@@ -3,12 +3,10 @@ name: Docker
 # Need the job to run when i push to the git repo
 on:
     push:
-        branches: [main]
-        paths: ['**']
-        tags: ['v*']
-
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
 # i have a docker-compose file give me a version of the current job that uses the docker-compose file to build the image
-
 
 jobs:
     publish_image:
@@ -18,12 +16,12 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Setup Docker Compose
-              uses: docker/setup-compose@v2
+              run: apt-get update && apt-get install -y docker-compose
 
             - name: Build Docker image
-              run: docker-compose -f docker-compose.yml build
+              run: docker compose -f docker-compose.yml build
 
             - name: Push image to Docker Hub
               run: |
-                docker login -u frank1o3 -p ${{ secrets.DOCKER_TOKEN }}
-                docker-compose -f docker-compose.yml push
+                  docker login -u frank1o3 -p ${{ secrets.DOCKER_TOKEN }}
+                  docker compose -f docker-compose.yml push
