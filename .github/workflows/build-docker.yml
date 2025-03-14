@@ -1,12 +1,12 @@
 name: Docker
 
-# Need the job to run when i push to the git repo
+
 on:
-    push:
-        branches: ["main"]
-    pull_request:
-        branches: ["main"]
-# i have a docker-compose file give me a version of the current job that uses the docker-compose file to build the image
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
 
 jobs:
     publish_image:
@@ -15,13 +15,16 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
-            - name: Setup Docker Compose
-              run: sudo apt-get update && sudo apt-get install -y docker-compose
-
-            - name: Build Docker image
-              run: docker compose -f docker-compose.yml build
-
-            - name: Push image to Docker Hub
+            # Set up Docker (install docker-compose)
+            - name: Set up Docker Compose
               run: |
-                  docker login -u frank1o3 -p ${{ secrets.DOCKER_TOKEN }}
-                  docker compose -f docker-compose.yml push
+                sudo apt-get update
+                sudo apt-get install -y docker-compose
+
+            - name: Build image
+              run: docker compose -f docker-compose.yml build
+              
+            - name: Push image
+              run: |
+                docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}
+                docker-compose -f docker-compose.yml push

@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: bedrock-server
+    image: frank1o3/bedrock-server:latest
     container_name: bedrock-server
     environment:
       - NO_IP_USERNAME
@@ -12,5 +12,5 @@ services:
       - .env
     network_mode: host
     restart: always
-    # volumes:
-    #   - ./data/worlds:/bedrock/worlds # Maps local directory to container
+    volumes:
+      - ./data/backups:/bedrock/backups/ # Maps local directory to container
