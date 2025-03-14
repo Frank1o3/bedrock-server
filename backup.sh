@@ -15,6 +15,9 @@ if [ ! -d "/bedrock/worlds/Main" ]; then
   exit 1
 fi
 
+# Remove backups older than 1 hour
+find "$backup_dir" -type d -name "Main-*" -mmin +60 -exec rm -rf {} \; 2>> "$backup_dir/backup.log"
+
 # Create a backup of the world (Main in this example)
 cp -r /bedrock/worlds/Main "$backup_dir/Main-$timestamp" 2>> "$backup_dir/backup.log"
 

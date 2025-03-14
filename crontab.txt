@@ -1,5 +1,5 @@
 # Run backup.sh every hour and log output
-0 * * * * root /bin/bash /bedrock/backup.sh >> /bedrock/backup.log 2>&1
+*/25 * * * * root /bin/bash /bedrock/backup.sh >> /bedrock/backup.log 2>&1
 
 # Run No-IP DDNS update every 5 minutes (secure credentials handling recommended)
 */5 * * * * /usr/local/bin/noip-duc -g all.ddnskey.com --username "$NO_IP_USERNAME" --password "$NO_IP_PASSWORD"
