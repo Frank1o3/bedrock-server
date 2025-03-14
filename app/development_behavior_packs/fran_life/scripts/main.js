@@ -1,6 +1,5 @@
 // ct:/main.js
 import * as mc from "@minecraft/server";
-import * as net from "@minecraft/server-net"
 
 var HP_Objective = "HP";
 var Player_List = Array();
