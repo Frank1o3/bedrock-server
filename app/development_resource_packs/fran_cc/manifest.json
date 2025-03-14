@@ -1,0 +1,40 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Chat Commands",
+    "description": "Add-On Starter",
+    "uuid": "a7a856c7-6475-41bb-b5f0-f0258894119a",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      60
+    ]
+  },
+  "modules": [
+    {
+      "description": "Add-on Pack Resources",
+      "type": "resources",
+      "uuid": "b7ea22e4-ef34-4c57-8325-b80fa3c9250c",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "43bb7139-aace-4a2c-9f68-be729936041c",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

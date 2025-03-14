@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Experimental behavior pack for Spring Drop 2025 content",
+    "name": "Spring Drop 2025",
+    "uuid": "cf08a58a-2d6a-4586-ae4b-263c2616e196",
+    "version": [
+      0,
+      0,
+      1
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      60
+    ]
+  },
+  "modules": [
+    {
+      "description": "Experimental behavior pack for Spring Drop 2025 content",
+      "type": "data",
+      "uuid": "79b9b163-c631-4552-8d9e-5948f08f24c8",
+      "version": [
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

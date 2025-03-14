@@ -1,0 +1,50 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Life left",
+    "description": "TypeScript Starter",
+    "uuid": "d31186ee-625f-4e93-b059-b451da481307",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      60
+    ]
+  },
+  "modules": [
+    {
+      "description": "Script resources",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "c104832e-d668-4a45-9256-e551a16988c6",
+      "version": [
+        1,
+        0,
+        0
+      ],
+      "entry": "scripts/main.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": [
+        1,
+        17,
+        0
+      ]
+    },
+    {
+      "uuid": "b772ba65-b681-461b-96b0-e1bd217c79d4",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ]
+}

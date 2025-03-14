@@ -1,0 +1,23 @@
+Dedicated_Server.txt
+[2025-03-14 13:28:24:117 INFO] Starting Server
+[2025-03-14 13:28:24:118 INFO] Version: 1.21.62.01
+[2025-03-14 13:28:24:118 INFO] Session ID: 80745d17-57ed-492b-ad9e-fca224fe5c4f
+[2025-03-14 13:28:24:118 INFO] Build ID: 31303358
+[2025-03-14 13:28:24:118 INFO] Branch: r/21_u6
+[2025-03-14 13:28:24:118 INFO] Commit ID: 3844ee11290e274b54bb8fc9008ac3fb4ea34be3
+[2025-03-14 13:28:24:118 INFO] Configuration: Publish
+[2025-03-14 13:28:24:119 INFO] Level Name: Main
+[2025-03-14 13:28:24:122 INFO] No CDN config file found for dedicated server
+[2025-03-14 13:28:24:122 INFO] Game mode: 0 Survival
+[2025-03-14 13:28:24:122 INFO] Difficulty: 2 NORMAL
+[2025-03-14 13:28:24:128 INFO] Content logging to console is enabled.
+[2025-03-14 13:28:25:221 INFO] Opening level 'worlds/Main/db'
+[2025-03-14 13:28:25:319 INFO] [SERVER] Pack Stack - None
+[2025-03-14 13:28:27:268 INFO] IPv4 supported, port: 19132: Used for gameplay and LAN discovery
+[2025-03-14 13:28:27:268 INFO] IPv6 supported, port: 19133: Used for gameplay
+[2025-03-14 13:28:27:291 INFO] server-authoritative-movement value from server.properties: server-auth
+[2025-03-14 13:28:27:291 INFO] Level Movement Flight: client-auth-flight
+[2025-03-14 13:28:27:291 INFO] Final Level Movement Authority: server-auth
+[2025-03-14 13:28:27:292 INFO] Server started.
+[2025-03-14 13:28:34:000 INFO] Server stop requested.
+[2025-03-14 13:28:34:017 INFO] Stopping server...
