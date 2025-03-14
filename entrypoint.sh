@@ -13,7 +13,6 @@ fi
 # Configure and start No-IP DUC
 if [ -n "$NO_IP_USERNAME" ] && [ -n "$NO_IP_PASSWORD" ]; then
     echo "Configuring No-IP DUC..."
-    noip-duc 
 else
     echo "No-IP credentials not set. Skipping update."
 fi
