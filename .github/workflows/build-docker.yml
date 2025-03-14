@@ -1,12 +1,8 @@
 name: Docker
 
-
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
 
 jobs:
     Publish_Image:
