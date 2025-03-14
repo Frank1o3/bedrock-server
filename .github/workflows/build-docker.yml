@@ -14,4 +14,6 @@ jobs:
               run: docker build ./ -t frank1o3/bedrock-server:latest
 
             - name: Push image
-              run: docker push frank1o3/bedrock-server:latest
+              run: |
+                docker login -u frank1o3 -p ${{ secrets.DOCKER_TOKEN }}
+                docker push frank1o3/bedrock-server:latest
