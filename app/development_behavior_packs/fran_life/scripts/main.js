@@ -29,7 +29,7 @@ mc.world.afterEvents.playerSpawn.subscribe((eventData) => {
 	}
 	if (objective && objective.isValid()) {
 		let health = Math.round(
-			Player.getComponent("minecraft:health").currentValue
+			Player.getComponent("minecraft:health").current
 		);
 		objective.setScore(Player.name, health);
 	}
@@ -47,7 +47,7 @@ function Main() {
 	Player_List.forEach((player) => {
 		if (objective && objective.isValid()) {
 			let health = Math.round(
-				player.getComponent("minecraft:health").currentValue
+				player.getComponent("minecraft:health").current
 			);
 			objective.setScore(player.name, health);
 		}
@@ -57,7 +57,13 @@ function Main() {
 mc.system.run(() => {
 	console.log("Mod Running....");
 	createObjective();
-  
+	try {
+		const Overworld = mc.world.getDimension(mc.MinecraftDimensionTypes.overworld);
+		Overworld.runCommandAsync("gamerule showcoordinates true");
+		Overworld.runCommandAsync("gamerule showdaysplayed true");
+	} catch (error) {
+		console.error("Error setting game rules:", error);
+	}
 });
 
 mc.system.runInterval(Main, 20);
