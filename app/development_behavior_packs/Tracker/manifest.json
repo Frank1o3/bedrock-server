@@ -1,0 +1,52 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Frank1o3"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.43"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "Tracker",
+		"description": "Tracker Mod that lets you track your friends",
+		"min_engine_version": [
+			1,
+			21,
+			60
+		],
+		"uuid": "c66f0ab2-5393-4b85-9bd5-c6daf5fd9f05",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "b532a069-7427-418c-a6ac-d4a7fe14b978",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.17.0"
+		},
+		{
+			"module_name": "@minecraft/vanilla-data",
+			"version": "1.0.0"
+		}
+	]
+}
