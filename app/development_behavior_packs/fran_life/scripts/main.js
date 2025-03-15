@@ -1,58 +1,56 @@
 // ct:/main.js
 import * as mc from "@minecraft/server";
 
-var HP_Objective = "HP";
-var Player_List = Array();
-var objective = mc.world.scoreboard.getObjectives().find((obj) => obj.id === HP_Objective) ?? mc.world.scoreboard.addObjective(HP_Objective, HP_Objective);
+const HP_Objective = "HP";
 
 function createObjective() {
-	objective = mc.world.scoreboard
-		.getObjectives()
-		.find((obj) => obj.id === HP_Objective);
-	if (!objective) {
-		objective = mc.world.scoreboard.addObjective(
+	const existingObjective = mc.world.scoreboard.getObjective(HP_Objective);
+	if (!existingObjective) {
+		const objective = mc.world.scoreboard.addObjective(
 			HP_Objective,
 			HP_Objective
 		);
+		mc.world.scoreboard.setObjectiveAtDisplaySlot(mc.DisplaySlotId.BelowName, {
+			objective: objective,
+			sortOrder: mc.ObjectiveSortOrder.Ascending
+		});
 	}
-	objective = mc.world.scoreboard.setObjectiveAtDisplaySlot(mc.DisplaySlotId.BelowName, {
-		objective,
-		sortOrder: mc.ObjectiveSortOrder.Ascending
-	});
 }
 
 mc.world.afterEvents.playerSpawn.subscribe((eventData) => {
+	const scoreboard = mc.world.scoreboard.getObjective(HP_Objective);
 	const Player = eventData.player;
-	if (!Player_List.find((plr) => plr === Player)) {
-		Player_List.push(Player);
-	}
-	if (objective && objective.isValid()) {
-		let health = Math.round(
+
+	if (scoreboard && scoreboard.isValid()) {
+		let health = Math.floor(
 			Player.getComponent("minecraft:health").currentValue
 		);
-		objective.setScore(Player.name, health);
+		scoreboard.setScore(Player.name, health);
 	}
-});
-
-mc.world.beforeEvents.playerLeave.subscribe((eventData) => {
-	const Player = eventData.player;
-	Player_List = Player_List.filter((plr) => plr !== Player);
 });
 
 function Main() {
-	Player_List.forEach((player) => {
-		if (objective && objective.isValid()) {
-			let health = Math.round(
-				player.getComponent("minecraft:health").currentValue
-			);
-			objective.setScore(player.name, health);
+	const scoreboard = mc.world.scoreboard.getObjective(HP_Objective);
+
+	for (const player of mc.world.getPlayers()) {
+		const healthComponent = player.getComponent("minecraft:health");
+		if (healthComponent) {
+			const currentHealth = Math.floor(healthComponent.currentValue); // Round health to an integer
+			try {
+				scoreboard.setScore(player, currentHealth);
+			} catch (error) {
+				console.error(`❌ Error updating ${player.name}'s HP:`, error);
+			}
 		}
-	});
+	};
 }
 
 mc.system.run(() => {
 	console.log("Mod Running....");
+
 	createObjective();
+	Main();
+
 	try {
 		const Overworld = mc.world.getDimension(mc.MinecraftDimensionTypes.overworld);
 		Overworld.runCommandAsync("gamerule showcoordinates true");
@@ -63,4 +61,4 @@ mc.system.run(() => {
 	}
 });
 
-mc.system.runInterval(Main, 20);
+mc.system.runInterval(Main, 10);
