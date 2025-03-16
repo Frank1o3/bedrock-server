@@ -1,69 +1,77 @@
 import * as server from "@minecraft/server";
+import { AdminPanel } from "./gui/Admin";
 import * as data from "@minecraft/vanilla-data";
 
 const world = server.world;
 const system = server.system;
-const Players = [];
-const PlayerTargets = new Map(); // Tracks each player's selected target
-
-world.afterEvents.playerSpawn.subscribe((eventData) => {
-    const Player = eventData.player;
-
-    if (!Players.includes(Player.name)) {
-        Players.push(Player.name);
-    }
-});
-
-world.beforeEvents.playerLeave.subscribe((eventData) => {
-    const Player = eventData.player;
-
-    Players.splice(Players.indexOf(Player.name), 1);
-    PlayerTargets.delete(Player.name);
-});
+const PlayerTargets = new Map();
+const PlayerArrows = new Map(); // Store arrows tracking each player
 
 world.beforeEvents.itemUse.subscribe((eventData) => {
-    eventData.cancel = true;
     const Player = eventData.source;
     const Item = eventData.itemStack;
 
-    if (Item?.typeId === data.MinecraftItemTypes.compass && Item.nameTag?.toLowerCase() === "tracker") {
-        if (Players.length > 1) {
-            let TargetIndex = Players.indexOf(Player.name);
-            let NextIndex = (TargetIndex + 1) % Players.length;
+    if (Item.typeId === "minecraft:compass" && (Item.nameTag === "Tracker" || Item.nameTag === "tracker")) {
+        let players = world.getAllPlayers().map(p => p.name);
+        if (players.length > 1) {
+            let NextIndex = (players.indexOf(Player.name) + 1) % players.length;
+            while (players[NextIndex] === Player.name) {
+                NextIndex = (NextIndex + 1) % players.length;
+            }
+            const Target = players[NextIndex];
+            PlayerTargets.set(Player.name, Target);
+            Player.sendMessage(`Tracking: ${Target}`);
 
-            while (Players[NextIndex] === Player.name) {
-                NextIndex = (NextIndex + 1) % Players.length;
+            // Remove old arrow if it exists
+            if (PlayerArrows.has(Player.name)) {
+                let oldArrow = PlayerArrows.get(Player.name);
+                oldArrow.remove();
             }
 
-            const Target = Players[NextIndex];
-            PlayerTargets.set(Player.name, Target); // Store target
-            Player.sendMessage(`Tracking: ${Target}`); // Notify player
+            // Summon new tracking arrow in front of the player
+            const playerLoc = Player.location;
+            let arrow = world.spawnEntity("fr:arrow", {
+                x: playerLoc.x,
+                y: playerLoc.y + 1,
+                z: playerLoc.z
+            });
+
+            PlayerArrows.set(Player.name, arrow);
         }
+    } else if (Item.typeId == data.MinecraftItemTypes.Stick && Player.hasTag("Admin")) {
+        AdminPanel(Player);
     }
 });
 
-// Main Loop - Updates Compass Direction
-function Main() {
+// Update arrow direction every tick
+system.runInterval(() => {
     PlayerTargets.forEach((targetName, playerName) => {
-        const Target_Player = world.getAllPlayers().find((p) => p.name === targetName);
-        const Player = world.getAllPlayers().find((p) => p.name === playerName);
+        let Target_Player = world.getAllPlayers().find(p => p.name === targetName);
+        let Player = world.getAllPlayers().find(p => p.name === playerName);
+        let Arrow = PlayerArrows.get(playerName);
+        if (!Target_Player || !Player || !Arrow) return;
 
-        if (!Target_Player || !Player) return;
+        // Get direction vector (normalize)
+        let direction = {
+            x: Target_Player.location.x - Player.location.x,
+            y: Target_Player.location.y - Player.location.y,
+            z: Target_Player.location.z - Player.location.z
+        };
+        let magnitude = Math.sqrt(direction.x ** 2 + direction.y ** 2 + direction.z ** 2);
+        direction.x /= magnitude;
+        direction.y /= magnitude;
+        direction.z /= magnitude;
 
-        // Get target's position
-        const targetLocation = Target_Player.location;
+        // Position the arrow a small distance in front of the player
+        let newArrowPos = {
+            x: Player.location.x + direction.x * 2,
+            y: Player.location.y + 1.5,
+            z: Player.location.z + direction.z * 2
+        };
 
-        // Update the compass to track the target
-        Player.runCommand(`execute as @s at @s run particle minecraft:composter_fill ${targetLocation.x} ${targetLocation.y} ${targetLocation.z} 0 0 0 0 1 force`);
-
-        // Notify the player
-        Player.sendMessage(`Compass is tracking: ${targetName}`);
+        Arrow.teleport(newArrowPos);
+        Arrow.rotation = { x: 0, y: Math.atan2(direction.x, direction.z) * (180 / Math.PI) }; // Rotate towards target
     });
-}
+}, 5); // Update every 5 ticks (~0.25s)
 
-system.run(() => {
-    console.log("Mod Script Loaded!");
-});
-
-// Start Main Loop
-system.runInterval(Main, 20);
+console.log("Tracking Arrow System Loaded!");
