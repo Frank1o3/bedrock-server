@@ -43,6 +43,59 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
     }
 });
 
+world.beforeEvents.chatSend.subscribe((eventData) => {
+    eventData.cancel = true;
+    const msg = eventData.message.toLocaleLowerCase();
+
+    const Enchantments = [
+        data.MinecraftEnchantmentTypes.Protection,
+        data.MinecraftEnchantmentTypes.Unbreaking,
+        data.MinecraftEnchantmentTypes.Mending,
+        data.MinecraftEnchantmentTypes.Thorns,
+        data.MinecraftEnchantmentTypes.Sharpness,
+        data.MinecraftEnchantmentTypes.Looting,
+        data.MinecraftEnchantmentTypes.Efficiency,
+        data.MinecraftEnchantmentTypes.Fortune,
+        data.MinecraftEnchantmentTypes.Power,
+        data.MinecraftEnchantmentTypes.Flame,
+        data.MinecraftEnchantmentTypes.BowInfinity,
+        data.MinecraftEnchantmentTypes.Punch,
+        data.MinecraftEnchantmentTypes.SoulSpeed,
+        data.MinecraftEnchantmentTypes.SwiftSneak,
+        data.MinecraftEnchantmentTypes.FeatherFalling,
+        data.MinecraftEnchantmentTypes.Thorns
+    ];
+
+
+    const Items = [
+        new server.ItemStack(data.MinecraftItemTypes.NetheriteHelmet, 1),
+        new server.ItemStack(data.MinecraftItemTypes.NetheriteChestplate, 1),
+        new server.ItemStack(data.MinecraftItemTypes.NetheriteLeggings, 1),
+        new server.ItemStack(data.MinecraftItemTypes.NetheriteBoots, 1),
+        new server.ItemStack(data.MinecraftItemTypes.EnchantedGoldenApple, 64 * 2)
+    ]
+
+    Items.forEach((item) => {
+        item.keepOnDeath = true;
+        const a = item.getComponent(server.ItemComponentTypes.Enchantable);
+
+        Enchantments.forEach((enchant) => {
+            if (a.canAddEnchantment(enchant) && !a.hasEnchantment(enchant)) {
+                a.AddEnchantment(enchant);
+            }
+        });
+    });
+
+    if (msg == "!pvp") {
+        for (const player of world.getAllPlayers()) {
+            const invetory = player.getComponent(server.EntityComponentTypes.Inventory).container;
+            Items.forEach((item) => {
+                invetory.addItem(item);
+            });
+        }
+    }
+});
+
 // Update arrow direction every tick
 system.runInterval(() => {
     PlayerTargets.forEach((targetName, playerName) => {
