@@ -37,7 +37,7 @@ RUN wget --content-disposition https://www.noip.com/download/linux/latest -O noi
     apt-get update && \
     apt-get install -y libpcap0.8 && \
     dpkg -i ./noip-duc_*.deb || apt-get install -f -y && \
-    rm -rf /bedrock/noip-duc_*
+    rm -rf /bedrock/noip-duc.tar.gz /bedrock/noip-duc_*
 
 # Add the crontab configuration file
 COPY ./crontab.txt /etc/cron.d/bedrock-backup

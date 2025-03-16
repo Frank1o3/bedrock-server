@@ -17,10 +17,6 @@ else
     echo "No-IP credentials not set. Skipping update."
 fi
 
-# Ensure cron is running as root
-echo "Starting cron service..."
-sudo service cron start
-
 # Handle rollback command
 if [ "$1" == "rollback" ]; then
     echo "Rolling back to the latest backup..."
