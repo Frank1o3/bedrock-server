@@ -10,6 +10,7 @@ const PlayerArrows = new Map(); // Store arrows tracking each player
 world.beforeEvents.itemUse.subscribe((eventData) => {
     const Player = eventData.source;
     const Item = eventData.itemStack;
+    const Dimention = Player.dimension;
 
     if (Item.typeId === "minecraft:compass" && (Item.nameTag === "Tracker" || Item.nameTag === "tracker")) {
         let players = world.getAllPlayers().map(p => p.name);
@@ -30,7 +31,7 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 
             // Summon new tracking arrow in front of the player
             const playerLoc = Player.location;
-            let arrow = world.spawnEntity("fr:arrow", {
+            let arrow = Dimention.spawnEntity("fr:arrow", {
                 x: playerLoc.x,
                 y: playerLoc.y + 1,
                 z: playerLoc.z
@@ -65,7 +66,6 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
         data.MinecraftEnchantmentTypes.FeatherFalling,
         data.MinecraftEnchantmentTypes.Thorns
     ];
-
 
     const Items = [
         new server.ItemStack(data.MinecraftItemTypes.NetheriteHelmet, 1),
