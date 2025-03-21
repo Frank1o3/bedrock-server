@@ -8,9 +8,23 @@ services:
     environment:
       - NO_IP_USERNAME
       - NO_IP_PASSWORD
+      - TZ=America/Santo_Domingo
     env_file:
       - .env
-    network_mode: host
+    network_mode: bridge
+    ports:
+      - "19132:19132/udp"
+      - "19133:19133/tcp"
+      - "19133:19133/udp"
+      - "19132:19132/tcp"
     restart: always
     volumes:
       - ./data/backups:/bedrock/backups/ # Maps local directory to container
+
+networks:
+  bedrock-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16

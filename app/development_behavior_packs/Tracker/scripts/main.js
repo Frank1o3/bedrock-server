@@ -1,6 +1,5 @@
 import * as server from "@minecraft/server";
 import { AdminPanel } from "./gui/Admin";
-import * as VanillaData from "../../../node_modules/@minecraft/vanilla-data";
 
 const world = server.world;
 const system = server.system;
@@ -13,7 +12,7 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
     const Dimention = Player.dimension;
     console.warn(Item.typeId);
 
-    if (Item.typeId === VanillaData.MinecraftItemTypes.Compass) {
+    if (Item.typeId === "minecraft:compass") {
         let players = world.getAllPlayers().map(p => p.name);
         if (players.length > 1) {
             let NextIndex = (players.indexOf(Player.name) + 1) % players.length;
@@ -46,41 +45,45 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 world.beforeEvents.chatSend.subscribe((eventData) => {
     const Player = eventData.sender;
     eventData.cancel = true;
+
+    if (!Player.hasTag("admin")) {
+        // how can i color this message to red? You do not have permission to use this command!
+        Player.sendMessage(`§cYou do not have permission to use this command!`);
+    }
+
     const msg = eventData.message.toLowerCase();
     console.warn(msg);
 
     const Enchantments = [
-        { id: VanillaData.MinecraftEnchantmentTypes.Protection, level: 4 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Unbreaking, level: 3 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Mending, level: 1 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Thorns, level: 3 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Sharpness, level: 5 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Looting, level: 3 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Efficiency, level: 4 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Fortune, level: 3 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Power, level: 5 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Flame, level: 1 },
-        { id: VanillaData.MinecraftEnchantmentTypes.BowInfinity, level: 1 },
-        { id: VanillaData.MinecraftEnchantmentTypes.Punch, level: 2 },
-        { id: VanillaData.MinecraftEnchantmentTypes.SoulSpeed, level: 3 },
-        { id: VanillaData.MinecraftEnchantmentTypes.SwiftSneak, level: 3 },
-        { id: VanillaData.MinecraftEnchantmentTypes.FeatherFalling, level: 4 }
+        { id: "minecraft:Protection", level: 4 },
+        { id: "minecraft:Unbreaking", level: 3 },
+        { id: "minecraft:Mending", level: 1 },
+        { id: "minecraft:Thorns", level: 3 },
+        { id: "minecraft:Sharpness", level: 5 },
+        { id: "minecraft:Looting", level: 3 },
+        { id: "minecraft:Efficiency", level: 4 },
+        { id: "minecraft:Fortune", level: 3 },
+        { id: "minecraft:Power", level: 5 },
+        { id: "minecraft:Flame", level: 1 },
+        { id: "minecraft:Punch", level: 2 },
+        { id: "minecraft:Soul_Speed", level: 3 },
+        { id: "minecraft:Swift_Sneak", level: 3 },
+        { id: "minecraft:Feather_Falling", level: 4 }
     ];
 
     const equipItems = () => {
         const items = [
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteHelmet, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteChestplate, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteLeggings, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteBoots, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteSword, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteShovel, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteAxe, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheritePickaxe, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.Bow, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.Arrow, 1),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.GoldenApple, 64),
-            new server.ItemStack(VanillaData.MinecraftItemTypes.GoldenApple, 64)
+            new server.ItemStack("minecraft:netherite_helmet", 1),
+            new server.ItemStack("minecraft:netherite_chestplate", 1),
+            new server.ItemStack("minecraft:netherite_leggings", 1),
+            new server.ItemStack("minecraft:netherite_boots", 1),
+            new server.ItemStack("minecraft:netherite_sword", 1),
+            new server.ItemStack("minecraft:netherite_shovel", 1),
+            new server.ItemStack("minecraft:netherite_axe", 1),
+            new server.ItemStack("minecraft:netherite_pickaxe", 1),
+            new server.ItemStack("minecraft:bow", 1),
+            new server.ItemStack("minecraft:arrow", 255),
+            new server.ItemStack("minecraft:golden_apple", 255)
         ];
 
         for (const item of items) {
@@ -89,13 +92,11 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
 
             for (const enchant of Enchantments) {
                 try {
-                    const enchantmentType = server.EnchantmentTypes.get(enchant.id); // Get valid EnchantmentType
+                    const enchantmentType = server.EnchantmentTypes.get(enchant.id.toLowerCase()); // Get valid EnchantmentType
                     if (!enchantmentType) continue; // Skip if invalid
 
-                    const enchantmentInstance = new server.Enchantment(enchantmentType, enchant.level);
-
-                    if (enchantable.canAddEnchantment(enchantmentInstance)) {
-                        enchantable.addEnchantment(enchantmentInstance);
+                    if (enchantable.canAddEnchantment({ type: enchantmentType, level: enchant.level })) {
+                        enchantable.addEnchantment({ type: enchantmentType, level: enchant.level });
                     }
                 } catch (error) {
                     console.warn(`Failed to apply enchantment ${enchant.id}: ${error}`);
@@ -110,24 +111,25 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
         system.runTimeout(() => {
             world.sendMessage("Equipping players with PvP gear!");
             for (const player of world.getAllPlayers()) {
-                const inventory = player.getComponent(server.EntityComponentTypes.Inventory).container;
-                equipItems().forEach(item => inventory.addItem(item));
+                const inventory = player.getComponent(server.EntityComponentTypes.Inventory);
+                const items = equipItems();
+                items.forEach(item => {
+                    inventory.container.addItem(item);
+                });
             }
         }, 200);
     } else if (msg === "!clear") {
         world.sendMessage("Clearing players' inventories!");
         for (const player of world.getAllPlayers()) {
-            const inventory = player.getComponent(server.EntityComponentTypes.Inventory);
-            inventory.container.clearAll();
+            player.runCommandAsync("/clear @s");
         }
-    } else if (msg === "!adminPanel") {
+    } else if (msg === "!admin") {
+        // System runTimeout works with minecraft ticks (20 ticks = 1 second)
         system.runTimeout(() => {
             AdminPanel(Player);
-        }, 200);
-    } else if (msg === "!reload") {
-        world.getDimension(Player.dimension.id).runCommand("/reload");
+        }, 20); // Show admin panel after 10 seconds
     } else if (msg === "!help") {
-        Player.sendMessage("Commands: !pvp, !clear, !adminPanel");
+        Player.sendMessage("Commands: !pvp, !clear");
     }
 });
 

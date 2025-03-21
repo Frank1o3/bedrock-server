@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     jq \
     sudo \
     tar \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user and ensure they have permissions for the required directories
