@@ -8,7 +8,6 @@ services:
     environment:
       - NO_IP_USERNAME
       - NO_IP_PASSWORD
-      - TZ=America/Santo_Domingo
     env_file:
       - .env
     network_mode: bridge
