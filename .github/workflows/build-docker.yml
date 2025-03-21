@@ -3,13 +3,6 @@ name: Docker-Builder
 on:
     schedule:
         - cron: "42 19 * * *"
-    push:
-        branches: ["main"]
-        # Publish semver tags as releases.
-        tags: ["v*.*.*"]
-    pull_request:
-        branches: ["main"]
-
 jobs:
     Publish_Image:
         runs-on: ubuntu-latest
