@@ -25,6 +25,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose-plugin
+          docker compose version  # Verify installation
+
       - name: Log into GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -34,15 +40,15 @@ jobs:
 
       - name: Build and push image using Docker Compose
         run: |
-          docker-compose build
+          docker compose build
           docker tag frank1o3/bedrock-server:latest ghcr.io/frank1o3/bedrock-server:latest
           docker push ghcr.io/frank1o3/bedrock-server:latest
 
       - name: Run Bedrock server container for testing
         run: |
-          docker-compose up -d
+          docker compose up -d
           sleep 10  # Give the server time to start
           docker ps
 
       - name: Stop and remove container
-        run: docker-compose down
+        run: docker compose down
