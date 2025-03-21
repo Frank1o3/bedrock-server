@@ -45,68 +45,68 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 world.beforeEvents.chatSend.subscribe((eventData) => {
     const Player = eventData.sender;
     eventData.cancel = true;
-    const msg = eventData.message.toLocaleLowerCase();
+    const msg = eventData.message.toLowerCase();
     console.warn(msg);
 
-    const Enchantments = {
-        "minecraft:protection": 4,
-        "minecraft:unbreaking": 1,
-        "minecraft:mending": 1,
-        "minecraft:thorns": 3,
-        "minecraft:sharpness": 5,
-        "minecraft:looting": 3,
-        "minecraft:efficiency": 4,
-        "minecraft:fortune": 5,
-        "minecraft:power": 5,
-        "minecraft:flame": 1,
-        "minecraft:infinity": 1,
-        "minecraft:punch": 2,
-        "minecraft:soul_speed": 3,
-        "minecraft:swift_sneak": 3,
-        "minecraft:feather_falling": 4
-    };
+    const Enchantments = [
+        { id: "protection", level: 4 },
+        { id: "unbreaking", level: 3 },
+        { id: "mending", level: 1 },
+        { id: "thorns", level: 3 },
+        { id: "sharpness", level: 5 },
+        { id: "looting", level: 3 },
+        { id: "efficiency", level: 4 },
+        { id: "fortune", level: 3 },
+        { id: "power", level: 5 },
+        { id: "flame", level: 1 },
+        { id: "infinity", level: 1 },
+        { id: "punch", level: 2 },
+        { id: "soul_speed", level: 3 },
+        { id: "swift_sneak", level: 3 },
+        { id: "feather_falling", level: 4 }
+    ];
 
-    const helmet = new server.ItemStack("minecraft:netherite_helmet", 1);
-    const chestplate = new server.ItemStack("minecraft:netherite_chestplate", 1);
-    const leggings = new server.ItemStack("minecraft:netherite_leggings", 1);
-    const boots = new server.ItemStack("minecraft:netherite_boots", 1);
-    const sword = new server.ItemStack("minecraft:netherite_sword", 1);
-    const bow = new server.ItemStack("minecraft:bow", 1);
-    const arrow = new server.ItemStack("minecraft:arrow", 64 * 10);
-    const food = new server.ItemStack("minecraft:golden_apple", 64 * 10);
+    const equipItems = () => {
+        const items = [
+            new server.ItemStack("minecraft:netherite_helmet", 1),
+            new server.ItemStack("minecraft:netherite_chestplate", 1),
+            new server.ItemStack("minecraft:netherite_leggings", 1),
+            new server.ItemStack("minecraft:netherite_boots", 1),
+            new server.ItemStack("minecraft:netherite_sword", 1),
+            new server.ItemStack("minecraft:bow", 1),
+            new server.ItemStack("minecraft:arrow", 64 * 10),
+            new server.ItemStack("minecraft:golden_apple", 64 * 10)
+        ];
 
-    if (msg == "!pvp") {
-        const Items = [helmet, chestplate, leggings, boots, sword, bow, arrow, food];
-        for (const item of Items) {
-            const a = item.getComponent(server.ItemComponentTypes.Enchantable);
+        for (const item of items) {
+            const enchantable = item.getComponent("minecraft:enchantable");
+            if (!enchantable) continue;
 
-            if (!a) continue;
-
-            for (const enchantment in Enchantments) {
-                const e = new server.EnchantmentType(enchantment);
-
-                if (a.canAddEnchantment(enchantment)) {
-                    a.addEnchantment(enchantment, Enchantments[enchantment]);
+            for (const enchant of Enchantments) {
+                if (enchantable.canAddEnchantment({ type: enchant.id, level: enchant.level })) {
+                    enchantable.addEnchantment({ type: enchant.id, level: enchant.level });
                 }
             }
         }
-        world.sendMessage("PvP Empezara en 10 segundos!");
+        return items;
+    };
+
+    if (msg === "!pvp") {
+        world.sendMessage("PvP will start in 10 seconds!");
         setTimeout(() => {
-            world.sendMessage("Equipando jugadores con equipo PvP!");
+            world.sendMessage("Equipping players with PvP gear!");
             for (const player of world.getAllPlayers()) {
-                const invetory = player.getComponent("minecraft:inventory").container;
-                Items.forEach((item) => {
-                    invetory.addItem(item);
-                });
+                const inventory = player.getComponent("minecraft:inventory").container;
+                equipItems().forEach(item => inventory.addItem(item));
             }
         }, 10000);
-    } else if (msg == "!clear") {
-        world.sendMessage("Limpiando inventarios de jugadores!");
+    } else if (msg === "!clear") {
+        world.sendMessage("Clearing players' inventories!");
         for (const player of world.getAllPlayers()) {
-            const invetory = player.getComponent("minecraft:inventory").container;
-            invetory.clear();
+            const inventory = player.getComponent("minecraft:inventory").container;
+            inventory.clear();
         }
-    } else if (msg == "!adminPanel") {
+    } else if (msg === "!adminPanel") {
         AdminPanel(Player);
     }
 });
