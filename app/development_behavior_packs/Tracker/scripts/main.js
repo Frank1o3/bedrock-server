@@ -1,5 +1,6 @@
 import * as server from "@minecraft/server";
 import { AdminPanel } from "./gui/Admin";
+import * as VanillaData from "../../../node_modules/@minecraft/vanilla-data";
 
 const world = server.world;
 const system = server.system;
@@ -12,7 +13,7 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
     const Dimention = Player.dimension;
     console.warn(Item.typeId);
 
-    if (Item.typeId === "minecraft:compass") {
+    if (Item.typeId === VanillaData.MinecraftItemTypes.Compass) {
         let players = world.getAllPlayers().map(p => p.name);
         if (players.length > 1) {
             let NextIndex = (players.indexOf(Player.name) + 1) % players.length;
@@ -49,42 +50,55 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
     console.warn(msg);
 
     const Enchantments = [
-        { id: "protection", level: 4 },
-        { id: "unbreaking", level: 3 },
-        { id: "mending", level: 1 },
-        { id: "thorns", level: 3 },
-        { id: "sharpness", level: 5 },
-        { id: "looting", level: 3 },
-        { id: "efficiency", level: 4 },
-        { id: "fortune", level: 3 },
-        { id: "power", level: 5 },
-        { id: "flame", level: 1 },
-        { id: "infinity", level: 1 },
-        { id: "punch", level: 2 },
-        { id: "soul_speed", level: 3 },
-        { id: "swift_sneak", level: 3 },
-        { id: "feather_falling", level: 4 }
+        { id: VanillaData.MinecraftEnchantmentTypes.Protection, level: 4 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Unbreaking, level: 3 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Mending, level: 1 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Thorns, level: 3 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Sharpness, level: 5 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Looting, level: 3 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Efficiency, level: 4 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Fortune, level: 3 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Power, level: 5 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Flame, level: 1 },
+        { id: VanillaData.MinecraftEnchantmentTypes.BowInfinity, level: 1 },
+        { id: VanillaData.MinecraftEnchantmentTypes.Punch, level: 2 },
+        { id: VanillaData.MinecraftEnchantmentTypes.SoulSpeed, level: 3 },
+        { id: VanillaData.MinecraftEnchantmentTypes.SwiftSneak, level: 3 },
+        { id: VanillaData.MinecraftEnchantmentTypes.FeatherFalling, level: 4 }
     ];
 
     const equipItems = () => {
         const items = [
-            new server.ItemStack("minecraft:netherite_helmet", 1),
-            new server.ItemStack("minecraft:netherite_chestplate", 1),
-            new server.ItemStack("minecraft:netherite_leggings", 1),
-            new server.ItemStack("minecraft:netherite_boots", 1),
-            new server.ItemStack("minecraft:netherite_sword", 1),
-            new server.ItemStack("minecraft:bow", 1),
-            new server.ItemStack("minecraft:arrow", 64 * 10),
-            new server.ItemStack("minecraft:golden_apple", 64 * 10)
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteHelmet, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteChestplate, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteLeggings, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteBoots, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteSword, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteShovel, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheriteAxe, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.NetheritePickaxe, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.Bow, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.Arrow, 1),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.GoldenApple, 64),
+            new server.ItemStack(VanillaData.MinecraftItemTypes.GoldenApple, 64)
         ];
 
         for (const item of items) {
-            const enchantable = item.getComponent("minecraft:enchantable");
+            const enchantable = item.getComponent(server.ItemComponentTypes.Enchantable);
             if (!enchantable) continue;
 
             for (const enchant of Enchantments) {
-                if (enchantable.canAddEnchantment({ type: enchant.id, level: enchant.level })) {
-                    enchantable.addEnchantment({ type: enchant.id, level: enchant.level });
+                try {
+                    const enchantmentType = server.EnchantmentTypes.get(enchant.id); // Get valid EnchantmentType
+                    if (!enchantmentType) continue; // Skip if invalid
+
+                    const enchantmentInstance = new server.Enchantment(enchantmentType, enchant.level);
+
+                    if (enchantable.canAddEnchantment(enchantmentInstance)) {
+                        enchantable.addEnchantment(enchantmentInstance);
+                    }
+                } catch (error) {
+                    console.warn(`Failed to apply enchantment ${enchant.id}: ${error}`);
                 }
             }
         }
@@ -93,21 +107,27 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
 
     if (msg === "!pvp") {
         world.sendMessage("PvP will start in 10 seconds!");
-        setTimeout(() => {
+        system.runTimeout(() => {
             world.sendMessage("Equipping players with PvP gear!");
             for (const player of world.getAllPlayers()) {
-                const inventory = player.getComponent("minecraft:inventory").container;
+                const inventory = player.getComponent(server.EntityComponentTypes.Inventory).container;
                 equipItems().forEach(item => inventory.addItem(item));
             }
-        }, 10000);
+        }, 200);
     } else if (msg === "!clear") {
         world.sendMessage("Clearing players' inventories!");
         for (const player of world.getAllPlayers()) {
-            const inventory = player.getComponent("minecraft:inventory").container;
-            inventory.clear();
+            const inventory = player.getComponent(server.EntityComponentTypes.Inventory);
+            inventory.container.clearAll();
         }
     } else if (msg === "!adminPanel") {
-        AdminPanel(Player);
+        system.runTimeout(() => {
+            AdminPanel(Player);
+        }, 200);
+    } else if (msg === "!reload") {
+        world.getDimension(Player.dimension.id).runCommand("/reload");
+    } else if (msg === "!help") {
+        Player.sendMessage("Commands: !pvp, !clear, !adminPanel");
     }
 });
 

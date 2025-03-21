@@ -20,7 +20,7 @@
   "dependencies": {
     "@minecraft/server": "^2.0.0-beta",
     "@minecraft/server-ui": "^2.0.0-beta",
-    "chatsend": "^1.2.0"
+    "@minecraft/vanilla-data": "^1.21.62"
   },
   "devDependencies": {
     "@types/node": "^22.13.10"
