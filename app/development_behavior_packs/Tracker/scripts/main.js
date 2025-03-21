@@ -1,6 +1,5 @@
 import * as server from "@minecraft/server";
 import { AdminPanel } from "./gui/Admin";
-import * as data from "@minecraft/vanilla-data";
 
 const world = server.world;
 const system = server.system;
@@ -11,8 +10,9 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
     const Player = eventData.source;
     const Item = eventData.itemStack;
     const Dimention = Player.dimension;
+    console.warn(Item.typeId);
 
-    if (Item.typeId === "minecraft:compass" && (Item.nameTag === "Tracker" || Item.nameTag === "tracker")) {
+    if (Item.typeId === "minecraft:compass") {
         let players = world.getAllPlayers().map(p => p.name);
         if (players.length > 1) {
             let NextIndex = (players.indexOf(Player.name) + 1) % players.length;
@@ -39,60 +39,75 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 
             PlayerArrows.set(Player.name, arrow);
         }
-    } else if (Item.typeId == data.MinecraftItemTypes.Stick && Player.hasTag("Admin")) {
-        AdminPanel(Player);
     }
 });
 
 world.beforeEvents.chatSend.subscribe((eventData) => {
+    const Player = eventData.sender;
     eventData.cancel = true;
     const msg = eventData.message.toLocaleLowerCase();
+    console.warn(msg);
 
-    const Enchantments = [
-        data.MinecraftEnchantmentTypes.Protection,
-        data.MinecraftEnchantmentTypes.Unbreaking,
-        data.MinecraftEnchantmentTypes.Mending,
-        data.MinecraftEnchantmentTypes.Thorns,
-        data.MinecraftEnchantmentTypes.Sharpness,
-        data.MinecraftEnchantmentTypes.Looting,
-        data.MinecraftEnchantmentTypes.Efficiency,
-        data.MinecraftEnchantmentTypes.Fortune,
-        data.MinecraftEnchantmentTypes.Power,
-        data.MinecraftEnchantmentTypes.Flame,
-        data.MinecraftEnchantmentTypes.BowInfinity,
-        data.MinecraftEnchantmentTypes.Punch,
-        data.MinecraftEnchantmentTypes.SoulSpeed,
-        data.MinecraftEnchantmentTypes.SwiftSneak,
-        data.MinecraftEnchantmentTypes.FeatherFalling,
-        data.MinecraftEnchantmentTypes.Thorns
-    ];
+    const Enchantments = {
+        "minecraft:protection": 4,
+        "minecraft:unbreaking": 1,
+        "minecraft:mending": 1,
+        "minecraft:thorns": 3,
+        "minecraft:sharpness": 5,
+        "minecraft:looting": 3,
+        "minecraft:efficiency": 4,
+        "minecraft:fortune": 5,
+        "minecraft:power": 5,
+        "minecraft:flame": 1,
+        "minecraft:infinity": 1,
+        "minecraft:punch": 2,
+        "minecraft:soul_speed": 3,
+        "minecraft:swift_sneak": 3,
+        "minecraft:feather_falling": 4
+    };
 
-    const Items = [
-        new server.ItemStack(data.MinecraftItemTypes.NetheriteHelmet, 1),
-        new server.ItemStack(data.MinecraftItemTypes.NetheriteChestplate, 1),
-        new server.ItemStack(data.MinecraftItemTypes.NetheriteLeggings, 1),
-        new server.ItemStack(data.MinecraftItemTypes.NetheriteBoots, 1),
-        new server.ItemStack(data.MinecraftItemTypes.EnchantedGoldenApple, 64 * 2)
-    ]
-
-    Items.forEach((item) => {
-        item.keepOnDeath = true;
-        const a = item.getComponent(server.ItemComponentTypes.Enchantable);
-
-        Enchantments.forEach((enchant) => {
-            if (a.canAddEnchantment(enchant) && !a.hasEnchantment(enchant)) {
-                a.AddEnchantment(enchant);
-            }
-        });
-    });
+    const helmet = new server.ItemStack("minecraft:netherite_helmet", 1);
+    const chestplate = new server.ItemStack("minecraft:netherite_chestplate", 1);
+    const leggings = new server.ItemStack("minecraft:netherite_leggings", 1);
+    const boots = new server.ItemStack("minecraft:netherite_boots", 1);
+    const sword = new server.ItemStack("minecraft:netherite_sword", 1);
+    const bow = new server.ItemStack("minecraft:bow", 1);
+    const arrow = new server.ItemStack("minecraft:arrow", 64 * 10);
+    const food = new server.ItemStack("minecraft:golden_apple", 64 * 10);
 
     if (msg == "!pvp") {
-        for (const player of world.getAllPlayers()) {
-            const invetory = player.getComponent(server.EntityComponentTypes.Inventory).container;
-            Items.forEach((item) => {
-                invetory.addItem(item);
-            });
+        const Items = [helmet, chestplate, leggings, boots, sword, bow, arrow, food];
+        for (const item of Items) {
+            const a = item.getComponent(server.ItemComponentTypes.Enchantable);
+
+            if (!a) continue;
+
+            for (const enchantment in Enchantments) {
+                const e = new server.EnchantmentType(enchantment);
+
+                if (a.canAddEnchantment(enchantment)) {
+                    a.addEnchantment(enchantment, Enchantments[enchantment]);
+                }
+            }
         }
+        world.sendMessage("PvP Empezara en 10 segundos!");
+        setTimeout(() => {
+            world.sendMessage("Equipando jugadores con equipo PvP!");
+            for (const player of world.getAllPlayers()) {
+                const invetory = player.getComponent("minecraft:inventory").container;
+                Items.forEach((item) => {
+                    invetory.addItem(item);
+                });
+            }
+        }, 10000);
+    } else if (msg == "!clear") {
+        world.sendMessage("Limpiando inventarios de jugadores!");
+        for (const player of world.getAllPlayers()) {
+            const invetory = player.getComponent("minecraft:inventory").container;
+            invetory.clear();
+        }
+    } else if (msg == "!adminPanel") {
+        AdminPanel(Player);
     }
 });
 
