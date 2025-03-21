@@ -31,7 +31,7 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 
             // Summon new tracking arrow in front of the player
             const playerLoc = Player.location;
-            let arrow = Dimention.spawnEntity("fr:arrow", {
+            let arrow = Dimention.spawnEntity("fr:arrow_particle", {
                 x: playerLoc.x,
                 y: playerLoc.y + 1,
                 z: playerLoc.z
