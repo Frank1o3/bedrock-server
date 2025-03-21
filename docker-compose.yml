@@ -17,6 +17,8 @@ services:
       - "19133:19133/tcp"
       - "19133:19133/udp"
       - "19132:19132/tcp"
+      - "25575:25575/tcp"
+      - "25575:25575/udp"
     restart: always
     volumes:
       - ./data/backups:/bedrock/backups/ # Maps local directory to container

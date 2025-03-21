@@ -9,7 +9,7 @@ const PlayerArrows = new Map(); // Store arrows tracking each player
 world.beforeEvents.itemUse.subscribe((eventData) => {
     const Player = eventData.source;
     const Item = eventData.itemStack;
-    const Dimention = Player.dimension;
+    const Dimention = world.getDimension(Player.dimension.id);
     console.warn(Item.typeId);
 
     if (Item.typeId === "minecraft:compass") {
@@ -78,9 +78,9 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
             new server.ItemStack("minecraft:netherite_leggings", 1),
             new server.ItemStack("minecraft:netherite_boots", 1),
             new server.ItemStack("minecraft:netherite_sword", 1),
-            new server.ItemStack("minecraft:netherite_shovel", 1),
             new server.ItemStack("minecraft:netherite_axe", 1),
             new server.ItemStack("minecraft:netherite_pickaxe", 1),
+            new server.ItemStack("minecraft:netherite_shovel", 1),
             new server.ItemStack("minecraft:bow", 1),
             new server.ItemStack("minecraft:arrow", 255),
             new server.ItemStack("minecraft:golden_apple", 255)
@@ -127,7 +127,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
         // System runTimeout works with minecraft ticks (20 ticks = 1 second)
         system.runTimeout(() => {
             AdminPanel(Player);
-        }, 20); // Show admin panel after 10 seconds
+        }, 40); // Show admin panel after 10 seconds
     } else if (msg === "!help") {
         Player.sendMessage("Commands: !pvp, !clear");
     }
