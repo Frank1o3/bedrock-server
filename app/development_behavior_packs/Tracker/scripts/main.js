@@ -1,16 +1,21 @@
 import * as server from "@minecraft/server";
 import { AdminPanel } from "./gui/Admin";
+import * as data from "@minecraft/vanilla-data";
 
+var PVPMode = false;
+const spawn = { x: -4171, y: 304, z: -25601 };
+const left = { x: -4205, y: 307, z: -25588 };
+const right = { x: -4158, y: 302, z: -25628 };
 const world = server.world;
 const system = server.system;
 const PlayerTargets = new Map();
 const PlayerArrows = new Map(); // Store arrows tracking each player
+const PlayersInventory = new Map(); // Store players' inventories
 
 world.beforeEvents.itemUse.subscribe((eventData) => {
     const Player = eventData.source;
     const Item = eventData.itemStack;
     const Dimention = world.getDimension(Player.dimension.id);
-    console.warn(Item.typeId);
 
     if (Item.typeId === "minecraft:compass") {
         let players = world.getAllPlayers().map(p => p.name);
@@ -44,7 +49,6 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 
 world.beforeEvents.chatSend.subscribe((eventData) => {
     const Player = eventData.sender;
-    eventData.cancel = true;
 
     if (!Player.hasTag("admin")) {
         // how can i color this message to red? You do not have permission to use this command!
@@ -52,7 +56,6 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
     }
 
     const msg = eventData.message.toLowerCase();
-    console.warn(msg);
 
     const Enchantments = [
         { id: "minecraft:Protection", level: 4 },
@@ -79,8 +82,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
             new server.ItemStack("minecraft:netherite_boots", 1),
             new server.ItemStack("minecraft:netherite_sword", 1),
             new server.ItemStack("minecraft:netherite_axe", 1),
-            new server.ItemStack("minecraft:netherite_pickaxe", 1),
-            new server.ItemStack("minecraft:netherite_shovel", 1),
+            new server.ItemStack("minecraft:shield", 1),
             new server.ItemStack("minecraft:bow", 1),
             new server.ItemStack("minecraft:arrow", 255),
             new server.ItemStack("minecraft:golden_apple", 255)
@@ -107,6 +109,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
     };
 
     if (msg === "!pvp") {
+        eventData.cancel = true;
         world.sendMessage("PvP will start in 10 seconds!");
         system.runTimeout(() => {
             world.sendMessage("Equipping players with PvP gear!");
@@ -119,16 +122,19 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
             }
         }, 200);
     } else if (msg === "!clear") {
+        eventData.cancel = true;
         world.sendMessage("Clearing players' inventories!");
         for (const player of world.getAllPlayers()) {
             player.runCommandAsync("/clear @s");
         }
     } else if (msg === "!admin") {
+        eventData.cancel = true;
         // System runTimeout works with minecraft ticks (20 ticks = 1 second)
         system.runTimeout(() => {
             AdminPanel(Player);
         }, 40); // Show admin panel after 10 seconds
     } else if (msg === "!help") {
+        eventData.cancel = true;
         Player.sendMessage("Commands: !pvp, !clear");
     }
 });
