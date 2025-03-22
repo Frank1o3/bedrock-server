@@ -52,7 +52,7 @@ mc.system.run(() => {
 	Main();
 
 	try {
-		const Overworld = mc.world.getDimension(mc.MinecraftDimensionTypes.overworld);
+		const Overworld = mc.world.getDimension("minecraft:overworld");
 		Overworld.runCommandAsync("gamerule showcoordinates true");
 		Overworld.runCommandAsync("gamerule showdaysplayed true");
 		Overworld.runCommandAsync("gamerule playerssleepingpercentage 25");

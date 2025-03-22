@@ -10,6 +10,20 @@ services:
       - NO_IP_PASSWORD
     env_file:
       - .env
+    network_mode: bridge
+    ports:
+      - "19132:19132/udp"
+      - "19133:19133/tcp"
+      - "19133:19133/udp"
+      - "19132:19132/tcp"
     restart: always
     volumes:
       - ./backups:/bedrock/backups # Maps local directory to container directory
+
+networks:
+  bedrock-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16

@@ -53,8 +53,6 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
 
             PlayerArrows.set(Player.name, arrow);
         }
-    } else if (Item.typeId === "minecraft:compass") {
-        Ui.show(Player);
     } else if (Item.typeId === "minecraft:clock") {
         customUi.show(Player);
     }
@@ -71,6 +69,9 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
     if (msg === "!pvp" && !PVPMode) {
         eventData.cancel = true;
         PVPMode = true;
+        const Overworld = server.world.getDimension("minecraft:overworld");
+        Overworld.runCommand("gamerule showcoordinates " + PVPMode);
+
         EliminatedPlayers.clear();
         PlayersInventory.clear();
 
@@ -86,13 +87,13 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
             }
 
             PlayersInventory.set(player.name, storedItems);
+            player.runCommand("/clear @s");
         }
 
         system.runTimeout(() => {
             world.sendMessage("§cEquipping players with PvP gear!");
             for (const player of world.getAllPlayers()) {
                 const inventory = player.getComponent(server.EntityComponentTypes.Inventory);
-                inventory.container.clearAll();
                 equipItems().forEach(item => inventory.container.addItem(item));
             }
         }, 200);
@@ -101,7 +102,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
     if (msg === "!clear") {
         eventData.cancel = true;
         world.sendMessage("Clearing players' inventories!");
-        world.getAllPlayers().forEach(player => player.runCommandAsync("/clear @s"));
+        world.getAllPlayers().forEach(player => player.runCommand("/clear @s"));
     }
 
     if (msg === "!admin") {
@@ -125,13 +126,17 @@ world.afterEvents.entityDie.subscribe((eventData) => {
 
 world.afterEvents.playerSpawn.subscribe((eventData) => {
     const Player = eventData.player;
+    Player.runCommand("/clear @s");
+
     if (!PlayersInventory.has(Player.name) || !PVPMode) return;
 
     system.runTimeout(() => {
         const inventory = Player.getComponent(server.EntityComponentTypes.Inventory);
-        inventory.container.clearAll();
 
-        PlayersInventory.get(Player.name)?.forEach(item => inventory.container.addItem(item));
+        PlayersInventory.get(Player.name).forEach((item) => {
+            console.log(item.nameTag);
+            inventory.container.addItem(item);
+        });
 
         checkForWinner();
     }, 20);
@@ -144,8 +149,9 @@ function checkForWinner() {
         let winner = alivePlayers[0];
         world.sendMessage(`§6${winner.name} has won the PvP match!`);
         winner.getComponent(server.EntityComponentTypes.Inventory).container.addItem(new server.ItemStack("minecraft:golden_apple", 1));
-
         PVPMode = false;
+        const Overworld = server.world.getDimension("minecraft:overworld");
+        Overworld.runCommandAsync("gamerule showcoordinates " + PVPMode);
         EliminatedPlayers.clear();
     }
 }
@@ -166,10 +172,15 @@ function equipItems() {
         new server.ItemStack("minecraft:netherite_leggings", 1),
         new server.ItemStack("minecraft:netherite_boots", 1),
         new server.ItemStack("minecraft:netherite_sword", 1),
+        new server.ItemStack("minecraft:netherite_axe", 1),
         new server.ItemStack("minecraft:shield", 1),
         new server.ItemStack("minecraft:bow", 1),
-        new server.ItemStack("minecraft:arrow", 255),
-        new server.ItemStack("minecraft:golden_apple", 255)
+        new server.ItemStack("minecraft:arrow", 64),
+        new server.ItemStack("minecraft:arrow", 64),
+        new server.ItemStack("minecraft:golden_apple", 64),
+        new server.ItemStack("minecraft:golden_apple", 64),
+        new server.ItemStack("minecraft:experience_bottle", 64),
+        new server.ItemStack("minecraft:experience_bottle", 64),
     ];
 
     for (const item of items) {

@@ -33,8 +33,12 @@ if [ "$1" == "rollback" ]; then
     rm -rf "$LATEST_BACKUP"
 
     echo "Restarting server..."
-    /bedrock/start.sh
+    # Activate the virtual environment
+    source .venv/bin/activate
+    python3 /bedrock/tool.py
 else
     echo "Starting Minecraft server..."
-    /bedrock/start.sh
+    # Activate the virtual environment
+    source .venv/bin/activate
+    python3 /bedrock/tool.py
 fi

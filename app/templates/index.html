@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bedrock Console</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		#log {
+			height: 400px;
+			overflow-y: scroll;
+			border: 1px solid #ccc;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Bedrock Server Console</h2>
+	<div id="log"></div>
+	<form onsubmit="sendCommand(event)">
+		<input type="text" id="command" placeholder="Enter command" required>
+		<button type="submit">Send</button>
+	</form>
+
+	<script>
+        var socket = io();
+
+        socket.on('log', function(data) {
+            var logDiv = document.getElementById('log');
+            logDiv.innerHTML += data.data + '<br>';
+            logDiv.scrollTop = logDiv.scrollHeight;
+        });
+
+        function sendCommand(event) {
+            event.preventDefault();
+            var command = document.getElementById("command").value;
+            fetch("/send_command", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "command=" + encodeURIComponent(command)
+            });
+            document.getElementById("command").value = "";
+        }
+	</script>
+</body>
+
+</html>
