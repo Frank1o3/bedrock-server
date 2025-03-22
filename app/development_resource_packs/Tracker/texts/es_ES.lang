@@ -1,0 +1,10 @@
+tracker.admin_panel.title= Panel de Administración
+tracker.admin_panel.header= ¡Bienvenido, %s, al panel de administración!
+tracker.admin_panel.body= ¿Qué te gustaría hacer?
+tracker.admin_panel.clear= Vaciar el inventario de todos los jugadores
+tracker.admin_panel.ban_player= Expulsar a un jugador
+tracker.admin_panel.kick_player= Expulsar temporalmente a un jugador
+tracker.admin_panel.teleport_to_random= Teletransportarse a un jugador aleatorio
+tracker.admin_panel.ban_player_header= Selecciona el nombre del jugador que deseas expulsar:
+tracker.admin_panel.ban_player_dropdown= Jugador:
+tracker.admin_panel.ban_player_submit= Expulsar

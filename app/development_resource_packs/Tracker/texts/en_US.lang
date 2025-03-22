@@ -1,0 +1,10 @@
+tracker.admin_panel.title= Admin_panel
+tracker.admin_panel.header= Welcome, %s, to the admin panel!
+tracker.admin_panel.body= What would you like to do?
+tracker.admin_panel.clear= Clear all players Inventory
+tracker.admin_panel.ban_player= Ban a player
+tracker.admin_panel.kick_player= Kick a player
+tracker.admin_panel.teleport_to_random= Teleport to a random player
+tracker.admin_panel.ban_player_header= Select the name of the player you want to ban:
+tracker.admin_panel.ban_player_dropdown= Player:
+tracker.admin_panel.ban_player_submit= Ban
