@@ -28,7 +28,7 @@ RUN curl -L -A "bedrock-server-1.21.62.01.zip" -o bedrock-server-1.21.62.01.zip 
 
 COPY ./app /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
-COPY ./data/backups/ /bedrock/backups/
+COPY ./backups/ /bedrock/backups/
 
 # Set script permissions
 RUN chmod +x /bedrock/*.sh && chown -R bedrock:bedrock /bedrock
