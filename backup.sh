@@ -1,30 +1,34 @@
 #!/bin/bash
 
-# Get the current timestamp
-timestamp=$(date +%Y-%m-%d_%H-%M-%S)
+echo "Starting backup at $(date)" >> /backups/backup.log
 
-# Define backup directory
-backup_dir="/bedrock/backups"
+# Set paths
+WORLD_DIR="/bedrock/worlds/Main"
+BACKUP_DIR="/backups"
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+BACKUP_PATH="$BACKUP_DIR/Main-$TIMESTAMP"
 
-# Create a backup folder if it doesn't exist
-mkdir -p "$backup_dir"
+# Ensure backup directory exists
+mkdir -p "$BACKUP_DIR"
 
-# Check if the main world directory exists
-if [ ! -d "/bedrock/worlds/Main" ]; then
-  echo "ERROR: /bedrock/worlds/Main not found!" >> "$backup_dir/backup.log"
+# Check if the world exists
+if [ ! -d "$WORLD_DIR" ]; then
+  echo "ERROR: World directory not found: $WORLD_DIR" >> "$BACKUP_DIR/backup.log"
+  exit 1
+fi
+
+# Create a backup using rsync for better reliability
+rsync -a "$WORLD_DIR/" "$BACKUP_PATH/" 2>> "$BACKUP_DIR/backup.log"
+
+# Verify backup success
+if [ $? -eq 0 ]; then
+  echo "Backup created: $BACKUP_PATH" >> "$BACKUP_DIR/backup.log"
+else
+  echo "ERROR: Backup failed" >> "$BACKUP_DIR/backup.log"
   exit 1
 fi
 
 # Remove backups older than 1 hour
-find "$backup_dir" -type d -name "Main-*" -mmin +60 -exec rm -rf {} \; 2>> "$backup_dir/backup.log"
+find "$BACKUP_DIR" -type d -name "Main-*" -mmin +60 -exec rm -rf {} \; 2>> "$BACKUP_DIR/backup.log"
 
-# Create a backup of the world (Main in this example)
-cp -r /bedrock/worlds/Main "$backup_dir/Main-$timestamp" 2>> "$backup_dir/backup.log"
-
-# Check for successful backup creation
-if [ $? -eq 0 ]; then
-  echo "Backup created: $backup_dir/Main-$timestamp" >> "$backup_dir/backup.log"
-else
-  echo "ERROR: Backup failed" >> "$backup_dir/backup.log"
-  exit 1
-fi
+echo "Backup completed at $(date)" >> "$BACKUP_DIR/backup.log"

@@ -3,6 +3,7 @@ FROM ubuntu:20.04
 
 # Install required dependencies
 RUN apt-get update && apt-get install -y \
+    rsync \
     curl \
     wget \
     unzip \

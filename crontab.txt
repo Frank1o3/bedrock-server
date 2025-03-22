@@ -1,5 +1,5 @@
-# Run backup.sh every hour and log output
-*/5 * * * * /bin/bash /bedrock/backup.sh >> /bedrock/backup.log 2>&1
+# Run backup.sh every 5 minutes and log output
+*/15 * * * * /bin/bash /bedrock/backup.sh >> /backups/backup.log 2>&1
 
-# Run No-IP DDNS update every 5 minutes (secure credentials handling recommended)
-*/5 * * * * noip-duc -g all.ddnskey.com --username "$NO_IP_USERNAME" --password "$NO_IP_PASSWORD" /dev/null 2>&1
+# Run No-IP DDNS update every 5 minutes (fixing environment variable issue)
+*/5 * * * * /bin/bash noip-duc -g all.ddnskey.com --username "$NO_IP_USERNAME" --password "$NO_IP_PASSWORD"' >> /bedrock/noip.log 2>&1
