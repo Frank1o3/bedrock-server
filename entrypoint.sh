@@ -35,10 +35,10 @@ if [ "$1" == "rollback" ]; then
     echo "Restarting server..."
     # Activate the virtual environment
     source .venv/bin/activate
-    python3 /bedrock/tool.py
+    .venv/bin/python /bedrock/tool.py
 else
     echo "Starting Minecraft server..."
     # Activate the virtual environment
     source .venv/bin/activate
-    python3 /bedrock/tool.py
+    .venv/bin/python /bedrock/tool.py
 fi
