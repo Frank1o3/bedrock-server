@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BACKUP_DIR="/backups"
-WORLD_DIR="/worlds/Main"
+BACKUP_DIR="/bedrock/backups"
+WORLD_DIR="/bedrock/worlds/Main"
 
 # Ensure backup directory exists
 if [ ! -d "$BACKUP_DIR" ]; then
@@ -20,7 +20,12 @@ fi
 
 # Backup the current world before rollback
 TEMP_BACKUP="${WORLD_DIR}_old_$(date +%Y-%m-%d_%H-%M-%S)"
-mv "$WORLD_DIR" "$TEMP_BACKUP"
+if [ -d "$WORLD_DIR" ]; then
+  mv "$WORLD_DIR" "$TEMP_BACKUP"
+fi
+
+# Ensure world directory exists before restoring
+mkdir -p "$WORLD_DIR"
 
 # Restore the latest backup
 rsync -a --delete "$latest_backup/" "$WORLD_DIR/"
@@ -29,6 +34,7 @@ rsync -a --delete "$latest_backup/" "$WORLD_DIR/"
 if [ $? -eq 0 ]; then
   echo "Rollback successful! Restored from: $latest_backup"
   rm -rf "$TEMP_BACKUP"  # Remove old world backup after successful rollback
+  rm -rf "$latest_backup"  # Remove backup after successful rollback
 else
   echo "ERROR: Rollback failed! Restoring the previous world..."
   mv "$TEMP_BACKUP" "$WORLD_DIR"

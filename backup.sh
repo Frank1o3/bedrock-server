@@ -1,10 +1,8 @@
 #!/bin/bash
 
-echo "Starting backup at $(date)" >> /backups/backup.log
-
 # Set paths
 WORLD_DIR="/bedrock/worlds/Main"
-BACKUP_DIR="/backups"
+BACKUP_DIR="/bedrock/backups"
 TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
 BACKUP_PATH="$BACKUP_DIR/Main-$TIMESTAMP"
 

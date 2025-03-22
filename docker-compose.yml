@@ -12,4 +12,4 @@ services:
       - .env
     restart: always
     volumes:
-      - ./data/backups:./backups/ # Maps local directory to container directory
+      - ./data/backups/:/bedrock/backups/ # Maps local directory to container directory
