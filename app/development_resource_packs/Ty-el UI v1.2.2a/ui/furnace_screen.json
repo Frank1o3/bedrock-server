@@ -1,0 +1,97 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "furnace_panel/root_panel": {
+    "$container_item_mode_supported": true,
+
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_toolbox@tyel_container_common.container_toolbox": {}
+          },
+          {
+            "container_item_mode_switch_panel@tyel_container_item_mode.container_item_mode_switch_panel": {
+            }
+          },
+          {
+            "container_item_type_switch@tyel_container_item_mode.container_item_type_switch": {
+            }
+          },
+          {
+            "container_player_renderer_panel@tyel_common.container_player_renderer_panel": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "furnace_panel": {
+    "modifications": [
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "furnace_panel_top_half": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "furnace_arrow_progress@furnace.furnace_arrow_progress": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "flame_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "furnace_flame_progress@furnace.furnace_flame_progress": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "furnace_arrow_progress@tyel_percentage.progress_percentage_label_template": {
+    "$progress_binding_name": "#furnace_arrow_ratio",
+    "$progress_binding_condition": "always",
+    "$progress_binding_type": "global",
+    "$percentage_text_color": "$title_text_color",
+    "$percentage_text_shadow": false,
+    "$show_floating_point_numbers": false,
+    "anchor_from": "center",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -10 ]
+  },
+
+  "furnace_flame_progress@tyel_percentage.progress_percentage_label_template": {
+    "$progress_binding_name": "#furnace_flame_ratio",
+    "$progress_binding_condition": "always",
+    "$progress_binding_type": "global",
+    "$percentage_text_color": "$title_text_color",
+    "$percentage_text_shadow": false,
+    "$show_floating_point_numbers": false,
+    "anchor_from": "left_middle",
+    "anchor_to": "right_middle",
+    "offset": [ -2, 0 ]
+  },
+
+  "furnace_screen": {
+    "$use_combined_inventory_mode": "$pocket_screen",
+    "$screen_helpers_content": "common.common_inventory_screen_helpers"
+  }
+}

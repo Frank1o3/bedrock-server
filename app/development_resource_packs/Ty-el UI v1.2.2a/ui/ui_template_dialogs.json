@@ -1,0 +1,222 @@
+{
+  "standard_title_label": {
+    "size": [ "default", "default" ],
+    "max_size": [ "100%", 20 ],
+    "text_alignment": "center",
+    "color": "$main_header_text_color",
+    "bindings": "$title_bindings",
+    "$title_bindings|default": [
+      {
+        "binding_type": "$title_text_binding_type",
+        "binding_condition": "$title_binding_condition",
+        "binding_name": "$text_name",
+        "binding_name_override": "$text_name"
+      },
+      {
+        "binding_type": "global",
+        "binding_condition": "once",
+        "binding_name": "#tts_dialog_title"
+      }
+    ],
+    "variables": [
+      {
+        "requires": "(('||' + $text_name) - '#' = ('||' + $text_name))",
+        "$title_bindings": [
+          {
+            "binding_type": "global",
+            "binding_condition": "once",
+            "binding_name": "#tts_dialog_title"
+          }
+        ]
+      }
+    ]
+  },
+
+  "oreui_close_button@tyel_oreui_design__buttons.close_button": {
+    "ignored": "(not $show_close_button)",
+    "size": [ 24, 24 ]
+  },
+
+  "dialog_header_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "$show_close_button|default": true,
+    "$use_custom_title_control|default": false,
+    "$custom_title_label|default": "common.empty_panel",
+    "$title_binding_condition|default": "none",
+    "$title_text_binding_type|default": "none",
+    "$dialog_header_close_button|default": "common_dialogs.oreui_close_button",
+    "controls": [
+      {
+        "padding_left@common.empty_panel": {
+          "ignored": "(not $show_close_button)",
+          "size": [ 24, 24 ]
+        }
+      },
+      {
+        "dialog_title_label_panel": {
+          "type": "panel",
+          "size": [ "fill", 24 ],
+          "controls": [
+            {
+              "common_dialogs_0@common_dialogs.standard_title_label": {
+                "ignored": "$use_custom_title_control"
+              }
+            },
+            {
+              "common_dialogs_1@$custom_title_label": {
+                "ignored": "(not $use_custom_title_control)"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_button_panel": {
+          "ignored": "(not $show_close_button)",
+          "type": "panel",
+          "size": [ 24, 24 ],
+          "controls": [
+            {
+              "dialog_header_close_button@$dialog_header_close_button": {
+                "offset": [ 0, 0 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "main_panel_three_buttons@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$dialog_header_content": "common_dialogs.dialog_header_content",
+    "$dialog_body_content": "$child_control",
+    "$button_panel": "common_dialogs.main_panel_three_buttons_button_panel",
+    "$dialog_body_indent_size": [ "100%", "100% - 28px - 112px" ],
+    "$dialog_footer_content_size": [ "100%", 96 ],
+    "$text_name|default": "",
+    "$top_button_panel|default": "common.empty_panel",
+    "$middle_button_panel|default": "common.empty_panel",
+    "$bottom_button_panel|default": "common.empty_panel"
+  },
+
+  "main_panel_three_buttons_button_panel": {
+    "type": "panel",
+    "size": [ "100%", 96 ],
+    "controls": [
+      {
+        "top_button_panel@$top_button_panel": {
+          "size": [ "100%", 30 ],
+          "offset": [ 0, 0 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle"
+        }
+      },
+      {
+        "middle_button_panel@$middle_button_panel": {
+          "size": [ "100%", 30 ],
+          "offset": [ 0, 0 ],
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      },
+      {
+        "bottom_button_panel@$bottom_button_panel": {
+          "size": [ "100%", 30 ],
+          "offset": [ 0, 0 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "main_panel_two_buttons@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$dialog_header_content": "common_dialogs.dialog_header_content",
+    "$dialog_body_content": "$child_control",
+    "$button_panel": "common_dialogs.main_panel_two_buttons_button_panel",
+    "$dialog_body_indent_size": [ "100%", "100% - 28px - 80px" ],
+    "$dialog_footer_content_size": [ "100%", 64 ],
+    "$text_name|default": "",
+    "$top_button_panel|default": "common.empty_panel",
+    "$bottom_button_panel|default": "common.empty_panel"
+  },
+
+  "main_panel_two_buttons_button_panel": {
+    "type": "panel",
+    "size": [ "100%", 64 ],
+    "controls": [
+      {
+        "top_button_panel@$top_button_panel": {
+          "size": [ "100%", 30 ],
+          "offset": [ 0, 0 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle"
+        }
+      },
+      {
+        "bottom_button_panel@$bottom_button_panel": {
+          "size": [ "100%", 30 ],
+          "offset": [ 0, 0 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "main_panel_one_button@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$dialog_header_content": "common_dialogs.dialog_header_content",
+    "$dialog_body_content": "$child_control",
+    "$button_panel": "common_dialogs.main_panel_one_button_button_panel",
+    "$dialog_body_indent_size": [ "100%", "100% - 28px - 46px" ],
+    "$dialog_footer_content_size": [ "100%", 30 ],
+    "$text_name|default": "",
+    "$bottom_button_panel|default": "common.empty_panel"
+  },
+
+  "main_panel_one_button_button_panel": {
+    "type": "panel",
+    "size": [ "100%", 30 ],
+    "controls": [
+      {
+        "bottom_button_panel@$bottom_button_panel": {
+          "size": [ "100%", 30 ],
+          "offset": [ 0, 0 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "main_panel_no_buttons@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$dialog_style": "no_footer",
+    "$dialog_header_content": "common_dialogs.dialog_header_content",
+    "$dialog_body_content": "$child_control",
+    "$dialog_body_indent_size": [ "100%", "100% - 28px" ],
+    "$text_name|default": ""
+  },
+
+  "main_panel_no_title_no_buttons@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$dialog_style": "no_header|no_footer",
+    "$dialog_body_content": "$child_control",
+    "$dialog_body_indent_size": [ "100%", "100%" ]
+  },
+
+  "main_panel_small_title_one_button@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$show_close_button": false,
+    "$dialog_header_content": "common_dialogs.dialog_header_content",
+    "$dialog_body_content": "$child_control",
+    "$button_panel": "common_dialogs.main_panel_one_button_button_panel",
+    "$dialog_body_indent_size": [ "100%", "100% - 28px - 46px" ],
+    "$button_panel_size|default": [ "100%", 30 ],
+    "$dialog_footer_content_size": "$button_panel_size",
+    "$text_name|default": "",
+    "$top_button_panel|default": "common.empty_panel"
+  },
+
+  "background_image": {
+    "texture": "textures/ui/screen_background"
+  }
+}

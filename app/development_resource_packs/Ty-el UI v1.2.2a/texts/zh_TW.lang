@@ -1,0 +1,488 @@
+## Don't change this translation, this is required
+map.position=位置: %s, %s, %s	#
+
+## 您可以定義以下4行
+## \/ \/
+deathScreen.message=您死了！	#
+deathScreen.subtitlemessage=… ;-; 不要放棄…	#
+inBed.title=祝你發個好夢！	#
+inBed.subtitle=_(-w-)_ zzZ…	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### 最多 6 個字符
+icontext.all=全部	### 最多 6 個字符
+icontext.hovertext.multiplyone=物品數量：1	#
+icontext.hovertext.all=物品數量：方格裏所有物品	#
+
+icontext.dropOne=丟棄一個	#
+icontext.dropAll=丟棄全部	#
+icontext.destroyOne=摧毀一個	#
+icontext.destroyAll=摧毀全部	#
+
+accessibility.chat.tts.autocomplete=自動補充	#
+accessibility.chat.tts.autocompleteback=自動補充退格	#
+accessibility.chat.tts.previous=上一個信息	#
+accessibility.chat.tts.next=下一個信息	#
+accessibility.chat.tts.visibilityModeToggle=切換信息可見度模式	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, 當前模式：自動填滿畫面	#
+accessibility.chat.tts.visibilityModeToggle.chat=, 當前模式：聊天畫面	#
+
+accessibility.pause.infoPanelToggle=切換信息面板	#
+accessibility.play.editMode=編輯	#
+accessibility.toggle.tts.startsidebar=側邊欄菜單按鈕	#
+accessibility.toggle.tts.threedotsmenu=更多選項	#
+
+chat.placeHolderText=輸入消息或指令…	#
+commandBlockScreen.placeHolderText=在這裡輸入指令	#
+commandBlockScreen.placeHolderOutputText=這裡是指令輸出…	#
+
+compatibility.enabled=兼容模式已啟用！	#
+compatibility.autoEnabledforServer=此伺服器的 Ty-el UI 兼容模式可用，並且在您加入後將自動啟用！	#
+compatibility.enabledForAdditionalServers.disclaimer=如果在外部伺服器的按鈕上顯示這個徽章，就代表那個伺服器設有與 Ty-el UI 的兼容模式。請在暫停遊戲畫面查看伺服器的資料，以獲取更多資訊。 
+compatibility.tyelUI=與 Ty-el UI 兼容！	#
+
+container.destroyItemsTooltip.line1=摧毀物品：點擊物品兩下。	#
+container.destroyItemsTooltip.line1_touch=摧毀物品：點擊物品兩下。	#
+container.destroyItemsTooltip.line2=§l§c選擇物品去摧毀時，請格外小心！§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=摧毀物品模式於生存模式中不適用！	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§a此模式只適用於創造模式。§r	#
+container.fastCraft=快速合成	#
+container.fastCraft.warningHoverText=快速合成模式是§c非常危險§r的！按下配方手冊中任何物品以進行快速合成。請注意：如你不小心合成錯誤的物品，你會永遠失去你的貴重物品！	#
+container.highlightItems=突出顯示項目 [區分大小寫！]	#
+container.highlightitems.placeholdertext=突出顯示項目...	#
+container.itemAmountHoverText.one=物品數量：一個	#
+container.itemAmountHoverText.max=物品數量：一組	#
+container.itemAmountHoverText.maxFixed=物品數量：一組 （固定）	#
+container.invMode=物品欄模式:	#
+container.invMode.autoPlace=自動放置	#
+container.invMode.manualPlace=手動放置	#
+container.invMode.normalMode=正常模式	#
+container.invMode.autoPlaceMode=快速移動模式	#
+container.invMode.dropMode=丟棄模式	#
+container.invMode.autoDestroyMode=自動摧毀模式	#
+container.quickCraft=製作與獲取	#
+
+controller.buttonTip.toggleSidebar=側欄菜單	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=與世界的預設遊戲模式同步。	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=在世界中自由飛翔，欣賞周圍的景色，但同時不能與世界互動。	#
+createWorldScreen.levelSeed.copySeedTooltip=按下世界種子碼輸入欄，選擇種子碼，並在鍵盤上按下複製鍵。#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=按下世界種子碼輸入欄，並在鍵盤上按下 Ctrl + A 和 Ctrl + C 進行複製。	#
+createWorldScreen.serverSimDistanceDescription.header=遊戲會在特定方塊的範圍内載入世界。	#
+createWorldScreen.serverSimDistanceDescription.footer=方塊範圍：	#
+createWorldScreen.worldNameDescription.create=為你的世界起個名字吧！	#
+createWorldScreen.worldNameDescription.edit=你可以在這裡更改世界的名稱。	#
+
+dr.toggle.purchaseLock=確認購買	#
+
+generator.infinite.desc=一個無限的世界是無邊無際的。不同的生態和地形會生成。	#
+generator.old.desc=一個有限的世界。世界的大小只有 256x256x256，並使用舊版地形。	#
+
+hudScreen.hideHudTooltip=雙擊以隱藏HUD	#
+hudScreen.lowDurability=低耐久度!	#
+hudScreen.showHudTooltip=點擊該區域再次顯示HUD！	#
+
+itemLore.title=項目信息查看器 §o§7(測試版!)	#
+itemLore.emptyMessage=<這個插槽是空的！>	#
+
+menu.communityStandards=查看社區標準	#
+menu.feedback=送出意見反應	#
+menu.multiplayerHelp=多人遊戲幫助	#
+menu.quit=退出遊戲	#
+
+networkWorld.view_server_store=查看服務器存儲	#
+
+options.quickSettingsTitle=快速設定	#
+options.thirdperson.firstperson_short=第一人	#
+options.thirdperson.thirdpersonback_short=第三方背面	#
+options.thirdperson.thirdpersonfront_short=第三方正面	#
+
+pauseScreen.thirdPartyWorld=精選伺服器	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=上一個選項	#
+playscreen.navigateDown=下一個選項	#
+playscreen.joinRecentExternalServer=加入最近的外部伺服器	#
+playscreen.recentlyPlayed=最近玩過	#
+playscreen.playButton=遊戲！	#
+playscreen.projectsearch.placeholdertext=搜索項目... [ 區分大小寫！]	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§c警告：§r 由於性能不佳和代碼限制，我們最多只能索引 §l§e50§r 個最近的世界進行搜索，不便之處敬請諒解。	#
+playscreen.worldsearch.placeholdertext=搜索世界... [ 區分大小寫！]	#
+playscreen.worldsearch.resultmessage_before=結果： 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.warning.forceautoplace.title=強制快速移動警告	#
+playscreen.warning.forceautoplace.body=在服務器上使用強制快速移動功能風險自擔，不要在服務器上濫用這個功能(尤其是精選服務器)！	#
+
+progressScreen.hiveNetherGlitch.title=哎呀。。。地獄的 bug 又出現了！
+progressScreen.hiveNetherGlitch.body=你只需要等待並重新登入，或者强制關閉遊戲並重新開啓。如果你在使用微軟 Windows 系統，你也可以按下右上角的 [最大化] 按鈕。這個畫面就會立刻關閉了！
+
+resourcePack.packSearchPlaceHolderText.global=搜索全球資源套件...	#
+resourcePack.packSearchPlaceHolderText.world_resource=搜索資源套件...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=搜索行為模式包...	#
+resourcePack.showNotDownloaded=顯示未下載的套件	#
+resourcePack.tyelUIWarningMessage=如果您已經在全局資源中激活了 Ty-el UI，則不需要再次在世界資源包中激活 Ty-el UI，除非您在世界資源包設置中啟用了"要求玩家接受資源包才能加入"。這可避免重複的控件錯誤和意外錯誤。	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=嘗試從 Ty-el UI 加載 /ui/_global_variables.json 時發生錯誤。請檢查文件語法並重試。	#
+
+screenshot.saveLocation=截圖位置: 	#
+screenshot.showSaveLocation=顯示截圖位置	#
+
+serverform.searchPlaceHolderText=過濾搜索... [區分大小寫！]	#
+serverform.searchDisclaimer.tooltip=確保您不想嘗試在此表單屏幕中搜索過於頻繁的內容，例如：§o"Select to equip", "Last Seen", etc.	#
+
+soundCategory.ambient.description=背景音效的音量 （水底、地獄、洞穴），離開、進入水底的聲音及煙火	#
+soundCategory.block.description=方塊音效的音量 （鐵砧、箱、門等）	#
+soundCategory.hostile.description=敵對及中性生物音效的音量 （殭屍、苦力怕、蜘蛛等）	#
+soundCategory.main.description=所有音效的主音量 （包括背景音樂和聲音）	#
+soundCategory.music.description=背景音樂的主音量 （於遊戲時隨機播放）	#
+soundCategory.neutral.description=友好生物音效的音量 （鷄、牛、豬、村民等）	#
+soundCategory.player.description=玩家音效的音量 （扔掉物品、受傷、進食等）	#
+soundCategory.record.description=唱片機和音階盒的音量	#
+soundCategory.sound.description=遊戲音效的主音量 （不包括音樂）	#
+soundCategory.weather.description=下雨、打雷的音量	#
+soundCategory.texttospeech.description=語音導航的音量 （可於設定中的輔助設定開啓）	#
+
+storageManager.floatingFileStorageSelector.tooltip=想更改遊戲檔案的儲存位置嗎？ （使用 Ty-el UI 時不建議這樣做！）	#
+
+store.cost=價錢：	#
+
+store.confirmPurchase.title=確認購買	#
+store.confirmPurchase.description=你確定要購買這個商品嗎？這是你將會取得的商品：	#
+store.confirmPurchase.description_completed=購買完成！你可關掉此視窗。	#
+store.confirmPurchase.tooltip=在商店按下購買按鈕時，你將被要求確認購買的動作。	#
+store.proceedToPurchase=我要購買這個商品！	#
+
+trade.tradeAll= 交易全部	#
+
+tyelAbout.about=關於 Ty-el UI	#
+tyelAbout.customAvailable=可以自定義屏幕！	#
+tyelAbout.minGameVerRequired=最低要求的 Minecraft 版本：	#
+tyelAbout.openAboutTyelUITooltip.openText=點擊此處打開Ty-el UI設置 （當前： 自定義屏幕）	#
+tyelAbout.openAboutTyelUITooltip.closeText=點擊此處回到自定義屏幕 （當前： 關於 Ty-el UI）	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Ty-el UI 疑難排解模式	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=按下 [ 停用 Ty-el UI ] 按鈕立即停用套件，再按下 [ 關閉設定 ] 按鈕停用套件。完成以上步驟後，你也需要在 /ui/_global_variables.json 中將 "$tyel_ui_troubleshooting_mode" 換成 §cfalse§r。	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=這個按鈕的出現是因爲 /ui/_global_variables.json 沒有正確地載入。請檢查檔案的格式是否正確，然後再試一次。如果你想停用 Ty-el UI，可按下 [ 停用 Ty-el UI ] 按鈕立即停用套件，再按下 [ 關閉設定 ] 按鈕停用套件。	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=停用 Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=關閉設定	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=遊戲時不能停用 Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=疑難排解模式	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Ty-el UI 疑難排解模式	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c（Global Variables 載入時發生錯誤！）	#
+
+
+## DO NOT TRANSLATE PACK NAME
+tyelAbout.creatorTitle=作者：	#
+tyelAbout.aboutLabel1=Ty-el's UI Pack （簡稱Ty-el UI）是個改善原版介面的資源包，同時增加新的功能、調整，及新的按鈕聲音。此套件能在保留原版的設計下，使你的遊戲體驗變得更好。此套件與其他資源包 （包括從商店中購買的） 互相兼容。	#
+tyelAbout.aboutLabel2=§l§b聲明§r： §o此套件只是個資源包，不是經過改裝的遊戲版本！§r	#
+tyelAbout.aboutLabel3=目前支援的語言：	#
+## tyelAbout.aboutLabel4 is only language names
+tyelAbout.aboutLabel5=和越南文 （需要 MCPEDL.com/CurseForge 上的 The Ty-el's Vietnamese Language Pack）。此資源包在未來會支援更多語言。 	#
+tyelAbout.aboutLabel6=如果你發現任何 bugs，或者你希望留下意見，都可在 Twitter 上讓我知道。	#
+tyelAbout.translationHelp=我需要你們的幫助！如果你想把此資源包翻譯成你的語言，請用 Twitter 聯繫我。	#
+
+tyelAbout.features=功能	#
+tyelAbout.featuresTitleFeatures=§e主要功能	#
+tyelAbout.featuresLabel0=- 爲了 Ore UI Aspects （未來基岩版的介面更新）更改了許多介面的設計。	#
+tyelAbout.featuresLabel1=- 在物品欄中增加了 [ 丟棄物品 ] 按鈕和 [ 摧毀物品 ] 按鈕 （只適用於創造模式）。	#
+tyelAbout.featuresLabel1.1=§7在物品欄中選取一格存放槽時，#
+tyelAbout.featuresLabel1.2=§7點擊一下	#
+tyelAbout.featuresLabel1.3=§7丟棄該格内的物品，或	#
+tyelAbout.featuresLabel1.4=§7摧毀該格内的物品。	#
+tyelAbout.featuresLabel1.5=§7[x1] 代表1個物品，[全部] 代表該格裏的所有物品。	#
+tyelAbout.featuresLabel1.6=§2提示：你在一格存放槽内儲存多少物品也好，都可更快、更準確地丟棄或摧毀改格内的物品！	#
+tyelAbout.featuresLabel2=- 在物品欄和工作台的介面中新增了 [ 快速合成 ] 按鈕。現在你可更容易、更快地合成物品！此外，也增加了 [ 交易全部 ] 按鈕，讓你更容易進行大量交易！	#
+tyelAbout.featuresLabel3=- 在物品欄中增加了物品欄模式設定！這可讓你更容易地存放、拿取物品。	#
+tyelAbout.featuresLabel3.1=§7使用時，只需選擇模式 （正常、自動放置、丟棄物品），然後按下物品欄裏任何物品，物品便會立刻放置到物品欄裏，或者放到儲物箱裏，或丟棄在地上（視乎你選擇什麽模式）。	#
+tyelAbout.featuresLabel4=- 在物品欄中新增切換物品欄模式的按鈕。這就像在電腦上按下 SHIFT，不過視爲手機和平板上的玩家而設的！（只適用於 Pocket UI 設定檔。此資源包於將來會移除此功能）	#
+tyelAbout.featuresLabel4.1=§7此功能讓你一鍵穿上盔甲或不死圖騰，或者把物品欄的物品放到快捷鍵槽中！	#
+tyelAbout.featuresLabel5=- 將創造模式和配方手冊的物品分類按鈕搬到畫面的左邊，與 Java 版更相似！	#
+tyelAbout.featuresLabel6=- 進度顯示條 （世界載入、經驗值、Boss 狀態、熔爐、鍛造台等）增加了百分比顯示！	#
+tyelAbout.featuresLabel7=- 在世界選擇畫面及設定 （全球資源套件、存放） 中新增搜尋功能。請注意：世界搜尋功能只會搜尋 50 個最近玩過的世界。	#
+tyelAbout.featuresLabel8=- 為儲物箱添加了物品突出搜尋器，它可以幫助你在非常凌亂的箱子中找到物品！ （區分大小寫！）	#
+tyelAbout.featuresLabel9=- 指南針、時鐘和恢復指南針現在會於 HUD 屏幕上顯示，以更輕鬆地管理您的遊戲時間，並讓你更容易回到世界重生點。 （請注意：復生羅盤默認不會顯示，你需要在 global_variables.json 中手動啟用 §7"$use_recovery_compass_utility"§r。此設定在 精選伺服器中永遠關閉，防止遊戲崩潰）	#
+tyelAbout.featuresLabel10=- 僅針對觸控用戶，在 Hotbar 旁邊新增了隱藏 HUD 按鈕，以便在不進入設置屏幕的情況下輕鬆隱藏 HUD。 #
+tyelAbout.featuresLabel11=- 將最近玩過的世界建議功能添加到世界選擇畫面。 你最近玩過的世界將位於世界選擇畫面的頂部，讓你更輕鬆地玩最常玩的世界！	#
+tyelAbout.featuresLabel12=- 為 HUD 上顯示的聊天消息新增了動畫。	#
+tyelAbout.featuresLabel13=- 在市集中新增確認購買功能，避免意外地購買商品。（免費物品不受影響）#
+tyelAbout.featuresLabel14=- 設定屏幕：現在大多數多項選擇的設定都使用按鈕模式！ #
+tyelAbout.featuresLabel15=- 增加了快速設定功能：到設定畫面右上角的 ≡ 按鈕，可以更改視角、亮度、FOV 等！ #
+tyelAbout.featuresLabel16=- 重新設計了開始屏幕，並添加了市集風格的側邊欄菜單！ #
+tyelAbout.featuresLabel17=- 增加了 2 個按鈕來自動完成聊天命令和 2 個按鈕來輕鬆撤消或重做消息，最適合使用觸控的用戶。 #
+tyelAbout.featuresLabel18=- 聊天屏幕中的自動填滿命令/提及現在比以前更快！ 您現在可以按下自動填滿的建議來自動完成命令，或者快速提及某人，多麼方便！ #
+tyelAbout.featuresLabel19=- 在市集中新增搜尋功能，讓你可以更快地搜索內容！ #
+tyelAbout.featuresLabel20=- 一些 UI 畫面的更改。 #
+
+tyelAbout.featuresTitleParity=§e其他功能、原版修改、修復與 Java 版的趨同事項	#
+tyelAbout.featuresLabelParity2=- 在儲物箱介面和紅石方塊介面（漏斗、發射器、投擲器）上添加了紙娃娃渲染器，以您更容易和更快了解裝上的盔甲！	#
+tyelAbout.featuresLabelParity3=- 如果您按住物品欄中任何一格，物品欄上方會出現 [ 自訂拿取物品數量 ] 指示，讓您看到您要移動或使用的物品數量。	#
+tyelAbout.featuresLabelParity4=- 在某些熱門的伺服器的暫停屏幕上增加了服務器信息面板。它有一些有用的信息，如伺服器網站鏈接、支援網站鏈接等。	#
+tyelAbout.featuresLabelParity5=- The Hive 的新功能 （Minecraft 精選伺服器）：安山岩計算器，在 Skywars （空戰） 中使用安山岩搭橋時效果最佳！（也許很快會添加更多功能？）	#
+tyelAbout.featuresLabelParity6=- Java 版趨同事項：在重新命名或搜索鐵砧或製圖台中的任何項目時，最多可輸入的字符由 30 個增至 50 個！	#
+tyelAbout.featuresLabelParity7=- Java 版趨同事項：遊戲時，您可以直接在設置中更改遊戲語言！#
+tyelAbout.featuresLabelParity8=- 在設置/視頻屏幕中添加了垂直同步 （V-Sync） 開關和最大幀率 （FPS) 設定！	#
+tyelAbout.featuresLabelParity9=- 在聊天屏幕上增設開關，將所有聊天靜音，讓您更快地隱藏聊天。	#
+tyelAbout.featuresLabelParity10=- 添加了一個跳轉到聊天介面底部的按鈕，這樣您就不需要再向下滾動了！	#
+
+tyelAbout.featuresLabelParity11=- 在命令方塊屏幕中增加了 「延遲秒數」 計算器，顯示執行命令之間的延遲，以秒為單位！ （時間格式也被美化了！) #
+tyelAbout.featuresLabelParity12=- 在暫停介面增加了退出確認彈出窗口，以避免意外退出遊戲。#
+tyelAbout.featuresLabelParity13=- 在更衣室介面中為自定義導入的皮膚添加了皮膚類型切換按鈕。這將幫助你改變皮膚類型，無論是史蒂夫（正常）類型還是亞歷克斯（狹窄）類型，都更容易，而無需重新導入新的自定義皮膚文件。 #
+tyelAbout.featuresLabelParity14=- 改善了睡覺的介面，增加了類似死亡介面的睡眠標題。 #
+tyelAbout.featuresLabelParity15=- 更加悲慘的死亡畫面，現在背景不再是紅色，而是慢慢變黑。現在，更加悲慘...;-; #
+tyelAbout.featuresLabelParity16=- 原版修復： HUD 中的光暈效果現在是在所有東西的上面，而不是聊天信息。 #
+tyelAbout.featuresLabelParity17=- 原版修復： 修復了在 v1.19.50 以上版本中通過熔爐不正常獲得經驗值的漏洞。 (MCPE-152227) #
+tyelAbout.featuresLabelParity18=- HUD 中標題和副標題的字體變小了，不再超出屏幕外。另外，即使在創造模式中，快捷欄和經驗條上的物品數量也會顯示！ #
+tyelAbout.featuresLabelParity19=- 修復背景動畫，另外了調整一些動畫。 #
+tyelAbout.featuresLabelParity20=- 對不同介面進行更新，原版介面調整和修復（更大的標題欄，更方便用戶的屏幕安全區域及更多！） #
+
+tyelAbout.subpackFeatures=分包功能	#
+tyelAbout.subpackFeaturesInfo=§o您可以在 設定/全球資源套件 中的資源包設定切換資源包分包。	#
+tyelAbout.subpackFeatures.current=§o§7目前正在使用：	#
+tyelAbout.subpackFeatures.default=「預設」 分包	#
+tyelAbout.subpackFeaturesLabel.default=這個分包的所有内容都是預設的，但是您可以透過更改 /ui/_global_variables.json 中的變量自訂功能。	#
+tyelAbout.subpackFeatures.defaultVanilla=「預設原版」 分包	#
+tyelAbout.subpackFeaturesLabel.defaultVanilla=如果您不喜歡新的彈出窗口或是新的主畫面，就可以使用此分包。	#
+tyelAbout.subpackFeatures.performance=「更佳性能」 分包	#
+tyelAbout.subpackFeaturesLabel.performance=此分包移除了物品欄模式、進度百分比顯示、拿取自定數量物品顯示功能，但保留了儲物箱介面和紅石方塊 （漏斗、發射器、投擲器） 介面的快速移動模式開關。	#
+tyelAbout.subpackFeatures.ultra=「極端模式」 分包	#
+tyelAbout.subpackFeaturesLabel.ultra=此分包在進度百分比顯示上加入一位小數點，讓顯示更準確。§c注意，此會影響遊戲的性能！不建議在系統設備較低的裝置上使用！§r	#
+
+tyelAbout.compatibilityMode=兼容模式	#
+tyelAbout.compatibilityModeInfo=兼容模式資訊	#
+tyelAbout.compatibilityModeLabelInfo1=如果您正在使用兼容模式適用的資源包，此功能會協助您進行疑難排解。如要開啓此功能，請開啓 /ui/_global_variables.json，然後滑到檔案的最底部，然後更改 Compatibility Mode 中的變量為 §2true§r.	#
+tyelAbout.compatibilityModeLabelInfo2=如果您將一些資源包放到 Ty-el UI 上，這些資源包的作者可能已經將這些變量的數值預設設爲 true。在這個情況下，您便不需要更改變量的數值。如果您想您的資源包在 Ty-el UI 擁有自訂的設定，請聯絡我。	#
+tyelAbout.compatibilityModeLabelInfo3=以下是所有支援兼容模式的套件，它們都在變量的設定中顯示顔色。 （§2true§r 或 §cfalse§r）。	#
+tyelAbout.compatibilitymodelabel.automated=自動	#
+
+tyelAbout.compatibilityModeLabel.chainsketchUTM.name=Chainsketch - Ultimate Thumbnail Maker	#
+tyelAbout.compatibilityModeLabel.chainsketchUTM.desc=移除 Ty-el UI's 中的隱藏 HUD 按鈕和 HUD 工具。此資源包的設定會蓋過 「$use_hud_utilities」 設定。	#
+
+tyelAbout.compatibilityModeLabel.modulesPlus.name=Chainsketch - Modules+	#
+tyelAbout.compatibilityModeLabel.modulesPlus.desc=移除 Ty-el UI's 中的 HUD 工具，包括慣用手已選擇物品顯示器 （因爲 Modules+ 已經提供此功能），而且將畫面右側的計分板向下移動少許。此資源包的設定會蓋過 「$use_hud_utilities」 設定。	#
+
+tyelAbout.compatibilityModeLabel.utilityUI.name=HJN - Utility UI （BETA版）
+tyelAbout.compatibilityModeLabel.utilityUI.desc=除 Ty-el UI's 中的慣用手已選擇物品顯示器、HUD 工具和隱藏 HUD 按鈕。
+
+tyelAbout.compatibilityModeLabel.zeqa.name=Zeqa Server Resource Pack	#
+tyelAbout.compatibilityModeLabel.zeqa.desc=修復伺服器表格標題字體大小太大的問題。	#
+
+tyelAbout.compatibilityModeLabel.hive_bedrock.name=The Hive （精選伺服器）	#
+tyelAbout.compatibilityModeLabel.hive_bedrock.desc=§e獨家功能：為 Skywars （空戰） 而設的安山岩計算器！§r修復計分板的偏移量；如果 HUD 介面中的標題是空白的，副標題的字體大小就會變得更大。	#
+
+tyelAbout.credits=表彰	#
+tyelAbout.creditsTitle=特別鳴謝...	#
+tyelAbout.creditsTitleTranslators=翻譯人員	#
+
+tyelAbout.usage=使用條款	#
+tyelAbout.usageLabel1=你§l§a可以§r：	#
+tyelAbout.usageLabel2=- Make contents about this pack as long as you provide credits or proper attributions in the description.	#
+tyelAbout.usageLabel3=- Customize and share your /ui/_global_variables.json configurations.	#
+tyelAbout.usageLabel4=- Add your own custom panorama, or create your own Ty-el Theme (instructions in /ui/_tyel_theme_template.json).	#
+tyelAbout.usageLabel5=- Modify the pack only for personal uses.	#
+
+tyelAbout.usageLabel6=你§l§c不可以§r：	#
+tyelAbout.usageLabel7=- Use, or claim any of my codes and use as your own, please respect my hard works ;-;	#
+tyelAbout.usageLabel8=- Distribute the modified pack to public.	#
+tyelAbout.usageLabel9=- Redistribute this pack to other sites/app stores, no one will have the permission.	#
+tyelAbout.usageLabel10=- Make contents about this pack but without proper attributions.	#
+tyelAbout.usageLabel11=- Use this pack in third-party projects, instead, let players know that your projects are compatible with this pack.	#
+
+tyelAbout.changelog=變更列表	#
+tyelAbout.changelog.newfeatures=§b新功能	#
+tyelAbout.changelog.changes=§a變更	#
+tyelAbout.changelog.fixes=§e問題修復	#
+tyelAbout.changelog.knownissues=§6已知問題	#
+tyelAbout.changelog.removed=§c移除功能	#
+
+tyelAbout.changelog101=v1.0.1	#
+tyelAbout.changelog101.title=§a「快速掠奪」 更新	#
+tyelAbout.changelog101.label1=- 在儲物箱介面和紅石方塊 （漏斗、發射器、投擲器） 介面的快速移動模式開關。	#
+tyelAbout.changelog101.label2=- 新增了丟棄和銷毀物品按鈕的懸浮文字資訊。	#
+tyelAbout.changelog101.label3=- 為 HUD 中的物品名稱文字和動作欄上方的文字加上影子。	#
+tyelAbout.changelog101.label4=- HUD 中右側計分板介面的背景現在更深色，以符合 Java 版！	#
+tyelAbout.changelog101.label5=- 在 _global_variables.json」 檔案中加入變量，讓您可以自訂功能：	#
+tyelAbout.changelog101.label6=§7  + 「$screen_background_alpha」 設定遊戲介面 （物品欄介面、背景 (Inventory Screen, Pause Screen...) background alpha (default to 0.4)	#
+tyelAbout.changelog101.label7=§7  + 「$item_name_text_background_alpha」 設定 HUD 中的物品名稱文字背景alpha。 （設定為 0 以仿效 Java 版！）	#
+tyelAbout.changelog101.label8=§7  + 「$actionbar_background_alpha」 設定物品欄上方的文字背景 alpha。	#
+tyelAbout.changelog101.label9=§7  + 「$item_text_one_line_layout」 設定物品名稱顯示的行數。 （用來隱藏附魔名稱！）	#
+tyelAbout.changelog101.label10=§7  + 「$use_quick_craft_button」 用來隱藏或顯示快速合成按鈕。	#
+tyelAbout.changelog101.label11=- 修復聊天介面中自動填滿的按鈕的問題。	#
+tyelAbout.changelog101.label12=- 修復暫停畫面中資訊介面的問題。	#
+tyelAbout.changelog101.label13=- 修復遊戲說明中標題有時候太長、被斷開的問題。	#
+tyelAbout.changelog101.label14=- 修復主畫面中鍵盤提示的顯示問題。	#
+tyelAbout.changelog101.label15=- 修復按下按鈕的聲音在一些介面中不會正確地播放的問題。	#
+tyelAbout.changelog101.label16=- 修復自訂全景圖 （Panorama） 不在資訊畫面顯示 （只在進入遊戲前） 的問題。	#
+tyelAbout.changelog101.label17=- 更改了螢幕截圖免責聲明資訊的能見度，讓其在更多裝置正確地顯示。	#
+tyelAbout.changelog101.label18=- 其他小型的背景修復。	#
+
+tyelAbout.changelog102=v1.0.2	#
+tyelAbout.changelog102.title=§e「傷心傢伙」 語言更新#
+tyelAbout.changelog102.label0=§a此更新修復了一個在原版令打開工作台時的問題：
+tyelAbout.changelog102.label0a=§a- 修復了 3x3 合成介面在物品欄和工作台介面不置中的問題，由 Phoenix SC （@phnixhamsta） §o「發現」§r§a。	#
+tyelAbout.changelog102.label1=- 加入對更多語言的支援 （未來會加入更多）：	#
+## tyelAbout.changelog102.label2 for language names
+tyelAbout.changelog102.label3=（感謝 @nattsuiy （推特） 翻譯成日文！）	#
+tyelAbout.changelog102.label4=- 在物品欄介面新增物品欄模式設定切換，讓您更快地穿上盔甲、不死圖騰，或者從物品欄和快捷欄中互相調換物品。	#
+tyelAbout.changelog102.label5=- 在儲物箱介面和紅石方塊 （漏斗、發射器、投擲器） 介面中加入紙娃娃渲染器。	#
+tyelAbout.changelog102.label6=- 重新設計了伺服器表格介面。	#
+tyelAbout.changelog102.label7=- 在快速設定介面中加入與 RTX 光追有關的設定。	#
+tyelAbout.changelog102.label8=- 新增 HUD 快捷欄開關，以隱藏或顯示 HUD 快捷欄，遊戲時畫面更整潔。 （只供使用觸控模式的玩家使用）	#
+tyelAbout.changelog102.label9=- 在遊戲暫停畫面新增資訊介面開關，以隱藏或顯示遊戲名單和計分板，讓畫面更整潔！	#
+tyelAbout.changelog102.label10=- 進度介面中的文字介面現在可以疊起。	#
+tyelAbout.changelog102.label11=- 進度介面中的文字介面 在遊戲時會置中顯示。	#
+tyelAbout.changelog102.label12=- 將進度介面中的取消按鈕搬到右下角。	#
+tyelAbout.changelog102.label13=- 改善了自訂全景圖的控制，現在您可以開關您的自訂全景圖 （預設為關閉），也可支援自訂全景圖的動畫。#
+tyelAbout.changelog102.label14=- 饋送和螢幕截圖選擇的畫面現在以全螢幕顯示。	#
+tyelAbout.changelog102.label15=- 在 _global_variables.json」 檔案中加入變量，讓您可以自訂功能：#
+tyelAbout.changelog102.label16=§7  + 「$use_container_toggles」 以隱藏或顯示快速掠奪和物品欄模式的開關。 （預設為 true）	#
+tyelAbout.changelog102.label17=§7  + 「$scoreboard_sidebar_anchor_pocket」 以更改 Pocket UI 設定檔中，畫面右側的計分板的錨。	#
+tyelAbout.changelog102.label18=§7  + 「$scoreboard_sidebar_offset_pocket」 以更改 Pocket UI 設定檔中，畫面右側的計分板的偏移量。	#
+tyelAbout.changelog102.label19=§7  + 「$utility_anchor_pocket」以更改 Pocket UI 設定檔的功能錨。	#
+tyelAbout.changelog102.label20=§7  + 「$utility_offset_pocket」以更改 Pocket UI 設定檔的功能偏移量。	#
+tyelAbout.changelog102.label21=§7  + 「$use_hud_utilities」 以隱藏或顯示 HUD 中的指南針和鐘。 （預設為 true）	#
+tyelAbout.changelog102.label22=- 重新命名了 _global_variables.json 中的一些變量；
+tyelAbout.changelog102.label23=§7  + 「$item_name_text_background_alpha」 -> 「$item_name_text_bg_alpha」	#
+tyelAbout.changelog102.label24=§7  + 「$actionbar_background_alpha」 -> 「$actionbar_bg_alpha」	#
+tyelAbout.changelog102.label25=- 更改了主畫面中登入按鈕的 ID。 （修復主畫面中登入按鈕的問題）	#
+tyelAbout.changelog102.label26=- 優化了主畫面介面的程式碼。	#
+tyelAbout.changelog102.label27=- （原版問題修復） 修復了 Manifest 核實畫介面（套件資訊介面）在一些裝置上可能與一些內容重疊的問題。 （MCPE-102555）	#
+tyelAbout.changelog102.label28=- 快捷欄的引導按鈕現在支援文字轉語音輸出。	#
+tyelAbout.changelog102.label29=- 主畫面中的「管理帳戶」按鈕現在只會於微軟系統、安卓系統或 iOS 上登入微軟帳戶後才會顯示。	#
+
+tyelAbout.changelog110=v1.1.0	#
+tyelAbout.changelog110.title=§eORE UI ASPECTS' INDICATION UPDATE	#
+tyelAbout.changelog110.notice1=§d注意：由此更新開始， 「快速掠奪」 將改稱為 「快速移動」。這改變並不會影響快速掠奪的功能。此改變是因為配合原版及其他容器的介面而設。	#
+tyelAbout.changelog110.notice2=§e全新 BETA 功能：物品知識顯示器！這功能讓您在一個長長的清單中看到物品的所有資訊。在空島伺服器上使用效果最佳！此外，物品編號顯示器亦為套件製作者帶來更多有用的資訊。	#
+## NEW FEATURES
+tyelAbout.changelog110.label1=- 加入對更多語言的支援： 	#
+## tyelAbout.changelog110.label2 for language names
+tyelAbout.changelog110.label3=（感謝 TentexDev#0807 （duranforreal）（Discord） 完成土耳其文翻譯、@theqwermc (Twitter) 完成俄文翻譯、@YangTuo_zi (Twitter) 、 @student_2333 (Twitter) 和 @mascot_fox8888 (Twitter) 完成簡體中文翻譯！）	#
+tyelAbout.changelog110.label4=- 改善了西班牙文 （西班牙） 的翻譯。 （感謝@sebasxpert (Twitter) ！）	#
+tyelAbout.changelog110.label5=- 新增 3 個新分包： 「預設原版」 、 「更佳性能」 、 「極端模式」。您可於 「關於 Ty-el UI / 分包功能」 版面中找到更多資訊。	#
+tyelAbout.changelog110.label6=- 為一些套件啟動兼容模式。您可於 「關於 Ty-el UI / 兼容模式」 中找到更多資訊。.	#
+tyelAbout.changelog110.label7=- 為了 Ore UI Aspects （未來基岩版的介面更新），更改了不少介面的設計，但亦加入了一些獨特元素。	#
+tyelAbout.changelog110.label8=- 進度棒 （世界載入、經驗棒、Boss生命值、熔爐冶煉進度、鍛造台鍛造藥水及燃料進度等） 現在加上百分比！#
+tyelAbout.changelog110.label9=- 在選擇世界的介面和設定 （全球資源套件、資源包、行為包、儲存）中加入搜尋功能。注意，基於性能原因，在搜尋世界時只能搜尋頭 50 個最近玩過的世界。	#
+tyelAbout.changelog110.label10=- 在選擇資源包的介面，新增隱藏和顯示尚未下載的套件的功能。	#
+tyelAbout.changelog110.label11=- 在儲物箱的介面新增物品突出搜尋器，讓您在混亂的儲物箱中找到所需的物品！ （區分大小寫！）	#
+tyelAbout.changelog110.label12=- 在市集介面的標題新增搜尋功能，讓您可以更快地搜尋商品。	#
+tyelAbout.changelog110.label13=- 如果您按住物品欄中任何一格，物品欄上方會出現 [ 自訂拿取物品數量 ] 指示，讓您看到您要移動或使用的物品數量。	#
+tyelAbout.changelog110.label14=- 在選擇世界的介面中新增最近遊玩過的世界的顯示。	#
+tyelAbout.changelog110.label15=- 在一些容器的介面新增物品欄模式切換功能。	#
+tyelAbout.changelog110.label16=- 在遊戲暫停的畫面新增一些精選伺服器的資訊。	#
+tyelAbout.changelog110.label17=- 在遊戲暫停的畫面新增確認離開世界的功能，避免意外地離開世界。	#
+tyelAbout.changelog110.label18=- 暫停畫面中的 「儲存及離開」 按鈕現在於精選伺服器中自動更改為 「中斷連結」。	#
+tyelAbout.changelog110.label19=- 在 Pocket UI 的介面中加入物品欄模式、丟棄物品和銷毀物品的功能。	#
+tyelAbout.changelog110.label20=- 新增 HUD 中的慣用手已選擇物品顯示器，顯示您在拿著哪些物品，以及該物品的耐久度 （如適用）。	#
+tyelAbout.changelog110.label21=- 伺服器表格介面和彈出對話方格中的標題文字現在自動刪除由 「$l」、「$0」、「$8」 開始的文字方塊。§o§6提示:將 $ 改為 "Section Sign" 標點§r §	#
+tyelAbout.changelog110.label22=- 在聊天畫面中重新加入開關，將所有聊天功能靜音，讓您更快地隱藏聊天信息。	#
+tyelAbout.changelog110.label23=- 在市集和更衣室中新增確認購買功能，避免意外地購買商品。 （免費商品不受影響）	#
+tyelAbout.changelog110.label24=- 在更衣室介面中為自定義導入的皮膚新增了皮膚類型切換按鈕。這將幫助您改變皮膚類型，無論是正常類型還是狹窄類型，都更容易，而無需重新導入新的自定義皮膚檔案！	#
+tyelAbout.changelog110.label25=- 螢幕截圖介面中的螢幕截圖檔案位置現在顯示完整的檔案地址。	#
+tyelAbout.changelog110.label26=- 為配合以上改變，螢幕截圖的介面已新增 「顯示截圖位置」 按鈕，保障私隱。	#
+tyelAbout.changelog110.label27=- 在選擇世界的介面和帳戶介面中加入 「三點介面」。	#
+tyelAbout.changelog110.label28=- 在 _global_variables.json」 檔案中加入變量，讓您可以自訂功能：	#
+tyelAbout.changelog110.label29=§7  + 「$tyel_dialog_accent_color」 以改變彈出視窗和對話方塊的強調色。（除了 「預設原版」 分包和伺服器表格介面中都適用）	#
+tyelAbout.changelog110.label30=§7  + 「$force_auto_place_on」 在打開容器方塊時，強制開啟快速移動功能。如果您開啟這個設定，選擇世界的介面中會顯示一個警告。	#
+tyelAbout.changelog110.label31=§7  + 「$pause_quit_confirmation_popup_enabled」 以開啟或關閉暫停畫面的 「確認退出遊戲」 彈出視窗功能。	#
+tyelAbout.changelog110.label32=§7  + 「$use_black_death_background」 以使用黑色的死亡介面背景。把這個設為 false 以使用原版的紅色背景。#
+tyelAbout.changelog110.label33=§7  + 「$server_form_dialog_size」 以更改這個資源包中伺服器表格對話方格的大小。	#
+tyelAbout.changelog110.label34=§7  + 「$recent_world_suggest_enabled」 以開啟或關閉 「最近遊玩過的世界」 的功能。	#
+tyelAbout.changelog110.label35=§7  + 「$scoreboard_sidebar_bg_alpha」 以更改計分板側欄的背景 alpha 值。	#
+tyelAbout.changelog110.label36=§7  + 「$hud_percentage_text_visible」 以開關 HUD 中的文字 （XP 棒，Boss 棒）的可見度百分比。	#
+tyelAbout.changelog110.label37=§7  + 「$use_hive_andesite_counter」 在 The Hive （精選伺服器） 中使用安山岩計算器。	#
+## CHANGES
+tyelAbout.changelog110.label38=- 為不在 Beta 版或預覽版的玩家開啟新的觸控控制功能！	#
+tyelAbout.changelog110.label39=- 重新設計了伺服器表格介面，現在不再是一個對話方塊視窗了！	#
+tyelAbout.changelog110.label40=- 將隱藏 HUD 的按鈕搬到快捷欄選擇器旁邊，更支援了慣用左手者功能！為避免意外地按到按鈕，按鈕只會在快速點兩下後才可使用。	#
+tyelAbout.changelog110.label41=- 從物品欄介面中移除了問號按鈕！	#
+tyelAbout.changelog110.label42=- 為促進無障礙設計，隱藏 HUD 按鈕、暫停畫面中的玩家清單開關、丟棄物品按鈕和毀滅物品按鈕，當鼠標懸浮在按鈕上方，按鈕就會有白色的邊框。	#
+tyelAbout.changelog110.label43=- 在更衣室和自訂角色的畫面中的 Toast 彈出視窗現在設有動畫，並搬到畫面的上方。	#
+tyelAbout.changelog110.label44=- 螢幕動畫現在更加順暢。	#
+tyelAbout.changelog110.label45=- 在暫停遊戲的介面中重新加入 Realm 饋送按鈕 （只在 Realms 中顯示）。	#
+tyelAbout.changelog110.label46=- [ 預設原版 ] 選擇世界介面的標籤現在變窄了，但設有最小的大小。	#
+tyelAbout.changelog110.label47=- 現在，您可以使用遙控器上(≡) Start 按鈕以開啟主畫面的側欄菜單、設定介面的快速設定，和 「三點介面」。	#
+tyelAbout.changelog110.label48=- 為快速合成按鈕新增文字轉語音功能。	#
+tyelAbout.changelog110.label49=- 將垂直同步 （V-Sync） 的設定搬到視訊設定的最底部。	#
+tyelAbout.changelog110.label50=- 將 HUD 工具的預設位置設為右下角。	#
+tyelAbout.changelog110.label51=- 在創作者設定中新增 「開啟除錯 HUD」 的設定，以暫時顯示或隱藏除錯 HUD。 （只限Beta版或預覽版）	#
+tyelAbout.changelog110.label52=- 「升級」 和 「光線追蹤」 的快速設定現在只會在支援光追的裝置上顯示。	#
+tyelAbout.changelog110.label53=- 將自定全景圖的最高幀數加至 500。	#
+tyelAbout.changelog110.label54=- 改善了 Ty-el 主題工廠。	#
+tyelAbout.changelog110.label55=§7  + 現在，您可以創作屬於您自己的Ty-el 主題。	#
+tyelAbout.changelog110.label56=§7  + 您可以新增自訂全景圖，並加上特別效果、文字等，更設有主題元數據。	#
+tyelAbout.changelog110.label57=§7  + 更多資訊可在資源包檔案中 「Ty-el Theme Instructions.txt」 中找到。	#
+## FIXES
+tyelAbout.changelog110.label58=- 將主畫面側欄菜單介面的離開按鈕放大。	#
+tyelAbout.changelog110.label59=- 修復了在朋友標籤上邀請圖示不會顯示的問題。	#
+tyelAbout.changelog110.label60=- 修復了起床的介面 （用以顯示多人遊戲中正在睡覺的玩家數目） 不會顯示的問題。	#
+tyelAbout.changelog110.label61=- 在關於 Ty-el UI 介面中加入控制器提示。	#
+tyelAbout.changelog110.label62=- 指令方塊介面中的狀態圖示現在設有黑色的邊框。	#
+tyelAbout.changelog110.label63=- 將主畫面中反饋的按鈕改名為 「提交反饋」。	#
+tyelAbout.changelog110.label64=- 在主畫面側欄菜單中「關於 Ty-el U 和 「離開遊戲」 按鈕的樞軸現在正確地運行。	#
+tyelAbout.changelog110.label65=- 修復了 HUD 快捷欄在生存模式中不顯示的問題。	#
+tyelAbout.changelog110.label66=- 修復了有關焦點導航模式在內容紀錄歷程中顯示的錯誤紀錄。	#
+tyelAbout.changelog110.label67=- 新增其他介面的背景、介面改善和錯誤修復。	#
+## FEATURES REMOVED
+tyelAbout.changelog110.label68=  + 隱形觸控圓圈，因為1.18.30 或以上的版本新增了RenderDragon 渲染器，令光影材質包不再運行。;-;	#
+tyelAbout.changelog110.label69=  + 快捷欄開關和循環選擇快捷欄物品的按鈕，因為這些按鈕在新的觸控系統可能不再被支援。	#
+
+tyelAbout.changelog111=v1.1.1	#
+tyelAbout.changelog111.title=§g暢通無阻§b更新	#
+## NEW FEATURES
+tyelAbout.changelog111.label1=- 全新官方變量，讓其他套件的製作者可以新增自己的套件與此資源包的兼容功能： §a「$is_tyel_ui」§r （您可以在 _global_variables.json 中開啟和關閉此功能 （§2true§r 或 §cfalse§r）！#
+tyelAbout.changelog111.label2=- 此資源包現在與由 HJN 製作的 Utility Pack 互相兼容！（此為 BETA 功能，還未完全支援）	#
+tyelAbout.changelog111.label3=- 重新加入了快捷欄開關！在使用這個開關時，您也不會遇到關於觸控系統的問題！ （只限設有觸控功能的裝置）	#
+tyelAbout.changelog111.label4=- 在世界設定和音效設定的介面中，為差不多所有設定都加上補充。在選擇觸控模式時，如果您將鼠標放在圖片上，您也可以看到觸控模式的補充！	#
+tyelAbout.changelog111.label5=- 在交易的介面新增「交易所有」按鈕，讓您更快地與村民進行交易！	#
+tyelAbout.changelog111.label6=- 使用聊天介面的自動完成功能現在更方便！您可以按下自動完成的建議項目，然後系統就會幫你完成指令，或是自動為您完成對其他玩家的提及，多麼方便！	#
+tyelAbout.changelog111.label7=- 在聊天介面中新增了「跳到聊天底部」的按鈕，節省時間，更加方便！	#
+tyelAbout.changelog111.label8=- 在 Pocket UI 設定檔中，為紅石方塊（漏斗、發射器、投擲器） 介面 和所有容器方塊的介面新增物品突出搜尋器！	#
+tyelAbout.changelog111.label9=- 在指令方塊的介面新增 「延遲秒數」 的計算器，顯示執行命令之間的延遲，以秒為單位！ （時間格式也被美化了！）	#
+tyelAbout.changelog111.label10=- 還記得版本 v1.1.0 中選擇世界介面的 「加入 The Hive」 按鈕嗎？現在，您可以把它的功能自訂化！這個功能叫做 「迅速加入伺服器」。要自訂此按鈕的功能，請打開 /ui/_global_variables.json ，並更改這些變量的數值：	#
+tyelAbout.changelog111.label11=§e  + 「$insta_join_server_type」： 更改伺服器種類 （0 = 精選伺服器 ； 1 = 其他第三方伺服器）#
+tyelAbout.changelog111.label12=§e  + 「$insta_join_server_name」： 更改按鈕上的伺服器名稱！這裡輸入的名稱必須與您在伺服器清單中的名稱一樣，且區分大小寫！	#
+tyelAbout.changelog111.label13=- 現在，您可以透過更改一些變量的數值，開啟或關閉 HUD 工具的重生羅盤渲染器。 為避免遊戲崩潰，這個功能在精算伺服器中會自動關閉。	#
+tyelAbout.changelog111.label14=- 在市集和更衣室介面中新增確認購買功能，避免意外地購買商品！	#
+tyelAbout.changelog111.label15=- 在 _global_variables.json」 檔案中加入變量，讓您可以自訂功能：	#
+tyelAbout.changelog111.label16=§7  + 「$tyel_ui_troubleshooting_mode」 以開啟或關閉資源包停用和離開遊戲確認的疑難排解模式。 （未來可能新增更多功能）	#
+tyelAbout.changelog111.label17=§7  + 「$use_hud_chat_anchor_override」 以蓋過由 「$use_hud_bottom_chat」 使用的 HUD 聊天介面樞軸。如您把這個變量設為 false， 「$use_hud_bottom_chat」 就會變得不可用，而聊天界面在非觸控的裝置上便會自動靠在屏幕的底部。	#
+tyelAbout.changelog111.label18=§7  + 「$use_hud_bottom_chat」 將 HUD 的聊天介面一直靠在屏幕底部。如果您把這個變量設為 false，聊天界面就會如原版般在屏幕較上的位置顯示。	#
+tyelAbout.changelog111.label19=§7  + 「$use_recovery_compass_utility」 開啟或關閉 HUD 工具的重生羅盤渲染器。 為避免遊戲崩潰，這個功能在精算伺服器中會自動關閉。	#
+tyelAbout.changelog111.label20=§7  + 「$use_large_scroll_box」 開啟或關閉介面中更大的滑動方格。 （實驗性功能）	#
+tyelAbout.changelog111.label21=§7  + 「$disable_compatibility_mode_toasts」 以關閉 「兼容模式已開啟！」 的信息。有時候，您會對這些信息感到煩厭，就可以把這個變量設為 §2true§r§7！	#
+
+## CHANGES
+tyelAbout.changelog111.label22=- 改善了更改屏幕安全區域的介面，由四個角標改為一個有四個角的長方形，讓您更清楚地看見螢幕安全區域。	#
+tyelAbout.changelog111.label23=- 在檔案設定中新增一個新的懸浮按鈕，以開啟或關閉 「檔案儲存位置」 的可見度。 （只限某些裝置）	#
+tyelAbout.changelog111.label24=- 改善了與 Modules+ 套件的兼容性。	#
+tyelAbout.changelog111.label25=- 選擇資源包的介面和選擇世界的介面中自訂搜尋功能現在會跳過文字格式。	#
+tyelAbout.changelog111.label26=- 新增對編輯器模式開啟時的選擇世界介面的支援。	#
+tyelAbout.changelog111.label27=- 在 Zeqa 上遊玩時，暫停畫面中 「自訂介面可用」」的提示會顯示為 「Zeqa Rules & About Ty-el UI here!」	## Don't translate "Zeqa Rules & About Ty-el UI here!"	#
+tyelAbout.changelog111.label28=- 將與 Zega 的兼容性變量名稱改為 「$is_zeqa」。	#
+tyelAbout.changelog111.label29=- 更改了 「兼容模式已開啟」 提示的設計。	#
+tyelAbout.changelog111.label30=- 更改了玩家權限介面中，主畫面的橫向大小限制。	#
+tyelAbout.changelog111.label31=- 將伺服器表格介面的輸入棒改為 「正在輸入」 的圈圈。	#
+
+## FIXES
+tyelAbout.changelog111.label32=- 修復了在 v1.19.40 或以上的版本令整個設定介面不可用的問題。	#
+tyelAbout.changelog111.label33=- 修復了在 v1.19.40 或以上的版本在容器方塊中，把鼠標放在物品上時，物品名稱不會顯示的問題。	#
+tyelAbout.changelog111.label34=- 修復了在 v1.19.40 或以上的版本中，即使把 「允許使用流動數據進行網上遊戲」 的選項打開，在世界載入的畫面中 「流動數據」 的圖案依然不會顯示的問題。	#
+tyelAbout.changelog111.label35=- 修復了 「下載資源包」 彈出視窗不會顯示，以至無法加入 Realms 的問題。	#
+tyelAbout.changelog111.label36=- 修復了當開啟與 Modules+ 套件的兼容模式時，計分板側欄會與 HUD 上的方向盤重疊的問題。	#
+tyelAbout.changelog111.label37=- 修復了當開啟與 Modules+ 套件的兼容模式時，慣用手使用物品的百分比會與經驗棒重疊的問題。	#
+tyelAbout.changelog111.label38=- 修復了一個令您無法使用控制器的箭頭按鈕操作介面的問題。	#
+tyelAbout.changelog111.label39=- 原版修復： §o§c再一次§r修復了一個以不正當的方式透過熔爐獲取經驗值的漏洞。 （MCPE-152227）	#
+tyelAbout.changelog111.label40=- 在進度介面中重新加入控制器提示。	#
+tyelAbout.changelog111.label41=- 您現在可以使用控制器上 「Start」 按鈕開啟或關閉側欄菜單、更多設定介面和突出搜尋物品的功能。	#
+tyelAbout.changelog111.label42=- 優化了主畫面側欄菜單的介面。	#
+tyelAbout.changelog111.label43=- 移除了彈出提示的動畫，因為那些動畫在 v1.19.60 或以上的版本不可用。	#
+tyelAbout.changelog111.label44=- 修復了一些有關翻譯的問題。	#
+tyelAbout.changelog111.label45=- 小型的介面設計改變和修復。	#
+
+## FEATURES REMOVED
+tyelAbout.changelog111.label46=- 在市集介面和更衣室介面中有動畫的 「購買」 按鈕，因為它們會被更好、改善過的 「確認購買」 提示取代。	#

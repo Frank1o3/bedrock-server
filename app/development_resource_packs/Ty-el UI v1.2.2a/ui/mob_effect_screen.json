@@ -1,0 +1,231 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "effect_icon": {
+    "size": [ 18, 18 ],
+    "offset": [ 4, 0 ],
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle"
+  },
+
+  "mob_effect_grid_item": {
+    "size": [ "100%", 30 ],
+    "controls": [
+      {
+        "bg@common_buttons.dark_content_button": {
+          "$pressed_button_name": "button.ignore_me",
+          "$button_content": "common.empty_panel",
+          "size": [ "100%", "100%" ],
+          "tts_inherit_siblings": true
+        }
+      },
+      { "name@mob_effect.effect_name": { "layer": 8 } },
+      { "timer@mob_effect.effect_timer": { "layer": 8 } },
+      { "icon@mob_effect.effect_icon": { "layer": 8 } }
+    ]
+  },
+
+  "mob_effect_grid": {
+    "size": [ "100%", "default" ],
+    "offset": [ 0, 0 ]
+  },
+
+  "mob_effect_list_content_panel/scrolling_panel": {
+    "size": [ "100%", "100%" ],
+    "offset": [ 0, 0 ],
+    "$scroll_box_mouse_image_control": "common.scrollbar_box_image",
+    "$scroll_size": [ "8px", "100% - 4px" ]
+  },
+
+  "mob_effect_list_content_panel": {
+    "size": [ "100%", "100% + 2px" ],
+    "offset": [ 0, 0 ]
+  },
+
+  "mob_effect_content": {
+    "controls": [
+      {
+        "close_bg@mob_effect.close_bg_button": {
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle"
+        }
+      },
+      {
+        "content_panel@common_dialogs.main_panel_no_buttons": {
+          "size": [ 240, "100%" ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "$use_custom_title_control": true,
+          "$custom_title_label": "mob_effect.active_effects_title",
+          "$close_button_to_button_id": "button.menu_continue",
+          "$child_control": "mob_effect.mob_effect_list_content_panel"
+        }
+      }
+    ]
+  },
+
+  "active_effects_title": {
+    "type": "panel",
+    "size": [ "100%", 10 ],
+    "clips_children": true,
+    "layer": 4,
+    "controls": [
+      {
+        "clipped_panel": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "size": [ "100%", "100%c" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "controls": [
+            {
+              "no_effects": {
+                "type": "label",
+                "text": "mobeffect.title.noEffects",
+                "text_alignment": "center",
+                "size": [ "100%", 10 ]
+              }
+            },
+            {
+              "counter_stack": {
+                "type": "grid",
+                "size": [ "100%", "100%c" ],
+                "grid_item_template": "mob_effect.active_effect_number_label",
+                "grid_dimension_binding": "#mob_effect_grid_size",
+                "collection_name": "mob_effects_collection",
+                "bindings": [
+                  {
+                    "binding_name": "#mob_effect_grid_size"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "active_effect_number_label": {
+    "type": "panel",
+    "size": [ "100%", 10 ],
+    "controls": [
+      {
+        "counter_label": {
+          "type": "label",
+          "text": "#text",
+          "size": [ "default", 10 ],
+          "color": "$main_header_text_color",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "mob_effects_collection"
+            },
+            {
+              "binding_name": "#collection_index",
+              "binding_type": "collection",
+              "binding_collection_name": "mob_effects_collection"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('%mobeffect.title.activeEffects ' + (#collection_index + 1))",
+              "target_property_name": "#text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "mob_effect_screen": {
+    "$force_render_below": true,
+    "$is_full_screen_layout": true,
+    "$initial_panel_offset": [ "50%", 0 ],
+    "$screen_animations": [
+      "@mob_effect.mob_effect_entrance_animation_push_offset",
+      "@mob_effect.mob_effect_entrance_animation_pop_offset",
+      "@mob_effect.mob_effect_exit_animation_push_offset",
+      "@mob_effect.mob_effect_exit_animation_pop_offset",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ]
+  },
+
+  "mob_effect_exit_animation_push_offset": {
+    "anim_type": "offset",
+    "easing": "in_out_circ",
+    "duration": "$transition_time_push",
+    "from": [ 0, 0 ],
+    "to": "$initial_panel_offset",
+    "$initial_panel_offset|default": [ "50%", 0 ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "mob_effect_exit_animation_pop_offset": {
+    "anim_type": "offset",
+    "easing": "in_out_circ",
+    "duration": "$transition_time_pop",
+    "from": [ 0, 0 ],
+    "to": "$initial_panel_offset",
+    "$initial_panel_offset|default": [ "50%", 0 ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "mob_effect_entrance_animation_push_offset": {
+    "anim_type": "offset",
+    "easing": "in_out_circ",
+    "duration": "$transition_time_push",
+    "from": "$initial_panel_offset",
+    "to": [ 0, 0 ],
+    "$initial_panel_offset|default": [ "50%", 0 ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "mob_effect_entrance_animation_pop_offset": {
+    "anim_type": "offset",
+    "easing": "in_out_circ",
+    "duration": "$transition_time_pop",
+    "from": "$initial_panel_offset",
+    "to": [ 0, 0 ],
+    "$initial_panel_offset|default": [ "50%", 0 ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "close_bg_button@common.button": {
+    "size": [ "100% - 240px", "100%" ],
+    "focus_enabled": false,
+    "$pressed_button_name": "button.menu_continue",
+    "sound_volume": 0,
+    "layer": -1,
+    "controls": [
+      {
+        "default@common.empty_panel": {}
+      },
+      {
+        "hover@common.empty_panel": {}
+      },
+      {
+        "pressed@common.empty_panel": {}
+      }
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      }
+    ]
+  }
+}

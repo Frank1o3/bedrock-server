@@ -1,0 +1,228 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "background_with_hover_text": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "exp_loss_ratio_calc": {
+              "type": "panel",
+              "size": [ 0, 0 ],
+              "bindings": [
+                {
+                  "binding_type": "collection_details",
+                  "binding_collection_name": "#enchant_buttons"
+                },
+                {
+                  "binding_name": "#collection_index",
+                  "binding_type": "collection",
+                  "binding_collection_name": "#enchant_buttons"
+                },
+                {
+                  "binding_name": "#player_level_info"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(0 + #player_level_info)",
+                  "target_property_name": "#current_level"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(#current_level - #collection_index - 1)",
+                  "target_property_name": "#remaining_level"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "((#current_level > 16) * 1 + (#current_level > 31) * 1)",
+                  "target_property_name": "#current_tier"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "((#remaining_level > 16) * 1 + (#remaining_level > 31) * 1)",
+                  "target_property_name": "#remaining_tier"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(((2 + (#current_tier > 0) * 3 + (#current_tier > 1) * 4) * #current_level * #current_level) / 2 + ((#current_tier = 0) * (6 * #current_level) - (#current_tier = 1) * (#current_level * 81 / 2 - 360) - (#current_tier = 2) * (#current_level * 325 / 2 - 2220)))",
+                  "target_property_name": "#total_current"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(((2 + (#remaining_tier > 0) * 3 + (#remaining_tier > 1) * 4) * #remaining_level * #remaining_level) / 2 + ((#remaining_tier = 0) * (6 * #remaining_level) - (#remaining_tier = 1) * (#remaining_level * 81 / 2 - 360) - (#remaining_tier = 2) * (#remaining_level * 325 / 2 - 2220)))",
+                  "target_property_name": "#total_remaining"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(((#total_current - #total_remaining) * 10000) / #total_current)",
+                  "target_property_name": "#pm"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(#pm / 100)",
+                  "target_property_name": "#pm_e0"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(#pm - (#pm_e0 * 100))",
+                  "target_property_name": "#pm_n_e2"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "('§o§7XP Req: ' + (#total_current - #total_remaining) + ' XP (' + #pm_e0 + '.' + ((#pm_n_e2 > -1 and #pm_n_e2 < 10) + ':0' - 'false:0' - 'true:') + #pm_n_e2 + '%)')",
+                  "target_property_name": "#test"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "background_with_hover_text/hover_text": {
+    "bindings": [
+      {
+        "binding_name": "#hover_text",
+        "binding_name_override": "#hover_text_pre",
+        "binding_collection_name": "#enchant_buttons",
+        "binding_type": "collection"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "exp_loss_ratio_calc",
+        "source_property_name": "#test",
+        "target_property_name": "#test",
+        "resolve_sibling_scope": true
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#hover_text_pre + '\n' + #test)",
+        "target_property_name": "#hover_text"
+      }
+    ]
+  },
+
+  "enchanting_panel_top_half": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "player_level_panel@enchanting.player_level_panel": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "player_level_panel@resource_packs.gray_image": {
+    "layer": 1,
+    "size": [ "100%c + 1px", "100%c" ],
+    "alpha": 0.3,
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "offset": [ 6.5, -2 ],
+    "controls": [
+      {
+        "player_level_label_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", "100%cm" ],
+          "layer": 2,
+          "controls": [
+            {
+              "player_level_label": {
+                "type": "label",
+                "color": "#color",
+                "shadow": true,
+                "font_type": "rune",
+                "text": "Level",
+                "bindings": [
+                  {
+                    "binding_name": "#player_level_color",
+                    "binding_name_override": "#color"
+                  }
+                ]
+              }
+            },
+            {
+              "colon_padding": {
+                "type": "label",
+                "color": "#color",
+                "shadow": true,
+                "text": ": ",
+                "bindings": [
+                  {
+                    "binding_name": "#player_level_color",
+                    "binding_name_override": "#color"
+                  }
+                ]
+              }
+            },
+            {
+              "level_label": {
+                "type": "label",
+                "color": "#color",
+                "shadow": true,
+                "text": "#text",
+                "bindings": [
+                  {
+                    "binding_name": "#player_level_info",
+                    "binding_name_override": "#text"
+                  },
+                  {
+                    "binding_name": "#player_level_color",
+                    "binding_name_override": "#color"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "enchanting_panel/root_panel": {
+    "$container_item_mode_supported": true,
+
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_toolbox@tyel_container_common.container_toolbox": {}
+          },
+          {
+            "container_item_mode_switch_panel@tyel_container_item_mode.container_item_mode_switch_panel": {
+            }
+          },
+          {
+            "container_item_type_switch@tyel_container_item_mode.container_item_type_switch": {
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "enchanting_panel": {
+    "modifications": [
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "enchanting_screen": {
+    "$use_combined_inventory_mode": "$pocket_screen",
+    "$screen_helpers_content": "common.common_inventory_screen_helpers"
+  }
+}

@@ -30,31 +30,38 @@ world.beforeEvents.itemUse.subscribe((eventData) => {
     const Dimension = world.getDimension(Player.dimension.id);
 
     if (Item.typeId === "minecraft:compass") {
-        let players = world.getAllPlayers().map(p => p.name);
-        if (players.length > 1) {
-            let NextIndex = (players.indexOf(Player.name) + 1) % players.length;
-            while (players[NextIndex] === Player.name) {
-                NextIndex = (NextIndex + 1) % players.length;
+        eventData.cancel = true
+        server.system.runTimeout(() => {
+            let players = world.getAllPlayers().map(p => p.name);
+            if (players.length > 1) {
+                let NextIndex = (players.indexOf(Player.name) + 1) % players.length;
+                while (players[NextIndex] === Player.name) {
+                    NextIndex = (NextIndex + 1) % players.length;
+                }
+                const Target = players[NextIndex];
+                PlayerTargets.set(Player.name, Target);
+                Player.sendMessage(`Tracking: ${Target}`);
+
+                if (PlayerArrows.has(Player.name)) {
+                    let oldArrow = PlayerArrows.get(Player.name);
+                    oldArrow?.remove();
+                }
+
+                let arrow = Dimension.spawnParticle("fr:arrow", {
+                    x: Player.location.x,
+                    y: Player.location.y + 1,
+                    z: Player.location.z
+                });
+
+                PlayerArrows.set(Player.name, arrow);
             }
-            const Target = players[NextIndex];
-            PlayerTargets.set(Player.name, Target);
-            Player.sendMessage(`Tracking: ${Target}`);
-
-            if (PlayerArrows.has(Player.name)) {
-                let oldArrow = PlayerArrows.get(Player.name);
-                oldArrow?.remove();
-            }
-
-            let arrow = Dimension.spawnEntity("fr:arrow_particle", {
-                x: Player.location.x,
-                y: Player.location.y + 1,
-                z: Player.location.z
-            });
-
-            PlayerArrows.set(Player.name, arrow);
-        }
+        }, 2);
     } else if (Item.typeId === "minecraft:clock") {
-        customUi.show(Player);
+        eventData.cancel = true
+
+        server.system.runTimeout(() => {
+            customUi.show(Player);
+        }, 2);
     }
 });
 
@@ -62,7 +69,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
     const Player = eventData.sender;
     const msg = eventData.message.toLowerCase();
 
-    if (!Player.hasTag("admin")) {
+    if (!Player.hasTag("admin") && !msg.startsWith("!")) {
         Player.sendMessage(`§cYou do not have permission to use this command!`);
     }
 
@@ -70,7 +77,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
         eventData.cancel = true;
         PVPMode = true;
         const Overworld = server.world.getDimension("minecraft:overworld");
-        Overworld.runCommand("gamerule showcoordinates " + PVPMode);
+        Overworld.runCommandAsync("gamerule keepinventory " + PVPMode);
 
         EliminatedPlayers.clear();
         PlayersInventory.clear();
@@ -87,7 +94,7 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
             }
 
             PlayersInventory.set(player.name, storedItems);
-            player.runCommand("/clear @s");
+            player.runCommandAsync("/clear @s");
         }
 
         system.runTimeout(() => {
@@ -97,12 +104,13 @@ world.beforeEvents.chatSend.subscribe((eventData) => {
                 equipItems().forEach(item => inventory.container.addItem(item));
             }
         }, 200);
+
     }
 
     if (msg === "!clear") {
         eventData.cancel = true;
         world.sendMessage("Clearing players' inventories!");
-        world.getAllPlayers().forEach(player => player.runCommand("/clear @s"));
+        world.getAllPlayers().forEach(player => player.runCommandAsync("/clear @s"));
     }
 
     if (msg === "!admin") {
@@ -126,20 +134,20 @@ world.afterEvents.entityDie.subscribe((eventData) => {
 
 world.afterEvents.playerSpawn.subscribe((eventData) => {
     const Player = eventData.player;
-    Player.runCommand("/clear @s");
 
     if (!PlayersInventory.has(Player.name) || !PVPMode) return;
 
     system.runTimeout(() => {
+        Player.runCommandAsync("/clear @s");
         const inventory = Player.getComponent(server.EntityComponentTypes.Inventory);
 
         PlayersInventory.get(Player.name).forEach((item) => {
-            console.log(item.nameTag);
+            console.log(item);
             inventory.container.addItem(item);
         });
 
         checkForWinner();
-    }, 20);
+    }, 40);
 });
 
 function checkForWinner() {
@@ -151,7 +159,7 @@ function checkForWinner() {
         winner.getComponent(server.EntityComponentTypes.Inventory).container.addItem(new server.ItemStack("minecraft:golden_apple", 1));
         PVPMode = false;
         const Overworld = server.world.getDimension("minecraft:overworld");
-        Overworld.runCommandAsync("gamerule showcoordinates " + PVPMode);
+        Overworld.runCommandAsync("gamerule keepinventory " + PVPMode);
         EliminatedPlayers.clear();
     }
 }
@@ -181,6 +189,8 @@ function equipItems() {
         new server.ItemStack("minecraft:golden_apple", 64),
         new server.ItemStack("minecraft:experience_bottle", 64),
         new server.ItemStack("minecraft:experience_bottle", 64),
+        new server.ItemStack("minecraft:cobblestone", 64),
+        new server.ItemStack("minecraft:cobblestone", 64)
     ];
 
     for (const item of items) {

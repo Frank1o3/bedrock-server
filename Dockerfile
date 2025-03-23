@@ -12,8 +12,13 @@ RUN apt-get update && apt-get install -y \
     jq \
     sudo \
     tar \
+    python3 \
+    pip \
     && apt-get clean \
-&& rm -rf /var/lib/apt/lists/*
+    && apt-get upgrade -y \
+    && apt-get update -y \
+    && apt-get auto-remove \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user and ensure they have permissions for the required directories
 RUN useradd -m -s /bin/bash bedrock && \
@@ -24,7 +29,7 @@ WORKDIR /bedrock
 
 RUN curl -L -A "bedrock-server-1.21.62.01.zip" -o bedrock-server-1.21.62.01.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.62.01.zip && \
     unzip bedrock-server-1.21.62.01.zip && \
-rm bedrock-server-1.21.62.01.zip
+    rm bedrock-server-1.21.62.01.zip
 
 COPY ./app /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
@@ -40,7 +45,7 @@ RUN wget --content-disposition https://www.noip.com/download/linux/latest -O noi
     apt-get update && \
     apt-get install -y libpcap0.8 && \
     dpkg -i ./noip-duc_*.deb || apt-get install -f -y && \
-rm -rf /bedrock/noip-duc.tar.gz /bedrock/noip-duc_*
+    rm -rf /bedrock/noip-duc.tar.gz /bedrock/noip-duc_*
 
 # Add the crontab configuration file
 COPY ./crontab.txt /etc/cron.d/bedrock-backup

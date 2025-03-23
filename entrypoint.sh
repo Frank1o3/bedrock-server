@@ -17,6 +17,9 @@ else
     echo "No-IP credentials not set. Skipping update."
 fi
 
+chmod +x /bedrock/backup.sh
+chmod +x /bedrock/rollback.sh
+
 # Handle rollback command
 if [ "$1" == "rollback" ]; then
     echo "Rolling back to the latest backup..."
@@ -34,11 +37,11 @@ if [ "$1" == "rollback" ]; then
 
     echo "Restarting server..."
     # Activate the virtual environment
-    source .venv/bin/activate
-    .venv/bin/python /bedrock/tool.py
+    pip install fastapi websockets "uvicorn[standard]"
+    python3 /bedrock/tool.py
 else
     echo "Starting Minecraft server..."
     # Activate the virtual environment
-    source .venv/bin/activate
-    .venv/bin/python /bedrock/tool.py
+    pip install fastapi websockets "uvicorn[standard]"
+    python3 /bedrock/tool.py
 fi

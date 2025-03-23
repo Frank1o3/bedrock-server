@@ -1,0 +1,546 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "popup_dialog_button@common_buttons.light_text_button": {
+    "layer": 101,
+    "size": [ "40%", "20%" ]
+  },
+
+  "modal_title_text": {
+    "type": "label",
+    "size": [ "default", "default" ],
+    "max_size": [ "100%", 20 ],
+    "text": "$popup_title_text",
+    "text_tts": "$popup_title_text_tts",
+    "color": "$title_color",
+    "$title_color|default": "$main_header_text_color",
+    "$popup_title_text|default": "#text",
+    "$popup_title_text_tts|default": "#tts_text",
+    "$title_text_anchor": "center",
+    "$title_text_alignment": "center",
+    "$title_text_offset": [ 0, 0 ],
+    "$default_modal_title_text|default": "modal.defaultTitle",
+    "$popup_title_bindings|default": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$visibility_source_control_name",
+        "source_property_name": "(#modal_title_text - '§l' - '§0' - '§8')",
+        "target_property_name": "#text_pre"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#text_pre = '') + ':' + $default_modal_title_text - ('false:' + $default_modal_title_text) - 'true:' + #text_pre)",
+        "target_property_name": "#text"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "$visibility_source_control_name",
+        "source_property_name": "#modal_title_tts",
+        "target_property_name": "#tts_text"
+      }
+    ],
+    "bindings": "$popup_title_bindings"
+  },
+
+  "modal_label_text": {
+    "$popup_label_text_controls|default": "common.empty_panel_size_y_0",
+    "modifications": [
+      {
+        "control_name": "text",
+        "operation": "replace",
+        "value": [
+          {
+            "text_panel": {
+              "type": "panel",
+              "size": [ "100%", "100%c + 16px" ],
+              "controls": [
+                {
+                  "text": {
+                    "type": "label",
+                    "size": [ "default", "default" ],
+                    "max_size": [ "100%", "default" ],
+                    "anchor_to": "$modal_label_anchor",
+                    "anchor_from": "$modal_label_anchor",
+                    "offset": [ 0, 10 ],
+                    "$modal_label_anchor|default": "top_middle",
+                    "layer": 2,
+                    "$popup_label_text|default": "#text",
+                    "$popup_label_text_tts|default": "#tts_text",
+                    "$modal_label_text_alignment|default": "left",
+                    "text_alignment": "$modal_label_text_alignment",
+                    "text": "$popup_label_text",
+                    "text_tts": "$popup_label_text_tts",
+                    "color": "$body_text_color",
+                    "font_type": "default",
+                    "shadow": false,
+                    "bindings": "$popup_label_bindings",
+                    "$popup_label_bindings|default": [
+                      {
+                        "binding_type": "view",
+                        "source_control_name": "$visibility_source_control_name",
+                        "source_property_name": "#modal_label_text",
+                        "target_property_name": "#text"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_control_name": "$visibility_source_control_name",
+                        "source_property_name": "#modal_label_tts",
+                        "target_property_name": "#tts_text"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "popup_label_text_controls@$popup_label_text_controls": {}
+          },
+          {
+            "padding2": {
+              "type": "panel",
+              "layer": 2,
+              "size": [ 0, 2 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "modal_label_panel": {
+    "$scrolling_pane_size": [ "100% - 1px", "100%" ]
+  },
+
+  "light_text_button@common_buttons.tyel_design:light_text_button": {},
+
+  "red_text_button@common_buttons.tyel_design:red_text_button": {},
+
+  "green_text_button@common_buttons.tyel_design:green_text_button": {},
+
+  "modal_left_button@popup_dialog.green_text_button": {
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "size": [ "100%", "50%-1px" ],
+    "$pressed_button_name": "$popup_dialog_left_button_name",
+    "$button_text": "#modal_left_button_text",
+    "$button_focus_precedence": 0
+  },
+
+  "modal_middle_button@popup_dialog.light_text_button": {
+    "anchor_to": "center",
+    "anchor_from": "center",
+    "size": [ "100%", "50%-1px" ],
+    "$pressed_button_name": "$popup_dialog_middle_button_name",
+    "$button_text": "#modal_middle_button_text",
+    "$button_focus_precedence": 0
+  },
+
+  "modal_rightcancel_button@popup_dialog.light_text_button": {
+    "anchor_to": "bottom_middle",
+    "anchor_from": "bottom_middle",
+    "size": [ "100%", "50%-1px" ],
+    "$pressed_button_name": "$popup_dialog_rightcancel_button_name",
+    "$button_text": "#modal_rightcancel_button_text",
+    "$button_focus_precedence": 1
+  },
+
+  "modal_red_left_button@popup_dialog.red_text_button": {
+    "anchor_to": "top_middle",
+    "anchor_from": "top_middle",
+    "size": [ "100%", "50%-1px" ],
+    "$pressed_button_name": "$popup_dialog_left_button_name",
+    "$button_text": "#modal_left_button_text",
+    "$button_focus_precedence": 0
+  },
+
+  "three_buttons_panel": {
+    "size": [ "100%", 90 ]
+  },
+
+  "destructive_three_buttons_panel": {
+    "size": [ "100%", 90 ],
+    "modifications": [
+      {
+        "control_name": "left",
+        "operation": "replace",
+        "value": [
+          {
+            "left@popup_dialog.modal_red_left_button": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "two_buttons_panel": {
+    "size": [ "100%", 64 ]
+  },
+
+  "destructive_two_buttons_panel": {
+    "size": [ "100%", 64 ],
+    "modifications": [
+      {
+        "control_name": "left",
+        "operation": "replace",
+        "value": [
+          {
+            "left@popup_dialog.modal_red_left_button": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "single_button_panel": {
+    "size": [ "100%", 30 ]
+  },
+
+  "modal_dialog_with_buttons": {
+    "controls": [
+      {
+        "dialog_content_stack@tyel_oreui_design__dialogs.oreui_dialog_panel": {
+          "$dialog_header_content": "popup_dialog.modal_dialog_header_content",
+          "$show_close_button": false
+        }
+      }
+    ]
+  },
+
+  "modal_dialog_header_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "$show_close_button|default": true,
+    "$debug_mode|default": false,
+    "$title_label_panel|default": "popup_dialog.modal_title_text",
+    "controls": [
+      {
+        "debug_panel": {
+          "ignored": "(not $debug_mode)",
+          "type": "panel",
+          "size": [ 0, 24 ],
+          "layer": 10,
+          "controls": [
+            {
+              "debug_info": {
+                "type": "image",
+                "texture": "textures/ui/hud_tip_text_background",
+                "size": [ "100%c + 8px", "100%c + 8px" ],
+                "alpha": 0.9,
+                "layer": 100,
+                "anchor_from": "top_left",
+                "anchor_to": "bottom_left",
+                "offset": [ -3, -4 ],
+                "controls": [
+                  {
+                    "stack": {
+                      "type": "stack_panel",
+                      "orientation": "vertical",
+                      "size": [ "100%cm", "100%c" ],
+                      "controls": [
+                        {
+                          "three_buttons_visible": {
+                            "visible": "$three_buttons_visible",
+                            "$three_buttons_visible|default": false,
+                            "type": "label",
+                            "text": "state: $three_buttons_visible"
+                          }
+                        },
+                        {
+                          "destructive_three_buttons_visible": {
+                            "visible": "$destructive_three_buttons_visible",
+                            "$destructive_three_buttons_visible|default": false,
+                            "type": "label",
+                            "text": "state: $destructive_three_buttons_visible"
+                          }
+                        },
+                        {
+                          "two_buttons_visible": {
+                            "visible": "$two_buttons_visible",
+                            "$two_buttons_visible|default": false,
+                            "type": "label",
+                            "text": "state: $two_buttons_visible"
+                          }
+                        },
+                        {
+                          "destructive_two_buttons_visible": {
+                            "visible": "$destructive_two_buttons_visible",
+                            "$destructive_two_buttons_visible|default": false,
+                            "type": "label",
+                            "text": "state: $destructive_two_buttons_visible"
+                          }
+                        },
+                        {
+                          "single_button_visible": {
+                            "visible": "$single_button_visible",
+                            "$single_button_visible|default": false,
+                            "type": "label",
+                            "text": "state: $single_button_visible"
+                          }
+                        },
+                        {
+                          "no_buttons_visible": {
+                            "visible": "$no_buttons_visible",
+                            "$no_buttons_visible|default": false,
+                            "type": "label",
+                            "text": "state: $no_buttons_visible"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_left_for_centralization@common.empty_panel": {
+          "ignored": "(not $show_close_button)",
+          "size": [ 24, 24 ]
+        }
+      },
+      {
+        "dialog_title_label_panel": {
+          "type": "panel",
+          "size": [ "fill", 24 ],
+          "controls": [
+            {
+              "dialog_title@$title_label_panel": {
+                "size": [ "100% - 16px", "default" ],
+                "max_size": [ "100% - 16px", 20 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_button@tyel_oreui_design__buttons.close_button": {
+          "ignored": "(not $show_close_button)",
+          "size": [ 24, 24 ]
+        }
+      }
+    ]
+  },
+
+  "modal_input_panel": {
+    "layer": 1000
+  },
+
+  "popup_anim_offset": {
+    "anim_type": "offset",
+    "easing": "in_out_circ",
+    "duration": "$transition_time_pop",
+    "from": [ 0, "2%" ],
+    "to": [ 0, 0 ]
+  },
+
+  "popup_anim_fade": {
+    "anim_type": "alpha",
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "from": 0.0,
+    "to": 1.0,
+    "scale_from_starting_alpha": true
+  },
+
+  "popup_anim_bg_fade": {
+    "anim_type": "alpha",
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "from": 0.0,
+    "to": 1.0,
+    "scale_from_starting_alpha": true
+  },
+
+  "modal_dialog_popup/modal_input/modal_bg_buttons": {
+    "anims": "$popup_animations",
+    "propagate_alpha": true,
+    "disable_anim_fast_forward": true
+  },
+
+  "modal_dialog_popup/modal_input/black_background": {
+    "ignored": "$is_holographic",
+    "texture": "textures/ui/screen_background",
+    "size": [ "120%", "120%" ],
+    "anims": "$popup_background_animations",
+    "alpha": "$fill_alpha"
+  },
+
+  "modal_dialog_popup/modal_input": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "dynamic_helpers@popup_dialog.popup_dynamic_helpers_panel": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "modal_dialog_popup": {
+    "$allow_scroll_even_when_content_fits": false,
+    "$allow_scrolling_even_when_content_fits": false,
+    "$fill_alpha|default": 0.8,
+    "$popup_animations|default": [],
+    "$popup_background_animations|default": [],
+    "$oreui_dialog_style__animate_popup": true,
+    "variables": [
+      {
+        "requires": "$screen_transitions_enabled",
+        "$popup_animations": [
+          "@popup_dialog.popup_anim_fade"
+        ],
+        "$popup_background_animations": [
+          "@popup_dialog.popup_anim_bg_fade"
+        ]
+      },
+      {
+        "requires": "$three_buttons_visible",
+        "$modal_screen_size": [ 310, 190 ],
+        "$button_panel": "popup_dialog.three_buttons_panel",
+        "$modal_panel_label_size": [ "100% - 2px", 100 ]
+      },
+      {
+        "requires": "$destructive_three_buttons_visible",
+        "$modal_screen_size": [ 310, 190 ],
+        "$button_panel": "popup_dialog.destructive_three_buttons_panel",
+        "$modal_panel_label_size": [ "100% - 2px", 100 ]
+      },
+      {
+        "requires": "$two_buttons_visible",
+        "$modal_screen_size": [ 310, 175 ],
+        "$button_panel": "popup_dialog.two_buttons_panel",
+        "$modal_panel_label_size": [ "100% - 2px", 100 ]
+      },
+      {
+        "requires": "$destructive_two_buttons_visible",
+        "$modal_screen_size": [ 310, 175 ],
+        "$button_panel": "popup_dialog.destructive_two_buttons_panel",
+        "$modal_panel_label_size": [ "100% - 2px", 100 ]
+      },
+      {
+        "requires": "$single_button_visible",
+        "$modal_screen_size": [ 310, 130 ],
+        "$button_panel": "popup_dialog.single_button_panel",
+        "$modal_panel_label_size": [ "100% - 2px", 100 ]
+      },
+      {
+        "requires": "$no_buttons_visible",
+        "$modal_screen_size": [ 310, 100 ],
+        "$button_panel": "common.empty_panel",
+        "$modal_panel_label_size": [ "100% - 2px", 100 ],
+        "$dialog_style": "no_footer"
+      }
+    ]
+  },
+
+  "form_fit_dialog_header_content": {
+    "type": "label",
+    "text": "$modal_title",
+    "size": [ "100%", "100% - 48px" ],
+    "text_alignment": "center",
+    "$modal_title_binding_type|default": "none",
+    "$modal_title_binding_condition|default": "none",
+    "color": "$main_header_text_color",
+    "bindings": [
+      {
+        "binding_name": "$modal_title",
+        "binding_type": "$modal_title_binding_type",
+        "binding_condition": "$modal_title_binding_condition"
+      }
+    ]
+  },
+
+  "form_fit_screen_with_title_and_close_and_bottom_buttons": {
+    "$form_fit_dialog_style": "",
+    "$lower_size": [ "100%", 30 ]
+  },
+
+  "form_fit_screen_with_title_and_close": {
+    "type": "panel",
+    "size": [ "100%cm", "100%cm" ],
+    "layer": 1,
+    "$show_close_button|default": true,
+    "$form_fit_dialog_style|default": "no_footer",
+    "controls": [
+      {
+        "panel_content@tyel_oreui_design__dialogs.oreui_dialog_form_fitting_panel": {
+          "$dialog_style": "$form_fit_dialog_style",
+          "$title_label_panel": "popup_dialog.form_fit_dialog_header_content",
+          "$dialog_body_content": "$modal_contents",
+          "$dialog_footer_content": "$lower_contents",
+          "$dialog_footer_content_size": "$lower_size",
+          "$close_button_to_button_id": "$popup_dialog_escape_button_name"
+        }
+      }
+    ]
+  },
+
+  "form_fit_modal_dialog_popup/content": {
+    "propagate_alpha": true,
+    "disable_anim_fast_forward": true,
+    "anims": "$popup_animations",
+    "$popup_animations|default": []
+  },
+
+  "form_fit_modal_dialog_popup/background": {
+    "size": [ "120%", "120%" ],
+    "anims": "$popup_background_animations",
+    "$popup_background_animations|default": [],
+    "disable_anim_fast_forward": true
+  },
+
+  "form_fit_modal_dialog_popup": {
+    "$fill_alpha|default": 0.8,
+    "variables": [
+      {
+        "requires": "$screen_transitions_enabled",
+        "$popup_animations": [
+          "@popup_dialog.popup_anim_fade"
+        ],
+        "$popup_background_animations": [
+          "@popup_dialog.popup_anim_bg_fade"
+        ]
+      }
+    ]
+  },
+
+  "gamepad_helpers_a_and_b_dynamic": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", "100%cm" ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "$show_gamepad_helper_a_tooltip|default": true,
+    "$show_gamepad_helper_b_tooltip|default": true,
+    "controls": [
+      {
+        "gamepad_helper_a@common.gamepad_helper_a": {
+          "ignored": "(not $show_gamepad_helper_a_tooltip)"
+        }
+      },
+      {
+        "gamepad_helper_b@common.gamepad_helper_b": {
+          "ignored": "(not $show_gamepad_helper_b_tooltip)"
+        }
+      }
+    ]
+  },
+
+  "popup_dynamic_helpers_panel@common.dynamic_helpers_template": {
+    "layer": 2,
+    "$dynamic_helpers_content": "popup_dialog.gamepad_helpers_a_and_b_dynamic"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "furnace_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "furnace_arrow_progress@furnace.furnace_arrow_progress": {
+              "anchor_from": "center",
+              "anchor_to": "center",
+              "offset": [ 0, -16 ],
+              "layer": 4
+            }
+          },
+          {
+            "furnace_flame_progress@furnace.furnace_flame_progress": {
+              "anchor_from": "center",
+              "anchor_to": "right_middle",
+              "offset": [ -48, 0 ],
+              "layer": 4
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "header": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_item_mode_switch_panel@tyel_container_item_mode.container_item_mode_switch_panel_pocket_header": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "inventory_and_furnace_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "drop_buttons_panel@tyel_container_common.drop_buttons_panel_pocket_containers": {
+              "$hover_text_anchor": "right_middle",
+              "$hover_text_offset": [ -8, 2 ],
+              "anchor_from": "bottom_right",
+              "anchor_to": "bottom_right",
+              "offset": [ -4, -4 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "furnace_panel": {
+    "$container_item_mode_supported": true,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_item_type_switch@tyel_container_item_mode.container_item_type_switch_pocket": {
+            }
+          }
+        ]
+      },
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

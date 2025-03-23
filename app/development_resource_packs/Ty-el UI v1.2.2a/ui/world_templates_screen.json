@@ -1,0 +1,73 @@
+{
+  "label_content_template": {
+    "size": [ "100%", "100%c - 1px" ],
+    "controls": [
+      {
+        "title_label_block@tyel_oreui_design__misc.colored_category_block": {
+          "$category_label": "$label_content_label",
+          "$category_background_color|default": "$sidebar_bg_color",
+          "$category_label_color|default": "$body_text_color",
+          "$label_text_binding_type|default": "none",
+          "$category_label_bindings": [
+            {
+              "binding_name": "$label_content_label",
+              "binding_type": "$label_text_binding_type"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "realms_plus_templates_label": {
+    "$category_background_color": "$csb_upsell_button_text_color",
+    "$category_label_color": "$store_csb_gold_text_color"
+  },
+
+  "world_list_grids_stack/store_panel/store_grids/suggested_content_panel": {
+    "modifications": [
+      {
+        "control_name": "suggested_content_offers_title_label",
+        "operation": "replace",
+        "value": [
+          {
+            "suggested_content_offers_title_label@tyel_oreui_design__misc.colored_category_block": {
+              "$category_label": "selectTemplate.suggestedContent.title",
+              "$category_background_color|default": "$sidebar_bg_color",
+              "$category_label_color|default": "$body_text_color",
+              "bindings": [
+                {
+                  "binding_name": "(not #realms_info_visible)",
+                  "binding_name_override": "#visible"
+                }
+              ]
+            }
+          },
+          {
+            "padding_hack@common.empty_panel": {
+              "size": [ 0, -1 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "world_list_grids_stack": {
+    "modifications": [
+      {
+        "control_name": "store_panel",
+        "operation": "move_back"
+      }
+    ]
+  },
+
+  "scrolling_offsets": {
+    "max_size": [ 400, "100%" ]
+  },
+
+  "world_templates_screen": {
+    "$tyel_theme_screen_alias": "world_templates",
+    "$use_custom_panorama": true
+  }
+}

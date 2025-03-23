@@ -1,0 +1,64 @@
+{
+  //"filter_menu_screen_content": {
+  //  "modifications": [
+  //    {
+  //      "control_name": "filter_main_panel",
+  //      "operation": "replace",
+  //      "value": [
+  //        {
+  //          "filter_main_panel": {
+  //            "type": "panel",
+  //            "max_size": "$store_filter_or_sort_menu_panel_max_size",
+  //            "$store_filter_or_sort_menu_panel_max_size|default": [ 800, "100%" ],
+  //            "bindings": [
+  //              {
+  //                "binding_name": "(not #is_dressing_room_scene)",
+  //                "binding_name_override": "#visible"
+  //              }
+  //            ],
+  //            "controls": [
+  //              {
+  //                "filter_main_panel@filter_menu.filter_menu_panel": {
+  //                  "$filter_top_padding": [ "100%", 8 ],
+  //                  "$filter_left_padding": [ "60%", "100%" ],
+  //                  "$filter_right_padding": [ 12, "100%" ],
+  //                  "$scrolling_content": "filter_menu.filter_menu_content"
+  //                }
+  //              }
+  //            ]
+  //          }
+  //        }
+  //      ]
+  //    },
+  //    {
+  //      "control_name": "filter_main_panel_persona",
+  //      "operation": "replace",
+  //      "value": [
+  //        {
+  //          "filter_main_panel_persona": {
+  //            "type": "panel",
+  //            "max_size": "$store_filter_or_sort_menu_panel_max_size",
+  //            "$store_filter_or_sort_menu_panel_max_size|default": [ 800, "100%" ],
+  //            "bindings": [
+  //              {
+  //                "binding_name": "#is_dressing_room_scene",
+  //                "binding_name_override": "#visible"
+  //              }
+  //            ],
+  //            "controls": [
+  //              {
+  //                "filter_main_panel_persona@filter_menu.filter_menu_panel": {
+  //                  "$filter_top_padding": [ "100%", 11 ],
+  //                  "$filter_left_padding": [ "8%", "100%" ],
+  //                  "$filter_right_padding": [ "47%", "100%" ],
+  //                  "$scrolling_content": "filter_menu.filter_menu_content_persona"
+  //                }
+  //              }
+  //            ]
+  //          }
+  //        }
+  //      ]
+  //    }
+  //  ]
+  //}
+}

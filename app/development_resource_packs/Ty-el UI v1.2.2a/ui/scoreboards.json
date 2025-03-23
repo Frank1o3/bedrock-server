@@ -1,0 +1,72 @@
+{
+  "scoreboard_sidebar_score": {
+    "shadow": true
+  },
+
+  "scoreboard_sidebar_player": {
+    "shadow": true
+  },
+
+  "scoreboard_sidebar/main": {
+    "alpha": "$scoreboard_sidebar_bg_alpha",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "hotbar_scoreboard_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "scoreboard_sidebar/main/displayed_objective": {
+    "shadow": true
+  },
+
+  "scoreboard_sidebar/main/lists/scores": {
+    "ignored": "$ignore_scoreboard_sidebar_scores"
+  },
+
+  "scoreboard_sidebar": {
+    "layer": 10,
+    "anchor_from": "$anchor",
+    "anchor_to": "$anchor",
+    "offset": "$offset",
+    "$anchor|default": "$scoreboard_sidebar_anchor",
+    "$offset|default": "$scoreboard_sidebar_offset",
+    "$ignore_scoreboard_sidebar_scores|default": false,
+    "$sidebar_flag_override_enabled|default": false,
+    "$scoreboard_sidebar_anchor_override|default": "center",
+    "$scoreboard_sidebar_offset_override|default": [ 0, 0 ],
+    "variables": [
+      {
+        "requires": "($pocket_screen and not $sidebar_flag_override_enabled)",
+        "$anchor": "$scoreboard_sidebar_anchor_pocket",
+        "$offset": "$scoreboard_sidebar_offset_pocket"
+      },
+      {
+        "requires": "$sidebar_flag_override_enabled",
+        "$anchor": "$scoreboard_sidebar_anchor_override",
+        "$offset": "$scoreboard_sidebar_offset_override"
+      },
+      {
+        "requires": "($is_modules_plus and not $is_zeqa and not $sidebar_flag_override_enabled)",
+        "$anchor": "top_right",
+        "$offset": [ 0, 60 ]
+      }
+    ]
+  },
+
+  "scoreboard_player_list": {
+    "modifications": [
+      {
+        "control_name": "invite_players_button_panel",
+        "operation": "remove"
+      },
+      {
+        "control_name": "vertical_padding_5",
+        "operation": "remove"
+      }
+    ]
+  }
+}

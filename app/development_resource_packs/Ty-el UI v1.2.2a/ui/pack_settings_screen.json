@@ -1,0 +1,28 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "screen": {
+    "$fill_alpha": "$fill_alpha",
+    "$screen_animations": [
+      "@tyel_oreui_design__anims.oreui_dialog_entrance_animation_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_entrance_animation_pop_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_exit_animation_push_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_exit_animation_pop_fade"
+    ]
+  },
+
+  "main_screen_content": {
+    "size": [ "100% - 20px", "100% - 40px" ],
+    "max_size": [ 420, 360 ],
+    "$oreui_dialog_style__animate_dialog": true
+  },
+
+  "scrolling_content": {
+    "use_child_anchors": true
+  },
+
+  "scrolling_content/generated_form": {
+    "size": [ "100% - 8px", "100%c" ]
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bedrock Console</title>
+	<script>
+		let socket = new WebSocket(`ws://${window.location.host}/ws`);
+
+		socket.addEventListener("message", (ev) => {
+			let logDiv = document.getElementById("log");
+			let newMessage = document.createElement("div");
+			newMessage.textContent = ev.data;
+			logDiv.appendChild(newMessage);
+			logDiv.scrollTop = logDiv.scrollHeight; // Auto-scroll to latest log
+		});
+
+		function sendCommand(event) {
+			event.preventDefault();
+			let command = document.getElementById("command").value;
+			fetch("/send_command", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ command: command })
+			});
+			document.getElementById("command").value = "";
+		}
+
+		function Send(command) {
+			fetch("/send_command", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ command: command })
+			});
+		}
+	</script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+
+		#log {
+			height: 400px;
+			overflow-y: scroll;
+			border: 1px solid #ccc;
+			padding: 10px;
+			background: #000;
+			color: #0f0;
+			font-family: monospace;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Bedrock Server Console</h2>
+	<div id="log"></div>
+	<form onsubmit="sendCommand(event)">
+		<input type="text" id="command" placeholder="Enter command" required>
+		<button type="submit">Send</button>
+	</form>
+	<form onsubmit="sendCommand('reload')">
+		<button type="submit">Reload Mods</button>
+	</form>
+</body>
+
+</html>

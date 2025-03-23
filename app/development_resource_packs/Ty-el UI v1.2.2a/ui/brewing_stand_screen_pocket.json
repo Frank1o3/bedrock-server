@@ -1,0 +1,275 @@
+{
+  "brewing_fuel_slot": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "brewing_fuel_progress@brewing_stand.brewing_fuel_progress": {
+              "anchor_from": "top_middle",
+              "anchor_to": "bottom_middle",
+              "offset": [ 0, -2 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "slots_panel": {
+    "layer": 5
+  },
+
+  "slots_panel/brewing_arrow_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "brewing_arrow_progress@brewing_stand.brewing_arrow_progress": {
+              "anchor_from": "center",
+              "anchor_to": "left_middle",
+              "offset": [ 4, 0 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "screen_layout_toggle_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+
+    "size": [ "default", "100% - 8px" ],
+    "offset": [ -22, 4 ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "$layout_toggle_size": [ 28, 20 ],
+    "controls": [
+      {
+        "brewing_guide_toolbar_panel_content@tyel_brewing_guide_common.brewing_guide_toolbar_panel_content": {
+          "$button_size": [ 20, 20 ],
+          "$hover_text_anchor": "top_right",
+          "$hover_text_offset": [ -8, -2 ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "screen_layout__recipe_book_layout",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "leftmost_padding@common.empty_panel": {
+          "size": [ 8, 0 ]
+        }
+      },
+      {
+        "left_trigger_anchor": {
+          "type": "panel",
+          "size": [ 0, "100%" ],
+          "bindings": [
+            {
+              "binding_name": "#gamepad_helper_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "gamepad_helper_left_trigger@common.gamepad_helper_left_trigger": {
+                "offset": [ 3, -2 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "right_middle"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_0": {
+          "type": "panel",
+          "size": [ 8, 0 ]
+        }
+      },
+      {
+        "recipe_book_layout_toggle_panel": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            { "recipe_book_layout_toggle@brewing_stand.recipe_book_layout_toggle": {} }
+          ]
+        }
+      },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ 1, 0 ]
+        }
+      },
+      {
+        "default_layout_toggle_panel": {
+          "type": "panel",
+          "size": [ "100%c", "100%" ],
+          "controls": [
+            { "default_layout_toggle@brewing_stand.default_layout_toggle": {} }
+          ]
+        }
+      },
+      {
+        "padding_2": {
+          "type": "panel",
+          "size": [ 6, 0 ]
+        }
+      },
+      {
+        "right_trigger_anchor": {
+          "type": "panel",
+          "size": [ 0, "100%" ],
+          "bindings": [
+            {
+              "binding_name": "#gamepad_helper_visible",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "gamepad_helper_right_trigger@common.gamepad_helper_right_trigger": {
+                "offset": [ -2, -2 ],
+                "anchor_from": "right_middle",
+                "anchor_to": "left_middle"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "header": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "inventory_navigation_panel": {
+              "type": "panel",
+              "size": [ "100%cm", "100%cm" ],
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "offset": [ 4, 4 ],
+              "controls": [
+                {
+                  "container_item_mode_switch_panel@tyel_container_item_mode.container_item_mode_switch_panel_pocket_header": {
+                    "$panel_offset": [ 0, 0 ],
+                    "bindings": [
+                      {
+                        "binding_type": "view",
+                        "source_control_name": "screen_layout__default_layout",
+                        "source_property_name": "#toggle_state",
+                        "target_property_name": "#visible"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "tab_navigation_panel_layout_pocket_header@tyel_brewing_guide_common.tab_navigation_panel_layout_pocket_header": {
+                    "bindings": [
+                      {
+                        "binding_type": "view",
+                        "source_control_name": "screen_layout__recipe_book_layout",
+                        "source_property_name": "#toggle_state",
+                        "target_property_name": "#visible"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "screen_layout_toggle_panel@brewing_stand_pocket.screen_layout_toggle_panel": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "inventory_and_brewing_panel/inventory_half_screen": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "screen_layout__default_layout",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "inventory_and_brewing_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "drop_buttons_panel@tyel_container_common.drop_buttons_panel_pocket_containers": {
+              "$hover_text_anchor": "right_middle",
+              "$hover_text_offset": [ -8, 2 ],
+              "anchor_from": "bottom_right",
+              "anchor_to": "bottom_right",
+              "offset": [ -4, -4 ]
+            }
+          },
+          {
+            "brewing_guide_half_screen": {
+              "type": "panel",
+              "size": [ "50%", "100%" ],
+              "anchor_from": "left_middle",
+              "anchor_to": "left_middle",
+              "bindings": [
+                {
+                  "binding_type": "view",
+                  "source_control_name": "screen_layout__recipe_book_layout",
+                  "source_property_name": "#toggle_state",
+                  "target_property_name": "#visible"
+                }
+              ],
+              "controls": [
+                { "brewing_guide_content@tyel_brewing_guide_common.tab_content_pocket": {} }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "brewing_stand_panel": {
+    "$container_item_mode_supported": true,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_item_type_switch@tyel_container_item_mode.container_item_type_switch_pocket": {
+            }
+          },
+          {
+            "brewing_guide_assistant_dialog@tyel_brewing_guide_assistant.brewing_guide_assistant_dialog": {}
+          }
+        ]
+      },
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "display_logged_error_modal": {
+    "layer": 1000
+  },
+
+  "error_details_modal": {
+    "layer": 1000
+  }
+}

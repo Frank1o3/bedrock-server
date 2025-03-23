@@ -1,0 +1,180 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+
+// You can add more server/world names to trigger custom title icons and info at here!
+
+{
+  "namespace": "tyel_pause_title",
+
+  // Title Icons (default is "Grass Block" texture)
+  // Sadly I can't trigger this feature to Mineville (UI is incompatible). Sorry for the inconvenience ;-;
+  "title_icons": {
+    "type": "panel",
+    "controls": [
+      {
+        "hive_bedrock@tyel_pause_title.title_icon_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$title_icon_texture": "textures/ui/server_icons/hive_bedrock",
+          "$world_name": "Hive Games"
+        }
+      },
+      {
+        "cubecraft@tyel_pause_title.title_icon_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$title_icon_texture": "textures/ui/server_icons/cubecraft",
+          "$world_name": "CubeCraft Games",
+          "$show_outline_border": false
+        }
+      },
+      {
+        "galaxite@tyel_pause_title.title_icon_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$title_icon_texture": "textures/ui/server_icons/galaxite",
+          "$world_name": "Galaxite"
+        }
+      },
+      {
+        "lifeboat@tyel_pause_title.title_icon_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$title_icon_texture": "textures/ui/server_icons/lifeboat",
+          "$world_name": "Lifeboat Network"
+        }
+      },
+      {
+        "enchanted_dragons@tyel_pause_title.title_icon_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$title_icon_texture": "textures/ui/server_icons/enchanted_dragons",
+          "$world_name": "Enchanted"
+        }
+      },
+      {
+        "zeqa@tyel_pause_title.title_icon_template": {
+          "$title_icon_texture": "textures/ui/server_icons/zeqa",
+          "$world_name": "Zeqa Network"
+        }
+      },
+      {
+        "nethergames@tyel_pause_title.title_icon_template": {
+          "$title_icon_texture": "textures/ui/server_icons/nethergames",
+          "$world_name": "NetherGames Network"
+        }
+      },
+      {
+        // Reverse every world name from controls that are not Featured Servers
+        "local_world_icon@tyel_pause_title.title_icon_template": {
+          "layer": 0,
+          "ignored": "$is_on_3p_server",
+          "$use_custom_world_name_property": true,
+          "$title_icon_texture": "textures/blocks/grass_side_carried",
+          "$custom_world_name_property": "((#players_list_title - 'Zeqa Network' = #players_list_title) or (#players_list_title - 'NetherGames Network' = #players_list_title))"
+        }
+      }
+    ]
+  },
+
+  // Info Panels: the button on the top right of Pause Screen,
+  // hover it to see info of the world/server.
+  "info_panels": {
+    "type": "panel",
+    "controls": [
+      {
+        "hive_bedrock@tyel_pause_title.world_info_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$tyel_ui_compatible": true,
+          "$world_name": "Hive Games",
+          "$world_info_header": "The Hive",
+          "$world_info": "Website: https://playhive.com/ \nSupport: https://support.playhive.com/",
+          "$world_sub_info": "Welcome, Bees!\nHive Games © 2024"
+        }
+      },
+      {
+        "cubecraft@tyel_pause_title.world_info_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$tyel_ui_compatible": true,
+          "$world_name": "CubeCraft Games",
+          "$world_info_header": "CubeCraft",
+          "$world_info": "Website: https://cubecraft.net/ \nSupport: https://help.cubecraft.net/",
+          "$world_sub_info": "One of the largest Minecraft Networks.\n© ZIAX LTD 2024"
+        }
+      },
+      {
+        "galaxite@tyel_pause_title.world_info_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$tyel_ui_compatible": true,
+          "$world_name": "Galaxite",
+          "$world_info_header": "Galaxite",
+          "$world_info": "Website: https://www.galaxite.net/ \nSupport: https://www.galaxite.net/support/",
+          "$world_sub_info": "Galaxite is a featured Bedrock Edition Minecraft Server,\nmade by Blockception.",
+          "$tyel_ui_compatible_header": "Compatible with Ty-el UI,\nbut some screens UI may break."
+        }
+      },
+      {
+        "lifeboat@tyel_pause_title.world_info_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$tyel_ui_compatible": true,
+          "$world_name": "Lifeboat Network",
+          "$world_info_header": "Lifeboat Network",
+          "$world_info": "Website: https://www.lbsg.net/",
+          "$world_sub_info": "Play SG, Skyblock, Prisons and MORE.\n© 2024 Hydreon Corporation"
+        }
+      },
+      {
+        // TODO: Add proper description after server's initial release
+        "enchanted_dragons@tyel_pause_title.world_info_template": {
+          "ignored": "(not $is_on_3p_server)",
+          "$tyel_ui_compatible": true,
+          "$world_name": "Enchanted",
+          "$world_info_header": "Enchanted Dragons",
+          "$world_info": "Website: https://enchanted.gg",
+          "$world_sub_info": "To be added.\n© 2024 Enchanted",
+          "$tyel_ui_compatible_header": "Partially compatible with Ty-el UI.\nProper compatibility will be added in the future"
+        }
+      },
+      {
+        "zeqa@tyel_pause_title.world_info_template": {
+          "$tyel_ui_compatible": false,
+          "$world_name": "Zeqa Network",
+          "$world_info_header": "Zeqa Network",
+          "$world_info": "Store: http://store.zeqa.net \nVote Us: http://vote.zeqa.net",
+          "$world_sub_info": "§7For better experience in Zeqa Network when using Ty-el UI,\nplease enable \"$is_zeqa\" in _global_variables.json.\n(Not 100% compatible with Ty-el UI)§r\n©Zeqa Network",
+          "variables": [
+            {
+              "requires": "$is_zeqa",
+              "$world_sub_info": "§aTy-el UI Compatibility Mode is manually enabled for this server!§r\n©Zeqa Network"
+            }
+          ]
+        }
+      },
+      {
+        "nethergames@tyel_pause_title.world_info_template": {
+          "$tyel_ui_compatible": true,
+          "$world_name": "NetherGames Network",
+          "$world_info_header": "NetherGames Network",
+          "$world_info": "Website: https://nethergames.org/ \nSupport: https://support.nethergames.org/ \nVote Us: https://portal.nethergames.org/vote",
+          "$world_sub_info": "All for one. All for fun.\n© 2025 NetherGames Network"
+        }
+      }
+    ]
+  },
+
+  "title_subtitles": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "featured_server@tyel_pause_title.title_subtitle": {
+          "ignored": "(not $is_on_3p_server)",
+          "$title_subtitle_text": "pauseScreen.thirdPartyWorld"
+        }
+      },
+      {
+        "is_in_realm@tyel_pause_title.title_subtitle": {
+          "$subtitle_visible_binding_name": "#is_realm_level",
+          "$title_subtitle_text": "pauseScreen.realmWorld"
+        }
+      }
+    ]
+  },
+
+  "file_validation:custom_titles": { "$valid": true }
+}

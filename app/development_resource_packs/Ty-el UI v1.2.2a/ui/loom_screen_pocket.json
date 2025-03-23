@@ -1,0 +1,10 @@
+{
+  "loom_panel": {
+    "modifications": [
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

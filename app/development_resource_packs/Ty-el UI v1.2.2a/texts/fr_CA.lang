@@ -1,0 +1,104 @@
+## Vous pouvez personnaliser ces 4 lignes suivantes
+## \/ \/
+deathScreen.message=Vous êtes mort(e)!	#
+deathScreen.subtitlemessage=... ;-; ...	#
+inBed.title=zzz...	#
+inBed.subtitle=Beaux rêves! _(-w-)_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### Maximum 6 characters
+icontext.all=Toutes	### Maximum 6 characters
+
+icontext.dropOne=Lâcher un	#
+icontext.dropAll=Lâcher toutes	#
+icontext.destroyOne=Détruire un	#
+icontext.destroyAll=Détruire toutes	#
+
+accessibility.chat.tts.autocomplete=Saisie automatique	#
+accessibility.chat.tts.autocompleteback=Saisie automatique retour	#
+accessibility.chat.tts.previous=Message précédent	#
+accessibility.chat.tts.next=Message suivant	#
+accessibility.pause.infoPanelToggle=Activer/désactiver panneau d'informations	#
+accessibility.play.editMode=Modifier	#
+accessibility.toggle.tts.startsidebar=Bouton de menu de la barre latérale	#
+accessibility.toggle.tts.threedotsmenu=Plus d'options	#
+
+chat.placeHolderText=Entrez votre message de discussion ou votre commande ici...	#
+commandBlockScreen.placeHolderText=Entrez votre saisie de commande ici	#
+commandBlockScreen.placeHolderOutputText=Votre sortie de commande sera ici...	#
+
+compatibility.enabled=Mode de compatibilité activée!	#
+compatibility.autoEnabledforServer=Le mode de compatibilité de Ty-el UI pour ce serveur est disponible et s'activera automatiquement une fois que vous aurez rejoint!	#
+compatibility.tyelUI=Compatible avec Ty-el UI!	#
+
+container.highlightitems.placeholdertext=Surbrillance l'objet...	#
+container.invMode=Mode Inventaire:	#
+container.invMode.autoPlace=Placer automatique	#
+container.invMode.manualPlace=Placer manuel	#
+container.invMode.normalMode=Mode normal	#
+container.invMode.autoPlaceMode=Mode déplacement rapide	#
+container.invMode.dropMode=Mode lâcher	#
+container.quickCraft=Fabriquer rapides	#
+
+controller.buttonTip.toggleSidebar=Menu de la barre latérale	#
+
+dr.toggle.purchaseLock=Verrouillage d'achat	#
+
+hudScreen.hideHudTooltip=Touchez deux fois pour cacher l'interface	#
+hudScreen.lowDurability=Faible durabilité!	#
+hudScreen.showHudTooltip=Appuyez sur cette zone pour afficher à nouveau l'interface!	#
+
+itemLore.title=Visualiseur d'informations sur l'objet §o§7(BÊTA!)	#
+itemLore.emptyMessage=<Cet emplacement est vide!>	#
+
+menu.communityStandards=Afficher les normes de la communauté	#
+menu.feedback=Envoyer des commentaires	#
+menu.multiplayerHelp=Aide multijoueur	#
+menu.quit=Quitter le jeu	#
+
+networkWorld.view_server_store=Afficher le magasin du serveur	#
+
+options.quickSettingsTitle=Paramètres rapides	#
+options.thirdperson.firstperson_short=Première	#
+options.thirdperson.thirdpersonback_short=Troisième (arrière)	#
+options.thirdperson.thirdpersonfront_short=Troisième (avant)	#
+
+pauseScreen.thirdPartyWorld=Serveur en vedette	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Onglet supérieur	#
+playscreen.navigateDown=Onglet inférieur	#
+playscreen.joinRecentExternalServer=Rejoindre le serveur externe récent	#
+playscreen.recentlyPlayed=Joué récemment	#
+playscreen.playButton=JOUER!	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cATTENTION:§r En raison de mauvaises performances et de limitations de code, nous ne pouvons indexer que jusqu'à §l§e50§r mondes les plus récents pour pouvoir effectuer une recherche, désolé pour le désagrément.	#
+playscreen.worldsearch.placeholdertext=Rechercher des mondes... [Sensible aux majuscules et minuscules!]	#
+playscreen.worldsearch.resultmessage_before=Résultats pour: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.warning.forceautoplace.title=Forcer le déplacement rapide sur avertissement	#
+playscreen.warning.forceautoplace.body=Utilisez la fonction Forcer le déplacement rapide sur les serveurs à vos risques et périls, n'en abusez pas trop dans les serveurs (surtout serveurs présentés)!	#
+
+resourcePack.packSearchPlaceHolderText.global=Rechercher des ressources globales...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Rechercher des packs de ressources...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Rechercher des packs de comportement...	#
+resourcePack.showNotDownloaded=Afficher non téléchargé	#
+resourcePack.tyelUIWarningMessage=Si vous avez déjà activé Ty-el UI dans les Ressources globales, vous ne devriez pas avoir besoin de réactiver Ty-el UI dans les Packs de ressources du monde, sauf que vous avez activé "Imposer les packs de ressources pour se connecter" dans les paramètres des Packs de ressources du monde, pour éviter les bugs de contrôles en double et les imprévus. les erreurs.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=Une erreur s'est produite lors de la tentative de chargement de /ui/_global_variables.json à partir de Ty-el UI. Veuillez vérifier les syntaxes des fichiers et réessayer.	#
+
+screenshot.saveLocation=Emplacement du capture d'écran:	#
+screenshot.showSaveLocation=Afficher les emplacement du capture d'écran	#
+
+serverform.searchPlaceHolderText=Filtrer la recherche... [Sensible aux majus./minus.]	#
+serverform.searchDisclaimer.tooltip=Assurez-vous que vous ne voulez pas essayer de rechercher des contenus qui sont utilisés trop souvent dans cet écran de formulaire, par exemple: §o"Select to equip", "Last Seen",...	#
+
+store.cost=Coût:	#
+
+tyelAbout.about=À propos de Ty-el UI	#
+tyelAbout.customAvailable=Écran personnalisé disponible!	#
+tyelAbout.minGameVerRequired=Version minimale de Minecraft requise:	#
+tyelAbout.openAboutTyelUITooltip.openText=Appuyez sur moi pour ouvrir À propos de Ty-el UI (actuellement l'écran personnalisé)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Appuyez sur moi pour revenir à l'écran personnalisé (actuellement l'écran À propos de Ty-el UI)	#
+tyelAbout.translationHelp=J'ai besoin de votre aide! Si vous souhaitez traduire le pack dans votre langue, contactez-moi sur Twitter. (C'est Français (France) traductions ;-;)	#

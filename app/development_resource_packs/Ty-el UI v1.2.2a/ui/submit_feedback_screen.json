@@ -1,0 +1,42 @@
+{
+  "write_feedback_panel": {
+    "size": [ "100% - 8px", "100%c" ],
+    "modifications": [
+      {
+        "control_name": "feedback_textbox",
+        "operation": "replace",
+        "value": [
+          {
+            "feedback_textbox@common.scrollable_text_edit_box": {
+              "size": [ "100%", 60 ],
+              "$text_box_name": "#write_feedback_textbox",
+              "$place_holder_text": "gui.submitFeedback.placeHolder.text",
+              "max_length": "$feedback_textbox_max_length",
+              "$text_edit_box_label_anchor_point": "top_left"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "scroll_panel": {
+    "size": [ "100%", "100%c" ]
+  },
+
+  "submit_feedback_screen": {
+    "force_render_below": true,
+    "$is_full_screen_layout": true,
+    "$screen_animations": [
+      "@tyel_oreui_design__anims.oreui_dialog_entrance_animation_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_entrance_animation_pop_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_exit_animation_push_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_exit_animation_pop_fade"
+    ]
+  },
+
+  "submit_feedback_content/submit_feedback_main_panel": {
+    "$oreui_dialog_style__animate_dialog": true,
+    "size": [ 270, 200 ]
+  }
+}

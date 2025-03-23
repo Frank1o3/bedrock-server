@@ -1,0 +1,41 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "smithing_table_panel/root_panel": {
+    "$container_item_mode_supported": true,
+
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_toolbox@tyel_container_common.container_toolbox": {}
+          },
+          {
+            "container_item_mode_switch_panel@tyel_container_item_mode.container_item_mode_switch_panel": {
+            }
+          },
+          {
+            "container_item_type_switch@tyel_container_item_mode.container_item_type_switch": {
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "smithing_table_panel": {
+    "modifications": [
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "smithing_table_screen": {
+    "$screen_helpers_content": "common.common_inventory_screen_helpers"
+  }
+}

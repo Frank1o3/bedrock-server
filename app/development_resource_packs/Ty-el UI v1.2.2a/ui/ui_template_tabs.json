@@ -1,0 +1,231 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "formatted_tab_panel@common_tabs.tab_panel": {
+    "offset": "$tab_content_offset",
+    "size": "$tab_size",
+    "anchor_from": "$tab_anchor",
+    "anchor_to": "$tab_anchor",
+    "$tab_content_offset|default": [ 0, 0 ],
+    "$tab_size|default": [ "100%", "100%" ],
+    "$tab_anchor|default": "center"
+  },
+
+  "tab_toggle_state_template": {
+    "type": "image",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "texture": "$tab_texture",
+    "$tab_texture|default": "",
+    "$toggle_control_template|default": "common.empty_panel",
+    "$tab_texture_alpha|default": 1,
+    "alpha": "$tab_texture_alpha",
+    "controls": [
+      {
+        "toggle_control@$tab_content": {
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "tab_toggle_on@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$checked_default_image",
+    "$tab_content": "$tab_checked_content"
+  },
+
+  "tab_toggle_off@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$unchecked_default_image",
+    "$tab_content": "$tab_unchecked_content"
+  },
+
+  "tab_toggle_on_hover@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$checked_hover_image",
+    "$tab_content": "$tab_checked_hover_content"
+  },
+
+  "tab_toggle_off_hover@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$unchecked_hover_image",
+    "$tab_content": "$tab_unchecked_hover_content"
+  },
+
+  "tab_toggle_on_locked@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$checked_locked_image",
+    "$tab_content": "$tab_checked_content"
+  },
+
+  "tab_toggle_off_locked@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$unchecked_locked_image",
+    "$tab_content": "$tab_unchecked_content"
+  },
+
+  "tab_toggle_on_locked_hover@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$checked_locked_hover_image",
+    "$tab_content": "$tab_checked_hover_content"
+  },
+
+  "tab_toggle_off_locked_hover@common_tabs.tab_toggle_state_template": {
+    "$tab_texture": "$unchecked_locked_hover_image",
+    "$tab_content": "$tab_unchecked_hover_content"
+  },
+
+  "tab_toggle_control_content_template@common.toggle": {
+    "$tab_checked_content|default": "common.empty_panel",
+    "$tab_unchecked_content|default": "common.empty_panel",
+    "$tab_checked_hover_content|default": "common.empty_panel",
+    "$tab_unchecked_hover_content|default": "common.empty_panel",
+
+    "$unchecked_control": "common_tabs.tab_toggle_off",
+    "$checked_control": "common_tabs.tab_toggle_on",
+    "$unchecked_hover_control": "common_tabs.tab_toggle_off_hover",
+    "$checked_hover_control": "common_tabs.tab_toggle_on_hover",
+    "$unchecked_locked_control": "common_tabs.tab_toggle_off_locked",
+    "$unchecked_locked_hover_control": "common_tabs.tab_toggle_off_locked_hover",
+    "$checked_locked_control": "common_tabs.tab_toggle_on_locked",
+    "$checked_locked_hover_control": "common_tabs.tab_toggle_on_locked_hover"
+  },
+
+  "left_tab_toggle_control_content@common_tabs.tab_toggle_control_content_template": {
+    "$is_bottom_most_tab|default": false,
+    "$is_top_most_tab|default": false,
+
+    "variables": [
+      {
+        "requires": "($is_bottom_most_tab and not $is_top_most_tab)",
+        "$unchecked_default_image": "textures/ui/TabLeftBackBottomMost",
+        "$unchecked_hover_image": "textures/ui/TabLeftBackBottomMostHover",
+        "$unchecked_locked_image": "textures/ui/TabLeftBackBottomMost",
+        "$unchecked_locked_hover_image": "textures/ui/TabLeftBackBottomMost",
+
+        "$checked_default_image": "textures/ui/TabLeftFrontBottomMost",
+        "$checked_hover_image": "textures/ui/TabLeftFrontBottomMostHover",
+        "$checked_locked_image": "textures/ui/TabLeftFrontBottomMost",
+        "$checked_locked_hover_image": "textures/ui/TabLeftFrontBottomMost"
+      },
+      {
+        "requires": "($is_top_most_tab and not $is_bottom_most_tab)",
+        "$unchecked_default_image": "textures/ui/TabLeftBackTopMost",
+        "$unchecked_hover_image": "textures/ui/TabLeftBackTopMostHover",
+        "$unchecked_locked_image": "textures/ui/TabLeftBackTopMost",
+        "$unchecked_locked_hover_image": "textures/ui/TabLeftBackTopMost",
+
+        "$checked_default_image": "textures/ui/TabLeftFrontTopMost",
+        "$checked_hover_image": "textures/ui/TabLeftFrontTopMostHover",
+        "$checked_locked_image": "textures/ui/TabLeftFrontTopMost",
+        "$checked_locked_hover_image": "textures/ui/TabLeftFrontTopMost"
+      }
+    ],
+
+    "$unchecked_default_image|default": "textures/ui/TabLeftBack",
+    "$unchecked_hover_image|default": "textures/ui/TabLeftBackHover",
+    "$unchecked_locked_image|default": "textures/ui/TabLeftBack",
+    "$unchecked_locked_hover_image|default": "textures/ui/TabLeftBack",
+
+    "$checked_default_image|default": "textures/ui/TabLeftFront",
+    "$checked_hover_image|default": "textures/ui/TabLeftFrontHover",
+    "$checked_locked_image|default": "textures/ui/TabLeftFront",
+    "$checked_locked_hover_image|default": "textures/ui/TabLeftFront"
+  },
+
+  "right_tab_toggle_control_content@common_tabs.tab_toggle_control_content_template": {
+    "$is_bottom_most_tab|default": false,
+    "$is_top_most_tab|default": false,
+
+    "variables": [
+      {
+        "requires": "($is_bottom_most_tab and not $is_top_most_tab)",
+        "$unchecked_default_image": "textures/ui/TabRightBackBottomMost",
+        "$unchecked_hover_image": "textures/ui/TabRightBackBottomMostHover",
+        "$unchecked_locked_image": "textures/ui/TabRightBackBottomMost",
+        "$unchecked_locked_hover_image": "textures/ui/TabRightBackBottomMost",
+
+        "$checked_default_image": "textures/ui/TabRightFrontBottomMost",
+        "$checked_hover_image": "textures/ui/TabRightFrontBottomMostHover",
+        "$checked_locked_image": "textures/ui/TabRightFrontBottomMost",
+        "$checked_locked_hover_image": "textures/ui/TabRightFrontBottomMost"
+      },
+      {
+        "requires": "($is_top_most_tab and not $is_bottom_most_tab)",
+        "$unchecked_default_image": "textures/ui/TabRightBackTopMost",
+        "$unchecked_hover_image": "textures/ui/TabRightBackTopMostHover",
+        "$unchecked_locked_image": "textures/ui/TabRightBackTopMost",
+        "$unchecked_locked_hover_image": "textures/ui/TabRightBackTopMost",
+
+        "$checked_default_image": "textures/ui/TabRightFrontTopMost",
+        "$checked_hover_image": "textures/ui/TabRightFrontTopMostHover",
+        "$checked_locked_image": "textures/ui/TabRightFrontTopMost",
+        "$checked_locked_hover_image": "textures/ui/TabRightFrontTopMost"
+      }
+    ],
+
+    "$unchecked_default_image|default": "textures/ui/TabRightBack",
+    "$unchecked_hover_image|default": "textures/ui/TabRightBackHover",
+    "$unchecked_locked_image|default": "textures/ui/TabRightBack",
+    "$unchecked_locked_hover_image|default": "textures/ui/TabRightBack",
+
+    "$checked_default_image|default": "textures/ui/TabRightFront",
+    "$checked_hover_image|default": "textures/ui/TabRightFrontHover",
+    "$checked_locked_image|default": "textures/ui/TabRightFront",
+    "$checked_locked_hover_image|default": "textures/ui/TabRightFront"
+  },
+
+  "top_tab_toggle_control_content@common_tabs.tab_toggle_control_content_template": {
+    "$is_left_most_tab|default": false,
+    "$is_right_most_tab|default": false,
+
+    "variables": [
+      {
+        "requires": "($is_left_most_tab and not $is_right_most_tab)",
+        "$unchecked_default_image": "textures/ui/TabTopBackLeftMost",
+        "$unchecked_hover_image": "textures/ui/TabTopBackLeftMostHover",
+        "$unchecked_locked_image": "textures/ui/TabTopBackLeftMost",
+        "$unchecked_locked_hover_image": "textures/ui/TabTopBackLeftMost",
+
+        "$checked_default_image": "textures/ui/TabTopFrontLeftMost",
+        "$checked_hover_image": "textures/ui/TabTopFrontLeftMostHover",
+        "$checked_locked_image": "textures/ui/TabTopFrontLeftMost",
+        "$checked_locked_hover_image": "textures/ui/TabTopFrontLeftMost"
+      },
+      {
+        "requires": "($is_right_most_tab and not $is_left_most_tab)",
+        "$unchecked_default_image": "textures/ui/TabTopBackRightMost",
+        "$unchecked_hover_image": "textures/ui/TabTopBackRightMostHover",
+        "$unchecked_locked_image": "textures/ui/TabTopBackRightMost",
+        "$unchecked_locked_hover_image": "textures/ui/TabTopBackRightMost",
+
+        "$checked_default_image": "textures/ui/TabTopFrontRightMost",
+        "$checked_hover_image": "textures/ui/TabTopFrontRightMostHover",
+        "$checked_locked_image": "textures/ui/TabTopFrontRightMost",
+        "$checked_locked_hover_image": "textures/ui/TabTopFrontRightMost"
+      }
+    ],
+
+    "$unchecked_default_image": "textures/ui/TabTopBack",
+    "$unchecked_hover_image": "textures/ui/TabTopBackHover",
+    "$unchecked_locked_image": "textures/ui/TabTopBack",
+    "$unchecked_locked_hover_image": "textures/ui/TabTopBack",
+
+    "$checked_default_image|default": "textures/ui/TabTopFront",
+    "$checked_hover_image|default": "textures/ui/TabTopFrontHover",
+    "$checked_locked_image|default": "textures/ui/TabTopFront",
+    "$checked_locked_hover_image|default": "textures/ui/TabTopFront"
+  },
+
+  "pocket_tab_help_button": {
+    "ignored": "$hide_help_ingame_button"
+  },
+
+  "pocket_tab_close_and_help_button": {
+    "size": [ "100%", "100%c + 12px" ]
+  },
+
+  "pocket_tab_close_and_help_button/help_button": {
+    "ignored": "$hide_help_ingame_button"
+  },
+
+  "tab_close_and_help_button/help_button": {
+    "visible": "(not $hide_help_ingame_button)"
+  }
+}

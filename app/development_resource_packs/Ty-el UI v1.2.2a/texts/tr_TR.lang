@@ -1,0 +1,936 @@
+## Aşağıdaki 4 satırı özelleştirebilirsiniz
+## \/ \/
+inBed.title=zzz...	#
+inBed.subtitle=Tatlı Rüyalar! _(-w-)_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1 ## Maksimum 6 Karakter
+icontext.all=Hepsi	## Maksimum 6 Karakter
+icontext.hovertext.multiplyone=Ürün Miktarı: Bir Ürün	#
+icontext.hovertext.all=Ürün Miktarı: Tek Slot	#
+
+icontext.dropOne=Bir Tane Bırak	#
+icontext.dropAll=Hepsini Bırak	#
+icontext.destroyOne=Bir Tane İmha Et	#
+icontext.destroyAll=Hepsini İmha Et	#
+
+accessibility.chat.tts.autocomplete=Otomatik Tamamlama	#
+accessibility.chat.tts.autocompleteback=Otomatik Tamamlama Geri	#
+accessibility.chat.tts.previous=Önceki Mesaj	#
+accessibility.chat.tts.next=Sonraki Mesaj	#
+accessibility.chat.tts.textboxSearchTitle=Search Messages Text Box	#
+accessibility.chat.tts.visibilityModeToggle=Sohbet Görünürlük Modu Değiştirme #
+## Aşağıda, tts diğer her şeyi okumadan önce küçük bir bekleme süresi için her mod geçişinden önce bir virgül eklenir.
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, Geçerli Mod: Paneli Otomatik Tamamla	#
+accessibility.chat.tts.visibilityModeToggle.chat=, Geçerli Mod: Sohbet Paneli	#
+
+accessibility.pause.infoPanelToggle=Bilgi Paneli Geçişi	#
+accessibility.play.editMode=Düzenle	#
+accessibility.play.quickJoinButton=Quick Join Server Button	#
+accessibility.start.hideStartScreen=Hide Start Screen	#
+accessibility.start.showStartScreen=Show Start Screen	#
+## Format to show in game: Press <B> or <BACK> to show Start Screen again!
+accessibility.start.toggleStartScreenTooltip.prefix=Press	#
+accessibility.start.toggleStartScreenTooltip.infix=or	#
+accessibility.start.toggleStartScreenTooltip.postfix=to show Start Screen again!	#
+accessibility.toggle.tts.closethreedotsmenu=Close More Options	#
+accessibility.toggle.tts.searchBar=Toggle Search Bar	#
+accessibility.toggle.tts.startsidebar=Kenar Çubuğu Menü Düğmesi	#
+accessibility.toggle.tts.threedotsmenu=Seçenekler	#
+
+attribute.name.minecraft:damage_taken=Damage Taken	#
+attribute.name.minecraft:jump_strength=Jump Strength	#
+attribute.name.towardsUndead=Towards Undead	#
+
+brewingGuide.assistantPanel.button=Find a recipe	#
+brewingGuide.assistantPanel.title=Find a recipe...	#
+brewingGuide.assistantPanel.closeTitle=Close & Show me the recipe!	#
+brewingGuide.explanation=Explanations:	#
+brewingGuide.explanation.baseDamage=BaseDamage: current player's damage, damages from weapons and tools are included. Default: 1	#
+brewingGuide.fuelRemainingPrefix=Brews Remaining:	#
+brewingGuide.mundanePotion.name=Mundane Potion Ingredients: 	#
+brewingGuide.mundanePotion.anyofIngredients=Any of the following items:	#
+brewingGuide.modifier.whenAddedAsModifier=When added as a modifier:	#
+brewingGuide.modifier.whenAddedToWaterBottle=When added to water bottle:	#
+brewingGuide.modifierDescription.extend=[Extension] Extends the duration of a potion.	#
+brewingGuide.modifierDescription.enhance=[Enhancement] Increases the level of a potion.	#
+brewingGuide.modifierDescription.corrupt=[Corruption] Changes the effect of a potion.	#
+brewingGuide.popup.optimizingEffectIcons=Optimizing Mob Effect Icons...	#
+brewingGuide.potionEffect.removePoison=Cures Poison	#
+brewingGuide.potionEffect.removeWeakness=Cures Weakness	#
+brewingGuide.potionEffect.removeBlindness=Cures Blindness	#
+brewingGuide.potionEffect.removeNausea=Cures Nausea	#
+brewingGuide.tab.basePotions=Base Potions	#
+brewingGuide.tab.splashPotions=Splash Potions	#
+brewingGuide.tab.lingeringPotions=Lingering Potions	#
+brewingGuide.tab.EduChemistryPotions=Chemical Medicines	#
+brewingGuide.tab.legend=Base & Modifiers	#
+brewingGuide.toggle.uselessRecipesVisibility=Toggle Useless Recipes' Visibility	#
+brewingGuide.toggle.fallbackItemRendererMode=Fallback Item Renderer Mode	#
+brewingGuide.uselessPotions.avoidTip=§o§dAvoid any of these ingredients specifically in this step because Mundane Potions are useless and can't be brewed into any other potions!	#
+
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabel=Show blacklisted message	#
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabelAlt=Show message and apply caret mode	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabel=Hide blacklisted message	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabelAlt=Disable caret mode to hide message	#
+chat.blacklistedMessageNotifier.label=§o--- Message hidden ---	#
+chat.chatToolbox.cannotEnter.tooltip=Can't enter Chat Toolbox Mode while typing commands or in autocomplete modes	#
+chat.navigationNotification.search=Searching...	#
+chat.navigationNotification.caretMode=Chat Caret Mode is enabled...	#
+chat.placeHolderText=Sohbet mesajınızı veya komutunuzu buraya girin...	#
+chat.searchMessages.placeHolderText=Search messages...	#
+
+commandBlockScreen.placeHolderText=Komut girişinizi buraya girin	#
+commandBlockScreen.placeHolderOutputText=Komut çıktınız burada olacak...	#
+
+compatibility.enabled=Uyumluluk Modu Etkin!	#
+compatibility.autoEnabledforServer=Ty-el UI'nin bu sunucu için Uyumluluk Modu mevcuttur ve katıldığınızda otomatik olarak etkinleştirilecektir!	#
+compatibility.enabledForAdditionalServers.disclaimer=Bu rozeti herhangi bir harici sunucu geçişinde görürseniz, bu sunucuların Ty-el UI için Uyumluluk Moduna sahip olduğu anlamına gelir, daha fazla bilgi için oyundaki duraklatma ekranındaki sunucu bilgilerini kontrol edin.	#
+compatibility.tyelUI=Ty-el UI ile uyumlu!	#
+
+container.craftAll.itemsRemainHeader=Items Remain after Craft All:	#
+## Format to show in game: Will craft <numbers> time(s) ==> x<total_items>
+container.craftAll.stepsToCraftPrefix=Will craft	#
+container.craftAll.stepsToCraftPostfix=time(s)	#
+
+container.destroyItemsTooltip.line1=Double Press on items to Destroy Selected Items.	#
+container.destroyItemsTooltip.line1_touch=Double Tap on items to Destroy Selected Items.	#
+container.destroyItemsTooltip.line2=§l§cYok edilecek öğeleri seçerken dikkatli olun!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=Hayatta Kalma'da Öğeleri Yok Et modu kullanılamaz!	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aBu mod yalnızca Yaratıcı oyun modunda kullanılabilir.§r	#
+container.fastCraft=Hızlı Craft	#
+container.fastCraft.warningHoverText=Hızlı Yapım, §cÇok Tehlikeli!§r Hızlı yapmak için tarif kitabındaki herhangi bir öğe yuvasına basın! Kazara yanlış bir şey yaptıysanız, değerli eşyalarınızı sonsuza kadar kaybedebilirsiniz!	#
+container.highlightItems=Öğeleri Vurgula (Büyük/Küçük Harfe Duyarlı!)	#
+container.highlightitems.placeholdertext=Öğeleri Vurgula...	#
+container.itemAmountHoverText.one=Ürün Miktarı: Bir Ürün	#
+container.itemAmountHoverText.max=Ürün Miktarı: Bir Yığın	#
+container.itemAmountHoverText.maxFixed=Öğe Miktarı: Bir Yığın (Sabit)	#
+container.invMode=Envanter Modu:	#
+container.invMode.autoPlace=Otomatik Yerleştirme	#
+container.invMode.manualPlace=Manuel Yerleştirme	#
+container.invMode.normalMode=Normal Modu	#
+container.invMode.autoPlaceMode=Hızlı Hareket Modu	#
+container.invMode.dropMode=Bırak Modu	#
+container.invMode.autoDestroyMode=Öğeleri Yok Etme Modu	#
+container.quickCraft=Hızlı Craftlama	#
+container.repair.durabilityGainedTooltip.anvil=Durability amounts gained compare to the first input slot	#
+container.repair.durabilityGainedTooltip.grindstone=Durability amounts gained compare to the item with least durability	#
+container.smithing_table.previewAngle=Preview Angle:	#
+
+container.toolbox=Container Toolbox	#
+
+container.toolbox.slotBulkQuickMove.toInventory=Quick Move to Inventory	#
+container.toolbox.slotBulkQuickMove.toContainer=Quick Move to Container	#
+
+container.toolbox.slotBulkClear.compact.line1=Double  to Clear Hotbar	#
+container.toolbox.slotBulkClear.compact.line2=§cHold SHIFT + Double  to Clear Inventory	#
+container.toolbox.slotBulkClear.compact.line1.controller=Double Press to Clear Hotbar	#
+container.toolbox.slotBulkClear.compact.line2.controllerPrefix=§cDouble Press	#
+container.toolbox.slotBulkClear.compact.line2.controller=§cto Clear Inventory	#
+container.toolbox.slotBulkClear.compact.tts=Double Click to clear hotbar. Hold Shift and Double Click to clear inventory	#
+container.toolbox.slotBulkClear.compact.tts.controller=Double press to clear hotbar. Double press the "quick move" key to clear inventory	#
+container.toolbox.slotBulkClear.hotbar=§cDouble Tap to Clear Hotbar	#
+container.toolbox.slotBulkClear.inventory=§cDouble Tap to Clear Inventory	#
+
+container.toolbox.slotDestroy.compact.line1= to Destroy All	#
+container.toolbox.slotDestroy.compact.line2= to Destroy One	#
+container.toolbox.slotDestroy.compact.line1.controller=Press to Destroy All	#
+container.toolbox.slotDestroy.compact.line2.controller=to Destroy One	#
+container.toolbox.slotDestroy.compact.tts=Click to destroy all selected items. Right click to destroy one selected item	#
+container.toolbox.slotDestroy.compact.tts.controller=Press to destroy all selected items. Press "Take Half/Place One" to destroy one selected item	#
+
+container.toolbox.slotDrop.compact.line1= to Drop All	#
+container.toolbox.slotDrop.compact.line2= to Drop One	#
+container.toolbox.slotDrop.compact.line1.controller=Press to Drop All	#
+container.toolbox.slotDrop.compact.line2.controller=to Drop One	#
+container.toolbox.slotDrop.compact.tts=Click to drop all selected items. Right click to drop one selected item	#
+container.toolbox.slotDrop.compact.tts.controller=Press to drop all selected items. Press "Take Half/Place One" to drop one selected item	#
+
+contentlog.keystrokeProtip=Protip: If you have Content Log GUI toggles enabled, you can use Ctrl + H to easily open Content Log GUI, anywhere! (requires keyboard)	#
+contentlog.msgSize.header=Indexed messages count:	#
+contentlog.msgSize.maxFlag=[MAX]	#
+contentlog.msgSize.maxFlag.tooltip=Maximum is 100, but you can get full content logs in saved log files	#
+contentlog.filter.errors=Errors	#
+contentlog.filter.title=Show All:	#
+contentlog.filter.warnings=Warnings	#
+
+controller.buttonTip.doublePress=[Double Press]	#
+controller.buttonTip.highlightItems=Highlight Items	#
+controller.buttonTip.playRecentWorld=Play Recently Saved World	#
+controller.buttonTip.playSelectedServer=Play Selected Server	#
+controller.buttonTip.toggleSidebar=Kenar Çubuğu Menüsü	#
+controller.buttonTip.toggleScreen=Show/Hide Screen	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=Dünyanın varsayılan oyun modu ile senkronize edilmiştir.	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=Etrafta uçun ve hiçbir şekilde etkileşime girmeden dünyayı gözlemleyin.	#
+createWorldScreen.levelSeed.copySeedTooltip=Seviye tohum metin kutusuna basın, tüm tohum metnini seçin ve klavyenizde Kopyala'ya basın.	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=Seviye tohumu metin kutusuna tıklayın, seviye tohumunu kopyalamak için klavyenizde Ctrl + A ve ardından Ctrl + C tuşlarına basın.	#
+createWorldScreen.serverSimDistanceDescription.header=Oyun, belirli bir blok yarıçapı içindeki değişiklikleri yükler ve uygular.	#
+createWorldScreen.serverSimDistanceDescription.footer=Blok Yarıçapı:	#
+createWorldScreen.worldNameDescription.create=Dünyanızı adlandırabileceğiniz yer burasıdır.	#
+createWorldScreen.worldNameDescription.edit=Burası, dünyanızın adını düzenleyebileceğiniz yerdir.	#
+createWorldScreen.worldLocationSectionName=World Folder Location:	#
+createWorldScreen.worldLocationSection.unknownLabel=(Unknown)	#
+
+
+
+
+
+dr.toggle.purchaseLock=Satın Alma Kilidi	#
+
+generator.infinite.desc=Sonsuz bir dünya sonsuza kadar devam eder. Çeşitli manzaralar, biyomları kullanarak oluşturur.	#
+generator.old.desc=Boyut ve yükseklikte sonlu bir dünya, 256x256x256. Eski dünya nesillerini kullanır.	#
+
+hudScreen.hideHudTooltip=HUD'u Gizlemek İçin Çift Tıklayın	#
+hudScreen.inventoryFull.warning=§lFull!	#
+hudScreen.levelHeaderAbbreviated=Lvl	#
+hudScreen.lowDurability=Düşük Dayanıklılık!	#
+hudScreen.scoreboardList.playerCount.header=Showing	#
+hudScreen.scoreboardList.playerCount.player=player	#
+hudScreen.scoreboardList.playerCount.players=players	#
+hudScreen.scoreboardList.playerTag.self=[You]	#
+hudScreen.scoreboardList.unscoredTitle=Unscored Players	#
+hudScreen.showHudTooltip=HUD'u tekrar göstermek için bu alana dokunun!	#
+hudScreen.toggleables.hiveXpCalc.show=Show HIVE XP Calculator Menu	#
+hudScreen.toggleables.hotbar.hide=Hide Hotbar	#
+hudScreen.toggleables.hotbar.show=Show Hotbar	#
+hudScreen.toggleables.scoreboardList.hide=Hide Scoreboard List	#
+hudScreen.toggleables.scoreboardList.show=Show Scoreboard List	#
+hudScreen.toggleables.scoreboardSidebar.hide=Hide Scoreboard Sidebar	#
+hudScreen.toggleables.scoreboardSidebar.show=Show Scoreboard Sidebar	#
+hudScreen.toggleables.tooltip=Hold TAB to peek Player List. Access HUD toggles by using TAB + <Number Key>.	#
+
+itemLore.title=Öğe Bilgi Görüntüleyici §o§7(BETA!)	#
+itemLore.emptyMessage=<Bu yuva boş!>	#
+
+key.peekListAndHUDTogglesForTyelUI=Peek Scoreboard List and HUD Menu for Ty-el UI	#
+key.showContentLogGUI=Show Content Log GUI	#
+key.showContentLogGUI.disabledTag=(disabled)	#
+key.toggleGraphicsMode=Switch Graphics Modes (if available)	#
+key.toggleHUD=Hide/Show HUD	#
+key.togglePaperDoll=Hide/Show Paper Doll	#
+
+## Formatting for map.chunk while ingame: [Chunk: <xi>, <yi>, <zi> in <x>, <y>, <z>]
+map.chunk=Chunk	#
+map.chunk.in=in	#
+map.chunkBorder=Chunk Border	#
+map.chunkBorder.none=None	#
+
+menu.communityStandards=Topluluk Standartlarını Görüntüle	#
+menu.feedback=Geri Bildirim Gönder	#
+menu.multiplayerHelp=Çok Oyunculu Yardım	#
+menu.quit=Oyundan Çık	#
+
+mobeffect.title.noEffects=No Active Effects	#
+mobeffect.title.activeEffects=Active Effects:	#
+
+modal.defaultTitle=Are you sure?	#
+
+networkWorld.view_server_store=Sunucu Mağazasını Görüntüle	#
+
+options.hardcoded_keybinds_section=Hardcoded Keys (built-in and can't be modified)	#
+options.quickSettingsTitle=Hızlı Ayarlar	#
+options.thirdperson.firstperson_short=Birinci Şahış	#
+options.thirdperson.thirdpersonback_short=Üçüncü Şahış Arkadan	#
+options.thirdperson.thirdpersonfront_short=Üçüncü Şahıs Önden	#
+options.toggleOptionDescriptions=Show/Hide Option Descriptions	#
+
+options.enableAutoPlatformTextToSpeech.description=Enables Text To Speech with System Settings.	#
+options.enableUITextToSpeech.description=Enables Text To Speech on background menus.	#
+options.enableChatTextToSpeech.description=Enables Text To Speech on chat messages and commands.	#
+options.enableOpenChatMessage.description=Hides/Shows the Open Chat notifications.	#
+options.textBackgroundOpacity.description=Changes text background opacity of titles and subtitles. Set to 0% will render backgrounds completely invisible.	#
+options.gamma.description=Adjusts the game's brightness.	#
+options.thirdperson.description=Toggles first/third person view. Third person view allows the player to view the nearby environment from an "outside" perspective.	#
+options.fullscreen.description=Puts Minecraft into Fullscreen mode; keeping it off keeps it in a window.	#
+options.hidehand.description=Shows or hides the player hand in first person view.	#
+options.hidepaperdoll.description=Toggles the side-view of the player displayed in the top-left corner of the screen.	#
+options.hidehud.description=Shows/Hides the HUD.	#
+options.screenAnimations.description=Toggles the animations when switching between UI or menus.	#
+options.interfaceOpacity.description=Toggles the opacity of the HUD. Choosing item on hotbar or interacting with UI will temporarily revert the opacity back to 100% . This option won't affect Paper Doll opacity.	#
+options.fov.description=Changes the field of view. Controls how much of the game world is visible on the screen.	#
+options.splitscreen.description=Toggles between the horizontal and vertical orientation of the splitscreen.	#
+options.showautosaveicon.description=Hides/Shows the autosave indicator icon. The indicator icon shows on HUD when the game is attempting to automatically save your world to device storage.	#
+options.classic_box_selection.description=Toggles the outline selection of the block. Disabling this will instead use highlight selection of the block.	#
+options.ingamePlayerNames.description=Toggles the name tag text visibility that can be seen on top of players' head, mobs and NPCs.	#
+options.splitscreenIngamePlayerNames.description=Toggles the name tag text visibility that can be seen on top of players' head, mobs and NPCs, while in split screen.	#
+options.viewBobbing.description=Toggles the "bobbing" motion of the camera as the player is walking.	#
+options.screenShake.description=Toggles screen shake when maps use the "/camerashake" commands. Disabling this option prevents the game from screen shaking when the commands are executed.	#
+options.transparentleaves.description=Toggles transparent leaves.	#
+options.bubbleparticles.description=Toggles the fancy water bubble columns graphics. This may lower performance on some devices.	#
+options.renderclouds.description=Toggles the clouds graphics. Disabling this option causes no clouds to be rendered.	#
+options.fancyskies.description=Toggles the sun, moon, clouds, stars and sky color. Disabling this option will not render them in the world and instead only sky color is rendered.	#
+options.smooth_lighting.description=Lighting is smoothed across the blocks (ambient occlusion) or each block has a distinctive light level.	#
+options.graphics.description=Fancy graphics enable higher quality graphic effects, including transparent leaves, transparent clouds.	#
+options.fov.toggle.description=Toggles whether gameplay affects FOV changes, when sprinting, when having slowness or speed effect, etc.	#
+options.guiScale.description=Controls the Graphical User Interface scale. This also controls the HUD size.	#
+options.gui.accessibility.scaling.description=Enables an extra large version of the menu interface as an additional accessibility option.	#
+options.uiprofile.description=Changes the game UI style between classic (Desktop UI) and Pocket UI. Classic UI has Java-like UI style, while Pocket UI has bigger item slots, redesigned screens, more user-friendly to mobile devices.	#
+options.raytracing.description=Toggles the ray tracing on or off.	#
+options.upscaling.description=Boosts frame rates on GeForce RTX graphics cards with NVIDIA DLSS 2.0.	#
+options.raytracing.renderDistance.description=Controls the chunk render distance of ray tracing if "Ray Tracing" option is on.	#
+options.renderDistance.description=Controls how many chunks of the world are visible at once. This also affects the render distance of foliage such as transparent leaves, crops and animated textures.	#
+options.maxFramerate.description=Limits the framerates per second. Limiting the framerate to a multiple of the player monitor's refresh rate can save processing power.	#
+options.msaa.description=Toggles the amount of anti-aliasing, which smoothes the image and removes jagged edges.	#
+options.texelAA.description=Toggles texture pixel anti-aliasing, which smoothes the pixels of blocks.	#
+options.vsync.description=Limits the framerates per second to the screen's refresh rate. Set to No Vertical Sync or Adaptive will increase FPS higher than player monitor's refresh rate but negatively affect processing power.	#
+
+pauseScreen.thirdPartyWorld=Öne Çıkan Sunucu	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Üst Sekme	#
+playscreen.navigateDown=Alt Sekme	#
+playscreen.joinRecentExternalServer=Son Harici Sunucuya Katılın	#
+playscreen.lastPlayed=Last saved:	#
+playscreen.loading=Loading...	#
+playscreen.motd=MOTD	#
+playscreen.pinging=Pinging...	#
+playscreen.playButton=OYNA!	#
+playscreen.projectsearch.placeholdertext=Proje ara... [Büyük/Küçük Harfe Duyarlı]	#
+playscreen.recentlyPlayed=Son Oynanan	#
+playscreen.showWorldFolderName=Show World Folder Name (Experimental)	#
+playscreen.worldFolderName.undefined=(Undefined ;-;)	#
+playscreen.worldFolderName.unknown=(Unknown Folder)	#
+playscreen.worldsFound=world(s) found	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cUYARI:§r Kötü performans ve kod sınırlamaları nedeniyle, arama yapabilmek için yalnızca en son §l§e50§r dünyayı dizine ekleyebiliriz, rahatsızlıktan dolayı özür dileriz.	#
+playscreen.worldsearch.placeholdertext=Dünyaları ara... [Harfe duyarlı!]	#
+playscreen.worldsearch.resultmessage_before=Sonuçlar: 	### Yerelleştirmeniz izin vermiyorsa bunu boş tutun (" " boşluk ekleyin)
+playscreen.worldsearch.resultmessage_after= ### Yerelleştirmeniz izin vermiyorsa bunu boş tutun (" " boşluk ekleyin)
+playscreen.worldSize=World size:	#
+playscreen.warning.forceautoplace.title=Hızlı Hareket'u Uyarıda Zorla	#
+playscreen.warning.forceautoplace.body=Zorla Hızlı Hareket özelliğini sunucularda risk olarak kullanın, sunucularda (özellikle öne çıkan sunucularda) bunu çok fazla kötüye kullanmayın!	#
+
+progressScreen.hiveNetherGlitch.title=AYHH,... Nether Glitch'i (Hatası) Yine!	#
+progressScreen.hiveNetherGlitch.body=Ne yapabilirsin? Sadece... bekle ve yeniden katıl ya da zorla kapat ve oyunu yeniden aç ya da Windows kullanıyorsanız, "Küçült" düğmesini değil, "Geri Yükle" düğmesini kullanın! Bu ekranı sizin için anında kapatmalı!	#
+
+resourcePack.packSearchPlaceHolderText.global=Arama Global Kaynaklar...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Arama Kaynak Paketleri...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Arama Davranış Paketleri...	#
+resourcePack.showNotDownloaded=İndirilmediğini Göster	#
+resourcePack.tyelUIWarningMessage=Global Kaynaklar Ty-el UI'yi zaten etkinleştirdiyseniz, yinelenenleri önlemek için Dünya Kaynak Paketleri Ayarlarında "Oyuncular katılmak için kaynak paketlerini kabul etmelidir." yi etkinleştirmiş olmanız dışında, Ty-el UI'yi Dünya Kaynak Paketleri'lerde tekrar etkinleştirmemelisiniz, hataları ve beklenmeyen hataları.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=/ui/_global_variables.json'u Ty-el UI'ten yüklemeye çalışırken bir hata oluştu. Lütfen dosya sözdizimlerini kontrol edin ve tekrar deneyin.	#
+
+screenshot.saveLocation=Ekran Görüntüsü Konumu:	#
+screenshot.showSaveLocation=Ekran Görüntüsü Konumu Göster	#
+
+screenLoading.tooLongTooltip=If the game takes too long to load this screen, please restart the game.	#
+
+serverform.searchPlaceHolderText=Filtre Arama... [Harfe duyarlı!]	#
+serverform.searchDisclaimer.tooltip=Bu form ekranında çok sık kullanılan içerikleri aramaya çalışmak istemediğinizden emin olun, örneğin: §o"Select to equip", "Last Seen", etc.	#
+
+soundCategory.ambient.description=Ambiyansın ses düzeyi (su altı, yeraltı veya mağara sesleri), suya giren veya çıkan sesler ve havai fişek sesleri.	#
+soundCategory.block.description=Blokların hacmi (örsler, sandıklar, kapılar vb.)	#
+soundCategory.hostile.description=Düşman ve tarafsız çetelerin hacmi (zombiler, sürüngenler, örümcekler vb.)	#
+soundCategory.main.description=Tüm seslerin ana ses düzeyi (hem oyun müziği hem de sesler)	#
+soundCategory.music.description=Oyun müziğinin ana ses düzeyi (oynatma sırasında rastgele çalınır)	#
+soundCategory.neutral.description=Pasif çetelerin hacmi (tavuklar, inekler, domuzlar, köylüler, vb.)	#
+soundCategory.player.description=Oyuncuların ses seviyesi (eşya patlamaları, incinme sesleri, yemek yeme sesleri vb.)	#
+soundCategory.record.description=Nota Blokları ve Müzik Kutularından çalınan müzik ve seslerin düzeyi.	#
+soundCategory.sound.description=Oyun seslerinin ana ses düzeyi (müzik hariç)	#
+soundCategory.weather.description=Yağmur ve gök gürültüsü hacmi	#
+soundCategory.texttospeech.description=Metin okuma hacmi (sohbet ve kullanıcı arayüzü için TTS, bunları Ayarlar/Erişilebilirlik bölümünde etkinleştirin)	#
+
+storageManager.floatingFileStorageSelector.tooltip=Depolama konumunuzu değiştirmek mi istiyorsunuz? Buraya basın! (Ty-el UI ile oynarken ÖNERİLMEZ!)	#
+
+store.cost=Maliyet:	#
+store.redeem=Get for free!	#
+store.free.uppercase=§l§oFREE!	#
+
+store.confirmPurchase.title=Satın Alımı Onayla?	#
+store.confirmPurchase.description=Bu ürünü satın almak istediğinizden emin misiniz? İşte alacaklarınız:	#
+store.confirmPurchase.description_completed=gitmekte fayda var Artık bu diyaloğu kapatabilir ve satın alma işleminizin keyfini çıkarabilirsiniz.	#
+store.confirmPurchase.tooltip=Yanlışlıkla ürün satın almaktan kaçınmak için satın alma düğmelerine basarken satın alma işlemini onaylamanız istenecektir.	#
+store.proceedToPurchase=Accept and Proceed to Purchase	#
+
+dr.rarity.=Error, Clear Filter is required	#
+store.search.filter.=Error, Clear Filter is required	#
+
+store.search.filter.highlight.title=Highlight Filter	#
+store.search.filter.minecoinSpecials=Minecoins/Specials	#
+store.search.filter.newOffers=New Offers	#
+store.search.filter.redeemable=Redeemable	#
+store.search.filter.collectible=Collectible through Achievements	#
+store.search.filter.paid=Paid	#
+
+trade.tradeAll=Tüm Ticaret	#
+trade.maxLevelTag=MAX	#
+
+tyelHive.xpCalculator.disclaimerLabel=XP Charts info collected from hivetools.app. Not affiliated with Hive Games in anyway.	#
+tyelHive.xpCalculator.hideButtonLabel=Hide	#
+tyelHive.xpCalculator.maxLevel=Max Level	#
+tyelHive.xpCalculator.increment=Increment / lvl	#
+tyelHive.xpCalculator.incrementCap=Cap ## ~= Maximum	#
+tyelHive.xpCalculator.title=Hive XP Calculator Mode Switches	#
+tyelHive.xpCalculator.pageIdentifier=Page	#
+tyelHive.xpCalculator.lastUpdated=Last Updated:	#
+
+tyelAbout.about=Ty-el UI Hakkında	#
+tyelAbout.customAvailable=Özel Ekranı Mevcuttur!	#
+tyelAbout.customAvailable.zeqa=Check out Zeqa Rules & About Ty-el UI here!	#
+tyelAbout.minGameVerRequired=Asgari Minecraft sürümü gerekli: 	#
+tyelAbout.openAboutTyelUITooltip.openText=Ty-el Kullanıcı Arayüzü Hakkında'yı açmak için bana basın (şu anda özel ekran)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Özel ekrana geri dönmek için bana basın (şu anda Ty-el UI ekranı hakkında)	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Ty-el UI Sorun Giderme Modu	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=Paketi anında devre dışı bırakmak için bu "Ty-el UI'yi Devre Dışı Bırak" düğmesine basın ve devre dışı bırakma işlemini tamamlamak için "Ayarları Kapat" düğmesine basın. Ayrıca, bu işlem tamamlandıktan sonra /ui/_global_variables.json'da "tyel_ui_troubleshooting_mode" ifadesini tekrar §cfalse§r olarak değiştirmeniz gerekir.	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=/ui/_global_variables.json dosyası doğru yüklenmediği için bu yeni düğmeyi aldınız. Lütfen dosya sözdizimlerini kontrol edin ve tekrar deneyin. Veya Ty-el UI'yi devre dışı bırakmak istiyorsanız, paketi anında devre dışı bırakmak için bu "Ty-el UI'yi Devre Dışı Bırak" düğmesine basın ve devre dışı bırakma işlemini tamamlamak için "Ayarları Kapat" düğmesine basın.	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Ty-el UI'yı Devre Dışı Bırak!	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=Ayarları Kapat!	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=Oyundayken Ty-el UI devre dışı bırakılamıyor!	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=Sorun Giderme Modu	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Ty-el UI Sorun Giderme Modu	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Global Değişkenler yüklenemedi!)	#
+
+tyelAbout.expRequiredDialog.openSettings=Open Game Settings	#
+tyelAbout.expRequiredDialog.title=Ty-el UI: Experimental Flags Required	#
+tyelAbout.expRequiredDialog.header=Before continue playing with Ty-el UI in your current version of the game, you should change these experimental flag(s) manually first §c(because it can't be automated)§r:	#
+tyelAbout.expRequiredDialog.bodyParagraph1=Open the "/ui/_global_variables.json" inside the Ty-el UI's pack folder (usually "TheTy-el's") to modify all the required flag(s) and then restart the game or reactivate the pack. The reason(s) why can be found below:	#
+tyelAbout.expRequiredDialog.bodyParagraph2=You can also open Game Settings to safely deactivate Ty-el UI and wait until a next pack update is released. ;-;	#
+tyelAbout.expRequiredDialog.gameVersionHeader=Your current game version:	#
+
+## DO NOT TRANSLATE PACK NAME
+tyelAbout.creatorTitle=Yaratıcı:	#
+tyelAbout.aboutLabel1=The Ty-el's UI Pack (kısaca Ty-el UI), deneyiminizi bir şekilde daha iyi hale getirmek ama yine de orijinali korumak için bazı özellikler, ince ayarlar ve ayrıca yeni tıklama sesleri (!) ekleyen Vanilla UI için bir UI tedavi paketidir. Vanilya duyguları. Harici veya pazardan gelen doku paketleriyle veya oyununuzu geliştiren bazı kaynak paketleriyle uyumlu, çünkü neden olmasın?!	#
+tyelAbout.aboutLabel2=§l§bYASAL UYARI§r: §oBu paket yalnızca bir kaynak paketidir, gerçek istemci değil!§r	#
+tyelAbout.aboutLabel3=Şu anda desteklenen diller:	#
+## tyelAbout.aboutLabel4 is only lanlguage names
+tyelAbout.aboutLabel5=Ve Vietnamca (MCPEDL.com/CurseForge'da The Ty-el's Vietnamese Language Pack gerektirir), yakında daha fazla dil gelecek.	#
+tyelAbout.aboutLabel6=Bu paketle ilgili herhangi bir hata veya geri bildirim bulursanız, Twitter hesabımdan bana bildirin.	#
+tyelAbout.translationHelp=Yardımınıza ihtiyaçım var! Paketi kendi dilinize çevirmek isterseniz, lütfen Twitter'dan benimle iletişime geçin.	#
+
+tyelAbout.features=Yenilikler	#
+tyelAbout.featuresTitleFeatures=§eAna Yenilikler	#
+tyelAbout.featuresLabel0=- Ore UI Aspects güncellemesi için birçok ekran güncellendi, Bedrock Edition için yakında çıkacak bir UI güncellemesi ve evet, biraz remiks ile.	#
+tyelAbout.featuresLabel1=- Tüm kutu ekranlarına ve Eşyaları Yok Et düğmelerine Öğe Bırak düğmeleri eklendi (yalnızca Envanter Ekranı/Üretim Tablosu Ekranında ve yalnızca Yaratıcı Modda).	#
+tyelAbout.featuresLabel1.1=§7Envanterde bir eşya yuvası seçildiğinde,	#
+tyelAbout.featuresLabel1.2=§7tıkla	#
+tyelAbout.featuresLabel1.3=§7düşürmek veya	#
+tyelAbout.featuresLabel1.4=§7öğeleri yok etmek	#
+tyelAbout.featuresLabel1.5=§7seçilen slotlarda. "x1" bir öğe anlamına gelir ve "Tümü" düşürülecek veya yok edilecek bir yuva anlamına gelir	#
+tyelAbout.featuresLabel1.6=§2İpucu: Öğeleri daha hızlı ve daha doğru bir şekilde düşürmek veya yok etmek için bir yuvada istediğiniz kadar öğe tutabilirsiniz (ör. 3/42 öğe seçin)!	#
+tyelAbout.featuresLabel2=- Envanter/üretim ekranına Hızlı Üretim düğmesi eklendi, üretim artık eskisinden daha kolay ve hızlı!	#
+tyelAbout.featuresLabel3=- (Neredeyse) tüm konteyner ekranlarına Konteyner Modu Değiştirici eklendi! Bu, öğeleri daha hızlı yağmalamanıza veya düşürmenize yardımcı olabilir, Touch kullanıcıları için en iyisi!	#
+tyelAbout.featuresLabel3.1=§7Bunu kullanmak için, sadece istediğiniz modu seçin (Normal, Hızlı Hareket, Bırak) ve kaplardaki veya envanterdeki herhangi bir öğeye (veya PC'deyse Sol Fare Düğmesine) dokunun, öğeler anında envanterinize gidecek veya geri dönecektir. konteynerlere veya düşürülecek!	#
+tyelAbout.featuresLabel4=- Envanter Ekranına Envanter Modu geçişi eklendi, dokunmatik kullanıcılar için başka bir vardiya tutucu, ancak Envanter Ekranında! (Yalnızca Cep UI, kullanımdan kaldırılıyor)	#
+tyelAbout.featuresLabel4.1=§7Bu özellik, zırhları/totemleri donatmanıza veya öğeleri ana envanterden hotbar'a ve tam tersine yerleştirmenize yardımcı olacak... daha hızlı, sadece tek bir dokunuşla!	#
+tyelAbout.featuresLabel5=- Yaratıcı/Tarif Kitabı kategorisi ekranın sol tarafına kaydırıldı, Java Sürümü'ndeki tarif kitabına benziyor.	#
+tyelAbout.featuresLabel6=- İlerleme Çubuklarının (Dünya Yükleme çubuğu, XP çubuğu ve Boss Sağlık çubukları, ayrıca Ocak Ekranı Eritme İlerlemesi ve Yakıt İlerlemesi ve Simya Standı Ekranı Simya İlerlemesi ve Yakıt İlerlemesi de! Bu çok fazla!) artık yanında bir yüzde etiketi var. Artık dünya yükleme ilerlemesinin tam yüzdesini, patron sağlığını veya mevcut XP ilerlemenizi görebilirsiniz, evet, XP!	#
+tyelAbout.featuresLabel7=- Oyna/Dünyalar Ekranı ve Ayarlar/(Global Kaynaklar/Kaynak Paketleri/Davranış Paketleri/Depolama) Ekranına, dünyalarınızı ve paketlerinizi daha hızlı aramanıza yardımcı olabilecek Arama özelliği eklendi (Lütfen Oyna/Dünyalar Ekranı arama özelliğinin yalnızca kötü performans sorunları nedeniyle aranabilecek en yeni 50 dünya ;-;)	#
+tyelAbout.featuresLabel8=- Çok düzensiz sandıklarda belirli adlara sahip öğeleri bulmanıza yardımcı olabilecek, Sandık Ekranlarına Öğe Vurgulayıcı eklendi! (Ve büyük/küçük harfe duyarlıdır!)	#
+tyelAbout.featuresLabel9=- Oyun sürenizi daha kolay yönetmek ve aynı zamanda orijinal dünyanızı her zamankinden daha iyi bir şekilde bulmak için HUD Ekranına Pusula ve Saat eklendi.	#
+tyelAbout.featuresLabel10=- Yalnızca Touch kullanıcıları için, ayarlar ekranına girmeden HUD'yi kolayca gizlemek için Hotbar seçicisinin yanına HUD'yi Gizle düğmesi eklendi.	#
+tyelAbout.featuresLabel11=- Oyna Ekranına En Son Oynanan Dünya Önerisi özelliği eklendi. En son oynadığınız/açtığınız dünya Oyna/Dünyalar sekmesinin en üstünde olacak, böylece en yeni dünyayı eskisinden çok daha kolay oynayabilirsiniz!	#
+tyelAbout.featuresLabel12=- HUD Sohbet Mesajları artık hafif animasyonlara sahip.	#
+tyelAbout.featuresLabel13=- Ayrıca başlıklar ve alt yazılar artık daha küçük yazı tipi boyutuna sahip ve başlıklar çok uzunsa ekrandan asla çıkmıyor!	#
+tyelAbout.featuresLabel14=- Ayarlar Ekranı: Artık çoğunlukla tüm açılır menüler, orijinal açılır menü yerine düğme modunu kullanıyor!	#
+tyelAbout.featuresLabel15=- Hızlı Ayarlar ekranı eklendi: Ayarlar'a gidin ve ekranın sağ üst köşesindeki ≡ düğmesine basın. Burada tamamen temiz bir canlı arka plan ile Kamera Perspektifi, Parlaklık, FOV ve daha fazlasını değiştirebilirsiniz!	#
+tyelAbout.featuresLabel16=- Başlangıç Ekranı yeniden tasarlandı ve Pazaryeri tarzı kenar çubuğu menüsü eklendi!	#
+tyelAbout.featuresLabel17=- Sohbet komutlarını otomatik olarak tamamlamak için 2 düğme ve mesajları kolayca geri almak veya yeniden yapmak için 2 düğme eklendi, Touch kullanıcıları için en iyisi.	#
+tyelAbout.featuresLabel18=- Sohbet ekranında otomatik tamamlama komutları/bahsetmeler artık eskisinden daha hızlı! Artık komutları otomatik olarak tamamlamak veya birinden hızlıca bahsetmek için otomatik tamamlama metin önerilerine basabilirsiniz, ne kadar uygun!	#
+tyelAbout.featuresLabel19=- Market Katalog Ekranı başlığına, içeriği her yerden daha hızlı arayabileceğiniz arama metin kutusu eklendi!	#
+tyelAbout.featuresLabel20=- Bazı UI Ekran değişiklikleri	#
+
+tyelAbout.featuresTitleParity=§eDiğer Özellikler, Java Eşliği ve Vanilya Düzeltmeleri	#
+tyelAbout.featuresLabelParity1=- Yeni tıklama sesleri (Ore UI seslerinden esinlenilmiştir)	#
+tyelAbout.featuresLabelParity2=- Hangi zırhları eskisinden daha kolay ve hızlı donattığınızı bilmek için Sandık Ekranlarına ve Redstone Ekranlarına (Hopper, Dispenser, Dropper) Canlı Kağıt Bebek Oluşturucu eklendi!	#
+tyelAbout.featuresLabelParity3=- Herhangi bir eşya yuvasını basılı tutarsanız, eşya yuvasının üstünde "Özel Miktarda Eşya Al" göstergesi bulunur, böylece kaç eşya taşımak veya kullanmak üzere olduğunuzu görebilirsiniz.	#
+tyelAbout.featuresLabelParity4=- Daha İyi Sunucu Deneyimleri??, seçilen bazı popüler sunucular için Duraklatma Ekranına Sunucu Bilgisi paneli eklendi. Sunucu web sitesi bağlantıları, destek web sitesi bağlantıları ve daha fazlası gibi bazı yararlı bilgilere sahiptir!	#
+tyelAbout.featuresLabelParity5=- The Hive (Minecraft Öne Çıkan Sunucu) için yeni görünmeyen özellik: Andezit Sayacı, en iyi SkyWars'ta Andezit bloklarını kullanarak köprü kurarken! (Belki yakında daha fazla özellik?)	#
+tyelAbout.featuresLabelParity6=- Java Parity: Artık Anvil'deki veya Haritacılık Tablosundaki herhangi bir öğeyi yeniden adlandırabilir veya 30 karaktere kadar 50 karaktere kadar herhangi bir öğeyi arayabilirsiniz!	#
+tyelAbout.featuresLabelParity7=- Java Parity: Oyun dilini doğrudan oyun içindeki ayarlardan değiştirebilirsiniz!	#
+tyelAbout.featuresLabelParity8=- Ayarlar/İçerik Üretici'da VSync geçişi ve Ayarlar/Video'da Maksimum Kare Hızı kaydırıcısı eklendi!	#
+tyelAbout.featuresLabelParity9=- Sohbeti daha hızlı gizlemek için Tüm Sohbetin Sesini Kapat düğmesi Sohbet Ekranına geri eklendi.	#
+tyelAbout.featuresLabelParity10=- Sohbet Ekranına Aşağıya Atla düğmesi eklendi, böylece çok yukarı kaydırdığınızda aşağı kaydırmanıza bile gerek kalmıyor!	#
+tyelAbout.featuresLabelParity11=- Komutların iki kez yürütülmesi arasındaki gecikmeyi Saniye olarak bilmek için Komut Bloğu Ekranına "Saniye cinsinden Gecikme" (Tıklar değil) sayacı eklendi! (Zaman formatı da güzelleştirildi!)	#
+tyelAbout.featuresLabelParity12=- Oyundan yanlışlıkla çıkmayı önlemek için Ekranı Duraklatmak için Çık Onay Açılır Penceresi eklendi.	#
+tyelAbout.featuresLabelParity13=- Giyinme Odası Ekranına özel ithal dış görünümler için Dış Görünüm Değiştirme düğmeleri eklendi. Bu, Steve (Normal) tipi veya Alex (İnce) tipi cilt tipini değiştirmenize yardımcı olacak, yeni özel dış görünüm dosyalarını yeniden içe aktarmadan daha kolay!	#
+tyelAbout.featuresLabelParity14=- Daha iyi uyku ekranı, ölüm ekranı başlığına benzer uyku başlığı eklendi	#
+tyelAbout.featuresLabelParity15=- Daha da üzücü Ölüm Ekranı, artık arka plan artık kırmızı değil, artık yavaş yavaş kararıyor, ve şimdi, daha da üzücü... ;-;	#
+tyelAbout.featuresLabelParity16=- Vanilla Düzeltmeleri: HUD'daki Vinyet efekti artık sohbet değil, her şeyin üstünde	#
+tyelAbout.featuresLabelParity17=- Vanilya Düzeltmeleri: v1.19.50+ sürümünde yine Fırınlar aracılığıyla uygunsuz bir şekilde XP kazanmaya neden olan bir istismar düzeltildi!(MCPE-152227 Resmi Bug)	#
+tyelAbout.featuresLabelParity18=- HUD ekranındaki Başlık ve Altyazı artık daha küçük yazı tipi boyutuna sahip ve artık ekran dışı değil! Öğe sayısı ve XP çubuğu, Yaratıcı Moddayken bile her zaman görünür!	#
+tyelAbout.featuresLabelParity19=- Sabit arka plan animasyonları, bazı animasyon ince ayarları	#
+tyelAbout.featuresLabelParity20=- Çeşitli ekran güncellemeleri, basit kullanıcı arayüzü değişiklikleri ve düzeltmeleri (daha büyük başlık çubuğu, daha kullanıcı dostu ekran güvenli alanları... ve daha fazlası!)	#
+
+tyelAbout.subpackFeatures=Alt Paket Yenilikleri	#
+tyelAbout.subpackFeaturesInfo=§oAlt paketleri, Ayarlar/Global Kaynaklar ekranındaki Paket Ayarlarında değiştirebilirsiniz.	#
+tyelAbout.subpackFeatures.current=§o§7Şu anda kullanıyor:	#
+tyelAbout.subpackFeatures.default="Default" Alt Paketi	#
+tyelAbout.subpackFeaturesLabel.default=Bu alt paketteki her şey varsayılandır ve /ui/_global_variables.json içindeki değişkenler düzenlenerek özelleştirilebilir.	#
+tyelAbout.subpackFeatures.defaultVanilla="Default Vanilla" Alt Paketi	#
+tyelAbout.subpackFeaturesLabel.defaultVanilla=Yeni Açılır İletişim Kutusu ekran tasarımını veya yeni Oyna Ekranı tasarımını beğenmediyseniz bunu kullanın.	#
+tyelAbout.subpackFeatures.performance="Performance" Alt Paketi	#
+tyelAbout.subpackFeaturesLabel.performance=This subpack removes Container Mode Switcher, Ty-el UI HUD Modules, XP Percentage Text, Take Custom Amount of Items Indicator features, but keeps Quick Move toggle in Chest Screens and Redstone Screens (Hopper, Dispenser, Dropper).	#
+tyelAbout.subpackFeatures.ultra="ULTRA MODE" Alt Paketi	#
+tyelAbout.subpackFeaturesLabel.ultra=Adds "Durability Viewer" label to item hover text in any inventory screen, and Chat Caret Mode in Chat Screen. §cPERFORMANS ETKİSİ! Düşük kaliteli cihazlar için önerilmez!!!§r	#
+
+tyelAbout.compatibilityMode=Uyumluluk Modu	#
+tyelAbout.compatibilityModeInfo=Uyumluluk Modu Bilgisi	#
+tyelAbout.compatibilityModeLabelInfo1=Uyumluluk Modu tarafından desteklenen bazı paketleri kullanıyorsanız, bu, Ty-el UI'deki bazı hataları giderecektir. Bunu etkinleştirmek için /ui/_global_variables.json dosyasını açın ve dosyanın en altına inin ve Uyumluluk Modu bölümünde değişken değerlerini §2true§r olarak ayarlayın.	#
+tyelAbout.compatibilityModeLabelInfo2=Bu paketlerin sahibi, paketleri Ty-el UI'nin üstündeyse, varsayılan olarak true olarak ayarlanmış değişken değerlere sahip OLABİLİR. Yani değişkenleri manuel olarak değiştirmenize gerek yok. Paketinizin paketimde bazı konfigürasyonlar olmasını istiyorsanız, benimle iletişime geçmekten çekinmeyin.	#
+tyelAbout.compatibilityModeLabelInfo3=Burada desteklenen tüm paketler Uyumluluk Modu'dur ve etkinleştirme durumu değişken konfigürasyonlarda renkler olarak gösterilir (§2true§r veya §cfalse§r).	#
+tyelAbout.compatibilitymodelabel.automated=Otomatik	#
+
+tyelAbout.compatibilityModeLabel.chainsketchUTM.name=Chainsketch - Ultimate Thumbnail Maker	#
+tyelAbout.compatibilityModeLabel.chainsketchUTM.desc=Ty-el UI'nin HUD düğmelerini ve HUD Yardımcı Programlarını Gizle'yi kaldırır. Bu, "HUD Yardımcı Programlarını Kullan!" ayarını geçersiz kılar.	#
+
+tyelAbout.compatibilityModeLabel.modulesPlus.name=Chainsketch - Modules+	#
+tyelAbout.compatibilityModeLabel.modulesPlus.desc=Ana El Yuvası Göstergesi de dahil olmak üzere Ty-el UI'nin HUD Yardımcı Programlarını kaldırır (çünkü Modules+'da zaten mevcuttur). Bu, "$use_hud_utilities" ayarını geçersiz kılar.	#
+
+tyelAbout.compatibilityModeLabel.utilityUI.name=HJN - Utility UI (BETA)	#
+tyelAbout.compatibilityModeLabel.utilityUI.desc=Removes Ty-el UI's Mainhand Slot Indicator, HUD Utilities and Hide HUD button.	#
+
+tyelAbout.compatibilityModeLabel.zeqa.name=Zeqa Sunucu Kaynak Paketi	#
+tyelAbout.compatibilityModeLabel.zeqa.desc=Removes Ty-el UI's HUD Utilities, but without removing Mainhand Slot Indicator. This does not override "$use_hud_utilities" setting on Mainhand Slot Indicator. Changes "Custom Screen Available!" tooltip in Pause Screen to "Check out Zeqa Rules & About Ty-el UI here!"	#
+
+tyelAbout.compatibilityModeLabel.hive_bedrock.name=The Hive (Öne Çıkan Sunucu)	#
+tyelAbout.compatibilityModeLabel.hive_bedrock.desc=§eAdvanced Hive XP Calculator§r, can be enabled in the HUD by pressing the "TAB + 3" key while using Keyboard & Mouse control, or from HUD Menu while using touch control. Note that this feature is not automated due to limitations.	#
+
+tyelAbout.compatibilityModeLabel.cubecraft_bedrock.name=CubeCraft Games (Featured Server)	#
+tyelAbout.compatibilityModeLabel.cubecraft_bedrock.desc=§9Server-Wide XP Progress§r, only visible when in server lobbies, in "Skyblock" game mode, this feature will use the Vanilla XP System instead.	#
+
+tyelAbout.credits=Yapımcılar	#
+tyelAbout.creditsTitle=Özellikle Teşekkür Ederiz...	#
+tyelAbout.creditsTitleTranslators=Paket Çevirmenler	#
+
+tyelAbout.usage=Kullanım Şartları	#
+tyelAbout.usageLabel1=§l§aÖZGÜRSÜN§r:	#
+tyelAbout.usageLabel2=- Make contents about this pack as long as you provide credits or proper attributions in the description.	#
+tyelAbout.usageLabel3=- Customize and share your /ui/_global_variables.json configurations.	#
+tyelAbout.usageLabel4=- Add your own custom panorama, or create your own Ty-el Theme (instructions in /ui/_tyel_theme_template.json).	#
+tyelAbout.usageLabel5=- Modify the pack only for personal uses.	#
+
+tyelAbout.usageLabel6=§l§cİZNİNİZ YOK§r:	#
+tyelAbout.usageLabel7=- Use, or claim any of my codes and use as your own, please respect my hard works ;-;	#
+tyelAbout.usageLabel8=- Distribute the modified pack to public.	#
+tyelAbout.usageLabel9=- Redistribute this pack to other sites/app stores, no one will have the permission.	#
+tyelAbout.usageLabel10=- Make contents about this pack but without proper attributions.	#
+tyelAbout.usageLabel11=- Use this pack in third-party projects, instead, let players know that your projects are compatible with this pack.	#
+
+tyelAbout.validation=UI Validation	#
+tyelAbout.validation.errorList=Error List	#
+tyelAbout.validationLabel1=Any errors detected by "Ty-el UI Validation System" will be shown here.	#
+tyelAbout.validationLabel2=If there are any errors shown here, you should reinstall the pack to resolve all issues. For advanced users, enable Content Log UI in Game Settings for more detailed information about errors.	#
+tyelAbout.validation.errorCodeTitle=Error Code:	#
+tyelAbout.validation.detailsTitle=Details:	#
+tyelAbout.validation.error.assetNotFound=File with this following namespace can't be loaded:	#
+tyelAbout.validation.error.variableValueInvalid=Variable value is not valid:	#
+tyelAbout.validation.error.variableValueInvalid.anchorString=[Anchor String] We only accept any of these values: "top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"	#
+
+tyelAbout.changelog=Yenilikler	#
+tyelAbout.changelog.newfeatures=§bYENİ ÖZELLİKLER	#
+tyelAbout.changelog.changes=§aDEĞİŞİKLİKLER	#
+tyelAbout.changelog.fixes=§eDÜZELTMELER	#
+tyelAbout.changelog.knownissues=§6KNOWN ISSUES	#
+tyelAbout.changelog.removed=§cÖZELLİKLER KALDIRILDI	#
+
+tyelAbout.changelog101=v1.0.1	#
+tyelAbout.changelog101.title=§aHIZLI LOOT GÜNCELLEMESİ	#
+tyelAbout.changelog101.label1=- Sandıkla İlgili Ekranlara ve Redstone Ekranlarına (Hopper, Dispenser, Dropper) Hızlı Yağma Modu geçişi eklendi	#
+tyelAbout.changelog101.label2=- Bırak ve Yok Et düğmeleri için Fareyle Üzerine Gelme Metni Bilgisi eklendi	#
+tyelAbout.changelog101.label3=- HUD Öğe Adı Metni ve Eylem Çubuğu Başlığı için metin gölgesi eklendi	#
+tyelAbout.changelog101.label4=- HUD Skor Tahtası Kenar Çubuğu Arka Planı artık Amaç Adı altında daha koyu bir arka plana sahip, Java ile eşleştirin!	#
+tyelAbout.changelog101.label5=- Paket özelleştirmeleri için _global_variables.json'a değişkenler eklendi:	#
+tyelAbout.changelog101.label6=§7  + "$screen_background_alpha" oyun içi (Envanter Ekranı, Ekranı Duraklat...) arka plan alfa için (varsayılan olarak 0,4'tür)	#
+tyelAbout.changelog101.label7=§7  + "$item_name_text_background_alpha": HUD Öğe Adı Metin Arkaplan alfa için (Java stili için bunu 0 olarak değiştirin!)	#
+tyelAbout.changelog101.label8=§7  + Actionbar Title alpha için "actionbar_background_alpha"	#
+tyelAbout.changelog101.label9=§7  + "$item_text_one_line_layout" Öğe Metni için tek satır düzeni modunu kullanmak için (Büyü adı metnini gizlemek için kullanın!)	#
+tyelAbout.changelog101.label10=§7  + "$use_quick_craft_button" Quick Craft düğmesini gizlemek veya göstermek için	#
+tyelAbout.changelog101.label11=- Sabit Sohbet Otomatik Tamamlama düğmeleri odakların düzgün çalışmaması	#
+tyelAbout.changelog101.label12=- Sabit Duraklatma Bilgi Panelinde doğru dolgu yok	#
+tyelAbout.changelog101.label13=-Nasıl Oynanır Ekranındaki Sabit Başlık Etiketi bazen çok uzuyor ve kesiliyor	#
+tyelAbout.changelog101.label14=- Sabit Oyna ekranı Klavye Yardımcısı açıklaması ofseti çok yüksek	#
+tyelAbout.changelog101.label15=- Bazı ekranlarda doğru şekilde oynatılmayan tuşlara basma sesleri düzeltildi.	#
+tyelAbout.changelog101.label16=- Paket Bilgi Ekranında görünmeyen sabit özel panorama (yalnızca oyun öncesi)	#
+tyelAbout.changelog101.label17=-Ekran görüntüsü sorumluluk reddi bilgisi görünürlüğü değiştirildi, artık daha fazla cihaz doğru şekilde görebilir	#
+tyelAbout.changelog101.label18=- Diğer küçük arka plan düzeltmeleri	#
+
+tyelAbout.changelog102=v1.0.2	#
+tyelAbout.changelog102.title=§eSAD GUY DİL GÜNCELLEMESİ	#
+tyelAbout.changelog102.label0=§aBu güncelleme, Crafting Table Screen'i açarken sizi bir şekilde rahatsız eden bir Vanilla hatasını düzeltti:	#
+tyelAbout.changelog102.label0a=§a- Envanter/Üretim Tablosu ekranındaki Sabit 3x3 Üretim Çıktısı yuvası ortalanmıyor (4 piksel kapalı), Phoenix SC (@phnixhamsta) tarafından §o"bulundu"§r§a :)	#
+tyelAbout.changelog102.label1=- Paket artık bazı dilleri destekliyor (daha fazlası yakında gelecek):	#
+## tyelAbout.changelog102.label2 for language names
+tyelAbout.changelog102.label3=(Japonca çeviriler için @nattsuiy (Twitter)'a teşekkürler!)	#
+tyelAbout.changelog102.label4=- Zırhları/totemleri donatmanıza veya öğelere ana envanterden hotbar'a veya tam yerleştirme yerleştirmenize yardımcı olacak Envanter Modu geçişi eklenecek...	#
+tyelAbout.changelog102.label5=- Hangi zırhları daha kolay ve daha hızlı donattığınızı bilmek için Göğüs Ekranlarına ve Redstone Ekranlarına (Huni, Dağıtıcı, Bırakıcı) Canlı Kağıt Bebek Oluşturucu eklendi	#
+tyelAbout.changelog102.label6=- The Hive Ekranı Oynat'den esinlenerek yeniden tasarlanan Sunucu Form Ekranı, beğenip beğenmediğinizi bilmiyorum?	#
+tyelAbout.changelog102.label7=- Hızlı Ayarlar ekranına RTX ile ilgili ayarlar eklendi	#
+tyelAbout.changelog102.label8=- Oynarken *geçici* daha temiz görünüm için HUD Hotbar'ı gizlemek/göstermek için HUD Hotbar Toggle eklendi (yalnızca Touch kullanıcıları için)	#
+tyelAbout.changelog102.label9=- Daha temiz bir görünüm için Oyuncuları/Skor Tablosu Oyuncuları Listesini gizlemek/göstermek için Bilgi Paneli Ekranı Duraklatmaya Geçiş Eklendi!	#
+tyelAbout.changelog102.label10=- Devam Eden Metin Paneli Ekranı artık istiflenebilir	#
+tyelAbout.changelog102.label11=- Metin Paneli Devam Ediyor Ekranı artık yalnızca oyun içindeyken ekranın ortasında	#
+tyelAbout.changelog102.label12=- İlerleme Ekranındaki İptal düğmesi sağ alta taşındı	#
+tyelAbout.changelog102.label13=- Geliştirilmiş Özel Panorama paneli kontrolleri, artık özel panoramayı açıp kapatabilirsiniz (varsayılan olarak kapalıdır), ayrıca özel panorama uv animasyonlarını da destekler (bunu biliyorsanız)	#
+tyelAbout.changelog102.label14=- Besleme Ekranında ve Ekran Görüntüsü Seçici Ekranında tam ekran Ekran Arka Planı yapıldı, umm...	#
+tyelAbout.changelog102.label15=- Paket özelleştirmeleri için _global_variables.json'a değişkenler eklendi:	#
+tyelAbout.changelog102.label16=§7  + "$use_container_toggles" Hızlı Yağma ve Envanter Modu Geçişlerini gizlemek veya göstermek için (varsayılandan doğruya)	#
+tyelAbout.changelog102.label17=§7  + "$scoreboard_sidebar_anchor_pocket": Pocket UI profilini değiştirmek için Skorbord Kenar Çubuğu bağlantısı	#
+tyelAbout.changelog102.label18=§7  + "$scoreboard_sidebar_offset_pocket": Pocket UI profilini değiştirmek için Skorbord Kenar Çubuğu ofsetini	#
+tyelAbout.changelog102.label19=§7  + "$utility_anchor_pocket" Pocket UI profili Yardımcı Programı çapasını değiştirmek	#
+tyelAbout.changelog102.label20=§7  + "$utility_offset_pocket" Cep UI profili Yardımcı Programı ofsetini değiştirmek	#
+tyelAbout.changelog102.label21=§7  + "$use_hud_utilities" HUD Pusulası ve Saatini gizlemek veya göstermek (varsayılandan doğruya)	#
+tyelAbout.changelog102.label22=- _global_variables.json'da yeniden adlandırılan değişkenler:	#
+tyelAbout.changelog102.label23=§7  + "$item_name_text_background_alpha" -> "$item_name_text_bg_alpha"	#
+tyelAbout.changelog102.label24=§7  + "$actionbar_background_alpha" -> "$actionbar_bg_alpha"	#
+tyelAbout.changelog102.label25=- Başlangıç ​​Ekranında Değiştirilen Oturum Açma düğmesi kimliği (Sabit Oturum Açma düğmesi Başlat Ekranı çalışmıyor)	#
+tyelAbout.changelog102.label26=- Optimize edilmiş Başlangıç ​​Ekranı UI kodları	#
+tyelAbout.changelog102.label27=- (Vanilya Hata Düzeltmesi) Manifest Valida'da Sabit Hata Bölümü arka plantion Screen (Paket Bilgi Ekranı) bazı cihazlarda içerikler çakışıyor olabilir (Bug MCPE-102555 Resmi Bug sanırım?)	#
+tyelAbout.changelog102.label28=- Hotbar Gezinme Düğmeleri artık TTS Reader'ı destekliyor	#
+tyelAbout.changelog102.label29=- Başlangıç ​​Ekranı Kenar Çubuğundaki "Hesabı Yönet" düğmesi artık yalnızca görünüre Microsoft Hesabında ve Windows, iOS veya Android'de oturum açtığınızda	#
+
+tyelAbout.changelog110=v1.1.0	#
+tyelAbout.changelog110.title=§eCEVHER UI YÖNLERİ GÖSTERGESİ GÜNCELLEMESİ	#
+tyelAbout.changelog110.notice1=§dUyarı: Bu sürümden itibaren "Hızlı Yağma" artık "Hızlı Hareket" olarak adlandırılmaktadır, bu hızlı yağma işlevini değiştirmez, bu değişiklik Vanilla'yı eşleştirmek ve diğer konteyner ekranlarıyla uyumluluk içindir.	#
+tyelAbout.changelog110.notice2=§eBu güncellemeye yeni BETA özelliği eklendi: Öğe Bilgi Görüntüleyici! Bununla, SÜPER DUPER büyük ve uzun eşya bilgisine ait tüm bilgileri bir kaydırma panelinde görebilirsiniz, en iyisi Skyblock sunucularında! Ek olarak, eklenti oluşturucular için Öğe Kimliği AUX görüntüleyici ve öğelerle ilgili bazı diğer (muhtemelen) yararlı teknik bilgiler de!	#
+## NEW FEATURES
+tyelAbout.changelog110.label1=- Paket artık daha da fazla dili destekliyor:	#
+## tyelAbout.changelog110.label2 for language names
+tyelAbout.changelog110.label3=(Türkçe çeviriler için TentexDev#0807 (duranforreal) (Discord), Rusça çeviriler için @theqwermc (Twitter), Çince (Basitleştirilmiş) çeviriler için @YangTuo_zi (Twitter), @student_2333 (Twitter) ve @mascot_fox8888 (Twitter) teşekkürler!)	#
+tyelAbout.changelog110.label4=- İyileştirilmiş Español (España) çevirileri (@sebasxpert (Twitter) sayesinde!)	#
+tyelAbout.changelog110.label5=- 3 yeni Subpack eklendi: Default Vanilla, Performance ve Ultra Mode. Ty-el UI Hakkında/Alt Paket Yenilikleri'de daha fazla bilgi	#
+tyelAbout.changelog110.label6=- Bazı paketler için Uyumluluk Modu eklendi. Ty-el UI Hakkında/Uyumluluk Modunda daha fazla bilgi.	#
+tyelAbout.changelog110.label7=- Ore UI Aspects güncellemesi için birçok ekran tasarımı güncellendi ve değiştirildi, Bedrock Edition için yakında çıkacak bir UI güncellemesi ve elbette biraz remikslerle	#
+tyelAbout.changelog110.label8=- İlerleme Çubuklarının (Dünya Yükleme çubuğu, XP çubuğu ve Boss Sağlık çubukları, ayrıca Ocak Ekranı Eritme İlerlemesi ve Yakıt İlerlemesi ve Simya Standı Ekranı Simya İlerlemesi ve Yakıt İlerlemesi de! Bu çok fazla!) artık yanında bir yüzde etiketi var. Artık dünya yükleme ilerlemesinin tam yüzdesini, patron sağlığını veya mevcut XP ilerlemenizi görebilirsiniz, evet, XP!	#
+tyelAbout.changelog110.label9=- Oyna/Dünyalar Ekranı ve Ayarlar/(Global Kaynaklar/Kaynak Paketleri/Davranış Paketleri/Depolama) Ekranına, dünyalarınızı ve paketlerinizi daha hızlı aramanıza yardımcı olabilecek Arama özelliği eklendi (Lütfen Oyna/Dünyalar Ekranı arama özelliğinin yalnızca kötü performans sorunları nedeniyle aranabilecek en yeni 50 dünya ;-;)	#
+tyelAbout.changelog110.label10=- Kaynak Paketleri Ekranında indirilmeyen paketleri gizleme ve gösterme özelliği eklendi	#
+tyelAbout.changelog110.label11=- Çok düzensiz sandıklarda belirli adlara sahip öğeleri bulmanıza yardımcı olabilecek, Sandık Ekranlarına Öğe Vurgulayıcı eklendi! (Ve büyük/küçük harfe duyarlıdır!)	#
+tyelAbout.changelog110.label12=- Market Katalog Ekranı başlığına, içeriği her yerden daha hızlı arayabileceğiniz arama metin kutusu eklendi!	#
+tyelAbout.changelog110.label13=- Herhangi bir eşya yuvasını basılı tutarsanız, eşya yuvasının üstünde "Özel Miktarda Eşya Al" göstergesi bulunur, böylece kaç eşya taşımak veya kullanmak üzere olduğunuzu görebilirsiniz.	#
+tyelAbout.changelog110.label14=- Oyna Ekranına En Son Oynanan Dünya Önerisi özelliği eklendi	#
+tyelAbout.changelog110.label15=- Soyunma Odası ve Persona Ekranlarında Tweaked Popup Tost animasyonları	#
+tyelAbout.changelog110.label16=- Seçilen bazı popüler sunucular için Duraklatma Ekranına Sunucu Bilgisi paneli eklendi	#
+tyelAbout.changelog110.label17=- Bazı konteyner ekranlarına Konteyner Modu Değiştirici eklendi	#
+tyelAbout.changelog110.label18=- Duraklatma Ekranındaki "Kaydet ve Çık" etiketi artık sunuculardayken otomatik olarak "Bağlantıyı Kes" olarak değişir, §cYALNIZCA öne çıkan sunucularda kullanılabilir!	#
+tyelAbout.changelog110.label19=- Cep UI ekranlarına Envanter Modu, Öğeleri Bırak ve Öğeleri Yok Et işlevleri eklendi	#
+tyelAbout.changelog110.label20=- Hangi eşyaları tuttuğunuzu, kaç tane olduğunu ve mümkünse dayanıklılığını göstermek için HUD Ana El Göstergesi eklendi	#
+tyelAbout.changelog110.label21=- Sunucu Formu Ekranı ve Açılır İletişim Kutularındaki başlık metni artık baştan başlayarak şu metin bloklarını otomatik olarak siler: "$l", "$o", "$0", "$8". §o§6Not: $ yerine "Bölüm İşareti" karakteri§r girin §	#
+tyelAbout.changelog110.label22=- Sohbeti daha hızlı gizlemek için Tüm Sohbetin Sesini Kapat düğmesi Sohbet Ekranına geri eklendi	#
+tyelAbout.changelog110.label23=- Pazaryeri için Satın Alma Onayı eklendi, bu, yanlışlıkla herhangi bir öğe (Minecoin veya gerçek para) satın almamanıza yardımcı olacak. (Ücretsiz öğeler etkilenmeyecektir)	#
+tyelAbout.changelog110.label24=- Giyinme Odası Ekranına özel ithal dış görünümler için Dış Görünüm Değiştirme düğmeleri eklendi. Bu, Steve (Normal) tipi veya Alex (İnce) tipi cilt tipini değiştirmenize yardımcı olacak, yeni özel dış görünüm dosyalarını yeniden içe aktarmadan daha kolay!	#
+tyelAbout.changelog110.label25=- Ekran Görüntüsü Ekranındaki Ekran Görüntüsü Konumu bilgisi artık tam dosya yolunu gösteriyor	#
+tyelAbout.changelog110.label26=- Yukarıdaki değişiklik nedeniyle, ekran görüntüsü dosya yolunu görmek istiyorsanız, gizlilik için Ekran Görüntüsü Ekranına "Ekran Görüntüsü Konumunu Göster" düğmesini ekledim.	#
+tyelAbout.changelog110.label27=- Oyna Ekranı ve Profil Kartı Ekranına Üç Nokta Menüsü eklendi, burada bazı yararlı navigasyonlar var	#
+tyelAbout.changelog110.label28=- Paket özelleştirmeleri için _global_variables.json'a değişkenler eklendi:	#
+tyelAbout.changelog110.label29=§7  + "$tyel_dialog_accent_color": pop-up'larda ve iletişim kutularında iletişim üst çubuğunun vurgu rengini değiştirme (Sunucu Formu Ekranı hariç, yalnızca Varsayılan Vanilya Alt Paketi dışında kullanılabilir)	#
+tyelAbout.changelog110.label30=§7  + "$force_auto_place_on": Hızlı Hareket özelliğini zorlamak için kapsayıcıları açarken her zaman etkindir (Bunu etkinleştirirseniz Oyna Ekranında bir uyarı düğmesi görünür)	#
+tyelAbout.changelog110.label31=§7  + "$pause_quit_confirmation_popup_enabled": Ekranı Duraklat Çık Onay açılır özelliğini etkinleştirmek veya devre dışı bırakmak	#
+tyelAbout.changelog110.label32=§7  + "$use_black_death_background": Kara Ölüm Arka Planı kullanmak (orijinal kırmızı gradyan ölüm arka planı için bunu false olarak ayarlayın)	#
+tyelAbout.changelog110.label33=§7  + "$server_form_dialog_size": paketimin Sunucu Formu İletişim Kutusu boyutunu değiştirmek	#
+tyelAbout.changelog110.label34=§7  + "$recent_world_suggest_enabled": en Son Oynanan Dünya Önerisi özelliğini etkinleştirmek veya devre dışı bırakmak	#
+tyelAbout.changelog110.label35=§7  + "$scoreboard_sidebar_bg_alpha": skorbord Kenar Çubuğu Arka Plan Şeffaflığını değiştirmek	#
+tyelAbout.changelog110.label36=§7  + "$hud_percentage_text_visible": HUD Yüzdesi Metin görünürlüğünü aç/kapat (XP Çubuğunda, Boss Çubuklarında)	#
+tyelAbout.changelog110.label37=§7  + "$use_hive_andesite_counter": The Hive'te Andezit Sayacı kullanın (Öne Çıkan Sunucu)	#
+## CHANGES
+tyelAbout.changelog110.label38=- Beta/Preview olmayan oyuncular için Yeni Dokunmatik Kontrol Şemaları etkinleştirildi!	#
+tyelAbout.changelog110.label39=- Yeniden tasarlanan Sunucu Formu ekranı, artık bir açılır pencere değil (belki yay)	#
+tyelAbout.changelog110.label40=- Hotbar seçicisinin yanındaki HUD'yi Gizle düğmesi taşındı ve Lefty kontrol şemasını da destekliyor! Ancak yanlışlıkla basmamak için bu düğmeyi yalnızca çift dokunulduğunda kullanılabilir hale getirdim.	#
+tyelAbout.changelog110.label41=- Envanter Ekranından soru işareti butonu kaldırıldı!	#
+tyelAbout.changelog110.label42=- Erişilebilirlik nedenleriyle, HUD'yi Gizle düğmesi, Oyuncu Listelerini Duraklat düğmesi, Öğeyi Bırak düğmeleri ve Öğeyi Yok Et düğmeleri artık üzerine getirildiğinde beyaz bir kenarlığa sahip	#
+tyelAbout.changelog110.label43=- Soyunma Odasında ve Persona Ekranında açılan tost pop-up'ları artık animasyonlarla birlikte ekranın üst kısmında yer alıyor.	#
+tyelAbout.changelog110.label44=- Ekran geçiş animasyonlarını biraz daha temiz hale getirdi (muhtemelen)	#
+tyelAbout.changelog110.label45=- Mojang Studios onu geri eklemeyi unuttuğu için Diyar Beslemesi düğmesi Ekranı Duraklat'a geri eklendi (yalnızca Realms'deyken görünür) :p	#
+tyelAbout.changelog110.label46=- Oyna Ekranı'in sekmeleri artık daha küçük yatay boyuta sahip, ancak minimum boyut belirli bir değerde sabitlendi	#
+tyelAbout.changelog110.label47=- Artık Başlat Ekranı kenar çubuğunu, Ayarlar Ekranı Hızlı Ayarları ve Üç Nokta menülerini açmak için denetleyiciyi (≡) Başlat düğmesini kullanabilirsiniz	#
+tyelAbout.changelog110.label48=- Quick Craft düğmesi için TTS destekleri eklendi	#
+tyelAbout.changelog110.label49=- VSync ayarları, Ayarlar/Video bölümünün altına taşındı	#
+tyelAbout.changelog110.label50=- HUD Yardımcı Programları'in varsayılan konumu sağ alt olarak değiştirildi	#
+tyelAbout.changelog110.label51=- Hata Ayıklama HUD'sini geçici olarak gizlemek veya göstermek için Ayarlar/Oluşturucu bölümünde hata ayıklama HUD ayarlarını etkinleştir eklendi (yalnızca Beta/Önizleme)	#
+tyelAbout.changelog110.label52=- Hızlı Ayarlar ekranındaki Ölçekleme ve Işın İzleme geçişleri artık yalnızca cihazlarınız Işın İzlemeyi destekliyorsa görünür	#
+tyelAbout.changelog110.label53=- Özel Panorama için maksimum kare sınırı 500'e çıkarıldı	#
+tyelAbout.changelog110.label54=- Geliştirilmiş Ty-el Theme fabrikası 	#
+tyelAbout.changelog110.label55=§7  + Artık kendi Ty-el Theme'nizi oluşturabilirsiniz	#
+tyelAbout.changelog110.label56=§7  + Artık özel efektler, metinler, vb. için alt kontrollerle ve ayrıca tema meta verileriyle özel panorama ekleyebilirsiniz.	#
+tyelAbout.changelog110.label57=§7  + Paket klasöründeki "Ty-el Theme Instructions.txt" hakkında daha fazla bilgi	#
+## FIXES
+tyelAbout.changelog110.label58=- Başlangıç ​​ekranı kenar çubuğu çıkış arka planı boyutu büyütüldü	#
+tyelAbout.changelog110.label59=- Oynat/Arkadaşlar sekmesindeki Davet Simgesinin görünmemesi düzeltildi	#
+tyelAbout.changelog110.label60=- Yatak Ekranında Uyandırma Etiketi Paneli (çok oyunculu dünyalarda kaç oyuncunun uyuduğunu göstermek için kullanılır) düzeltildi	#
+tyelAbout.changelog110.label61=- Ty-el UI Hakkında ekranına gamepad yardımcıları eklendi	#
+tyelAbout.changelog110.label62=- Komut Bloğu Ekranındaki komut bloğu durum simgesinin artık siyah bir sınır çizgisi var	#
+tyelAbout.changelog110.label63=- Başlat Ekranı Geri Bildirim düğmesinin adı "Geri Bildirim Gönder" olarak değiştirildi	#
+tyelAbout.changelog110.label64=- Düğme, Başlangıç ​​Ekranı Kenar Çubuğu'ndaki Ty-el Kullanıcı Arayüzü Hakkında ve Oyundan Çık düğmelerine odaklanır artık düzgün çalışıyor	#
+tyelAbout.changelog110.label65=- HUD hotbar'ın hayatta kalma modunda görünmemesi düzeltildi	#
+tyelAbout.changelog110.label66=- Odak gezinme moduyla ilgili sabit içerik günlüğü hataları	#
+tyelAbout.changelog110.label67=- Çeşitli ekran arka planları, kullanıcı arayüzü iyileştirmeleri ve hata düzeltmeleri	#
+## FEATURES REMOVED
+tyelAbout.changelog110.label68=  + Görünmez Dokunma Çemberi, çünkü 1.18.30'da shader'ların çalışmamasını sağlayan RenderDragon eklendi ve bu özellik shader'lar sayesinde mümkün oldu ;-;	#
+tyelAbout.changelog110.label69=  + Hotbar Öğelerini Aç/Kapat ve Döndür düğmeleri, çünkü bu düğmeler Yeni Dokunmatik Kontrol Düzenleri özelliği etkinleştirilirse çalışmayabilir	#
+
+tyelAbout.changelog111=v1.1.1	#
+tyelAbout.changelog111.title=§bTHE §gSMOOTHENED §b& §6UNSMOOTHENED §bUPDATE	#
+## NEW FEATURES
+tyelAbout.changelog111.label1=- New official variable for pack creators to make your packs compatible with my pack, §a"$is_tyel_ui"§r (This can be toggled (§2true§r or §cfalse§r) in _global_variables.json too!)	#
+tyelAbout.changelog111.label2=- Added compatibility mode support for Utility UI pack by HJN (BETA, base, not completely supported)	#
+tyelAbout.changelog111.label3=- You know what, the Hotbar Toggle is BACK! You can now properly use it without having issues about touch control schemes! (Touch devices only)	#
+tyelAbout.changelog111.label4=- Added descriptions to nearly every option in World Settings screen, Audio section in Settings screen, and while you hover the touch control scheme image in Settings/Touch, you can also see the control scheme description as well!	#
+tyelAbout.changelog111.label5=- Added Trade All button to Trade Screens, which can help you bulk trade items faster!	#
+tyelAbout.changelog111.label6=- Autocomplete commands/mentions in chat screen are now faster than before! You can now press on autocomplete text suggestions to automatically complete the commands, or quickly mention someone, how convenient!	#
+tyelAbout.changelog111.label7=- Added the Jump to Bottom button in Chat Screen so you don't even need to scroll down once you scrolled up too far!	#
+tyelAbout.changelog111.label8=- Added Item Highlighter feature to Redstone Screens (Hopper, Dispenser, Dropper) and all container screens in Pocket UI!	#
+tyelAbout.changelog111.label9=- Added the "Delay in Seconds" (not Ticks) counter in Command Block Screen to know the delay between two times executing commands, in Seconds! (The time format is also prettified!)	#
+tyelAbout.changelog111.label10=- Remember the weird "Join The Hive" button in Play Screen from v1.1.0? Now you can even customise it too! This feature is now called "Insta-Join Servers"! To customise this, just open /ui/_global_variables.json and simply change these variables:	#
+tyelAbout.changelog111.label11=§e  + "$insta_join_server_type": Change server type (0 = Featured Servers, 1 = Additional Servers)	#
+tyelAbout.changelog111.label12=§e  + "$insta_join_server_name": Change server name you want to insta-join the server on click! Server names must be exactly the same as you named them in game, and case sensitive!	#
+tyelAbout.changelog111.label13=- Now you can toggle Recovery Compass item renderer on HUD Utility with some variable edits. This feature is always disabled in Featured Servers to prevent game from crashing	#
+tyelAbout.changelog111.label14=- Added the Confirm Purchase dialogue feature to Marketplace PDP Screen and Persona Screen. You can now keep your minecoins safe from buying anything accidentally!	#
+tyelAbout.changelog111.label15=- Added variables to _global_variables.json for pack customisations:	#
+tyelAbout.changelog111.label16=§7  + "$tyel_ui_troubleshooting_mode" for pack deactivation and quit confirmation troubleshooting (might be more in the future)	#
+tyelAbout.changelog111.label17=§7  + "$use_hud_chat_anchor_override" for overriding HUD chat panel anchor variable used by "$use_hud_bottom_chat". Set this to false will make "$use_hud_bottom_chat" unusable and chat panel anchor will be changed automatically to bottom when on non-touch devices	#
+tyelAbout.changelog111.label18=§7  + "$use_hud_bottom_chat" for making HUD chat panel always anchored bottom, set this to false will set the anchor to top as in vanilla	#
+tyelAbout.changelog111.label19=§7  + "$use_recovery_compass_utility" for toggling Recovery Compass item renderer for HUD Utility, this setting is always disabled in Featured Servers to prevent game from crashing	#
+tyelAbout.changelog111.label20=§7  + "$use_large_scroll_box" for toggling Larger Scroll Box in Scrolling Panels (experimental)	#
+tyelAbout.changelog111.label21=§7  + "$disable_compatibility_mode_toasts" for disabling "Compatibility Mode Enabled!" toast messages. Sometimes you are very annoyed seeing these kind of toasts, well, just set this to §2true§r§7 to fix that.	#
+
+## CHANGES
+tyelAbout.changelog111.label22=- Improved Change Screen Safe Area screen, instead of having 4 corners, which is harder to use, now with 4 edges made into a rectangle, you will see how the screen safe area will change easier than before, rather than having 4 corners and some §oimaginations§r	#
+tyelAbout.changelog111.label23=- Added a floating button in Settings/Storage to toggle "File Storage Location" dropdown visibility (Only for supported devices)	#
+tyelAbout.changelog111.label24=- Improved Compatibility Mode for Modules+	#
+tyelAbout.changelog111.label25=- The custom search feature in Resource Packs Screen and Play/Worlds Screen now ignores text formatting blocks	#
+tyelAbout.changelog111.label26=- Added support for Play Screen UI when Editor Mode is enabled	#
+tyelAbout.changelog111.label27=- "Custom Screen Available!" tooltip in Pause Screen now shows "Zeqa Rules & About Ty-el UI here!" instead when playing on Zeqa	## Don't translate "Zeqa Rules & About Ty-el UI here!"	#
+tyelAbout.changelog111.label28=- Changed Zeqa compatibility variable name to "$is_zeqa"	#
+tyelAbout.changelog111.label29=- Changed "Compatibility Mode Enabled" toast design	#
+tyelAbout.changelog111.label30=- Changed horizontal size limit of the main panel in Permissions Screen	#
+tyelAbout.changelog111.label31=- Changed the loading bars while button images are loading, to loading spinner in Server Form Screen	#
+
+## FIXES
+tyelAbout.changelog111.label32=- Fixed a pack error that make entire Settings screen broken while on v1.19.40+	#
+tyelAbout.changelog111.label33=- Fixed a bug that item hover texts in containers aren't visible while on v1.19.40+	#
+tyelAbout.changelog111.label34=- Fixed a bug that the "Mobile Data" badge in Loading World/Dimension Screen always visible even the "Allow mobile data for online play" option isn't enabled while on v1.19.40+	#
+tyelAbout.changelog111.label35=- Fixed a bug that you can't join Realms because the "Download Resource Packs" popup is unable to load	#
+tyelAbout.changelog111.label36=- Fixed Scoreboard Sidebar overlaps Direction HUD when Modules+ Compatibility Mode is enabled	#
+tyelAbout.changelog111.label37=- Fixed Mainhand Percentage overlaps Experience Bar Percentage when Modules+ Compatibility Mode is enabled	#
+tyelAbout.changelog111.label38=- Fixed a bug that you can't use controller arrow buttons to change focuses within button mode dropdowns	#
+tyelAbout.changelog111.label39=- Vanilla Fixes: Fixed an exploit with improperly gaining XP through Furnaces on v1.19.50+, §o§cagain!§r (MCPE-152227)	#
+tyelAbout.changelog111.label40=- Re-added the gamepad helper in Progress Screen	#
+tyelAbout.changelog111.label41=- You can now use the "Start" button on your controller to toggle Sidebar Menu, More Options Menu and Highlight Items	#
+tyelAbout.changelog111.label42=- Optimised the codes of the Start Screen's Sidebar Menu for better accessibility	#
+tyelAbout.changelog111.label43=- Removed custom animations of toast messages because it is currently broken on v1.19.60+	#
+tyelAbout.changelog111.label44=- Fixed some translation bugs	#
+tyelAbout.changelog111.label45=- Minor screen design changes and fixes	#
+
+## FEATURES REMOVED
+tyelAbout.changelog111.label46=- Animated Smooth Purchase buttons in Marketplace PDP Screen and Purchase Lock in Persona Screen, because both are replaced with the better, improved and fancy custom Confirm Purchase dialogues	#
+
+tyelAbout.changelog112=v1.1.2	#
+tyelAbout.changelog112.title=§c1.19.80 AND BEYOND 1.20 COMPATIBILITY HOTFIX	#
+tyelAbout.changelog112.notice1=§dNotice: Although this versions supports v1.19.80 or higher, if you play Minecraft on version 1.20.1 and older, you must manually disable this new experimental flag "$exp_enable_new_recipe_book_tabs" that can be found in /ui/_global_variables.json because if you kept the variable enabled, you would see tabs inside inventory screen are missing while using Classic UI profile. If you play on version 1.20.10 and newer, you need to keep "$exp_enable_new_recipe_book_tabs" enabled, otherwise the game will crash. A dialog will show up in start screen to warn you if you set them incorrectly §l("$exp_enable_new_recipe_book_tabs" is set to true by default.)	#
+tyelAbout.changelog112.notice2=§eThis update added supports of Aseprite Flipbooks for custom panorama (BETA), you can open /ui/_tyel_theme_template.json to know more	#
+
+## NEW FEATURES
+tyelAbout.changelog112.label1=- Added Ty-el UI v1.1.1 translations support to all missing languages since v1.1.1 release	#
+tyelAbout.changelog112.label2=- Redesigned Death Screen, now it looks more like the new Death Screen from Ore UI with red gradient background, changed title font type, and there is an alternative design of the screen hidden behind the "$use_respawn_button_bg_layout_override" variable option	#
+tyelAbout.changelog112.label3=- If you are on Windows or Android or iOS, you can now see the world folder names in Play Screen by pressing the "More options" button at the top right of the screen (the vertical ... button), and enable checkbox "Show World Folder Name (Experimental)"	#
+tyelAbout.changelog112.label4=- You can now see the folder location path of your packs/worlds right inside Settings/Storage section	#
+tyelAbout.changelog112.label5=- Added new technical properties to Item Lore Viewer: "armor_trim_material", "decorated_pot_sherds", "shield_base_color"	#
+tyelAbout.changelog112.label6=- Added Option Descriptions to Settings/Video, as well as the toggle button to hide/show option descriptions at the top right of the screen	#
+tyelAbout.changelog112.label7=- Gamepad helper texts now have a black background behind	#
+tyelAbout.changelog112.label8=- Added new variables to _global_variables.json for pack customisations:	#
+tyelAbout.changelog112.label9=§7  + "$desc_black_bg_alpha": Adjusts the transparency (alpha) of the black background behind button/gamepad helper descriptions and some other bright text controls	#
+tyelAbout.changelog112.label10=§7  + "$use_settings_option_descriptions": Use Option Descriptions feature and its visibility toggle	#
+tyelAbout.changelog112.label11=§7  + "$always_show_settings_option_descriptions_by_default": Always shows Option Descriptions as you open Settings by default	#
+tyelAbout.changelog112.label12=§7  + "$exp_enable_new_recipe_book_tabs": Enables the patch fix of recipe book tabs on v1.20.10 or higher that causes the game to crash (not required if using beta/preview v1.20.10.x or higher)	#
+tyelAbout.changelog112.label13=§7  + "$exp_enable_new_recipe_book_tabs__force_disable": If for some reasons you don't want the "$exp_enable_new_recipe_book_tabs" experiment automatically enabled (maybe because you're playing on beta/preview v1.20.0.x or older, or experiencing invisible tabs), set this to true	#
+tyelAbout.changelog112.label14=§7  + "$enable_recovery_compass_item_id_aux_override": Overrides the Recovery Compass Item ID AUX for versions or addons compatibility (advanced)	#
+tyelAbout.changelog112.label15=§7  + "$rcompass_id_aux_override": Modifies the Recovery Compass Item ID AUX to override if "$enable_recovery_compass_item_id_aux_override" is set to true	#
+tyelAbout.changelog112.label16=§7  + $use_death_screen_respawn_button_bg_layout": Enables the cleaner layout of death screen which the entire background will be the respawn button	#
+tyelAbout.changelog112.label17=§7  + "$use_touch_hide_hud_button": Shows/Hides the Hide HUD button for touch on hotbar	#
+tyelAbout.changelog112.label18=§7  + "$use_container_paper_dolls": Shows/Hides Paper Dolls in container screens (except the one in Inventory Screens, Classic UI only)	#
+tyelAbout.changelog112.label19=§7  + "$world_search_feature_enabled": Enables World Search Feature (may greatly improve performance if disabled)	#
+tyelAbout.changelog112.label20=§7  + "$expanded_content_area_max_size": Expands some content area size to maximum possible size in some screens	#
+
+## CHANGES
+tyelAbout.changelog112.label21=- Added supports to the new Smithing Table v2 Screens	#
+tyelAbout.changelog112.label22=- Updated the Recovery Compass's Item ID AUX for the HUD utilities feature	#
+tyelAbout.changelog112.label23=- Changed screen animations easing from "in_out_sine" to "in_out_circ"	#
+tyelAbout.changelog112.label24=- The main screen content size inside most screens now have limited maximum horizontal content size to reduce screen stretching issues (you can also toggle this change on or off by modifying the "$expanded_content_area_max_size" variable option)	#
+tyelAbout.changelog112.label25=- Replaced the Brewing Fuel progress percentage text with the Brew times left progress text (example: 50% now shows as 10/20)	#
+tyelAbout.changelog112.label26=- Moved the "Sign In" button and the "Signing in" message outside the sidebar menu in Start Screen and is now next to the hamburger "Sidebar Menu" button	#
+tyelAbout.changelog112.label27=- You can now press the Right arrow button on controller/keyboard to close Sidebar Menu while it's opening	#
+tyelAbout.changelog112.label28=- Added a transparent black background to copyright/version texts in Start Screen and gamepad helpers texts for accessibility reasons	#
+tyelAbout.changelog112.label29=- Added TTS supports to the Settings button and the Insta Join Server button inside Play Screen	#
+tyelAbout.changelog112.label30=- You can now toggle hide or show the featured panels inside Dressing Room screens to reduce distractions	#
+tyelAbout.changelog112.label31=- Reformatted the _global_variables.json file by categories	#
+
+## FIXES
+tyelAbout.changelog112.label32=- Fixed the Item ID Data calculator inside Item Lore Viewer showing incorrect values, now it should show correctly on enchanted items (thanks to Asaki Zuki)	#
+tyelAbout.changelog112.label33=- Custom searches now show results correctly if text inputs inside text boxes start with numbers	#
+tyelAbout.changelog112.label34=- Fixed a bug that custom panoramas can cover the entire screen UI while on beta/preview versions of the game	#
+tyelAbout.changelog112.label35=- Fixed the Switch Accounts button inside Start Screen didn't work properly	#
+tyelAbout.changelog112.label36=- Fixed the copyright/version texts offset inside Start Screen on v1.20.x+	#
+tyelAbout.changelog112.label37=- (Vanilla Bug Fix) The dirt background inside Credits screen now scrolls properly	#
+tyelAbout.changelog112.label38=- Many small bug fixes, visual improvements and more	#
+
+tyelAbout.changelog113=v1.1.3 & v1.1.3a	#
+tyelAbout.changelog113.title=§c1.20.30+ COMPATIBLE AND DURABLE HOTFIX	#
+
+tyelAbout.changelog113.label_a_header=Changes and fixes on v1.1.3a (107)-2023.12.7-(r1.20.50):	#
+tyelAbout.changelog113.label_a1=- Updated and improved Chinese (Simplified) translations support, thanks @_Pig_Peppa_ (Twitter)!	#
+tyelAbout.changelog113.label_a2=- Updated Recovery Compass Item ID AUX to 42860544, to support v1.20.50+, players on version before v1.20.50 need to change Item ID AUX in /ui/_global_variables.json back to the old one manually (which is 42795008)	#
+tyelAbout.changelog113.label_a3=- Added a new variable for pack customizations "$use_play_screen_compact_layout": enables compact Play Screen layout (not supported on Vanilla Default subpack)	#
+tyelAbout.changelog113.label_a4=- Fixed a bug on Pocket UI that causes players not being able to obtain items from output slot inside Furnace Screen	#
+tyelAbout.changelog113.label_a5=- Fixed compatibility with Ty-el Settings Overlay, there will be a visual bug if players try to enter the Touch Control Customization screen	#
+tyelAbout.changelog113.label_a6=- Re-added the Autocomplete and Autocomplete Back buttons in Chat Screen again, as both buttons work properly again since v1.20.50	#
+tyelAbout.changelog113.label_a7=- Removed the "Choose Skin" button from inside Start Screen sidebar on v1.20.50 due to a change to bindings	#
+tyelAbout.changelog113.label_a8=- Removed experimental flag "$exp_enable_new_recipe_book_tabs" and all contents related to that experiment, since the pack no longer supports v1.20.10 or older	#
+tyelAbout.changelog113.label_a_footer=v1.1.3 (106)-2023.11.16-(r1.20.41):	#
+
+## NEW FEATURES
+tyelAbout.changelog113.label1=- Updated Portuguese (Brasil) translations support to more places, like About Ty-el UI. Thanks @will_ushuah (Twitter) and @IjoaopedroAnd (Twitter)!	#
+tyelAbout.changelog113.label2=- Introducing the new durability calculation system to inventory screens and mainhand item display on HUD, accurate and very performance friendly!	#
+tyelAbout.changelog113.label3=- Redesigned the Play Screen to properly match the modern Ore UI design (not available in the Vanilla Default subpack)	#
+tyelAbout.changelog113.label4=- Reworked the Content Log History Screen message visuals to reduce eyestrains, with error messages highlighted in red background (this feature is incomplete and might be reverted in the future)	#
+tyelAbout.changelog113.label5=- Added option descriptions to Settings/Accessibility and to some missing places in Settings/Video, World Settings	#
+
+## FIXES
+tyelAbout.changelog113.label6=- Fixed a pack error on v1.20.30+	#
+tyelAbout.changelog113.label7=- Fixed some content log errors	#
+tyelAbout.changelog113.label8=- Fixed a bug that would cause the game to not load item hover texts in inventory/containers correctly (however, this temporarily reverts item hover text rendering methods back to vanilla default, should be back to normal in a future version)	#
+
+## REMOVED
+tyelAbout.changelog113.label9=- Removed the Autocomplete and Autocomplete Back buttons in Chat Screen because it do nothing now. Try using a better method, like pressing on an autocomplete item on main screen	#
+
+tyelAbout.changelog114=v1.1.4	#
+tyelAbout.changelog114.title=§gTHE CSB-COMPATIBLE! UPDATE	#
+
+## NEW FEATURES
+tyelAbout.changelog114.label1=- Updated and changed some of Deutsch (Deutschland) translations. Thanks @Iam_best_dev (Twitter)!	#
+tyelAbout.changelog114.label2=- You can now open the "Marketplace Pass" screen directly from the Confirm Purchase dialog inside the Marketplace Screen and Persona Screen	#
+tyelAbout.changelog114.label3=- You can now use the "Redeem" button inside the Confirm Purchase dialog in Persona Screen if you have a valid and active subscription	#
+tyelAbout.changelog114.label4=- Optimized the Local World Search feature in Play Screen for better performance, and uncapped the maximum indexable worlds from 50 to infinity!	#
+tyelAbout.changelog114.label5=- Re-introduced the item hover text rendering method for touch players	#
+
+## CHANGES
+tyelAbout.changelog114.label6=- Added the Inbox button to the Start Screen sidebar, which was missing in v1.1.3	#
+tyelAbout.changelog114.label7=- Moved the copyright and version labels in Start Screen to the bottom of the screen	#
+
+## FIXES
+tyelAbout.changelog114.label8=- Fixed a bug that causes the content log message "Expected variable not found in ancestor tree: '$education_edition_china'" to appear when opening the Trade Screen v2 for the first time	#
+tyelAbout.changelog114.label9=- Fixed some pack errors that can be seen in the Pack Info screen	#
+
+## REMOVED
+tyelAbout.changelog114.label10=- Removed the "Ultra" Subpack, the accurate percentage label feature will be added back in a future update	#
+
+tyelAbout.changelog120=v1.2.0
+tyelAbout.changelog120.title=§gTHE BIGGEST EVER CALCULATOR UPDATE?!	#
+tyelAbout.changelog120.notice1=Note: "Ore UI Design" as explained here are made with JSON UI to modify only visuals, not to be confused with "Ore UI", which is based on ReactJS.	#
+
+## NEW FEATURES
+tyelAbout.changelog120.label1=- Completely OreUI-ified most dialogs in the game (Vanilla Default subpack won't be affected by this change)	#
+tyelAbout.changelog120.label2=- Improved Controller experiences with redesigned and organized gamepad helpers at the bottom of the screen!	#
+
+tyelAbout.changelog120.label3=§l§b* NEW IN-GAME FEATURES	#
+tyelAbout.changelog120.label4=- New features in HUD Screen:	#
+tyelAbout.changelog120.label5=§7  + Accurate XP Progress, will let you know how many XP is required to ascend to the next level, without percentage trickiness.	#
+tyelAbout.changelog120.label6=§7  + Inventory Free Slots Counter, will let you know if your inventory is currently full or not.	#
+tyelAbout.changelog120.label7=§7  + Total Similar Items in Inventory, for which items you are holding in hotbar, this feature ignores items with durability.	#
+tyelAbout.changelog120.label8=§7  + Utility Artifacts (was HUD Utility) now require player to have actual compass/clock/recovery compass items in inventory to make it show up in HUD. This change was made to balance overall gameplay while improving usages of those items.	#
+tyelAbout.changelog120.label9=§7  + Lodestone Compass Artifacts, will help you put up to 3 lodestone compasses in HUD for easier navigation, each lodestone compass will have a tracking ID to identify which one is correct for you.	#
+tyelAbout.changelog120.label10=§7  + Chunk Coordinates and Chunk Borders, will let you know your current chunk position, and current block position in your chunk, which may come in handy in some situations.	#
+tyelAbout.changelog120.label11=§7  + TAB Menu/HUD Menu for toggling certain features on HUD. To show TAB Menu (for Keyboard and Mouse control), hold the TAB key and press a number key to toggle a specific feature. To show HUD Menu (for Touch control), press the designated button at the top of the screen.	#
+tyelAbout.changelog120.label12=§7  + Player List, will help you check for players in your current multiplayer session, or "Scoreboard List" scores if enabled, hold TAB to peek player list on Keyboard and Mouse, or press Show Player List button inside HUD Menu on Touch control.	#
+tyelAbout.changelog120.label13=§7  + Numbers of players in your current multiplayer session, can be found in HUD Player List.	#
+tyelAbout.changelog120.label14=§7  + Ability to toggle Scoreboard Sidebar, Hotbar (Keyboard and Mouse only) using TAB Menu on Keyboard and Mouse control, or HUD Menu on Touch control.	#
+tyelAbout.changelog120.label15=- Added "Container Toolbox" to inventory screens, which contains some useful features for inventory management. Container Toolbox has these following features:	#
+tyelAbout.changelog120.label16=§7  + Added "Bulk Quick Move" button. To use this feature, you need to select an item in inventory or a supported container screen, then either press "Quick Move to Container" to move all of the same items in your inventory to container, or "Quick Move to Inventory" to move all of the same items in container to your inventory.	#
+tyelAbout.changelog120.label17=§7  + Added "Clear Hotbar/Inventory" button. This feature is hidden behind a small arrow toggle to avoid pressing on it by accident.	#
+tyelAbout.changelog120.label18=§7  + Moved "Drop One/All" and "Destroy One/All" buttons to Container Toolbox.	#
+tyelAbout.changelog120.label19=- Hovering the Craft All button in Inventory Screen or Crafting Screen now shows number of items obtained after craft all, and items remaining after craft all.	#
+tyelAbout.changelog120.label20=- Added "Brewing Guide UI" to Brewing Stand Screen:	#
+tyelAbout.changelog120.label21=§7  + See the full guide on how to make specific potions in Minecraft!	#
+tyelAbout.changelog120.label22=§7  + You can search for a brewing recipe as well!	#
+tyelAbout.changelog120.label23=§7  + Supports Chemistry Mode (requires "Education edition" enabled, and "$brewing_guide__show_chemistry_potions_tab" enabled in the _global_variables.json file)	#
+tyelAbout.changelog120.label24=§7  + Has "Fallback Item Renderer Mode", in case of Item ID AUX being broken again in a future update, or when add-ons were being activated in your worlds	#
+tyelAbout.changelog120.label25=- Villager XP Progress in Trade Screen now uses accurate numbers of XP instead of percentage numbers	#
+tyelAbout.changelog120.label26=- Hovering the "Brewing Times" number in Brewing Stand Screen now shows "Brews Remaining" count (calculated by taking the amount of Blaze Powder in the Fuel Slot multiply by 20, then adding the "Brewing Times" number)	#
+tyelAbout.changelog120.label27=- Added the ability to rotate Smithing Preview in Smithing Screen, by using a slider.	#
+tyelAbout.changelog120.label28=- Added "Durability Gained" amount label to Anvil Screen and Grindstone Screen, to see how many durability points will be added to the items.	#
+tyelAbout.changelog120.label29=- Added "Item Tracking ID" to Lodestone Compass item renderer in inventory.	#
+tyelAbout.changelog120.label30=- Progress Percentage is now heavily optimized and is now able to show up to 2 decimal places. This feature is so optimized that this no longer requires "Ultra Mode" subpack!	#
+tyelAbout.changelog120.label31=- Re-introduced the "Ultra Mode" subpack with these following new features exclusive to this mode:	#
+tyelAbout.changelog120.label32=§7  + Item Durability when hovering an item (does not require selecting items).	#
+tyelAbout.changelog120.label33=§7  + "Chat Caret Mode", to allow players to select and copy chat messages straight from Chat Screen.	#
+tyelAbout.changelog120.label34=§l§b* NEW SERVER EXCLUSIVE QOL FEATURES	#
+tyelAbout.changelog120.label35=- "The Hive" Exclusive: Added Hive XP Calculator, allows you to track for your current XP in your selected game, to enable this, press TAB + 3 if on Keyboard and Mouse control, or find the "Show Hive XP Calculator Menu" if on Touch control. On Keyboard and Mouse control, to select a game, press a number key 1 ~ 6, press 8 or 9 to navigate between pages, press 7 to Reset (hides this feature from HUD), and press TAB or ESC to close menu. On Touch control, the way to interact with this menu is very friendly and straightforward, just tap on buttons.	#
+tyelAbout.changelog120.label36=- "CubeCraft Games" Exclusive: Added Server-Wide XP Progress viewer, allows you to see your current exact XP progress only in lobby. In "Skyblock" game mode, this feature will use the Vanilla XP System instead.	#
+tyelAbout.changelog120.label37=§l§b* OTHER NEW FEATURES	#
+tyelAbout.changelog120.label38=- Added "Chat Blacklist" to allow players to block messages that contain specified criteria. To add words/phrases to blacklist, in _global_variables.json, add your words/phrases to "$chat_blacklist_index_**" variables. Limit is 32 words/phrases. You can also modify blacklist settings to not show the "Message Hidden" notification in HUD Screen and Chat Screen.	#
+tyelAbout.changelog120.label39=- In Start Screen, you can now toggle Start Screen visibility and show only screen background.	#
+tyelAbout.changelog120.label40=- You can now see your worlds list in Play Screen in Grid Mode, this can be toggled very easily in Play Screen. This mode is enabled by default if on touch control mode or using Pocket UI.	#
+tyelAbout.changelog120.label41=- You can now see your saved world folder names in Play Screen. This feature is toggleable through the More Options menu.	#
+tyelAbout.changelog120.label42=- Further optimized the algorithm of searching worlds in Play Screen, and you can now see number of worlds that meets your current search criteria.	#
+tyelAbout.changelog120.label43=- Re-added the "Left hand mode" toggle in Settings/Touch. This is because some players might prefer Mob Effect Panel to be displayed from the left side rather than the right side of the screen.	#
+tyelAbout.changelog120.label44=- Added "Hardcoded Keys" category in Settings/Keyboard & Mouse. This will allow players to know some hidden and not customizable hotkeys in the game.	#
+tyelAbout.changelog120.label45=- Added the ability clear custom Search Bars in some specific screens.	#
+tyelAbout.changelog120.label46=- Added the ability to show accurate amount and percentage of rates in Marketplace PDP Screen.	#
+tyelAbout.changelog120.label47=- Added "Highlight Filter" to Dressing Room screen to allow players to focus on only specific pieces that match filter criteria.	#
+tyelAbout.changelog120.label48=- Added hover tooltip to Marketplace and Dressing Room sidebars with a nice little animation.	#
+tyelAbout.changelog120.label49=§l§b* TECHNICAL FEATURES	#
+tyelAbout.changelog120.label50=- Added Ty-el UI Validation system, can be found in the "About Ty-el UI" screen. This will allow players to inspect custom UI JSON file errors if available.	#
+tyelAbout.changelog120.label51=- Players can now see full folder paths of resource content in Settings/Storage.	#
+tyelAbout.changelog120.label52=- Added the ability to generate a "textures_list.json" file for Resource Packs in Settings/Storage. This feature is only available for packs that are not from the Marketplace.	#
+tyelAbout.changelog120.label53=§l§b* NEW GLOBAL VARIABLES	#
+tyelAbout.changelog120.label54=- Added these new global variables to "/ui/_global_variables.json" for pack customization:	#
+tyelAbout.changelog120.label55=§7  + "$use_brewing_guide_gui": Enable Brewing Guide GUI feature in Brewing Stand Screen (disable this if having performance issues).	#
+tyelAbout.changelog120.label56=§7  + "$brewing_guide__show_chemistry_potions_tab": Enable the Chemistry Potions tab in Brewing Guide UI.	#
+tyelAbout.changelog120.label57=§7  + "$hud_utility_artifacts_mode": Toggle between Dynamic Utility Artifacts/Legacy HUD Utilities. Because of this change, "$use_recovery_compass_utility" have been put behind "Legacy HUD Utilities".	#
+tyelAbout.changelog120.label58=§7  + "$show_trailing_zeros_in_percentage_labels": Hide/Show trailing zeros in custom percentage labels (maximum 2 trailing zeros).	#
+tyelAbout.changelog120.label59=- Added these new global variables to "/ui/_global_variables.json" to allow you to toggle and customize HUD Utilities and Modules:	#
+tyelAbout.changelog120.label60=§7  + "$enable_movable_hud_utilities_and_modules": Enable the ability to customize HUD Modules, must be enabled first to be able to customize anchors and offsets.	#
+tyelAbout.changelog120.label61=§7  + "$use_tyel_hud_modules:accurate_exp_progress", "$accurate_exp_progress_anchor", "$accurate_exp_progress_offset": Accurate XP Progress	#
+tyelAbout.changelog120.label62=§7  + "$use_tyel_hud_modules:inventory_free_slots_counter", "$inventory_free_slots_counter_anchor", "$inventory_free_slots_counter_offset": Inventory Free Slots Counter	#
+tyelAbout.changelog120.label63=§7  + "$use_tyel_hud_modules:lodestone_compass_artifacts", "$lodestone_compass_artifacts_anchor", "$lodestone_compass_artifacts_offset": Lodestone Compass Artifacts	#
+tyelAbout.changelog120.label64=§7  + "$use_tyel_hud_modules:mainhand_renderer", "$mainhand_renderer_anchor", "$mainhand_renderer_offset": Mainhand Renderer	#
+tyelAbout.changelog120.label65=§7  + "$use_tyel_hud_modules:utility_artifacts", "$utility_artifacts_anchor", "$utility_artifacts_offset": Utility Artifacts (Compass, Clock, Recovery Compass)	#
+tyelAbout.changelog120.label66=- Added these new global variables to "/ui/_global_variables.json" to allow you to customize Ty-el UI's Ore UI Design elements:	#
+tyelAbout.changelog120.label67=§7  + "$tyel_oreui_design:light_button_default_text_color"	#
+tyelAbout.changelog120.label68=§7  + "$tyel_oreui_design:light_button_hover_text_color"	#
+tyelAbout.changelog120.label69=§7  + "$tyel_oreui_design:light_button_pressed_text_color"	#
+tyelAbout.changelog120.label70=§7  + "$tyel_oreui_design:light_button_locked_text_color"	#
+tyelAbout.changelog120.label71=§7  + "$tyel_oreui_design:dark_button_default_text_color"	#
+tyelAbout.changelog120.label72=§7  + "$tyel_oreui_design:dark_button_hover_text_color"	#
+tyelAbout.changelog120.label73=§7  + "$tyel_oreui_design:dark_button_pressed_text_color"	#
+tyelAbout.changelog120.label74=§7  + "$tyel_oreui_design:dark_button_locked_text_color"	#
+tyelAbout.changelog120.label75=§7  + "$tyel_oreui_design:green_button_default_text_color"	#
+tyelAbout.changelog120.label76=§7  + "$tyel_oreui_design:green_button_hover_text_color"	#
+tyelAbout.changelog120.label77=§7  + "$tyel_oreui_design:green_button_pressed_text_color"	#
+tyelAbout.changelog120.label78=§7  + "$tyel_oreui_design:realms_button_default_text_color"	#
+tyelAbout.changelog120.label79=§7  + "$tyel_oreui_design:realms_button_hover_text_color"	#
+tyelAbout.changelog120.label80=§7  + "$tyel_oreui_design:realms_button_pressed_text_color"	#
+tyelAbout.changelog120.label81=§7  + "$tyel_oreui_design:red_button_default_text_color"	#
+tyelAbout.changelog120.label82=§7  + "$tyel_oreui_design:red_button_hover_text_color"	#
+tyelAbout.changelog120.label83=§7  + "$tyel_oreui_design:red_button_pressed_text_color"	#
+tyelAbout.changelog120.label84=§7  + "$tyel_oreui_design:common_title_button_icon_color"	#
+
+### CHANGES
+tyelAbout.changelog120.label85=- Added the eye-closing effect transition to Bed Screen.	#
+tyelAbout.changelog120.label86=- Made normal Toast Notifications form-fitting, it will be more compact and smaller than the vanilla one.	#
+tyelAbout.changelog120.label87=- Redesigned the World Loading Screen to make it look more modern with the "Mine-Chop-Dig" animated icon at the bottom right of the screen.	#
+tyelAbout.changelog120.label88=- Redesigned the "Screen takes too long to load" loading bar panel to have only a simple spinner image.	#
+tyelAbout.changelog120.label89=- Redesigned the Pack Info Screen for a cleaner look, and added pack size label to the info panel.	#
+tyelAbout.changelog120.label90=- Moved the "Filter Search" text box in Server Form Screen behind a "Search" toggle.	#
+tyelAbout.changelog120.label91=- Changed translation of "I want to buy this item" in Confirm Purchase dialog to "Accept and Proceed to Purchase".	#
+tyelAbout.changelog120.label92=- Reformatted overall pack file structure.	#
+tyelAbout.changelog120.label93=- Default value for vanilla global variable "$player_list_score_color" was changed from Red to Yellow.	#
+tyelAbout.changelog120.label94=§l§e* CHANGED GLOBAL VARIABLES DEFAULT VALUES	#
+tyelAbout.changelog120.label95=- "$scoreboard_sidebar_anchor" => "right_middle"	#
+tyelAbout.changelog120.label96=- "$scoreboard_sidebar_anchor_pocket" => "right_middle"	#
+
+### FIXES
+tyelAbout.changelog120.label97=- Fixed many bugs that cause the game to throw tons of content log errors.	#
+tyelAbout.changelog120.label98=- Fixed a pack error in Start Screen when "Realms Promo" treatment was applied by the game.	#
+tyelAbout.changelog120.label99=- Fixed item stack labels appeared to be on top of Item Highlighter overlay.	#
+tyelAbout.changelog120.label100=- Miscellaneous screen layouts and improvements bug fixes.	#
+
+### REMOVED FEATURES
+tyelAbout.changelog120.label101=- These following global variables were removed because these are no longer needed or impossible to customize because of Ore UI (the one from the game, not to be confused with "Ore UI Design"):	#
+tyelAbout.changelog120.label102=§7  + "$tyel_dialog_accent_color": Accent color for Ty-el UI Dialog top bar, but after this update, all dialogs were replaced with new Ore UI Design dialogs.	#
+tyelAbout.changelog120.label103=§7  + "$use_death_screen_respawn_button_bg_layout", "$use_black_death_background", "$black_death_bg_alpha": Death Screen was replaced with the new Death Screen powered by Ore UI.	#
+tyelAbout.changelog120.label104=§7  + "$actionbar_bg_alpha": It's now possible to change Action Bar background opacity right in Settings/Accessibility.	#
+tyelAbout.changelog120.label105=§l§c* REMOVED SERVER EXCLUSIVE FEATURES	#
+tyelAbout.changelog120.label106=- "The Hive" Exclusive: Andesite Counter, this feature was replaced with the improved and more powerful feature "Total Similar Items in Inventory".	#
