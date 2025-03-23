@@ -4,64 +4,175 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bedrock Console</title>
+	<title>Bedrock & Bash Console</title>
 	<script>
 		let socket = new WebSocket(`ws://${window.location.host}/ws`);
 
 		socket.addEventListener("message", (ev) => {
-			let logDiv = document.getElementById("log");
-			let newMessage = document.createElement("div");
-			newMessage.textContent = ev.data;
-			logDiv.appendChild(newMessage);
-			logDiv.scrollTop = logDiv.scrollHeight; // Auto-scroll to latest log
+			let data = JSON.parse(ev.data);
+			let source = data.source;
+			let message = data.message;
+			let logDiv;
+
+			if (source === "bedrock") {
+				logDiv = document.getElementById("bedrock-log");
+			} else if (source === "bash") {
+				logDiv = document.getElementById("bash-log");
+			}
+
+			if (logDiv) {
+				let newMessage = document.createElement("div");
+				newMessage.textContent = message;
+				logDiv.appendChild(newMessage);
+				logDiv.scrollTop = logDiv.scrollHeight; // Auto-scroll to latest log
+			}
 		});
 
-		function sendCommand(event) {
+		function sendBedrockCommand(event) {
 			event.preventDefault();
-			let command = document.getElementById("command").value;
+			let command = document.getElementById("bedrock-command").value;
 			fetch("/send_command", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ command: command })
 			});
-			document.getElementById("command").value = "";
+			document.getElementById("bedrock-command").value = "";
 		}
 
-		function Send(command) {
-			fetch("/send_command", {
+		function sendBashCommand(event) {
+			event.preventDefault();
+			let command = document.getElementById("bash-command").value;
+			fetch("/send_terminal_command", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ command: command })
 			});
+			document.getElementById("bash-command").value = "";
+		}
+
+		// New function to restart the Docker container
+		function restartContainer() {
+			fetch("/restart_container", {
+				method: "POST",
+			})
+				.then(response => response.json())
+				.then(data => alert(data.message || data.error));
 		}
 	</script>
 	<style>
-		body {
-			font-family: Arial, sans-serif;
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
 		}
 
-		#log {
-			height: 400px;
-			overflow-y: scroll;
-			border: 1px solid #ccc;
+		body {
+			font-family: Arial, sans-serif;
+			background: #121212;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+		}
+
+		.console-container {
+			display: flex;
+			height: 100%;
+		}
+
+		.console-box {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			border: 1px solid #444;
+			background: #1e1e1e;
+			margin: 5px;
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		.console-header {
+			background: #333;
 			padding: 10px;
-			background: #000;
-			color: #0f0;
+			text-align: center;
+			font-weight: bold;
+			border-bottom: 2px solid #555;
+		}
+
+		.console {
+			flex: 1;
+			overflow-y: auto;
+			padding: 10px;
 			font-family: monospace;
+			background: black;
+			color: #0f0;
+			border-bottom: 2px solid #555;
+		}
+
+		.input-container {
+			display: flex;
+			padding: 10px;
+			background: #222;
+			border-top: 1px solid #444;
+		}
+
+		.input-container input {
+			flex: 1;
+			padding: 8px;
+			background: #000;
+			color: white;
+			border: 1px solid #555;
+			outline: none;
+			border-radius: 5px;
+		}
+
+		.input-container button {
+			margin-left: 5px;
+			padding: 8px 15px;
+			background: #008080;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.input-container button:hover {
+			background: #00a0a0;
+		}
+
+		@media (max-width: 768px) {
+			.console-container {
+				flex-direction: column;
+			}
 		}
 	</style>
 </head>
 
 <body>
-	<h2>Bedrock Server Console</h2>
-	<div id="log"></div>
-	<form onsubmit="sendCommand(event)">
-		<input type="text" id="command" placeholder="Enter command" required>
-		<button type="submit">Send</button>
-	</form>
-	<form onsubmit="sendCommand('reload')">
-		<button type="submit">Reload Mods</button>
-	</form>
+	<div class="console-container">
+		<div class="console-box">
+			<div class="console-header">Bedrock Server Console</div>
+			<div id="bedrock-log" class="console"></div>
+			<div class="input-container">
+				<input type="text" id="bedrock-command" placeholder="Enter Bedrock command">
+				<button onclick="sendBedrockCommand(event)">Send</button>
+			</div>
+		</div>
+
+		<div class="console-box">
+			<div class="console-header">Bash Terminal</div>
+			<div id="bash-log" class="console"></div>
+			<div class="input-container">
+				<input type="text" id="bash-command" placeholder="Enter Bash command">
+				<button onclick="sendBashCommand(event)">Send</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- New Restart Button -->
+	<div style="text-align: center; padding: 10px;">
+		<button onclick="restartContainer()">Restart Docker Container</button>
+	</div>
 </body>
 
 </html>
