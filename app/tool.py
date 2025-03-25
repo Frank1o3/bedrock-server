@@ -3,13 +3,18 @@ import threading
 import asyncio
 import uvicorn
 from fastapi import FastAPI, WebSocket
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import json
+import os
 
 app = FastAPI()
-app.mount("/bedrock/static", StaticFiles(directory="static"), name="static")
+app.mount("/bedrock/static/assets",
+          StaticFiles(directory="static/assets"), name="assets")
+app.mount("/bedrock/static",
+          StaticFiles(directory="static", html=True), name="static")
+
 
 # Start Bedrock server
 bedrock_process = subprocess.Popen(
@@ -77,8 +82,8 @@ async def broadcast(message: str, source: str):
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_index():
-    with open("static/index.html", "r") as f:
-        return HTMLResponse(content=f.read())
+    index_path = os.path.join("static", "index.html")
+    return FileResponse(index_path)
 
 
 @app.websocket("/ws")

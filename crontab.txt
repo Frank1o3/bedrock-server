@@ -2,4 +2,4 @@
 */15 * * * * /bin/bash /bedrock/backup.sh >> /backups/backup.log 2>&1
 
 # Run No-IP DDNS update every 5 minutes (fixing environment variable issue)
-*/5 * * * * /bin/bash noip-duc -g all.ddnskey.com --username "$NO_IP_USERNAME" --password "$NO_IP_PASSWORD"' >> /bedrock/noip.log 2>&1
+*/5 * * * * /bin/bash noip-duc -g all.ddnskey.com --username "$NO_IP_USERNAME" --password "$NO_IP_PASSWORD" >> /bedrock/noip.log 2>&1
