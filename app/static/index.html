@@ -1,104 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bedrock & Bash Console</title>
-    <script>
-        let socket = new WebSocket(`ws://${window.location.host}/ws`);
-
-        socket.addEventListener("message", (ev) => {
-            let data = JSON.parse(ev.data);
-            let source = data.source;
-            let message = data.message;
-            let logDiv;
-
-            if (source === "bedrock") {
-                logDiv = document.getElementById("bedrock-log");
-            } else if (source === "bash") {
-                logDiv = document.getElementById("bash-log");
-            }
-
-            if (logDiv) {
-                let newMessage = document.createElement("div");
-                newMessage.textContent = message;
-                logDiv.appendChild(newMessage);
-                logDiv.scrollTop = logDiv.scrollHeight; // Auto-scroll to latest log
-            }
-        });
-
-        function sendBedrockCommand(event) {
-            event.preventDefault();
-            let command = document.getElementById("bedrock-command").value;
-            fetch("/send_command", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ command: command })
-            });
-            document.getElementById("bedrock-command").value = "";
-        }
-
-        function sendBashCommand(event) {
-            event.preventDefault();
-            let command = document.getElementById("bash-command").value;
-            fetch("/send_terminal_command", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ command: command })
-            });
-            document.getElementById("bash-command").value = "";
-        }
-    </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .console-container {
-            display: flex;
-            gap: 20px;
-        }
-
-        .console {
-            width: 50%;
-            height: 400px;
-            overflow-y: scroll;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background: #000;
-            color: #0f0;
-            font-family: monospace;
-        }
-
-        .input-container {
-            margin-top: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Bedrock & Bash Web Terminals</h1>
-
-    <div class="console-container">
-        <div>
-            <h2>Bedrock Server Console</h2>
-            <div id="bedrock-log" class="console"></div>
-            <div class="input-container">
-                <input type="text" id="bedrock-command" placeholder="Enter Bedrock command" required>
-                <button onclick="sendBedrockCommand(event)">Send</button>
-            </div>
-        </div>
-
-        <div>
-            <h2>Bash Terminal</h2>
-            <div id="bash-log" class="console"></div>
-            <div class="input-container">
-                <input type="text" id="bash-command" placeholder="Enter Bash command" required>
-                <button onclick="sendBashCommand(event)">Send</button>
-            </div>
-        </div>
-    </div>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bedrock/static/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <script type="module" crossorigin src="/bedrock/static/assets/index-CC57jAR8.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
