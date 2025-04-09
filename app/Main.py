@@ -62,6 +62,10 @@ class CommandRequest(BaseModel):
     command: str
 
 
+class AuthRequest(BaseModel):
+    username: str
+    password: str
+
 class SettingsRequest(BaseModel):
     username: str
     password: str
@@ -190,7 +194,7 @@ async def handle_cookie(request: Request):
     account_data[username] = {"password": password}
     save_account_data(account_data)  # Save updated account data to file
 
-    return {"accountCreated": True}  # Successfully created account
+    return {"accountCreated": True}  # Successfully created accoun
 
 
 @app.post("/send_command")
@@ -234,6 +238,15 @@ async def server_command(request: CommandRequest):
 
     return {"error": "Invalid command. Use 'start' or 'stop'."}
 
+
+@app.post("/auth")
+async def authenticate(auth: AuthRequest):
+    account_data = load_account_data()
+
+    if auth.username in account_data and account_data[auth.username]["password"] == auth.password:
+        return {"authenticated": True}
+    else:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
 
 @app.get("/settings")
 async def get_all_env_vars(username: str, password: str):
