@@ -7,9 +7,12 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import json
+import os
 
 app = FastAPI()
 app.mount("/bedrock/static", StaticFiles(directory="static"), name="static")
+
+DATA_FILE = "data.json"
 
 # Start Bedrock server
 
@@ -59,23 +62,25 @@ class CommandRequest(BaseModel):
     command: str
 
 
-class AuthRequest(BaseModel):
+class SettingsRequest(BaseModel):
     username: str
     password: str
-
+    option: str  # The environment variable name
+    update: str  # The new value for the environment variable
 
 # Load account data from file (data.json)
+
+
 def load_account_data():
-    try:
-        with open("./data.json", "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
+    if not os.path.exists(DATA_FILE):
         return {}
+    with open(DATA_FILE, "r") as f:
+        return json.load(f)
 
 
 def save_account_data(data):
-    with open("./data.json", "w") as f:
-        json.dump(data, f)
+    with open(DATA_FILE, "w") as f:
+        json.dump(data, f, indent=4)
 
 
 # Check if account is created (only the first user can access)
@@ -188,7 +193,6 @@ async def handle_cookie(request: Request):
     return {"accountCreated": True}  # Successfully created account
 
 
-
 @app.post("/send_command")
 async def send_command(request: CommandRequest):
     """
@@ -232,37 +236,48 @@ async def server_command(request: CommandRequest):
 
 
 @app.get("/settings")
-async def get_settings(auth: AuthRequest):
+async def get_all_env_vars(username: str, password: str):
     """
-    Returns server settings if the user is authenticated with correct username and password.
-    """
-    account_data = load_account_data()
-
-    # Authenticate user by username and password
-    if auth.username in account_data and account_data[auth.username]["password"] == auth.password:
-        ip = fetch_noip_ip()
-        return {"ip": ip}
-    else:
-        raise HTTPException(
-            status_code=401, detail="Invalid username or password")
-
-@app.post("/update_noip")
-async def update_noip(auth: AuthRequest, request: Request):
-    """
-    Updates the No-IP credentials with the provided username and password.
+    Fetch all environment variables if the user is authenticated.
     """
     account_data = load_account_data()
 
-    # Authenticate user by username and password
-    if auth.username in account_data and account_data[auth.username]["password"] == auth.password:
-        data = await request.json()
-        username = data.get("username")
-        password = data.get("password")
-        update_noip_credentials(username, password)
-        return {"message": "No-IP credentials updated successfully."}
-    else:
-        raise HTTPException(
-            status_code=401, detail="Invalid username or password")
+    # Authenticate user
+    if username in account_data and account_data[username]["password"] == password:
+        return {"env_vars": dict(os.environ)}
+
+    raise HTTPException(status_code=401, detail="Invalid username or password")
+
+
+@app.post("/settings")
+async def update_env_var(request: SettingsRequest):
+    """
+    Update a specific environment variable if the user is authenticated.
+    """
+    account_data = load_account_data()
+
+    if request.username in account_data and account_data[request.username]["password"] == request.password:
+        env_var_name = request.option
+        new_value = request.update
+
+        if env_var_name not in os.environ:
+            raise HTTPException(
+                status_code=400, detail=f"Environment variable '{env_var_name}' does not exist.")
+
+        # Update the environment variable inside the container
+        os.environ[env_var_name] = new_value
+
+        # Apply changes by restarting the container (Optional)
+        try:
+            subprocess.run(
+                ["docker", "restart", "bedrock_server_container"], check=True)
+        except subprocess.CalledProcessError as e:
+            raise HTTPException(
+                status_code=500, detail=f"Failed to restart container: {str(e)}")
+
+        return {"message": f"Environment variable '{env_var_name}' updated successfully."}
+
+    raise HTTPException(status_code=401, detail="Invalid username or password")
 
 
 # Start the log streaming threads
