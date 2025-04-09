@@ -52,7 +52,7 @@ bash_process = subprocess.Popen(
 )
 
 # WebSocket clients
-clients: set[WebSocket] = set()
+clients = set()
 
 
 class CommandRequest(BaseModel):
