@@ -27,7 +27,7 @@ RUN useradd -m -s /bin/bash bedrock && \
 # Set working directory
 WORKDIR /bedrock
 
-RUN curl -L -A "bedrock-server-1.21.62.01.zip" -o bedrock-server-1.21.62.01.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.62.01.zip && \
+RUN curl -L -A "bedrock-server-1.21.62.01.zip" -o bedrock-server-1.21.62.01.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.80.27.zip && \
     unzip bedrock-server-1.21.62.01.zip && \
     rm bedrock-server-1.21.62.01.zip
 
