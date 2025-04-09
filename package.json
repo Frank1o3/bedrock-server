@@ -20,7 +20,8 @@
   "dependencies": {
     "@minecraft/server": "^2.0.0-beta",
     "@minecraft/server-ui": "^2.0.0-beta",
-    "@minecraft/vanilla-data": "^1.21.62"
+    "@minecraft/vanilla-data": "^1.21.62",
+    "bedrock-server": "file:"
   },
   "devDependencies": {
     "@types/node": "^22.13.10"

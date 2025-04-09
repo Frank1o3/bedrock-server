@@ -36,12 +36,18 @@ if [ "$1" == "rollback" ]; then
     rm -rf "$LATEST_BACKUP"
 
     echo "Restarting server..."
-    # Activate the virtual environment
+
+    # Create a virtual environment and install dependencies
+    python3 -m venv /bedrock/venv
+    source /bedrock/venv/bin/activate
     pip install fastapi websockets "uvicorn[standard]"
-    python3 /bedrock/tool.py
+    python3 /bedrock/Main.py
 else
     echo "Starting Minecraft server..."
-    # Activate the virtual environment
+    
+    # Create a virtual environment and install dependencies
+    python3 -m venv /bedrock/venv
+    source /bedrock/venv/bin/activate
     pip install fastapi websockets "uvicorn[standard]"
-    python3 /bedrock/tool.py
+    python3 /bedrock/Main.py
 fi
