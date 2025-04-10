@@ -1,0 +1,82 @@
+{
+  "emote_wheel_screen": {
+    "$force_render_below": true,
+    "$screen_bg_content": "persona.emote_wheel_bg_content",
+    "$fill_alpha": "$fill_alpha",
+    "$is_full_screen_layout": "(not $is_modules_plus)",
+    "$is_modules_plus|default": false,
+    "modifications": [
+      {
+        "array_name": "button_mappings",
+        "operation": "insert_back",
+        "value": [
+          {
+            "from_button_id": "button.scoreboard",
+            "to_button_id": "button.dressing_room",
+            "mapping_type": "global",
+            "input_mode_condition": "not_gamepad"
+          }
+        ]
+      }
+    ]
+  },
+
+  "emote_wheel_bg_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "emote_wheel_touch_zone@common_buttons.no_background_content_button": {
+          "size": [ "100%", "100%" ],
+          "$pressed_button_name": "button.menu_exit",
+          "sound_volume": 0,
+          "focus_enabled": false,
+          "tts_ignore_count": true,
+          "tts_skip_message": true,
+          "tts_inherit_siblings": true
+        }
+      }
+    ]
+  }
+
+  //"emote_wheel_screen_content/root_panel/emotes_panel": {
+  //  "$squaring_panel_content": "persona.animated_emote_wheel_panel"
+  //},
+
+  //"animated_emote_wheel_panel": {
+  //  "type": "panel",
+  //  "controls": [
+  //    {
+  //      "center_slot_panel": {
+  //        "type": "panel",
+  //        "size": [ "34%", "34%" ],
+  //        "controls": [
+  //          {
+  //            "frame_image@persona.frame_image_template": {
+  //              "size": [ "100% + 4px", "100% + 4px" ]
+  //            }
+  //          },
+  //          {
+  //            "emote_name@persona_common.emote_label": {
+  //              "size": [ "100% - 12px", "default" ],
+  //              "max_size": [ "100% - 12px", "100% - 12px" ],
+  //              "text": "#emote_name",
+  //              "layer": 10,
+  //              "shadow": true,
+  //              "bindings": [
+  //                {
+  //                  "binding_name": "#emote_name"
+  //                }
+  //              ]
+  //            }
+  //          }
+  //        ]
+  //      }
+  //    }
+  //  ]
+  //},
+
+  //"frame_image_template": {
+  //  "type": "image",
+  //  "texture": "textures/ui/dialog_background_hollow_4_thin"
+  //}
+}

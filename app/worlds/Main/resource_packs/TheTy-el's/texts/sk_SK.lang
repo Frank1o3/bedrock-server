@@ -1,0 +1,226 @@
+## You can customise these 4 following lines
+## \/ \/
+deathScreen.message=You Died!	#
+deathScreen.subtitlemessage=... ;-; Don't give up	#
+inBed.title=zzz...	#
+inBed.subtitle=Sweet Dreams! _(-w-)_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### Maximum 6 characters
+icontext.all=All	### Maximum 6 characters
+icontext.hovertext.multiplyone=Item Amount: One Item	#
+icontext.hovertext.all=Item Amount: One Slot	#
+
+icontext.dropOne=Drop One	#
+icontext.dropAll=Drop All	#
+icontext.destroyOne=Destroy One	#
+icontext.destroyAll=Destroy All	#
+
+accessibility.chat.tts.autocomplete=Autocomplete	#
+accessibility.chat.tts.autocompleteback=Autocomplete Back	#
+accessibility.chat.tts.previous=Previous Message	#
+accessibility.chat.tts.next=Next Message	#
+accessibility.chat.tts.visibilityModeToggle=Chat Visibility Mode Toggle	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, Current Mode: Auto Complete Panel	#
+accessibility.chat.tts.visibilityModeToggle.chat=, Current Mode: Chat Panel	#
+
+accessibility.pause.infoPanelToggle=Info Panel Toggle	#
+accessibility.play.editMode=Edit	#
+accessibility.play.quickJoinButton=Quick Join Server Button	#
+accessibility.toggle.tts.startsidebar=Sidebar Menu Button	#
+accessibility.toggle.tts.threedotsmenu=More Options	#
+
+chat.placeHolderText=Enter your chat message or command here...	#
+commandBlockScreen.placeHolderText=Enter your command input here	#
+commandBlockScreen.placeHolderOutputText=Your command output will be here...	#
+
+compatibility.enabled=Compatibility Mode Enabled!	#
+compatibility.autoEnabledforServer=Ty-el UI's Compatibility Mode for this server is available and will automatically enable once you join!	#
+compatibility.enabledForAdditionalServers.disclaimer=If you see this badge on any external server toggles, it means that those servers have Compatibility Mode for Ty-el UI available, check server info in pause screen in game for more info.	#
+compatibility.tyelUI=Compatible with Ty-el UI!	#
+
+container.destroyItemsTooltip.line1=Double Press on items to Destroy Items.	#
+container.destroyItemsTooltip.line1_touch=Double Tap on items to Destroy Items.	#
+container.destroyItemsTooltip.line2=§l§cBe careful when choosing items to destroy!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=Can't use Destroy Items mode in Survival!	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aThis mode is only available in Creative game mode.§r	#
+container.fastCraft=Fast Craft	#
+container.fastCraft.warningHoverText=Fast Craft, §cVery Dangerous!§r Press on any item slot in recipe book to quick craft it! May lose your valuable items forever if you crafted something wrong by accident!	#
+container.highlightItems=Highlight Items (Case Sensitive!)	#
+container.highlightitems.placeholdertext=Highlight Items...	#
+container.itemAmountHoverText.one=Item Amount: One Item	#
+container.itemAmountHoverText.max=Item Amount: One Stack	#
+container.itemAmountHoverText.maxFixed=Item Amount: One Stack (Fixed)	#
+container.invMode=Inventory Mode:	#
+container.invMode.autoPlace=Auto Place	#
+container.invMode.manualPlace=Manual Place	#
+container.invMode.normalMode=Normal Mode	#
+container.invMode.autoPlaceMode=Quick Move Mode	#
+container.invMode.dropMode=Drop Mode	#
+container.invMode.autoDestroyMode=Destroy Items Mode	#
+container.quickCraft=Quick Craft	#
+
+controller.buttonTip.doublePress=[Double Press]	#
+controller.buttonTip.toggleSidebar=Sidebar Menu	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=Synchronised with the default game mode of the world.	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=Fly around and observe the world without interacting with it in any way.	#
+createWorldScreen.levelSeed.copySeedTooltip=Press on the level seed text box, select all the seed text and press Copy on your keyboard.	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=Click on the level seed text box, press Ctrl + A and then Ctrl + C on your keyboard to copy the level seed.	#
+createWorldScreen.serverSimDistanceDescription.header=The game loads and applies changes within a specified amount of block radius	#
+createWorldScreen.serverSimDistanceDescription.footer=Block Radius:	#
+createWorldScreen.worldNameDescription.create=This is where you can name your world.	#
+createWorldScreen.worldNameDescription.edit=This is where you can edit the name of your world.	#
+createWorldScreen.worldLocationSectionName=World Folder Location:	#
+createWorldScreen.worldLocationSection.unknownLabel=(Unknown)	#
+
+deathScreen.btnBgLayout.labelHeader=Press anywhere to Respawn	#
+deathScreen.btnBgLayout.labelHeader.touch=Tap anywhere to Respawn	#
+deathScreen.btnBgLayout.labelFooter=or go back to Main Menu	#
+
+dr.toggle.purchaseLock=Purchase Lock	#
+
+generator.infinite.desc=An infinite world goes on and on forever. Various landscapes generate utilising biomes.	#
+generator.old.desc=A finite world in size and height, 256x256x256. Uses old world generations.	#
+
+hudScreen.hideHudTooltip=Double Tap to Hide HUD	#
+hudScreen.lowDurability=Low Durability!	#
+hudScreen.showHudTooltip=Tap this area to Show HUD again!	#
+
+itemLore.title=Item Lore Viewer §o§7(BETA!)	#
+itemLore.emptyMessage=<This slot is empty!>	#
+
+menu.communityStandards=View Community Standards	#
+menu.feedback=Odoslať spätnú väzbu	#
+menu.multiplayerHelp=Multiplayer Help	#
+menu.quit=Quit Game	#
+
+networkWorld.view_server_store=View Server Store	#
+
+options.quickSettingsTitle=Quick Settings	#
+options.thirdperson.firstperson_short=First	#
+options.thirdperson.thirdpersonback_short=3rd Back	#
+options.thirdperson.thirdpersonfront_short=3rd Front	#
+options.toggleOptionDescriptions=Show/Hide Option Descriptions	#
+
+options.gamma.description=Adjusts the game's brightness.	#
+options.thirdperson.description=Toggles first/third person view. Third person view allows the player to view the nearby environment from an "outside" perspective.	#
+options.fullscreen.description=Puts Minecraft into Fullscreen mode; keeping it off keeps it in a window.	#
+options.hidehand.description=Shows or hides the player hand in first person view.	#
+options.hidepaperdoll.description=Toggles the side-view of the player displayed in the top-left corner of the screen.	#
+options.hidehud.description=Shows/Hides the HUD.	#
+options.screenAnimations.description=Toggles the animations when switching between UI or menus.	#
+options.interfaceOpacity.description=Toggles the opacity of the HUD. Choosing item on hotbar or interacting with UI will temporarily revert the opacity back to 100% . This option won't affect Paper Doll opacity.	#
+options.fov.description=Changes the field of view. Controls how much of the game world is visible on the screen.	#
+options.splitscreen.description=Toggles between the horizontal and vertical orientation of the splitscreen.	#
+options.showautosaveicon.description=Hides/Shows the autosave indicator icon. The indicator icon shows on HUD when the game is attempting to automatically save your world to device storage.	#
+options.classic_box_selection.description=Toggles the outline selection of the block. Disabling this will instead use highlight selection of the block.	#
+options.ingamePlayerNames.description=Toggles the name tag text visibility that can be seen on top of players' head, mobs and NPCs.	#
+options.splitscreenIngamePlayerNames.description=Toggles the name tag text visibility that can be seen on top of players' head, mobs and NPCs, while in split screen.	#
+options.viewBobbing.description=Toggles the "bobbing" motion of the camera as the player is walking.	#
+options.screenShake.description=Toggles screen shake when maps use the "/camerashake" commands. Disabling this option prevents the game from screen shaking when the commands are executed.	#
+options.transparentleaves.description=Toggles transparent leaves.	#
+options.bubbleparticles.description=Toggles the fancy water bubble columns graphics. This may lower performance on some devices.	#
+options.renderclouds.description=Toggles the clouds graphics. Disabling this option causes no clouds to be rendered.	#
+options.fancyskies.description=Toggles the sun, moon, clouds, stars and sky color. Disabling this option will not render them in the world and instead only sky color is rendered.	#
+options.smooth_lighting.description=Lighting is smoothed across the blocks (ambient occlusion) or each block has a distinctive light level.	#
+options.graphics.description=Fancy graphics enable higher quality graphic effects, including transparent leaves, transparent clouds.	#
+options.fov.toggle.description=Toggles whether gameplay affects FOV changes, when sprinting, when having slowness or speed effect, etc.	#
+options.guiScale.description=Controls the Graphical User Interface scale. This also controls the HUD size.	#
+options.gui.accessibility.scaling.description=Enables an extra large version of the menu interface as an additional accessibility option.	#
+options.uiprofile.description=Changes the game UI style between classic (Desktop UI) and Pocket UI. Classic UI has Java-like UI style, while Pocket UI has bigger item slots, redesigned screens, more user-friendly to mobile devices.	#
+options.raytracing.description=Toggles the ray tracing on or off.	#
+options.upscaling.description=Boosts frame rates on GeForce RTX graphics cards with NVIDIA DLSS 2.0.	#
+options.raytracing.renderDistance.description=Controls the chunk render distance of ray tracing if "Ray Tracing" option is on.	#
+options.renderDistance.description=Controls how many chunks of the world are visible at once. This also affects the render distance of foliage such as transparent leaves, crops and animated textures.	#
+options.maxFramerate.description=Limits the framerates per second. Limiting the framerate to a multiple of the player monitor's refresh rate can save processing power.	#
+options.msaa.description=Toggles the amount of anti-aliasing, which smoothes the image and removes jagged edges.	#
+options.vsync.description=Limits the framerates per second to the screen's refresh rate. Set to No Vertical Sync or Adaptive will increase FPS higher than player monitor's refresh rate but negatively affect processing power.	#
+
+pauseScreen.thirdPartyWorld=Featured Server	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Upper Tab	#
+playscreen.navigateDown=Lower Tab	#
+playscreen.joinRecentExternalServer=Join Recent External Server	#
+playscreen.recentlyPlayed=Recently Played	#
+playscreen.playButton=HRAŤ!	#
+playscreen.projectsearch.placeholdertext=Search projects... [Case Sensitive]	#
+playscreen.showWorldFolderName=Show World Folder Name (Experimental)	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cWARNING:§r Due to bad performance and code limitations, we can only index up to §l§e50§r most recent worlds to be searchable, sorry for the inconvenience.	#
+playscreen.worldsearch.placeholdertext=Search for your favourite worlds... [Case Sensitive!]	#
+playscreen.worldsearch.resultmessage_before=Results for: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.warning.forceautoplace.title=Force Quick Move On Warning	#
+playscreen.warning.forceautoplace.body=Use Force Quick Move On feature in servers as your own risk, do not abuse this too much in servers (especially featured servers)!	#
+
+progressScreen.hiveNetherGlitch.title=AARGH,... Nether Glitch Again!	#
+progressScreen.hiveNetherGlitch.body=What can you do? Just... wait and rejoin, or force close and reopen the game, or if you're on Windows, use your "Restore Down" button, not "Minimize"! It should close this screen instantly for you!	#
+
+resourcePack.packSearchPlaceHolderText.global=Search Global Packs...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Search Resource Packs...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Search Behaviour Packs...	#
+resourcePack.showNotDownloaded=Show Not Downloaded	#
+resourcePack.tyelUIWarningMessage=If you already activated Ty-el UI in Global Resources, you shouldn't need to activate Ty-el UI in World Resource Packs again, except you enabled "Require players to accept resource packs to join" in World Resource Packs Settings, to avoid duplicated controls bugs and unexpected errors.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=An error has occured while trying to load /ui/_global_variables.json from Ty-el UI. Check the file syntaxes and try this again.	#
+
+screenshot.saveLocation=Screenshot Location:	#
+screenshot.showSaveLocation=Show Screenshot Location	#
+
+serverform.searchPlaceHolderText=Filter Search... [Case Sensitive!]	#
+serverform.searchDisclaimer.tooltip=Make sure that you don't want to try to search contents that are used too often in this form screen, for example: §o"Select to equip", "Last Seen", etc.	#
+
+soundCategory.ambient.description=Volume of ambience (underwater, nether or cave sounds), sounds of entering or exiting water and fireworks	#
+soundCategory.block.description=Volume of blocks (anvils, chests, doors, etc.)	#
+soundCategory.hostile.description=Volume of hostile and neutral mobs (zombies, creepers, spiders, etc.)	#
+soundCategory.main.description=Master volume of all sounds (both game music and sounds)	#
+soundCategory.music.description=Master volume of the gameplay music (randomly played while playing)	#
+soundCategory.neutral.description=Volume of passive mobs (chickens, cows, pigs, villagers, etc.)	#
+soundCategory.player.description=Volume of players (item plops, hurt sounds, eating sounds, etc.)	#
+soundCategory.record.description=Volume of music and sounds played from Note Blocks and Jukeboxes	#
+soundCategory.sound.description=Master volume of the gameplay sounds (exclude music)	#
+soundCategory.weather.description=Volume of rain and thunder	#
+soundCategory.texttospeech.description=Volume of text to speech (TTS for chat and UI, enable these in Settings/Accessibility section)	#
+
+storageManager.floatingFileStorageSelector.tooltip=Want to change your storage location? Press here! (NOT RECOMMENDED while playing with Ty-el UI!)	#
+
+store.cost=Cost:	#
+store.free.uppercase=§l§oFREE!	#
+
+store.confirmPurchase.title=Confirm Purchase	#
+store.confirmPurchase.description=Are you sure you want to buy this item? Here's what you'll get:	#
+store.confirmPurchase.description_completed=You're good to go. You can now close this dialogue and enjoy your purchase.	#
+store.confirmPurchase.tooltip=You will be prompted to confirm the purchase while you press on the purchase buttons to avoid buying items by accident.	#
+store.proceedToPurchase=I will buy this item	#
+
+trade.tradeAll=Trade All	#
+
+tyelAbout.about=About Ty-el UI	#
+tyelAbout.customAvailable=Custom Screen Available!	#
+tyelAbout.minGameVerRequired=Minimum Minecraft Version required:	#
+tyelAbout.openAboutTyelUITooltip.openText=Press me to open the About Ty-el UI screen (currently showing the custom screen)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Press me to go back to the custom screen (currently showing the About Ty-el UI screen)	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Ty-el UI Troubleshooting Mode	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=Press this "Deactivate Ty-el UI" button to deactivate the pack instantly, and press "Close Settings" to complete the deactivation process. You also need to change "$tyel_ui_troubleshooting_mode" back to §cfalse§r in /ui/_global_variables.json after this process is done.	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=You got this new button because the /ui/_global_variables.json file wasn't loaded correctly. Please check the file syntaxes and try again. Or if you want to deactivate Ty-el UI, press this "Deactivate Ty-el UI" button to deactivate the pack instantly, and press "Close Settings" to complete the deactivation process.	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Deactivate Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=Close Settings	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=Can't deactivate Ty-el UI while in game	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=Troubleshooting Mode	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Ty-el UI Troubleshooting Mode	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Global Variables failed to load!)	#
+
+tyelAbout.expRequiredDialog.openSettings=Open Game Settings	#
+tyelAbout.expRequiredDialog.title=Ty-el UI: Experimental Flags Required	#
+tyelAbout.expRequiredDialog.header=Before continue playing with Ty-el UI in your current version of the game, you should change these experimental flag(s) manually first §c(because it can't be automated)§r:	#
+tyelAbout.expRequiredDialog.bodyParagraph1=Open the "/ui/_global_variables.json" inside the Ty-el UI's pack folder (usually "TheTy-el's") to modify all the required flag(s) and then restart the game or reactivate the pack. The reason(s) why can be found below:	#
+tyelAbout.expRequiredDialog.bodyParagraph2=You can also open Game Settings to safely deactivate Ty-el UI and wait until a next pack update is released. ;-;	#
+tyelAbout.expRequiredDialog.gameVersionHeader=Your current game version:	#
+
+tyelAbout.translationHelp=I need your help! If you want to translate the pack in to your language, please contact me on Twitter.	#

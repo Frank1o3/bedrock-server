@@ -1,0 +1,67 @@
+{
+  "right_navigation_tabs": {
+    "modifications": [
+      {
+        "control_name": "pocket_tab_close_button",
+        "operation": "replace",
+        "value": [
+          { "pocket_tab_close_and_help_button@common_tabs.pocket_tab_close_and_help_button": {} }
+        ]
+      }
+    ]
+  },
+
+  "trade_and_help_buttons/how_to_play_button_holder": {
+    "modifications": [
+      {
+        "control_name": "how_to_play_button",
+        "operation": "replace",
+        "value": [
+          {
+            "how_to_play_button@trade2.trade_all_button": {
+              "size": [ 32, "100%" ],
+              "anchor_from": "right_middle",
+              "anchor_to": "right_middle",
+              "$trade_icon_size": [ 24, 24 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "name_and_trade_slots_stack_panel/exp_progress_bar_holder": {
+    "modifications": [
+      {
+        "control_name": "exp_progress_bar",
+        "operation": "replace",
+        "value": [
+          {
+            "exp_progress_bar@trade2.exp_progress_bar_panel": {
+              "size": [ "100% - 16px", "100%c" ],
+              "offset": [ 0, 0 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "screen_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "trade_tier_calc_stack@trade2.trade_tier_calc_stack": {}
+          }
+        ]
+      },
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

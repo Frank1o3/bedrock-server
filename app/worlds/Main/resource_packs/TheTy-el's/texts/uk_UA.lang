@@ -1,0 +1,225 @@
+## Ви можете налаштувати ці 4 наступні рядки
+## \/ \/
+deathScreen.message=Вам гаплик!	#
+deathScreen.subtitlemessage=... ;-; Не здавайся...	#
+inBed.title=zzz...	#
+inBed.subtitle=Солодких снів! _(u-u)_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### Maximum 6 characters
+icontext.all=Усі	### Maximum 6 characters
+icontext.hovertext.multiplyone=Сума предмет: Один предмет	#
+icontext.hovertext.all=Сума предмет: Один слот	#
+
+icontext.dropOne=Викинути один	#
+icontext.dropAll=Викинути усі	#
+icontext.destroyOne=Знищити один	#
+icontext.destroyAll=Знищити усі	#
+
+accessibility.chat.tts.autocomplete=Автозавершення	#
+accessibility.chat.tts.autocompleteback=Назад автозаповнення	#
+accessibility.chat.tts.previous=Попереднє повідомлення	#
+accessibility.chat.tts.next=Наступне повідомлення	#
+accessibility.chat.tts.visibilityModeToggle=Перемикач режиму видимості чату	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, Поточний режим:  автозаповнення	#
+accessibility.chat.tts.visibilityModeToggle.chat=, Поточний режим: Панельний чат	#
+
+accessibility.pause.infoPanelToggle=Перемикач інформаційної панелі	#
+accessibility.play.editMode=Змінити	#
+accessibility.play.quickJoinButton=Кнопка швидкого приєднання до серверу	#
+accessibility.toggle.tts.startsidebar=Кнопка меню бічної панелі	#
+accessibility.toggle.tts.threedotsmenu=Більше параметри	#
+
+chat.placeHolderText=Введіть тут своє повідомлення або команду...	#
+commandBlockScreen.placeHolderText=Введіть тут свою команду	#
+commandBlockScreen.placeHolderOutputText=Вихід команди буде тут...	#
+
+compatibility.enabled=Режим сумісності ввімкнуто!	#
+compatibility.autoEnabledforServer=Режим сумісності Ty-el UI для цього сервера доступний і вмикається автоматично після приєднання!	#
+compatibility.enabledForAdditionalServers.disclaimer=Якщо ви бачите цей значок на будь-якому перемикачі зовнішнього сервера, це означає, що на цих серверах доступний режим сумісності для Ty-el UI. Для отримання додаткової інформації перевірте інформацію про сервер на екрані паузи в грі.	#
+compatibility.tyelUI=Сумісний з Ty-el UI!	#
+
+container.destroyItemsTooltip.line1=Двічі натисніть на предмети, щоб знищити предмети.	#
+container.destroyItemsTooltip.line1_touch=Двічі торкніться на предмети, щоб знищити предмети.	#
+container.destroyItemsTooltip.line2=§l§cБудьте обережні, вибираючи предмети для знищення!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=Не можна використовувати режим Знищення предметів у Виживанні!	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aЦей режим доступний лише в Творчому режимі.§r	#
+container.fastCraft=Швидше скрафтити	#
+container.fastCraft.warningHoverText=Швидкий крафт, §cДуже небезпечно!§r Натисніть на будь-який слот предмета в книзі рецептів, щоб швидко створити предмет у ньому! Ви можете назавжди втратити свої цінні предмети, якщо ви випадково створили щось не так!	#
+container.highlightItems=Виділіть предмети (Чутливий до регістру!)	#
+container.highlightitems.placeholdertext=Виділіть предмети...	#
+container.itemAmountHoverText.one=Сума предмет: Один предмет	#
+container.itemAmountHoverText.max=Сума предмет: Один стак	#
+container.itemAmountHoverText.maxFixed=Сума предмет: Один стак (Виправлено)	#
+container.invMode=Режим інвентар:	#
+container.invMode.autoPlace=Авто розміщення	#
+container.invMode.manualPlace=Посібник розміщення	#
+container.invMode.normalMode=Нормальний режим	#
+container.invMode.autoPlaceMode=Режим швидкого переміщення	#
+container.invMode.dropMode=Режим викидування	#
+container.invMode.autoDestroyMode=Режим знищення предметів	#
+container.quickCraft=Швидкий крафт	#
+
+controller.buttonTip.doublePress=[Двіччі Натисніть]	#
+controller.buttonTip.toggleSidebar=Меню бічної панелі	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=Синхронізовано зі стандартним ігровим режимом світу.	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=Літайте навколо та спостерігайте за світом, жодним чином з ним не взаємодіючи.	#
+createWorldScreen.levelSeed.copySeedTooltip=Натисніть текстове поле сід, виділіть весь текст сіду і натисніть Копіювати на клавіатурі.	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=Натисніть на текстове поле сід, натисніть Ctrl + A, а потім Ctrl + C на клавіатурі, щоб скопіювати сід.	#
+createWorldScreen.serverSimDistanceDescription.header=Гра завантажує та застосовує зміни в межах заданого радіусу блоків	#
+createWorldScreen.serverSimDistanceDescription.footer=Радіус блоків:	#
+createWorldScreen.worldNameDescription.create=Тут ви можете назвати свій світ.	#
+createWorldScreen.worldNameDescription.edit=Тут ви можете змінити назву свого світу.	#
+createWorldScreen.worldLocationSectionName=Локація папки світу:	#
+createWorldScreen.worldLocationSection.unknownLabel=(Невідомо)	#
+
+deathScreen.btnBgLayout.labelHeader=Натисність будь де для відродження	#
+deathScreen.btnBgLayout.labelHeader.touch=Натисність будь де для відродження	#
+deathScreen.btnBgLayout.labelFooter=або вийдіть головне меню	#
+
+dr.toggle.purchaseLock=Замок покупки	#
+
+generator.infinite.desc=Нескінченний світ триває вічно. Різноманітні ландшафти створюють використання біомів.	#
+generator.old.desc=Кінцевий світ розміром і висотою, 256x256x256. Використовує покоління старого світу.	#
+
+hudScreen.hideHudTooltip=Двічі торкніться, щоб приховати HUD	#
+hudScreen.lowDurability=Низька міцність!	#
+hudScreen.showHudTooltip=Торкніться цієї області, щоб знову показати HUD!	#
+
+itemLore.title=Перегляд інформації про предмет §o§7(БЕТА!)	#
+itemLore.emptyMessage=<Цей слот порожній!>	#
+
+menu.communityStandards=Переглянути стандарти спільноти	#
+menu.feedback=Надіслати відгук	#
+menu.multiplayerHelp=Довідка мультиплеєр	#
+menu.quit=Вийти з гри	#
+
+networkWorld.view_server_store=Переглянути магазин серверів	#
+
+options.quickSettingsTitle=Швидка налаштування	#
+options.thirdperson.firstperson_short=Першої	#
+options.thirdperson.thirdpersonback_short=Третьої / ззаду	#
+options.thirdperson.thirdpersonfront_short=Третьої / спереду	#
+options.toggleOptionDescriptions=Показати/Сховати опис параметрів	#
+
+options.gamma.description=Налаштуйте яскравість гри.	#
+options.thirdperson.description=Змінює вигляд від першої/третьої особи. Вигляд від третьої особи дозволяє дивитися гравцю на довкілля зі сторони	#
+options.fullscreen.description=Розгортає гру на весь екран; вимикаючі це залишає гру у вікні.	#
+options.hidehand.description=Показує чи ховає руку гравця у вигляді від першої особи	#
+options.hidepaperdoll.description=Перемикає вигляд гравця зі сторони, який розташований у лівому верхньому куті екрану.	#
+options.hidehud.description=Показує/ховає HUD	#
+options.screenAnimations.description=Змінює анімацію, коли переключаєшся між UI або меню	#
+options.interfaceOpacity.description=Вибираючі предмет у панелі швидкого доступу або взаємодія з UI тимчасово повертає непрозорість до 100%. Це налаштування не впливає на непрозорість паперової ляльки.	#
+options.fov.description=Змінює поле зору. Визначає скільки ігрового світу видно на екрані.	#
+options.splitscreen.description=Перемикає між горизонтальною і вертикальною орієнтацією при розділені екрану.	#
+options.showautosaveicon.description=Показує/Ховає індикатор автозбереження. Індикатор показує на HUD коли гра намагається автоматично зберегти ваш світ на пам'ять пристрою.	#
+options.classic_box_selection.description=Перемикає контурний вибір блоку. Вимикаючі це натомість буде використовувати підсвічування блоку.	#
+options.ingamePlayerNames.description=Перемикає видимість імен/тексту ярликів які ви можете побачити над головами гравців, мобів і NPC	#
+options.splitscreenIngamePlayerNames.description=Перемикає видимість імен/тексту ярликів які ви можете побачити над головами гравців, мобів і NPC, під час розділення екрану.	#
+options.viewBobbing.description=Змінює "стрибаючий" рух камери коли гравець пересувається.	#
+options.screenShake.description=Змінює трясіння екрану коли світи використовують команди "/camerashake". Вимикаючі це запобігає гру від трясіння екрану коли команди виконані.	#
+options.transparentleaves.description=Вмикає прозорі листя	#
+options.bubbleparticles.description=Вмикає ефект строкатого стовпу з водяних бульбашок. Це може знизити продуктивність на деяких пристроях.	#
+options.renderclouds.description=Змінює графіку хмар. Вимикаючі це призводить до не рендерення хмар.	#
+options.fancyskies.description=Змінює графіку сонця, місяця, зірок і неба. Вимикаючі це не буде рендерети їх у світі і натомість буле рендерети тільки колір неба	#
+options.smooth_lighting.description=Освітлення пом'якшено по блоках (Ambient occlusion) або кожен блок має відмінний рівень освітлення.	#
+options.graphics.description=Красива графіка вмикає вищу якість графічних ефектів, включаючі прозорі листя, прозорі хмари.	#
+options.fov.toggle.description=Вмикає вплив гри на зміну FOVу, коли маєш ефект уповільнення чи швидкості, тд.	#
+options.guiScale.description=Змінює маштаб графічного інтерфейсу користувача. Це також змінює розмір HUD.	#
+options.gui.accessibility.scaling.description=Вмикає збільшену версію інтерфейсу меню як додаткове налаштування доступності.	#
+options.uiprofile.description=Перемикає між класичним (Десктоп UI) і кишеньковим. Класичне UI має подібний стиль до Java UI, й натомість Кишенькове UI має більші слоти для предметів, перероблені вікна, більш зручний для мобільних пристроїв інтерфейс	#
+options.raytracing.description=Змінює режим трасування променів між вмк/вимк.	#
+options.upscaling.description=Збільшує частоту кадрів на відеокартах GeForce RTX за допоги NVIDIA DLSS 2.0.	#
+options.raytracing.renderDistance.description=Змінює відстань рендеру чанків для трасування променів "Трасування променів" увімкнено.	#
+options.renderDistance.description=Змінює кількість видимих чанків у світі. Це також впливає на дальність рендеру рослинності (foliage) таких як прозорі листя, рослин і анімованих текстур.	#
+options.maxFramerate.description=Обмежує максимальну частоту кадрів на секунду. Обмеження частоти кадрів, кратним до частоти оновлення монітора гравця може заощадити обчислювану потужність	#
+options.msaa.description=Змінює зглажування, що пом'якшує зображення й прибирає зубчасті кути.	#
+options.vsync.description=Обмежує частоту кадрів на секунду до частоти оновлення екрана. Якщо встановлено значення Без вертикальної синхронізації або Адаптивна, частота кадрів у секунду буде вищою за частоту оновлення монітора гравця, але це негативно вплине на обчислювальну потужність.	#
+
+pauseScreen.thirdPartyWorld=Рекомендовані сервери	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Верхня вкладка	#
+playscreen.navigateDown=Нижня вкладка	#
+playscreen.joinRecentExternalServer=Приєднатися до останнього зовнішнього сервера	#
+playscreen.recentlyPlayed=Недавно грав	#
+playscreen.playButton=ГРАТИ!	#
+playscreen.projectsearch.placeholdertext=Пошук проектів... [Чутливий до регістру]	#
+playscreen.showWorldFolderName=Показати ім'я папки світу (Експерементальне)	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cУВАГА:§r Через погану продуктивність і обмеження коду ми можемо індексувати лише до §l§e50§r останніх світів, щоб мати можливість здійснювати пошук, вибачте за незручності.	#
+playscreen.worldsearch.placeholdertext=Пошук світи... [Чутливий до регістру!]	#
+playscreen.worldsearch.resultmessage_before=Результати для: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.warning.forceautoplace.title=Примусово швидке переміщення: попередження	#
+playscreen.warning.forceautoplace.body=Використовуйте функцію примусово швидкого переміщення на серверах на свій страх і ризик, не зловживайте цим занадто сильно на серверах (особливо на рекомендованих серверах)!	#
+
+progressScreen.hiveNetherGlitch.title=AARGH,... Знову Nether Glitch!	#
+progressScreen.hiveNetherGlitch.body=Що ти можеш зробити? Просто... зачекайте та знову приєднайтеся, або примусово закрийте та знову відкрийте гру, або, якщо ви користуєтеся Windows, скористайтеся кнопкою «Відновити», а не «Згорнути»! Він повинен миттєво закрити цей екран для вас!	#
+
+resourcePack.packSearchPlaceHolderText.global=Пошук глобальних ресурсів...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Пошук пакетів ресурсів...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Пошук пакетів поведінки...	#
+resourcePack.showNotDownloaded=Показувати не завантажені	#
+resourcePack.tyelUIWarningMessage=Якщо ви вже активували Ty-el UI в Глобальних ресурсах, вам не потрібно знову активувати Ty-el UI у Пакетах ресурсів світу, за винятком того, що ви ввімкнули "Вимагати від гравців прийняти пакети ресурсів, щоб приєднатися до світу" в налаштуваннях Пакетів ресурсів світу, щоб уникайте помилок дублювання елементів керування та несподіваних помилок.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=Під час спроби завантажити /ui/_global_variables.json із Ty-el UI сталася помилка. Перевірте синтаксис файлу та повторіть спробу.	#
+
+screenshot.saveLocation=Розташування знімку екрана:	#
+screenshot.showSaveLocation=Показ розташування знімку екрана	#
+
+serverform.searchPlaceHolderText=Фільтр пошуку... [Чутливий до регістру!]	#
+serverform.searchDisclaimer.tooltip=Переконайтеся, що ви не хочете шукати вміст, який надто часто використовується на цьому екрані форми, наприклад: §o"Select to equip", "Last Seen",...	#
+
+soundCategory.ambient.description=Гучність звуків довкілля (підводні звуки, звуки незеру або печерні звуки), звуки входу або виходу з води та феєрверки	#
+soundCategory.block.description=Гучність звуку блоків (ковадла, скрині, двері, і т.д.)	#
+soundCategory.hostile.description=Гучність звуку ворожих та нейтральних мобів (зомбі, кріпери, павуки, і т.д.)	#
+soundCategory.main.description=Головна гучність всіх звуків (як музика гри, так і всі інші звуки)	#
+soundCategory.music.description=Головна гучність звуку музики ігрового процесу (випадково програються під час гри)	#
+soundCategory.neutral.description=Гучність звуку мирних мобів (кури, корови, свині, селяни, і т.д.)	#
+soundCategory.player.description=Гучність звуку гравців (викидання предметів, звуки шкоди, звуки їжі, і т.д.)	#
+soundCategory.record.description=Гучність звуку музики та звуків, що відтворюються з нотних блоків та програвачів	#
+soundCategory.sound.description=Головна гучність звуків ігрового процесу (виключає музику)	#
+soundCategory.weather.description=Гучність звуку дощу і грому	#
+soundCategory.texttospeech.description=Гучність звуку голосового відтворення тексту (для чату і UI увімкніть їх у розділі «Налаштування/Спеціальні можливості».)	#
+
+storageManager.floatingFileStorageSelector.tooltip=Хочете змінити місце зберігання? Натисніть тут! (НЕ РЕКОМЕНДУЄТЬСЯ під час гри з Ty-el UI!)	#
+
+store.cost=Вартість:	#
+store.free.uppercase=§l§oБЕЗКОШТОВНО!	#
+
+store.confirmPurchase.title=Підтвердити покупку	#
+store.confirmPurchase.description=Ви впевнені, що бажаєте купити цей товар? Ось що ви отримаєте:	#
+store.confirmPurchase.description_completed=Ваш товар готовий. Тепер ви можете закрити це вікно і насолоджуватися покупкою.	#
+store.confirmPurchase.tooltip=Вам буде запропоновано підтвердити покупку під час натискання кнопок покупки, щоб уникнути випадкової покупки товарів.	#
+store.proceedToPurchase=Я куплю цю річ	#
+
+trade.tradeAll=Продати все	#
+
+tyelAbout.about=Про Ty-el UI	#
+tyelAbout.customAvailable=Доступний особливий екран!	#
+tyelAbout.minGameVerRequired=Необхідна мінімальна версія Minecraft:	#
+tyelAbout.openAboutTyelUITooltip.openText=Натисніть мене, щоб відкрити Про Ty-el UI (наразі особливий екран)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Натисніть мене, щоб повернутися до особливий екрана (наразі екран Про Ty-el UI)	#
+tyelAbout.translationHelp=Мені потрібна твоя допомога! Якщо ви хочете перекласти пакет на вашу мову, зв’яжіться зі мною в Twitter.	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Режим усунення несправностей Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=Натисніть цю кнопку «Деактивувати Ty-el UI», щоб миттєво деактивувати пакет, і натисніть «Закрити налаштування», щоб завершити процес деактивації. Вам також потрібно змінити "$tyel_ui_troubleshooting_mode" назад на §cfalse§r у /ui/_global_variables.json після завершення процесу.	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=Ви отримали цю нову кнопку, оскільки файл /ui/_global_variables.json завантажено неправильно. Перевірте синтаксис файлу та повторіть спробу. Або, якщо ви хочете деактивувати Ty-el UI, натисніть Натисніть цю кнопку «Деактивувати Ty-el UI», щоб миттєво деактивувати пакет, і натисніть «Закрити налаштування», щоб завершити процес деактивації.	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Деактивувати Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=Закрити налаштування	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=Неможливо деактивувати Ty-el UI під час гри	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Режим усунення	#
+tyelAbout.troubleshootingMode.watermark.label_row2=несправностей Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Режим усунення несправностей Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Не вдалося завантажити глобальні змінні!)	#
+
+tyelAbout.expRequiredDialog.openSettings=Відкрити налаштування гри	#
+tyelAbout.expRequiredDialog.title=Експерементальні позначки які необхідні	#
+tyelAbout.expRequiredDialog.header=Перш ніж продовжувати грати з Ty-el UI у вашій поточній версії гри, вам слід змінити ці експериментальні прапорці вручну §c(оскільки це неможливо автоматизувати)§r:	#
+tyelAbout.expRequiredDialog.bodyParagraph1=Відкрийте файл "/ui/_global_variables.json" у папці ресурспака Ty-el UI's (зазвичай назва "TheTy-el's"), щоб змінити всі необхідні позначки, а потім перезапустіть гру або переактивуйте пакунок. Причину(и) помилок можна знайти нижче:	#
+tyelAbout.expRequiredDialog.bodyParagraph2=Ви можете також відкрити Налаштування Гри щоб безпечно деактивувати Ty-el UI і чекати коли оновлення вийде. ;-;	#
+tyelAbout.expRequiredDialog.gameVersionHeader=Ваша поточна версія гри:	#

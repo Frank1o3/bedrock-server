@@ -1,0 +1,29 @@
+{
+  "gamepad_disconnected_modal": {
+    "controls": [
+      {
+        "dialog@common_dialogs.main_panel_no_buttons": {
+          "$show_close_button": false,
+          "$text_name": "gamepad_disconnect",
+          "$child_control": "gamepad_disconnected.gamepad_disconnected_modal_body"
+        }
+      }
+    ]
+  },
+
+  "gamepad_disconnected_modal_body": {
+    "type": "panel",
+    "controls": [
+      {
+        "description": {
+          "layer": 10,
+          "type": "label",
+          "color": "$body_text_color",
+          "size": [ "100% - 8px", "default" ],
+          "text": "gamepad_disconnect.reconnectController",
+          "text_alignment": "center"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "trade_panel": {
+    "modifications": [
+      {
+        "control_name": "gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

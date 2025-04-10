@@ -1,0 +1,162 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "modal_title_text": {
+    "font_type": "$title_font_type",
+    "font_scale_factor": "$title_font_scale_factor",
+    "size": [ "default", "default" ],
+    "text": "$popup_title_text",
+    "text_tts": "$popup_title_text_tts",
+    "layer": 5,
+    "$title_font_type|default": "normal",
+    "$title_font_scale_factor|default": 1,
+    "$popup_title_text|default": "#text",
+    "$popup_title_text_tts|default": "#tts_text",
+    "$default_modal_title_text|default": "modal.defaultTitle",
+    "$popup_title_bindings|default": [
+      {
+        "binding_type": "view",
+        "source_control_name": "$visibility_source_control_name",
+        "source_property_name": "#modal_title_text",
+        "target_property_name": "#text_pre"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#text_pre = '') + ':' + $default_modal_title_text - ('false:' + $default_modal_title_text) - 'true:' + #text_pre)",
+        "target_property_name": "#text"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "$visibility_source_control_name",
+        "source_property_name": "#modal_title_tts",
+        "target_property_name": "#tts_text"
+      }
+    ],
+    "bindings": "$popup_title_bindings"
+  },
+
+  "modal_label_text": {
+    "modifications": [
+      {
+        "control_name": "text",
+        "operation": "replace",
+        "value": [
+          {
+            "text": {
+              "type": "panel",
+              "size": [ "100%", "100%c" ],
+              "controls": [
+                {
+                  "text": {
+                    "type": "label",
+                    "size": [ "default", "default" ],
+                    "max_size": [ "100%", "default" ],
+                    "anchor_to": "$modal_label_anchor",
+                    "anchor_from": "$modal_label_anchor",
+                    "$modal_label_anchor|default": "top_left",
+                    "layer": 2,
+                    "$popup_label_text|default": "#text",
+                    "$popup_label_text_tts|default": "#tts_text",
+                    "$modal_label_text_alignment|default": "left",
+                    "text_alignment": "$modal_label_text_alignment",
+                    "text": "$popup_label_text",
+                    "text_tts": "$popup_label_text_tts",
+                    "color": "$body_text_color",
+                    "font_type": "default",
+                    "shadow": false,
+                    "bindings": "$popup_label_bindings",
+                    "$popup_label_bindings|default": [
+                      {
+                        "binding_type": "view",
+                        "source_control_name": "$visibility_source_control_name",
+                        "source_property_name": "#modal_label_text",
+                        "target_property_name": "#text"
+                      },
+                      {
+                        "binding_type": "view",
+                        "source_control_name": "$visibility_source_control_name",
+                        "source_property_name": "#modal_label_tts",
+                        "target_property_name": "#tts_text"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "padding2": {
+              "type": "panel",
+              "layer": 2,
+              "size": [ 0, 2 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "modal_input_panel": {
+    "layer": 500
+  },
+
+  "modal_dialog_popup/modal_input": {
+    "$show_black_background|default": true,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "dynamic_helpers@popup_dialog.popup_dynamic_helpers_panel": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "modal_dialog_popup/modal_input/black_background": {
+    "ignored": "$is_holographic",
+    "texture": "textures/ui/screen_background",
+    "alpha": "$fill_alpha",
+    "size": [ "120%", "120%" ]
+  },
+
+  "form_fit_modal_dialog_popup/background": {
+    "size": [ "120%", "120%" ]
+  },
+
+  "gamepad_helpers_a_and_b_dynamic": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", "100%cm" ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "$show_gamepad_helper_a_tooltip|default": true,
+    "$show_gamepad_helper_b_tooltip|default": true,
+    "controls": [
+      {
+        "gamepad_helper_a@common.gamepad_helper_a": {
+          "ignored": "(not $show_gamepad_helper_a_tooltip)"
+        }
+      },
+      {
+        "gamepad_helper_b@common.gamepad_helper_b": {
+          "ignored": "(not $show_gamepad_helper_b_tooltip)"
+        }
+      }
+    ]
+  },
+
+  "popup_dynamic_helpers_panel@common.dynamic_helpers_template": {
+    "layer": 2,
+    "$dynamic_helpers_content": "popup_dialog.gamepad_helpers_a_and_b_dynamic"
+  }
+}

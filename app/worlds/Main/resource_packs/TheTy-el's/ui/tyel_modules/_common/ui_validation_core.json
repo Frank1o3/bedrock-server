@@ -1,0 +1,347 @@
+{
+  "namespace": "tyel_ui_validation",
+
+  "tyel_ui_validation_template": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%c" ],
+    "$gverr": "tyel_ui_validation.validation_error_template__global_variable_value_invalid",
+    "$fnf": "tyel_ui_validation.validation_error_template__tyel_ui_asset_not_found",
+    "$file_version_violation": "tyel_ui_validation.validation_error_template__file_version_violation"
+  },
+
+  // * File errors
+
+  "validation_error_template__tyel_ui_asset_not_found": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "$codename|default": "tyel_common",
+    "$validation_namespace|default": "tyel_common",
+    "$validation_modifier|default": "",
+    "controls": [
+      {
+        "wrapper": {
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "$file_validation": "($validation_namespace + '.file_validation' + $validation_modifier)",
+          "controls": [
+            {
+              "validator@$file_validation": {
+                "type": "panel",
+                "size": [ "100%", "100%c" ],
+                "$valid|default": false,
+                "controls": [
+                  {
+                    "template@tyel_ui_validation.validation_error_template__tyel_ui_asset_not_found_content": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "validation_error_template__tyel_ui_asset_not_found_content@tyel_ui_validation.validation_error_template": {
+    "ignored": "(not ($valid = false))",
+    "$codename|default": "unset codename",
+    "$validation_namespace|default": "unset validation_namespace",
+    "$validation_modifier|default": "",
+
+    "$error_code": "('fnf:' + $validation_namespace + $validation_modifier)",
+    "$error_priority": "error",
+    "$error_desc": "tyelAbout.validation.error.assetNotFound",
+    "$error_desc_panel": "tyel_ui_validation.tyel_ui_asset_not_found_desc"
+  },
+
+  "tyel_ui_asset_not_found_desc": {
+    "type": "label",
+    "text": "('§z>> ' + $codename)",
+    "color": "$body_text_color",
+    "localize": false
+  },
+
+  // * Global Variables
+
+  "validation_error_template__global_variable_value_invalid": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "$variable_name|default": "fill_alpha",
+    "$variable_data|default": "$fill_alpha",
+    "$variable_type|default": "pc_float",
+    "$variable_check|default": false,
+    "variables": [
+      {
+        "requires": "($variable_type = 'anchor_string')",
+        "$variable_check": "(($variable_data = 'top_left') or ($variable_data = 'top_middle') or ($variable_data = 'top_right') or ($variable_data = 'left_middle') or ($variable_data = 'center') or ($variable_data = 'right_middle') or ($variable_data = 'bottom_left') or ($variable_data = 'bottom_middle') or ($variable_data = 'bottom_right'))",
+        "$variable_type_description": "tyelAbout.validation.error.variableValueInvalid.anchorString"
+      },
+      {
+        "requires": "($variable_type = 'pc_float')",
+        "$variable_check": "(($variable_data > 0.0 and $variable_data < 1.0) or $variable_data = 0.0 or $variable_data = 1.0)",
+        "$variable_type_description": "tyelAbout.validation.error.variableValueInvalid.percentualFloat"
+      }
+    ],
+    "controls": [
+      {
+        "validator": {
+          "ignored": "$variable_check",
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "$valid|default": false,
+          "controls": [
+            {
+              "template@tyel_ui_validation.validation_error_template__global_variable_value_invalid_content": {}
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "validation_error_template__global_variable_value_invalid_content@tyel_ui_validation.validation_error_template": {
+    "$variable_type|default": "unset variable_type",
+    "$variable_type_description|default": "unset variable_type_description",
+    "$variable_name|default": "unset variable_name",
+    "$variable_data|default": "unset variable_data",
+
+    "$error_code": "('gverr:$' + $variable_name)",
+    "$error_priority": "warning",
+    "$error_desc": "tyelAbout.validation.error.variableValueInvalid",
+    "$error_desc_panel": "tyel_ui_validation.global_variable_value_invalid_error_desc"
+  },
+
+  "global_variable_value_invalid_error_desc": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%c" ],
+    "$variable_value_text": "('§z>> $' + $variable_name + ': §c\"' + $variable_data + '\"')",
+    "controls": [
+      {
+        "current_variable_value_text": {
+          "type": "label",
+          "text": "$variable_value_text",
+          "color": "$body_text_color",
+          "localize": false,
+          "size": [ "100%", "default" ]
+        }
+      },
+      {
+        "variable_type_description": {
+          "type": "label",
+          "text": "$variable_type_description",
+          "color": "$body_text_color",
+          "font_type": "smooth",
+          "size": [ "100%", "default" ]
+        }
+      }
+    ]
+  },
+
+  // * File Version Violation
+  "validation_error_template__file_version_violation": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "$file_version_source|default": "common.empty_panel",
+    "controls": [
+      {
+        "validator$file_version_source": {
+          "type": "panel",
+          "size": [ "100%", "100%c" ],
+          "$variable_check": "($global_variables_file_version = $tyel_ui_gv_ver)",
+          "controls": [
+            {
+              "template@tyel_ui_validation.validation_error_template__file_version_violation_content": {
+                "ignored": "$variable_check"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "validation_error_template__file_version_violation_content@tyel_ui_validation.validation_error_template": {
+    "$error_code": "('fvv:version_not_equal:' + $tyel_ui_gv_ver)",
+    "$error_priority": "warning",
+    "$error_desc": "tyelAbout.validation.error.globalVariablesVersionViolation",
+    "$error_desc_panel": "tyel_ui_validation.file_version_violation_error_desc"
+  },
+
+  "file_version_violation_error_desc": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%", "100%cm" ],
+    "controls": [
+      {
+        "current_variable_value_text": {
+          "type": "label",
+          "text": "tyelAbout.validation.error.globalVariablesVersionViolation.allowedBodyText",
+          "color": "$body_text_color",
+          "localize": false,
+          "size": [ "default", "default" ]
+        }
+      },
+      {
+        "padding@common.empty_panel": {
+          "size": [ 4, 4 ]
+        }
+      },
+      {
+        "variable_type_description": {
+          "type": "label",
+          "text": "('v' + $global_variables_file_version)",
+          "color": "$body_text_color",
+          "size": [ "default", "default" ]
+        }
+      }
+    ]
+  },
+
+  "validation_error_template": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ "100%", "100%c" ],
+
+    "$error_code|default": "# N/A",
+    "$error_priority|default": "???",
+    "$error_desc|default": "",
+    "$error_desc_panel|default": "tyel_ui_validation.empty_error_desc_panel",
+    "variables": [
+      {
+        "requires": "($error_priority = 'warning')",
+        "$priority_text": "manifestvalidation.warning",
+        "$priority_text_color": "$warning_text_color"
+      },
+      {
+        "requires": "($error_priority = 'error')",
+        "$priority_text": "manifestvalidation.error",
+        "$priority_text_color": "$error_text_color"
+      },
+      {
+        "requires": "($error_priority = 'critical')",
+        "$priority_text": "manifestvalidation.critical",
+        "$priority_text_color": "$error_text_color"
+      }
+    ],
+    "controls": [
+      {
+        "separator_panel": {
+          "type": "panel",
+          "size": [ "100%", 10 ],
+          "controls": [
+            {
+              "separator": {
+                "type": "image",
+                "texture": "textures/ui/White",
+                "size": [ "85%", 1 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "error_code_labels": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 10 ],
+          "$priority_text|default": "$error_priority",
+          "$priority_text_color|default": "$body_text_color",
+          "controls": [
+            {
+              "error_priority": {
+                "type": "label",
+                "text": "$priority_text",
+                "color": "$priority_text_color"
+              }
+            },
+            {
+              "separator_panel": {
+                "type": "panel",
+                "size": [ 10, 10 ],
+                "controls": [
+                  {
+                    "separator": {
+                      "type": "image",
+                      "texture": "textures/ui/White",
+                      "size": [ 1, 10 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "error_code_title": {
+                "type": "label",
+                "text": "tyelAbout.validation.errorCodeTitle",
+                "color": "$body_text_color"
+              }
+            },
+            {
+              "padding_0": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "error_code": {
+                "type": "label",
+                "text": "$error_code",
+                "color": "$body_text_color",
+                "localize": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "error_description_stack": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", "100%cm" ],
+          "controls": [
+            {
+              "description_title": {
+                "type": "label",
+                "text": "tyelAbout.validation.detailsTitle",
+                "color": "$body_text_color"
+              }
+            },
+            {
+              "padding_middle": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "description_labels": {
+                "type": "stack_panel",
+                "orientation": "vertical",
+                "size": [ "fill", "100%c" ],
+                "controls": [
+                  {
+                    "description_row_0": {
+                      "type": "label",
+                      "text": "$error_desc",
+                      "color": "$body_text_color",
+                      "size": [ "100%", "default" ]
+                    }
+                  },
+                  {
+                    "error_desc_panel@$error_desc_panel": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "empty_error_desc_panel": {
+    "type": "panel",
+    "size": [ 0, 0 ]
+  }
+}

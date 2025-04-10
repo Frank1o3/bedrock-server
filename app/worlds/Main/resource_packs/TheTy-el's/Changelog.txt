@@ -1,0 +1,526 @@
+v1.2.2a (113)-2025.3.2-(r1.21.62)
+a minor hotfix for v1.2.2 update
+- Added "Graphics Mode" dropdown option to Settings/Quick Settings screen.
+- Fixed an issue that cause the "Brewing Guide Assistant" dialog to render incorrectly while using "Vanilla Default" subpack due to file naming misconfiguration.
+
+============================================================
+
+
+v1.2.2 (112)-2025.2.27-(r1.21.62)
+THE "BYE-BYE PLAY SCREEN" UPDATE :(
+### NEW FEATURES
+- It's now possible to see the amount of coins in your balance after you purchase items on marketplace in the Confirm Purchase dialog.
+- Added some missing option descriptions in Settings/Video
+- Added one new global variable "$tyel_hud_modules_disable_tooltip" to allow players to disable the HUD menu tooltip at the bottom left of the screen when the HUD is reloaded.
+
+### CHANGES
+- Moved "Clear Marketplace Cache", "Clear Screenshots Cache", "Clear Local Screenshots" buttons and "File Storage Location" dropdown in Settings/Storage to a "More options" menu.
+- Made the "Mute All Chat" toggle styled like a button in Chat Screen. Also moved "Chat Search", "Caret Mode" toggles and "Chat Settings" button to the top right of the screen for easier access.
+- Global variable "$hud_percentage_text_visible" now also affects the HUD XP percentage label and in "Performance" subpack.
+
+### FIXES
+- Fixed a bug that cause "NetherGames Network" server info to be shown in Pause Screen while actually not in the server.
+- Miscellaneous screen layouts and improvements bug fixes.
+
+### REMOVED
+- Removed "Ray Tracing" and "Upscaling" toggles from the Settings/Quick Settings menu as it's irrelevant now.
+
+============================================================
+
+
+v1.2.1 (111)-2024.12.24-(r1.21.51)
+THE "DEPRESSED CLEAR HOVERER" UPDATE
+Please note that this update does not have any new localization supports.
+Note: As JSON UI is being replaced by Ore UI day-by-day, it means that we are nearing the end of Ty-el UI (JSON UI Edition). Unless Mojang allows us to customize Ore UI with resource packs, most screens won't be customizable anymore, including the Bed Screen and Play Screen. It's something I can't help players to pass through.
+
+### NEW FEATURES
+- Added the "Clear Recipe" button to non-controller players, allow players to quickly move all items inside the crafting grid to your inventory in just one click. This feature is already a vanilla feature on controller mode and therefore does not need to be made for controller players as a duplicate.
+- Added the ability to toggle item hover text visibility, can be enabled in Container Toolbox.
+- It's now possible to see exact bundle "weights" in HUD and when the bundle item is selected in inventory.
+- Added the missing "Account Profile" button to the Start Screen Sidebar, as well as the "Servers" button as another "quick" button to open Play Screen/Servers tab.
+- It's now possible to enable/disable HUD chunk position/chunk border features by setting Pack Options to "Performance" or disabling global variable "$use_hud_advanced_position_texts".
+* NEW GLOBAL VARIABLES
+- Added these new global variables to "/ui/_global_variables.json" for pack customization:
+  + "$toggleable_hover_text_default_state": customize the default state of "Toggle Item Hover Text Visibility".
+  + "$use_classic_hover_text_on_touch": (Touch only) Toggle between classic hover text mode (next to selected item) and touch mode hover text (always at the bottom of the screen).
+  + "$use_hud_advanced_position_texts": Enable Chunk Position and Chunk Border features, disabling this can improve performance.
+  + "$container_toolbox_always_visible": Container Toolbox always visible by default. (This will hide the original toggle if set to true, Classic UI only, on Pocket UI it's always visible by design.)
+
+### CHANGES
+- Updated Container Toolbox display layout on some Pocket UI screens to fix some problems that cause buttons to be overlapped each other.
+
+### FIXES
+- Fixed some pack errors since the game was updated to v1.21.50+
+- Fixed an issue that causes the game to crash when the Mob Effect screen is opened.
+- Reverted a change to store filter/sort menu popups that cause both menus to be invisible when being opened.
+- Miscellaneous screen layouts and improvements bug fixes.
+
+============================================================
+
+
+v1.2.0 (110)-2024.9.2-(r1.21.22)
+THE BIGGEST EVER CALCULATOR UPDATE?!
+
+### NEW FEATURES
+Note: "Ore UI Design": made with JSON UI to modify only visuals, not to be confused with "Ore UI", which is based on ReactJS.
+
+- Completely OreUI-ified most dialogs in the game (Vanilla Default subpack won't be affected by this change)
+- Improved Controller experiences with redesigned and organized gamepad helpers at the bottom of the screen!
+
+* NEW IN-GAME FEATURES
+- New features in HUD Screen:
+  + Accurate XP Progress, will let you know how many XP is required to ascend to the next level, without percentage trickiness.
+  + Inventory Free Slots Counter, will let you know if your inventory is currently full or not.
+  + Total Similar Items in Inventory, for which items you are holding in hotbar, this feature ignores items with durability.
+  + Utility Artifacts (was HUD Utility) now require player to have actual compass/clock/recovery compass items in inventory to make it show up in HUD. This change was made to balance overall gameplay while improving usages of those items.
+  + Lodestone Compass Artifacts, will help you put up to 3 lodestone compasses in HUD for easier navigation, each lodestone compass will have a tracking ID to identify which one is correct for you.
+  + Chunk Coordinates and Chunk Borders, will let you know your current chunk position, and current block position in your chunk, which may come in handy in some situations.
+  + TAB Menu/HUD Menu for toggling certain features on HUD. To show TAB Menu (for Keyboard and Mouse control), hold the TAB key and press a number key to toggle a specific feature. To show HUD Menu (for Touch control), press the designated button at the top of the screen.
+  + Player List, will help you check for players in your current multiplayer session, or "Scoreboard List" scores if enabled, hold TAB to peek player list on Keyboard and Mouse, or press Show Player List button inside HUD Menu on Touch control.
+  + Numbers of players in your current multiplayer session, can be found in HUD Player List.
+  + Ability to toggle Scoreboard Sidebar, Hotbar (Keyboard and Mouse only) using TAB Menu on Keyboard and Mouse control, or HUD Menu on Touch control.
+- Added "Container Toolbox" to inventory screens, which contains some useful features for inventory management. Container Toolbox has these following features:
+  + Added "Bulk Quick Move" button. To use this feature, you need to select an item in inventory or a supported container screen, then either press "Quick Move to Container" to move all of the same items in your inventory to container, or "Quick Move to Inventory" to move all of the same items in container to your inventory.
+  + Added "Clear Hotbar/Inventory" button. This feature is hidden behind a small arrow toggle to avoid pressing on it by accident.
+  + Moved "Drop One/All" and "Destroy One/All" buttons to Container Toolbox.
+- Hovering the Craft All button in Inventory Screen or Crafting Screen now shows number of items obtained after craft all, and items remaining after craft all.
+- Added "Brewing Guide UI" to Brewing Stand Screen:
+  + See the full guide on how to make specific potions in Minecraft!
+  + You can search for a brewing recipe as well!
+  + Supports Chemistry Mode (requires "Education edition" enabled, and "$brewing_guide__show_chemistry_potions_tab" enabled in the _global_variables.json file)
+  + Has "Fallback Item Renderer Mode", in case of Item ID AUX being broken again in a future update, or when add-ons were being activated in your worlds
+- Villager XP Progress in Trade Screen now uses accurate numbers of XP instead of percentage numbers
+- Hovering the "Brewing Times" number in Brewing Stand Screen now shows "Brews Remaining" count (calculated by taking the amount of Blaze Powder in the Fuel Slot multiply by 20, then adding the "Brewing Times" number)
+- Added the ability to rotate Smithing Preview in Smithing Screen, by using a slider.
+- Added "Durability Gained" amount label to Anvil Screen and Grindstone Screen, to see how many durability points will be added to the items.
+- Added "Item Tracking ID" to Lodestone Compass item renderer in inventory.
+- Progress Percentage is now heavily optimized and is now able to show up to 2 decimal places. This feature is so optimized that this no longer requires "Ultra Mode" subpack!
+- Re-introduced the "Ultra Mode" subpack with these following new features exclusive to this mode:
+  + Item Durability when hovering an item (does not require selecting items).
+  + "Chat Caret Mode", to allow players to select and copy chat messages straight from Chat Screen.
+
+* NEW SERVER EXCLUSIVE QOL FEATURES
+- "The Hive" Exclusive: Added Hive XP Calculator, allows you to track for your current XP in your selected game, to enable this, press TAB + 3 if on Keyboard and Mouse control, or find the "Show Hive XP Calculator Menu" if on Touch control. On Keyboard and Mouse control, to select a game, press a number key 1 ~ 6, press 8 or 9 to navigate between pages, press 7 to Reset (hides this feature from HUD), and press TAB or ESC to close menu. On Touch control, the way to interact with this menu is very friendly and straightforward, just tap on buttons.
+- "CubeCraft Games" Exclusive: Added Server-Wide XP Progress viewer, allows you to see your current exact XP progress only in lobby. In "Skyblock" game mode, this feature will use the Vanilla XP System instead.
+
+* OTHER NEW FEATURES
+- Added "Chat Blacklist" to allow players to block messages that contain specified criteria. To add words/phrases to blacklist, in _global_variables.json, add your words/phrases to "$chat_blacklist_index_**" variables. Limit is 32 words/phrases. You can also modify blacklist settings to not show the "Message Hidden" notification in HUD Screen and Chat Screen.
+- In Start Screen, you can now toggle Start Screen visibility and show only screen background.
+- You can now see your worlds list in Play Screen in Grid Mode, this can be toggled very easily in Play Screen. This mode is enabled by default if on touch control mode or using Pocket UI.
+- You can now see your saved world folder names in Play Screen. This feature is toggleable through the More Options menu.
+- Further optimized the algorithm of searching worlds in Play Screen, and you can now see number of worlds that meets your current search criteria.
+- Re-added the "Left hand mode" toggle in Settings/Touch. This is because some players might prefer Mob Effect Panel to be displayed from the left side rather than the right side of the screen.
+- Added "Hardcoded Keys" category in Settings/Keyboard & Mouse. This will allow players to know some hidden and not customizable hotkeys in the game.
+- Added the ability clear custom Search Bars in some specific screens.
+- Added the ability to show accurate amount and percentage of rates in Marketplace PDP Screen.
+- Added "Highlight Filter" to Dressing Room screen to allow players to focus on only specific pieces that match filter criteria.
+- Added hover tooltip to Marketplace and Dressing Room sidebars with a nice little animation.
+
+* TECHNICAL FEATURES
+- Added Ty-el UI Validation system, can be found in the "About Ty-el UI" screen. This will allow players to inspect custom UI JSON file errors if available.
+- Players can now see full folder paths of resource content in Settings/Storage.
+- Added the ability to generate a "textures_list.json" file for Resource Packs in Settings/Storage. This feature is only available for packs that are not from the Marketplace.
+
+* NEW GLOBAL VARIABLES
+- Added these new global variables to "/ui/_global_variables.json" for pack customization:
+  + "$use_brewing_guide_gui": Enable Brewing Guide GUI feature in Brewing Stand Screen (disable this if having performance issues).
+  + "$brewing_guide__show_chemistry_potions_tab": Enable the Chemistry Potions tab in Brewing Guide UI.
+  + "$hud_utility_artifacts_mode": Toggle between Dynamic Utility Artifacts/Legacy HUD Utilities. Because of this change, "$use_recovery_compass_utility" have been put behind "Legacy HUD Utilities".
+  + "$show_trailing_zeros_in_percentage_labels": Hide/Show trailing zeros in custom percentage labels (maximum 2 trailing zeros).
+
+- Added these new global variables to "/ui/_global_variables.json" to allow you to toggle and customize HUD Utilities and Modules:
+  + "$enable_movable_hud_utilities_and_modules": Enable the ability to customize HUD Modules, must be enabled first to be able to customize anchors and offsets.
+  + "$use_tyel_hud_modules:accurate_exp_progress", "$accurate_exp_progress_anchor", "$accurate_exp_progress_offset": Accurate XP Progress
+  + "$use_tyel_hud_modules:inventory_free_slots_counter", "$inventory_free_slots_counter_anchor", "$inventory_free_slots_counter_offset": Inventory Free Slots Counter
+  + "$use_tyel_hud_modules:lodestone_compass_artifacts", "$lodestone_compass_artifacts_anchor", "$lodestone_compass_artifacts_offset": Lodestone Compass Artifacts
+  + "$use_tyel_hud_modules:mainhand_renderer", "$mainhand_renderer_anchor", "$mainhand_renderer_offset": Mainhand Renderer
+  + "$use_tyel_hud_modules:utility_artifacts", "$utility_artifacts_anchor", "$utility_artifacts_offset": Utility Artifacts (Compass, Clock, Recovery Compass)
+
+- Added these new global variables to "/ui/_global_variables.json" to allow you to customize Ty-el UI's Ore UI Design elements:
+  + "$tyel_oreui_design:light_button_default_text_color"
+  + "$tyel_oreui_design:light_button_hover_text_color"
+  + "$tyel_oreui_design:light_button_pressed_text_color"
+  + "$tyel_oreui_design:light_button_locked_text_color"
+  + "$tyel_oreui_design:dark_button_default_text_color"
+  + "$tyel_oreui_design:dark_button_hover_text_color"
+  + "$tyel_oreui_design:dark_button_pressed_text_color"
+  + "$tyel_oreui_design:dark_button_locked_text_color"
+  + "$tyel_oreui_design:green_button_default_text_color"
+  + "$tyel_oreui_design:green_button_hover_text_color"
+  + "$tyel_oreui_design:green_button_pressed_text_color"
+  + "$tyel_oreui_design:realms_button_default_text_color"
+  + "$tyel_oreui_design:realms_button_hover_text_color"
+  + "$tyel_oreui_design:realms_button_pressed_text_color"
+  + "$tyel_oreui_design:red_button_default_text_color"
+  + "$tyel_oreui_design:red_button_hover_text_color"
+  + "$tyel_oreui_design:red_button_pressed_text_color"
+  + "$tyel_oreui_design:common_title_button_icon_color"
+
+### CHANGES
+- Added the eye-closing effect transition to Bed Screen.
+- Made normal Toast Notifications form-fitting, it will be more compact and smaller than the vanilla one.
+- Redesigned the World Loading Screen to make it look more modern with the "Mine-Chop-Dig" animated icon at the bottom right of the screen.
+- Redesigned the "Screen takes too long to load" loading bar panel to have only a simple spinner image.
+- Redesigned the Pack Info Screen for a cleaner look, and added pack size label to the info panel.
+- Moved the "Filter Search" text box in Server Form Screen behind a "Search" toggle.
+- Changed translation of "I want to buy this item" in Confirm Purchase dialog to "Accept and Proceed to Purchase".
+- Reformatted overall pack file structure.
+- Default value for vanilla global variable "$player_list_score_color" was changed from Red to Yellow.
+
+* CHANGED GLOBAL VARIABLES DEFAULT VALUES
+- "$scoreboard_sidebar_anchor" => "right_middle"
+- "$scoreboard_sidebar_anchor_pocket" => "right_middle"
+
+### FIXES
+- Fixed many bugs that cause the game to throw tons of content log errors.
+- Fixed a pack error in Start Screen when "Realms Promo" treatment was applied by the game.
+- Fixed item stack labels appeared to be on top of Item Highlighter overlay.
+- Miscellaneous screen layouts and improvements bug fixes.
+
+### REMOVED FEATURES
+- These following global variables were removed because these are no longer needed or impossible to customize because of Ore UI (the one from the game, not to be confused with "Ore UI Design"):
+  + "$tyel_dialog_accent_color": Accent color for Ty-el UI Dialog top bar, but after this update, all dialogs were replaced with new Ore UI Design dialogs.
+  + "$use_death_screen_respawn_button_bg_layout", "$use_black_death_background", "$black_death_bg_alpha": Death Screen was replaced with the new Death Screen powered by Ore UI.
+  + "$actionbar_bg_alpha": It's now possible to change Action Bar background opacity right in Settings/Accessibility.
+
+* REMOVED SERVER EXCLUSIVE FEATURES
+- "The Hive" Exclusive: Andesite Counter, this feature was replaced with the improved and more powerful feature "Total Similar Items in Inventory".
+
+============================================================
+
+
+v1.1.4 (109)-2024.3.31-(r1.20.70)
+THE CSB-COMPATIBLE! UPDATE
+
+### NEW FEATURES
+- You can now open the "Marketplace Pass" screen directly from the Confirm Purchase dialog inside the Marketplace Screen and Persona Screen
+- You can now use the "Redeem" button inside the Confirm Purchase dialog in Persona Screen if you have a valid and active subscription
+- Optimized the Local World Search feature in Play Screen for better performance, and uncapped the maximum indexable worlds from 50 to infinity!
+- Re-introduced the item hover text rendering method for touch players
+
+### CHANGES
+- Added the Inbox button to the Start Screen sidebar, which was missing in v1.1.3
+- Moved the copyright and version labels in Start Screen to the bottom of the screen
+
+### FIXES
+- Fixed a bug that causes the content log message `Expected variable not found in ancestor tree: '$education_edition_china'` to appear when opening the Trade Screen v2 for the first time
+- Fixed some pack errors that can be seen in the Pack Info screen
+
+### REMOVED
+- Removed the "Ultra" Subpack, the accurate percentage label feature will be added back in a future update
+
+============================================================
+
+
+v1.1.3b (108)-2023.12.24-(r1.20.50)
+"another minor fix to v1.1.3a update" update
+
+- Fixed a bug that causes players using Touch not being able to use Quick Move Mode or Drop Mode
+- Fixed a bug that causes players not being able to purchase (free) items in Dressing Room screen due to binding name changes on Minecraft v1.20.50 and newer
+
+============================================================
+
+
+v1.1.3a (107)-2023.12.7-(r1.20.50)
+a minor fix to v1.1.3 update
+
+- Updated and improved Chinese (Simplified) translations support, thanks @_Pig_Peppa_ (Twitter)!
+- Updated Recovery Compass Item ID AUX to 42860544, to support v1.20.50+, players on version before v1.20.50 need to change Item ID AUX in /ui/_global_variables.json back to the old one manually (which is 42795008)
+- Added a new variable for pack customizations "$use_play_screen_compact_layout": enables compact Play Screen layout (not supported on Vanilla Default subpack)
+- Fixed a bug on Pocket UI that causes players not being able to obtain items from output slot inside Furnace Screen
+- Fixed compatibility with Ty-el Settings Overlay, there will be a visual bug if players try to enter the Touch Control Customization screen
+- Re-added the Autocomplete and Autocomplete Back buttons in Chat Screen again, as both buttons work properly again since v1.20.50
+- Removed the "Choose Skin" button from inside Start Screen sidebar on v1.20.50 due to a change to bindings
+- Removed experimental flag "$exp_enable_new_recipe_book_tabs" and all contents related to that experiment, since the pack no longer supports v1.20.10 or older
+
+============================================================
+
+
+v1.1.3 (106)-2023.11.16-(r1.20.41)
+1.20.30+ COMPATIBLE AND DURABLE HOTFIX
+
+### NEW FEATURES
+- Updated Portuguese (Brasil) translations support to more places, like About Ty-el UI. Thanks @will_ushuah (Twitter) and @IjoaopedroAnd (Twitter)!
+- Introducing the new durability calculation system to inventory screens and mainhand item display on HUD, accurate and very performance friendly!
+- Redesigned the Play Screen to properly match the modern Ore UI design (not available in the Vanilla Default subpack)
+- Reworked the Content Log History Screen message visuals to reduce eyestrains, with error messages highlighted in red background (this feature is incomplete and might be reverted in the future)
+- Added option descriptions to Settings/Accessibility and to some missing places in Settings/Video, World Settings
+
+### FIXES
+- Fixed a pack error on v1.20.30+
+- Fixed some content log errors
+- Fixed a bug that would cause the game to not load item hover texts in inventory/containers correctly (however, this temporarily reverts item hover text rendering methods back to vanilla default, should be back to normal in a future version)
+
+### REMOVED FEATURES
+- Removed the Autocomplete and Autocomplete Back buttons in Chat Screen because it do nothing now. Try using a better method, like pressing on an autocomplete item on main screen
+
+============================================================
+
+v1.1.2 (105)-2023.7.18-(r1.20.10)
+1.19.80 AND BEYOND 1.20 COMPATIBILITY HOTFIX
+Notice: Although this versions supports v1.19.80 or higher, if you play Minecraft on version 1.20.1 and older, you must manually disable this new experimental flag "$exp_enable_new_recipe_book_tabs" that can be found in /ui/_global_variables.json because if you kept the variable enabled, you would see tabs inside inventory screen are missing while using Classic UI profile. If you play on version 1.20.10 and newer, you need to keep "$exp_enable_new_recipe_book_tabs" enabled, otherwise the game will crash. A dialog will show up in start screen to warn you if you set them incorrectly ("$exp_enable_new_recipe_book_tabs" is set to true by default.)
+This update added supports of Aseprite Flipbooks for custom panorama (BETA), you can open /ui/_tyel_theme_template.json to know more
+
+### NEW FEATURES
+- Added Ty-el UI v1.1.1 translations support to all missing languages since v1.1.1 release
+- Redesigned Death Screen, now it looks more like the new Death Screen from Ore UI with red gradient background, changed title font type, and there is an alternative design of the screen hidden behind the "$use_respawn_button_bg_layout_override" variable option
+- If you are on Windows or Android or iOS, you can now see the world folder names in Play Screen by pressing the "More options" button at the top right of the screen (the vertical ... button), and enable checkbox "Show World Folder Name (Experimental)"
+- You can now see the folder location path of your packs/worlds right inside Settings/Storage section
+- Added new technical properties to Item Lore Viewer: "armor_trim_material", "decorated_pot_sherds", "shield_base_color"
+- Added Option Descriptions to Settings/Video, as well as the toggle button to hide/show option descriptions at the top right of the screen
+- Gamepad helper texts now have a black background behind
+- Added variables to _global_variables.json for pack customizations:
+  + "$desc_black_bg_alpha": Adjusts the transparency (alpha) of the black background behind button/gamepad helper descriptions and some other bright text controls
+  + "$use_settings_option_descriptions": Use Option Descriptions feature and its visibility toggle
+  + "$always_show_settings_option_descriptions_by_default": Always shows Option Descriptions as you open Settings by default
+  + "$exp_enable_new_recipe_book_tabs": Enables the patch fix of recipe book tabs on v1.20.10 or higher that causes the game to crash (not required if using beta/preview v1.20.10.x or higher)
+  + "$exp_enable_new_recipe_book_tabs__force_disable": If for some reasons you don't want the "$exp_enable_new_recipe_book_tabs" experiment automatically enabled (maybe because you're playing on beta/preview v1.20.0.x or older, or experiencing invisible tabs), set this to true
+  + "$enable_recovery_compass_item_id_aux_override": Overrides the Recovery Compass Item ID AUX for versions or addons compatibility (advanced)
+  + "$rcompass_id_aux_override": Modifies the Recovery Compass Item ID AUX to override if "$enable_recovery_compass_item_id_aux_override" is set to true
+  + $use_death_screen_respawn_button_bg_layout": Enables the cleaner layout of death screen which the entire background will be the respawn button
+  + "$use_touch_hide_hud_button": Shows/Hides the Hide HUD button for touch on hotbar
+  + "$use_container_paper_dolls": Shows/Hides Paper Dolls in container screens (except the one in Inventory Screens, Classic UI only)
+  + "$world_search_feature_enabled": Enables World Search Feature (may greatly improve performance if disabled)
+  + "$expanded_content_area_max_size": Expands some content area size to maximum possible size in some screens
+
+### CHANGES
+- Added supports to the new Smithing Table v2 Screens
+- Updated the Recovery Compass's Item ID AUX for the HUD utilities feature
+- Changed screen animations easing from "in_out_sine" to "in_out_circ"
+- The main screen content size inside most screens now have limited maximum horizontal content size to reduce screen stretching issues (you can also toggle this change on or off by modifying the "$expanded_content_area_max_size" variable option)
+- Replaced the Brewing Fuel progress percentage text with the Brew times left progress text (example: 50% now shows as 10/20)
+- Moved the "Sign In" button and the "Signing in" message outside the sidebar menu in Start Screen and is now next to the hamburger "Sidebar Menu" button
+- You can now press the Right arrow button on controller/keyboard to close Sidebar Menu while it's opening
+- Added a transparent black background to copyright/version texts in Start Screen and gamepad helpers texts for accessibility reasons
+- Added TTS supports to the Settings button and the Insta Join Server button inside Play Screen
+- You can now toggle hide or show the featured panels inside Dressing Room screens to reduce distractions
+- Reformatted the _global_variables.json file by categories
+
+### FIXES
+- Fixed the Item ID Data calculator inside Item Lore Viewer showing incorrect values, now it should show correctly on enchanted items (thanks to Asaki Zuki)
+- Custom searches now show results correctly if text inputs inside text boxes start with numbers
+- Fixed a bug that custom panoramas can cover the entire screen UI while on beta/preview versions of the game
+- Fixed the Switch Accounts button inside Start Screen didn't work properly
+- Fixed the copyright/version texts offset inside Start Screen on v1.20.x+
+- (Vanilla Bug Fix) The dirt background inside Credits screen now scrolls properly
+- Many small bug fixes, visual improvements and more
+
+============================================================
+
+v1.1.1 (104)-2023.01.01-(r1.19.51)
+THE SMOOTHENED & UNSMOOTHENED UPDATE
+
+### NEW FEATURES
+- New official variable for pack creators to make your packs compatible with my pack, "$is_tyel_ui" (This can be toggled (true or false) in _global_variables.json too!)
+- Added compatibility mode support for Utility UI pack by HJN (BETA, base, not completely supported)
+- You know what, the Hotbar Toggle is BACK! You can now properly use it without having issues about touch control schemes! (Touch devices only)
+- Added descriptions to nearly every option in World Settings screen, Audio section in Settings screen, and while you hover the touch control scheme image in Settings/Touch, you can also see the control scheme description as well!
+- Added Trade All button to Trade Screens, which can help you bulk trade items faster!
+- Autocomplete commands/mentions in chat screen are now faster than before! You can now press on autocomplete text suggestions to automatically complete the commands, or quickly mention someone, how convenient!
+- Added the Jump to Bottom button in Chat Screen so you don't even need to scroll down once you scrolled up too far!
+- Added Item Highlighter feature to Redstone Screens (Hopper, Dispenser, Dropper) and all container screens in Pocket UI!
+- Added the "Delay in Seconds" (not Ticks) counter in Command Block Screen to know the delay between two times executing commands, in Seconds! (The time format is also prettified!)
+- Remember the weird "Join The Hive" button in Play Screen from v1.1.0? Now you can even customize it too! This feature is now called "Insta-Join Servers"! To customize this, just open /ui/_global_variables.json and simply change these variables:
+  + "$insta_join_server_type": Change server type (0 = Featured Servers, 1 = Additional Servers)
+  + "$insta_join_server_name": Change server name you want to insta-join the server on click! Server names must be exactly the same as you named them in game, and case sensitive!
+- Now you can toggle Recovery Compass item renderer on HUD Utility with some variable edits. This feature is always disabled in Featured Servers to prevent game from crashing
+- Added the Confirm Purchase dialog feature to Marketplace PDP Screen and Persona Screen. You can now keep your minecoins safe from buying anything accidentally!
+- Added variables to _global_variables.json for pack customizations:
+  + "$tyel_ui_troubleshoot_mode" for pack deactivation and quit confirmation troubleshooting (might be more in the future)
+  + "$use_hud_chat_anchor_override" for overriding HUD chat panel anchor variable used by "$use_hud_bottom_chat". Set this to false will make "$use_hud_bottom_chat" unusable and chat panel anchor will be changed automatically to bottom when on non-touch devices
+  + "$use_hud_bottom_chat" for making HUD chat panel always anchored bottom, set this to false will set the anchor to top as in vanilla
+  + "$use_recovery_compass_utility" for toggling Recovery Compass item renderer for HUD Utility, this setting is always disabled in Featured Servers to prevent game from crashing
+  + "$use_large_scroll_box" for toggling Larger Scroll Box in Scrolling Panels (experimental)
+  + "$disable_compatibility_mode_toasts" for disabling "Compatibility Mode Enabled!" toast messages. Sometimes you are very annoyed seeing these kind of toasts, well, just set this to true to fix that.
+
+### CHANGES
+- Improved Change Screen Safe Area screen, instead of having 4 corners, which is harder to use, now with 4 edges made into a rectangle, you will see how the screen safe area will change easier than before, rather than having 4 corners and some imaginations
+- Added a floating button in Settings/Storage to toggle "File Storage Location" dropdown visibility (Only for supported devices)
+- Improved Compatibility Mode for Modules+
+- The custom search feature in Resource Packs Screen and Play/Worlds Screen now ignores text formatting blocks
+- Added support for Play Screen UI when Editor Mode is enabled
+- "Custom Screen Available!" tooltip in Pause Screen now shows "Zeqa Rules & About Ty-el UI here!" instead when playing on Zeqa	## Don't translate "Zeqa Rules & About Ty-el UI here!"
+- Changed Zeqa compatibility variable name to "$is_zeqa"
+- Changed "Compatibility Mode Enabled" toast design
+- Changed horizontal size limit of the main panel in Permissions Screen
+- Changed the loading bars while button images are loading, to loading spinner in Server Form Screen
+
+### FIXES
+- Fixed a pack error that make entire Settings screen broken while on v1.19.40+
+- Fixed a bug that item hover texts in containers aren't visible while on v1.19.40+
+- Fixed a bug that the "Mobile Data" badge in Loading World/Dimension Screen always visible even the "Allow mobile data for online play" option isn't enabled while on 1.19.40+
+- Fixed a bug that you can't join Realms because the "Download Resource Packs" popup is unable to load
+- Fixed Scoreboard Sidebar overlaps Direction HUD when Modules+ Compatibility Mode is enabled
+- Fixed Mainhand Percentage overlaps Experience Bar Percentage when Modules+ Compatibility Mode is enabled
+- Fixed a bug that you can't use controller arrow buttons to change focuses within button mode dropdowns
+- Vanilla Fix: Fixed an exploit with improperly gaining XP through Furnaces on v1.19.50+, again! (MCPE-152227)
+- Re-added the gamepad helper in Progress Screen
+- You can now use the "Start" button on your controller to toggle Sidebar Menu, More Options Menu and Highlight Items
+- Optimized the codes of the Start Screen's Sidebar Menu for better accessibility
+- Removed custom animations of toast messages because it is currently broken on v1.19.60+
+- Fixed some translation bugs
+- Minor screen design changes and fixes
+
+### FEATURES REMOVED
+- Animated Smooth Purchase buttons in Marketplace PDP Screen and Purchase Lock in Persona Screen, because both are replaced with the better, improved and fancy custom Confirm Purchase dialogs
+
+============================================================
+
+v1.1.0a (104)-2022.10.26-(r1.19.40)
+1.19.40+ COMPATIBILITY HOTFIX
+### FIXES
+- Improved Settings/Storage section:
+  + Made "Clear Marketplace Cache" button smaller
+  + Added a floating button to toggle "File Storage Location" dropdown visibility (Only for supported devices)
+- Fixed a pack error that make entire Settings screen broken while on 1.19.40+
+- Fixed a bug that item hover texts in containers aren't visible while on 1.19.40+
+- Fixed a bug that the "Mobile Data" badge in Loading World/Dimension Screen always visible even the "Allow mobile data for online play" option isn't enabled while on 1.19.40+
+- Changed Zeqa compatibility variable name to "$is_zeqa"
+
+============================================================
+
+v1.1.0 (103)-2022.09.04-(r1.19.22):
+ORE UI ASPECTS' INDICATION UPDATE
+* Notice: As of this version, "Quick Loot" is now called "Quick Move", this doesn't change quick loot function, this change is to match Vanilla, and compatibility with other container screens.
+* New BETA feature is included in this update: Item Lore Viewer! With this, you can see all the information of the SUPER DUPER big and long item lore inside a scrolling panel, best in Skyblock servers! Additionally Item ID AUX viewer for add-on creators and some other (probably) useful technical information of the items too!
+
+### NEW FEATURES
+- Pack now supports even more languages: 
+Deutsch (Deutschland), Italiano (Italia), Polski (Polska), Svenska (Sverige), Türkçe (Türkiye), Русский (Россия), Українська (Україна), 中文(中国), 中文(繁體), 한국어 (대한민국)
+(Thanks Tentex#0807 (Discord) for Turkish translations, @theqwermc (Twitter) for Russian translations and @YangTuo_zi (Twitter), @student_2333 (Twitter) and @mascot_fox8888 (Twitter) for Chinese (Simplified) translations!)
+- Improved Español (España) translations (Thanks to @sebasxpert (Twitter)!)
+- Added 3 new subpacks: Default Vanilla, Performance and Ultra Mode. More info in About Ty-el UI/Subpack Features.
+- Added Compatibility Mode to some packs. More info in About Ty-el UI/Compatibility Mode.
+- Updated and changed many screen designs for Ore UI Aspects update, an upcoming UI update for Bedrock Edition, and sure, with a bit of remixes
+- Progress Bars (World Loading bar, XP bar and Boss Health bars, also Smelting Progress and Fuel Progress in Furnace Screens, and Brewing Progress and Fuel Progress in Brewing Stand Screen too! That's a lot!) now have a percentage label next to it. Now you can see the exact percentage of world loading progress, or boss health, or your current XP progress, yes, XP!
+- Added the Search feature to Play/Worlds Screen and Settings/(Global Resources/Resource Packs/Behavior Packs/Storage) Screen, which can help you search for your worlds and packs faster (The search feature in Play/Worlds Screen only allow up to 50 most recent worlds to be searchable, due to bad performance issues ;-;)
+- Added the ability to hide and show not downloaded packs in Resource Packs Screen
+- Added Item Highlighter to Chest Screens, which can help you find items with specific names in very untidy chests! (And it's cAsE sEnSiTiVe!)
+- Added the search text box to the Marketplace Screen header, which you can search for contents faster than before, anywhere!
+- If you press and hold any item slots, there's "Take Custom Amount of Items" indicator on top of the item slot, so you can see how many items you are about to move or use.
+- Added Recently Played World Suggestion feature to Play Screen
+- Added Container Mode Switcher to some container screens
+- Added Server Info panel to Pause Screen for some selected popular servers
+- Added Quit Confirmation Popup to Pause Screen to avoid quitting the game accidentally
+- The "Save and Quit" label in Pause Screen now automatically changes to "Disconnect" when you are in servers, ONLY available on featured servers!
+- Added Inventory Mode, Drop Items and Destroy Items functionalities to Pocket UI screens
+- Added HUD Mainhand Indicator for showing which items you're holding, how many of them, and its durability if possible
+- The title text in Server Form Screen and Popup Dialogs now automatically deletes the following text blocks start from beginning: "§l", "§0", "§8"
+- Added back the Mute All Chat toggle to Chat Screen for faster hide chat
+- Added Purchase Confirmation to Marketplace, and Purchase Lock to Dressing Room Screen, this will help you not to buy any items (either Minecoins or real money) accidentally. (Free items won't be affected)
+- Added Skin Type Switch buttons to custom imported skins in Dressing Room Screen. This will help you change skin type, either Steve (Normal) type or Alex (Slim) type, easier without re-importing new custom skin files!
+- The Screenshot Location info in Screenshot Screen now shows exact file path
+- Due to the change above, I added "Show Screenshot Location" button to Screenshot Screen if you want to see the screenshot file path, for privacy
+- Added Three Dots Menu to Play Screen and Profile Card Screen, which has some useful navigations in there
+- Added variables to _global_variables.json for pack customizations:
+  + "$tyel_dialog_accent_color" for changing the dialog top bar accent color in pop-ups and dialogs (Only available outside Default Vanilla Subpack, except Server Form Screen)
+  + "$force_auto_place_on" for forcing Quick Move feature always enabled when opening containers (A warning button will show up in Play Screen if you enable this)
+  + "$pause_quit_confirmation_popup_enabled" for enabling or disabling Pause Screen Quit Confirmation popup feature
+  + "$use_black_death_background" for using Black Death Background (set this to false for original red gradient death background)
+  + "$server_form_dialog_size" for changing my pack's Server Form Dialog size
+  + "$recent_world_suggest_enabled" for enabling or disabling Recently Played World Suggestion feature
+  + "$scoreboard_sidebar_bg_alpha" for changing Scoreboard Sidebar Background Alpha
+  + "$hud_percentage_text_visible" for toggling HUD Percentage Text visibility (on XP Bar, Boss Bars)
+  + "$use_hive_andesite_counter" for using Andesite Counter when on The Hive (Featured Server)
+
+### CHANGES
+- Enabled New Touch Control Schemes toggle for non-beta/preview players!
+- Redesigned Server Form screen, now it's no longer a dialog window (maybe yay)
+- Moved Hide HUD button next to the hotbar chooser, and it supports Lefty control scheme too! But to avoid pressing it accidentally, I made that button only usable when double tapped it.
+- Removed the question mark button from Inventowhen onry Screen!
+- For Accessibility reasons, Hide HUD button, Pause Player Lists toggle, Drop Item buttons and Destroy Item buttons now have a white border when hovering it
+- Toast popups in Dressing Room and Persona Screen are now located on top of the screen, with animations
+- Made screen transition animations a bit cleaner (probably)
+- Added back the Realm Feed button to Pause Screen (only visible when in Realms), because Mojang Studios forgot to add it back :p
+- [Default Vanilla] Play Screen's tabs now have smaller horizontal size, but minimum size is fixed in a specific value
+- Now you can use the controller (≡) Start button to open Start Screen sidebar, Settings Screen Quick Settings and Three Dots menus
+- Added TTS supports to Quick Craft button
+- Moved VSync settings to the bottom of Settings/Video section
+- Changed default location of HUD Utilities to bottom right
+- Added Enable debug HUD option in Settings/Creator section to temporarily hide or show Debug HUD (Beta/Preview only)
+- The Upscaling and Ray Tracing toggles in Quick Settings screen now only visible if your devices support Ray Tracing
+- Extended maximum frames cap for Custom Panorama to 500
+- Improved Ty-el Theme Factory
+  + You can now create your own Ty-el Theme
+  + You can now add custom panorama with child controls for special effects, texts, etc., with additionally theme metadata
+  + More info in "Ty-el Theme Instructions.txt" in pack folder
+
+### FIXES
+- Made start screen sidebar exit background size bigger
+- Fixed the Invite Icon on Play/Friends tab not visible
+- Fixed Wake Up Label Panel (used to show how many players are sleeping in multiplayer worlds) in In Bed Screen not showing
+- Added gamepad helpers to About Ty-el UI screen
+- The command block state icon in Command Block Screen now has a black border line
+- Changed Start Screen Feedback button name to "Submit Feedback"
+- Button focuses for About Ty-el UI and Quit Game buttons in Start Screen Sidebar now work correctly
+- Fixed the HUD hotbar is not visible in survival mode
+- Fixed content log errors related to focus navigation mode
+
+### FEATURES REMOVED
+- Miscellaneous screen backgrounds, UI improvements and bug fixes
+  + Invisible Touch Circle, because v1.18.30+ added RenderDragon, which makes shaders no longer working, and this feature was made possible by shaders ;-;
+  + Hotbar Toggle and Cycle Hotbar Items buttons, because these buttons may not be usable if the New Touch Control Schemes feature is enabled
+
+============================================================
+
+v1.0.2-2021.12.24-(r1.18.2):
+SAD GUY LANGUAGE UPDATE
+This update fixed a Vanilla bug that make you somehow uncomfortable when opening Crafting Table Screen:
+- Fixed 3x3 Crafting Output slot in Inventory/Crafting Table screen is not centered (4 pixels off), "found" by Phoenix SC (@phnixhamsta) :)
+
+- Pack now supports some languages (more will come soon): Español (España), Español (México), Français (France), Français (Canada), Bahasa Indonesia (Indonesia), Português (Brasil), Português (Portugal), 日本語 (日本)
+(Thanks to @x_natsukun_xCTM (Twitter) for Japanese translations!)
+- Added Inventory Mode toggle to Inventory Screen, which will help you equip armors/totems or place items from main inventory to hotbar and vice versa... faster
+- Added Live Paper Doll Renderer to Chest Screens and Redstone Screens (Hopper, Dispenser, Dropper) to know which armors you're equipping easier and faster
+- Redesigned Server Form Screen, inspired from The Hive's Play Screen, I don't know if you like it or not?
+- Added RTX-related settings to Quick Settings screen
+- Added HUD Hotbar Toggle to hide/show HUD Hotbar for *temporary* cleaner view when playing
+- Added Info Panel Toggle to Pause Screen to hide/show Players/Scoreboard Players List, for cleaner look!
+- Text Panel in Progress Screen is now stackable
+- Text Panel in Progress Screen is now at the center of the screen only when in-game
+- Moved Cancel button in Progress Screen to bottom right
+- Improved Custom Panorama panel controls, now you can toggle on/off the custom panorama (default to off), also supports custom panorama uv animations (if you know this)
+- Made Screen Background in Feed Screen and Screenshot Picker Screen full screen, umm...
+- Added variables to _global_variables.json for pack customizations:
+  + "$use_container_toggles" for hiding or showing Quick Loot and Inventory Mode Toggles (default to true)
+  + "$scoreboard_sidebar_anchor_pocket" for changing Pocket UI profile Scoreboard Sidebar anchor
+  + "$scoreboard_sidebar_offset_pocket" for changing Pocket UI profile Scoreboard Sidebar offset
+  + "$utility_anchor_pocket" for changing Pocket UI profile Utility anchor
+  + "$utility_offset_pocket" for changing Pocket UI profile Utility offset
+  + "$use_hud_utilities" for hiding or showing HUD Compass and Clock (default to true)
+- Renamed variables in _global_variables.json:
+  + "$item_name_text_background_alpha" -> "$item_name_text_bg_alpha"
+  + "$actionbar_background_alpha" -> "$actionbar_bg_alpha"
+- Changed Sign In button ID in Start Screen (Fixed Sign In button in Start Screen is not working)
+- Optimized Start Screen UI codes
+- (Vanilla Bug Fix) Fixed Error Section background in Manifest Validation Screen may overlap contents on some devices (Bug MCPE-102555 I guess?)
+- Hotbar Navigation Buttons now support TTS Reader
+- The "Manage Account" button in Start Screen Sidebar now only visible when signed into Microsoft Account and on Windows, iOS or Android
+
+============================================================
+
+v1.0.1-2021.10.22-(r1.17.40):
+FASTER LOOTERS UPDATE
+- Added Quick Loot Mode toggle to Chest-related Screens and Redstone Screens (Hopper, Dispenser, Dropper)
+- Added Hover Text Info for Drop and Destroy buttons
+- Added text shadow for HUD Item Name Text and Actionbar Title
+- HUD Scoreboard Sidebar Background now have a darker background under Objective Name, match Java!
+- Added variables to _global_variables.json for pack customizations:
+  + "$screen_background_alpha" for ingame (Inventory Screen, Pause Screen...) background alpha (default to 0.4)
+  + "$item_name_text_background_alpha" for HUD Item Name Text Background alpha (Change this to 0 for Java style!)
+  + "$actionbar_background_alpha" for Actionbar Title alpha
+  + "$item_text_one_line_layout" for using one line layout mode for Item Text (Use for hiding enchantment name text!)
+  + "$use_quick_craft_button" for hiding or showing Quick Craft button
+- Fixed Chat Autocomplete buttons focuses not working correctly
+- Fixed Pause Info Panel doesn't have right padding
+- Fixed Header Label in How to Play Screen sometimes get very long and cut off
+- Fixed Play screen Keyboard Helper description offset is too high
+- Fixed buttons pressing sounds in some screens not played correctly 
+- Fixed custom panorama not showing in Pack Info Screen (only when pregame)
+- Changed Screenshot disclaimer info visibility, now more devices can see it correctly
+- Other small background fixes
+
+============================================================
+
+v1.0.0-2021.10.10-(r1.17.40):
+Initial Release.

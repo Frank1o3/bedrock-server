@@ -1,0 +1,13 @@
+{
+  "chat_settings_scrolling_content/chat_settings_content_area": {
+    "size": [ "100% - 4px", "100%c" ]
+  },
+
+  "chat_setting_scrolling_panel": {
+    "size": [ 236, 200 ]
+  },
+
+  "chat_settings_popup": {
+    "$fill_alpha": "$fill_alpha"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "inventory_and_enchanting_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "drop_buttons_panel@tyel_container_common.drop_buttons_panel_pocket_containers": {
+              "$hover_text_anchor": "right_middle",
+              "$hover_text_offset": [ -8, 2 ],
+              "anchor_from": "bottom_right",
+              "anchor_to": "bottom_right",
+              "offset": [ -4, -4 ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "enchanting_panel": {
+    "modifications": [
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

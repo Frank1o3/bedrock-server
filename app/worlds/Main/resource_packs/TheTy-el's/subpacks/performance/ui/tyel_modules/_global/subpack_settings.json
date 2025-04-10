@@ -1,0 +1,44 @@
+{
+  "namespace": "tyel_subpack_settings",
+
+  "subpack_type@tyel_about_common.subpack_type": {
+    "$subpack_name": "Performance"
+  },
+
+  "dialog_background_switcher": {
+    "type": "panel"
+  },
+
+  "quit_dialog@popup_dialog.modal_dialog_with_buttons": {
+    "$modal_screen_size": [ 330, 190 ],
+    "$modal_panel_label_size": [ "100% - 2px", 100 ],
+    "$modal_label_text_alignment": "center"
+  },
+
+  "destroy_items_tooltip_anim_control@tyel_common.anim_destroy_items_tooltip_alpha_start": {
+    "destroy_at_end": "destroy_items_warning_tooltip"
+  },
+
+  "chat_screen_varied_settings": {
+    "$use_chat_caret_mode_text_boxes": false
+  },
+
+  "item_count_indexes_varied_settings": {
+    "$disable_total_item_count_indexes": false
+  },
+
+  "hover_text_with_durability_settings": {
+    "$enable_item_durability_tooltip": false
+  },
+
+  "hud_modules_settings": {
+    "$enable_hud_modules": false,
+    "$enable_advanced_position_texts": false
+  },
+
+  "item_lore_viewer_settings": {
+    "$enable_item_lore_viewer": false
+  },
+
+  "file_validation": { "$valid": true }
+}

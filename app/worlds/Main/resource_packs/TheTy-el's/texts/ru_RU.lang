@@ -1,0 +1,404 @@
+## Можно кастомизировать следующие 4 строки
+## \/ \/
+inBed.title=zzz...	#
+inBed.subtitle=Сладких снов! _(-w-)_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### Максимум 6 символов
+icontext.all=Все	### Максимум 6 символов
+icontext.hovertext.multiplyone=Кол-во: Один предмет	#
+icontext.hovertext.all=Кол-во: Один слот	#
+
+icontext.dropOne=Сбросить один предмет	#
+icontext.dropAll=Сбросить все предметы	#
+icontext.destroyOne=Удалить один предмет	#
+icontext.destroyAll=Удалить все предметы	#
+
+accessibility.chat.tts.autocomplete=Автозаполнение	#
+accessibility.chat.tts.autocompleteback=Обратное автозаполнение	#
+accessibility.chat.tts.previous=Предыдущее сообщение	#
+accessibility.chat.tts.next=Следующее сообщение	#
+accessibility.chat.tts.textboxSearchTitle=Search Messages Text Box	#
+accessibility.chat.tts.visibilityModeToggle=Переключение видимости чата	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, текущий режим: автозаполнение 	#
+accessibility.chat.tts.visibilityModeToggle.chat=, текущий режим: панель чата	#
+
+accessibility.pause.infoPanelToggle=Переключатель инфопанели	#
+accessibility.play.editMode=Изменить	#
+accessibility.play.quickJoinButton=Quick Join Server Button	#
+accessibility.start.hideStartScreen=Hide Start Screen	#
+accessibility.start.showStartScreen=Show Start Screen	#
+## Format to show in game: Press <B> or <BACK> to show Start Screen again!
+accessibility.start.toggleStartScreenTooltip.prefix=Press	#
+accessibility.start.toggleStartScreenTooltip.infix=or	#
+accessibility.start.toggleStartScreenTooltip.postfix=to show Start Screen again!	#
+accessibility.toggle.tts.closethreedotsmenu=Close More Options	#
+accessibility.toggle.tts.searchBar=Toggle Search Bar	#
+accessibility.toggle.tts.startsidebar=Кнопка "Меню сайдбара"	#
+accessibility.toggle.tts.threedotsmenu=Дополнительные настройки	#
+
+attribute.name.minecraft:damage_taken=Damage Taken	#
+attribute.name.minecraft:jump_strength=Jump Strength	#
+attribute.name.towardsUndead=Towards Undead	#
+
+brewingGuide.assistantPanel.button=Find a recipe	#
+brewingGuide.assistantPanel.title=Find a recipe...	#
+brewingGuide.assistantPanel.closeTitle=Close & Show me the recipe!	#
+brewingGuide.explanation=Explanations:	#
+brewingGuide.explanation.baseDamage=BaseDamage: current player's damage, damages from weapons and tools are included. Default: 1	#
+brewingGuide.fuelRemainingPrefix=Brews Remaining:	#
+brewingGuide.mundanePotion.name=Mundane Potion Ingredients: 	#
+brewingGuide.mundanePotion.anyofIngredients=Any of the following items:	#
+brewingGuide.modifier.whenAddedAsModifier=When added as a modifier:	#
+brewingGuide.modifier.whenAddedToWaterBottle=When added to water bottle:	#
+brewingGuide.modifierDescription.extend=[Extension] Extends the duration of a potion.	#
+brewingGuide.modifierDescription.enhance=[Enhancement] Increases the level of a potion.	#
+brewingGuide.modifierDescription.corrupt=[Corruption] Changes the effect of a potion.	#
+brewingGuide.popup.optimizingEffectIcons=Optimizing Mob Effect Icons...	#
+brewingGuide.potionEffect.removePoison=Cures Poison	#
+brewingGuide.potionEffect.removeWeakness=Cures Weakness	#
+brewingGuide.potionEffect.removeBlindness=Cures Blindness	#
+brewingGuide.potionEffect.removeNausea=Cures Nausea	#
+brewingGuide.tab.basePotions=Base Potions	#
+brewingGuide.tab.splashPotions=Splash Potions	#
+brewingGuide.tab.lingeringPotions=Lingering Potions	#
+brewingGuide.tab.EduChemistryPotions=Chemical Medicines	#
+brewingGuide.tab.legend=Base & Modifiers	#
+brewingGuide.toggle.uselessRecipesVisibility=Toggle Useless Recipes' Visibility	#
+brewingGuide.toggle.fallbackItemRendererMode=Fallback Item Renderer Mode	#
+brewingGuide.uselessPotions.avoidTip=§o§dAvoid any of these ingredients specifically in this step because Mundane Potions are useless and can't be brewed into any other potions!	#
+
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabel=Show blacklisted message	#
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabelAlt=Show message and apply caret mode	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabel=Hide blacklisted message	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabelAlt=Disable caret mode to hide message	#
+chat.blacklistedMessageNotifier.label=§o--- Message hidden ---	#
+chat.chatToolbox.cannotEnter.tooltip=Can't enter Chat Toolbox Mode while typing commands or in autocomplete modes	#
+chat.navigationNotification.search=Searching...	#
+chat.navigationNotification.caretMode=Chat Caret Mode is enabled...	#
+chat.placeHolderText=Введите команду или сообщение...	#
+chat.searchMessages.placeHolderText=Search messages...	#
+
+commandBlockScreen.placeHolderText=Введите команду	#
+commandBlockScreen.placeHolderOutputText=Результат выполнения команды будет здесь...	#
+
+compatibility.enabled=Включен режим совместимости!	#
+compatibility.autoEnabledforServer=Режим совместимости Ty-el UI доступен для этого сервера и будет включён автоматически.	#
+compatibility.enabledForAdditionalServers.disclaimer=Если вы видите данный бейдж на внешних серверах, значит на них есть режим совместимости с Ty-el UI. Загляните на экран паузы для подробностей.	#
+compatibility.tyelUI=Совместимо с Ty-el UI	#
+
+container.craftAll.itemsRemainHeader=Items Remain after Craft All:	#
+## Format to show in game: Will craft <numbers> time(s) ==> x<total_items>
+container.craftAll.stepsToCraftPrefix=Will craft	#
+container.craftAll.stepsToCraftPostfix=time(s)	#
+
+container.destroyItemsTooltip.line1=Double Press on items to Destroy Selected Items.	#
+container.destroyItemsTooltip.line1_touch=Double Tap on items to Destroy Selected Items.	#
+container.destroyItemsTooltip.line2=§l§cБудьте бдительны при удалении предметов!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=В режиме выживания нельзя удалять предметы	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aЭта функция доступна только в творческом режиме§r	#
+container.fastCraft=Быстрое создание	#
+container.fastCraft.warningHoverText=Быстрое создание, §c(Опасно!)§r Нажмите на слот книги рецептов, чтобы быстро скрафтить предмет. Если вы скрафтите что-либо случайно, потеряете важные вещи НАВСЕГДА! 	#
+container.highlightItems=Подсветить предметы (точное соответствие)	#
+container.highlightitems.placeholdertext=Выделить предметы...	#
+container.itemAmountHoverText.one=Кол-во: Один предмет	#
+container.itemAmountHoverText.max=Кол-во: Одна стопка	#
+container.itemAmountHoverText.maxFixed=Кол-во: Одна стопка (пофикшено)	#
+container.invMode=Режим инвентаря:	#
+container.invMode.autoPlace=Авто-перемещение	#
+container.invMode.manualPlace=Мануальное перемещение	#
+container.invMode.normalMode=Обычный режим	#
+container.invMode.autoPlaceMode=Быстрое перемещение	#
+container.invMode.dropMode=Сброс предмета	#
+container.invMode.autoDestroyMode=Удаление предмета	#
+container.quickCraft=Быстрое создание	#
+container.repair.durabilityGainedTooltip.anvil=Durability amounts gained compare to the first input slot	#
+container.repair.durabilityGainedTooltip.grindstone=Durability amounts gained compare to the item with least durability	#
+container.smithing_table.previewAngle=Preview Angle:	#
+
+container.toolbox=Container Toolbox	#
+
+container.toolbox.slotBulkQuickMove.toInventory=Quick Move to Inventory	#
+container.toolbox.slotBulkQuickMove.toContainer=Quick Move to Container	#
+
+container.toolbox.slotBulkClear.compact.line1=Double  to Clear Hotbar	#
+container.toolbox.slotBulkClear.compact.line2=§cHold SHIFT + Double  to Clear Inventory	#
+container.toolbox.slotBulkClear.compact.line1.controller=Double Press to Clear Hotbar	#
+container.toolbox.slotBulkClear.compact.line2.controllerPrefix=§cDouble Press	#
+container.toolbox.slotBulkClear.compact.line2.controller=§cto Clear Inventory	#
+container.toolbox.slotBulkClear.compact.tts=Double Click to clear hotbar. Hold Shift and Double Click to clear inventory	#
+container.toolbox.slotBulkClear.compact.tts.controller=Double press to clear hotbar. Double press the "quick move" key to clear inventory	#
+container.toolbox.slotBulkClear.hotbar=§cDouble Tap to Clear Hotbar	#
+container.toolbox.slotBulkClear.inventory=§cDouble Tap to Clear Inventory	#
+
+container.toolbox.slotDestroy.compact.line1= to Destroy All	#
+container.toolbox.slotDestroy.compact.line2= to Destroy One	#
+container.toolbox.slotDestroy.compact.line1.controller=Press to Destroy All	#
+container.toolbox.slotDestroy.compact.line2.controller=to Destroy One	#
+container.toolbox.slotDestroy.compact.tts=Click to destroy all selected items. Right click to destroy one selected item	#
+container.toolbox.slotDestroy.compact.tts.controller=Press to destroy all selected items. Press "Take Half/Place One" to destroy one selected item	#
+
+container.toolbox.slotDrop.compact.line1= to Drop All	#
+container.toolbox.slotDrop.compact.line2= to Drop One	#
+container.toolbox.slotDrop.compact.line1.controller=Press to Drop All	#
+container.toolbox.slotDrop.compact.line2.controller=to Drop One	#
+container.toolbox.slotDrop.compact.tts=Click to drop all selected items. Right click to drop one selected item	#
+container.toolbox.slotDrop.compact.tts.controller=Press to drop all selected items. Press "Take Half/Place One" to drop one selected item	#
+
+contentlog.keystrokeProtip=Protip: If you have Content Log GUI toggles enabled, you can use Ctrl + H to easily open Content Log GUI, anywhere! (requires keyboard)	#
+contentlog.msgSize.header=Indexed messages count:	#
+contentlog.msgSize.maxFlag=[MAX]	#
+contentlog.msgSize.maxFlag.tooltip=Maximum is 100, but you can get full content logs in saved log files	#
+contentlog.filter.errors=Errors	#
+contentlog.filter.title=Show All:	#
+contentlog.filter.warnings=Warnings	#
+
+controller.buttonTip.doublePress=[Double Press]	#
+controller.buttonTip.highlightItems=Highlight Items	#
+controller.buttonTip.playRecentWorld=Play Recently Saved World	#
+controller.buttonTip.playSelectedServer=Play Selected Server	#
+controller.buttonTip.toggleSidebar=Меню сайдбара	#
+controller.buttonTip.toggleScreen=Show/Hide Screen	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=Синхронизация со стандартным режимом этого мира.	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=Пролетайте сквозь блоки и исследуйте мир без взаимодействия с ним.	#
+createWorldScreen.levelSeed.copySeedTooltip=Нажмите на поле ключа генератора, выделите весь текст и нажмите кнопку "Скопировать".	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=Щёлкните поле ключа генератора, выделите весь текст используя [ctrl]+[a] и скопируйте его используя [ctrl]+[c].	#
+createWorldScreen.serverSimDistanceDescription.header=The game loads and applies changes within a specified amount of block radius	#
+createWorldScreen.serverSimDistanceDescription.footer=Block Radius:	#
+createWorldScreen.worldNameDescription.create=This is where you can name your world.	#
+createWorldScreen.worldNameDescription.edit=This is where you can edit the name of your world.	#
+createWorldScreen.worldLocationSectionName=World Folder Location:	#
+createWorldScreen.worldLocationSection.unknownLabel=(Unknown)	#
+
+
+
+
+
+dr.toggle.purchaseLock=Блокировка покупки	#
+
+generator.infinite.desc=Бескнечный мир с разнообразными биомами, уходящий вдаль.	#
+generator.old.desc=Конечный мир размером 256х256х256, использующий старую генерацию.	#
+
+hostOption.time.customTime=Custom Time:	#
+hostOption.time.customTime.warning=Warning: Gametime will be overridden!	#
+hostOption.time.customTimeSlider=Custom Time Slider	#
+hostOption.weather.query=Query Weather	#
+
+hudScreen.hideHudTooltip=Нажмите два раза, чтобы скрыть интерфейс	#
+hudScreen.inventoryFull.warning=§lFull!	#
+hudScreen.levelHeaderAbbreviated=Lvl	#
+hudScreen.lowDurability=Низкая прочность!	#
+hudScreen.scoreboardList.playerCount.header=Showing	#
+hudScreen.scoreboardList.playerCount.player=player	#
+hudScreen.scoreboardList.playerCount.players=players	#
+hudScreen.scoreboardList.playerTag.self=[You]	#
+hudScreen.scoreboardList.unscoredTitle=Unscored Players	#
+hudScreen.showHudTooltip=Коснитесь этой области, чтобы снова показать HUD!	#
+hudScreen.toggleables.hiveXpCalc.show=Show HIVE XP Calculator Menu	#
+hudScreen.toggleables.hotbar.hide=Hide Hotbar	#
+hudScreen.toggleables.hotbar.show=Show Hotbar	#
+hudScreen.toggleables.scoreboardList.hide=Hide Scoreboard List	#
+hudScreen.toggleables.scoreboardList.show=Show Scoreboard List	#
+hudScreen.toggleables.scoreboardSidebar.hide=Hide Scoreboard Sidebar	#
+hudScreen.toggleables.scoreboardSidebar.show=Show Scoreboard Sidebar	#
+hudScreen.toggleables.tooltip=Hold TAB to peek Player List. Access HUD toggles by using TAB + <Number Key>.	#
+
+itemLore.title=Средство просмотра информации о предмете §o§7(БЕТА!)	#
+itemLore.emptyMessage=<Этот слот пуст!>	#
+
+key.peekListAndHUDTogglesForTyelUI=Peek Scoreboard List and HUD Menu for Ty-el UI	#
+key.showContentLogGUI=Show Content Log GUI	#
+key.showContentLogGUI.disabledTag=(disabled)	#
+key.toggleGraphicsMode=Switch Graphics Modes (if available)	#
+key.toggleHUD=Hide/Show HUD	#
+key.togglePaperDoll=Hide/Show Paper Doll	#
+
+## Formatting for map.chunk while ingame: [Chunk: <xi>, <yi>, <zi> in <x>, <y>, <z>]
+map.chunk=Chunk	#
+map.chunk.in=in	#
+map.chunkBorder=Chunk Border	#
+map.chunkBorder.none=None	#
+
+menu.communityStandards=Посмотреть стандарты сообщества	#
+menu.feedback=Отправить отзыв	#
+menu.multiplayerHelp=Справка по мультиплееру	#
+menu.quit=Выйти из игры	#
+
+mobeffect.title.noEffects=No Active Effects	#
+mobeffect.title.activeEffects=Active Effects:	#
+
+modal.defaultTitle=Are you sure?	#
+
+networkWorld.view_server_store=Просмотр магазина сервера	#
+
+options.hardcoded_keybinds_section=Hardcoded Keys (built-in and can't be modified)	#
+options.quickSettingsTitle=Быстрые настройки	#
+options.thirdperson.firstperson_short=Первое лицо	#
+options.thirdperson.thirdpersonback_short=3-е лицо сзади	#
+options.thirdperson.thirdpersonfront_short=3-е лицо спереди	#
+options.toggleOptionDescriptions=Show/Hide Option Descriptions	#
+
+options.enableAutoPlatformTextToSpeech.description=Enables Text To Speech with System Settings.	#
+options.enableUITextToSpeech.description=Enables Text To Speech on background menus.	#
+options.enableChatTextToSpeech.description=Enables Text To Speech on chat messages and commands.	#
+options.enableOpenChatMessage.description=Hides/Shows the Open Chat notifications.	#
+options.textBackgroundOpacity.description=Changes text background opacity of titles and subtitles. Set to 0% will render backgrounds completely invisible.	#
+options.gamma.description=Adjusts the game's brightness.	#
+options.thirdperson.description=Toggles first/third person view. Third person view allows the player to view the nearby environment from an "outside" perspective.	#
+options.fullscreen.description=Puts Minecraft into Fullscreen mode; keeping it off keeps it in a window.	#
+options.hidehand.description=Shows or hides the player hand in first person view.	#
+options.hidepaperdoll.description=Toggles the side-view of the player displayed in the top-left corner of the screen.	#
+options.hidehud.description=Shows/Hides the HUD.	#
+options.screenAnimations.description=Toggles the animations when switching between UI or menus.	#
+options.interfaceOpacity.description=Toggles the opacity of the HUD. Choosing item on hotbar or interacting with UI will temporarily revert the opacity back to 100% . This option won't affect Paper Doll opacity.	#
+options.fov.description=Changes the field of view. Controls how much of the game world is visible on the screen.	#
+options.splitscreen.description=Toggles between the horizontal and vertical orientation of the splitscreen.	#
+options.showautosaveicon.description=Hides/Shows the autosave indicator icon. The indicator icon shows on HUD when the game is attempting to automatically save your world to device storage.	#
+options.classic_box_selection.description=Toggles the outline selection of the block. Disabling this will instead use highlight selection of the block.	#
+options.ingamePlayerNames.description=Toggles the name tag text visibility that can be seen on top of players' head, mobs and NPCs.	#
+options.splitscreenIngamePlayerNames.description=Toggles the name tag text visibility that can be seen on top of players' head, mobs and NPCs, while in split screen.	#
+options.viewBobbing.description=Toggles the "bobbing" motion of the camera as the player is walking.	#
+options.screenShake.description=Toggles screen shake when maps use the "/camerashake" commands. Disabling this option prevents the game from screen shaking when the commands are executed.	#
+options.transparentleaves.description=Toggles transparent leaves.	#
+options.bubbleparticles.description=Toggles the fancy water bubble columns graphics. This may lower performance on some devices.	#
+options.renderclouds.description=Toggles the clouds graphics. Disabling this option causes no clouds to be rendered.	#
+options.fancyskies.description=Toggles the sun, moon, clouds, stars and sky color. Disabling this option will not render them in the world and instead only sky color is rendered.	#
+options.smooth_lighting.description=Lighting is smoothed across the blocks (ambient occlusion) or each block has a distinctive light level.	#
+options.graphics.description=Fancy graphics enable higher quality graphic effects, including transparent leaves, transparent clouds.	#
+options.fov.toggle.description=Toggles whether gameplay affects FOV changes, when sprinting, when having slowness or speed effect, etc.	#
+options.guiScale.description=Controls the Graphical User Interface scale. This also controls the HUD size.	#
+options.gui.accessibility.scaling.description=Enables an extra large version of the menu interface as an additional accessibility option.	#
+options.uiprofile.description=Changes the game UI style between classic (Desktop UI) and Pocket UI. Classic UI has Java-like UI style, while Pocket UI has bigger item slots, redesigned screens, more user-friendly to mobile devices.	#
+options.raytracing.description=Toggles the ray tracing on or off.	#
+options.upscaling.description=Enables NVIDIA DLSS 2.0 to boost frame rates on GeForce RTX graphics cards and support higher than 1080 resolutions.	#
+options.raytracing.renderDistance.description=Controls how many chunks of the world are visible at once if "Ray Tracing" option is on. This also affects the render distance of foliage such as transparent leaves, crops and animated textures.	#
+options.renderDistance.description=Controls how many chunks of the world are visible at once. This also affects the render distance of foliage such as transparent leaves, crops and animated textures.	#
+options.maxFramerate.description=Limits the framerates per second. Limiting the framerate to a multiple of the player monitor's refresh rate can save processing power.	#
+options.msaa.description=Toggles the amount of anti-aliasing, which smoothes the image and removes jagged edges.	#
+options.texelAA.description=Toggles texture pixel anti-aliasing, which smoothes the pixels of blocks.	#
+options.vsync_dropdown.description=Limits the framerates per second to the screen's refresh rate. Set to No Vertical Sync or Adaptive will increase FPS higher than player monitor's refresh rate but negatively affect processing power.	#
+options.vsync.description=Limits the framerates per second to the screen's refresh rate. Disabling this will increase FPS higher than player monitor's refresh rate but negatively affect processing power and may cause screen tearing.	#
+
+pauseScreen.thirdPartyWorld=Подборка серверов	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Выше	#
+playscreen.navigateDown=Ниже	#
+playscreen.joinRecentExternalServer=Присоединиться к недавнему внешнему серверу	#
+playscreen.lastPlayed=Last saved	#
+playscreen.loading=Loading...	#
+playscreen.motd=MOTD	#
+playscreen.pinging=Pinging...	#
+playscreen.playButton=ИГРАТЬ!	#
+playscreen.projectsearch.placeholdertext=Поиск проектов (точное соответствие)	#
+playscreen.recentlyPlayed=Recently Played	#
+playscreen.showWorldFolderName=Show World Folder Name (Experimental)	#
+playscreen.worldFolderName.undefined=(Undefined ;-;)	#
+playscreen.worldFolderName.unknown=(Unknown Folder)	#
+playscreen.worldsFound=world(s) found	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cПРЕДУПРЕЖДЕНИЕ:§r Из-за плохой производительности и ограничений кода мы можем индексировать только до §l§e50§r самых последних миров.	#
+playscreen.worldsearch.placeholdertext=Поиск миров... (точное соответствие)	#
+playscreen.worldsearch.resultmessage_before=Результаты поиска: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldSize=World size:	#
+playscreen.warning.forceautoplace.title=ПРЕДУПРЕЖДЕНИЕ: Принудительно включено быстро перемещение	#
+playscreen.warning.forceautoplace.body=Используйте принудительное быстрое перемещение на серверах на свой страх и риск (особенно на рекомендованных)! 	#
+
+progressScreen.hiveNetherGlitch.title=ААААА,... опять баги незера!!!	#
+progressScreen.hiveNetherGlitch.body=Что вы хотите сделать?  Просто... подождите и снова присоединитесь, или принудительно закройте и снова откройте игру, или, если вы используете Windows, используйте кнопку "Восстановить", а не "Свернуть"!  Она должна мгновенно закрыть этот экран!	#
+
+resourcePack.packSearchPlaceHolderText.global=Поиск наборов ресурсов...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Поиск наборов ресурсов...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Поиск наборов данных...	#
+resourcePack.showNotDownloaded=Показать не загружено	#
+resourcePack.tyelUIWarningMessage=Если вы уже активировали Ty-el UI в глобальных ресурсах, не нужно снова активировать Ty-el UI в ресурспаках мира, за исключением того, что вы включили «Игроки должны принять наборы ресурсов, чтобы присоединиться» в настройках ресурспаков мира.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=Произошла ошибка при попытке загрузить /ui/_global_variables.json из Ty-el UI. Проверьте синтаксис файла и повторите попытку.  #
+
+screenshot.saveLocation=Расположение скрина:	#
+screenshot.showSaveLocation=Показать расположение скрина	#
+
+screenLoading.tooLongTooltip=If the game takes too long to load this screen, please restart the game.	#
+
+serverform.searchPlaceHolderText=Фильтр поиска... (точное соответствие)	#
+serverform.searchDisclaimer.tooltip=Убедитесь, что вы не хотите пытаться искать содержимое, которое слишком часто используется на этом экране формы, например: §o"Select to equip", "Last Seen", etc.	#
+
+soundCategory.ambient.description=Звуки окружения (вода, звуки Незера или стоны пещер)	#
+soundCategory.block.description=Звуки блоков (наковальни, сундуки, двери и т.д.)	#
+soundCategory.hostile.description=Звуки враждебных мобов (зомби, криперы, пауки и т.д.)	#
+soundCategory.main.description=Громкость всех звуков (включая звуки игры и музыку)	#
+soundCategory.music.description=Громкость стандартной музыки игры	#
+soundCategory.neutral.description=Звуки пассивных мобов (курица, корова, свинья, деревенщина и т.д.)	#
+soundCategory.player.description=Звук игроков (сброс предметов, урон, поедание и т.д.)	#
+soundCategory.record.description=Громкость музыки нотных блоков и проигрывателей	#
+soundCategory.sound.description=Громкость звуков геймплея (исключая музыку)	#
+soundCategory.weather.description=Звуки дождя и грозы	#
+soundCategory.texttospeech.description=Звуки автоматизированной диктовки текста нейросетью	#
+
+storageManager.floatingFileStorageSelector.tooltip=Хотите сменить расположение файлов игры? Нажмите сюда. (НЕ рекомендуется, если вы играете с Ty-el UI)	#
+
+store.coin.bundle=Coin Bundles	#
+store.cost=Расходы:	#
+store.redeem=Get for free!	#
+store.free.uppercase=§l§oFREE!	#
+
+store.confirmPurchase.title=Подтвердить покупку	#
+store.confirmPurchase.description=Хотите купить этот предмет? Вот что вы получите:	#
+store.confirmPurchase.description_completed=Отлично! Теперь вы можете закрыть данное окно и использовать покупку	#
+store.confirmPurchase.tooltip=Вы будете предупреждены при нажатии кнопки покупки предмета.	#
+store.proceedToPurchase=Accept and Proceed to Purchase	#
+
+dr.rarity.=Error, Clear Filter is required	#
+store.search.filter.=Error, Clear Filter is required	#
+
+store.search.filter.highlight.title=Highlight Filter	#
+store.search.filter.minecoinSpecials=Minecoins/Specials	#
+store.search.filter.newOffers=New Offers	#
+store.search.filter.redeemable=Redeemable	#
+store.search.filter.collectible=Collectible through Achievements	#
+store.search.filter.paid=Paid	#
+
+trade.tradeAll=Торговля	#
+trade.maxLevelTag=MAX	#
+
+tyelHive.xpCalculator.disclaimerLabel=XP Charts info collected from hivetools.app. Not affiliated with Hive Games in anyway.	#
+tyelHive.xpCalculator.hideButtonLabel=Hide	#
+tyelHive.xpCalculator.maxLevel=Max Level	#
+tyelHive.xpCalculator.increment=Increment / lvl	#
+tyelHive.xpCalculator.incrementCap=Cap ## ~= Maximum	#
+tyelHive.xpCalculator.title=Hive XP Calculator Mode Switches	#
+tyelHive.xpCalculator.pageIdentifier=Page	#
+tyelHive.xpCalculator.lastUpdated=Last Updated:	#
+
+tyelAbout.about=Ty-el UI — Информация	#
+tyelAbout.customAvailable=Кастомный экран доступен!	#
+tyelAbout.customAvailable.zeqa=Check out Zeqa Rules & About Ty-el UI here!	#
+tyelAbout.minGameVerRequired=Минимальная версия Майнкрафта:	#
+tyelAbout.openAboutTyelUITooltip.openText=Нажмите, чтобы открыть экран информации Ty-el UI (кастомный экран)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Нажмите, чтобы вернуться назад, на кастомный экран (Ty-el UI — информация)	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Режим устранения ошибок Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=Нажмите "Деактивировать Ty-el UI", чтобы деактивировать ресурспак моментально, затем закройте настройки, чтобы применить изменения. После деактивации вам необходимо изменить параметр "$tyel_ui_troubleshooting_mode" на §cfalse§r в /ui/_global_variables.json.	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc= У вас появилась эта кнопка, поскольку файл /ui/_global_variables.json загрузился некорркетно. Проверьте, пожалуйста, его синтаксис. Если вы хотите деактивировать Ty-el UI, нажиите "Деактивировать Ty-el UI".	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Деактивировать Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=Закрыть настройки	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=Не удалось деактивировать Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=Режим устранения онибок	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Режим устранения ошибок Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Не удалось загрузить наборы ресурсов)	#
+
+
+## DO NOT TRANSLATE PACK NAME
+tyelAbout.creatorTitle=Создатель:	#
+tyelAbout.aboutLabel1=The Ty-el's UI Pack (Ty-el UI) — ресурспак, немного изменяющий ванильный интерфейс, который добавляет некоторые функции, настройки, а также новые звуки клика (!), чтобы сделать твой опыт как-то лучше, но при этом сохранить оригинальные ощущения. Совместим с большим количеством ресурпаков. Почему б и нет?!	#
+tyelAbout.aboutLabel2=§l§bDISCLAIMER§r: §oЭто ресурспак, не клиент!§r	#
+tyelAbout.aboutLabel3=Поддерживаемые языки:	#
+## tyelAbout.aboutLabel4 for language names
+tyelAbout.aboutLabel5=и Вьетнамский (Необходим ресурспак "The Ty-el's Vietnamese Language Pack", скачать можно на MCPEDL.com/CurseForge), поддержка других языков будет доступна вскоре.	#
+tyelAbout.aboutLabel6=Если вы нашли баг, дээмните мне в Твиттере	#
+tyelAbout.translationHelp=Мне нужна помощь! Если хотите перевести ресурспак на свой язык, напишите мне в Twitter.	#

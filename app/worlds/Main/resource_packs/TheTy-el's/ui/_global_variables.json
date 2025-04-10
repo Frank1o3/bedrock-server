@@ -1,0 +1,416 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+
+
+// Here you can edit some settings to make your UI experience
+// somehow better than ever!
+
+/* USAGE =============================================
+ONLY EDIT VARIABLE VALUES AFTER COLON,
+DO NOT EDIT OR DELETE ANYTHING ELSE, AND ALSO
+DO NOT DELETE ANY QUOTATION MARKS OR COMMAS (if available),
+OR THIS FILE WON'T BE LOADED AND PACK MAY BREAK!
+====================================================*/
+
+/* Legend: Variable formats
+  ? At the end of each variable there is a //<format> indicating which value format
+  ? you will need to apply, otherwise this file will break and may fail to load.
+  ! An error toast will show up if this file is failed to load, or global variables
+  ! file version is not latest
+
+  * string: a label value inside 2 quotation marks, example: "hello world"
+  * pc_float: a percentual float number (between 0.00 ~ 1.00), example: 32% ==> 0.32
+  * int: an integer number (between -2147483648 ~ 2147483647) with noted exceptions
+  * bool: (boolean) either "true" or "false" (without quotation marks)
+  * anchor_string: only 9 following strings work:
+    ___________________________________________
+    top_left,     top_middle,     top_right
+    left_middle,  center,         right_middle,
+    bottom_left,  bottom_middle,  bottom_right
+    ___________________________________________
+  * vec2 (arr[x,y]): (2 values in a vector) you can use number or exact percentage (hard to explain),
+    (all values in vector must be inside two brackets)
+  * rgb_vec (arr[r,g,b(,a)]): R,G,B(%) or R,G,B,A(%)
+    (3 or 4 values in a vector) an rgb or rgba color vector
+    (with min 0 and max 1, consistent with min 0 and max 255 in RGB(A))
+    example: rgba(255, 238, 0, 255) ==> [ 1.0, 0.93, 0.0, 1.0 ]
+               <divided by 255, rounded to 2nd decimal place>
+*/
+
+{
+  // ACCESSIBILITY -------------------------------
+  // Reduced Motion Mode will reduce and limit amount of UI animations and transitions,
+  // while keeping screen transitions as smooth as possible.
+  // (Only applies to unmodified Vanilla UI with Ty-el UI)
+  // + Note: if you want to completely disable animations, consider using
+  // the "Screen Animations" toggle in the in-game Video Settings instead.
+  "$enable_reduced_motion_mode": false, //bool
+
+  // Change the transparency (alpha) of the black background behind button/gamepad
+  // helper descriptions and some other bright text controls
+  "$desc_black_bg_alpha": 0.8, //pc_float
+
+  // HUD Screen
+  // - Chat and Scoreboard Sidebar Background Alpha
+  "$chat_bg_alpha": 0.2, //pc_float
+  "$scoreboard_sidebar_bg_alpha": 0.2, //pc_float
+
+  // - Item Name Text and Actionbar Text Background Visibility and Alpha
+  "$item_name_text_bg_alpha": 0.6, //pc_float
+
+  // Use Larger Scroll Box in Scrolling Panels
+  "$use_large_scroll_box": false, //bool
+
+  // Compact Play Screen Layout (not supported on Vanilla Default Subpack)
+  "$use_play_screen_compact_layout": false,
+
+  // Option Descriptions in Settings Screens
+  // - Use Option Descriptions feature and visibility toggle
+  "$use_settings_option_descriptions": true, //bool
+
+  // - Always show Option Descriptions as you open Settings
+  // (use toggle at the top right to hide or show them again)
+  "$always_show_settings_option_descriptions_by_default": true, //bool
+
+
+  // TROUBLESHOOTING AND DEBUGGING ---------------
+  // Troubleshooting Mode: access some troubleshooting tools,
+  // including the "Item ID AUX Offsetting" tool in inventory screen,
+  // and disable Quit Comfirmation feature in Pause Screen.
+  // Useful when you can't access to some important features because
+  // of incompatible packs that make game UI completely bugged out
+  "$tyel_ui_troubleshooting_mode": false, //bool
+
+  // Enable Pause Screen's Quit Confirmation feature, disable this
+  // if your resource packs override entire Pause Screen codes
+  "$pause_quit_confirmation_popup_enabled": true, //bool
+
+  // Recovery Compass Item ID AUX Override
+  // - Override the Recovery Compass Item ID AUX for versions or addons compatibility (advanced)
+  "$enable_recovery_compass_item_id_aux_override": false, //bool
+
+  // - Recovery Compass Item ID AUX to override if the above variable is set to true
+  "$rcompass_id_aux_override": 42860544, //int
+
+  // Item ID AUX offsetting, should be shifted by (x * 65536).
+  // You can use the "Item ID AUX Offsetting" tool to get the offsetting value. (Coming soon)
+  // In some cases custom item renderers with AUX > 16777216 (ID > 256) show incorrect items because of
+  // having addons activated, or sometimes after each major update of the game, this could help fixing it.
+  // An integer number can be positive (forward shifts) or negative (backward shifts)
+  "$item_id_aux_offset": 0, //int
+
+
+  // HUD -----------------------------------------
+  // Enable Chunk Position and Chunk Border features, disabling this can improve performance
+  "$use_hud_advanced_position_texts": true, //bool
+
+  // Chat Panel
+  // Override HUD Chat Panel Anchor, for enabling Bottom Chat
+  // - Set this to true so that Bottom Chat Panel setting should work, and force
+  // override Auto Anchor below...
+  // - Set this to false to make this automatically change anchors depending
+  // on which control method you're using
+  "$use_hud_chat_anchor_override": true, //bool
+
+  // Bottom Chat Panel (with Clips Children enabled automatically)
+  "$use_hud_bottom_chat": false, //bool
+
+  // Texts
+  // + Item Name Text One Line Layout
+  "$item_text_one_line_layout": false, //bool
+
+  // + HUD Percentage Text Visibility (XP Bar, Boss Bars)
+  "$hud_percentage_text_visible": true, //bool
+
+  // Scoreboard Sidebar Setups
+  "$scoreboard_sidebar_anchor": "right_middle", //anchor_string
+  "$scoreboard_sidebar_offset": [ 0, 0 ], //vec2
+
+  "$scoreboard_sidebar_anchor_pocket": "right_middle", //anchor_string
+  "$scoreboard_sidebar_offset_pocket": [ 0, 0 ], //vec2
+  "$ignore_scoreboard_sidebar_scores": false, //bool
+
+  // HUD Modules Menu Toggle (Touch only)
+  // Here you can customize offset and transparency of HUD Modules Menu Toggle on Touch
+  "$tyel_hud_modules_toggle_size": [ 18, 18 ], //vec2
+  "$tyel_hud_modules_toggle_anchor_from": "top_middle", //anchor_string
+  "$tyel_hud_modules_toggle_anchor_to": "top_right", //anchor_string
+  "$tyel_hud_modules_toggle_offset": [ -30, 1 ], //vec2
+  "$tyel_hud_modules_toggle_alpha": 1.0, //pc_float
+
+  // HUD Utilities and Modules Setups
+  // - Enable/Disable HUD Modules
+  //   + Accurate XP Progress
+  "$use_tyel_hud_modules:accurate_exp_progress": true, //bool
+  //   + Inventory Free Slots Counter
+  "$use_tyel_hud_modules:inventory_free_slots_counter": true, //bool
+  //   + Lodestone Compass Artifacts
+  "$use_tyel_hud_modules:lodestone_compass_artifacts": true, //bool
+  //   + Mainhand Renderer
+  "$use_tyel_hud_modules:mainhand_renderer": true, //bool
+  //   + Utility Artifacts
+  "$use_tyel_hud_modules:utility_artifacts": true, //bool
+
+  // + Toggle Mode: Dynamic Utility Artifacts/Legacy HUD Utilities
+  // by setting the following variable to 0 or 1
+  //   > 0 - Dynamic: Items visible on HUD only while you have
+  //   Clock/Compass/Recovery Compass items in your inventory (fairer gameplay)
+  //   > 1 - Legacy: Items ALWAYS visible on HUD (for compatibility with
+  //   newer versions or addons, otherwise please don't enable this)
+  "$hud_utility_artifacts_mode": 0, //int
+
+  // + (Legacy Only) Show/Hide Recovery Compass item renderer
+  // This variable is always disabled in Featured Servers
+  "$use_recovery_compass_utility": false, //bool
+
+  // Allow you to freely customize HUD Utilities and Modules anchors and offsets
+  "$enable_movable_hud_utilities_and_modules": false, //bool
+
+  // Disable the HUD menu tooltip at the bottom left when the HUD screen is reloaded
+  "$tyel_hud_modules_disable_tooltip": true, //bool
+
+  // HUD Utilities and Modules Offset Customization
+  // These variables require "$enable_movable_hud_utilities_and_modules" to be enabled first
+  // ------------
+  // - Accurate XP Progress
+  "$accurate_exp_progress_anchor": "bottom_left", //anchor_string
+  "$accurate_exp_progress_offset": [ 2, -2 ], //vec2
+  // - Inventory Free Slots Counter
+  "$inventory_free_slots_counter_anchor": "bottom_left", //anchor_string
+  "$inventory_free_slots_counter_offset": [ 2, -17 ], //vec2
+  // - Lodestone Compass Artifacts
+  "$lodestone_compass_artifacts_anchor": "bottom_left", //anchor_string
+  "$lodestone_compass_artifacts_offset": [ 2, -38 ], //vec2
+  // - Mainhand Renderer
+  "$mainhand_renderer_anchor": "bottom_right", //anchor_string
+  "$mainhand_renderer_offset": [ -2, -2 ], //vec2
+  // - Utility Artifacts
+  "$utility_artifacts_anchor": "bottom_right", //anchor_string
+  "$utility_artifacts_offset": [ -2, -23 ], //vec2
+  // ------------
+
+
+  // CONTAINER AND INVENTORY SCREENS -------------
+  // Use Quick Craft Button inside Crafting and Inventory Screens
+  "$use_quick_craft_button": true, //bool
+
+  // Use Container Toggles (Normal Mode, Quick Move Mode, Drop Mode)
+  "$use_container_toggles": true, //bool
+
+  // Container Toolbox always visible by default
+  // (will hide the original toggle if set to true, Classic UI only)
+  "$container_toolbox_always_visible": false,
+
+  // Force Quick Move Mode On when opening containers (not recommended)
+  // Enable this as your own risk! This might get you banned from some servers!
+  "$force_auto_place_on": false, //bool
+
+  // Hide Help Button in some screens (Trade Screen, Loom Screen...)
+  "$hide_help_ingame_button": false, //bool
+
+  // Show or Hide Paper Dolls in container screens
+  // (except the one in Inventory Screens, Classic UI only)
+  "$use_container_paper_dolls": true, //bool
+
+  // Use Brewing Guide GUI inside Brewing Stand Screens
+  // (disable this if having performance issues)
+  "$use_brewing_guide_gui": true, //bool
+
+  // Item Hover Text
+  // + (Touch only) Toggle between classic hover text mode (next to selected item)
+  // and touch mode hover text (always at the bottom of the screen)
+  "$use_classic_hover_text_on_touch": true,
+
+  // + Item Hover Text Visibility Toggle default state, set this to true will force the game to
+  // not render item hover text by default until player turn the toggle off
+  "$toggleable_hover_text_default_state": false,
+
+  // SERVER FORM ---------------------------------
+  // Server Form Dialog Size
+  "$server_form_dialog_size": [ "100%", "100%" ], //vec2
+
+
+  // PLAY SCREEN ---------------------------------
+  // Enable World Search Feature (may greatly improve performance if disabled)
+  "$world_search_feature_enabled": true, //bool
+
+  // Enable Recently Played World Suggest Feature
+  "$recent_world_suggest_enabled": true, //bool
+
+
+  // BREWING STAND SCREEN/BREWING GUIDE ----------
+  // Show the Chemical Potions Tab in Brewing Guide.
+  // Requires "Education Edition" toggle enabled to show textures correctly
+  "$brewing_guide__show_chemistry_potions_tab": false, //bool
+
+
+  // COMMON --------------------------------------
+  // Common Background Alpha
+  "$fill_alpha": 0.6, //pc_float
+
+  // Common Background Alpha for Inventory Screens
+  "$screen_background_alpha": 0.4, //pc_float
+
+  // Settings Screen Gray Background
+  // + Visibility
+  "$settings_gray_bg_visible": true, //bool
+  // + Alpha
+  "$settings_gray_bg_alpha": 1, //pc_float
+
+  // Flying Item Renderer Visible
+  "$flying_item_renderer_visible": true, //bool
+
+
+  // MISCELLANEOUS -------------------------------
+  // Expand screen content area size to maximum possible size in some screens
+  "$expanded_content_area_max_size": false, //bool
+
+  // Insta-Join Server from Play Screen
+  // * Server Type
+  //   0 = Featured Servers, 1 = Additional Servers, Others = will be set to Default (0)
+  "$insta_join_server_type": 0, //int
+  // * Server Name
+  //   Name must be exactly the same as in game, and case sensitive!
+  "$insta_join_server_name": "The Hive", //string
+
+  // Disable Compatibility Mode Toast Messages
+  // Sometimes you are very annoyed seeing these kind of toasts, just set this to true to fix that.
+  "$disable_compatibility_mode_toasts": false, //bool
+
+  // Hide/Show trailing zeros in percentage labels (maximum 2 trailing zeros)
+  // Example: (without trailing zeros) "23%" <-> "23.00%" (with trailing zeros)
+  "$show_trailing_zeros_in_percentage_labels": false, //bool
+
+  // Custom "Minecraft for Android" package name for "Local World Folder Name" feature
+  // Only change this if your "Minecraft for Android" app has a different package name
+  // (Please buy and use the paid version of Minecraft on Play Store.)
+  "$custom_minecraft_for_android_package_name": "com.mojang.minecraftpe", //string
+
+  // ======================================================
+  // COMPATIBILITY MODE - Only Bool values accepted
+  // Try enabling compatibility mode by setting any of these following variables to true
+  // ======================================================
+
+  // Ultimate Thumbnail Maker by Chainsketch
+  // Removes Ty-el UI's Hide HUD buttons and HUD Utilities
+  "$is_chainsketch_UTM": false,
+
+  // Modules Plus by Chainsketch
+  // Removes some duplicated HUD elements in Ty-el UI that Modules Plus have and
+  // changed scoreboard sidebar offset
+  "$is_modules_plus": false,
+
+  // Utility UI by HJN
+  // Removes some duplicated HUD elements in Ty-el UI that Utility UI have
+  "$is_utility_ui": false,
+
+  // Zeqa Server Resource Pack
+  // Fixes Server Form title label font size is too big
+  "$is_zeqa": false,
+
+
+  // ======================================================
+  // CHAT BLACKLISTING AND SETTINGS
+  // Add words/phrases you don't want to see in chat panels
+  // (hud screen and chat screen), an identifier message will
+  // replace the messages having blacklisted words/phrases you
+  // set up. Up to 32 words/phrases can be added here. CASE SENSITIVE!
+  // ======================================================
+
+  // Warning: due to JSON UI limitations, you are not allowed to use numbers
+  // and some mathematical operators or special characters at the beginning
+  // of each word/phrase index (such as '0', '2', '+', '-', etc.)
+
+  // Add asterisks at the beginning or the end or both for partial matching
+  // for blacklisting
+  // example:
+  // + "*gg*" ~> 'eggs' => hidden, 'gg' => hidden
+  // + "*at" ~> 'cat' => hidden, but 'attack' => not hidden
+
+  "$chat_blacklist_index_01": "*smp*", //string
+  "$chat_blacklist_index_02": "", //string
+  "$chat_blacklist_index_03": "", //string
+  "$chat_blacklist_index_04": "", //string
+  "$chat_blacklist_index_05": "", //string
+  "$chat_blacklist_index_06": "", //string
+  "$chat_blacklist_index_07": "", //string
+  "$chat_blacklist_index_08": "", //string
+  "$chat_blacklist_index_09": "", //string
+  "$chat_blacklist_index_10": "", //string
+  "$chat_blacklist_index_11": "", //string
+  "$chat_blacklist_index_12": "", //string
+  "$chat_blacklist_index_13": "", //string
+  "$chat_blacklist_index_14": "", //string
+  "$chat_blacklist_index_15": "", //string
+  "$chat_blacklist_index_16": "", //string
+  "$chat_blacklist_index_17": "", //string
+  "$chat_blacklist_index_18": "", //string
+  "$chat_blacklist_index_19": "", //string
+  "$chat_blacklist_index_20": "", //string
+  "$chat_blacklist_index_21": "", //string
+  "$chat_blacklist_index_22": "", //string
+  "$chat_blacklist_index_23": "", //string
+  "$chat_blacklist_index_24": "", //string
+  "$chat_blacklist_index_25": "", //string
+  "$chat_blacklist_index_26": "", //string
+  "$chat_blacklist_index_27": "", //string
+  "$chat_blacklist_index_28": "", //string
+  "$chat_blacklist_index_29": "", //string
+  "$chat_blacklist_index_30": "", //string
+  "$chat_blacklist_index_31": "", //string
+  "$chat_blacklist_index_32": "", //string
+
+  // Settings
+  // + Show/Hide "message hidden" warning in HUD Screen
+  "$show_chat_blacklisted_message_hidden_notifier_in_hud_screen": true, //bool
+
+  // + Show/Hide "message hidden" warning in Chat Screen
+  "$show_chat_blacklisted_message_hidden_notifier_in_chat_screen": true, //bool
+
+
+  // ======================================================
+  // TY-EL UI'S OREUI DESIGN GLOBAL VARIABLES
+  // Customize Ty-el UI's OreUI element colors and more!
+  // ======================================================
+  "$tyel_oreui_design:light_button_default_text_color": [ 0.117, 0.117, 0.121 ], //rgb_vec
+  "$tyel_oreui_design:light_button_hover_text_color": [ 0.117, 0.117, 0.121 ], //rgb_vec
+  "$tyel_oreui_design:light_button_pressed_text_color": [ 0.117, 0.117, 0.121 ], //rgb_vec
+  "$tyel_oreui_design:light_button_locked_text_color": [ 0.3, 0.3, 0.3 ], //rgb_vec
+
+  "$tyel_oreui_design:dark_button_default_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:dark_button_hover_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:dark_button_pressed_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:dark_button_locked_text_color": [ 0.3, 0.3, 0.3 ], //rgb_vec
+
+  "$tyel_oreui_design:green_button_default_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:green_button_hover_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:green_button_pressed_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+
+  "$tyel_oreui_design:realms_button_default_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:realms_button_hover_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:realms_button_pressed_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+
+  "$tyel_oreui_design:red_button_default_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:red_button_hover_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+  "$tyel_oreui_design:red_button_pressed_text_color": [ 1.0, 1.0, 1.0 ], //rgb_vec
+
+  "$tyel_oreui_design:common_title_button_icon_color": [ 0.0, 0.0, 0.0 ], //rgb_vec
+
+  "$tyel_oreui_design:common_title_text_color": [ 0.0, 0.0, 0.0 ], //rgb_vec
+
+  // MODIFIED FROM VANILLA RESOURCE PACK
+  // (can be overridden by any other resource packs)
+  "$player_list_score_color": [ 1.0, 1.0, 0.0, 1.0 ], //rgb_vec
+
+
+  // ======================================================
+  // GLOBAL INTERNAL VARIABLES
+  // Do not delete or modify these variables, or you will get an error when trying to load this file!
+  // ======================================================
+  // Variable to enable compatibility with other resource packs
+  "$is_tyel_ui": true, //bool
+  // Variable to check if this file is loaded or not
+  "$tyel_ui_global_variables_check": "ok",
+  // Ty-el UI "Global Variables" file version, do not change
+  "$tyel_ui_gv_ver": 112
+}

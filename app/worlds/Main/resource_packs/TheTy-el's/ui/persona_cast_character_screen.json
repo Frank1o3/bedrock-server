@@ -1,0 +1,191 @@
+{
+  "cast_modal_bottom_bar": {
+    "size": [ "100%", 30 ],
+    "offset": [ 0, 0 ]
+  },
+
+  "cast_common_dialog_background@tyel_oreui_design__dialogs.oreui_dialog_hollowed_panel": {
+    "$dialog_body_indent_size": [ "100%", "100% - 28px - 46px" ],
+    "$dialog_footer_content_size": [ "100%", 30 ],
+
+    "$inner_contents|default": "persona_cast_character_screen.cast_character_select_main",
+
+    "$dialog_header_content": "persona_cast_character_screen.common_cast_modal_top_bar",
+    "$dialog_body_content": "persona_cast_character_screen.common_cast_modal_body",
+    "$dialog_footer_content": "persona_cast_character_screen.cast_modal_bottom_bar",
+    "$oreui_dialog_anims": [
+      "@tyel_oreui_design__anims.oreui_popup_dialog_hollowed_anim_size"
+    ]
+  },
+
+  "popup_dialog__cast_character_select/popup_background": {
+    "size": [ "57%", "80%" ],
+    "max_size": [ 480, 400 ]
+  },
+
+  "popup_dialog__cast_character_select": {
+    "$cast_modal_bottom_bar_controls": [
+      {
+        "select_button@common_buttons.tyel_design:light_text_button": {
+          "size": [ "100%", "100%" ],
+          "$pressed_button_name": "button.cast_select",
+          "$button_text": "gui.select",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+          "$focus_override_left": "FOCUS_OVERRIDE_STOP",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+          "bindings": [
+            {
+              "binding_name": "#cast_enabled_select",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      }
+    ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "popup_dynamic_helpers_panel@popup_dialog.popup_dynamic_helpers_panel": {
+              "layer": 600,
+              "anchor_from": "bottom_middle",
+              "anchor_to": "top_middle"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "cast_character_select_main": {
+    "offset": [ 0, 0 ],
+    "modifications": [
+      {
+        "control_name": "modal_inner_background",
+        "operation": "remove"
+      }
+    ]
+  },
+
+  "common_cast_modal_body": {
+    "type": "panel",
+    "controls": [
+      {
+        "inner_contents@$inner_contents": {
+          "size": [ "100%", "100%" ]
+        }
+      }
+    ]
+  },
+
+  "common_cast_modal_top_bar": {
+    "type": "panel",
+    "$ignore_close_button|default": false,
+    "$show_close_button": true,
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "dialog_title_label_panel": {
+          "type": "panel",
+          "size": [ "100% - 16px", 24 ],
+          "controls": [
+            {
+              "title_text": {
+                "type": "label",
+                "size": [ "100%", "default" ],
+                "max_size": [ "100%", 20 ],
+                "text": "$character_cast_prompt_title",
+                "text_alignment": "center",
+                "layer": 2,
+                "color": "$main_header_text_color"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_button@tyel_oreui_design__buttons.close_button": {
+          "size": [ 24, 24 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "$close_button_offset": [ 0, 0 ]
+        }
+      }
+    ]
+  },
+
+  "common_preview_page_framework/cast_preview_modal": {
+    "max_size": [ 480, 320 ]
+  },
+
+  "common_preview_page_framework": {
+    "$close_button_to_button_id": "button.menu_exit",
+    "$cast_modal_bottom_bar_controls": [
+      {
+        "left_bottom_button@common_buttons.tyel_design:light_text_button": {
+          "size": [ "fill", "100%" ],
+          "$pressed_button_name": "button.cast_left_select",
+          "$left_button_text|default": "",
+          "$button_text": "$left_button_text",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+          "$focus_override_left": "FOCUS_OVERRIDE_STOP",
+          "bindings": [
+            {
+              "binding_name": "#cast_enabled_select",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 4, "100%" ]
+        }
+      },
+      {
+        "right_bottom_button@common_buttons.tyel_design:light_text_button": {
+          "size": [ "fill", "100%" ],
+          "$pressed_button_name": "button.cast_right_select",
+          "$right_button_text|default": "",
+          "$button_text": "$right_button_text",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+          "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+          "bindings": [
+            {
+              "binding_name": "#cast_enabled_select",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      }
+    ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "popup_dynamic_helpers_panel@popup_dialog.popup_dynamic_helpers_panel": {
+              "layer": 600,
+              "anchor_from": "bottom_middle",
+              "anchor_to": "top_middle"
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "cast_preview_page_one_inner_section": {
+    "modifications": [
+      {
+        "control_name": "modal_inner_background",
+        "operation": "remove"
+      }
+    ]
+  }
+}
