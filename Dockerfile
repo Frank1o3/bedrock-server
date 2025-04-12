@@ -1,66 +1,47 @@
-# Use the official Ubuntu image as the base
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
-# Install required dependencies
-RUN apt-get update && apt-get install -y \
-    rsync \
-    curl \
-    wget \
-    unzip \
-    bash \
-    cron \
-    jq \
-    sudo \
-    tar \
-    python3 \
-    pip \
-    && apt-get clean \
-    && apt-get upgrade -y \
-    && apt-get update -y \
-    && apt-get auto-remove \
-    && rm -rf /var/lib/apt/lists/*
+# Set environment to non-interactive (avoid tzdata prompt)
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Create a non-root user and ensure they have permissions for the required directories
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y \
+    rsync curl wget unzip bash cron jq sudo tar python3 python3-pip libpcap0.8 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Add non-root user
 RUN useradd -m -s /bin/bash bedrock && \
     echo "bedrock ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Set working directory
 WORKDIR /bedrock
 
+# Download Bedrock Server
 RUN curl -L -A "bedrock-server.zip" -o bedrock-server.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.72.01.zip && \
     unzip bedrock-server.zip && \
     rm bedrock-server.zip
 
+# Copy app files and scripts
 COPY ./app /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
 COPY ./backups/ /bedrock/backups/
+COPY ./crontab.txt /etc/cron.d/bedrock-backup
 
-# Set script permissions
-RUN chmod +x /bedrock/*.sh && chown -R bedrock:bedrock /bedrock
+# Set permissions
+RUN chmod +x /bedrock/*.sh && \
+    chmod 0644 /etc/cron.d/bedrock-backup && \
+    chown -R bedrock:bedrock /bedrock && \
+    crontab /etc/cron.d/bedrock-backup
 
 # Install No-IP DUC
 RUN wget --content-disposition https://www.noip.com/download/linux/latest -O noip-duc.tar.gz && \
     tar xf noip-duc.tar.gz && \
-    cd /bedrock/noip-duc_*/binaries && \
-    apt-get update && \
-    apt-get install -y libpcap0.8 && \
-    dpkg -i ./noip-duc_*.deb || apt-get install -f -y && \
-    rm -rf /bedrock/noip-duc.tar.gz /bedrock/noip-duc_*
+    dpkg -i /bedrock/noip-duc_*/binaries/noip-duc_*.deb || apt-get install -f -y && \
+    rm -rf /bedrock/noip-duc*
 
-# Add the crontab configuration file
-COPY ./crontab.txt /etc/cron.d/bedrock-backup
-
-# Set correct permissions for crontab and add the user to cron
-RUN chmod 0644 /etc/cron.d/bedrock-backup && crontab /etc/cron.d/bedrock-backup
-
-# Ensure the cron daemon is running in the background
-RUN service cron start
-
-# Switch to the non-root user
+# Switch to non-root user
 USER bedrock
 
-# Set entrypoint
 ENTRYPOINT ["/bedrock/entrypoint.sh"]
-
-# Default command starts the server
 CMD ["/bedrock/start.sh"]
