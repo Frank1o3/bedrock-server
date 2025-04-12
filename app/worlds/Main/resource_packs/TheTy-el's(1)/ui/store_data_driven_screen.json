@@ -1,0 +1,138 @@
+{
+  "store_data_driven_screen_base": {
+    "$no_sdl_screen_animations|default": false,
+    "$store_header_icon": "",
+    "$icon_control": "common_store.store_header_icons_control",
+    "$screen_helpers_content": "store_layout.store_layout_helpers_content",
+    "$screen_helpers_content_layer": 600,
+    "$main_panel_control_animations": [
+      "@common.screen_entrance_animation_push_offset",
+      "@common.screen_entrance_animation_pop_offset",
+      "@common.screen_exit_animation_push_offset",
+      "@common.screen_exit_animation_pop_offset",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade"
+    ],
+    "variables": [
+      {
+        "requires": "(not $use_animation)",
+        "$screen_animations": [
+          "@common.screen_exit_animation_no_offset",
+          "@common.screen_exit_animation_pop_fade"
+        ],
+        "$background_animations": [
+          "@common.screen_exit_animation_pop_fade"
+        ]
+      },
+      {
+        "requires": "($use_animation)",
+        "$screen_animations": [
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade"
+        ],
+        "$background_animations": [
+          "@common.screen_exit_animation_pop_fade"
+        ]
+      },
+      {
+        "requires": "$no_sdl_screen_animations",
+        "$main_panel_control_animations": []
+      }
+    ]
+  },
+
+  "main_panel/main_panel_content": {
+    "anims": "$main_panel_control_animations",
+    "$main_panel_control_animations|default": [],
+    "propagate_alpha": true,
+    "disable_anim_fast_forward": true,
+    "animation_reset_name": "screen_animation_reset",
+    "variables": [
+      {
+        "requires": "(not $expanded_content_area_max_size)",
+        "$scroll_view_port_max_size": [ 700, "100%" ]
+      }
+    ]
+  },
+
+  "store_full_screen_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "confirm_purchase_popup_dialog@tyel_confirm_purchase_dialog.confirm_purchase_popup_dialog": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "store_screen_modal_panel/one_button_dialog": {
+    "$dialog_footer_content": "store_layout.dialog_button_panel",
+    "$oreui_dialog_style__animate_dialog": true,
+    "$use_transparent_background": true
+  },
+
+  "dialog_button_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "dialog_button@common_buttons.tyel_design:light_text_button": {
+          "size": [ "100%", 30 ],
+          "$pressed_button_name": "button.bottom_modal",
+          "$button_text": "#dialog_button_text",
+          "$button_text_binding_type": "collection",
+          "$button_text_grid_collection_name": "modal_button_collection",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$button_text_grid_collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "character_creator_base_screen": {
+    "$confirm_purchase_scrolling_content": "tyel_confirm_purchase_dialog.persona_sdl_confirm_purchase_summary_panel"
+  },
+
+  "character_creator_screen": {
+    "$no_sdl_screen_animations": true
+  },
+
+  "dressing_room_color_picker_screen": {
+    "$no_sdl_screen_animations": true
+  },
+
+  "expanded_appearance_view_screen": {
+    "$no_sdl_screen_animations": true
+  },
+
+  "skin_selector_screen": {
+    "$confirm_purchase_scrolling_content": "tyel_confirm_purchase_dialog.persona_sdl_confirm_purchase_summary_panel",
+    "$no_sdl_screen_animations": true
+  },
+
+  "store_data_driven_modal_one_button_screen": {
+    "variables": [],
+    "$screen_helpers_content": "common.common_screen_helpers",
+    "$screen_animations": [
+      "@tyel_oreui_design__anims.oreui_dialog_entrance_animation_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_entrance_animation_pop_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_exit_animation_push_fade",
+      "@tyel_oreui_design__anims.oreui_dialog_exit_animation_pop_fade"
+    ]
+  },
+
+  "store_layout_helpers_content@common_store.common_store_helpers_content": {
+    "$top_status_and_coins_visible_binding_type": "global",
+    "$top_status_and_coins_visible_binding": "#coin_visible"
+  }
+}

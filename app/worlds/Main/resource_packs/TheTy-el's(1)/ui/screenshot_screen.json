@@ -1,0 +1,6 @@
+{
+  "screenshot_screen": {
+    "$screen_content": "common.empty_panel",
+    "$screen_bg_content": "screenshot.screenshot_screen_content"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "progress_bar_nub": {
+    "ignored": true
+  },
+
+  "button_common@common_buttons.tyel_design:light_text_button": {
+    "layer": 1,
+    "size": [ "100%", "100%" ]
+  },
+
+  "common_label": {
+    "size": [ "default", "default" ],
+    "shadow": true,
+    "font_scale_factor": "$font_scale_factor",
+    "font_type": "$font_type",
+    "$font_scale_factor|default": 1,
+    "$font_type|default": "normal",
+    "$use_mcten_font|default": false,
+    "variables": [
+      {
+        "requires": "$use_mcten_font",
+        "$font_scale_factor": 1.5,
+        "$font_type": "MinecraftTen"
+      }
+    ]
+  },
+
+  "single_title_panel": {
+    "size": [ "100%", "100%cm" ]
+  },
+
+  "single_title_panel/center": {
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "color": "$body_text_color"
+  },
+
+  "dual_title_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%", "100%cm" ],
+    "layer": 1,
+    "controls": [
+      {
+        "left@file_upload.common_label": {
+          "size": [ "default", "default" ],
+          "$label_binding_name": "#dual_title_left_label"
+        }
+      },
+      {
+        "center@file_upload.common_label": {
+          "size": [ "default", "default" ],
+          "text": "/",
+          "bindings": [
+            {
+              "binding_name": "#dual_title_left_label"
+            },
+            {
+              "binding_name": "#dual_title_right_label"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not (#dual_title_left_label = '' or #dual_title_right_label = ''))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "right@file_upload.common_label": {
+          "size": [ "default", "default" ],
+          "$label_binding_name": "#dual_title_right_label"
+        }
+      }
+    ]
+  },
+
+  "upload_title_panel": {
+    "modifications": [
+      {
+        "control_name": "dual_label",
+        "operation": "replace",
+        "value": [
+          {
+            "dual_label@file_upload.dual_title_stack_panel": {
+              "bindings": [
+                {
+                  "binding_name": "#dual_label_visible",
+                  "binding_name_override": "#visible"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "content_stack_panel": {
+    "size": [ "100% - 4px", "100%c" ],
+    "controls": [
+      {
+        "message@message_text_panel": {
+          "layer": 1,
+          "size": [ "100%", 10 ]
+        }
+      },
+      {
+        "description@progress_text_panel": {
+          "layer": 1,
+          "size": [ "100%", 10 ]
+        }
+      }
+    ]
+  },
+
+  "warning_content_panel": {
+    "size": [ "100%", "100%c" ]
+  },
+
+  "file_upload_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "title_panel_content@common_art.title_panel_content": {
+          "$splash_text_visible": false,
+          "layer": -1
+        }
+      },
+      {
+        "content": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "size": [ "100% - 32px", "100%c" ],
+          "offset": [ 0, -18 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "controls": [
+            {
+              "buttons@file_upload.button_panel": {
+                "layer": 2,
+                "size": [ 66, 26 ]
+              }
+            },
+            {
+              "title@file_upload.upload_title_panel": {
+                "layer": 2,
+                "size": [ "100%", "100%cm" ],
+                "$use_mcten_font": true
+              }
+            },
+            {
+              "content@file_upload.content_panel": {
+                "layer": 2,
+                "size": [ "100%", "100%cm" ]
+              }
+            }
+          ]
+        }
+      },
+      //{
+      //  "icon@progress.mine_chop_dig_icon": {
+      //    "anchor_from": "bottom_right",
+      //    "anchor_to": "bottom_right",
+      //    "offset": [ -16, -16 ]
+      //  }
+      //},
+      {
+        "progress@file_upload.progress_bar_icon": {
+          "layer": 1,
+          "size": [ "100% - 4px", 10 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -2 ]
+        }
+      }
+    ]
+  },
+
+  "file_transmission_screen": {
+    "$tyel_theme_screen_alias": "file_transmission",
+    "$use_custom_panorama": "$is_pregame",
+    "$screen_animations": [
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ]
+  }
+}

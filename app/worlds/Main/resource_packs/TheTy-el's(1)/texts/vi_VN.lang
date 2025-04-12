@@ -1,0 +1,674 @@
+## Additional changes for Ty-el UI compatibility
+gui.edit=C.sửa	#
+
+## Bạn có thể tùy chỉnh 4 dòng dưới đây
+## \/ \/
+inBed.title=khò khò... zzZ	#
+inBed.subtitle=_[-w-]_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	## Maximum 6 characters
+icontext.all=Tất	## Maximum 6 characters
+icontext.hovertext.multiplyone=Số lượng vật phẩm: Một vật phẩm	#
+icontext.hovertext.all=Số lượng vật phẩm: Một ô	#
+
+icontext.dropOne=Thả một	#
+icontext.dropAll=Thả tất	#
+icontext.destroyOne=Phá hủy một	#
+icontext.destroyAll=Phá hủy tất	#
+
+accessibility.chat.tts.autocomplete=Tự động hoàn thành	#
+accessibility.chat.tts.autocompleteback=Tự động hoàn thành lùi	#
+accessibility.chat.tts.previous=Tin nhắn trước đó	#
+accessibility.chat.tts.next=Tin nhắn tiếp theo	#
+accessibility.chat.tts.textboxSearchTitle=Hộp văn bản tìm kiếm tin nhắn	#
+accessibility.chat.tts.visibilityModeToggle=Nút chuyển đổi chế độ hiển thị trò chuyện	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, chế độ hiện tại: Panel tự động hoàn thành	#
+accessibility.chat.tts.visibilityModeToggle.chat=, chế độ hiện tại: Panel trò chuyện	#
+
+accessibility.pause.infoPanelToggle=Ẩn/hiện Panel thông tin	#
+accessibility.play.editMode=Chỉnh sửa	#
+accessibility.play.quickJoinButton=Nút tham gia nhanh máy chủ	#
+accessibility.start.hideStartScreen=Ẩn màn hình Bắt đầu	#
+accessibility.start.showStartScreen=Hiện màn hình Bắt đầu	#
+## Format to show in game: Press <B> or <BACK> to show Start Screen again!
+accessibility.start.toggleStartScreenTooltip.prefix=Nhấn	#
+accessibility.start.toggleStartScreenTooltip.infix=hoặc	#
+accessibility.start.toggleStartScreenTooltip.postfix=để hiển thị lại màn hình Bắt đầu!	#
+accessibility.toggle.tts.closethreedotsmenu=Đóng Thêm tùy chọn	#
+accessibility.toggle.tts.searchBar=Ẩn/Hiện thanh tìm kiếm	#
+accessibility.toggle.tts.startsidebar=Nút Menu thanh bên	#
+accessibility.toggle.tts.threedotsmenu=Nhiều tùy chọn hơn	#
+
+attribute.name.minecraft:damage_taken=Sát thương đã nhận	#
+attribute.name.minecraft:jump_strength=Sức nhảy	#
+attribute.name.towardsUndead=Lên sinh vật xác sống	#
+
+brewingGuide.assistantPanel.button=Tìm một công thức	#
+brewingGuide.assistantPanel.title=Tìm một công thức...	#
+brewingGuide.assistantPanel.closeTitle=Đóng & Hiển thị cho tôi công thức!	#
+brewingGuide.explanation=Giải thích:	#
+brewingGuide.explanation.baseDamage=BaseDamage: sát thương hiện tại của người chơi, bao gồm cả sát thương từ vũ khí và công cụ. Mặc định: 1	#
+brewingGuide.fuelRemainingPrefix=Số lần pha chế còn lại:	#
+brewingGuide.mundanePotion.name=Nguyên liệu thuốc trần tục: 	#
+brewingGuide.mundanePotion.anyofIngredients=Bất kỳ nguyên liệu nào sau đây:	#
+brewingGuide.modifier.whenAddedAsModifier=Khi được thêm như là một nguyên liệu chỉnh sửa:	#
+brewingGuide.modifier.whenAddedToWaterBottle=Khi được thêm vào chai nước:	#
+brewingGuide.modifierDescription.extend=[Kéo dài] Kéo dài thời gian của thuốc.	#
+brewingGuide.modifierDescription.enhance=[Nâng cấp] Tăng cấp độ của thuốc.	#
+brewingGuide.modifierDescription.corrupt=[Sửa đổi] Thay đổi hiệu ứng của thuốc.	#
+brewingGuide.popup.optimizingEffectIcons=Đang tối ưu biểu tượng hiệu ứng sinh vật...	#
+brewingGuide.potionEffect.removePoison=Chữa độc	#
+brewingGuide.potionEffect.removeWeakness=Chữa yếu đuối	#
+brewingGuide.potionEffect.removeBlindness=Chữa mù quáng	#
+brewingGuide.potionEffect.removeNausea=Chữa choáng	#
+brewingGuide.tab.basePotions=Thuốc cơ bản	#
+brewingGuide.tab.splashPotions=Thuốc ném được	#
+brewingGuide.tab.lingeringPotions=Thuốc kéo dài	#
+brewingGuide.tab.EduChemistryPotions=Thuốc hóa học	#
+brewingGuide.tab.legend=Cơ bản & Sửa đổi	#
+brewingGuide.toggle.uselessRecipesVisibility=Bật/Tắt hiển thị công thức không cần thiết	#
+brewingGuide.toggle.fallbackItemRendererMode=Chế độ kết xuất vật phẩm thay thế	#
+brewingGuide.uselessPotions.avoidTip=§o§dTránh bất kỳ nguyên liệu nào ở bước này vì Thuốc trần tục là vô dụng và không thể pha chế thành bất kỳ loại thuốc nào khác!	#
+
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabel=Hiện tin nhắn đưa vào danh sách đen	#
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabelAlt=Hiện tin nhắn và áp dụng chế độ con trỏ	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabel=Ẩn tin nhắn đưa vào danh sách đen	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabelAlt=Tắt chế độ con trỏ để ẩn tin nhắn	#
+chat.blacklistedMessageNotifier.label=§o--- Tin nhắn đã bị ẩn ---	#
+chat.chatToolbox.cannotEnter.tooltip=Không thể vào chế độ Hộp công cụ trò chuyện khi đang nhập lệnh hoặc trong chế độ tự động hoàn thành	#
+chat.navigationNotification.search=Đang tìm kiếm...	#
+chat.navigationNotification.caretMode=Chế độ con trỏ đã bật...
+chat.placeHolderText=Nhập tin nhắn trò chuyện hoặc lệnh vào đây...	#
+chat.searchMessages.placeHolderText=Tìm kiếm tin nhắn...	#
+
+commandBlockScreen.placeHolderText=Nhập lệnh đầu vào của bạn vào đây	#
+commandBlockScreen.placeHolderOutputText=Lệnh đầu ra của bạn sẽ ở đây...	#
+
+compatibility.enabled=Chế độ tương thích đã được bật!	#
+compatibility.autoEnabledforServer=Chế độ tương thích của Ty-el UI cho máy chủ này là có sẵn và sẽ tự động được kích hoạt một khi bạn tham gia máy chủ!	#
+compatibility.enabledForAdditionalServers.disclaimer=Nếu bạn thấy biểu tượng này trên bất kỳ một nút máy chủ bên ngoài nào, biểu tượng ấy có nghĩa rằng là máy chủ này có sẵn hỗ trợ Chế độ tương thích cho Ty-el UI, hãy kiểm tra thông tin trong màn hình tạm dừng trong trò chơi để biết thêm thông tin.	#
+compatibility.tyelUI=Tương thích với Ty-el UI!	#
+
+container.craftAll.itemsRemainHeader=Các vật phẩm còn lại sau khi chế tạo tất:	#
+## Format to show in game: Will craft <numbers> time(s) ==> x<total_items>
+container.craftAll.stepsToCraftPrefix=Sẽ chế tạo	#
+container.craftAll.stepsToCraftPostfix=lần	#
+
+container.destroyItemsTooltip.line1=Nhấn đúp lên vật phẩm để phá hủy vật phẩm đã chọn.	#
+container.destroyItemsTooltip.line1_touch=Nhấn đúp lên vật phẩm để phá hủy vật phẩm đã chọn.	#
+container.destroyItemsTooltip.line2=§l§cHãy cẩn thận khi chọn vật phẩm muốn phá hủy!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=Không thể sử dụng chế độ phá hủy vật phẩm trong chế độ Sinh tồn!	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aChế độ này chỉ hỗ trợ cho chế độ chơi Sáng tạo.§r	#
+container.fastCraft=Chế tạo §ocấp tốc§r	#
+container.fastCraft.warningHoverText=Chế tạo §ocấp tốc§r, §crất nguy hiểm!§r Nhấn lên bất kỳ vật phẩm nào trong sách công thức để chế tạo chúng nhanh chóng! Có thể làm mất vật phẩm có giá trị của bạn mãi mãi nếu bạn đã vô tình chế tạo một thứ gì đó mà bạn không muốn!	#
+container.highlightItems=Làm nổi bật vật phẩm (có p.b. in hoa/thường!)	#
+container.highlightitems.placeholdertext=Làm nổi bật vật phẩm...	#
+container.itemAmountHoverText.one=Số lượng vật phẩm: Một vật phẩm	#
+container.itemAmountHoverText.max=Số lượng vật phẩm: Một stack	#
+container.itemAmountHoverText.maxFixed=Số lượng vật phẩm: Một stack (cố định)	#
+container.invMode=Chế độ túi đồ:	#
+container.invMode.autoPlace=Tự động đặt	#
+container.invMode.manualPlace=Đặt bằng tay	#
+container.invMode.normalMode=Chế độ bình thường	#
+container.invMode.autoPlaceMode=Chế độ di chuyển nhanh	#
+container.invMode.dropMode=Chế độ thả	#
+container.invMode.autoDestroyMode=Chế độ phá hủy vật phẩm	#
+container.quickCraft=Chế tạo nhanh	#
+container.repair.durabilityGainedTooltip.anvil=Lượng độ bền nhận được khi so sánh với ô vật phẩm đầu tiên	#
+container.repair.durabilityGainedTooltip.grindstone=Lượng độ bền nhận được khi so sánh với vật phẩm có ít độ bền nhất	#
+container.smithing_table.previewAngle=Góc xem trước:	#
+
+container.toolbox=Hộp công cụ khối chứa	#
+
+container.toolbox.slotBulkQuickMove.toInventory=Di chuyển nhanh vào túi đồ	#
+container.toolbox.slotBulkQuickMove.toContainer=Di chuyển nhanh vào khối chứa	#
+
+container.toolbox.slotBulkClear.compact.line1= đúp để xóa hotbar	#
+container.toolbox.slotBulkClear.compact.line2=§cGiữ SHIFT +  đúp để xóa túi đồ	#
+container.toolbox.slotBulkClear.compact.line1.controller=Nhấn đúp để xóa hotbar	#
+container.toolbox.slotBulkClear.compact.line2.controllerPrefix=§cNhấn đúp	#
+container.toolbox.slotBulkClear.compact.line2.controller=§cđể xóa túi đồ	#
+container.toolbox.slotBulkClear.compact.tts=Nhấn đúp để xóa hotbar. Giữ Shift và nhấn đúp để xóa túi đồ	#
+container.toolbox.slotBulkClear.compact.tts.controller=Nhấn đúp để xóa hotbar. Nhấn đúp nút "di chuyển nhanh" để xóa túi đồ	#
+container.toolbox.slotBulkClear.hotbar=§cNhấn hai lần để xóa hotbar	#
+container.toolbox.slotBulkClear.inventory=§cNhấn hai lần để xóa túi đồ	#
+
+container.toolbox.slotDestroy.compact.line1= để phá hủy tất	#
+container.toolbox.slotDestroy.compact.line2= để phá hủy một	#
+container.toolbox.slotDestroy.compact.line1.controller=Nhấn để phá hủy tất	#
+container.toolbox.slotDestroy.compact.line2.controller=để phá hủy một	#
+container.toolbox.slotDestroy.compact.tts=Nhấn để phá hủy tất cả các vật phẩm đã chọn. Nhấn phải chuột để phá hủy một vật phẩm đã chọn	#
+container.toolbox.slotDestroy.compact.tts.controller=Nhấn để phá hủy tất cả các vật phẩm đã chọn. Nhấn "Lấy một nửa/Đặt một" để phá hủy một vật phẩm đã chọn	#
+
+container.toolbox.slotDrop.compact.line1= để thả tất	#
+container.toolbox.slotDrop.compact.line2= để thả một	#
+container.toolbox.slotDrop.compact.line1.controller=Nhấn để thả tất	#
+container.toolbox.slotDrop.compact.line2.controller=để thả một	#
+container.toolbox.slotDrop.compact.tts=Nhấn để thả tất cả các vật phẩm đã chọn. Nhấn phải chuột để thả một vật phẩm đã chọn	#
+container.toolbox.slotDrop.compact.tts.controller=Nhấn để thả tất cả các vật phẩm đã chọn. Nhấn "Lấy một nửa/Đặt một" để thả một vật phẩm đã chọn	#
+
+contentlog.keystrokeProtip=Protip: Nếu bạn đã bật giao diện nhật ký nội dung, bạn có thể sử dụng Ctrl + H để dễ dàng mở giao diện nhật ký nội dung ở bất kỳ đâu! (yêu cầu phải có bàn phím)	#
+contentlog.msgSize.header=Số tin nhắn đã ghi:	#
+contentlog.msgSize.maxFlag=[MAX]	#
+contentlog.msgSize.maxFlag.tooltip=Tối đa 100, nhưng bạn có thể xem đầy đủ nhật ký trong các tập tin đã lưu	#
+contentlog.filter.errors=Lỗi	#
+contentlog.filter.title=Hiện tất cả:	#
+contentlog.filter.warnings=Cảnh báo	#
+
+controller.buttonTip.doublePress=[Nhấn đúp]	#
+controller.buttonTip.highlightItems=Làm nổi bật vật phẩm	#
+controller.buttonTip.playRecentWorld=Chơi thế giới đã lưu gần đây	#
+controller.buttonTip.playSelectedServer=Chơi máy chủ đã chọn	#
+controller.buttonTip.toggleSidebar=Menu thanh bên	#
+controller.buttonTip.toggleScreen=Ẩn/Hiện màn hình	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=Được đồng bộ với chế độ chơi mặc định của thế giới.	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=Bay và theo dõi thế giới mà không tương tác với thế giới bằng mọi cách.	#
+createWorldScreen.levelSeed.copySeedTooltip=Nhấn vào hộp văn bản hạt giống thế giới, chọn tất cả phần văn bản hạt giống thế giới và nhấn Sao chép trên bàn phím của bạn.	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=Nhấn vào hộp văn bản hạt giống thế giới, nhấn Ctrl + A và sau đó Ctrl + C trên bàn phím của bạn để sao chép hạt giống thế giới.	#
+createWorldScreen.serverSimDistanceDescription.header=Trò chơi tải và áp dụng các thay đổi trong một bán kính khối xác định	#
+createWorldScreen.serverSimDistanceDescription.footer=Bán kính khối:	#
+createWorldScreen.worldNameDescription.create=Đây là nơi bạn có thể đặt tên cho thế giới của bạn.	#
+createWorldScreen.worldNameDescription.edit=Đây là nơi bạn có thể đổi tên cho thế giới của bạn.	#
+createWorldScreen.worldLocationSectionName=Vị trí thư mục thế giới:	#
+createWorldScreen.worldLocationSection.unknownLabel=(Không rõ)	#
+
+
+
+
+
+dr.toggle.purchaseLock=Khóa thanh toán	#
+
+generator.infinite.desc=Một thế giới vô hạn kéo dài vô tận. Các cảnh quan khác nhau tạo ra các quần xã riêng.	#
+generator.old.desc=Một thế giới bị giới hạn về kích thước và chiều cao, 256x256x256. Sử dụng các thuật toán cũ để tạo ra thế giới.	#
+
+hostOption.time.customTime=Thời gian tự chọn:	#
+hostOption.time.customTime.warning=Cảnh báo: Thời gian của trò chơi sẽ bị ghi đè!	#
+hostOption.time.customTimeSlider=Thanh trượt thời gian tự chọn	#
+hostOption.weather.query=Truy vấn thời tiết	#
+
+hudScreen.hideHudTooltip=Nhấn đúp để ẩn HUD	#
+hudScreen.inventoryFull.warning=§lĐầy!	#
+hudScreen.levelHeaderAbbreviated=Cấp	#
+hudScreen.lowDurability=Độ bền thấp!	#
+hudScreen.scoreboardList.playerCount.header=Đang hiển thị	#
+hudScreen.scoreboardList.playerCount.player=người chơi	#
+hudScreen.scoreboardList.playerCount.players=người chơi	#
+hudScreen.scoreboardList.playerTag.self=[Bạn]	#
+hudScreen.scoreboardList.unscoredTitle=Người chơi không có điểm	#
+hudScreen.totalItemCount.slots=§o§7ô	#
+hudScreen.showHudTooltip=Nhấn vào khu vực này để hiển thị lại HUD!	#
+hudScreen.toggleables.hiveXpCalc.show=Hiện menu tính toán HIVE XP	#
+hudScreen.toggleables.hotbar.hide=Ẩn hotbar	#
+hudScreen.toggleables.hotbar.show=Hiện hotbar	#
+hudScreen.toggleables.scoreboardList.hide=Ẩn bảng điểm danh sách	#
+hudScreen.toggleables.scoreboardList.show=Hiện bảng điểm danh sách	#
+hudScreen.toggleables.scoreboardSidebar.hide=Ẩn bảng điểm thanh bên	#
+hudScreen.toggleables.scoreboardSidebar.show=Hiện bảng điểm thanh bên	#
+hudScreen.toggleables.tooltip=Giữ TAB để hiện nhanh Danh sách người chơi. Truy cập các modules HUD bằng cách sử dụng TAB + <Phím số>.	#
+
+itemLore.title=Xem thông tin vật phẩm §o§7(BETA!)	#
+itemLore.emptyMessage=<Ô này trống!>	#
+
+key.peekListAndHUDTogglesForTyelUI=Hiện nhanh bảng điểm danh sách và menu HUD cho Ty-el UI	#
+key.showContentLogGUI=Hiện giao diện nhật ký nội dung	#
+key.showContentLogGUI.disabledTag=(đã vô hiệu hóa)	#
+key.toggleGraphicsMode=Thay đổi chế độ hình ảnh (khi có sẵn)	#
+key.toggleHUD=Ẩn/Hiện HUD	#
+key.togglePaperDoll=Ẩn/Hiện búp bê giấy	#
+
+## Formatting for map.chunk while ingame: [Chunk: <xi>, <yi>, <zi> in <x>, <y>, <z>]
+map.chunk=Đoạn khúc	#
+map.chunk.formattingError=Lỗi: Định dạng "tọa độ" không hợp lệ!	#
+map.chunk.in=trong	#
+map.chunkBorder=Biên đoạn khúc	#
+map.chunkBorder.none=Không	#
+
+menu.communityStandards=Xem Tiêu chuẩn cộng đồng	#
+menu.feedback=Gửi phản hồi	#
+menu.multiplayerHelp=Trợ giúp nhiều người chơi	#
+menu.quit=Thoát trò chơi	#
+
+mobeffect.title.noEffects=Không có hiệu ứng	#
+mobeffect.title.activeEffects=Hiệu ứng còn hiệu lực:	#
+
+modal.defaultTitle=Bạn có chắc không?	#
+
+networkWorld.view_server_store=Xem cửa hàng của máy chủ	#
+
+options.hardcoded_keybinds_section=Các phím cứng (thiết lập sẵn và không thể thay đổi)	#
+options.quickSettingsTitle=Cài đặt nhanh	#
+options.thirdperson.firstperson_short=Thứ nhất	#
+options.thirdperson.thirdpersonback_short=Thứ ba từ sau	#
+options.thirdperson.thirdpersonfront_short=Thứ ba từ trước	#
+options.toggleOptionDescriptions=Ẩn/Hiện mô tả tùy chọn	#
+
+options.enableAutoPlatformTextToSpeech.description=Bật Văn bản thành giọng nói theo cài đặt hệ thống.	#
+options.enableUITextToSpeech.description=Bật Văn bản thành giọng nói trên các menu nền.	#
+options.enableChatTextToSpeech.description=Bật Văn bản thành giọng nói trên các tin nhắn trò chuyện và lệnh.	#
+options.enableOpenChatMessage.description=Ẩn/Hiện thông báo Mở trò chuyện.	#
+options.textBackgroundOpacity.description=Thay đổi độ mờ đục của nền tiêu đề và phụ đề trên HUD. Đặt thành 0% sẽ kết xuất nền hoàn toàn trong suốt.	#
+options.gamma.description=Thay đổi độ sáng của trò chơi.	#
+options.thirdperson.description=Chuyển đổi góc nhìn thứ nhất/thứ ba. Góc nhìn thứ ba cho phép người chơi xem môi trường gần mình từ một góc nhìn "từ bên ngoài".	#
+options.fullscreen.description=Đưa Minecraft sang chế độ Toàn màn hình; nếu tắt sẽ luôn giữ nó trong một cửa sổ.	#
+options.hidehand.description=Hiện hoặc ẩn tay của người chơi trong góc nhìn thứ nhất.	#
+options.hidepaperdoll.description=Hiển thị hoạt ảnh và trạng thái của người chơi ở góc trên bên trái của màn hình.	#
+options.hidehud.description=Ẩn/Hiện giao diện HUD.	#
+options.screenAnimations.description=Bật/Tắt hoạt ảnh khi di chuyển giữa UI hoặc các menu.	#
+options.interfaceOpacity.description=Thay đổi độ mờ đục của HUD. Chọn một vật phẩm trên hotbar hoặc tương tác với UI sẽ tạm thời đưa độ mờ đục về 100% . Tùy chọn này không ảnh hưởng lên Búp bê giấy.	#
+options.fov.description=Thay đổi phạm vi quan sát của người chơi. Điều khiển phạm vi thế giới trong trò chơi có thể thấy được trên màn hình.	#
+options.splitscreen.description=Thay đổi định hướng quay ngang hoặc dọc của màn hình tách.	#
+options.showautosaveicon.description=Ẩn/Hiện biểu tượng chỉ thị tự động lưu. Biểu tượng này hiển thị trên HUD khi trò chơi đang cố lưu tự động thế giới của bạn vào bộ nhớ thiết bị.	#
+options.classic_box_selection.description=Bật/Tắt cách lựa chọn khối theo kiểu đường viền. Tắt mục này sẽ thay vào đó sử dụng làm nổi bật khối được lựa chọn.	#
+options.ingamePlayerNames.description=Bật/Tắt hiển thị văn bản nhãn tên có thể được nhìn thấy ở trên đầu của người chơi, sinh vật và NPC.	#
+options.splitscreenIngamePlayerNames.description=Bật/Tắt hiển thị văn bản nhãn tên có thể được nhìn thấy ở trên đầu của người chơi, sinh vật và NPC, khi đang ở chế độ màn hình tách.	#
+options.viewBobbing.description=Bật/Tắt chuyển động "lay động" của màn ảnh khi người chơi đang đi.	#
+options.screenShake.description=Bật/Tắt hiệu ứng rung lắc màn hình khi sử dụng lệnh "/camerashake". Tắt tùy chọn này ngăn không cho trò chơi làm rung lắc màn hình khi lệnh được thực thi.	#
+options.transparentleaves.description=Bật/Tắt lá trong suốt.	#
+options.bubbleparticles.description=Bật/Tắt hiệu ứng đồ họa bong bóng nước sang trọng. Thiết lập này có thể làm giảm hiệu năng trên một số thiết bị.	#
+options.renderclouds.description=Bật/Tắt đồ họa mây. Tắt mục này sẽ vô hiệu hóa việc kết xuất mây.	#
+options.fancyskies.description=Bật/Tắt hiển thị mặt trời, mặt trăng, mây, sao và màu sắc của bầu trời. Tắt mục này sẽ không hiển thị chúng trên thế giới và chỉ hiển thị một màu sắc bầu trời.	#
+options.smooth_lighting.description=Ánh sáng được làm mịn qua các khối (Tương phản môi trường) hoặc giữa khối có độ sáng đặc biệt.	#
+options.graphics.description=Đồ họa sang trọng cho phép hiệu ứng hình ảnh chất lượng hơn, bao gồm lá trong suốt, mây trong suốt.	#
+options.fov.toggle.description=Thay đổi việc lối chơi có thể ảnh hưởng đến thay đổi FOV, khi chạy nhanh, khi có hiệu ứng làm chậm hoặc tốc độ, v.v.	#
+options.guiScale.description=Điều khiển Quy mô của giao diện. Mục này cũng thay đổi kích thước của HUD.	#
+options.gui.accessibility.scaling.description=Bật một phiên bản lớn hơn của giao diện menu như là một tùy chọn trợ năng.	#
+options.uiprofile.description=Thay đổi thiết kế UI trò chơi giữa cổ điển (Desktop UI) và Pocket UI. UI cổ điển có thiết kế UI giống phiên bản Java, và Pocket UI có các ô vật phẩm to hơn, màn hình đã được thiết kế lại, thân thiện hơn cho người chơi di động.	#
+options.raytracing.description=Bật/Tắt hiệu ứng đổ bóng ray tracing.	#
+options.upscaling.description=Sử dụng NVIDIA DLSS 2.0 để tăng tốc độ khung hình trên các card đồ họa GeForce RTX và hỗ trợ màn hình lớn hơn 1080p.	#
+options.raytracing.renderDistance.description=Điều khiển số lượng đoạn khúc có thể hiển thị cùng lúc khi "Ray Tracing" được bật. Mục này cũng thay đổi khoảng cách kết xuất của thực vật ví dụ như lá trong suốt, cây trồng và kết cấu có hoạt ảnh.	#
+options.renderDistance.description=Điều khiển số lượng đoạn khúc có thể hiển thị cùng lúc. Mục này cũng thay đổi khoảng cách kết xuất của thực vật ví dụ như lá trong suốt, cây trồng và kết cấu có hoạt ảnh.	#
+options.maxFramerate.description=Giới hạn số khung hình trên giây. Việc giới hạn số khung hình về tốc độ làm mới màn hình của người chơi có thể tiết kiệm năng lượng xử lý.	#
+options.msaa.description=Thay đổi độ mạnh khử răng cưa, khử răng cưa làm mịn hình ảnh và loại bỏ các cạnh bị lởm chởm.	#
+options.texelAA.description=Bật/Tắt khử răng cưa pixel kết cấu, sẽ làm mịn các pixel của khối.	#
+options.vsync_dropdown.description=Giới hạn số khung hình trên giây về tốc độ làm mới màn hình của người chơi. Đặt thành "Không có VSync" hoặc "Thích nghi" sẽ tăng FPS lên cao hơn tốc độ làm mới màn hình của người chơi nhưng ảnh hưởng xấu đến năng lượng xử lý và gây ra hiện tượng xé màn hình.	#
+options.vsync.description=Giới hạn số khung hình trên giây về tốc độ làm mới màn hình của người chơi. Tắt mục này sẽ tăng FPS lên cao hơn tốc độ làm mới màn hình của người chơi nhưng ảnh hưởng xấu đến năng lượng xử lý và gây ra hiện tượng xé màn hình.	#
+
+pauseScreen.thirdPartyWorld=Máy chủ nổi bật	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Thẻ trên	#
+playscreen.navigateDown=Thẻ dưới	#
+playscreen.joinRecentExternalServer=Tham gia máy chủ ngoài gần đây	#
+playscreen.lastPlayed=Đã lưu gần đây:	#
+playscreen.loading=Đang tải...	#
+playscreen.motd=MOTD	#
+playscreen.pinging=Đang ping...	#
+playscreen.playButton=CHƠI!	#
+playscreen.projectsearch.placeholdertext=Tìm kiếm dự án... [có p.b. in hoa/thường]	#
+playscreen.recentlyPlayed=Đã chơi gần đây	#
+playscreen.showWorldFolderName=Hiện tên thư mục thế giới (Thử nghiệm)	#
+playscreen.worldFolderName.undefined=(Không xác định ;-;)	#
+playscreen.worldFolderName.unknown=(Thư mục không rõ)	#
+playscreen.worldsFound=thế giới được tìm thấy	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cCẢNH BÁO:§r Vì lý do hiệu năng kém và giới hạn về code, chúng tôi chỉ có thể tìm kiếm tối đa lên đến §l§e50§r thế giới gần đây nhất, xin lỗi vì sự bất tiện này.	#
+playscreen.worldsearch.placeholdertext=Tìm kiếm thế giới yêu thích của bạn... [có p.b. in hoa/thường!]	#
+playscreen.worldsearch.resultmessage_before=Kết quả cho: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldSize=Kích thước thế giới:	#
+playscreen.warning.forceautoplace.title=Cảnh báo Buộc lấy đồ nhanh luôn bật	#
+playscreen.warning.forceautoplace.body=Sử dụng tính năng này như là rủi ro của riêng bạn, đừng lạm dụng nó quá mức trong các máy chủ (đặc biệt là các máy chủ nổi bật)!	#
+
+progressScreen.hiveNetherGlitch.title=AARGH,... Lỗi Nether huyền thoại ấy nữa sao!	#
+progressScreen.hiveNetherGlitch.body=Chỉ cần... đợi và tham gia lại, hoặc buộc thoát và khởi động lại trò chơi, hoặc nếu bạn đang ở trên Windows, sử dụng nút khôi phục "Restore Down", không phải nút thu nhỏ "Minimize"! Ít ra có thể đóng màn hình này giùm bạn!	#
+
+resourcePack.packSearchPlaceHolderText.global=Tìm kiếm các gói dùng chung...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Tìm kiếm các gói tài nguyên...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Tìm kiếm các gói hành vi...	#
+resourcePack.showNotDownloaded=Hiện gói chưa tải xuống	#
+resourcePack.tyelUIWarningMessage=Nếu bạn đã kích hoạt Ty-el UI trong Tài nguyên dùng chung, bạn không nên kích hoạt Ty-el UI trong các gói tài nguyên của thế giới một lần nữa, trừ khi bạn đã kích hoạt "Yêu cầu người chơi chấp nhận các gói tài nguyên để tham gia" trong cài đặt các gói tài nguyên của thế giới, để tránh các lỗi điều khiển bị trùng và các lỗi bất ngờ khác.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=Một lỗi đã xảy ra khi đang cố tải /ui/_global_variables.json từ Ty-el UI. Vui lòng kiểm tra cú pháp của tệp và thử lại.	#
+
+screenshot.saveLocation=Vị trí ảnh chụp:	#
+screenshot.showSaveLocation=Hiển thị vị trí ảnh chụp	#
+
+screenLoading.tooLongTooltip=Nếu trò chơi mất quá nhiều thời gian để tải màn hình này, vui lòng khởi động lại trò chơi.	#
+
+serverform.searchPlaceHolderText=Lọc tìm kiếm... [có p.b. in hoa/thường!]	#
+serverform.searchDisclaimer.tooltip=Hãy chắc rằng bạn không cố tìm kiếm những nội dung được sử dụng quá thường xuyên trong màn hình form này, ví dụ như: §o"Select to equip", "Last Seen",...	#
+
+soundCategory.ambient.description=Âm lượng của môi trường xung quanh (âm thanh dưới nước, nether hoặc dưới hang), âm thanh khi vào hoặc đi ra khỏi nước và pháo hoa	#
+soundCategory.block.description=Âm lượng của khối (đe, rương, cửa, v.v.)	#
+soundCategory.hostile.description=Âm lượng của các sinh vật thù địch và trung lập (thây ma, creepers, nhện, v.v.)	#
+soundCategory.main.description=Âm lượng tổng của tất cả âm thanh (cả nhạc và âm thanh của trò chơi)	#
+soundCategory.music.description=Âm lượng tổng của nhạc (được chơi một cách ngẫu nhiên)	#
+soundCategory.neutral.description=Âm lượng của sinh vật lành (gà, bò, heo, dân làng, v.v.)	#
+soundCategory.player.description=Âm lượng của người chơi (âm thanh nhặt vật phẩm, bị thương, đang ăn, v.v.)	#
+soundCategory.record.description=Âm lượng của nhạc và âm thanh được chơi từ khối nốt nhạc và hộp chơi nhạc	#
+soundCategory.sound.description=Âm lượng tổng của âm thanh (trừ nhạc)	#
+soundCategory.weather.description=Âm lượng của mưa và sấm sét	#
+soundCategory.texttospeech.description=Âm lượng của văn bản thành giọng nói TTS (TTS cho trò chuyện và UI, bật chúng trong Cài đặt/Trợ năng)	#
+
+storageManager.floatingFileStorageSelector.tooltip=Muốn thay đổi vị trí lưu trữ? Nhấn nút này! (KHÔNG KHUYẾN KHÍCH THAY ĐỔI khi đang chơi với Ty-el UI!)	#
+
+store.coin.bundle=Gói xu	#
+store.cost=Giá gốc:	#
+store.redeem=Nhận miễn phí!	#
+store.free.uppercase=§l§oMIỄN PHÍ!	#
+
+store.confirmPurchase.title=Xác nhận thanh toán	#
+store.confirmPurchase.description=Bạn có muốn mua mục này hay không? Dưới đây sẽ là những gì bạn sẽ nhận:	#
+store.confirmPurchase.description_completed=Bạn đã có thể đóng hộp thoại này và tận hưởng những gì bạn vừa mua.	#
+store.confirmPurchase.tooltip=Bạn sẽ được nhắc nhở trước khi mua hàng nếu bạn vô tình nhấn nút thanh toán để tránh mua nhầm vật phẩm không muốn mua.	#
+store.proceedToPurchase=Chấp nhận và tiến hành mua hàng	#
+
+dr.rarity.=Lỗi, yêu cầu xóa bộ lọc	#
+store.search.filter.=Lỗi, yêu cầu xóa bộ lọc	#
+
+store.search.filter.highlight.title=Lọc làm nổi bật	#
+store.search.filter.minecoinSpecials=Minecoins/Đặc biệt	#
+store.search.filter.newOffers=Mục mới	#
+store.search.filter.redeemable=Có thể nhận	#
+store.search.filter.collectible=Thu thập được qua Thành tích	#
+store.search.filter.paid=Trả phí	#
+
+trade.tradeAll=Trao đổi tất	#
+trade.maxLevelTag=TỐI ĐA	#
+
+tyelHive.xpCalculator.disclaimerLabel=Thông tin bảng biểu đồ XP được thu thập từ hivetools.app. Không liên kết với Hive Games bằng bất kỳ hình thức nào.	#
+tyelHive.xpCalculator.hideButtonLabel=Ẩn	#
+tyelHive.xpCalculator.maxLevel=Cấp tối đa	#
+tyelHive.xpCalculator.increment=Tăng / lvl	#
+tyelHive.xpCalculator.incrementCap=Tối đa ## ~= Maximum
+tyelHive.xpCalculator.title=Thay đổi chế độ tính toán Hive XP	#
+tyelHive.xpCalculator.pageIdentifier=Trang	#
+tyelHive.xpCalculator.lastUpdated=Cập nhật gần đây:	#
+
+tyelAbout.about=Về Ty-el UI	#
+tyelAbout.customAvailable=Có sẵn màn hình tùy chỉnh!	#
+tyelAbout.customAvailable.zeqa=Xem Quy tắc của Zeqa & Về Ty-el UI tại đây!	#
+tyelAbout.minGameVerRequired=Yêu cầu phiên bản Minecraft tối thiểu:	#
+tyelAbout.openAboutTyelUITooltip.openText=Nhấn vào đây để mở Về Ty-el UI (hiện tại màn hình tùy chỉnh)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Nhấn vào đây để trở lại màn hình tùy chỉnh (hiện tại màn hình Về Ty-el UI)	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Chế độ xử lý sự cố Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=Nhấn nút "Hủy kích hoạt Ty-el UI" để hủy kích hoạt gói này ngay lập tức, và nhấn nút "Đóng cài đặt" để hoàn tất việc hủy kích hoạt. Bạn cũng cần phải thay đổi "$tyel_ui_troubleshooting_mode" về §cfalse§r trong /ui/_global_variables.json sau khi hoàn thành việc xử lý.	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=Bạn thấy nút này vì tệp /ui/_global_variables.json không được tải chính xác. Vui lòng kiểm tra lại cú pháp của tệp và thử lại. Hoặc nếu bạn muốn hủy kích hoạt Ty-el UI, nhấn nút "Hủy kích hoạt Ty-el UI" để hủy kích hoạt gói này ngay lập tức, và nhấn nút "Đóng cài đặt" để hoàn tất việc hủy kích hoạt.	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Hủy kích hoạt Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=Đóng cài đặt	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=Không thể hủy kích hoạt Ty-el UI khi đang ở trong thế giới	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=Chế độ xử lý sự cố	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Chế độ xử lý sự cố Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Global Variables không thể tải!)	#
+
+
+
+
+
+
+
+
+## DO NOT TRANSLATE PACK NAME
+tyelAbout.creatorTitle=Được làm bởi:	#
+tyelAbout.aboutLabel1=The Ty-el's UI Pack (gọi tắt là Ty-el UI) là một gói vá UI cho Vanilla UI, được thêm một số tính năng, thay đổi, và cũng có âm thanh mới khi nhấn nút(!), để làm cho trải nghiệm chơi của bạn có một chút gì đó tốt hơn nhưng vẫn giữ phong cách Vanilla. Tương thích với các gói kết cấu từ bên ngoài hoặc từ Marketplace, hoặc một số gói tài nguyên có thể cải thiện lối chơi của bạn, tại sao lại không chứ?!	#
+tyelAbout.aboutLabel2=§l§bTỪ CHỐI TRÁCH NHIỆM§r: §oGói này chỉ là một gói tài nguyên bình thường, không phải một client thực sự!§r	#
+tyelAbout.aboutLabel3=Các ngôn ngữ được hỗ trợ:	#
+## tyelAbout.aboutLabel4 is only language names
+tyelAbout.aboutLabel5=và Tiếng Việt (Yêu cầu phải có gói The Ty-el's Vietnamese Language Pack trên MCPEDL.com/CurseForge), [§o§evâng, có thể bạn đang sử dụng gói này mà, cảm ơn! :3§r], sẽ hỗ trợ nhiều ngôn ngữ hơn sau này.	#
+tyelAbout.aboutLabel6=Nếu bạn tìm thấy bất kỳ lỗi nào, hoặc đóng góp ý kiến về gói này, hãy cho tôi biết trên Twitter của tôi.	#
+tyelAbout.translationHelp=Tôi cần sự giúp đỡ của bạn! Nếu bạn muốn dịch gói này sang ngôn ngữ của mình, hãy liên hệ với tôi trên Twitter.	#
+
+tyelAbout.features=Tính năng	#
+tyelAbout.featuresTitleFeatures=§eCác tính năng chính	#
+tyelAbout.featuresLabel0=- Đã cập nhật nhiều màn hình cho cập nhật Ore UI Aspects, cập nhật UI sắp tới cho Bedrock Edition, và đúng rồi đấy, với một ít "remix".	#
+tyelAbout.featuresLabel1=- Đã thêm nút Thả vật phẩm cho tất cả màn hình kho chứa và nút Phá hủy vật phẩm (chỉ có trong màn hình Túi đồ/Bàn chế tạo và chỉ trong chế độ Sáng tạo).	#
+tyelAbout.featuresLabel1.1=§7Khi một ô vật phẩm được chọn trong túi đồ,	#
+tyelAbout.featuresLabel1.2=§7nhấn	#
+tyelAbout.featuresLabel1.3=§7để thả, hoặc	#
+tyelAbout.featuresLabel1.4=§7để phá hủy vật phẩm	#
+tyelAbout.featuresLabel1.5=§7trong ô đã chọn. "x1" nghĩa là một vật phẩm, và "Tất" nghĩa là một ô vật phẩm sẽ được thả hoặc bị phá hủy	#
+tyelAbout.featuresLabel1.6=§2Mẹo: Bạn có thể giữ bao nhiêu vật phẩm tùy ý trong một ô vật phẩm (vd: chọn 3/42 vật phẩm) để thả hoặc phá hủy vật phẩm nhanh hơn và chính xác hơn!	#
+tyelAbout.featuresLabel2=- Đã thêm nút Chế tạo nhanh cho màn hình túi đồ/bàn chế tạo, chế tạo bây giờ sẽ nhanh hơn bao giờ hết!	#
+tyelAbout.featuresLabel3=- Đã thêm tính năng Chuyển chế độ kho chứa cho (hầu hết) tất cả màn hình kho chứa! Nó có thể giúp bạn loot hoặc thả vật phẩm nhanh hơn, rất tốt cho những người chơi cảm ứng!	#
+tyelAbout.featuresLabel3.1=§7Để sử dụng chúng, chỉ cần đơn giản chọn chế độ bạn muốn (Bình thường, Di chuyển nhanh, Thả) và nhấn bất kỳ vật phẩm nào (hoặc nút trái chuột nếu trên PC) trong kho chứa, hoặc trong túi đồ, vật phẩm sẽ ngay lập tức vào trong túi đồ của bạn, hoặc trở lại kho chứa, hoặc được thả ra ngoài!	#
+tyelAbout.featuresLabel4=- Đã thêm toggle chuyển đổi Chế độ túi đồ cho màn hình Túi đồ, một "thứ giữ nút shift" khác cho những người chơi cảm ứng nhưng bên trong màn hình Túi đồ! (chỉ dành cho Pocket UI, sẽ loại bỏ sau)	#
+tyelAbout.featuresLabel4.1=§7Tính năng này sẽ giúp bạn trang bị giáp/vật tổ hoặc đặt vật phẩm từ túi đồ chính đến hotbar và ngược lại... nhanh hơn, chỉ với một chạm!	#
+tyelAbout.featuresLabel5=- Đã di chuyển phần toggle chuyển đổi Loại vật phẩm ở trong màn hình Túi đồ, phần Sách công thức/túi đồ sáng tạo sang bên trái màn hình, nhìn khá giống sách công thức trên Java Edition.	#
+tyelAbout.featuresLabel6=- Thanh tiến trình (tiến trình Đang tải thế giới, kinh nghiệm và máu Boss, cũng như là tiến trình nung và nhiên liệu trong màn hình Lò nung, và tiến trình pha thuốc và nhiên liệu trong màn hình Giàn pha thuốc nữa! Nhiêu đó là rất nhiều!) bây giờ có chỉ số phần trăm kế bên chúng. Bây giờ bạn có thể nhìn thấy chỉ số phần trăm chính xác của chúng, kể cả phần trăm kinh nghiệm, đúng rồi đấy, kinh nghiệm đó!	#
+tyelAbout.featuresLabel7=- Đã thêm tính năng tìm kiếm vào màn hình Chơi/Thế giới và màn hình Cài đặt/(Tài nguyên dùng chung/Các gói tài nguyên/Các gói hành vi/Lưu trữ), sẽ giúp bạn tìm kiếm thế giới và các gói nhanh hơn (Lưu ý rằng tính năng này trong màn hình Chơi/Thế giới chỉ cho phép tối đa 50 thế giới gần đây nhất có thể tìm kiếm, vì một số vấn đề hiệu năng ;-;)	#
+tyelAbout.featuresLabel8=- Đã thêm tính năng Làm nổi bật vật phẩm vào màn hình Rương, có thể giúp bạn tìm kiếm vật phẩm với tên nhất định trong những cái rương bừa bộn! (Và nó có phân biệt iN hOa In ThƯờNg!)	#
+tyelAbout.featuresLabel9=- Đã thêm La bàn và Đồng hồ vào màn hình HUD để quản lý thời gian trong trò chơi của bạn dễ hơn, cũng như là tìm kiếm điểm hồi sinh của thế giới tốt hơn trước.	#
+tyelAbout.featuresLabel10=- Chỉ dành cho người chơi cảm ứng, đã thêm nút ẩn HUD kế bên thanh Hotbar để dễ dàng ẩn HUD mà không cần vào màn hình Cài đặt.	#
+tyelAbout.featuresLabel11=- Đã thêm tính năng Đề xuất thế giới đã chơi gần đây vào màn hình Chơi. Thế giới bạn đã chơi/mở gần đây nhất sẽ ở trên cùng của màn hình Chơi/thẻ Thế giới, cho nên bạn có thể chơi thế giới gần đây nhất của bạn còn dễ hơn trước!	#
+tyelAbout.featuresLabel12=- Tin nhắn trò chuyện trong HUD bây giờ có hoạt ảnh nhẹ.	#
+tyelAbout.featuresLabel13=- Đã thêm tính năng Xác nhận thanh toán cho Marketplace, và Khóa thanh toán cho màn hình Phòng thay đồ, chúng sẽ giúp bạn không phải mua các vật phẩm (bằng Minecoin hoặc tiền thật) một cách vô tình nữa. (Vật phẩm miễn phí sẽ không bị ảnh hưởng)	#
+tyelAbout.featuresLabel14=- Màn hình Cài đặt: Bây giờ hầu hết tất cả menu thả xuống sử dụng chế độ nút thay vào đó!	#
+tyelAbout.featuresLabel15=- Đã thêm màn hình Cài đặt nhanh: Vào Cài đặt, và nhấn nút ≡ ở phía trên bên phải màn hình. Ở đây bạn có thể chỉnh Thiết lập góc nhìn, Độ sáng, FOV, và hơn thế nữa... với nền đằng sau hoàn toàn trong sạch!	#
+tyelAbout.featuresLabel16=- Đã thiết kế lại màn hình Bắt đầu, và có thêm menu thanh bên phong cách Marketplace!	#
+tyelAbout.featuresLabel17=- Đã thêm 2 nút để tự động hoàn thành câu lệnh và 2 nút để hoàn tác hoặc hoàn lại dễ hơn.	#
+tyelAbout.featuresLabel18=- Giờ bạn có thể nhấn vào văn bản đề xuất tự động hoàn thành để tự động hoàn thành câu lệnh, hoặc đề cập một ai đó nhanh chóng, tiện thiệt chứ!	#
+tyelAbout.featuresLabel19=- Đã thêm hộp tìm kiếm vào tiêu đề của màn hình Marketplace, sẽ giúp bạn tìm kiếm dễ hơn, bất kỳ đâu!	#
+tyelAbout.featuresLabel20=- Một số thay đổi UI khác.	#
+
+tyelAbout.featuresTitleParity=§eCác tính năng khác, Java Parity và sửa lỗi Vanilla	#
+tyelAbout.featuresLabelParity1=- Âm thanh nhấn mới (lấy cảm hứng từ âm thanh của Ore UI)	#
+tyelAbout.featuresLabelParity2=- Đã thêm render Búp bê giấy trực tiếp cho màn hình Rương và Redstone (Phễu, Máy phân phát, Máy thả) để biết được bạn đang trang bị vật phẩm nào nhanh hơn trước!	#
+tyelAbout.featuresLabelParity3=- Nếu bạn nhấn và giữ bất kỳ vật phẩm nào, giờ có xuất hiện biểu thị "Lấy số lượng vật phẩm tùy ý" ở phía trên ô vật phẩm, cho nên bạn có thể thấy được bao nhiêu vật phẩm bạn đang chuẩn bị di chuyển hoặc sử dụng.	#
+tyelAbout.featuresLabelParity4=- Trải nghiệm máy chủ tốt hơn??, đã thêm panel Thông tin máy chủ vào Màn hình tạm dừng cho một số máy chủ phổ biến được chọn. Nó có một số thông tin hữu ích như liên kết trang web máy chủ, liên kết trang web hỗ trợ và hơn thế nữa!	#
+tyelAbout.featuresLabelParity5=- Tính năng chỉ dành cho The Hive (Máy chủ nổi bật của Minecraft): Andesite Counter (Đếm khối andesit), khá tốt trong khi việc bắt cầu sử dụng khối andesit khi đang trong SkyWars! (Có thể nhiều tính năng mới sau này?)	#
+tyelAbout.featuresLabelParity6=- Java Parity: Bạn bây giờ có thể đặt tên bất kỳ vật phẩm nào trong Cái đe, hoặc trong Bàn vẽ bản đồ, và tìm kiếm bất kỳ vật phẩm nào lên đến 50 ký tự, không phải 30!	#
+tyelAbout.featuresLabelParity7=- Java Parity: Bạn có thể thay đổi ngôn ngữ trò chơi trong màn hình Cài đặt cả khi đang ở trong thế giới!	#
+tyelAbout.featuresLabelParity8=- Đã thêm toggle chuyển đổi VSync trong Cài đặt/Nhà sáng tạo và thanh trượt Số khung hình tối đa trong Cài đặt/Đồ họa!	#
+tyelAbout.featuresLabelParity9=- Đã thêm trở lại toggle chuyển đổi Tắt tiếng tất cả trò chuyện vào màn hình Trò chuyện để ẩn trò chuyện nhanh hơn.	#
+tyelAbout.featuresLabelParity10=- Đã thêm nút Cuộn xuống dưới cùng trong màn hình Trò chuyện cho nên bạn không cần phải cuộn quá dài một khi bạn đã cuộn lên quá cao!	#
+tyelAbout.featuresLabelParity11=- Đã thêm bộ đếm "Độ trễ theo giây" (không phải tích) trong màn hình khối điều khiển để biết được độ trễ giữa hai lần thực thi lệnh, theo đơn vị giây! (Định dạng thời gian cũng đã được §olàm đẹp§r!)	#
+tyelAbout.featuresLabelParity12=- Đã thêm Popup Xác nhận thoát vào màn hình tạm dừng để tránh vô tình bị thoát khỏi trò chơi.	#
+tyelAbout.featuresLabelParity13=- Đã thêm nút Chuyển đổi loại ngoại hình cho các ngoại hình tùy chỉnh trong màn hình Phòng thay đồ. Chúng sẽ giúp bạn chỉnh sửa loại ngoại hình, có thể là loại Steve (Thường) hoặc Alex (Thon), dễ hơn mà không cần nhập lại tệp ngoại hình mới!	#
+tyelAbout.featuresLabelParity14=- Màn hình ngủ còn ngon hơn :p, đã thêm tiêu đề, giống như màn hình chết vậy.	#
+tyelAbout.featuresLabelParity15=- Màn hình chết thậm chí còn buồn hơn, bây giờ nền không phải đỏ nữa, thay vào đó là nền đen từ từ tối lại, và thế là trở nên buồn hơn... ;-;	#
+tyelAbout.featuresLabelParity16=- Vanilla Fixes: Hiệu ứng Vignette trong HUD bây giờ nằm ở phía trên mọi thứ.	#
+tyelAbout.featuresLabelParity17=- Vanilla Fixes: Đã sửa lỗi với việc nhận XP từ lò nung một cách không chính xác trên phiên bản v1.19.50+, §o§cmột lần nữa!§r (MCPE-152227)	#
+tyelAbout.featuresLabelParity18=- Tiêu đề và Phụ đề trong HUD giờ có kích thước font chữ nhỏ hơn, và không còn bị ra-khỏi-màn-hình nếu tiêu đề quá dài nữa! Số đếm vật phẩm và thanh kinh nghiệm ở hotbar giờ luôn thấy được kể cả trong chế độ Sáng tạo!	#
+tyelAbout.featuresLabelParity19=- Sửa lỗi hoạt ảnh của nền, v.v...	#
+tyelAbout.featuresLabelParity20=- Một số thay đổi, và sửa lỗi khác (thanh tiêu đề to hơn, vùng an toàn của màn hình thân thiện hơn,... và hơn thế nữa!)	#
+
+tyelAbout.subpackFeatures=Tính năng gói phụ	#
+tyelAbout.subpackFeaturesInfo=§oBạn có thể thay đổi gói phụ trong màn hình Cài đặt gói trong Cài đặt/Tài nguyên dùng chung.	#
+tyelAbout.subpackFeatures.current=§o§7Hiện tại đang sử dụng:	#
+tyelAbout.subpackFeatures.default="Default"	#
+tyelAbout.subpackFeaturesLabel.default=Mọi thứ là mặc định, và có thể cá nhân hóa bằng cách thay đổi các biến trong /ui/_global_variables.json.	#
+tyelAbout.subpackFeatures.defaultVanilla="Default Vanilla"	#
+tyelAbout.subpackFeaturesLabel.defaultVanilla=Nếu bạn không thích thiết kế mới của màn hình Popup hộp thoại, hoặc màn hình Chơi, sử dụng gói phụ này.	#
+tyelAbout.subpackFeatures.performance="Performance"	#
+tyelAbout.subpackFeaturesLabel.performance=Gói phụ này loại bỏ các tính năng ảnh hưởng hiệu năng trò chơi: Chuyển chế độ kho chứa, các modules HUD của Ty-el UI, văn bản phần trăm XP, biểu thị "Lấy số lượng vật phẩm tùy ý", nhưng vẫn giữ tính năng Di chuyển nhanh trong màn hình Rương và Redstone (Phễu, Máy phân phát, Máy thả) và biểu thị tay chính.	#
+tyelAbout.subpackFeatures.ultra="ULTRA MODE"	#
+tyelAbout.subpackFeaturesLabel.ultra=Thêm biểu thị độ bền vật phẩm vào văn bản vật phẩm khi trỏ trên bất kỳ màn hình túi đồ nào, và chế độ con trỏ trò chuyện trong màn hình trò chuyện. §cẢNH HƯỞNG HIỆU NĂNG TRÒ CHƠI! Không dành cho thiết bị yếu!!!§r	#
+
+tyelAbout.compatibilityMode=Chế độ tương thích	#
+tyelAbout.compatibilityModeInfo=Thông tin chế độ tương thích	#
+tyelAbout.compatibilityModeLabelInfo1=Tính năng này sẽ gỡ rối một số lỗi từ Ty-el UI nếu bạn có sử dụng một số gói có hỗ trợ Chế độ tương thích. Để kích hoạt chúng, mở /ui/_global_variables.json và kéo xuống dưới cùng của file, và chỉnh giá trị trong phần Chế độ tương thích thành §2true§r.	#
+tyelAbout.compatibilityModeLabelInfo2=Chủ nhân các gói này có thể đã thêm các giá trị trên chỉnh thành true theo mặc định, nếu các gói đó nằm ở trên Ty-el UI. Cho nên bạn không cần phải chỉnh chúng một cách thủ công. Nếu bạn muốn gói của bạn có một số điều chỉnh cho gói của tôi, hãy thoải mái liên hệ tôi.	#
+tyelAbout.compatibilityModeLabelInfo3=Đây là tất cả các gói được hỗ trợ Chế độ tương thích, với trạng thái đã được hiển thị theo màu trên các thiết đặt giá trị biến (§2true§r hoặc §cfalse§r).	#
+tyelAbout.compatibilitymodelabel.automated=Tự động	#
+
+tyelAbout.compatibilityModeLabel.chainsketchUTM.name=Chainsketch - Ultimate Thumbnail Maker	#
+tyelAbout.compatibilityModeLabel.chainsketchUTM.desc=Loại bỏ nút ẩn HUD và Công cụ HUD của Ty-el UI. Thiết đặt này ghi đè cài đặt "$use_hud_utilities".	#
+
+tyelAbout.compatibilityModeLabel.modulesPlus.name=Chainsketch - Modules+	#
+tyelAbout.compatibilityModeLabel.modulesPlus.desc=Loại bỏ công cụ HUD của Ty-el UI, bao gồm Biểu thị ô tay chính (bởi vì nó đã có trong Modules+). Thiết đặt này ghi đè cài đặt "$use_hud_utilities".	#
+
+tyelAbout.compatibilityModeLabel.utilityUI.name=HJN - Utility UI (BETA)	#
+tyelAbout.compatibilityModeLabel.utilityUI.desc=Loại bỏ biểu thị ô tay chính từ Ty-el UI, các công cụ HUD và nút ẩn HUD.	#
+
+tyelAbout.compatibilityModeLabel.zeqa.name=Gói tài nguyên của máy chủ Zeqa	#
+tyelAbout.compatibilityModeLabel.zeqa.desc=Loại bỏ các modules HUD của Ty-el UI, nhưng không loại bỏ biểu thị tay chính. Việc này không ghi đè thiết lập "$use_hud_utilities" lên biểu thị tay chính. Thay đổi chú giải công cụ "Có sẵn màn hình tùy chỉnh!" trong màn hình tạm dừng thành "Xem Quy tắc của Zeqa & Về Ty-el UI tại đây!"	#
+
+tyelAbout.compatibilityModeLabel.hive_bedrock.name=The Hive (Máy chủ nổi bật)	#
+tyelAbout.compatibilityModeLabel.hive_bedrock.desc=Công cụ tính toán Hive XP nâng cao§r, có thể được bật từ HUD bằng cách nhấn "TAB + 3" khi đang sử dụng Bàn phím & chuột, hoặc từ menu HUD khi đang sử dụng điều khiển cảm ứng. Hãy nhớ rằng tính năng này không được tự động hóa vì nhiều vấn đề ràng buộc.	#
+
+tyelAbout.compatibilityModeLabel.cubecraft_bedrock.name=CubeCraft Games (Máy chủ nổi bật)	#
+tyelAbout.compatibilityModeLabel.cubecraft_bedrock.desc=§9Tiến trình XP toàn máy chủ§r, chỉ hiển thị khi đang trong sảnh chờ chính của máy chủ, trong chế độ chơi "Skyblock", tính năng này sẽ thay vào đó sử dụng hệ thống XP của Vanilla.	#
+
+tyelAbout.credits=Credits	#
+tyelAbout.creditsTitle=Cảm ơn tới...	#
+tyelAbout.creditsTitleTranslators=Các dịch giả cho gói	#
+
+tyelAbout.usage=Điều khoản sử dụng	#
+tyelAbout.usageLabel1=BẠN §l§aĐƯỢC PHÉP§r:	#
+tyelAbout.usageLabel2=- Make contents about this pack as long as you provide credits or proper attributions in the description.	#
+tyelAbout.usageLabel3=- Customize and share your /ui/_global_variables.json configurations.	#
+tyelAbout.usageLabel4=- Add your own custom panorama, or create your own Ty-el Theme (instructions in /ui/_tyel_theme_template.json).	#
+tyelAbout.usageLabel5=- Modify the pack only for personal uses.	#
+
+tyelAbout.usageLabel6=BẠN §l§cKHÔNG ĐƯỢC PHÉP§r:	#
+tyelAbout.usageLabel7=- Use, or claim any of my codes and use as your own, please respect my hard works ;-;	#
+tyelAbout.usageLabel8=- Distribute the modified pack to public.	#
+tyelAbout.usageLabel9=- Redistribute this pack to other sites/app stores, no one will have the permission.	#
+tyelAbout.usageLabel10=- Make contents about this pack but without proper attributions.	#
+tyelAbout.usageLabel11=- Use this pack in third-party projects, instead, let players know that your projects are compatible with this pack.	#
+
+tyelAbout.validation=Trình xác thực UI	#
+tyelAbout.validation.errorList=Danh sách lỗi	#
+tyelAbout.validationLabel1=Bất kỳ lỗi nào được phát hiện bởi "Hệ thống xác thực lỗi của Ty-el UI" sẽ được hiển thị tại đây.	#
+tyelAbout.validationLabel2=Nếu có bất kỳ lỗi nào xuất hiện tại đây, bạn nên cài đặt lại gói để khắc phục hết tất cả các vấn đề. Dành cho người chơi nâng cao, bật Giao diện nhật ký nội dung trong cài đặt trò chơi để biết thêm thông tin chi tiết về lỗi.	#
+tyelAbout.validation.errorCodeTitle=Mã lỗi:	#
+tyelAbout.validation.detailsTitle=Mô tả:	#
+tyelAbout.validation.error.assetNotFound=Tập tin với namespace sau không thể tải:	#
+tyelAbout.validation.error.variableValueInvalid=Giá trị của biến không hợp lệ:	#
+tyelAbout.validation.error.variableValueInvalid.anchorString=[Anchor String] Chúng tôi chỉ chấp nhận các giá trị sau: "top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"	#
+
+tyelAbout.changelog=Nhật ký thay đổi	#
+tyelAbout.changelog.newfeatures=§bTÍNH NĂNG MỚI	#
+tyelAbout.changelog.changes=§aCÁC THAY ĐỔI	#
+tyelAbout.changelog.fixes=§eSỬA LỖI	#
+tyelAbout.changelog.knownissues=§6CÁC LỖI ĐÃ BIẾT	#
+tyelAbout.changelog.removed=§cCÁC TÍNH NĂNG ĐÃ BỊ LOẠI BỎ	#
+
+tyelAbout.changelog101=v1.0.1	#
+tyelAbout.changelog101.title=§aFASTER LOOTERS UPDATE	#
+tyelAbout.changelog101.label1=- Đã thêm toggle chuyển đổi Lấy đồ nhanh vào màn hình Rương và Redstone (Phễu, Máy phân phát, Máy thả)	#
+tyelAbout.changelog101.label2=- Đã thêm văn bản trỏ cho các nút Thả và Phá hủy vật phẩm	#
+tyelAbout.changelog101.label3=- Đã thêm hiệu ứng đổ bóng cho văn bản tên vật phẩm và tiêu đề Actionbar trong HUD	#
+tyelAbout.changelog101.label4=- Nền bảng điểm thanh bên HUD bây giờ có nền đen tối hơn đằng sau tên Mục tiêu, giống Java!	#
+tyelAbout.changelog101.label5=- Đã thêm các giá trị biến vào _global_variables.json cho việc cá nhân hóa gói:	#
+tyelAbout.changelog101.label6=§7  + "$screen_background_alpha" để thay đổi độ mờ đục của nền trong các màn hình ingame (Màn hình túi đồ, Màn hình dừng...) (mặc định 0.4)	#
+tyelAbout.changelog101.label7=§7  + "$item_name_text_background_alpha" để thay đổi độ mờ đục của nền tên vật phẩm trong HUD (chỉnh thành 0 để có phong cách Java!)	#
+tyelAbout.changelog101.label8=§7  + "$actionbar_background_alpha" để thay đổi độ mờ đục của tiêu đề Actionbar	#
+tyelAbout.changelog101.label9=§7  + "$item_text_one_line_layout" để sử dụng chế độ một hàng cho tên vật phẩm trong HUD (Dùng để ẩn tên phù phép!)	#
+tyelAbout.changelog101.label10=§7  + "$use_quick_craft_button" để ẩn hoặc hiện nút Chế tạo nhanh	#
+tyelAbout.changelog101.label11=- Đã sửa lỗi các điều khiển focus của các nút Tự động hoàn thành trong màn hình trò chuyện không hoạt động chính xác	#
+tyelAbout.changelog101.label12=- Đã sửa lỗi Panel thông tin trong màn hình tạm dừng không có khoảng trống bên phải	#
+tyelAbout.changelog101.label13=- Đã sửa lỗi tiêu đề chính trong màn hình Hướng dẫn chơi đôi khi bị quá dài và cắt xuống dòng	#
+tyelAbout.changelog101.label14=- Đã sửa lỗi vị trí mô tả giúp đỡ bàn phím trong màn hình chơi bị quá cao	#
+tyelAbout.changelog101.label15=- Đã sửa lỗi âm thanh khi nhấn các nút trong một số màn hình không được chơi đúng cách	#
+tyelAbout.changelog101.label16=- Đã sửa lỗi pano ảnh nền không hiển thị trong màn hình Thông tin gói (chỉ có khi ở pregame)	#
+tyelAbout.changelog101.label17=- Đã thay đổi cách hiển thị thông tin ảnh chụp màn hình, bây giờ tất cả mọi điều kiện màn hình có thể thấy chúng	#
+tyelAbout.changelog101.label18=- Sửa lỗi nền khác	#
+
+tyelAbout.changelog102=v1.0.2	#
+tyelAbout.changelog102.title=§eSAD GUY LANGUAGE UPDATE	#
+tyelAbout.changelog102.label0=§aCập nhật này đã sửa lỗi Vanilla có thể làm bạn cảm thấy không thỏa mãn khi mở màn hình Bàn chế tạo:	#
+tyelAbout.changelog102.label0a=§a- Đã sửa lỗi ô đầu ra của bảng chế tạo 3x3 trong màn hình túi đồ/Bàn chế tạo không được căn giữa (bị lệch 4 pixel), §o"được tìm ra"§r§a bởi Phoenix SC (@phnixhamsta) :)	#
+tyelAbout.changelog102.label1=- Gói hiện hỗ trợ thêm nhiều ngôn ngữ hơn:	#
+## tyelAbout.changelog102.label2 for language names
+tyelAbout.changelog102.label3=(Cảm ơn @nattsuiy (Twitter) vì bản dịch tiếng Nhật!)	#
+tyelAbout.changelog102.label4=- Đã thêm toggle chuyển đổi Chế độ túi đồ cho màn hình túi đồ, có thể giúp bạn trang bị giáp/vật tổ hoặc đặt vật phẩm từ túi đồ chính sang hotbar và ngược lại... nhanh hơn	#
+tyelAbout.changelog102.label5=- Đã thêm render Búp bê giấy trực tiếp cho màn hình Rương và Redstone (Phễu, Máy phân phát, Máy thả) để biết được bạn đang trang bị vật phẩm nào nhanh hơn trước	#
+tyelAbout.changelog102.label6=- Đã thiết kế lại màn hình Form máy chủ, được lấy cảm hứng từ màn hình chơi của The Hive, tôi không biết bạn có thích nó hay không? 	#
+tyelAbout.changelog102.label7=- Đã thêm các cài đặt RTX vào màn hình cài đặt nhanh	#
+tyelAbout.changelog102.label8=- Đã thêm toggle ẩn/hiện hotbar trong để ẩn/hiện để có một góc nhìn *tạm thời* sạch hơn khi đang chơi (chỉ dành cho người chơi cảm ứng)	#
+tyelAbout.changelog102.label9=- Đã thêm toggle ẩn/hiện Panel thông tin vào màn hình tạm dừng để ẩn hiện danh sách bảng điểm người chơi, để có cái nhìn sạch hơn!	#
+tyelAbout.changelog102.label10=- Panel văn bản trong màn hình tiến trình giờ có thể chồng lên nhau	#
+tyelAbout.changelog102.label11=- Panel văn bản trong màn hình tiến trình giờ nằm ở giữa màn hình chỉ khi đang in-game	#
+tyelAbout.changelog102.label12=- Moved Cancel button in Progress Screen to bottom right	#
+tyelAbout.changelog102.label13=- Đã cải tiến các điều khiển pano ảnh nền tùy chỉnh, giờ bạn có thể bật/tắt chúng (mặc định là tắt), và cũng đã có hỗ trợ pano hoạt hình kiểu UV (nếu bạn biết chúng)	#
+tyelAbout.changelog102.label14=- Đã làm cho nền của màn hình Realm Feed và Chọn ảnh chụp màn hình toàn màn hình	#
+tyelAbout.changelog102.label15=- Đã thêm các giá trị biến vào _global_variables.json cho việc cá nhân hóa gói:	#
+tyelAbout.changelog102.label16=§7  + "$use_container_toggles" để ẩn/hiện toggle chuyển đổi Lấy đồ nhanh và Chế độ túi đồ (mặc định là true)	#
+tyelAbout.changelog102.label17=§7  + "$scoreboard_sidebar_anchor_pocket" để thay đổi neo anchor của Bảng điểm thanh bên khi đang dùng Pocket UI	#
+tyelAbout.changelog102.label18=§7  + "$scoreboard_sidebar_offset_pocket" để thay đổi vị trí offset của Bảng điểm thanh bên khi đang dùng Pocket UI	#
+tyelAbout.changelog102.label19=§7  + "$utility_anchor_pocket" để thay đổi neo anchor của Công cụ HUD khi đang dùng Pocket UI	#
+tyelAbout.changelog102.label20=§7  + "$utility_offset_pocket" để thay đổi vị trí offset của Công cụ HUD khi đang dùng Pocket UI 	#
+tyelAbout.changelog102.label21=§7  + "$use_hud_utilities" để ẩn/hiện Công cụ HUD (mặc định là true)	#
+tyelAbout.changelog102.label22=- Các giá trị biến đã đổi tên trong _global_variables.json:	#
+tyelAbout.changelog102.label23=§7  + "$item_name_text_background_alpha" -> "$item_name_text_bg_alpha"	#
+tyelAbout.changelog102.label24=§7  + "$actionbar_background_alpha" -> "$actionbar_bg_alpha"	#
+tyelAbout.changelog102.label25=- Đã thay đổi ID nút Đăng nhập trong màn hình Bắt đầu (Đã sửa lỗi nút Đăng nhập trong màn hình Bắt đầu không hoạt động)	#
+tyelAbout.changelog102.label26=- Đã tối ưu code của UI màn hình Bắt đầu	#
+tyelAbout.changelog102.label27=- (Sửa lỗi Vanilla) Đã sửa lỗi nền của phần Lỗi trong màn hình Manifest Validation (màn hình Thông tin gói) có thể đè lên nội dung bên trên nó (Lỗi MCPE-102555?)	#
+tyelAbout.changelog102.label28=- Các nút điều khiển Hotbar giờ hỗ trợ TTS Reader	#
+tyelAbout.changelog102.label29=- Nút "Quản lý tài khoản" trong Thanh bên màn hình Bắt đầu giờ chỉ xuất hiện khi đã đăng nhập bằng tài khoản Microsoft Account và khi ở trên Windows, iOS hoặc Android	#
+
+tyelAbout.changelog110=v1.1.0	#
+tyelAbout.changelog110.title=§eORE UI ASPECTS' INDICATION UPDATE	#
+tyelAbout.changelog110.notice1=§dLưu ý: Kể từ phiên bản này, "Lấy đồ nhanh" giờ sẽ được gọi là "Di chuyển nhanh", điều này không ảnh hưởng đến chức năng lấy đồ nhanh, chỉ thay đổi để cho giống với Vanilla, và khả năng tương thích với các màn hình kho chứa khác.	#
+tyelAbout.changelog110.notice2=§eTính năng BETA mới có sẵn trong bản cập nhật này: Xem thông tin vật phẩm! Với chúng, bạn có thể xem hết tất cả thông tin SIÊU DÀI! của vật phẩm bên trong một Panel cuộn được, rất tốt khi ở trong các máy chủ Skyblock! Chưa hết, chúng còn có thể giúp bạn xem được ID AUX của vật phẩm dành cho các nhà sáng tạo add-on và một số thông tin hữu dụng nâng cao nữa (có thể như vậy)!	#
+## NEW FEATURES
+tyelAbout.changelog110.label1=- Gói đã hỗ trợ thêm còn nhiều ngôn ngữ hơn nữa: 	#
+## tyelAbout.changelog110.label2 for language names
+tyelAbout.changelog110.label3=(Cảm ơn TentexDev#0807 (duranforreal) (Discord) vì bản dịch tiếng Thổ Nhĩ Kỳ, @theqwermc (Twitter) vì bản dịch tiếng Nga và @YangTuo_zi (Twitter), @student_2333 (Twitter) và @mascot_fox8888 (Twitter) vì bản dịch tiếng Trung (Giản Thể)!)	#
+tyelAbout.changelog110.label4=- Đã cải thiện bản dịch tiếng Tây Ban Nha (Tây Ban Nha) (Cảm ơn @sebasxpert (Twitter)!)	#
+tyelAbout.changelog110.label5=- Đã thêm 3 gói phụ mới: Default Vanilla, Performance và Ultra Mode. Xem thêm thông tin trong Về Ty-el UI/Tính năng gói phụ.	#
+tyelAbout.changelog110.label6=- Đã thêm Chế độ tương thích cho một số gói. Xem thêm thông tin trong Về Ty-el UI/Chế độ tương thích.	#
+tyelAbout.changelog110.label7=- Đã cập nhật và thay đổi thiết kế của nhiều màn hình cho cập nhật Ore UI Aspects, cập nhật UI sắp tới cho Bedrock Edition, và đúng rồi đấy, với một ít "remix".	#
+tyelAbout.changelog110.label8=- Thanh tiến trình (tiến trình Đang tải thế giới, kinh nghiệm và máu Boss, cũng như là tiến trình nung và nhiên liệu trong màn hình Lò nung, và tiến trình pha thuốc và nhiên liệu trong màn hình Giàn pha thuốc nữa! Nhiêu đó là rất nhiều!) bây giờ có chỉ số phần trăm kế bên chúng. Bây giờ bạn có thể nhìn thấy chỉ số phần trăm chính xác của chúng, kể cả phần trăm kinh nghiệm, đúng rồi đấy, kinh nghiệm đó!	#
+tyelAbout.changelog110.label9=- Đã thêm tính năng tìm kiếm vào màn hình Chơi/Thế giới và màn hình Cài đặt/(Tài nguyên dùng chung/Các gói tài nguyên/Các gói hành vi/Lưu trữ), sẽ giúp bạn tìm kiếm thế giới và các gói nhanh hơn (Lưu ý rằng tính năng này trong màn hình Chơi/Thế giới chỉ cho phép tối đa 50 thế giới gần đây nhất có thể tìm kiếm, vì một số vấn đề hiệu năng ;-;)	#
+tyelAbout.changelog110.label10=- Đã thêm nút checkbox Hiện chưa tải xuống trong màn hình Các gói tài nguyên (nói chung)	#
+tyelAbout.changelog110.label11=- Đã thêm tính năng Làm nổi bật vật phẩm vào màn hình Rương, có thể giúp bạn tìm kiếm vật phẩm với tên nhất định trong những cái rương bừa bộn! (Và nó có phân biệt iN hOa In ThƯờNg!)	#
+tyelAbout.changelog110.label12=- Đã thêm hộp tìm kiếm vào tiêu đề của màn hình Marketplace, sẽ giúp bạn tìm kiếm dễ hơn, bất kỳ đâu!	#
+tyelAbout.changelog110.label13=- Nếu bạn nhấn và giữ bất kỳ vật phẩm nào, giờ có xuất hiện biểu thị "Lấy số lượng vật phẩm tùy ý" ở phía trên ô vật phẩm, cho nên bạn có thể thấy được bao nhiêu vật phẩm bạn đang chuẩn bị di chuyển hoặc sử dụng.	#
+tyelAbout.changelog110.label14=- Đã thêm tính năng Đề xuất thế giới đã chơi gần đây cho màn hình Chơi	#
+tyelAbout.changelog110.label15=- Đã thêm tính năng Chuyển chế độ kho chứa cho một số màn hình kho chứa	#
+tyelAbout.changelog110.label16=- Đă thêm panel Thông tin vào màn hình tạm dừng cho một số máy chủ	#
+tyelAbout.changelog110.label17=- Đã thêm Popup Xác nhận thoát cho màn hình tạm dừng để tránh thoát trò chơi một cách vô tình	#
+tyelAbout.changelog110.label18=- Văn bản "Lưu & thoát" trong màn hình tạm dừng bây giờ tự động thay đổi thành "Ngắt kết nối" khi bạn đang trong máy chủ, §cCHỈ CÓ trong các máy chủ nổi bật!	#
+tyelAbout.changelog110.label19=- Đã thêm các chức năng Chế độ túi đồ, Thả vật phẩm và Phá hủy vật phẩm vào màn hình Pocket UI	#
+tyelAbout.changelog110.label20=- Đã thêm Biểu thị ô tay chính HUD để hiển thị những vật phẩm nào bạn đang giữ, số lượng và độ bền của chúng nếu có thể	#
+tyelAbout.changelog110.label21=- Văn bản tiêu tiêu đề trong màn hình Form máy chủ và Hộp thoại Popup giờ tự động xóa các khối văn bản sau bắt bắt đầu từ đầu: "$l", "$o", "$0", "$8". §o§6Ghi chú: Thay thế $ với ký tự "Dấu phân đoạn"§r §	#
+tyelAbout.changelog110.label22=- Đã thêm vào trở lại toggle chuyển đổi Tắt tiếng tất cả trò chuyện vào màn hình Trò chuyện để ẩn trò chuyện nhanh hơn	#
+tyelAbout.changelog110.label23=- Đã thêm tính năng Xác nhận thanh toán cho Marketplace, và Khóa thanh toán cho màn hình Phòng thay đồ, chúng sẽ giúp bạn không phải mua các vật phẩm (bằng Minecoin hoặc tiền thật) một cách vô tình nữa. (Vật phẩm miễn phí sẽ không bị ảnh hưởng)	#
+tyelAbout.changelog110.label24=- Đã thêm nút Chuyển đổi loại ngoại hình cho các ngoại hình tùy chỉnh trong màn hình Phòng thay đồ. Chúng sẽ giúp bạn chỉnh sửa loại ngoại hình, có thể là loại Steve (Thường) hoặc Alex (Thon), dễ hơn mà không cần nhập lại tệp ngoại hình mới!	#
+tyelAbout.changelog110.label25=- Thông tin vị trí ảnh chụp màn hình trong màn hình Ảnh chụp màn hình bây giờ hiển thị đường dẫn tệp đầy đủ	#
+tyelAbout.changelog110.label26=- Vì sự thay đổi bên trên, tôi đã thêm nút "Hiển thị vị trí ảnh chụp" vào màn hình Ảnh chụp màn hình nếu bạn muốn thấy được đường dẫn tệp ảnh chụp đầy đủ, vì quyền riêng tư	#
+tyelAbout.changelog110.label27=- Đã thêm Menu ba chấm vào màn hình Chơi và màn hình Thẻ người chơi, trong đó có một số nút điều hướng hữu dụng trong đó	#
+tyelAbout.changelog110.label28=- Đã thêm các giá trị biến vào _global_variables.json cho việc cá nhân hóa gói:	#
+tyelAbout.changelog110.label29=§7  + "$tyel_dialog_accent_color" để thay đổi màu nổi của thanh trên của các hộp thoại (Chỉ khả dụng khi không sử dụng gói phụ "Default Vanilla", ngoại trừ màn hình Form máy chủ)	#
+tyelAbout.changelog110.label30=§7  + "$force_auto_place_on" để buộc tính năng Di chuyển nhanh luôn được bật theo mặc định khi mở kho chứa (Một nút cảnh báo sẽ xuất hiện trong màn hình Chơi nếu bạn bật mục này)	#
+tyelAbout.changelog110.label31=§7  + "$pause_quit_confirmation_popup_enabled" để bật/tắt tính năng Popup Xác nhận thoát trong màn hình tạm dừng	#
+tyelAbout.changelog110.label32=§7  + "$use_black_death_background" để sử dụng nền màn hình chết màu đen (đặt mục này thành false để sử dụng nền màn hình chết gốc có màu đỏ)	#
+tyelAbout.changelog110.label33=§7  + "$server_form_dialog_size" để thay đổi kích thước màn hình Form máy chủ của gói này	#
+tyelAbout.changelog110.label34=§7  + "$recent_world_suggest_enabled" để bật/tắt tính năng Đề xuất thế giới đã chơi gần đây	#
+tyelAbout.changelog110.label35=§7  + "$scoreboard_sidebar_bg_alpha" để thay đổi độ mờ đục của Nền bảng điểm	#
+tyelAbout.changelog110.label36=§7  + "$hud_percentage_text_visible" để ẩn hiện văn bản Phần trăm tiến trình (của Thanh kinh nghiệm, thanh Boss)	#
+tyelAbout.changelog110.label37=§7  + "$use_hive_andesite_counter" để ẩn/hiện tính năng Andesite Counter trong The Hive (Máy chủ nổi bật)	#
+## CHANGES
+tyelAbout.changelog110.label38=- Đã thêm nút bật tắt đề án điều khiển cảm ứng mới cho người chơi không ở trên beta/preview!	#
+tyelAbout.changelog110.label39=- Đã thiết kế lại màn hình Form máy chủ, bây giờ không còn là một cửa sổ hộp thoại	#
+tyelAbout.changelog110.label40=- Đã di chuyển nút Ẩn HUD sang kế bên hotbar, và nó vẫn hỗ trợ chế độ điều khiển Thuận tay trái! Nhưng để tránh bị nhấn phải, tôi đã làm nút đó chỉ sử dụng được khi bạn nhấn đúp nó.	#
+tyelAbout.changelog110.label41=- Đã loại bỏ nút dấu hỏi khỏi màn hình Túi đồ!	#
+tyelAbout.changelog110.label42=- Vì lý do Trợ năng, nút ẩn HUD, toggle ẩn/hiện danh sách người chơi trong màn hình tạm dừng, nút Thả vật phẩm và Phá vật phẩm bây giờ có viền trắng khi đang trỏ chúng	#
+tyelAbout.changelog110.label43=- Popup thông báo trong màn hình Phòng thay đồ và Persona giờ nằm ở trên màn hình, với hoạt ảnh	#
+tyelAbout.changelog110.label44=- Đã làm cho hoạt ảnh chuyển màn hình trở nên sạch hơn (có thể như vậy)	#
+tyelAbout.changelog110.label45=- Đã thêm trở lại nút Realm Feed vào màn hình tạm dừng (chỉ thấy được khi đang trong Realms), vì Mojang Studios quên thêm nó vào lại :p	#
+tyelAbout.changelog110.label46=- [Default Vanilla] Các thẻ trong màn hình Chơi giờ có chiều ngang ngắn hơn, nhưng kích thước tối thiểu được giữ cố định ở một giá trị xác định	#
+tyelAbout.changelog110.label47=- Bây giờ bạn có thể sử dụng nút (≡) Bắt đầu trên Tay cầm (Bộ điều khiển) để mở menu thanh bên trong màn hình Bắt đầu, Cài đặt nhanh trong màn hình Cài đặt và các menu ba chấm	#
+tyelAbout.changelog110.label48=- Đã thêm hỗ trợ TTS cho nút Chế tạo nhanh	#
+tyelAbout.changelog110.label49=- Đã di chuyển cài đặt VSync xuống dưới phần Cài đặt/Đồ họa	#
+tyelAbout.changelog110.label50=- Đã thay đổi vị trí mặc định của Tiện ích HUD xuống ở dưới cùng bên phải	#
+tyelAbout.changelog110.label51=- Đã thêm cài đặt Bật HUD gỡ lỗi vào Cài đặt/Nhà sáng tạo để tạm thời ẩn/hiện HUD gỡ lỗi (chỉ dành cho Beta/Preview)	#
+tyelAbout.changelog110.label52=- Cài đặt Cải thiện chất lượng hình ảnh và Ray Tracing trong màn hình Cài đặt nhanh giờ chỉ có thể thấy được khi thiết bị có hỗ trợ Ray Tracing	#
+tyelAbout.changelog110.label53=- Đã tăng giới hạn tối đa số khung hình cho pano tùy chỉnh lên 500	#
+tyelAbout.changelog110.label54=- Đã cải tiến Ty-el Theme	#
+tyelAbout.changelog110.label55=§7  + Bây giờ bạn có thể tạo một Ty-el Theme cho riêng bạn	#
+tyelAbout.changelog110.label56=§7  + Bây giờ, bạn có thể thêm ảnh panorama tùy chỉnh với các điều khiển con cho các hiệu ứng đặc biệt, văn bản, v.v., với metadata chủ đề bổ sung	#
+tyelAbout.changelog110.label57=§7  + More info in "Ty-el Theme Instructions.txt" in pack folder	#
+## FIXES
+tyelAbout.changelog110.label58=- Đã làm cho nền bên ngoài thanh bên trong màn hình Bắt đầu to hơn	#
+tyelAbout.changelog110.label59=- Đã sửa lỗi biểu tượng Mời trên màn hình Chơi/thẻ Bạn bè không xuất hiện	#
+tyelAbout.changelog110.label60=- Đã sửa lỗi Panel văn bản ngủ (dùng để hiển thị có bao nhiêu người đang ngủ trong thế giới nhiều người chơi) trong màn hình Ngủ không xuất hiện	#
+tyelAbout.changelog110.label61=- Đã thêm trợ giúp gamepad vào màn hình Về Ty-el UI	#
+tyelAbout.changelog110.label62=- Biểu tượng trạng thái khối điều khiển trong màn hình Khối điều khiển giờ có một viền đen bên ngoài	#
+tyelAbout.changelog110.label63=- Đã thay đổi văn bản của nút Phản hồi thành "Gửi phản hồi"	#
+tyelAbout.changelog110.label64=- Focus các nút trong màn hình Về Ty-el UI và nút Thoát trò chơi trong menu thanh bên màn hình Bắt đầu giờ hoạt động chính xác	#
+tyelAbout.changelog110.label65=- Đã sửa lỗi hotbar của HUD không thấy được khi ở trong chế độ sinh tồn	#
+tyelAbout.changelog110.label66=- Đã sửa các lỗi nhật ký nội dung liên quan đến chế độ điều hướng focus	#
+tyelAbout.changelog110.label67=- Các thay đổi về nền màn hình, cải tiến UI và gỡ lỗi khác	#
+## FEATURES REMOVED
+tyelAbout.changelog110.label68=  + Hình tròn cảm ứng tàng hình, vì v1.18.30 đã thêm RenderDragon, làm cho shaders không còn hoạt động, và tính năng này từng có thể làm được bởi shaders ;-;	#
+tyelAbout.changelog110.label69=  + Toggle ẩn/hiện Hotbar và các nút chuyển đổi ô vật phẩm trong hotbar, vì những nút này có thể không sử dụng được nếu thiết lập Đề án điều khiển cảm ứng mới được bật	#

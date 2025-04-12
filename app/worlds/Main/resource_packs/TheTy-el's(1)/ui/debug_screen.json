@@ -1,0 +1,6 @@
+{
+  "debug_screen": {
+    "screen_draws_last": "($pre_release or not $is_publish)",
+    "$use_custom_panorama": "(not $is_utility_ui and $is_pregame and (not $pre_release and $is_publish))"
+  }
+}

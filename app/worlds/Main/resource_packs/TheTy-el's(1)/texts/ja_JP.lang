@@ -1,0 +1,1009 @@
+
+
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### Maximum 6 characters
+icontext.all=すべて	### Maximum 6 characters
+icontext.hovertext.multiplyone=アイテム数: 1つ	#
+icontext.hovertext.all=アイテム数: スロット	#
+
+icontext.dropOne=1つドロップ	#
+icontext.dropAll=すべてドロップ	#
+icontext.destroyOne=1つ壊す	#
+icontext.destroyAll=すべて壊す	#
+
+accessibility.chat.tts.autocomplete=自動補完	#
+accessibility.chat.tts.autocompleteback=自動補完 前	#
+accessibility.chat.tts.previous=前のメッセージ	#
+accessibility.chat.tts.next=次のメッセージ	#
+accessibility.chat.tts.textboxSearchTitle=メッセージを検索する  #
+accessibility.chat.tts.visibilityModeToggle=チャット表示切り替え	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, 現在のモード: オートコンプリート	#
+accessibility.chat.tts.visibilityModeToggle.chat=, 現在のモード: チャット	#
+
+accessibility.pause.infoPanelToggle=情報パネル切り替え	#
+accessibility.play.editMode=編集する	#
+accessibility.play.quickJoinButton=クイックジョインサーバー	#
+accessibility.start.hideStartScreen=メインメニューを隠す	#
+accessibility.start.showStartScreen=メインメニューを表示する	#
+## Format to show in game: Press <B> or <BACK> to show Start Screen again!
+accessibility.start.toggleStartScreenTooltip.prefix=	#
+accessibility.start.toggleStartScreenTooltip.infix=もしくは	#
+accessibility.start.toggleStartScreenTooltip.postfix=を押してメインメニューを再度表示する	#
+accessibility.toggle.tts.closethreedotsmenu=その他のオプションを閉じる	#
+accessibility.toggle.tts.searchBar=検索バー	#
+accessibility.toggle.tts.startsidebar=サイドバーメニュー	#
+accessibility.toggle.tts.threedotsmenu=その他のオプション	#
+
+attribute.name.minecraft:damage_taken=受けるダメージ	#
+attribute.name.minecraft:jump_strength=跳躍力上昇	#
+attribute.name.towardsUndead=アンデッドに対して	#
+
+brewingGuide.assistantPanel.button=レシピを検索する	#
+brewingGuide.assistantPanel.title=レシピを検索...	#
+brewingGuide.assistantPanel.closeTitle=閉じてレシピを見る	#
+brewingGuide.explanation=追記:	#
+brewingGuide.explanation.baseDamage=BaseDamageとは: プレイヤーが与えるダメージのことで、持っている武器やツールなどによって変動します。素手では 1 です。	#
+brewingGuide.fuelRemainingPrefix=残り醸造可能回数:	#
+brewingGuide.mundanePotion.name=ありふれたポーションの材料: 	#
+brewingGuide.mundanePotion.anyofIngredients=以下のアイテムの内いずれか:	#
+brewingGuide.modifier.whenAddedAsModifier=性能向上として入れると:	#
+brewingGuide.modifier.whenAddedToWaterBottle=水入り瓶に入れると:	#
+brewingGuide.modifierDescription.extend=[延長] ポーション効果の時間を延長します	#
+brewingGuide.modifierDescription.enhance=[強化] ポーション効果の強さを上げます	#
+brewingGuide.modifierDescription.corrupt=[改悪] ポーション効果を変更します	#
+brewingGuide.popup.optimizingEffectIcons=モブエフェクトアイコンを最適化しています...	#
+brewingGuide.potionEffect.removePoison=毒の効果を消す	#
+brewingGuide.potionEffect.removeWeakness=弱体化の効果を消す	#
+brewingGuide.potionEffect.removeBlindness=盲目の効果を消す	#
+brewingGuide.potionEffect.removeNausea=吐き気の効果を消す	#
+brewingGuide.tab.basePotions=ポーション	#
+brewingGuide.tab.splashPotions=スプラッシュポーション	#
+brewingGuide.tab.lingeringPotions=残留ポーション	#
+brewingGuide.tab.EduChemistryPotions=薬	#
+brewingGuide.tab.legend=ベース & 性能向上	#
+brewingGuide.toggle.uselessRecipesVisibility=使えないポーションのレシピ表示切り替え	#
+brewingGuide.toggle.fallbackItemRendererMode=フォールバックモード	#
+brewingGuide.uselessPotions.avoidTip=§o§dありふれたポーションは全くもって役に立たないので、これらの材料を入れないようにしてください!	#
+
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabel=ブラックリストのメッセージを表示する	#
+chat.blacklistedMessageNotifier.itemHovered.uncheckedLabelAlt=メッセージを表示してキャレットモードを適用する	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabel=ブラックリストのメッセージを隠す	#
+chat.blacklistedMessageNotifier.itemHovered.checkedLabelAlt=キャレットモードを無効化してメッセージを非表示にする	#
+chat.blacklistedMessageNotifier.label=§o--- このメッセージは非表示になっています ---	#
+chat.caretMode=Enable Message Text Selection	#
+chat.caretMode.disable=Disable Message Text Selection	#
+chat.chatToolbox.cannotEnter.tooltip=コマンドを打っている時や自動補完モード時はチャットツールボックスを使用できません	#
+chat.navigationNotification.search=検索中...	#
+chat.navigationNotification.caretMode=キャレットモードが有効になっています...	#
+chat.placeHolderText=ここにメッセージかコマンドを入力してください...	#
+chat.searchMessages.placeHolderText=メッセージを検索...	#
+chat.searchMessages=Search Messages	#
+chat.searchMessages.hide=Close Search	#
+
+commandBlockScreen.placeHolderText=ここにコマンドを入力してください...	#
+commandBlockScreen.placeHolderOutputText=オンにすると前回実行したコマンドの結果はここに表示されます...	#
+
+compatibility.enabled=互換性モードが有効になっています! 	#
+compatibility.autoEnabledforServer=このサーバーではTy-el UIの互換性ードが利用可能で、参加すると自動的に有効になります。	#
+compatibility.enabledForAdditionalServers.disclaimer=外部サーバートグルでこのバッジが表示されているなら、そのサーバーはTy-el UIとの互換性があります。サーバー内のポーズメニューで詳しい情報を見ることができます。	#
+compatibility.tyelUI=Ty-el UIと互換性があります!	#
+
+container.craftAll.itemsRemainHeader=クラフト後に残るアイテム:	#
+## Format to show in game: Will craft <numbers> time(s) ==> x<total_items>
+container.craftAll.stepsToCraftPrefix=クラフト結果:	#
+container.craftAll.stepsToCraftPostfix=回クラフト	#
+
+container.destroyItemsTooltip.line1=ダブルクリックで選択したアイテムを削除します。	#
+container.destroyItemsTooltip.line1_touch=ダブルタップで選択したアイテムを削除します。	#
+container.destroyItemsTooltip.line2=§l§cアイテムを削除するときは慎重に!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=サバイバルモードではアイテム削除を使用することはできません!	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aクリエイティブモードのみで使用可能です。§r	#
+container.fastCraft=ファストクラフト	#
+container.fastCraft.warningHoverText=§c注意§r レシピ本のクラフト可能なアイテムをクリックすると即差にクラフトします。操作ミスでクラフトしてしまう可能性があります。十分に注意してください。	#
+container.highlightItems=アイテムをハイライト (ひらがな、カタカナ、漢字を区別してください!)	#
+container.highlightitems.placeholdertext=アイテムをハイライト...	#
+container.itemAmountHoverText.one=アイテム数: 1つ	#
+container.itemAmountHoverText.max=アイテム数: 1スタック	#
+container.itemAmountHoverText.maxFixed=アイテム数: 1スタック (修正版)	#
+container.invMode=インベントリモード:	#
+container.invMode.autoPlace=自動	#
+container.invMode.manualPlace=手動	#
+container.invMode.normalMode=通常	#
+container.invMode.autoPlaceMode=クイック移動	#
+container.invMode.dropMode=ドロップ	#
+container.invMode.autoDestroyMode=削除	#
+container.quickCraft=クイッククラフト	#
+container.repair.durabilityGainedTooltip.anvil=左側に置いたアイテムの耐久値が変化します	#
+container.repair.durabilityGainedTooltip.grindstone=最も耐久値が少ないアイテムの耐久値が変化します	#
+container.smithing_table.previewAngle=角度:	#
+
+container.toolbox=収納ツールボックス	#
+
+container.toolbox.slotBulkQuickMove.toInventory=インベントリへクイック移動	#
+container.toolbox.slotBulkQuickMove.toContainer=入れ物へクイック移動	#
+
+container.toolbox.slotBulkClear.compact.line1= をダブルタップでホットバーをクリア	#
+container.toolbox.slotBulkClear.compact.line2=§cSHIFT +  をダブルタップでインベントリをクリア	#
+container.toolbox.slotBulkClear.compact.line1.controller=ダブルタップでホットバーをクリア	#
+container.toolbox.slotBulkClear.compact.line2.controllerPrefix=§c	#
+container.toolbox.slotBulkClear.compact.line2.controller=§cをダブルタップでインベントリをクリア	#
+container.toolbox.slotBulkClear.compact.tts=ダブルクリックでホットバーをクリアし、シフト長押ししながらダブルクリックでインベントリをクリアします。	#
+container.toolbox.slotBulkClear.compact.tts.controller=ダブルタップでホットバーをクリアし、コントローラーのクリック移動ボタンをダブルタップでインベントリをクリアします。	#
+container.toolbox.slotBulkClear.hotbar=§cダブルタップでホットバーをクリア	#
+container.toolbox.slotBulkClear.inventory=§cダブルタップでインベントリをクリア	#
+
+container.toolbox.slotDestroy.compact.line1= ですべて削除	#
+container.toolbox.slotDestroy.compact.line2= で1つだけ削除	#
+container.toolbox.slotDestroy.compact.line1.controller=押してすべて削除	#
+container.toolbox.slotDestroy.compact.line2.controller=で1つだけ削除	#
+container.toolbox.slotDestroy.compact.tts=左クリックで選択したアイテムをすべて削除し、右クリックで選択したアイテムを1つだけ削除します。	#
+container.toolbox.slotDestroy.compact.tts.controller=押して選択したアイテムをすべて削除し、コントローラーの半分取る/一つだけ置くボタンで選択したアイテムを1つだけ削除します。	#
+
+container.toolbox.slotDrop.compact.line1= ですべてドロップ	#
+container.toolbox.slotDrop.compact.line2= で1つだけドロップ	#
+container.toolbox.slotDrop.compact.line1.controller=押してすべてドロップ	#
+container.toolbox.slotDrop.compact.line2.controller=で1つだけドロップ	#
+container.toolbox.slotDrop.compact.tts=左クリックで選択したアイテムをすべてドロップし、右クリックで選択したアイテムを1つだけドロップします。	#
+container.toolbox.slotDrop.compact.tts.controller=押して選択したアイテムをすべてドロップし、コントローラーの半分取る/一つだけ置くボタンで選択したアイテムを1つだけドロップします。	#
+
+contentlog.keystrokeProtip=豆知識: 設定でコンテンツログGUIの有効化をオンにしていると、Ctrl + H でコンテンツログGUIを開くことができます。(キーボードが必要)	#
+contentlog.msgSize.header=インデックスされたメッセージ数:	#
+contentlog.msgSize.maxFlag=[最大]	#
+contentlog.msgSize.maxFlag.tooltip=最大は100ですが、ログファイルの中にはすべてのログが保存されています	#
+contentlog.filter.error=エラー	#
+contentlog.filter.inform=情報	#
+contentlog.filter.title=すべて表示:	#
+contentlog.filter.verbose=詳細	#
+contentlog.filter.warning=警告	#
+
+controller.buttonTip.doublePress=[ダブルクリック]	#
+controller.buttonTip.highlightItems=アイテムをハイライト	#
+controller.buttonTip.playRecentWorld=最新のワールドをプレイ	#
+controller.buttonTip.playSelectedServer=選択したサーバーをプレイ	#
+controller.buttonTip.toggleSidebar=サイドバーメニュー #
+controller.buttonTip.toggleScreen=画面を表示/非表示	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=ワールドのデフォルトゲームモードに合わせます。	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=自由に飛び回ることができ、ブロックやエンティティなどとも干渉せず、観察することができます。	#
+createWorldScreen.levelSeed.copySeedTooltip=テキストボックスをタップし、コピーボタンをタップするとシード値をコピーすることができます。	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=テキストボックスをクリックし、 Ctrl + A と Ctrl + C でシード値をコピーすることができます。	#
+createWorldScreen.serverSimDistanceDescription.header=ワールドが読み込み、ブロックやエンティティなどの変更をする距離を変えることができます。	#
+createWorldScreen.serverSimDistanceDescription.footer=シミュレーション距離:	#
+createWorldScreen.worldNameDescription.create=ここでワールドを決めることができます	#
+createWorldScreen.worldNameDescription.edit=ここでワールド名を変更できます。	#
+createWorldScreen.worldLocationSectionName=フォルダの場所:	#
+createWorldScreen.worldLocationSection.unknownLabel=(不明)	#
+
+deathScreen.btnBgLayout.labelHeader=画面のどこかをクリックしてリスポーン	#
+deathScreen.btnBgLayout.labelHeader.touch=画面のどこかをタップしてリスポーン	#
+deathScreen.btnBgLayout.labelFooter=メインメニューに戻る	#
+
+dr.toggle.purchaseLock=購入ロック	#
+
+generator.infinite.desc=無限に続く巨大な世界。様々なバイオームが個性豊かな風景として生み出されます。	#
+generator.old.desc=256x256x256の縦横と、高さの制限がある世界。昔のワールド生成方法を使用します。	#
+
+hostOption.time.customTime=カスタム時間:	#
+hostOption.time.customTime.warning=注意: 本来のゲーム時間を上書きします!	#
+hostOption.time.customTimeSlider=カスタム時間スライダー	#
+hostOption.weather.query=天気をクエリ	#
+
+hudScreen.hideHudTooltip=ダブルタップしてHUDを非表示	#
+hudScreen.inventoryFull.warning=§l満タン	#
+hudScreen.levelHeaderAbbreviated=レベル	#
+hudScreen.lowDurability=低耐久値!	#
+hudScreen.scoreboardList.playerCount.header=表示中	#
+hudScreen.scoreboardList.playerCount.player=プレイヤー	#
+hudScreen.scoreboardList.playerCount.players=プレイヤー	#
+hudScreen.scoreboardList.playerTag.self=[自分]	#
+hudScreen.scoreboardList.unscoredTitle=スコアがないプレイヤー	#
+hudScreen.showHudTooltip=ここをタップしてHUDを再表示!	#
+hudScreen.totalItemCount.slots=§o§7スロット	#
+hudScreen.toggleables.hiveXpCalc.show=HIVE XP計算システムを表示	#
+hudScreen.toggleables.hotbar.hide=ホットバーを隠す	#
+hudScreen.toggleables.hotbar.show=ホットバーを表示	#
+hudScreen.toggleables.scoreboardList.hide=リストのスコアボードを隠す	#
+hudScreen.toggleables.scoreboardList.show=リストのスコアボードを隠す	#
+hudScreen.toggleables.scoreboardSidebar.hide=サイドバーのスコアボードを隠す	#
+hudScreen.toggleables.scoreboardSidebar.show=サイドバーのスコアボードを表示	#
+hudScreen.toggleables.tooltip=TAB を長押ししてプレイヤーリストを開く TAB + <数字キー> でHUD の切り替え	#
+
+itemLore.title=アイテムロアビューア §o§7(ベータ版!)	#
+itemLore.emptyMessage=<このスロットは空です!>	#
+
+key.peekListAndHUDTogglesForTyelUI=Ty-el UIのスコアボードとHUDメニューを見る	#
+key.showContentLogGUI=コンテンツログGUIを開く	#
+key.showContentLogGUI.disabledTag=(無効化されています)	#
+key.toggleGraphicsMode=グラフィックモードに切り替え (可能であれば)	#
+key.toggleHUD=HUDを表示/非表示	#
+key.togglePaperDoll=人形表示を表示/非表示	#
+
+## Formatting for map.chunk while ingame: [Chunk: <xi>, <yi>, <zi> in <x>, <y>, <z>]
+map.chunk=チャンク	#
+map.chunk.formattingError=エラー: 無効な座標テキスト形式	#
+map.chunk.in=の	#
+map.chunkBorder=チャンクの境	#
+map.chunkBorder.none=なし	#
+
+menu.communityStandards=コミュニティ規定を見る	#
+menu.feedback=フィードバックを送信	#
+menu.multiplayerHelp=マルチプレイヤーヘルプ	#
+menu.quit=ゲームを閉じる	#
+
+mobeffect.title.noEffects=有効な効果がありません	#
+mobeffect.title.activeEffects=現在有効な効果:	#
+
+modal.defaultTitle=本当によろしいですか?	#
+
+networkWorld.view_server_store=サーバーストアを見る	#
+
+options.hardcoded_keybinds_section=ハードコーディング (元々決められており、変更できません)	#
+options.quickSettingsTitle=クイック設定	#
+options.thirdperson.firstperson_short=一人称	#
+options.thirdperson.thirdpersonback_short=三人称後方	#
+options.thirdperson.thirdpersonfront_short=三人称前方	#
+options.toggleOptionDescriptions=設定の説明表示切り替え	#
+
+options.enableAutoPlatformTextToSpeech.description=機器設定でのテキスト読み上げを有効にします。	#
+options.enableUITextToSpeech.description=UIのテキスト読み上げを有効にします。	#
+options.enableChatTextToSpeech.description=チャットのメッセージやコマンドのテキスト読み上げを有効にします。	#
+options.enableOpenChatMessage.description=ワールド参加時に表示される"...を押してチャットを開く"というメッセージを有効にします。	#
+options.textBackgroundOpacity.description=タイトルとサブタイトルの背景の透明度を変更します。0%に設定すると完全な透明になります。	#
+options.actionbarTextBackgroundOpacity.description=アクションバーの背景の透明度を変更します。0%に設定すると完全な透明になります。	#
+options.gamma.description=ゲーム内の明るさを変更します。
+options.thirdperson.description=一人称/三人称視点を切り替えます。三人称視点では、プレイヤーの外から辺りの状況を把握することができます。
+options.fullscreen.description=Minecraftフルスクリーンで実行させます。
+options.hidehand.description=一人称視点時の、手の表示を切り替えます。
+options.hidepaperdoll.description=画面左上に表示される、プレイヤーを側面から見るHUDを表示を切り替えます。
+options.hidehud.description=HUDの表示を切り替えます。
+options.screenAnimations.description=UIもしくはメニューが変わるときのアニメーションの有無を切り替えます。
+options.interfaceOpacity.description=HUDの透明度を変更します。ホットバー内のアイテムを選んだときやUIに触ったときは一時的に100%になります。この設定は、人形表示には影響しません。
+options.fov.description=視野角を変更します。一度にどのぐらいの情報量が画面に入ってくるかを調整することができます。
+options.splitscreen.description=画面分割時、縦に分割するか横に分割するかを切り替えます。
+options.showautosaveicon.description=オートセーブアイコンの表示を切り替えます。オートセーブアイコンは、ワールドデータが端末に自動保存されたときに表示されます。
+options.classic_box_selection.description=視点の先のプロックを線で囲むかを切り替えます。この設定をオフにすると、線の代わりに、ブロックが少し明るくなります。
+options.ingamePlayerNames.description=プレイヤー、モブ、NPCの頭上のネームタグの表示を切り替えます。
+options.splitscreenIngamePlayerNames.description=画面分割時の、プレイヤー、モブ、NPCの頭上のネームタグの表示を切り替えます。
+options.viewBobbing.description=移動時の画面の揺れを切り替えます。
+options.screenShake.description="/camerashake" コマンド使用時の画面の揺れを切り替えます。この設定をオフにすると、コマンドが実行されても画面が揺れることがなくなります。
+options.transparentleaves.description=木の葉の一部を透明にするか否かを切り替えます。
+options.bubbleparticles.description=水の泡の表示を切り替えます。これをオンにするといくつかの機種でパフォーマンスが低下する可能性があります。
+options.renderclouds.description=雲を描画するかを切り替えます。この設定をオフにすると、雲が描画されなくなります。
+options.fancyskies.description=太陽、月、雲、星、空の色の変化の描画を切り替えます。この設定をオフにすると、先程のものすべてが描画されなくなり、空には各ディメンションごとのデフォルトの色のみが描画されます。
+options.smooth_lighting.description=明かりの表現をなめらかにするかを切り替えます。この設定をオフにすると、ブロックごとに明かりが描画され、カクカクした光になります。
+options.graphicsMode.simple.description=シンプルモードは、透明な葉っぱ、雲など画質を低下させ、パフォーマンスを向上させます。	#
+options.graphicsMode.fancy.description=描画優先モードは、透明な葉っぱ、透明な雲など画質を向上させます。	#
+options.graphicsMode.deferred.description=ディファードモードは、リアルな光源処理、鮮やかな色、水の反射、エミッシブテクスチャをレイトレーシングなしで有効化します。	#
+options.graphicsMode.rayTraced.description=レイトレースモードは、最高の画質を体験できます。リアルな光源処理、鮮やかな色、水の反射、エミッシブテクスチャを有効化します。レイトレーシング対応のデバイスが必要です。	#
+options.fov.toggle.description=ダッシュ時、速度上昇や低下の効果を受けたときなどに視野角を広くなったり狭くなったり、ゲームに合わせたダイナミックな視野角の有無を切り替えます。
+options.guiScale.description=GUIの大きさを変更します。HUDの大きさも変更されます。
+options.gui.accessibility.scaling.description=GUIの大きさをもっと大きくすることができます。アクセシビリティの一貫です。
+options.uiprofile.description=UIのスタイルをクラシックまたはポケット間で切り替えます。クラシックはJavaのような見た目で、ポケットはアイテムスロットが大きく、画面のデザインも維新されていて、タッチ勢向けのUIになっています。
+options.raytracing.description=レイトレーシングの有効/無効を切り替えます。
+options.upscaling.description=GeForce RTX グラフィックボード使用時なおかつNVIDIA DLSS 2.0を有効時のフレームレートを向上させます。
+options.raytracing.renderDistance.description="レイトレーシング"がオンのとき、それがどのくらいの距離まで有効かを変更します。
+options.renderDistance.description=一度にどのぐらいのチャンクを表示させるかを変更します。この設定は、一部透明になったは木の葉、作物、アニメーションテクスチャにも影響があります。
+options.maxFramerate.description=FPSの制限値を変更します。制限するFPSを使用しているモニターの倍数に指定すると処理能力を節約することができます。
+options.msaa.description=アンチエイジングの細かさを変更します。この設定は、ギザギザした線などをなめらかにします。
+options.texelAA.description=テクスチャのピクセルのアンチエイジングを有効にします。	#
+options.vsync.description=最大FPSをモニターのリフレッシュレートに合わせます。オフやアダプティブにしているとモニターのリフレッシュレートより高いFPSがでますが、全体的な処理速度に悪い影響がでます。	#
+
+pauseScreen.thirdPartyWorld=特集サーバー	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=上のタブ	#
+playscreen.navigateDown=下のタブ	#
+playscreen.joinRecentExternalServer=直近の外部サーバーに入る	#
+playscreen.lastPlayed=最後のセーブ:	#
+playscreen.loading=ロード中...	#
+playscreen.motd=説明	#
+playscreen.pinging=Ping中...	#
+playscreen.playButton=プレイ!	#
+playscreen.projectsearch.placeholdertext=プロジェクトを検索... [大文字小文字を区別]	#
+playscreen.recentlyPlayed=直近のプレイ	#
+playscreen.showWorldFolderName=ワールドのフォルダ名を表示 (試験的)	#
+playscreen.worldFolderName.undefined=(未設定 ;-;)	#
+playscreen.worldFolderName.unknown=(不明なフォルダ)	#
+playscreen.worldsFound=個のワールドが見つかりました	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§c注意:§r パフォーマンスの問題とコードの制限のため、検索は直近のワールドの§l§e50§r個のみを可能としています。ご不便をお掛けし申し訳ございません。	#
+playscreen.worldsearch.placeholdertext=お気に入りのワールドを検索... [大文字小文字を区別]	#
+playscreen.worldsearch.resultmessage_before=検索結果: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldSize=ワールドの容量:	#
+playscreen.warning.forceautoplace.title=クイック移動を固定する際の注意	#
+playscreen.warning.forceautoplace.body=クイック移動の固定をサーバーで使うことはリスクがあります。特に特集サーバーではあまり悪用しないでください。	#
+
+progressScreen.hiveNetherGlitch.title=あああああ!!!!もう!!!!! またネザーバグかよ!	#
+progressScreen.hiveNetherGlitch.body=できることは? 普通に...入れるのを待つか、再起動する、もしくはWindowsなら "リストアダウン" を使いましょう。 "最小化" じゃないですよ!これで画面をすぐに閉じることができます!	#
+
+resourcePack.packSearchPlaceHolderText.global=グローバルリソースを検索...	#
+resourcePack.packSearchPlaceHolderText.world_resource=リソースパックを検索...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=ビヘイベアーパックを検索...	#
+resourcePack.showNotDownloaded=未ダウンロードを表示	#
+resourcePack.tyelUIWarningMessage=グローバルリソースでTy-el UIが有効の場合、ワールドリソースパックの設定で "参加にはリソースパックの受け入れが必要" をオンになっている時以外は、ワールドリソースパックでTy-el UIを有効にしない方が、HUDのバグや予期せぬエラーを防ぐことができます。	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=Ty-el UIの /ui/_global_variables.json を読み込んでいる際に問題が発生しました。ファイルの構文を確認し、もう一度やり直してください。	#
+
+review.item.post.unowned=評価するにはダウンロードしてください	#
+
+screenshot.saveLocation=スクリーンショットの保存場所:	#
+screenshot.showSaveLocation=スクリーンショットの保存場所を開く	#
+
+screenLoading.tooLongTooltip=ロードが長引く場合はゲームを再起動してください。	#
+
+serverform.searchPlaceHolderText=フィルター検索... [大文字小文字、ひらがなカタカナ漢字を区別してください!]	#
+serverform.searchDisclaimer.tooltip=このフォーム画面では、頻繁に使用されるコンテンツを検索しないことに注意してください。例: §o"装備するものを選択", "最後に見たもの" など	#
+
+soundCategory.ambient.description=環境音の音量 (水の中, ネザーもしくは洞窟の音) 水の中に入る/出る音や、花火の音もこれに分類されます。	#
+soundCategory.block.description=ブロックの音量 (金床, チェスト, ドアなど)	#
+soundCategory.hostile.description=敵対もしくは中立MOBの音量 (ゾンビ, クリーパー, クモなど)	#
+soundCategory.main.description=すべての音の音量 (BGMと効果音の両方)	#
+soundCategory.music.description=ゲーム内BGMの音量 (ゲーム中にランダムに流れます)	#
+soundCategory.neutral.description=友好MOBの音量 (ニワトリ, 牛, ブタ, 村人など)	#
+soundCategory.player.description=プレイヤーの音量 (アイテム取得時の音, ダメージ音, 食事中の音など)	#
+soundCategory.record.description=ジュークボックスと音符ブロックの音量	#
+soundCategory.sound.description=ゲーム内の音量 (BGMを除く)	#
+soundCategory.weather.description=雨と雷の音量	#
+soundCategory.texttospeech.description=テキスト読み上げの音量 (テキスト読み上げはチャットとUIにのみ対応。設定/アクセシビリティで有効にすることができます)	#
+
+storageManager.floatingFileStorageSelector.tooltip=ファイルの保存場所を変えたい? ここをクリック! (Ty-el UIを使用している時はおすすめしません!)	#
+
+store.coin.bundle=コインバンドル	#
+store.cost=料金:	#
+store.redeem=無料で入手!	#
+store.free.uppercase=§l§o無料!	#
+
+store.confirmPurchase.title=購入を確定	#
+store.confirmPurchase.description=本当に以下のアイテムを購入してよろしいですか?:	#
+store.confirmPurchase.description_completed=処理が完了しました。この画面を閉じて引き続きお買い物をお楽しみください。	#
+store.confirmPurchase.tooltip=購入ボタンを押すと確認画面が表示されるので誤って購入することを防ぐことができます。	#
+store.proceedToPurchase=承認して購入手続きへ進む	#
+
+## how it will be shown in game for "afterPurchase" and "notEnough": "<translation>: <balance>"
+store.confirmPurchase.walletBalance.afterPurchase.minecoins=このアイテム購入後のMinecoin残高:	#
+store.confirmPurchase.walletBalance.afterPurchase.tokens=このアイテム購入後のトークン残高:	#
+store.confirmPurchase.walletBalance.notEnough.minecoins=Minecoinが不足しています。 "+" アイコンからMinecoinを購入するか、このアイテムを直接購入することもできます。不足しているMinecoin数:	#
+store.confirmPurchase.walletBalance.notEnough.tokens=トークンが不足しています。 "+" アイコンからトークンを購入するか、このアイテムを直接購入することもできます。不足しているトークン数:	#
+
+dr.rarity.=エラー フィルタをクリアしてください	#
+store.search.filter.=エラー フィルタをクリアしてください	#
+
+store.search.filter.highlight.title=ハイライト	#
+store.search.filter.minecoinSpecials=Minecoin/特殊	#
+store.search.filter.newOffers=新製品	#
+store.search.filter.redeemable=引き換え可能	#
+store.search.filter.collectible=実績解除によって獲得	#
+store.search.filter.paid=有料	#
+
+trade.tradeAll=すべて取引	#
+trade.maxLevelTag=最大	#
+
+tyelHive.xpCalculator.disclaimerLabel=XPチャートなどの情報は hivetools.app から入手しています。Hive Gamesはこれに関わっていません。	#
+tyelHive.xpCalculator.hideButtonLabel=隠す	#
+tyelHive.xpCalculator.maxLevel=最大レベル	#
+tyelHive.xpCalculator.increment=レベルごとの必要経験値数:	#
+tyelHive.xpCalculator.incrementCap=最大 ## ~= Maximum	#
+tyelHive.xpCalculator.title=Hive XP計算システム モード切替	#
+tyelHive.xpCalculator.pageIdentifier=ページ	#
+tyelHive.xpCalculator.lastUpdated=最終更新:	#
+
+tyelAbout.about=Ty-el UI について	#
+tyelAbout.customAvailable=カスタム画面が利用可能です!	#
+tyelAbout.customAvailable.zeqa=ZeqaのルールとTy-el UI について	#
+tyelAbout.minGameVerRequired=最低Minecraftバージョン:	#
+tyelAbout.openAboutTyelUITooltip.openText=クリックしてTy-el UIについてを開く (現在:カスタムスクリーン)	#
+tyelAbout.openAboutTyelUITooltip.closeText=クリックしてカスタムスクリーンに戻る (現在:Ty-el UIについて)	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Ty-el UI トラブルシューティングモード	#
+tyelAbout.troubleshootingMode.deactivatePack.desc="Ty-el UIを無効化" ボタンでこのパックをすぐに無効化することができ、"設定を閉じる" ボタンを押して完全に無効化できます。この操作が終わったあとに、/ui/_global_variables.json内の "$tyel_ui_troubleshooting_mode" を §cfalse§r に戻す必要があります。	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=/ui/_global_variables.json が正常に読み込まれなかったため、このボタンが表示されています。ファイルの構文を確認してもう一度お試しください。 もし Ty-el UIも無効化したいなら、"Ty-el UIを無効化" ボタンでこのパックをすぐに無効化することができ、"設定を閉じる" ボタンを押して完全に無効化できます。	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Ty-el UIを無効化	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=設定を閉じる	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=ゲーム中にTy-el UIを無効化することはできません。	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=トラブルシューティングモード	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Ty-el UI トラブルシューティングモード	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Global Variables の読み込みに失敗しました)	#
+
+tyelAbout.expRequiredDialog.openSettings=設定を開く	#
+tyelAbout.expRequiredDialog.title=Ty-el UI: 試験的フラグが必要です	#
+tyelAbout.expRequiredDialog.header=このバージョンでのTy-el UIの使用を続ける前に、試験的フラグを変更する必要があります。手動で行ってください。§c(自動化できなかったんですすみません許して)§r:	#
+tyelAbout.expRequiredDialog.bodyParagraph1=Ty-el UIのフォルダ(いじってなかったら"TheTy-el's")内にある "/ui/_global_variables.json" の必要とされるすべてのフラグを変更してください。その後Minecraftを再起動し、パックを再読み込みさせてください。理由は以下の通りです:	#
+tyelAbout.expRequiredDialog.bodyParagraph2=また、設定/グローバルリソースからTy-el UIを無効化し、次のアップデートが来るまで待つ選択肢もあります。 ;-;	#
+tyelAbout.expRequiredDialog.gameVersionHeader=現在のMinecraftバージョン:	#
+
+## DO NOT TRANSLATE PACK NAME
+tyelAbout.creatorTitle=製作者:	#
+tyelAbout.aboutLabel1=The Ty-el's UI Pack (略:Ty-el UI) は、バニラ(デフォルトの状態)をよりよくするパックであり、バニラにはない機能や調整、新しいクリック音などを追加し、でもバニラでの感覚を保ち、マイクライフをもっとよくします。外部のテクスチャパックやマーケットプレイスのテクスチャパック、軽量化などのパフォーマンス向上リソースパックとも互換性があります。	#
+tyelAbout.aboutLabel2=§l§b注意事項§r: §oこのパックは単なるリソースパックであり、クライアントではありません!§r	#
+tyelAbout.aboutLabel3=対応している言語:	#
+## tyelAbout.aboutLabel4 is only language names
+tyelAbout.aboutLabel5=とTiếng Việt (Việt Nam) (The Ty-el's Vietnamese Language Pack が必要です。MCPEDL.com/CurseForgeで配布されています)他にも様々な言語に対応する予定です。	#
+tyelAbout.aboutLabel6=もしバグを見つけた時やこのパックについてのフィードバックを送りたい場合は@tlgm2308(Twitter)まで。	#
+tyelAbout.translationHelp=人手が足りていません! このパックを対応している言語以外で翻訳にご協力してくださる方を募集中です。Twitterで連絡をお願いします。	#
+
+tyelAbout.features=追加された機能	#
+tyelAbout.featuresTitleFeatures=§e主な機能	#
+tyelAbout.featuresLabel_N_1=- ほとんどの画面を新しいOre UI デザインに合わせて再設計し、統合版の次期UIアップデートに対応しつつ、独自のアレンジも追加しました。	#
+tyelAbout.featuresLabel_N_2=- HUD画面に多数の新機能を追加:	#
+tyelAbout.featuresLabel_N_2.1=§7  + チャンク座標・境界 現在のチャンク位置と、そのチャンク内のブロック座標を表示します。	#
+tyelAbout.featuresLabel_N_2.2=§7  + 正確なXP進行度 次のレベルに必要なXPを%表記の曖昧さを解消し、正確に表示します。	#
+tyelAbout.featuresLabel_N_2.3=§7  + アイテム耐久値ビューア ホットバーで選択中のアイテムの耐久値を数値で確認できます。	#
+tyelAbout.featuresLabel_N_2.4=§7  + ホットバーでアイテムを選択中、インベントリ内にある同じアイテムの合計の数を表示します。	#
+tyelAbout.featuresLabel_N_2.5=§7  + 空きスロットカウンター インベントリが満杯かどうかを確認できます。	#
+tyelAbout.featuresLabel_N_2.6=§7  + ユーティリティーアーティファクト - コンパス、ロードストーンコンパス、時計、リカバリーコンパスのアイコンをHUD上に表示します。表示させるには、インベントリに対応したアイテムを所持する必要があります。(例えば、HUD上に時計を表示させたい場合はインベントリに時計を入れておく必要があります) ロードストーンコンパスは最大3つ同時に表示できます。トラッキングIDでどれがどのコンパスかを識別しています。	#
+tyelAbout.featuresLabel_N_2.7=§7  + TABメニュー/HUDメニュー を追加しました。HUDの特定機能を切り替えできます。TABメニュー(キーボード操作時)を表示するには、TABキーを長押しし、数字キーで機能を切り替えできます。HUDメニュー(タッチ操作時)を表示するには、画面上部の専用ボタンを押してメニューを表示することができます。	#
+tyelAbout.featuresLabel_N_2.8=§7  + プレイヤーリストを追加しました。マルチプレイ中のプレイヤー確認や有効化されていればスコアボードスコアを表示することができます。TABキー長押し(キーボード操作時)もしくはHUDメニューの"プレイヤーリストを表示"ボタンで表示(タッチ操作時)できます。	#
+tyelAbout.featuresLabel_N_3=- インベントリ/入れ物画面に "収納ツールボックス" を追加しました。インベントリ管理に役立つ機能を搭載しています:	#
+tyelAbout.featuresLabel_N_3.1=§7  + "クイック移動" ボタン この機能を使用するには、インベントリまたは対応した入れ物でアイテムを選択し、 "入れ物へクイック移動" または "インベントリへクイック移動" で同じアイテムを一括移動することができます。	#
+tyelAbout.featuresLabel_N_3.2=§7  + "ホットバー/インベントリクリア" ボタン このボタンはホットバーやインベントリのアイテムをきれいサッパリクリアすることができます。誤操作防止のため、小さい矢印ボタンの中に隠されています。インベントリでのみ使用可能です。	#
+tyelAbout.featuresLabel_N_3.3=§7  + "1つ/すべてドロップ" ボタン 選択したアイテムを1つもしくはスタックでドロップすることができます。	#
+tyelAbout.featuresLabel_N_3.4=§7  + "1つ/すべて破壊" ボタン 選択したアイテムを1つもしくはスタックで削除することができます。クリエイティブ中のインベントリ内でのみ使用可能です。	#
+tyelAbout.featuresLabel_N_4=- コンテナモードスイッチャーをほとんどの入れ物画面に追加しました!タッチ操作向けにアイテム管理を高速化する機能が盛りだくさんです。	#
+tyelAbout.featuresLabel_N_4.1=§7使用するには、モード(通常/クイック移動/ドロップ/破壊)を選択し、入れ物またはインベントリ内のアイテムをタップするだけです。	#
+tyelAbout.featuresLabel_N_5=- クラフト画面/石切台画面に "クイッククラフト" ボタンを追加しました。クラフトが以前より早く、簡単になります。 "すべてクラフト" ボタンにカーソルを合わせると、作成後のアイテム数と残りの材料数を表示します。そして、 "すべて取引" ボタンも追加しました。アイテムをまとめて取引できるようになります!	#
+tyelAbout.featuresLabel_N_6=- 醸造台画面に "醸造ガイドUI" を追加:	#
+tyelAbout.featuresLabel_N_6.1=§7  + Minecraftにあるすべてのポーションのレシピを確認できます!	#
+tyelAbout.featuresLabel_N_6.2=§7  + 検索機能もあり、作りたいポーションのレシピを探すこともできます!	#
+tyelAbout.featuresLabel_N_6.3=§7  + 教育版の化学薬品にも対応しています。("教育版" が有効なこと、_global_variables.json ファイルの "$brewing_guide__show_chemistry_potions_tab" が有効になっていることが必要です)	#
+tyelAbout.featuresLabel_N_6.4=§7  + "フォールバックモード" も搭載しており、将来のアップデートでアイテムID AUXが壊れてしまったときや、アドオンが有効になっているときに使用します。	#
+tyelAbout.featuresLabel_N_7=- チェスト画面に "アイテムハイライト機能" を追加しました。整理整頓がされていないチェストで特定のアイテムを探すのに役立ちます!(ひらがな、カタカナ、漢字を区別してください!)	#
+tyelAbout.featuresLabel_N_8=- チャット画面に自動補完ボタンと、やり直す/元に戻すボタンを追加しました。	#
+tyelAbout.featuresLabel_N_9=- チャットのコマンド/メンションの補完速度を向上させました!自動補完の候補をタップすると、即座にコマンドを入力またはメンションをすることができます。	#
+tyelAbout.featuresLabel_N_10=- プレイ画面/設定画面でワールド/パックを検索できるようにしました。探し物をする時に便利です。	#
+tyelAbout.featuresLabel_N_11=- プレイ画面に "最近プレイしたワールド" 機能を追加しました。最も最近プレイもしくは保存したワールドがワールドリストの最上部に表示されます。リピしているワールドがあれば役に立つことでしょう!	#
+tyelAbout.featuresLabel_N_12=- クイック設定を追加: 設定に行き、右上の ≡ ボタンを押すと開きます。カメラ視点/明るさ/FOVなどを即座に変更できます。そして、設定中に周りの状況を見れるように完全に透明な背景にしてあります。	#
+tyelAbout.featuresLabel_N_13=- マーケットプレイスPDP画面とペルソナ画面に購入確認画面を追加しました。うっかり操作による金ドブをなくせます!(無料アイテムには影響しません)	#
+
+tyelAbout.featuresTitleParity=§eその他の機能、Javaパリティ、バニラの修正	#
+tyelAbout.featuresLabelParity_N_1=- 新しいクリック音(Ore UIの音と同じような音です)	#
+tyelAbout.featuresLabelParity_N_2=- チェスト画面とレッドストーン画面(ホッパー、ディスペンサー、ドロッパー)に人形表示を追加しました。これにより、何の装備を着ているかが一瞬で確認できるようになります。	#
+tyelAbout.featuresLabelParity_N_3=- アイテムを長押しすると、 "指定した数のアイテムを取る" インジケーターがアイテムスロットの上に表示されます。何個のアイテムが移動・使用されるかが分かりやすくなります。	#
+tyelAbout.featuresLabelParity_N_4=- より良いサーバー経験?? 一部の人気サーバー用にポーズ画面にサーバー情報パネルを追加しました。ここにはサーバーに関する便利な情報、例えばサーバーの公式ウェブサイトのリンクなどが見れるようになっています!	#
+tyelAbout.featuresLabelParity_N_5=- クリエイティブ/レシピ本 ボタンを画面の左側に移動させました。Java版のような見た目にしました。	#
+tyelAbout.featuresLabelParity_N_6=- Javaパリティ: 金床や製図台でどのアイテムも名前を変更できるようにしました。そして、文字数制限を30文字から、50文字に増やしました!	#
+tyelAbout.featuresLabelParity_N_7=- Javaパリティ: 言語設定をゲーム内で変更できるようになりました!	#
+tyelAbout.featuresLabelParity_N_8=- 設定/ビデオ にVSync設定ボタンを復活させました。	#
+tyelAbout.featuresLabelParity_N_9=- チャット画面に すべてのチャットをミュート ボタンを追加しました。	#
+tyelAbout.featuresLabelParity_N_10=- チャット画面に 一番下までスクロール ボタンを追加しました。これで、長い長いスクロールをする必要がなくなります!	#
+tyelAbout.featuresLabelParity_N_11=- コマンドブロック画面に "秒単位の遅延"(ティックではありません) 表示を追加し、秒単位で次のコマンドが実行されるまでの時間を知れるようになりました!(テキストのフォーマット形式もスッキリしました!)	#
+tyelAbout.featuresLabelParity_N_12=- ワールドの退出確認画面を追加しました。間違えて抜けてしまうことがなくなります。	#
+tyelAbout.featuresLabelParity_N_13=- 更衣室画面にスキンタイプの変更ボタンを追加しました。これは、カスタムスキンを使用しているときにSteve(通常)とAlex(スリム)の2種類スキンタイプを簡単に、再インポートなしで変更できるようになります!	#
+tyelAbout.featuresLabelParity_N_14=- HUD画面のタイトルとサブタイトルを同じフォントサイズにしました。これで画面外に行くことがなくなります!ホットバーのアイテムカウンターやXPバーがクリエイティブでも表示されるようになります!	#
+tyelAbout.featuresLabelParity_N_15=- サーバー限定のQOL向上新機能:	#
+tyelAbout.featuresLabelParity_N_15.1=§7  + "The Hive" 限定: Hive XP計算システム 選択したゲームのXPのトラッキングをできるようにします。有効にするには、キーボード操作時は TAB + 3 を押します。タッチ操作時は "HIVE XP計算システムを表示" というボタンをタップします。表示した後、キーボード操作時は 1 ~ 6の数字キーでゲームを選択、8か9でページを切り替え、7で無効化することができます。TABもしくはESCでメニューを閉じることができます。タッチ操作時は、これまた非常に親切な設計になっており、ボタンタップするだけでOKです。	#
+tyelAbout.featuresLabelParity_N_15.2=§7  + "CubeCraft Games" 限定: Server-Wide XPカウンターを追加しました。サーバーのロビーにいる時に表示されます。"Skyblock" では、バニラの経験値システムを使用します。	#
+tyelAbout.featuresLabelParity_N_16=- UIアニメーションの改善やその他の細かい改良を施しました!	#
+
+tyelAbout.subpackFeatures=サブパックの機能	#
+tyelAbout.subpackFeaturesInfo=§o設定/グローバルリソース からサブパックの設定を変えることができます。	#
+tyelAbout.subpackFeatures.current=§o§7サブパック一覧:	#
+tyelAbout.subpackFeatures.default="Default"(デフォルト)	#
+tyelAbout.subpackFeaturesLabel.default=このサブパックに含まれるものは全て既定のものです。また、/ui/_global_variables.json から変数を変え、自分好みにカスタマイズすることができます。	#
+tyelAbout.subpackFeatures.defaultVanilla="Default Vanilla"(デフォルトバニラ)	#
+tyelAbout.subpackFeaturesLabel.defaultVanilla=もしポップアップダイアログや新しいプレイ画面が気に食わなかった時に使ってください。	#
+tyelAbout.subpackFeatures.performance="Performance"(パフォーマンス)	#
+tyelAbout.subpackFeaturesLabel.performance=このサブパックは入れ物画面のモード切り替え、進行状況インジケーターとアイテム取得インジケーターの機能を追加し、入れ物画面にクイック移動のトグルを復活させました。
+tyelAbout.subpackFeatures.ultra="ULTRA MODE"(ウルトラモード)	#
+tyelAbout.subpackFeaturesLabel.ultra=インベントリのそれぞれのアイテムに耐久値を表示するラベルを追加します。進行状況を詳しく知ることができます。 §cパフォーマンスに影響を与えます! 低スペックデバイスでは推奨されません!!!§r	#
+
+tyelAbout.compatibilityMode=互換性モード	#
+tyelAbout.compatibilityModeInfo=互換性モードについて	#
+tyelAbout.compatibilityModeLabelInfo1=これは、互換性モードに対応したパックを使用している際に、Ty-el UIからいくつかのエラーを修正するものです。これを有効にするには、/ui/_global_variables.json を開き、ファイルの一番下までスクロールして、互換性モードの変数値を§2true§rに設定するだけです。	#
+tyelAbout.compatibilityModeLabelInfo2=これらのパックは、グローバルリソース内の優先順位がTy-el UIの上にある場合、デフォルトで変数値がtrueに設定されている可能性があります。そのため、手動で変数値を変更する必要はありません。もし、あなたのパックをこのパックに反映させたい場合は、お気軽にご連絡ください。	#
+tyelAbout.compatibilityModeLabelInfo3=ここでは、互換性モードをサポートしているすべてのパックが有効になっているかを変数(§2true§rまたは§cfalse§r)のように色で表示しています。	#
+tyelAbout.compatibilitymodelabel.automated=自動	#
+
+tyelAbout.compatibilityModeLabel.chainsketchUTM.name=Chainsketch - Ultimate Thumbnail Maker	#
+tyelAbout.compatibilityModeLabel.chainsketchUTM.desc=Ty-el UIのHUDを隠すボタンとその他時計やコンパスなどのHUDを削除します。これは "$use_hud_utilities" をtrueにしていても削除されます。	#
+
+tyelAbout.compatibilityModeLabel.modulesPlus.name=Chainsketch - Modules+	#
+tyelAbout.compatibilityModeLabel.modulesPlus.desc=Ty-el UI's HUDの削除をします。この削除には、メインハンドスロットインジケーターを含みます。(すでにModules+で搭載されているためです) そして、スコアボードのサイドバーパネルを少し下に移動させました。これは "$use_hud_utilities" の設定を上書きします。	#
+
+tyelAbout.compatibilityModeLabel.utilityUI.name=HJN - Utility UI (ベータ)	#
+tyelAbout.compatibilityModeLabel.utilityUI.desc=Ty-el UIのメインハンドスロットインジケーターと、HUDユーティリティとHUD非表示ボタンを削除します。	#
+
+tyelAbout.compatibilityModeLabel.zeqa.name=Zeqa Server Resource Pack	#
+tyelAbout.compatibilityModeLabel.zeqa.desc=Ty-el UI's HUDユーティリティを削除します。しかしメインハンドスロットインジケーターは削除されません。これは "$use_hud_utilities" のメインハンドスロットインジケーターに関する設定を上書きしません。ポーズメニューにある "カスタムスクリーンが利用可能です!" と書かれたツールチップを "ZeqaのルールとTy-el UI について" に変更します。	#
+
+tyelAbout.compatibilityModeLabel.hive_bedrock.name=The Hive (特集サーバー)	#
+tyelAbout.compatibilityModeLabel.hive_bedrock.desc=§eHive XP計算システム§r キーボードを使用している時に "TAB + 3" もしくはタップ操作時にHUDメニューから表示することができます。この機能は制限により自動化されていません。	#
+
+tyelAbout.compatibilityModeLabel.cubecraft_bedrock.name=CubeCraft (特集サーバー)	#
+tyelAbout.compatibilityModeLabel.cubecraft_bedrock.desc=§9Server-Wide XPカウンター§r サーバーのロビーにいる時のみ表示されます。"Skyblock" では、バニラの経験値システムを使用します。	#
+
+tyelAbout.credits=クレジット	#
+tyelAbout.creditsTitle=スペシャルサンクス...	#
+tyelAbout.creditsTitleTranslators=翻訳者	#
+
+tyelAbout.usage=利用規約	#
+tyelAbout.usageLabel1=あなたが§l§aできる§rこと:	#
+tyelAbout.usageLabel2=- 概要欄にこのパックの正しいクレジットを載せて、このパックに関するコンテンツを作成すること	#
+tyelAbout.usageLabel3=- /ui/_global_variables.json のカスタマイズ機能でパックをカスタマイズし、それを共有すること	#
+tyelAbout.usageLabel4=- パノラマもしくはTy-elテーマを作ること(/ui/_tyel_theme_template.json にやり方が書かれています(英語))	#
+tyelAbout.usageLabel5=- 個人使用の目的でパックをカスタマイズすること	#
+
+tyelAbout.usageLabel6=あなたが§l§cできない§rこと:	#
+tyelAbout.usageLabel7=- このパックのコードを自分のものだと言い張ること 頑張って作ったものなのでそんなことはしないようにお願いします ;-;	#
+tyelAbout.usageLabel8=- 改造したパックを一般公開すること	#
+tyelAbout.usageLabel9=- 許可なしに他のアプリもしくはサイトにこのパックを二次配布すること	#
+tyelAbout.usageLabel10=- 正しいクレジットを書かずにこのパックに関するコンテンツを作ること	#
+tyelAbout.usageLabel11=- このパックをサードパーティのプロジェクトで使用すること。代わりに、あなたのプロジェクトがこのパックに互換性があることを記載してください。	#
+
+tyelAbout.validation=UI検証	#
+tyelAbout.validation.errorList=エラー一覧	#
+tyelAbout.validationLabel1="Ty-el UI検証システム" によって検知されたエラーたちはここに表示されます。	#
+tyelAbout.validationLabel2=もしここに何かエラーが表示された場合は、このパックを再インストールすることで問題が解消されます。詳しい人は、コンテンツログGUIからエラーに関する情報を探してみてください。	#
+tyelAbout.validation.errorCodeTitle=エラーコード:	#
+tyelAbout.validation.detailsTitle=詳細:	#
+tyelAbout.validation.error.assetNotFound=次の名前を含むファイルを読み込むことはできません:	#
+tyelAbout.validation.error.variableValueInvalid=変数の値が見つかりません:	#
+tyelAbout.validation.error.variableValueInvalid.anchorString=[指定された値のみ] 以下の値のみ使用できます: "top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"	#
+
+tyelAbout.changelog=アップデート内容	#
+tyelAbout.changelog.newfeatures=§b新機能	#
+tyelAbout.changelog.changes=§a変更点	#
+tyelAbout.changelog.fixes=§e修正点	#
+tyelAbout.changelog.knownissues=§6既知の問題	#
+tyelAbout.changelog.removed=§c削除された機能	#
+
+tyelAbout.changelog100=v1.0.0	#
+tyelAbout.changelog100.title=INITIAL RELEASE	#
+tyelAbout.changelog100.label1=- パック公開	#
+
+tyelAbout.changelog101=v1.0.1	#
+tyelAbout.changelog101.title=§aFASTER LOOTERS UPDATE	#
+tyelAbout.changelog101.label1=- - チェスト関連とレッドストーン関連画面(ホッパー、ディスペンサー、ドロッパー)にすばやく取るボタンが追加されました。	#
+tyelAbout.changelog101.label2=- ドロップと破壊ボタンにホバーテキストを追加しました。	#
+tyelAbout.changelog101.label3=- アイテム名テキストとアクションバータイトルにテキストシャドウを追加しました。	#
+tyelAbout.changelog101.label4=- スコアボードのサイドバー表示のとき、オブジェクトの名前の下の背景がより暗くなるようになりました。Javaと一緒ですね。	#
+tyelAbout.changelog101.label5=- パックのカスタマイズ用に_global_variables.jsonに変数を追加:	#
+tyelAbout.changelog101.label6=§7  + "$screen_background_alpha" でゲーム内(インベントリ画面、ポーズ画面...)の背景の値(デフォルトは0.4)	#
+tyelAbout.changelog101.label7=§7  + "$item_name_text_background_alpha" でアイテム名のテキスト背景の値(0にするとJavaと同じになります)	#
+tyelAbout.changelog101.label8=§7  + "$actionbar_background_alpha" でアクションバー背景の値	#
+tyelAbout.changelog101.label9=§7  + "$item_text_one_line_layout" でアイテム名に1行レイアウトモードを使用の有効/無効切り替え(エンチャントの表示を隠すために使用します)	#
+tyelAbout.changelog101.label10=§7  + "$use_quick_craft_button" でクイッククラフトボタンの有効/無効切り替え	#
+tyelAbout.changelog101.label11=- チャットの自動入力ボタンが正しく作動しなかったバグを修正	#
+tyelAbout.changelog101.label12=- ポーズ情報パネルのパディングが正しく行われないバグを修正	#
+tyelAbout.changelog101.label13=- 遊び方画面のヘッダーラベルが非常に長くなり、切れてしまうことがあるのを修正	#
+tyelAbout.changelog101.label14=- プレイ画面のキーボードヘルパーの記述オフセットが高すぎるのを修正	#
+tyelAbout.changelog101.label15=- 一部の画面でボタンを押したときの音が正しく再生されないのを修正	#
+tyelAbout.changelog101.label16=- パック情報画面でカスタムパノラマが表示されないのを修正(プレゲーム時のみ)	#
+tyelAbout.changelog101.label17=- スクリーンショットの保存場所の表示を変更し、より多くの端末で正しく表示されるようになりました。	#
+tyelAbout.changelog101.label18=- 少しだけ背景を修正しました。	#
+
+tyelAbout.changelog102=v1.0.2	#
+tyelAbout.changelog102.title=§eSAD GUY LANGUAGE UPDATE	#
+tyelAbout.changelog102.label0=§aバニラのバグ?を修正:	#
+tyelAbout.changelog102.label0a=§a- クラフト画面で、クラフト結果の枠がズレていたのを修正 (4ピクセル程変更) §o"バグ発見者"§r§a Phoenix SC (@phnixhamsta)	#
+tyelAbout.changelog102.label1=- このパックが複数の言語に対応 (いくつかは後々追加されます):	#
+## tyelAbout.changelog102.label2 for language names
+tyelAbout.changelog102.label3=(@nattsuiy (Twitter) がこのパックの日本語訳をしました)	#
+tyelAbout.changelog102.label4=- インベントリモード切り替えボタンを追加し、防具やオフハンドアイテムの装備、インベントリ内からホットバーへの移動やその逆も然り、すべてが安易にできるようになりました。	#
+tyelAbout.changelog102.label5=- 人形表示をチェスト関連とレッドストーン関連画面(ホッパー、ディスペンサー、ドロッパー)に追加しました。これにより今装備している防具やアイテムをより簡単に早く把握できるようになりました。	#
+tyelAbout.changelog102.label6=- サーバーのダイアログのデザインを変更しました。The Hiveの画面を参考にしています。これは好き嫌いの個人差が激しいと思います。	#
+tyelAbout.changelog102.label7=- クイック設定にRTX関連の設定を追加しました。	#
+tyelAbout.changelog102.label8=- ホットバー表示切り替えボタンを追加し、画面をスッキリさせることができるようになりました。(タッチユーザーの方向け)	#
+tyelAbout.changelog102.label9=- ポーズ画面に情報パネルの切り替えボタンを追加し、プレイヤー一覧、スコアボードの表示を切り替えられるようになりました。画面がスッキリして几帳面な方も大喜び。	#
+tyelAbout.changelog102.label10=- ロード画面のヒントの文字が2行以上になるようにしました。	#
+tyelAbout.changelog102.label11=- ゲーム中の時のみ、ロード画面のヒントが画面中央に来るように変更しました。	#
+tyelAbout.changelog102.label12=- ロード画面のキャンセルボタンが右下へ移動しました。	#
+tyelAbout.changelog102.label13=- カスタムパノラマのオン/オフが切り替えれるようになりました。(デフォルトはオフ)また、UVアニメーションにも対応しました。(知っている人のみ使うことを推奨します)	#
+tyelAbout.changelog102.label14=- フィード画面とスクリーンショット選択画面をフルスクリーンに変更しました。う〜ん...どうだろうな...	#
+tyelAbout.changelog102.label15=- 新しい変数を _global_variables.json にパックの設定をするために追加:	#
+tyelAbout.changelog102.label16=§7  + "$use_container_toggles" ですばやく取るボタンとインベントリモードボタンの有効/無効切り替え (デフォルトは有効)	#
+tyelAbout.changelog102.label17=§7  + "$scoreboard_sidebar_anchor_pocket" でポケットUIでのスコアボードを表示する場所の変更	#
+tyelAbout.changelog102.label18=§7  + "$scoreboard_sidebar_offset_pocket" でポケットUIでのスコアボードを表示する場所の微調整	#
+tyelAbout.changelog102.label19=§7  + "$utility_anchor_pocket" でポケットUIでのコンパスや時計などの表示する場所を変更	#
+tyelAbout.changelog102.label20=§7  + "$utility_offset_pocket" でポケットUIでのコンパスや時計などを表示する場所の微調整	#
+tyelAbout.changelog102.label21=§7  + "$use_hud_utilities" でHUDのコンパスと時計の有効/無効切り替え (デフォルトは有効)	#
+tyelAbout.changelog102.label22=- 一部変数の名前が _global_variables.json 内で変更されました:	#
+tyelAbout.changelog102.label23=§7  + "$item_name_text_background_alpha" -> "$item_name_text_bg_alpha"	#
+tyelAbout.changelog102.label24=§7  + "$actionbar_background_alpha" -> "$actionbar_bg_alpha"	#
+tyelAbout.changelog102.label25=-  タイトル画面のサインインボタンのIDを変更しました。(サインインボタンが働かなかったのを修正)	#
+tyelAbout.changelog102.label26=- タイトル画面のUIコードを軽量化しました。	#
+tyelAbout.changelog102.label27=- (バニラの修正) マニフェスト検証画面(パック情報画面)でエラーセクションの背景が一部のデバイスでコンテンツと重なることがあるのを修正しました。(多分MCPE-102555だったかな?)	#
+tyelAbout.changelog102.label28=- ホットバーコントロールボタンがTTS読み上げに対応しました。	#
+tyelAbout.changelog102.label29=- タイトル画面サイドバーのアカウントの管理ボタンがMicrosoftアカウントにサインインしているとき、その上Windowsもしくはモバイル(iOS&Android)のどちらかを使っているときのみ表示されるようになりました。	#
+
+tyelAbout.changelog110=v1.1.0	#
+tyelAbout.changelog110.title=§eORE UI ASPECTS' INDICATION UPDATE	#
+tyelAbout.changelog110.notice1=§dお知らせ: このバージョンから、"すばやく取る" の名称を "クイック移動" に変更します。この変更で元々のすばやく取るの機能は変わっておらず、バニラに合わせ、互換性のための変更です。	#
+tyelAbout.changelog110.notice2=§eベータ版として新しい機能が今回のアップデートで追加されました。アイテムロアビューアです! これにより、スクロールパネルとしてまじでありえんほど大きくて長いアイテムロアを見ることができます。スカイブロックのサーバーでこの機能は活躍します! さらに、アイテムID AUXビューアもアドオン作者向けに追加しました。その他に、(多分)役に立つアイテムのデータ情報もあります。	#
+## NEW FEATURES
+tyelAbout.changelog110.label1=- このパックがもっと色々な言語に対応:	#
+## tyelAbout.changelog110.label2 for language names
+tyelAbout.changelog110.label3=(TentexDev#0807 (duranforreal) (Discord) さんが Turkishの翻訳をしました! @theqwermc (Twitter) さんが Russianの翻訳をしました! そして、@YangTuo_zi (Twitter)、@student_2333 (Twitter) と @mascot_fox8888 (Twitter) さんがChinese (Simplified) の翻訳をしました!)	#
+tyelAbout.changelog110.label4=- Español (España) の翻訳を改善しました。 (@sebasxpert (Twitter) さんが翻訳しました!)	#
+tyelAbout.changelog110.label5=- 3つのサブパックを追加: Default Vanilla、PerformanceとULTRA MODEです。 詳しいことは Ty-el UIについて/サブパック に掲載しています。	#
+tyelAbout.changelog110.label6=- 互換性モードをいくつかのパックに対応しました。詳しくは Ty-el UI について/互換性モード	をご覧下さい。	#
+tyelAbout.changelog110.label7=- Bedrock Editionの次期UIアップデートであるOre UI Aspectsアップデートに向けて、多くの画面でデザインを更新・変更し、ちょっとしたアレンジを加えました。	#
+tyelAbout.changelog110.label8=- プログレスバー(ロード中、経験値、ボスの体力バー、かまどでの燃焼進捗、燃料残量と、醸造台での醸造進捗とブレイズパウダーの残量)の横にパーセンテージが表示されるようになりました。これで、ロードの進行状況、ボスの体力、経験値などを正確に見ることができるようになりました。	#
+tyelAbout.changelog110.label9=- 検索機能を プレイ/世界 画面と、 設定/(グローバルリソース/リソースパック/ビヘイベアーパック/ストレージ) 画面に追加しました。どれも探し物を探すのに役立ってくれるでしょう。(プレイ/世界 での検索はパフォーマンスの問題から、検索可能なワールドを直近の50個までに制限しています ;-;)	#
+tyelAbout.changelog110.label10=- 設定/グローバルリソース画面で、未ダウンロードパックの表示を切り替える機能を追加しました。	#
+tyelAbout.changelog110.label11=- チェスト画面にアイテムハイライターを追加しました。この機能は探しているアイテムを整理されていないチェストの中から探しだすことができます!(ひらがな、カタカナ、感じを区別してください)	#
+tyelAbout.changelog110.label12=- マーケットプレイス画面のヘッダーに、検索ボックスを追加しました。この機能でマーケットプレイスの隅々まで素早く検索できるようになります!	#
+tyelAbout.changelog110.label13=- アイテムスロットを長押しすると、アイテムスロットの上に "移動アイテムの個数" という表示が出現し、移動または使用するアイテムの個数を確認することができます。	#
+tyelAbout.changelog110.label14=- プレイ画面に最近プレイしたワールドのサジェスト機能を追加しました。	#
+tyelAbout.changelog110.label15=- インベントリモード切り替えを入れ物画面に追加しました。	#
+tyelAbout.changelog110.label16=- いくつかの人気のあるサーバーのポーズ画面にサーバー情報パネルを追加しました	#
+tyelAbout.changelog110.label17=- 間違えてワールドを退出するのを防ぐために、退出確認のポップアップが出るようにしました。	#
+tyelAbout.changelog110.label18=- ポーズ画面の "セーブして終了" がサーバーに入っている時のみ "切断" に変わります。 §l§c対応しているサーバーのみです!	#
+tyelAbout.changelog110.label19=- インベントリモード、アイテムをドロップと破壊する機能をポケットUIにも追加しました。	#
+tyelAbout.changelog110.label20=- HUDにメインハンドスロットインジケーターを追加しました。これは、何かを持っている時にそのアイテムがいくらあるか、可能であれば耐久値も表示します。	#
+tyelAbout.changelog110.label21=- サーバーフォーム画面とポップアップダイアログのタイトルを、以下のテキストブロックの先頭から自動的に削除:  "$l"、"$o"、"$0"、"$8"。§o§6注意: $ は "セクション記号" のことです。 §	#
+tyelAbout.changelog110.label22=- チャット画面に、すべてのチャットをミュートするボタンが追加され、より速くチャットを隠すことができるようになりました。	#
+tyelAbout.changelog110.label23=- マーケットプレイスの購入確認と更衣室画面の購入ロックを追加しました。これにより、誤ってアイテムを購入しないようにすることができます。(無料アイテムは影響を受けません)	#
+tyelAbout.changelog110.label24=- 更衣室内のカスタムスキンにスキンタイプ変更ボタンを追加しました。これはスキンタイプ(ノーマル、スリム)(要は腕の細さ)をわざわざもう一回スキンをインポートしなくても変更できるボタンです。 	#
+tyelAbout.changelog110.label25=- スクリーンショットをした時のスクリーンショットの保存場所の表示が正確なファイルの場所が表示されるようになりました。	#
+tyelAbout.changelog110.label26=- "スクリーンショットの保存場所を開く" ボタンを押すとそのフォルダを開くことができました。プライバシーも完璧な造りになっています。	#
+tyelAbout.changelog110.label27=- プレイ画面とプロフィールカード画面にケバブメニューを追加しました。ここには役に立つ項目ががあります。	#
+tyelAbout.changelog110.label28=- _global_variables.json に新しい変数を追加:	#
+tyelAbout.changelog110.label29=§7  + "$tyel_dialog_accent_color" で(ポップアップ)ダイアログ上のバーのアクセントカラーの変更(Default Vanillaサブパック以外では、サーバーフォーム画面以外で全て無効になります)	#
+tyelAbout.changelog110.label30=§7  + "$force_auto_place_on" でクイック移動の機能を常にオンにするかの有効/無効切り替え (これを有効にするとプレイ画面に警告ボタンが表示されます)	#
+tyelAbout.changelog110.label31=§7  + "$pause_quit_confirmation_popup_enabled" で退出確認ポップアップの有効/無効切り替え	#
+tyelAbout.changelog110.label32=§7  + "$use_black_death_background" で死亡画面の黒背景有効/無効切り替え (無効にするとバニラの赤背景になります)	#
+tyelAbout.changelog110.label33=§7  + "$server_form_dialog_size" でこのパックのサーバーフォームダイアログの大きさを変更	#
+tyelAbout.changelog110.label34=§7  + "$recent_world_suggest_enabled" で最近のプレイ機能の有効/無効切り替え	#
+tyelAbout.changelog110.label35=§7  + "$scoreboard_sidebar_bg_alpha" でサイドバースコアボードの背景のアルファ値	#
+tyelAbout.changelog110.label36=§7  + "$hud_percentage_text_visible" でHUDのパーセント表示切り替え(経験値バー、ボスバーなど)	#
+tyelAbout.changelog110.label37=§7  + "$use_hive_andesite_counter" でThe Hive(特集サーバー)での安山岩カウンターの有効/無効切り替え	#
+## CHANGES
+tyelAbout.changelog110.label38=- ベータ/プレビュー版以外でも新しいタッチコントロールが使えるようになりました。	#
+tyelAbout.changelog110.label39=- サーバーフォーム画面のデザインを変更し、ポップアップウィンドウではなくなりました。(多分ね。ウェーイ)	#
+tyelAbout.changelog110.label40=- HUD非表示ボタンをホットバーコントローラーの横に移動させ、左利きの方にも対応しました。間違い防止のため、ダブルタップで非表示になるようにしました。	#
+tyelAbout.changelog110.label41=- インベントリからヘルプボタン(?ボタン)を削除しました。	#
+tyelAbout.changelog110.label42=- アクセシビリティの観点から、HUDを隠すボタン、ポーズ画面のプレイヤーリスト表示切り替えボタン、アイテムドロップボタン、アイテム破壊ボタンにカーソルを置いたときに白いボーダーが表示されるように変更しました。	#
+tyelAbout.changelog110.label43=- 更衣室画面でのポップアップ通知が画面上部に配置され、アニメーションが表示されるようになりました。	#
+tyelAbout.changelog110.label44=- 画面変化のアニメーションを少しきれいにしました。(たぶん)	#
+tyelAbout.changelog110.label45=- ポーズ画面にRealmsフィードボタンを復活させました。 (Realmsに入っている時のみ) Mojang Studios がこれ追加すんの忘れてたからやってあげたんだお (´-ω-`)	#
+tyelAbout.changelog110.label46=- [Default Vanilla] プレイ画面のタブの横サイズを小さくすることができるようになりましたが、最小サイズは特定の値に固定されるようになっています。	#
+tyelAbout.changelog110.label47=- コントローラーの (≡) メニューボタンをメインメニュー内のサイドバーと、設定画面のクイック設定と、ケバブメニューで機能するようになりました。	#
+tyelAbout.changelog110.label48=- すばやくクラフトボタンがテキスト読み上げに対応しました。	#
+tyelAbout.changelog110.label49=- VSync(垂直同期)設定が 設定/ビデオ の下に移動しました。	#
+tyelAbout.changelog110.label50=- HUDユーティリティー(コンパス、時計...)のデフォルトの位置が右下になりました。	#
+tyelAbout.changelog110.label51=- 設定/クリエイターに、デバッグHUDを一時的に表示にする設定を追加しました。(ベータ/プレビュー版のみ)	#
+tyelAbout.changelog110.label52=- クイック設定内で、アップスケーリングとレイトレーシングの切り替えを対応しているデバイスのみで表示するように変更しました。	#
+tyelAbout.changelog110.label53=- カスタムパノラマの最大撮影コマ数を500コマに拡張しました。	#
+tyelAbout.changelog110.label54=- Ty-el テーマ工房を改善させました。	#
+tyelAbout.changelog110.label55=§7  + この工房では、オリジナルのTy-el テーマを作成できます。	#
+tyelAbout.changelog110.label56=§7  + 今回のアップデートからカスタムパノラマ(特殊効果コントロール付き)、文字、 などなどを追加できます。 それに加えて、テーマのメタデータもあります。	#
+tyelAbout.changelog110.label57=§7  + 詳細な情報はパックフォルダ内 "Ty-el Theme Instructions.txt" に記載しています。(英語)	#
+## FIXES
+tyelAbout.changelog110.label58=- メインメニューのサイドバー終了時の背景サイズを大きくしました。	#
+tyelAbout.changelog110.label59=- プレイ/フレンドタブの招待アイコンが表示されない不具合を修正しました。	#
+tyelAbout.changelog110.label60=- 睡眠中画面の起きるボタン(マルチプレイヤーで寝ているプレイヤーの人数を表示するためのパネル)が表示されない不具合を修正しました。	#
+tyelAbout.changelog110.label61=- Ty-el UI について画面にゲームパッドヘルパーを追加しました。	#
+tyelAbout.changelog110.label62=- コマンドブロック画面のコマンドブロック状態アイコンに黒枠を表示するようにしました。	#
+tyelAbout.changelog110.label63=- メインメニューのフィードバックボタンの名称を "フィードバックの送信" に変更しました。	#
+tyelAbout.changelog110.label64=- メインメニューサイドバーの Ty-el UI について と ゲームを終了する のボタンフォーカスが正しく動作するようになりました。	#
+tyelAbout.changelog110.label65=- サバイバルモードでホットバーが表示されない問題を修正しました。	#
+tyelAbout.changelog110.label66=- フォーカスナビゲーションモードに関するコンテンツログのエラーを修正しました。	#
+tyelAbout.changelog110.label67=- その他の画面背景、UIの改善とバグを修正しました。	#
+## FEATURES REMOVED
+tyelAbout.changelog110.label68=  + 透明のタッチ操作オーバーレイ(丸いヤツ):1.18.30でRenderDragonエンジンが対応し、シェーダーが機能しなくなりました。この機能もシェーダーの部類なので削除しました ;-;	#
+tyelAbout.changelog110.label69=  + ホットバー表示切り替えとホットバーコントローラー:新しいタッチ操作でこれらが機能しないことがあるかもしれないので。	#
+
+tyelAbout.changelog111=v1.1.1	#
+tyelAbout.changelog111.title=§bTHE §gSMOOTHENED §b& §6UNSMOOTHENED §bUPDATE	#
+## NEW FEATURES
+tyelAbout.changelog111.label1=- パック製作者のために、このパックと対応させる新しい変数を追加しました。 §a"$is_tyel_ui"§r (_global_variables.json と同じように変更できます (§2true§r もしくは §cfalse§r)	#
+tyelAbout.changelog111.label2=- Utility UIとの互換性モードを追加しました。Utility UI はHJNさんが制作しました。 (ベータ版, ベースしかできてない, 不完全バーション)	#
+tyelAbout.changelog111.label3=- ホットバートグルが帰ってきました!これからは問題なく使うことができますよ。(タッチデバイスのみ)	#
+tyelAbout.changelog111.label4=- ワールド設定のほとんどの設定に説明を追加しました。設定のオーディオと、設定/タッチの操作モードの選択の画像にカーソルを合わせると、操作方法も表示されます。	#
+tyelAbout.changelog111.label5=- 取引画面にできるだけすべて取引することができるボタンを追加しました。これを使えば一括取引をあっという間に行えます!	#
+tyelAbout.changelog111.label6=- チャット画面のコマンドとメンションの自動補完が前よりも早くなりました!自動補完の候補としてでてくる文字をクリックするだけで、素早くコマンドを打つことや、誰かをメンションすることができます。めちゃ便利!	#
+tyelAbout.changelog111.label7=- チャット画面に最下層へジャンプボタンを追加しました。これで上にスクロールした時にまた下に戻さなくて済みます!	#
+tyelAbout.changelog111.label8=- レッドストーン関連画面にアイテムハイライターを追加しました(ホッパー, ディスペンサー, ドロッパー) そして、ポケットUIの入れ物画面に対応しました。	#
+tyelAbout.changelog111.label9=- コマンドブロック画面に "秒単位の遅延"（ティックではありません）を追加し、コマンド実行間の遅延を秒単位で知ることができるようになりました。(形式もすっきりしました！)	#
+tyelAbout.changelog111.label10=- v1.1.0にあったきっしょくわるい "The Hiveに参加" ボタンがあったのを覚えていますか?これがカスタマイズ可能になりました!この機能は "クイックジョインサーバー" と呼びます!カスタマイズするには、 /ui/_global_variables.json を開き、これらの変数を変えるだけ:	#
+tyelAbout.changelog111.label11=§e  + "$insta_join_server_type": サーバータイプの変更 (0 = 特集サーバー, 1 = 追加サーバー)	#
+tyelAbout.changelog111.label12=§e  + "$insta_join_server_name": サーバー名を変更すると、クリックで即座にサーバーに参加できます。サーバー名はゲーム内で名付けたものと同じでなければなりません。大文字小文字、ひらがなカタカナ漢字を区別してください。。	#
+tyelAbout.changelog111.label13=- HUDユーティリティーのリカバリーコンパスの表示をいくつかの変数で切り替えれるようにしました。この機能はクラッシュするのを防ぐため特集サーバーでは常に無効に設定されています。	#
+tyelAbout.changelog111.label14=- マーケットプレイスPDP画面とペルソナ画面に購入確認ダイアログを追加しました。これによってマインコインを何らかのアクシデントで失くすことを防ぐことが出来ます!	#
+tyelAbout.changelog111.label15=- _global_variables.json にパックをカスタマイズするための新しい変数を追加:	#
+tyelAbout.changelog111.label16=§7  + "$tyel_ui_troubleshooting_mode" でパック無効と終了確認のトラブルシューティング有効/無効切り替え (今後増える可能性あり)	#
+tyelAbout.changelog111.label17=§7  + "$use_hud_chat_anchor_override" で "$use_hud_bottom_chat" で使用される、チャットの変数を上書きするためのものです。無効にすると、"$use_hud_bottom_chat" が使用できなくなり、タッチデバイス以外の場合、チャットが自動的に下に移動されます。	#
+tyelAbout.changelog111.label18=§7  + "$use_hud_bottom_chat" でチャットの位置をJava版のように下に移動。無効にするとバニラと同じ、上に固定されます。	#
+tyelAbout.changelog111.label19=§7  + "$use_recovery_compass_utility" でHUDユーティリティのリカバリーコンパスの有効/無効切り替え。特集サーバー内ではゲームのクラッシュを防ぐため常に無効になります。	#
+tyelAbout.changelog111.label20=§7  + "$use_large_scroll_box" で大きめのスクロールボックスの有効/無効切り替え (試験的)	#
+tyelAbout.changelog111.label21=§7  + "$disable_compatibility_mode_toasts" を無効にすることによって "互換性モードが有効です!" 通知が表示されます。時々、この通知でイライラすることがあるので §2有効§r§7 にすることで修正できます。	#
+
+## CHANGES
+tyelAbout.changelog111.label22=- 画面のセーフエリアの変更画面を改善し、4つの角のみで使いにくかったのを、4つの辺を長方形にしたことで4つの角と §o想像§r のみで、画面のセーフエリアが以前より簡単に変更できるようになりました。	#
+tyelAbout.changelog111.label23=- 設定/ストレージ に、フローティングボタンを追加し "ファイルストレージの場所" のドロップダウンの可視性を変更できるようにしました。 (対応デバイスのみ)	#
+tyelAbout.changelog111.label24=- Modules+ の互換性モードを改善しました。	#
+tyelAbout.changelog111.label25=- リソースパックおよび プレイ/世界 画面での検索機能で、テキストフォーマットブロックを無視するようになりました。	#
+tyelAbout.changelog111.label26=- エディターモード有効時のプレイ画面のUIに対応しました。	#
+tyelAbout.changelog111.label27=- ポーズメニュー内の "カスタム画面を利用可能!" ツールチップがZeqaでプレイしている時のみ、 "Zeqa Rules & About Ty-el UI here!"(ZeqaのルールとTy-el UIについて) に変更されるようにしました。	### Don't translate "Zeqa Rules & About Ty-el UI here!"
+tyelAbout.changelog111.label28=- Zeqaの互換性モードの変数を "$is_zeqa" に変更しました。	#
+tyelAbout.changelog111.label29=- "互換性モードが有効です" のトースト通知のデザインを変更しました。	#
+tyelAbout.changelog111.label30=- 権限画面のメインパネルの横のサイズ制限を変更しました。	#
+tyelAbout.changelog111.label31=- サーバーフォーム画面にて、ボタン画像読み込み中のローディングバーをローディングスピナーに変更しました。	#
+
+## FIXES
+tyelAbout.changelog111.label32=- バージョンv1.19.40以上でのエラーを修正しました。	#
+tyelAbout.changelog111.label33=- バージョンv1.19.40以上で入れ物画面内のアイテムのホバーテキストが表示されないバグを修正しました。	#
+tyelAbout.changelog111.label34=- バージョンv1.19.40以上で"オンライン プレイ時のモバイル データ通信を許可する" が有効になっていなくても、ワールドのロード中/ディメンションで "モバイルデータ" のバッジが常に表示されるバグを修正しました。	#
+tyelAbout.changelog111.label35=- "リソースパックのダウンロード" 画面が読み込めないせいで、Realmsに入れないバグを修正しました。	#
+tyelAbout.changelog111.label36=- Modules+ の互換性モードが有効の時に、スコアボードをディレクションHUDが重なるのを修正しました。	#
+tyelAbout.changelog111.label37=- Modules+ の互換性モードが有効の時に、手と経験値バーが重なるのを修正しました。	#
+tyelAbout.changelog111.label38=- ドロップダウン式のボタンで、コントローラーの十字ボタンで選択できないバグを修正しました。	#
+tyelAbout.changelog111.label39=- バニラの修正:v1.19.50以上でかまどからXPを§o§cまた§r不正に獲得できていたバグを修正しました。(MCPE-152227)	#
+tyelAbout.changelog111.label40=- 読み込み画面にコントローラーヘルパーを再追加しました。	#
+tyelAbout.changelog111.label41=- コントローラーのスタートボタンでサイドバーメニュー、その他のオプションメニュー、アイテムハイライトの切り替えができるようになりました。	#
+tyelAbout.changelog111.label42=- アクセシビリティの向上のために、メインメニューのサイドバーメニューのコードを最適化しました。	#
+tyelAbout.changelog111.label43=- v1.19.60以上では不具合を起こしていたので、トースト通知のカスタムアニメーションを削除しました。	#
+tyelAbout.changelog111.label44=- 翻訳のバグを一部修正しました。	#
+tyelAbout.changelog111.label45=- 画面のデザインを少しだけ変更、修正しました。	#
+
+## FEATURES REMOVED
+tyelAbout.changelog111.label46=- マーケットプレイスPDP画面とペルソナ画面の購入ロック内でのボタンのスムーズなアニメーション:この2つはもっといいものに置き換えられ、改良しより見やすくなるようにしたからです。	#
+
+tyelAbout.changelog112=v1.1.2	#
+tyelAbout.changelog112.title=§c1.19.80 AND BEYOND 1.20 COMPATIBILITY HOTFIX	#
+tyelAbout.changelog112.notice1=§dお知らせ: このバージョンではv1.19.80以降に対応していますが、v1.20.1以前でプレイする場合は /ui/_global_variables.json 内の "$exp_enable_new_recipe_book_tabs" という試験的フラグを手動で無効にする必要があります。 有効のままだと、クラシックUIプロフィール時のインベントリ画面のタブが表示されなくなります。v1.20.10以降であれば、クラッシュを防ぐために有効のままにしてください。もし間違った設定をしていた場合、メインメニューにダイアログが表示されます。 §l("$exp_enable_new_recipe_book_tabs" のデフォルト設定はtrueです)	#
+tyelAbout.changelog112.notice2=§eこのアップデートで、カスタムパノラマのAsepriteフリップブックに対応しました。 (ベータ版) /ui/_tyel_theme_template.json から詳細情報を見ることができます。	#
+
+## NEW FEATURES
+tyelAbout.changelog112.label1=- Ty-el UI v1.1.1 で翻訳されていなかった言語を翻訳しました。	#
+tyelAbout.changelog112.label2=- 死亡時の画面のデザインを維新し、Ore UIチックな赤グラデーションの背景や、文字フォントを変更したりしました。変数 "$use_respawn_button_bg_layout_override" を使用することで、別のデザインに変更できます。	#
+tyelAbout.changelog112.label3=- Windows もしくは Android もしくは iOS環境下で、プレイ画面右上の "その他の設定" ボタン(縦並びの ... ボタン)から、 "ワールドのフォルダ名を表示" にチェックをつけると、ワールドのフォルダ名を表示することができます。(試験的)"	#
+tyelAbout.changelog112.label4=- 設定/ストレージ で、ワールド、リソース、ビヘイベアーパックのフォルダの場所を表示させるようにしました。	#
+tyelAbout.changelog112.label5=- アイテムロアビューアに新たなプロパティを追加: "armor_trim_material", "decorated_pot_sherds", "shield_base_color"	#
+tyelAbout.changelog112.label6=- 設定/ビデオ に、各設定の説明を表示切り替えボタンを右上に追加しました。	#
+tyelAbout.changelog112.label7=- コントローラーの操作方法に黒い背景を追加しました。	#
+tyelAbout.changelog112.label8=- _global_variables.json にパックをカスタマイズするための新しい変数を追加:	#
+tyelAbout.changelog112.label9=§7  + "$desc_black_bg_alpha": でコントローラーの操作方法の背景の透明度のアルファ値	#
+tyelAbout.changelog112.label10=§7  + "$use_settings_option_descriptions": で設定の説明を表示切り替え	#
+tyelAbout.changelog112.label11=§7  + "$always_show_settings_option_descriptions_by_default": でデフォルトで設定の説明の表示切り替え	#
+tyelAbout.changelog112.label12=§7  + "$exp_enable_new_recipe_book_tabs": で v1.20.10 以降でレシピ本を開いたときに発生するクラッシュを防ぐための対策の有効/無効切り替え (ベータ/プレビュー版の v1.20.10.x 以降を使用している場合は不要です)	#
+tyelAbout.changelog112.label13=§7  + "$exp_enable_new_recipe_book_tabs__force_disable": で何らかの理由で "$exp_enable_new_recipe_book_tabs" を無効にしたい場合に自動的に無効にする機能の有効/無効切り替え (多分ベータ/プレビュー版の v1.20.0.x 以前を使用しているもしくは透明になっている場合)	#
+tyelAbout.changelog112.label14=§7  + "$enable_recovery_compass_item_id_aux_override": でバージョンやアドオンとの互換性のためにリカバリーコンパスのアイテムID AUXの上書きの有効/無効切り替え (上級者向け)	#
+tyelAbout.changelog112.label15=§7  + "$rcompass_id_aux_override": でリカバリーコンパスをアイテムID AUXを何に上書きするかを指定。 "$enable_recovery_compass_item_id_aux_override" 有効にする必要があります。	#
+tyelAbout.changelog112.label16=§7  + $use_death_screen_respawn_button_bg_layout": でよりスタイリッシュな死亡画面の有効/無効切り替え。これにより背景全体がリスポーンボタンになります。	#
+tyelAbout.changelog112.label17=§7  + "$use_touch_hide_hud_button": でタッチ操作時にHUDを隠すボタンの表示切り替え	#
+tyelAbout.changelog112.label18=§7  + "$use_container_paper_dolls": で入れ物画面での人形表示切り替え (インベントリを除き、クラシックUIのみで機能します)	#
+tyelAbout.changelog112.label19=§7  + "$world_search_feature_enabled": でワールド検索機能の有効/無効切り替え (無効にするとパフォーマンスをそこそこ向上させます)	#
+tyelAbout.changelog112.label20=§7  + "$expanded_content_area_max_size": で一部の画面において、コンテンツの表示エリアをできるだけ最大のサイズにする	#
+
+## CHANGES
+tyelAbout.changelog112.label21=- 鍛冶台画面の新デザインのサポートを追加しました。	#
+tyelAbout.changelog112.label22=- HUDユーティリティーのリカバリーコンパスのアイテムID AUXを更新しました。	#
+tyelAbout.changelog112.label23=- 画面のアニメーションの加減速を "in_out_sine" から "in_out_circ" に変更しました。	#
+tyelAbout.changelog112.label24=- ほぼすべての画面内のコンテンツの大きさは、画面引き伸ばしの問題を軽減するために水平方向の最大サイズが制限されるようになりました。 (変数 "$expanded_content_area_max_size" を有効にするとこの変更を無視できるようになります)	#
+tyelAbout.changelog112.label25=- 調合台画面で、残りの燃料(ブレイズパウダー)を%の代わりに回数で表示するようにしました。 (例: 50% は 10/20 のように表示されます)	#
+tyelAbout.changelog112.label26=- メインメニュー内のサイドバーメニューの外にある "サインイン" ボタンと "サインイン中" の表示をサイドバーボタンの横に移動させました。	#
+tyelAbout.changelog112.label27=- サイドバーメニューが開いているとき、コントローラーもしくはキーボードの右矢印を押すとサイドバーメニューを閉じることができるようになりました。	#
+tyelAbout.changelog112.label28=- アクセシビリティの観点から、透明な黒い背景をメインメニュー内の 著作権/バージョン 表示とコントローラーの操作方法に追加しました。	#
+tyelAbout.changelog112.label29=- テキスト読み上げが "プレイ" 画面内の設定ボタンとクイックジョインサーバーボタンに対応しました。	#
+tyelAbout.changelog112.label30=- 更衣室画面で、キャラメイク中のパネル表示を切り替えれるようになりました。	#
+tyelAbout.changelog112.label31=- _global_variables.json をカテゴリーごとに見やすいように並び替えしました。	#
+
+## FIXES
+tyelAbout.changelog112.label32=- アイテムロアビューアでアイテムID計算機能が違う値を表示していた問題を修正し、エンチャントされたアイテムを正しく表示するようになりました。 (Asaki Zukiに感謝)	#
+tyelAbout.changelog112.label33=- 検索機能で、テキストポックスが数字から始まる場合の検索結果が正しく表示されるようになりました。	#
+tyelAbout.changelog112.label34=- ベータ/プレビュー版で、カスタムパノラマが画面のUI全体を覆ってしまう問題を修正しました。	#
+tyelAbout.changelog112.label35=- メインメニュー内のアカウントを変更ボタンが正常に作動しない問題を修正しました。	#
+tyelAbout.changelog112.label36=- v1.20.x以降での、メインメニューに表示され る著作権/バージョン 表示の文字の偏りを修正しました。	#
+tyelAbout.changelog112.label37=- (バニラのバグ修正) クレジット画面の背景が正常にスクロールするようになりました。	#
+tyelAbout.changelog112.label38=- 小さなバグを修正したり、見た目をより良くしたり、その他色々しました。	#
+
+tyelAbout.changelog113=v1.1.3 & v1.1.3a	#
+tyelAbout.changelog113.title=§c1.20.30+ COMPATIBLE AND DURABLE HOTFIX	#
+
+tyelAbout.changelog113.label_a_header=v1.1.3a (107)-2023.12.7-(r1.20.50) での変更点や修正点:	#
+tyelAbout.changelog113.label_a1=- 中国語 (簡体) の翻訳を更新し、向上させました。@_Pig_Peppa_ (Twitter)さんが翻訳しました!	#
+tyelAbout.changelog113.label_a2=- リカバリーコンパスのアイテムID AUXを 42860544 に更新しました。v1.20.50+ に対応するためで、v1.20.50 より前でプレイしている人は /ui/_global_variables.json から前のものに変更する必要があります。(前のもの: 42795008)	#
+tyelAbout.changelog113.label_a3=- 新しい変数をパックのカスタマイズのために追加 "$use_play_screen_compact_layout": でコンパクトなプレイ画面の有効化 (バニラデフォルト サブパックには対応していません)	#
+tyelAbout.changelog113.label_a4=- ポケットUIで、かまど画面の出力スロットからアイテムを取ることができないバグを修正しました。	#
+tyelAbout.changelog113.label_a5=- Ty-el Settings Overlayとの互換性を修正しました。しかし、タッチ操作のカスタマイズ画面に入ると視覚的なバグが発生するようになってしまいました。	#
+tyelAbout.changelog113.label_a6=- v1.20.50 で再度正常に動くようになったため、チャット画面の自動補完ボタンを再度追加しました。	#
+tyelAbout.changelog113.label_a7=- v1.20.50 でバインディング変更があったため、メインメニューのサイドバーにある "スキンを選ぶ" ボタンを削除しました。	#
+tyelAbout.changelog113.label_a8=- パックが v1.20.10 より前をサポートしなくなったため、試験的フラグ "$exp_enable_new_recipe_book_tabs" とそれに関係するものをすべて削除しました。	#
+tyelAbout.changelog113.label_a_footer=v1.1.3 (106)-2023.11.16-(r1.20.41):	#
+
+## NEW FEATURES
+tyelAbout.changelog113.label1=- ポルトガル語 (ブラジル) の翻訳を更新し、色んな画面に対応しました。@will_ushuah (Twitter)さん と @IjoaopedroAnd (Twitter)さんが翻訳しました!	#
+tyelAbout.changelog113.label2=- 新しい耐久値計算システムを導入しました。インベントリとHUD上のメインハンドアイテムインジケーターに表示されます。正確で、低負荷です! #
+tyelAbout.changelog113.label3=- プレイ画面をよりOre UI風になるようにリデザインしました。(バニラデフォルト サブパックには対応していません)	#
+tyelAbout.changelog113.label4=- コンテンツログの履歴画面のエラーメッセージの背景を赤くして強調することで目の疲れを軽減するようにしました。 (この機能は未完成で、将来削除される可能性があります)	#
+tyelAbout.changelog113.label5=- 設定の説明を 設定/アクセシビリティ設定 と 設定/ビデオ、ワールド設定 の足りなかった部分に追加しました。	#
+
+## FIXES
+tyelAbout.changelog113.label6=- v1.20.30+ で起こっていたエラーを修正しました。	#
+tyelAbout.changelog113.label7=- いくつかのコンテンツログのエラーを修正しました。	#
+tyelAbout.changelog113.label8=- アイテムのホバーテキストが インベントリ/入れ物 画面で正しく読み込まれないバグを修正しました。(しかし、一時的にホバーテキストの表示方法をバニラのものに戻しただけなので、将来的には元に戻す予定です)	#
+
+## REMOVED
+tyelAbout.changelog113.label9=- チャット画面の自動補完ボタンを削除しました。メイン画面の自動補完アイテムボタンなど、より良いものを試してみてください。	#
+
+tyelAbout.changelog114=v1.1.4	#
+tyelAbout.changelog114.title=§gTHE CSB-COMPATIBLE! UPDATE	#
+
+## NEW FEATURES
+tyelAbout.changelog114.label1=- ドイツ語 (ドイツ) の翻訳を更新しました。@Iam_best_dev (Twitter)さんが翻訳しました!	#
+tyelAbout.changelog114.label2=- マーケットプレイス画面とベルソナ画面の購入確認ダイアログから、"Marketplace Pass"画面を開くことができるようになりました。	#
+tyelAbout.changelog114.label3=- 有効なサブスクリプションがある場合、ベルソナ画面の購入確認ダイアログで "引き換える" ボタンを使用できるようになりました。	#
+tyelAbout.changelog114.label4=- ワールドの検索機能を最適化し、検索可能なワールドの上限を50から無限に引き上げました!	#
+tyelAbout.changelog114.label5=- タッチ勢向けにアイテムのホバーテキストの表示方法を再導入しました。	#
+
+## CHANGES
+tyelAbout.changelog114.label6=- v1.1.3 にはなかった受信トレイボタンをメインメニューのサイドバーに追加しました。	#
+tyelAbout.changelog114.label7=- メインメニューにある著作権とバージョンのラベルを画面真ん中下に移動しました。	#
+
+## FIXES
+tyelAbout.changelog114.label8=- コンテンツログ内の、"Expected variable not found in ancestor tree: '$education_edition_china'" という、取引画面 v2 を最初に開いたときに表示されていたエラーを修正しました。	#
+tyelAbout.changelog114.label9=- パック情報画面で見えていたエラーを修正しました。	#
+
+## REMOVED
+tyelAbout.changelog114.label10=- "Ultra" サブパックの正確なパーセント表示を削除しました。将来のアップデートで戻ってきます。	#
+
+tyelAbout.changelog120=v1.2.0	#
+tyelAbout.changelog120.title=§gTHE BIGGEST EVER CALCULATOR UPDATE?!	#
+tyelAbout.changelog120.notice1=注意: ここで表記する "Ore UIデザイン" とは、JSON UIで見た目を変更しただけで、ReactJSベースの "Ore UI" とは違います。	#
+
+## NEW FEATURES
+tyelAbout.changelog120.label1=- ゲーム内のほとんどのダイアログをOre UI化しました。(バニラデフォルト サブパックでは変更されていません)	#
+tyelAbout.changelog120.label2=- 画面下のコントローラーのヒントのデザインが変更され、整理されたことでコントローラーの快適性が向上しました。	#
+
+tyelAbout.changelog120.label3=§l§b* ゲーム内の新機能	#
+tyelAbout.changelog120.label4=- HUDの新機能:	#
+tyelAbout.changelog120.label5=§7  + 経験値カウンターを追加しました。次のレベルに上がるために必要な経験値数を表示してくれるようになります。	#
+tyelAbout.changelog120.label6=§7  + インベントリの空きスロットカウンターを追加しました。インベントリが満タンかそうでないかを教えてくれます。	#
+tyelAbout.changelog120.label7=§7  + 合計アイテム数カウンターを追加しました。この機能は、耐久値のあるアイテムには適用されません。	#
+tyelAbout.changelog120.label8=§7  + ユーティリティーアーティファクト (旧名:HUDユーティリティー) を表示するには、ゲーム内で コンパス/時計/リカバリーコンパス を持っていないと非表示になるようにしました。この変更はゲームバランスを保ちつつ、アイテムの使い勝手を良くするための変更です。	#
+tyelAbout.changelog120.label9=§7  + ロードストーンコンパス アーティファクトを追加しました。この機能は、ロードストーンコンパスを3つまでHUDに表示します。それぞれのロードストーンコンパスにはIDが振り分けられます。	#
+tyelAbout.changelog120.label10=§7  + チャンク座標とチャンクの境の表示を追加しました。この機能は、現在のチャンクの位置や、チャンク座標などを表示します。状況によっては便利に働くかもしれません。	#
+tyelAbout.changelog120.label11=§7  + TAB メニュー/HUD メニュー をHUDの特定の機能を切り替えるために追加しました。 キーボード操作時にTAB メニューを表示するには、TABを長押しして切り替えたい機能の数字キーを押します。タッチ操作時にHUD メニューを表示するには、画面上部のボタンをタップします。	#
+tyelAbout.changelog120.label12=§7  + プレイヤーリストを追加しました。現在のワールドやサーバーに誰がいるのかが分かりやすくなります。そして、リスト で表示されているスコアボードもキーボード操作時は TAB を長押し、タッチ操作時は HUD メニュー ボタンをタップすることで見ることができます。	#
+tyelAbout.changelog120.label13=§7  + プレイヤーリストには、現在のワールドやサーバーにいるプレイヤーの総数も表示されています。	#
+tyelAbout.changelog120.label14=§7  + サイドバー スコアボードを非表示にする機能を追加しました。キーボード操作時は、TAB メニュー を表示している間にホットバーに設定しているキーを押します。タッチ操作時は、HUD メニューボタンをタップします。	#
+tyelAbout.changelog120.label15=- "収納ツールボックス" をインベントリに追加しました。インベントリの管理に便利な以下の機能があります:	#
+tyelAbout.changelog120.label16=§7  + "大型クイック移動" ボタン この機能を使うためには、インベントリもしくは対応している入れ物画面でアイテムを選択し、 "入れ物へクイック移動" ボタンを押すと選択しているアイテムと同じアイテムがすべて入れ物に移動します。 "インベントリへクイック移動" を押すとインベントリへ移動します。	#
+tyelAbout.changelog120.label17=§7  + "ホットバー/インベントリ をクリア" ボタン この機能は、誤作動しないように小さな矢印を押すと表示されるようになっています。	#
+tyelAbout.changelog120.label18=§7  + "1つ/すべて ドロップ" と "1つ/すべて 削除" ボタンを収納ツールボックスに移動しました。	#
+tyelAbout.changelog120.label19=- すべてクラフトする ボタンをホバーすると何回クラフトし、合計いくつのアイテムをクラフトするかを表示するようにしました。	#
+tyelAbout.changelog120.label20=- "醸造レシピUI" を醸造台画面に追加:	#
+tyelAbout.changelog120.label21=§7  + Minecraftのすべてのポーションの作り方を見ることができます。	#
+tyelAbout.changelog120.label22=§7  + レシピを検索することもできます。	#
+tyelAbout.changelog120.label23=§7  + 薬の醸造にも対応しています。("Education Edition" と _global_variables.jsonの "$brewing_guide__show_chemistry_potions_tab" が有効になっていることが必要です)	#
+tyelAbout.changelog120.label24=§7  + "フォールバックモード" は、将来のアップデートでアイテムID AUXが壊れてしまったときや、アドオンが有効になっているときに使用します。	#
+tyelAbout.changelog120.label25=- 村人の経験値数がパーセントではなく数字で表示されるようになりました。	#
+tyelAbout.changelog120.label26=- 醸造台画面の "醸造回数" が書かれた数字にホバーすると "残り醸造可能回数" が表示されるようになりました。(燃料スロットに入っているブレイズパウダーの数x20をした後に醸造回数の数字を足して計算しています)	#
+tyelAbout.changelog120.label27=- 鍛治台画面にプレビュー画面を追加しました。スライダーを使って回転させながらプレビューすることができます。	#
+tyelAbout.changelog120.label28=- 金床画面と砥石画面に耐久値がいくら増えるかの表記を追加しました。ホバーするとどちらのアイテムに耐久値が増えるかも分かります。	#
+tyelAbout.changelog120.label29=- ロードストーンコンパスに "アイテムトラッキングID" が割り振られるようになりました。	#
+tyelAbout.changelog120.label30=- 進捗状況のパーセンテージ表記が大幅に最適化され、小数点以下2桁まで表示されるようになりました。最適化の甲斐あって、"Ultra" サブパック限定の機能だったのが、通常の機能になりました。	#
+tyelAbout.changelog120.label31=- "Ultra" サブパックに新機能を追加:	#
+tyelAbout.changelog120.label32=§7  + アイテムをホバーした時に耐久値を表示するようになります。(選択しなくても出てきます)	#
+tyelAbout.changelog120.label33=§7  + "キャレットモード" をチャット画面に追加しました。これを使うと送られたメッセージをを直接コピーすることができます。	#
+tyelAbout.changelog120.label34=§l§b* サーバー限定のQOL向上新機能	#
+tyelAbout.changelog120.label35=- "The Hive" 限定: Hive XP計算システムを追加しました。選択したゲームのXPのトラッキングをできるようにします。有効にするには、キーボード操作時は TAB + 3 を押します。タッチ操作時は "HIVE XP計算システムを表示" というボタンをタップします。表示した後、キーボード操作時は 1 ~ 6の数字キーでゲームを選択、8か9でページを切り替え、7で無効化することができます。TABもしくはESCでメニューを閉じることができます。タッチ操作時は、これまた非常に親切な設計になっており、ボタンタップするだけでOKです。	#
+tyelAbout.changelog120.label36=- "CubeCraft" 限定: Server-Wide XPカウンターを追加しました。サーバーのロビーにいる時に表示されます。"Skyblock" では、バニラの経験値システムを使用します。	#
+tyelAbout.changelog120.label37=§l§b* その他の新機能	#
+tyelAbout.changelog120.label38=- "チャットブラックリスト" 機能を追加しました。指定した文字列が含まれているメッセージを自動的に非表示にしてくれます。_global_variables.json からブロックする文字列を指定でき、"$chat_blacklist_index_**" という変数に書き加えるだけです。最大で32個の文字列を指定できます。設定を変更してチャットに "メッセージは非表示になっています" という通知を表示しないようにすることもできます。	#
+tyelAbout.changelog120.label39=- メインメニューに背景以外のUIをすべて非表示にするボタンを追加しました。	#
+tyelAbout.changelog120.label40=- ワールド一覧をグリッドで見ることができるようになりました。タッチ操作時もしくはポケットUI使用時は自動でオンになります。	#
+tyelAbout.changelog120.label41=- 保存されているワールドのファイル名を見ることができるようになりました。この機能は設定で切り替え可能です。	#
+tyelAbout.changelog120.label42=- ワールド検索の仕組みが最適化され、いくつのワールドが検索にヒットしたか数字で表示されるようになりました。	#
+tyelAbout.changelog120.label43=- 設定/タッチ に "左手モード" を再度追加しました。人によっては画面の左からモブエフェクトのアイコンが表示される方がいいと感じる人もいるためです。	#
+tyelAbout.changelog120.label44=- 設定/キーボード & マウス に "ハードコーディング" キーの表示を追加しました。非表示になっていて、変更もできないキー設定を見ることができます。	#
+tyelAbout.changelog120.label45=- 特定の画面の検索バーをクリアすることができるようになりました。	#
+tyelAbout.changelog120.label46=- マーケットプレイスのPDP画面に正確な数字とパーセンテージを表示する機能を追加しました。	#
+tyelAbout.changelog120.label47=- 更衣室にパーツのハイライト機能を追加しました。これで特定のパーツをフィルタにかけて素早く探すことができるようになります。	#
+tyelAbout.changelog120.label48=- マーケットプレイスと更衣室のサイドバーのアイコンにホバーするとツールチップがアニメーションしながら出てくるようになりました。	#
+tyelAbout.changelog120.label49=§l§b* 技術的な機能	#
+tyelAbout.changelog120.label50=- Ty-el UI検証システムを追加しました。 "Ty-el UI について" 画面から見ることができ、JSONファイルにエラーがある際に内容を見ることができます。	#
+tyelAbout.changelog120.label51=- 設定/ストレージ から、すべてのファイルの場所を見ることができるようになりました。	#
+tyelAbout.changelog120.label52=- 設定/ストレージ に、リソースパックの "textures_list.json" ファイルを作成できる機能を追加しました。マーケットプレイスのリソースパックにはできません。	#
+tyelAbout.changelog120.label53=§l§b* 新しい変数	#
+tyelAbout.changelog120.label54=- カスタマイズのために "/ui/_global_variables.json" に新しい変数を追加:	#
+tyelAbout.changelog120.label55=§7  + "$use_brewing_guide_gui": 醸造台画面の醸造レシピを有効化(パフォーマンスに問題がある場合は無効にしてください)	#
+tyelAbout.changelog120.label56=§7  + "$brewing_guide__show_chemistry_potions_tab": 醸造レシピに薬のレシピを追加する	#
+tyelAbout.changelog120.label57=§7  + "$hud_utility_artifacts_mode": ユーティリティーアーティファクトかHUDユーティリティーのどちらを使用するかを切り替える。この変更により、 "$use_recovery_compass_utility" は "レガシーHUDユーティリティー" の後ろに配置されるようになりました。	#
+tyelAbout.changelog120.label58=§7  + "$show_trailing_zeros_in_percentage_labels": カスタムパーセンテージラベルの末端のゼロを表示する(最大で小数点以下2桁)	#
+tyelAbout.changelog120.label59=- HUDユーティリティーやモジュールのカスタマイズのために "/ui/_global_variables.json" に新しい変数を追加:	#
+tyelAbout.changelog120.label60=§7  + "$enable_movable_hud_utilities_and_modules": HUDモジュールをカスタマイズできるようにする アンカーやオフセットを変更するには、この変数を有効する必要があります。	#
+tyelAbout.changelog120.label61=§7  + "$use_tyel_hud_modules:accurate_exp_progress", "$accurate_exp_progress_anchor", "$accurate_exp_progress_offset": 経験値カウンターに関する変数	#
+tyelAbout.changelog120.label62=§7  + "$use_tyel_hud_modules:inventory_free_slots_counter", "$inventory_free_slots_counter_anchor", "$inventory_free_slots_counter_offset": インベントリの空きスロットカウンターに関する変数	#
+tyelAbout.changelog120.label63=§7  + "$use_tyel_hud_modules:lodestone_compass_artifacts", "$lodestone_compass_artifacts_anchor", "$lodestone_compass_artifacts_offset": ロードストーンコンパスのアーティファクトに関する変数	#
+tyelAbout.changelog120.label64=§7  + "$use_tyel_hud_modules:mainhand_renderer", "$mainhand_renderer_anchor", "$mainhand_renderer_offset": 手の描画に関する変数	#
+tyelAbout.changelog120.label65=§7  + "$use_tyel_hud_modules:utility_artifacts", "$utility_artifacts_anchor", "$utility_artifacts_offset": ユーティリティーアーティファクト(コンパス、時計、リカバリーコンパス)に関する変数	#
+tyelAbout.changelog120.label66=- Ty-el UIのOre UIデザインの要素をカスタマイズするために "/ui/_global_variables.json" に新しい変数を追加:	#
+tyelAbout.changelog120.label67=§7  + "$tyel_oreui_design:light_button_default_text_color"	#
+tyelAbout.changelog120.label68=§7  + "$tyel_oreui_design:light_button_hover_text_color"	#
+tyelAbout.changelog120.label69=§7  + "$tyel_oreui_design:light_button_pressed_text_color"	#
+tyelAbout.changelog120.label70=§7  + "$tyel_oreui_design:light_button_locked_text_color"	#
+tyelAbout.changelog120.label71=§7  + "$tyel_oreui_design:dark_button_default_text_color"	#
+tyelAbout.changelog120.label72=§7  + "$tyel_oreui_design:dark_button_hover_text_color"	#
+tyelAbout.changelog120.label73=§7  + "$tyel_oreui_design:dark_button_pressed_text_color"	#
+tyelAbout.changelog120.label74=§7  + "$tyel_oreui_design:dark_button_locked_text_color"	#
+tyelAbout.changelog120.label75=§7  + "$tyel_oreui_design:green_button_default_text_color"	#
+tyelAbout.changelog120.label76=§7  + "$tyel_oreui_design:green_button_hover_text_color"	#
+tyelAbout.changelog120.label77=§7  + "$tyel_oreui_design:green_button_pressed_text_color"	#
+tyelAbout.changelog120.label78=§7  + "$tyel_oreui_design:realms_button_default_text_color"	#
+tyelAbout.changelog120.label79=§7  + "$tyel_oreui_design:realms_button_hover_text_color"	#
+tyelAbout.changelog120.label80=§7  + "$tyel_oreui_design:realms_button_pressed_text_color"	#
+tyelAbout.changelog120.label81=§7  + "$tyel_oreui_design:red_button_default_text_color"	#
+tyelAbout.changelog120.label82=§7  + "$tyel_oreui_design:red_button_hover_text_color"	#
+tyelAbout.changelog120.label83=§7  + "$tyel_oreui_design:red_button_pressed_text_color"	#
+tyelAbout.changelog120.label84=§7  + "$tyel_oreui_design:common_title_button_icon_color"	#
+
+### CHANGES
+tyelAbout.changelog120.label85=- ベッドに入ったときに目を閉じるようなトランジションエフェクトを追加しました。	#
+tyelAbout.changelog120.label86=- 通常のトースト通知をコンパクト化しました。バニラのものよりスッキリします。	#
+tyelAbout.changelog120.label87=- ロード画面の右下にツルハシ-斧-シャベルのアニメーションアイコンを追加しました。これにより、少しオシャレなロード画面になりました。	#
+tyelAbout.changelog120.label88=- ロードに時間がかかりすぎた場合、シンブルなスピナーの画像だけを表示するようにしました。	#
+tyelAbout.changelog120.label89=- パック情報画面をクリーンな外観に変更し、パックの容量の大きさも表示されるようになりました。	#
+tyelAbout.changelog120.label90=- サーバーフォーム画面の "フィルター検索" のテキストボックスを "検索" の後ろに移動させました。	#
+tyelAbout.changelog120.label91=- 購入確認ダイアログの "これを購入したい" というテキストを "承認して購入手続きへ進む" に変更しました。	#
+tyelAbout.changelog120.label92=- このパックの全体的なファイル構造を再フォーマットしました。	#
+tyelAbout.changelog120.label93=- 変数 "$player_list_score_color" のデフォルト値を 赤 から 黄 に変更しました。	#
+tyelAbout.changelog120.label94=§l§e* 変数のデフォルト値の変更	#
+tyelAbout.changelog120.label95=- "$scoreboard_sidebar_anchor" => "right_middle"	#
+tyelAbout.changelog120.label96=- "$scoreboard_sidebar_anchor_pocket" => "right_middle"	#
+
+### FIXES
+tyelAbout.changelog120.label97=- 大量のコンテンツログのエラーを発生させる原因となっていたバグを修正しました。	#
+tyelAbout.changelog120.label98=- "Realms Promo" 処理がゲームに適用された時に、メインメニューで発生していたバグを修正しました。	#
+tyelAbout.changelog120.label99=- アイテムの個数がアイテムハイライターの上に表示されていた問題を修正しました。	#
+tyelAbout.changelog120.label100=- その他、画面のレイアウトに関するバグを修正しました。	#
+
+### REMOVED FEATURES
+tyelAbout.changelog120.label101=- これらの変数はいらなくなったり、Ore UIによって使えなくなったりしたものなので、削除されました。("Ore UIデザイン"と間違わないようにしてください):	#
+tyelAbout.changelog120.label102=§7  + "$tyel_dialog_accent_color": Ty-el UIダイアログの上部のバーのアクセントカラーの変更 アップデートでOre UIのダイアログと置き換わったため削除されました。	#
+tyelAbout.changelog120.label103=§7  + "$use_death_screen_respawn_button_bg_layout", "$use_black_death_background", "$black_death_bg_alpha": 死亡画面はOre UIのものと置き換わったため削除されました。	#
+tyelAbout.changelog120.label104=§7  + "$actionbar_bg_alpha": 設定/アクセシビリティ からアクションバーの背景の透明度を設定できるようになったため削除されました。	#
+tyelAbout.changelog120.label105=§l§c* 削除されたサーバー限定機能	#
+tyelAbout.changelog120.label106=- "The Hive" 限定: 安山岩カウンター この機能は改善され、"合計アイテム数カウンター" 機能に置き換えられました。	#
+
+tyelAbout.changelog121=v1.2.1	#
+tyelAbout.changelog121.title=§7THE "DEPRESSED CLEAR HOVERER" UPDATE	#
+tyelAbout.changelog121.notice1=§c注意:このアップデートでは、新しいローカライズの対応はありません。	#
+tyelAbout.changelog121.notice2=JSON UIはだんだんOre UIに置き換えられており、Ty-el UI（JSON UI Edition)の終わりが近づいています。MojangがリソースパックによるOre UIのカスタマイズを許可しない限り、ベッド画面やプレイ画面を含む多くの画面がカスタマイズできなくなります。プレイヤーの皆さんの力になれず§o申し訳ないです。	#
+
+### NEW FEATURES
+tyelAbout.changelog121.label1=- "クリアレシピ" ボタンをコントローラー以外のプレイヤー向けに追加しました。これにより、クリック1回でクラフトグリッド内の全アイテムをインベントリに戻せるようになりました。この機能はコントローラ操作では既にバニラの機能として存在するため、コントローラ向けには追加されません。	#
+tyelAbout.changelog121.label2=- アイテムホバーテキストの表示/非表示を切り替えできるようになりました。"収納ツールボックス"内で変更できます。	#
+tyelAbout.changelog121.label3=- HUDやインベントリでバンドルを選択時に正確な "重量" が表示されるようになりました。	#
+tyelAbout.changelog121.label4=- メニュー画面のサイドバーに "アカウントプロフィール" ボタンを追加しました。さらに、"サーバー" ボタンも追加し、プレイ画面のサーバータブにすぐ移動できるようにしました。 	#
+tyelAbout.changelog121.label5=- HUDのチャンク位置・境界表示がパックオプションの "Performance" もしくはグローバル変数の "$use_hud_advanced_position_texts" で切り替え可能になりました。	#
+tyelAbout.changelog121.label6=§l§b* 新しいグローバル変数	#
+tyelAbout.changelog121.label7=- パックのカスタマイズのために "/ui/_global_variables.json" に新しい変数を追加:	#
+tyelAbout.changelog121.label8=§7  + "$toggleable_hover_text_default_state": アイテムホバーテキストのデフォルト表示状態を設定	#
+tyelAbout.changelog121.label9=§7  + "$use_classic_hover_text_on_touch": (タッチ操作時)ホバーテキストの表示位置をクラシックモード(選択したアイテムの隣)とタッチモード(画面下)とで切り替え	#
+tyelAbout.changelog121.label10=§7  + "$use_hud_advanced_position_texts": HUDのチャンク位置・境界表示を有効/無効切り替え 無効にするとパフォーマンスが向上するかもしれません。	#
+tyelAbout.changelog121.label11=§7  + "$container_toolbox_always_visible": クラシックUIで収納ツールボックスを常に表示を有効/無効切り替え(ポケットUIでは常に表示されるようになっています.)	#
+
+### CHANGES
+tyelAbout.changelog121.label12=- ポケットUIの一部画面で "収納ツールボックス" のレイアウトを調整し、ボタンが重なってしまう問題を修正しました。	#
+
+### FIXES
+tyelAbout.changelog121.label13=- v1.21.50+ アップデートに伴うパックエラーを修正しました。	#
+tyelAbout.changelog121.label14=- "モブ効果" 画面を開くとクラッシュする問題を修正しました。	#
+tyelAbout.changelog121.label15=- マーケットプレイスの フィルター/ソートメニュー ポップアップの表示でバグがあったため元に戻しました。	#
+tyelAbout.changelog121.label16=- その他、各種画面レイアウトの調整および細かなバグ修正しました。	#
+
+tyelAbout.changelog122=v1.2.2
+tyelAbout.changelog122.title=§7THE "BYE-BYE PLAY SCREEN" UPDATE :(
+
+### NEW FEATURES
+tyelAbout.changelog122.label1=- マーケットプレイスでアイテムを購入した後、購入確認ダイアログで残りのコイン残高を確認できるようになりました。
+tyelAbout.changelog122.label2=- 設定/ビデオ にいくつかの不足していたオプションの説明を追加しました。
+tyelAbout.changelog122.label3=- HUDメニューのツールチップ(HUDリロード時に画面左下に表示されるもの)を無効化できる新しいグローバル変数 "$tyel_hud_modules_disable_tooltip" を追加しました。
+
+### CHANGES
+tyelAbout.changelog122.label4=- "マーケットプレイスのキャッシュをクリア"、"スクリーンショットのキャッシュをクリア"、"ローカルスクリーンショットをクリア" ボタン、"ファイル保存場所" のドロップダウンを "詳細オプション" メニュー に移動しました。
+tyelAbout.changelog122.label5=- "すべてのチャットをミュート" のトグルをボタンのような見た目に変更しました。また、"チャット検索"、"キャレットモード" のトグル、"チャット設定" ボタンを画面右上に移動し、より使いやすくしました。
+tyelAbout.changelog122.label6=- グローバル変数 "$hud_percentage_text_visible" が、HUDのXPパーセンテージラベルおよび "パフォーマンス" サブパックにも適用されるようになりました。
+
+### FIXES
+tyelAbout.changelog122.label7=- "NetherGames Network" のサーバー情報が一部の状況で誤ってポーズ画面に表示されるバグを修正しました。
+tyelAbout.changelog122.label8=- その他の画面レイアウトの調整およびバグ修正しました。
+
+### REMOVED
+tyelAbout.changelog122.label9=- "レイトレーシング" と "アップスケーリング" の設定をクイック設定から削除しました。(現在では不要になったため)

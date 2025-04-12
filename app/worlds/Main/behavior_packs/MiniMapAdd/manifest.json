@@ -1,0 +1,36 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "§i§lMini Map Addon §u[BP] §31.21.70",
+	    "description": "§iDeveloped by §uAlecsDeveloper §r§iin §l§7[§8C§6F§7]",
+		"uuid": "93af25cc-30bf-420e-a45d-57b10ae5b063",
+		"min_engine_version": [ 1, 21, 70 ],
+		"version": [ 1, 0, 2 ]
+	},
+	"modules": [
+		{
+			"description": "Behavior Pack Module",
+			"type": "data",
+			"uuid": "09906916-d949-4bfa-bc60-243cbd22237b",
+			"version": [ 1, 0, 2 ]
+		},
+		{
+			"description": "Gametest Module",
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/main.js",
+			"uuid": "d0f7ddbb-a205-45e0-a5cd-cebd65ea918b",
+			"version": [ 1, 0, 2 ]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.0.0-beta"
+		},
+		{
+			"uuid": "3a6d7bcb-f5ee-41a7-bfb0-b148d896b0cf",
+			"version": [ 1, 0, 2 ]
+		}
+	]
+}

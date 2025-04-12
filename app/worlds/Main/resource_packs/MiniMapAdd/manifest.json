@@ -1,0 +1,23 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "§i§lMini Map Addon §u[RP] §31.21.70",
+	    "description": "§iDeveloped by §uAlecsDeveloper §r§iin §l§7[§8C§6F§7]",
+        "uuid": "3a6d7bcb-f5ee-41a7-bfb0-b148d896b0cf",
+        "version": [ 1, 0, 2 ],
+        "min_engine_version": [ 1, 21, 70 ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "0adba35f-a63e-4afc-ac6f-d416a7957251",
+            "version": [ 1, 0, 2 ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "93af25cc-30bf-420e-a45d-57b10ae5b063",
+            "version": [ 1, 0, 2 ]
+        }
+    ]
+  }

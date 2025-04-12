@@ -1,0 +1,175 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "durability_gained_label": {
+    "type": "label",
+    "layer": 2,
+    "shadow": true,
+    "anchor_from": "right_middle",
+    "anchor_to": "top_right",
+    "offset": [ 0, 10 ],
+    "text": "#text",
+    "color": "$color",
+    "$color|default": "$anvil_cost_success_text_color",
+    "$visible_condition": "(#can_be_visible and #value > 0)",
+    "$is_negative|default": false,
+    "$arrow_icon": "textures/ui/arrow_up_glyph_small",
+    "variables": [
+      {
+        "requires": "$is_negative",
+        "$visible_condition": "(#can_be_visible and #value < 0)",
+        "$arrow_icon": "textures/ui/arrow_down_glyph_small",
+        "$color": "$anvil_cost_fail_text_color"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#cross_out_icon"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "durability_gained_output_calc",
+        "source_property_name": "#durability_gained_value_int",
+        "target_property_name": "#value"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "durability_gained_output_calc",
+        "source_property_name": "#durability_gained_visible",
+        "target_property_name": "#visible_state"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not #cross_out_icon and #visible_state)",
+        "target_property_name": "#can_be_visible"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "$visible_condition",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "('§z' + #value)",
+        "target_property_name": "#text"
+      }
+    ],
+    "controls": [
+      {
+        "gray@resource_packs.gray_image": {
+          "layer": -1,
+          "size": [ "100% + 12px", "100% + 1px" ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [ 1, 0 ],
+          "alpha": 0.3,
+          "controls": [
+            {
+              "hover_tooltip@common.button": {
+                "size": [ "100%", "100%" ],
+                "pressed_control": "hover",
+                "$pressed_button_name": "button.ignore_me",
+                "sound_volume": 0.0,
+                "controls": [
+                  { "default@common.empty_panel": {} },
+                  {
+                    "hover@common.empty_panel": {
+                      "$hover_state": true,
+                      "controls": [
+                        {
+                          "hover@tyel_common.hover_text_panel": {
+                            "visible": true,
+                            "$hover_text": "container.repair.durabilityGainedTooltip.grindstone",
+                            "$hover_text_max_size": [ 160, "default" ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "arrow_icon": {
+          "type": "image",
+          "texture": "$arrow_icon",
+          "color": "$color",
+          "size": [ 10, 10 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "right_middle",
+          "offset": [ 0, 0 ]
+        }
+      }
+    ]
+  },
+
+  "grindstone_slots_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "durability_gained_label@grindstone.durability_gained_label": {}
+          },
+          {
+            "durability_gained_label_negative@grindstone.durability_gained_label": {
+              "$is_negative": true
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "grindstone_panel/root_panel": {
+    "$container_item_mode_supported": true,
+
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "container_toolbox@tyel_container_common.container_toolbox": {}
+          },
+          {
+            "container_item_mode_switch_panel@tyel_container_item_mode.container_item_mode_switch_panel": {
+            }
+          },
+          {
+            "container_item_type_switch@tyel_container_item_mode.container_item_type_switch": {
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "grindstone_panel": {
+    "modifications": [
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "grindstone_durability_gained_calc@tyel_container_calc_panels.grindstone_durability_gained_calc": {}
+          }
+        ]
+      }
+    ]
+  },
+
+  "grindstone_screen": {
+    "$use_combined_inventory_mode": "$pocket_screen",
+    "$screen_helpers_content": "common.common_inventory_screen_helpers"
+  }
+}

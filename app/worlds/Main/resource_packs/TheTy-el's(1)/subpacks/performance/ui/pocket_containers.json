@@ -1,0 +1,67 @@
+{
+  "generic_label": {
+    "visible": "$label_visible",
+    "$label_visible|default": true
+  },
+
+  "header_area/inventory_header": {
+    "$label_visible": "(not $use_container_toggles)"
+  },
+
+  "header_area": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "tyel_auto_place_mode_toggle@tyel_auto_place.tyel_auto_place_mode_toggle_pocket": {
+              "anchor_from": "top_left",
+              "anchor_to": "top_left",
+              "offset": [ "5%", -1 ],
+              "size": [ "35%", "27px" ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
+  "inventory_grid": {
+    "$button_ref": "tyel_auto_place.container_slot_button_prototype_panel_with_auto_place"
+  },
+
+  "half_screen": {
+    "size": [ "50%", "100% - 56px" ]
+  },
+
+  "panel": {
+    "$is_auto_place_perf_supported": true,
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "pocket_container_toolbox_content_left_panel@tyel_container_common.pocket_container_toolbox_content_left_panel": {
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left",
+              "offset": [ "5%", -8 ]
+            }
+          },
+          {
+            "pocket_container_toolbox_content_right_panel@tyel_container_common.pocket_container_toolbox_content_right_panel": {
+              "anchor_from": "bottom_right",
+              "anchor_to": "bottom_right",
+              "offset": [ "-5%", -8 ]
+            }
+          }
+        ]
+      },
+      {
+        "control_name": "container_gamepad_helpers",
+        "operation": "remove"
+      }
+    ]
+  }
+}

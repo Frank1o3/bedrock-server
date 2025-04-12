@@ -1,0 +1,214 @@
+{
+  "namespace": "tyel_oreui_design__anims",
+
+  "dialog_exit_size_animation_push": {
+    "anim_type": "size",
+    "easing": "in_quart",
+    "duration": "$transition_time_push",
+    "from": [ "100%sm", "100%sm" ],
+    "to": [ "100%sm - 24px", "100%sm - 24px" ],
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "dialog_exit_size_animation_pop": {
+    "anim_type": "size",
+    "easing": "in_quart",
+    "duration": "$transition_time_pop",
+    "from": [ "100%sm", "100%sm" ],
+    "to": [ "100%sm - 24px", "100%sm - 24px" ],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "dialog_entrance_size_animation_push": {
+    "anim_type": "size",
+    "easing": "out_quart",
+    "duration": "$transition_time_push",
+    "from": [ "100%sm - 24px", "100%sm - 24px" ],
+    "to": [ "100%sm", "100%sm" ],
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "dialog_entrance_size_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "from": [ "100%sm - 24px", "100%sm - 24px" ],
+    "to": [ "100%sm", "100%sm" ],
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "dialog_exit_animation_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_quart",
+    "duration": "$transition_time_push",
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "dialog_exit_animation_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "dialog_entrance_animation_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_quart",
+    "duration": "$transition_time_push",
+    "from": 0.0,
+    "to": 1.0,
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "dialog_entrance_animation_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "from": 0.0,
+    "to": 1.0,
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "oreui_popup_dialog_body_anim_size": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_pop",
+    "from": "$anim_from",
+    "to": [ "100%", "100%c" ],
+    "$anim_from": [ "100%", 10 ],
+    "variables": [
+      {
+        "requires": "$enable_reduced_motion_mode",
+        "$anim_from": [ "100%", "100%c" ]
+      }
+    ]
+  },
+
+  "oreui_popup_dialog_hollowed_anim_size": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_pop",
+    "from": "$anim_from",
+    "to": [ "100%", "100%" ],
+    "$anim_from": [ "100%", "40%" ],
+    "variables": [
+      {
+        "requires": "$enable_reduced_motion_mode",
+        "$anim_from": [ "100%", "100%" ]
+      }
+    ]
+  },
+
+  "oreui_popup_dialog_form_fitting_anim_size": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_pop",
+    "from": "$anim_from",
+    "to": [ "100%c", "100%c" ],
+    "$anim_from": [ "100%c", 10 ],
+    "variables": [
+      {
+        "requires": "$enable_reduced_motion_mode",
+        "$anim_from": [ "100%c", "100%c" ]
+      }
+    ]
+  },
+
+  "oreui_dialog_entrance_size_animation_push": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_push",
+    "from": "$oreui_dialog_anim_size_to",
+    "to": "$oreui_dialog_anim_size_from",
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "oreui_dialog_entrance_size_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_pop",
+    "from": "$oreui_dialog_anim_size_to",
+    "to": "$oreui_dialog_anim_size_from",
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "oreui_dialog_exit_size_animation_push": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_push",
+    "to": "$oreui_dialog_anim_size_to",
+    "from": "$oreui_dialog_anim_size_from",
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "oreui_dialog_exit_size_animation_pop": {
+    "anim_type": "size",
+    "easing": "out_expo",
+    "duration": "$transition_time_pop",
+    "to": "$oreui_dialog_anim_size_to",
+    "from": "$oreui_dialog_anim_size_from",
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "oreui_dialog_entrance_animation_fade": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "out_quart",
+    "duration": "$transition_time_push",
+    "from": 0.0,
+    "to": 1.0,
+    "play_event": "screen.entrance_push",
+    "end_event": "screen.entrance_end"
+  },
+
+  "oreui_dialog_entrance_animation_pop_fade": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "from": 0.0,
+    "to": 1.0,
+    "play_event": "screen.entrance_pop",
+    "end_event": "screen.entrance_end"
+  },
+
+  "oreui_dialog_exit_animation_push_fade": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "out_quart",
+    "duration": "$transition_time_push",
+    "to": 0.0,
+    "from": 1.0,
+    "play_event": "screen.exit_push",
+    "end_event": "screen.exit_end"
+  },
+
+  "oreui_dialog_exit_animation_pop_fade": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "out_quart",
+    "duration": "$transition_time_pop",
+    "to": 0.0,
+    "from": 1.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "file_validation": { "$valid": true }
+}

@@ -1,0 +1,15 @@
+// File made and modified by @tlgm2308 (Twitter).
+// Please respect my works ;-;, and do not use my code without permissions!
+// Original code by (c) Mojang & (c) Microsoft. All rights reserved.
+{
+  "how_to_play_screen": {
+    "$tyel_theme_screen_alias": "how_to_play",
+    "$use_custom_panorama": "$is_pregame",
+    "$screen_bg_content": "common.gray_background",
+    "$fill_alpha": "$fill_alpha"
+  },
+
+  "how_to_play_section_content_panels": {
+    "size": [ "100% - 6px", "100%c + 5px" ]
+  }
+}

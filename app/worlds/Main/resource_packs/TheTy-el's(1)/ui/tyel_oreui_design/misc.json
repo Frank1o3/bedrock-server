@@ -1,0 +1,86 @@
+{
+  "namespace": "tyel_oreui_design__misc",
+
+  "snackbar_background": {
+    "type": "image",
+    "texture": "textures/ui/tyel_oreui_design/misc/snackbar_background"
+  },
+
+  "colored_category_block_label": {
+    "type": "label",
+    "text": "$category_label",
+    "enable_profanity_filter": "$enable_profanity_filter",
+    "color": "$category_label_color",
+    "size": [ "default", 10 ],
+    "max_size": [ 480, 10 ],
+    "layer": 1,
+    "bindings": "$category_label_bindings"
+  },
+
+  "colored_category_block": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%", 16 ],
+    "$category_background_color|default": [ 1, 1, 1 ],
+    "$category_outline_color|default": "$dark_border_default_color",
+    "$category_label|default": "",
+    "$category_label_color|default": "$title_text_color",
+    "$category_label_bindings|default": [],
+    "$enable_profanity_filter|default": true,
+    "$category_label_panel|default": "tyel_oreui_design__misc.colored_category_block_label",
+    "controls": [
+      {
+        "left_outline": {
+          "type": "image",
+          "texture": "textures/ui/tyel_oreui_design/misc/colored_category_outline_left",
+          "color": "$category_outline_color",
+          "size": [ "100%c", 16 ],
+          "layer": 1,
+          "controls": [
+            {
+              "left_background": {
+                "type": "image",
+                "texture": "textures/ui/tyel_oreui_design/misc/colored_category_block_left",
+                "color": "$category_background_color",
+                "size": [ "100%c + 8px", 16 ],
+                "layer": 1,
+                "controls": [
+                  {
+                    "category_label@$category_label_panel": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_hack@common.empty_panel": {
+          "size": [ -1, 0 ]
+        }
+      },
+      {
+        "right_outline": {
+          "type": "image",
+          "texture": "textures/ui/tyel_oreui_design/misc/colored_category_outline_right",
+          "color": "$category_outline_color",
+          "size": [ "fill", 16 ],
+          "layer": 1,
+          "controls": [
+            {
+              "right_background": {
+                "type": "image",
+                "texture": "textures/ui/tyel_oreui_design/misc/colored_category_block_right",
+                "color": "$category_background_color",
+                "size": [ "100%", 16 ],
+                "layer": 1
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "file_validation": { "$valid": true }
+}

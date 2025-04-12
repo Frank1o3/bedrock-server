@@ -1,0 +1,39 @@
+{
+    "namespace": "mm::block",
+
+    "minimap_blocks": {
+        "type": "panel",
+        "size": [ 100, 100 ],
+        "factory": { 
+            "name": "hud_title_text_factory", 
+            "control_ids": { "hud_title_text": "block_meshes@mm::block.block_meshes" }
+        }
+    },
+
+    "block_meshes": {
+        "type": "panel",
+        "controls": [
+            { "block_0@mm::block.block_mesh": { "layer": 140 } },
+            { "block_1@mm::block.block_mesh": { "layer": 130, "offset": "$block_offset" } }
+        ]
+    },
+
+    "block_mesh": {
+        "type": "label",
+        "text": "#text",
+        "shadow": false,
+        "font_scale_factor": "$block_scale",
+        "font_size": "small",
+        "line_padding": "$block_size",
+        "bindings": [
+            {
+                "binding_name": "#hud_title_text_string"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#hud_title_text_string - ('%.7s' * #hud_title_text_string))",
+                "target_property_name": "#text"
+            }
+        ]
+    }
+}

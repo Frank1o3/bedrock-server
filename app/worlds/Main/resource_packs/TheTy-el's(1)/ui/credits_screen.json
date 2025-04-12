@@ -1,0 +1,61 @@
+{
+  "anim_background_scroll": {
+    "to": [ 0, "-40%y" ],
+    "next": "@credits.anim_background_scroll"
+  },
+
+  "fade_in_image": {
+    "size": [ "150%", "150%" ],
+    "layer": 30
+  },
+
+  "anim_skip_button_in": {
+    "anim_type": "offset",
+    "easing": "out_expo",
+    "duration": "$transition_time_pop",
+    "from": [ 150, -8 ],
+    "to": [ -8, -8 ],
+    "next": "@credits.anim_skip_button_wait"
+  },
+
+  "anim_skip_button_wait": {
+    "anim_type": "wait",
+    "duration": 5.0,
+    "next": "@credits.anim_skip_button_out"
+  },
+
+  "anim_skip_button_out": {
+    "anim_type": "offset",
+    "easing": "in_expo",
+    "duration": "$transition_time_push",
+    "from": [ -8, -8 ],
+    "to": [ 150, -8 ],
+    "destroy_at_end": "skip_button"
+  },
+
+  "skip_panel/skip_button": {
+    "anims": [
+      "@credits.anim_skip_button_in"
+    ]
+  },
+
+  "credits_screen_content/fade_in_image": {
+    "layer": 30
+  },
+
+  "credits_screen_background": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "clips_children": true,
+    "controls": [
+      {
+        "background@credits.background": {}
+      }
+    ]
+  },
+
+  "credits_screen": {
+    "$tyel_theme_screen_alias": "credits",
+    "$screen_bg_content": "credits.credits_screen_background"
+  }
+}

@@ -1,0 +1,44 @@
+{
+    "namespace": "mm::map",
+
+    "minimap_panel": {
+        "type": "image",
+        "size": [ 120, 120 ],
+        "texture": "textures/map/map_background",
+        "anchor_to": "top_right",
+        "anchor_from": "top_right",
+        "controls": [
+            { "minimap_blocks@mm::block.minimap_blocks": {} },
+            { "player_panel@mm::player.player_panel": {} }
+        ],
+        "bindings": [{
+            "binding_name": "#paper_doll_visible",
+            "binding_name_override": "#visible"
+        }]
+    },
+
+    "minimap_button@common_buttons.light_text_button": {
+        "focus_enabled": false,
+        "prevent_touch_input": true,
+        "$pressed_button_name": "button.hide_paperdoll_hud",
+        "size": [ 18, 18 ],
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "offset": [ 38, 1 ],
+        "controls": [
+            {
+                "touch_icon": {
+                    "type": "image",
+                    "texture": "textures/items/map_locked"
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#inventory_touch_button",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
+            }
+        ]
+    }
+}

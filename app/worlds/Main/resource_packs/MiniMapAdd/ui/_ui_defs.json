@@ -1,0 +1,7 @@
+{
+    "ui_defs": [
+        "ui/mm_ui/map.json",
+        "ui/mm_ui/block.json",
+        "ui/mm_ui/player.json"
+    ]
+}

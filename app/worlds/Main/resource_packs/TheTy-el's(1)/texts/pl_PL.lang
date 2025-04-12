@@ -1,0 +1,173 @@
+## Możesz dostosować te 4 następujące linie
+## \/ \/
+deathScreen.message=Giniesz!	#
+deathScreen.subtitlemessage=... ;-; Nie poddawaj się...	#
+inBed.title=zzz...	#
+inBed.subtitle=Słodkie sny! _(-w-)_	#
+## /\ /\
+
+## Don't change this translation, this is required
+pauseScreen.playersTitle=%s	#
+
+icontext.multiplyone=x1	### Maximum 6 characters
+icontext.all=Wsz.	### Maximum 6 characters
+icontext.hovertext.multiplyone=Przedmiot kwota: Jeden przedmiot	#
+icontext.hovertext.all=Przedmiot kwota: Jeden gniazdo	#
+
+icontext.dropOne=Upuść jeden	#
+icontext.dropAll=Upuść wszystkie	#
+icontext.destroyOne=Zniszcz jeden	#
+icontext.destroyAll=Zniszcz wszystkie	#
+
+accessibility.chat.tts.autocomplete=Autouzupełnienie	#
+accessibility.chat.tts.autocompleteback=Autouzupełnienie z powrotem	#
+accessibility.chat.tts.previous=Wstecz wiadomość	#
+accessibility.chat.tts.next=Dalej wiadomość	#
+accessibility.chat.tts.visibilityModeToggle=Przełącznik trybu widoczności czatu	#
+## The followings add a comma before each mode toggle for a small amount of waiting time before tts reads everything else
+accessibility.chat.tts.visibilityModeToggle.autocomplete=, Bieżący tryb: Panel autouzupełnienie	#
+accessibility.chat.tts.visibilityModeToggle.chat=, Bieżący tryb: Panel czatu	#
+
+accessibility.pause.infoPanelToggle=Przełącz panelu informacji	#
+accessibility.play.editMode=Edytuj	#
+accessibility.toggle.tts.startsidebar=Przycisk menu paska bocznego	#
+accessibility.toggle.tts.threedotsmenu=Więcej opcje	#
+
+chat.placeHolderText=Wpisz tutaj swoją wiadomość lub polecenie...	#
+commandBlockScreen.placeHolderText=Wpisz tutaj swoje polecenie	#
+commandBlockScreen.placeHolderOutputText=Twoje wyjście poleceń będzie tutaj...	#
+
+compatibility.enabled=Tryb zgodności włączony!	#
+compatibility.autoEnabledforServer=Tryb zgodności Ty-el UI dla tego serwera jest dostępny i włączy się automatycznie po dołączeniu!	#
+compatibility.enabledForAdditionalServers.disclaimer=Jeśli zobaczysz tę plakietkę na dowolnym przełączniku serwera zewnętrznego, oznacza to, że te serwery mają dostępny tryb zgodności dla Ty-el UI. Sprawdź informacje o serwerze na ekranie pauzy w grze, aby uzyskać więcej informacji.	#
+compatibility.tyelUI=Kompatybilny z Ty-el UI!	#
+
+container.destroyItemsTooltip.line1=Naciśnij dwukrotnie przedmioty, aby je zniszczyć.	#
+container.destroyItemsTooltip.line1_touch=Dwukrotnie dotknij przedmiotów, aby je zniszczyć.	#
+container.destroyItemsTooltip.line2=§l§cZachowaj ostrożność przy wyborze przedmiotów do zniszczenia!§r	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line1=Nie można używać trybu niszczenia przedmiotów w trybie przetrwanie!	#
+container.destroyItemsTooltip.cannotBeUsedInSurvival.line2=§aTen tryb jest dostępny tylko w kreatywny trybie gry.§r	#
+container.fastCraft=Szybsze stwórz	#
+container.fastCraft.warningHoverText=Szybsze stwórz, §cBardzo niebezpieczne!§r Naciśnij dowolne miejsce na przedmiot w książce kucharskiej, aby szybko go stworzyć! Możesz stracić swoje cenne przedmioty na zawsze, jeśli przez przypadek stworzysz coś źle!	#
+container.highlightItems=Zaznacz przedmioty (rozróżniana wielkośći liter!)	#
+container.highlightitems.placeholdertext=Wyróżnij przedmioty...	#
+container.itemAmountHoverText.one=Przedmiot kwota: Jeden obiekt	#
+container.itemAmountHoverText.max=Przedmiot kwota: Jeden kilka	#
+container.itemAmountHoverText.maxFixed=Przedmiot kwota: Jeden kilka (naprawił)	#
+container.invMode=Tryb ekwipunek:	#
+container.invMode.autoPlace=Automatyczne umieść	#
+container.invMode.manualPlace=Miejsce umieść	#
+container.invMode.normalMode=Tryb normalny	#
+container.invMode.autoPlaceMode=Tryb szybkie przerzucenie	#
+container.invMode.dropMode=Tryb upuść	#
+container.invMode.autoDestroyMode=Tryb zniszcz przedmiot	#
+container.quickCraft=Szybkie stwórz	#
+
+controller.buttonTip.toggleSidebar=Menu paska bocznego	#
+
+createWorldScreen.gameMode.personal.gameModeDefaultDescription=Zsynchronizowano z domyślnym trybem gry na świecie.	#
+createWorldScreen.gameMode.personal.gameModeSpectatorDescription=Lataj i obserwuj świat bez jakiejkolwiek interakcji z nim.	#
+createWorldScreen.levelSeed.copySeedTooltip=Naciśnij pole tekstowe ziarno generatora, zaznacz cały tekst ziarno i naciśnij Kopiuj na klawiaturze.	#
+createWorldScreen.levelSeed.copySeedTooltip.keyboard=Kliknij pole tekstowe ziarno generatora, naciśnij Ctrl + A, a następnie Ctrl + C na klawiaturze, aby skopiować ziarno.	#
+createWorldScreen.serverSimDistanceDescription.header=Gra ładuje się i stosuje zmiany w określonym promieniu bloku	#
+createWorldScreen.serverSimDistanceDescription.footer=Promień bloku:	#
+createWorldScreen.worldNameDescription.create=Tutaj możesz nazwać swój świat.	#
+createWorldScreen.worldNameDescription.edit=Tutaj możesz edytować nazwę swojego świat.	#
+
+dr.toggle.purchaseLock=Blokada zakupu	#
+
+generator.infinite.desc=Nieskończony świat trwa i trwa wiecznie. Różne krajobrazy generują się z wykorzystaniem biomów.	#
+generator.old.desc=Skończony świat pod względem wielkości i wysokości, 256x256x256. Wykorzystuje generacje starego świata.	#
+
+hudScreen.hideHudTooltip=Dotknij dwukrotnie, aby ukryj interfejs HUD	#
+hudScreen.lowDurability=Niska trwałość!	#
+hudScreen.showHudTooltip=Dotknij tego obszaru, aby ponownie wyświetlić HUD!	#
+
+itemLore.title=Przeglądarka informacji o przedmiot §o§7(BETA!)	#
+itemLore.emptyMessage=<To gniazdo jest puste!>	#
+
+menu.communityStandards=Wyświetl standardy społeczności	#
+menu.feedback=Prześlij opinię	#
+menu.multiplayerHelp=Pomoc tryb wieloosobowy	#
+menu.quit=Zakończyć grę	#
+
+networkWorld.view_server_store=Wyświetl sklep z serwerami	#
+
+options.quickSettingsTitle=Szybka ustawienia	#
+options.thirdperson.firstperson_short=Pierwszej	#
+options.thirdperson.thirdpersonback_short=Trzeciej (tył)	#
+options.thirdperson.thirdpersonfront_short=Trzeciej (przód)	#
+
+pauseScreen.thirdPartyWorld=Serwer główne	#
+pauseScreen.realmWorld=Realm	#
+
+playscreen.navigateUp=Górna tab	#
+playscreen.navigateDown=Dolna tab	#
+playscreen.joinRecentExternalServer=Dołącz do ostatniego serwera zewnętrznego	#
+playscreen.recentlyPlayed=Niedawno grane	#
+playscreen.playButton=GRAJ!	#
+playscreen.projectsearch.placeholdertext=Wyszukaj projekty... [Rozróżnianie wielkości liter]	#
+playscreen.worldsearch.codelimiteddisclaimer=§l§cOSTRZEŻENIE:§r Ze względu na złą wydajność i ograniczenia kodu możemy zindeksować tylko do §l§e50§r najnowszych światów, aby móc wyszukiwać, przepraszam za niedogodności.	#
+playscreen.worldsearch.placeholdertext=Szukaj w światy... [Rozróżnianie wielkości liter!]	#
+playscreen.worldsearch.resultmessage_before=Wyniki dla: 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.worldsearch.resultmessage_after= 	### Keep this empty (add a space " ") if your localization doesn't allow it
+playscreen.warning.forceautoplace.title=Wymuś ostrzeżenie o szybkie przerzucenie	#
+playscreen.warning.forceautoplace.body=Użyj funkcji Wymuś włączenie szybkie przerzucenie na serwerach na własne ryzyko, nie nadużywaj tego zbytnio na serwerach (zwłaszcza serwery główne)!	#
+
+progressScreen.hiveNetherGlitch.title=AARGH,... znowu ten Nether Glitch!	#
+progressScreen.hiveNetherGlitch.body=Co możesz zrobić? Po prostu… poczekaj i dołącz ponownie lub wymuś zamknięcie i ponowne otwarcie gry, a jeśli korzystasz z systemu Windows, użyj przycisku „Przywróć w dół”, a nie „Minimalizuj”! Powinien natychmiast zamknąć ten ekran!	#
+
+resourcePack.packSearchPlaceHolderText.global=Szukaj w zasoby globalne...	#
+resourcePack.packSearchPlaceHolderText.world_resource=Szukaj w paczki zasobów...	#
+resourcePack.packSearchPlaceHolderText.world_behavior=Szukaj w paczki zachowań...	#
+resourcePack.showNotDownloaded=Pokaż niepobrane	#
+resourcePack.tyelUIWarningMessage=Jeśli masz już aktywowane Ty-el UI w Zasoby globalne, nie powinieneś ponownie aktywować Ty-el UI w Paczki zasobów świata, z wyjątkiem opcji „Wymagaj od graczy, żeby zaakceptowali paczki zasobów przed dołączeniem” w ustawieniach Paczki zasobów świata, aby uniknąć powielanych błędów sterowania i nieoczekiwanych błędy.	#
+resourcePack.tyelUI.globalVarsFailedToLoad.toastMessage=Wystąpił błąd podczas próby załadowania /ui/_global_variables.json z Ty-el UI. Sprawdź składnię plików i spróbuj ponownie.	#
+
+screenshot.saveLocation=Lokalizacja zrzut ekranu:	#
+screenshot.showSaveLocation=Pokaż lokalizacja zrzut ekranu	#
+
+serverform.searchPlaceHolderText=Filtruj wyszukiwanie... [Rozróżnianie wielkości liter!]	#
+serverform.searchDisclaimer.tooltip=Upewnij się, że nie chcesz próbować przeszukiwać treści, które są zbyt często używane na tym ekranie formularza, na przykład: §o"Select to equip", "Last Seen",...	#
+
+soundCategory.ambient.description=Głośność otoczenia (odgłosy podwodne, netherowe lub jaskiniowe), odgłosy wchodzenia i wychodzenia z wody oraz fajerwerków	#
+soundCategory.block.description=Głośność bloków (kowadła, skrzynie, drzwi, itp.)	#
+soundCategory.hostile.description=Głośność wrogie i neutralne moby (zombies, creepers, pająki, itp.)	#
+soundCategory.main.description=Główna głośność wszystkie dźwięki (zarówno muzyka z gry, jak i dźwięki)	#
+soundCategory.music.description=Główna głośność muzyka z gry (odtwarzane losowo podczas gry)	#
+soundCategory.neutral.description=Głośność dźwięku pasywne moby (kurczaki, krowy, wieprzowy, osadnicy, itp.)	#
+soundCategory.player.description=Głośność dźwięku gracze (trzaski przedmiotów, odgłosy zranienia, odgłosy jedzenia, itp.)	#
+soundCategory.record.description=Głośność dźwięku muzyka i dźwięki odtwarzane z NA Bloki dźwiękowe i szafa grająca	#
+soundCategory.sound.description=Główna głośność dźwięki gry (wykluczać muzykę)	#
+soundCategory.weather.description=Głośność dźwięku deszcz i grzmot	#
+soundCategory.texttospeech.description=Głośność dźwięku tekstu na mowę (w przypadku czatu i UI włącz je w sekcji Ustawienia/Ułatwienia dostępu)	#
+
+storageManager.floatingFileStorageSelector.tooltip=Chcesz zmienić miejsce przechowywania? Naciśnij tutaj! (NIEZALECANE podczas odtwarzania z płytą Ty-el UI!)	#
+
+store.cost=Koszt:	#
+
+store.confirmPurchase.title=Potwierdź zakup	#
+store.confirmPurchase.description=Czy na pewno chcesz kupić ten przedmiot? Oto, co otrzymasz:	#
+store.confirmPurchase.description_completed=Możesz iść. Możesz teraz zamknąć to okno dialogowe i cieszyć się zakupem.	#
+store.confirmPurchase.tooltip=Zostaniesz poproszony o potwierdzenie zakupu podczas naciskania przycisków zakupu, aby uniknąć przypadkowego zakupu przedmiotów.	#
+store.proceedToPurchase=Kupię ten przedmiot	#
+
+trade.tradeAll=handlować wszystkim	#
+
+tyelAbout.about=O Ty-el UI	#
+tyelAbout.customAvailable=Dostępny ekran niestandardowy!	#
+tyelAbout.minGameVerRequired=Wymagana minimalna wersja Minecraft:	#
+tyelAbout.openAboutTyelUITooltip.openText=Naciśnij mnie, aby otworzyć O Ty-el UI (obecnie ekran niestandardowy)	#
+tyelAbout.openAboutTyelUITooltip.closeText=Naciśnij mnie, aby wrócić do ekranu niestandardowego (obecnie ekran O Ty-el UI)	#
+tyelAbout.translationHelp=Potrzebuję twojej pomocy! Jeśli chcesz przetłumaczyć pakiet na swój język, skontaktuj się ze mną na Twitter.	#
+
+tyelAbout.troubleshootingMode.deactivatePack.title=Tryb rozwiązywania problemów Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.desc=Naciśnij ten przycisk „Dezaktywuj Ty-el UI”, aby natychmiast dezaktywować pakiet, i naciśnij „Zamknij ustawienia”, aby zakończyć proces dezaktywacji. Po zakończeniu tego procesu musisz także zmienić "$tyel_ui_troubleshooting_mode" z powrotem na §cfalse§r w /ui/_global_variables.json.	#
+tyelAbout.troubleshootingMode.deactivatePack.globalVarsFailedToLoadDesc=Masz ten nowy przycisk, ponieważ plik /ui/_global_variables.json nie został poprawnie załadowany. Sprawdź składnię pliku i spróbuj ponownie. Lub jeśli chcesz dezaktywować Ty-el UI, naciśnij ten przycisk „Dezaktywuj Ty-el UI”, aby natychmiast dezaktywować pakiet, i naciśnij „Zamknij ustawienia”, aby zakończyć proces dezaktywacji.	#
+tyelAbout.troubleshootingMode.deactivatePack.deactivateButtonLabel=Dezaktywuj Ty-el UI	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel=Zamknij ustawienia	#
+tyelAbout.troubleshootingMode.deactivatePack.closeSettingsButtonLabel.locked=Nie można dezaktywować Ty-el UI podczas gry	#
+tyelAbout.troubleshootingMode.watermark.label_row1=Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2=Tryb rozwiązywania problemów	#
+tyelAbout.troubleshootingMode.watermark.label_row1_globalVarsFailedToLoad=Tryb rozw. problemów Ty-el UI	#
+tyelAbout.troubleshootingMode.watermark.label_row2_globalVarsFailedToLoad=§c(Nie udało się załadować zmiennych globalnych!)	#

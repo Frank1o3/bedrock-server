@@ -1,0 +1,261 @@
+{
+  "namespace": "tyel_auto_place",
+
+  "container_slot_button_prototype_auto_place_mode@common.container_slot_button_prototype": {
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_secondary_select",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.controller_select",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_auto_place",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.controller_secondary_select",
+        "to_button_id": "button.container_auto_place",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_inventory_drop",
+        "to_button_id": "button.drop_one",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_inventory_drop_all",
+        "to_button_id": "button.drop_all",
+        "mapping_type": "pressed"
+      }
+    ]
+  },
+
+  "container_slot_button_prototype_panel_with_auto_place": {
+    "type": "button",
+    "consume_hover_events": false,
+    "$is_auto_place_perf_supported|default": false,
+    "controls": [
+      {
+        "container_slot_button_prototype_normal": {
+          "type": "panel",
+          "bindings": [
+            {
+              "ignored": "(not $is_auto_place_perf_supported)",
+              "binding_type": "view",
+              "source_control_name": "tyel_auto_place_mode_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "container_slot_button_prototype@common.container_slot_button_prototype": {
+                "consume_hover_events": false,
+                "tts_ignore_count": true,
+                "tts_skip_message": true,
+                "tts_inherit_siblings": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "container_slot_button_prototype_auto_place": {
+          "ignored": "(not $is_auto_place_perf_supported)",
+          "type": "panel",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "tyel_auto_place_mode_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "container_slot_button_prototype_auto_place_mode@tyel_auto_place.container_slot_button_prototype_auto_place_mode": {
+                "consume_hover_events": false,
+                "tts_ignore_count": true,
+                "tts_skip_message": true,
+                "tts_inherit_siblings": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "tyel_auto_place_mode_toggle@common_tabs.left_tab_toggle_control_content": {
+    "visible": "($use_container_toggles or $force_auto_place_on)",
+    "size": [ 100, 28 ],
+    "$force_auto_place_on|default": false,
+    "$use_container_toggles|default": true,
+    "$toggle_group_forced_index": 1,
+    "$tab_checked_content|default": "tyel_auto_place.auto_place_mode_toggle_on_control",
+    "$tab_unchecked_content|default": "tyel_auto_place.auto_place_mode_toggle_off_control",
+    "$tab_checked_hover_content|default": "tyel_auto_place.auto_place_mode_toggle_on_hover_control",
+    "$tab_unchecked_hover_content|default": "tyel_auto_place.auto_place_mode_toggle_off_hover_control",
+    "$option_label": "controller.buttonTip.quick.move",
+    "$option_on_label": "options.on",
+    "$option_off_label": "options.off",
+    "$toggle_name": "tyel_auto_place_mode_toggle",
+    "$toggle_default_state": "$force_auto_place_on"
+  },
+
+  "tyel_auto_place_mode_toggle_pocket@tyel_auto_place.tyel_auto_place_mode_toggle": {
+    "$tab_checked_content": "tyel_auto_place.auto_place_mode_toggle_pocket_on_control",
+    "$tab_unchecked_content": "tyel_auto_place.auto_place_mode_toggle_pocket_off_control",
+    "$tab_checked_hover_content": "tyel_auto_place.auto_place_mode_toggle_pocket_on_hover_control",
+    "$tab_unchecked_hover_content": "tyel_auto_place.auto_place_mode_toggle_pocket_off_hover_control",
+
+    "$unchecked_default_image": "",
+    "$unchecked_hover_image": "",
+    "$unchecked_locked_image": "",
+    "$unchecked_locked_hover_image": "",
+
+    "$checked_default_image": "",
+    "$checked_hover_image": "",
+    "$checked_locked_image": "",
+    "$checked_locked_hover_image": ""
+  },
+
+  "inventory_panel_bottom_half_with_label_auto_place_mode@common.inventory_panel_bottom_half_with_label": {
+    "controls": [
+      { "inventory_panel_auto_place_mode@tyel_auto_place.inventory_panel_auto_place_mode": {} },
+      {
+        "inventory_label@common.section_heading_label": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 7, 3 ],
+          "layer": 2,
+          "text": "container.inventory"
+        }
+      }
+    ]
+  },
+
+  "auto_place_mode_toggle_control_template": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100% - 8px", "100% - 8px" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 5, 4 ],
+    "clips_children": true,
+    "$toggle_image_control|default": "common.empty_panel",
+    "$option_label|default": "",
+    "$toggle_label|default": "",
+    "$option_primary_color|default": "$tab_checked_text_color",
+    "$option_secondary_color|default": "$tab_secondary_checked_text_color",
+    "controls": [
+      {
+        "toggle_image_panel": {
+          "type": "panel",
+          "size": [ 30, "100%" ],
+          "controls": [
+            {
+              "toggle_image_control@$toggle_image_control": {
+                "offset": [ 0, 2 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 2, "100%" ]
+        }
+      },
+      {
+        "auto_place_mode_label_panel": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            {
+              "auto_place_mode_label": {
+                "type": "label",
+                "text": "$option_label",
+                "color": "$option_primary_color",
+                "size": [ "100%", "default" ],
+                "max_size": [ "100%", 20 ]
+              }
+            },
+            {
+              "switch_label": {
+                "type": "label",
+                "text": "$toggle_label",
+                "color": "$option_secondary_color",
+                "size": [ "100%", 10 ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "auto_place_mode_toggle_on_control@tyel_auto_place.auto_place_mode_toggle_control_template": {
+    "$toggle_image_control": "settings_common.option_toggle_on",
+    "$toggle_label": "$option_on_label",
+    "$option_primary_color": "$tab_checked_text_color",
+    "$option_secondary_color": "$tab_secondary_checked_text_color"
+  },
+
+  "auto_place_mode_toggle_off_control@tyel_auto_place.auto_place_mode_toggle_control_template": {
+    "$toggle_image_control": "settings_common.option_toggle_off",
+    "$toggle_label": "$option_off_label",
+    "$option_primary_color": "$tab_unchecked_text_color",
+    "$option_secondary_color": "$tab_secondary_unchecked_text_color"
+  },
+
+  "auto_place_mode_toggle_on_hover_control@tyel_auto_place.auto_place_mode_toggle_control_template": {
+    "$toggle_image_control": "settings_common.option_toggle_on_hover",
+    "$toggle_label": "$option_on_label",
+    "$option_primary_color": "$tab_checked_hover_text_color",
+    "$option_secondary_color": "$tab_secondary_checked_hover_text_color"
+  },
+
+  "auto_place_mode_toggle_off_hover_control@tyel_auto_place.auto_place_mode_toggle_control_template": {
+    "$toggle_image_control": "settings_common.option_toggle_off_hover",
+    "$toggle_label": "$option_off_label",
+    "$option_primary_color": "$tab_unchecked_hover_text_color",
+    "$option_secondary_color": "$tab_secondary_unchecked_hover_text_color"
+  },
+
+  "auto_place_mode_toggle_pocket_on_control@tyel_auto_place.auto_place_mode_toggle_on_control": {
+    "$option_primary_color": "$pocket_title_text_color"
+  },
+
+  "auto_place_mode_toggle_pocket_off_control@tyel_auto_place.auto_place_mode_toggle_off_control": {
+    "$option_primary_color": "$pocket_title_text_color"
+  },
+
+  "auto_place_mode_toggle_pocket_on_hover_control@tyel_auto_place.auto_place_mode_toggle_on_hover_control": {
+    "$option_primary_color": "$pocket_title_text_color"
+  },
+
+  "auto_place_mode_toggle_pocket_off_hover_control@tyel_auto_place.auto_place_mode_toggle_off_hover_control": {
+    "$option_primary_color": "$pocket_title_text_color"
+  },
+
+  "file_validation": { "$valid": true }
+}

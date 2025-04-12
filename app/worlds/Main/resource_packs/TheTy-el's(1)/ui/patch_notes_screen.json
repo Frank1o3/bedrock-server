@@ -1,0 +1,9 @@
+{
+  "sunsetting_button_panel/sunsetting_toggle_panel/header_description_stack_panel/buffer_panel/label": {
+    "color": "$7_color_format"
+  },
+
+  "sunsetting_dialog": {
+    "$oreui_dialog_style__animate_dialog": true
+  }
+}
