@@ -38,12 +38,12 @@ if [ "$1" == "rollback" ]; then
     echo "Restarting server..."
 
     # Create a virtual environment and install dependencies
-    pip install fastapi websockets "uvicorn[standard]"
-    python3 /bedrock/Main.py
+    pip install -r "${HOME}/Backend/requirements.txt"
+    python3 "${HOME}/Backend/Main.py"
 else
     echo "Starting Minecraft server..."
     
     # Create a virtual environment and install dependencies
-    pip install fastapi websockets "uvicorn[standard]"
-    python3 /bedrock/Main.py
+    pip install "${HOME}/Backend/requirements.txt"
+    python3 "${HOME}/Backend/Main.py"
 fi

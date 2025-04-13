@@ -23,10 +23,12 @@ RUN curl -L -A "bedrock-server.zip" -o bedrock-server.zip https://www.minecraft.
     rm bedrock-server.zip
 
 # Copy app files and scripts
-COPY ./app /bedrock
+COPY ./app/BedrockServer /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
 COPY ./backups/ /bedrock/backups/
 COPY ./crontab.txt /etc/cron.d/bedrock-backup
+
+COPY ./app/Backend ${HOME}/Backend
 
 # Set permissions
 RUN chmod +x /bedrock/*.sh && \
