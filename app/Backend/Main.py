@@ -1,11 +1,9 @@
-import subprocess
 import threading
 import asyncio
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from Functions.functions import stream_bash_logs, stream_bedrock_logs
-
 
 
 app = FastAPI()

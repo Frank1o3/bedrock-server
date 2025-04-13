@@ -1,15 +1,18 @@
 FROM ubuntu:latest
 
+# Set environment to non-interactive (avoid tzdata prompt)
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y \
-    rsync curl wget unzip bash cron jq sudo tar python3 python3-pip libpcap0.8 && \
+    rsync curl wget unzip bash cron jq sudo tar python3 python3-pip python3-venv libpcap0.8 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Add non-root user
-RUN useradd -m -s /bin/bash bedrock && \
-    echo "bedrock ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN useradd -m -s /bin/bash server && \
+echo "server ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Set working directory
 WORKDIR /bedrock
@@ -17,30 +20,33 @@ WORKDIR /bedrock
 # Download Bedrock Server
 RUN curl -L -A "bedrock-server.zip" -o bedrock-server.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.72.01.zip && \
     unzip bedrock-server.zip && \
-    rm bedrock-server.zip
+rm bedrock-server.zip
 
 # Copy app files and scripts
 COPY ./app/BedrockServer /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
 COPY ./crontab.txt /etc/cron.d/bedrock-backup
 
-# Copy Backend files
-COPY ./app/Backend ${HOME}/Backend
+# Copy backend to the user's home directory
+COPY ./app/Backend /home/server/Backend
 
 # Set permissions
 RUN chmod +x /bedrock/*.sh && \
     chmod 0644 /etc/cron.d/bedrock-backup && \
-    chown -R bedrock:bedrock /bedrock && \
-    crontab /etc/cron.d/bedrock-backup
+    chown -R server:server /bedrock /home/server && \
+crontab /etc/cron.d/bedrock-backup
 
-# Install No-IP DUC
+# Switch to user for user-space install
+USER server
+WORKDIR /home/server
+
+# Install No-IP DUC under user's home directory
 RUN wget --content-disposition https://www.noip.com/download/linux/latest -O noip-duc.tar.gz && \
     tar xf noip-duc.tar.gz && \
-    dpkg -i /bedrock/noip-duc_*/binaries/noip-duc_*.deb || apt-get install -f -y && \
-    rm -rf /bedrock/noip-duc*
+    mkdir -p ~/noip && \
+    mv noip-duc_*/binaries/* ~/noip && \
+rm -rf noip-duc*
 
-# Switch to non-root user
-USER bedrock
-
+# Set back working directory to /bedrock
+WORKDIR /bedrock
 ENTRYPOINT ["/bedrock/entrypoint.sh"]
-CMD ["/bedrock/start.sh"]
