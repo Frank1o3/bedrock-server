@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: frank1o3/bedrock-server:latest
+    image: frank1o3/bedrock-server:beta
     container_name: bedrock-server
     environment:
       - NO_IP_USERNAME

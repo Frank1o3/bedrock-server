@@ -1,8 +1,5 @@
 FROM ubuntu:latest
 
-# Set environment to non-interactive (avoid tzdata prompt)
-ENV DEBIAN_FRONTEND=noninteractive
-
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y \
