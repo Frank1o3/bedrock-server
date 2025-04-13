@@ -27,6 +27,7 @@ COPY ./app/BedrockServer /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
 COPY ./crontab.txt /etc/cron.d/bedrock-backup
 
+# Copy Backend files
 COPY ./app/Backend ${HOME}/Backend
 
 # Set permissions
