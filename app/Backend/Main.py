@@ -9,7 +9,7 @@ import os
 
 
 app = FastAPI()
-app.mount(os.path.join(os.path.dirname(__file__), "static"),
+app.mount("/home/server/Backend/static",
           StaticFiles(directory="static"), name="static")
 
 app.include_router(web_routes.router)
