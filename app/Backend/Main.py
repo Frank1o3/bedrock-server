@@ -1,12 +1,11 @@
+from Functions.functions import stream_bash_logs, stream_bedrock_logs
+from fastapi.staticfiles import StaticFiles
+from Routes import web_routes, api_routes
+from fastapi import FastAPI
 import threading
 import asyncio
 import uvicorn
-from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from Functions.functions import stream_bash_logs, stream_bedrock_logs
-from Routes import web_routes, api_routes
 import os
-
 
 
 app = FastAPI()
