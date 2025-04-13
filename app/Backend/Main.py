@@ -15,11 +15,10 @@ app.mount("/static",
 app.include_router(web_routes.router)
 app.include_router(api_routes.router)
 
-# Start the log streaming threads
-threading.Thread(target=lambda: asyncio.run(
-    stream_bedrock_logs()), daemon=True).start()
-threading.Thread(target=lambda: asyncio.run(
-    stream_bash_logs()), daemon=True).start()
-
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=5000)
+    # Start the log streaming threads
+    threading.Thread(target=lambda: asyncio.run(
+        stream_bedrock_logs()), daemon=True).start()
+    threading.Thread(target=lambda: asyncio.run(
+        stream_bash_logs()), daemon=True).start()

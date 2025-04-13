@@ -1,35 +1,15 @@
 from Functions.functions import (start_bedrock_server,
                                  start_bash_console,
                                  load_account_data,
-                                 clients
+                                 clients,
+                                 bedrock_process,bash_process
                                  )
 from fastapi import APIRouter, WebSocket, HTTPException
 from fastapi.responses import HTMLResponse
 from models import CommandRequest
-import subprocess
 import asyncio
 
 router = APIRouter()
-
-bedrock_process = subprocess.Popen(
-    ["/bin/bash", "/bedrock/start.sh"],
-    stdin=subprocess.PIPE,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True,
-    bufsize=1,
-)
-
-# Start Bash terminal inside the same container
-bash_process = subprocess.Popen(
-    ["/bin/bash"],
-    stdin=subprocess.PIPE,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True,
-    bufsize=1,
-)
-
 
 @router.get("/", response_class=HTMLResponse)
 async def server_index():

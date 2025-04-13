@@ -1,23 +1,9 @@
 from fastapi import APIRouter, HTTPException
 from models import AuthRequest, SettingsRequest
-import json
+from Functions.functions import load_account_data, save_account_data, DATA_FILE
 import os
 
 router = APIRouter()
-DATA_FILE = "data.json"
-
-
-def load_account_data():
-    if not os.path.exists(DATA_FILE):
-        return {}
-    with open(DATA_FILE, "r") as f:
-        return json.load(f)
-
-
-def save_account_data(data):
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=4)
-
 
 @router.post("/auth")
 async def handle_cookie(request: AuthRequest):
