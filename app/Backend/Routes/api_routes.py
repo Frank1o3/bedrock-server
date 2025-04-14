@@ -1,11 +1,11 @@
 from fastapi import APIRouter, HTTPException
-from models import AuthRequest, SettingsRequest
+from models import AuthRequest, SettingsRequest, ModRequest
 from Functions.functions import load_account_data, save_account_data, DATA_FILE
 import os
 
 router = APIRouter()
 
-@router.post("/auth")
+@router.post("/api/auth")
 async def handle_cookie(request: AuthRequest):
     account_data = load_account_data()
     username = request.username
@@ -29,10 +29,10 @@ async def handle_cookie(request: AuthRequest):
         if request.username in account_data and account_data[request.username]["password"] == request.password:
             return {"authenticated": True}
         else:
-            raise HTTPException(status_code=401, detail="Invalid credentials")
+            return {"authenticated": False}
 
 
-@router.get("/settings")
+@router.get("/api/settings")
 async def get_all_env_vars():
     """
     Fetch all environment variables if the user is authenticated.
@@ -41,7 +41,7 @@ async def get_all_env_vars():
     return {"env_vars": dict(os.environ)}
 
 
-@router.post("/settings")
+@router.post("/api/settings")
 async def update_env_var(request: SettingsRequest):
     """
     Update a specific environment variable if the user is authenticated.
@@ -64,3 +64,8 @@ async def update_env_var(request: SettingsRequest):
         return {"message": f"Environment variable '{env_var_name}' updated successfully."}
 
     raise HTTPException(status_code=401, detail="Invalid username or password")
+
+@router.post("/api/mods/")
+async def add(request: ModRequest):
+    Type = request.requestType
+    modId = request.modId

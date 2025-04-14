@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
+from uuid import UUID
 
 
 class CommandRequest(BaseModel):
@@ -17,5 +18,17 @@ class AuthRequest(BaseModel):
 class SettingsRequest(BaseModel):
     username: str
     password: str
-    option: Optional[str] = ""  # The environment variable name
-    update: Optional[str] = ""  # The new value for the environment variable
+    option: Optional[str] = ""
+    update: Optional[str] = ""
+
+
+class ModRequest(BaseModel):
+    requestType: str
+    modId: Optional[UUID] = ""
+
+
+class ModResponce(BaseModel):
+    requestType: str
+    modId: Optional[UUID] = ""
+    modName: Optional[str] = ""
+    ok: bool = False

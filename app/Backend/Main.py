@@ -9,8 +9,8 @@ import os
 
 
 app = FastAPI()
-app.mount("/static",
-          StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
+app.mount(
+    "/static", StaticFiles(directory="/home/server/frontend/static"), name="static")
 
 app.include_router(web_routes.router)
 app.include_router(api_routes.router)

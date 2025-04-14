@@ -2,7 +2,7 @@ from Functions.functions import (start_bedrock_server,
                                  start_bash_console,
                                  load_account_data,
                                  clients,
-                                 bedrock_process,bash_process
+                                 bedrock_process, bash_process
                                  )
 from fastapi import APIRouter, WebSocket, HTTPException
 from fastapi.responses import HTMLResponse
@@ -11,9 +11,10 @@ import asyncio
 
 router = APIRouter()
 
+
 @router.get("/", response_class=HTMLResponse)
 async def server_index():
-    with open("static/index.html", "r") as f:
+    with open("/home/server/Backend/static/index.html", "r") as f:
         return HTMLResponse(content=f.read())
 
 
