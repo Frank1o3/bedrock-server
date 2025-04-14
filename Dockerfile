@@ -28,8 +28,8 @@ COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
 COPY ./crontab.txt /etc/cron.d/bedrock-backup
 
 # Copy backend to the user's home directory
-COPY ./app/backend /home/server/backend
-COPY ./app/frontend/static /home/server/frontend/static
+COPY ./app/backend/ /home/server/backend/
+COPY ./app/frontend/static/ /home/server/frontend/static/
 
 # Set permissions
 RUN chmod +x /bedrock/*.sh && \
