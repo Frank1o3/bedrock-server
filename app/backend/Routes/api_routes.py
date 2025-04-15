@@ -1,9 +1,13 @@
 from fastapi import APIRouter, HTTPException
 from models import AuthRequest, SettingsRequest, ModRequest, ModResponce
-from Functions.functions import load_account_data, save_account_data, DATA_FILE
+from Functions.functions import load_account_data, save_account_data
+from Libs.ModLoader import ModManager
+from uuid import uuid4
 import os
 
+md = ModManager()
 router = APIRouter()
+
 
 @router.post("/api/auth")
 async def handle_cookie(request: AuthRequest):
@@ -65,23 +69,20 @@ async def update_env_var(request: SettingsRequest):
 
     raise HTTPException(status_code=401, detail="Invalid username or password")
 
+
 @router.post("/api/mods/")
 async def add(request: ModRequest):
     Type = request.requestType.lower()
     modId = request.modId
-
     # Mock data
-    available_mods = [
-        ModResponce(id=1, name="BetterGraphics"),
-        ModResponce(id=2, name="FastMining"),
-    ]
-    active_mods = [
-        ModResponce(id=2, name="FastMining"),
-    ]
 
     if Type == "available":
-        return {"mods": available_mods}
+        BP, RP = md.list_all_mods()
+        mods = BP + RP
+        return {"mods": [ModResponce(id=mod.header.uuid.int, name=mod.header.name, Type="resource" if mod.dependencies is None else "behavior") for mod in mods]}
     elif Type == "active":
-        return {"mods": active_mods}
+        BP, RP = md.list_all_active_mods()
+        mods = BP + RP if BP and RP else []
+        return {"mods": [ModResponce(id=uuid4().int, name=md.look_up(mod.pack_id).header.name, Type="resource" if md.look_up(mod.pack_id).dependencies is None else "behavior") for mod in mods]}
 
     return HTTPException(status_code=400)

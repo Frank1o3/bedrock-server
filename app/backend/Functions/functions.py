@@ -2,6 +2,8 @@ from fastapi import WebSocket
 from typing import Set
 import subprocess
 import asyncio
+import socket
+import psutil
 import json
 import os
 
@@ -113,3 +115,25 @@ def load_account_data():
 def save_account_data(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
+
+def get_ip():
+    """
+    Get the IP address of the server.
+    """
+    interfaces = psutil.net_if_addrs()
+    ethernet_ip = None
+    wireless_ip = None
+
+    for interface_name, interface_addresses in interfaces.items():
+        for address in interface_addresses:
+            if address.family == socket.AF_INET:
+                if "eth" in interface_name.lower() or "en" in interface_name.lower():
+                    ethernet_ip = address.address
+                elif "wlan" in interface_name.lower() or "wl" in interface_name.lower():
+                    wireless_ip = address.address
+    if ethernet_ip:
+        return ethernet_ip
+    elif wireless_ip:
+        return wireless_ip
+    else:
+        return "127.0.0.1"

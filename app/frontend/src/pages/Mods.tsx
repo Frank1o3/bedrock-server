@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 interface Mod {
 	id: number;
 	name: string;
+	type: "behavior" | "resource";
 }
 
 const Mods: React.FC = () => {
@@ -94,7 +95,12 @@ const Mods: React.FC = () => {
 								}}
 								onClick={() => setSelectedMod(mod)}
 							>
-								{mod.name}
+								<div>{mod.name}</div>
+								<div style={styles.modTypeLabel}>
+									{mod.type === "behavior"
+										? "Behavior Pack"
+										: "Resource Pack"}
+								</div>
 							</div>
 						))}
 					</div>
@@ -116,7 +122,12 @@ const Mods: React.FC = () => {
 								}}
 								onClick={() => setSelectedMod(mod)}
 							>
-								{mod.name}
+								<div>{mod.name}</div>
+								<div style={styles.modTypeLabel}>
+									{mod.type === "behavior"
+										? "Behavior Pack"
+										: "Resource Pack"}
+								</div>
 							</div>
 						))}
 					</div>
@@ -220,6 +231,13 @@ const styles: { [key: string]: React.CSSProperties } = {
 		border: "1px solid #333",
 		cursor: "pointer",
 		transition: "background 0.3s",
+	},
+
+	modTypeLabel: {
+		fontSize: "12px",
+		color: "#9affc7",
+		opacity: 0.8,
+		marginTop: "2px",
 	},
 
 	actionButtons: {

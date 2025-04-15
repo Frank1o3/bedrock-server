@@ -1,7 +1,7 @@
 from json import load, loads, dump, JSONDecodeError
 from fastapi import UploadFile
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from uuid import UUID
 import zipfile
 import shutil
@@ -47,8 +47,6 @@ class JsonManifest:
         version: List[int] | str
         subpack: Optional[str] = None
 
-        class Config:
-            exclude_none = True
 
     def load(self, path: str) -> Optional['JsonManifest.Manifest']:
         try:
@@ -223,78 +221,99 @@ class ModLoader:
         print("Mod load complete.")
 
 
-class ModMetadata(BaseModel):
-    name: str
-    description: str
-    uuid: UUID
-    version: List[int]
-    authors: Optional[List[str]]
-    type: str  # 'behavior' or 'resource'
-
-
 class ModManager:
-    def __init__(self, world_path: str, temp_path: str = "temp_mod_extract"):
+    def __init__(self, world_path: str = r"worlds\Main", temp_path: str = "temp_mod_extract"):
         self.world_path = world_path
         self.temp_path = temp_path
         self.behavior_dir = os.path.join(world_path, "behavior_packs")
         self.resource_dir = os.path.join(world_path, "resource_packs")
+        self.world_behavior_dir = os.path.join(
+            world_path, "world_behavior_pack.json")
+        self.world_resource_dir = os.path.join(
+            world_path, "world_resource_pack.json")
         os.makedirs(self.behavior_dir, exist_ok=True)
         os.makedirs(self.resource_dir, exist_ok=True)
 
-    def extract_mod(self, file: UploadFile) -> List[ModMetadata]:
-        extract_dir = os.path.join(
-            self.temp_path, os.path.splitext(file.filename)[0])
-        os.makedirs(extract_dir, exist_ok=True)
-
-        with zipfile.ZipFile(file.file, 'r') as zip_ref:
-            zip_ref.extractall(extract_dir)
-
-        mods = []
-        for root, dirs, files in os.walk(extract_dir):
+    def _find_manifest(self, root_dir: str) -> Optional[str]:
+        for root, _, files in os.walk(root_dir):
             if "manifest.json" in files:
-                manifest_path = os.path.join(root, "manifest.json")
-                with open(manifest_path) as f:
+                return os.path.join(root, "manifest.json")
+        return None
+
+
+    def list_all_mods(self) -> Tuple[List[JsonManifest.Manifest],List[JsonManifest.Manifest]]:
+        behavior_packs: List[JsonManifest.Manifest] = []
+        resource_packs: List[JsonManifest.Manifest] = []
+        
+        for entry in os.listdir(self.behavior_dir):
+            path = os.path.join(self.behavior_dir, entry)
+            manifest = self._find_manifest(path)
+            if manifest:
+                with open(manifest, 'r') as f:
                     data = load(f)
-                    metadata = ModMetadata(
-                        name=data["header"]["name"],
-                        description=data["header"].get("description", ""),
-                        uuid=data["header"]["uuid"],
-                        version=data["header"]["version"],
-                        authors=data.get("metadata", {}).get("authors", []),
-                        type="behavior" if "behavior" in file.filename.lower() else "resource"
-                    )
-                    mods.append(metadata)
+                    behavior_packs.append(JsonManifest.Manifest(**data))
+        
+        for entry in os.listdir(self.resource_dir):
+            path = os.path.join(self.resource_dir, entry)
+            manifest = self._find_manifest(path)
+            if manifest:
+                with open(manifest, 'r') as f:
+                    data = load(f)
+                    resource_packs.append(JsonManifest.Manifest(**data))
+        
+        behavior_uuids = {mod.header.name for mod in behavior_packs}
+        resource_packs = [
+            mod for mod in resource_packs if mod.header.name not in behavior_uuids
+        ]
 
-                # Copy mod files to correct directory
-                dest_dir = self.behavior_dir if metadata.type == "behavior" else self.resource_dir
-                mod_dest = os.path.join(dest_dir, os.path.basename(root))
-                if os.path.exists(mod_dest):
-                    shutil.rmtree(mod_dest)
-                shutil.move(root, mod_dest)
+        return behavior_packs, resource_packs
 
-        shutil.rmtree(extract_dir, ignore_errors=True)
-        return mods
+    def list_all_active_mods(self) -> Tuple[List[JsonManifest.Mod], List[JsonManifest.Mod]]:
+        behavior_packs: List[JsonManifest.Mod] = []
+        resource_packs: List[JsonManifest.Mod] = []
 
-    def list_mods(self) -> List[ModMetadata]:
-        mods = []
-        for mod_type, mod_dir in [("behavior", self.behavior_dir), ("resource", self.resource_dir)]:
-            for subdir in os.listdir(mod_dir):
-                manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
-                try:
-                    with open(manifest_path, 'r') as f:
-                        data = load(f)
-                        mods.append(ModMetadata(
-                            name=data["header"]["name"],
-                            description=data["header"].get("description", ""),
-                            uuid=data["header"]["uuid"],
-                            version=data["header"]["version"],
-                            authors=data.get("metadata", {}).get(
-                                "authors", []),
-                            type=mod_type
-                        ))
-                except Exception as e:
-                    print(f"Failed to read manifest for {subdir}: {e}")
-        return mods
+        with open(self.world_behavior_dir, 'r') as f:
+            try:
+                data = load(f)
+                behavior_packs = [JsonManifest.Mod(**mod) for mod in data]
+            except JSONDecodeError as e:
+                print(e)
+
+        with open(self.world_resource_dir, 'r') as f:
+            try:
+                data = load(f)
+                resource_packs = [JsonManifest.Mod(**mod) for mod in data]
+            except JSONDecodeError as e:
+                print(e)
+
+        # Check if one of the behavior packs shares similar data with a resourse pack if true then remove the resource pack from the list
+        behavior_uuids = {mod.version for mod in behavior_packs}
+        resource_packs = [
+            mod for mod in resource_packs if mod.version not in behavior_uuids
+        ]
+        return behavior_packs, resource_packs
+
+    def look_up(self, uuid: UUID) -> JsonManifest.Manifest | None:
+        for entry in os.listdir(self.behavior_dir):
+            path = os.path.join(self.behavior_dir, entry)
+            manifest = self._find_manifest(path)
+            if manifest:
+                with open(manifest, 'r') as f:
+                    data = load(f)
+                    mod = JsonManifest.Manifest(**data)
+                    if mod.header.uuid == uuid:
+                        return mod
+        
+        for entry in os.listdir(self.resource_dir):
+            path = os.path.join(self.resource_dir, entry)
+            manifest = self._find_manifest(path)
+            if manifest:
+                with open(manifest, 'r') as f:
+                    data = load(f)
+                    mod = JsonManifest.Manifest(**data)
+                    if mod.header.uuid == uuid:
+                        return mod
+        return None
 
     def remove_mod(self, uuid: UUID) -> bool:
         success = False
@@ -312,3 +331,9 @@ class ModManager:
                         except Exception as e:
                             print(f"Error removing mod {uuid}: {e}")
         return success
+
+
+if __name__ == "__main__":
+    md = ModManager()
+    BP, RP = md.list_all_active_mods()
+    md.look_up(BP[0].pack_id)

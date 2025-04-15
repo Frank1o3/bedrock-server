@@ -30,3 +30,4 @@ class ModRequest(BaseModel):
 class ModResponce(BaseModel):
     id: int
     name: str
+    Type: Optional[str] = None
