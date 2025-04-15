@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from models import AuthRequest, SettingsRequest, ModRequest
+from models import AuthRequest, SettingsRequest, ModRequest, ModResponce
 from Functions.functions import load_account_data, save_account_data, DATA_FILE
 import os
 
@@ -67,10 +67,21 @@ async def update_env_var(request: SettingsRequest):
 
 @router.post("/api/mods/")
 async def add(request: ModRequest):
-    Type = request.requestType
+    Type = request.requestType.lower()
     modId = request.modId
 
-    if Type.lower() in ["available", "active"]:
-        return {"mods": ["example1", "example2"]}
+    # Mock data
+    available_mods = [
+        ModResponce(id=1, name="BetterGraphics"),
+        ModResponce(id=2, name="FastMining"),
+    ]
+    active_mods = [
+        ModResponce(id=2, name="FastMining"),
+    ]
+
+    if Type == "available":
+        return {"mods": available_mods}
+    elif Type == "active":
+        return {"mods": active_mods}
 
     return HTTPException(status_code=400)

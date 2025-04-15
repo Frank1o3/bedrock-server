@@ -28,7 +28,5 @@ class ModRequest(BaseModel):
 
 
 class ModResponce(BaseModel):
-    requestType: str
-    modId: Optional[UUID] = ""
-    modName: Optional[str] = ""
-    ok: bool = False
+    id: int
+    name: str
