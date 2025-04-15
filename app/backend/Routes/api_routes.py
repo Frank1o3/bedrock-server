@@ -69,3 +69,8 @@ async def update_env_var(request: SettingsRequest):
 async def add(request: ModRequest):
     Type = request.requestType
     modId = request.modId
+
+    if Type.lower() in ["available", "active"]:
+        return {"mods": ["example1", "example2"]}
+
+    return HTTPException(status_code=400)

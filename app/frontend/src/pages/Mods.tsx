@@ -23,8 +23,16 @@ const Mods: React.FC = () => {
 				const activeData = await axios.post("/api/mods/", {
 					requestType: "active",
 				});
-				setAvailableMods(availableResponse.data.mods);
-				setActiveMods(activeData.data.mods);
+
+				if (
+					availableResponse.status === 200 ||
+					availableResponse.status === 201
+				) {
+					setAvailableMods(availableResponse.data.mods);
+				}
+				if (activeData.status === 200 || activeData.status === 201) {
+					setActiveMods(activeData.data.mods);
+				}
 			} catch (error) {
 				console.error("Error fetching mods:", error);
 			}
@@ -43,7 +51,9 @@ const Mods: React.FC = () => {
 
 		const reader = new FileReader();
 		reader.onload = () => {
-			const socket = new WebSocket(`ws:${window.location.host}/ws/upload`);
+			const socket = new WebSocket(
+				`ws:${window.location.host}/ws/upload`
+			);
 			socket.onopen = () => {
 				socket.send(
 					JSON.stringify({
@@ -230,6 +240,5 @@ const styles: { [key: string]: React.CSSProperties } = {
 		transition: "background 0.3s",
 	},
 };
-
 
 export default Mods;

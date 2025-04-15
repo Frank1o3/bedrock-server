@@ -5,7 +5,6 @@ from fastapi import FastAPI
 import threading
 import asyncio
 import uvicorn
-import os
 
 
 app = FastAPI()
