@@ -117,7 +117,7 @@ class JsonManifest:
 
 
 class ModLoader:
-    def __init__(self, server_world_path=r"\bedrock\worlds\Main"):
+    def __init__(self, server_world_path="/bedrock"):
         self.target_dir = server_world_path
         self.extracted_path = "extracted_files"
         self.jm = JsonManifest()
@@ -222,9 +222,8 @@ class ModLoader:
 
 
 class ModManager:
-    def __init__(self, world_path: str = r"\bedrock\worlds\Main", temp_path: str = "temp_mod_extract"):
+    def __init__(self, world_path: str = "bedrock/worlds/Main"):
         self.world_path = world_path
-        self.temp_path = temp_path
         self.behavior_dir = os.path.join(world_path, "behavior_packs")
         self.resource_dir = os.path.join(world_path, "resource_packs")
         self.world_behavior_dir = os.path.join(

@@ -11,8 +11,7 @@ app.mount(
     "/static", StaticFiles(directory="/home/server/frontend/static"), name="static")
 
 app.include_router(web_routes.router)
-app.include_router(api_routes.router)
-
+app.include_router(api_routes.router, prefix="/api", tags=["api"])
 
 if __name__ == "__main__":
     IP = get_ip()

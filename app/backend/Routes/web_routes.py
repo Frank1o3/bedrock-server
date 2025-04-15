@@ -35,16 +35,11 @@ async def send_command(request: CommandRequest):
     """
     Sends a command to the Bedrock Server.
     """
-    account_data = load_account_data()
-
-    if request.username in account_data and account_data[request.username]["password"] == request.password:
-        if bedrock_process.poll() is None:
-            bedrock_process.stdin.write(f"{request.command}\n")
-            bedrock_process.stdin.flush()
-            return {"message": "Command sent to Bedrock server"}
-        return {"error": "Bedrock server is not running"}
-    else:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+    if bedrock_process.poll() is None:
+        bedrock_process.stdin.write(f"{request.command}\n")
+        bedrock_process.stdin.flush()
+        return {"message": "Command sent to Bedrock server"}
+    return {"error": "Bedrock server is not running"}
 
 
 @router.post("/send_terminal_command")
@@ -52,40 +47,32 @@ async def send_terminal_command(request: CommandRequest):
     """
     Sends a command to the Bash Terminal.
     """
-    account_data = load_account_data()
-
-    if request.username in account_data and account_data[request.username]["password"] == request.password:
-        if bash_process.poll() is None:
-            bash_process.stdin.write(f"{request.command}\n")
-            bash_process.stdin.flush()
-            return {"message": "Command sent to Bash terminal"}
-        return {"error": "Bash terminal is not running"}
-    else:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+    if bash_process.poll() is None:
+        bash_process.stdin.write(f"{request.command}\n")
+        bash_process.stdin.flush()
+        return {"message": "Command sent to Bash terminal"}
+    return {"error": "Bash terminal is not running"}
 
 
 @router.post("/server_command")
 async def server_command(request: CommandRequest):
     global bedrock_process, bash_process
-    account_data = load_account_data()
 
-    if request.username in account_data and account_data[request.username]["password"] == request.password:
-        if request.command.lower() == "stop":
-            if bedrock_process and bedrock_process.poll() is None:
-                bedrock_process.stdin.write("stop\n")
-                bedrock_process.stdin.flush()
-                return {"message": "Stop command sent to Bedrock server"}
-            return {"error": "Bedrock server is not running"}
-        elif request.command.lower() == "start":
-            start_bedrock_server()
-            return {"message": "Bedrock server started"}
-        elif request.command.lower() == "start bash":
-            start_bash_console()
-            return {"message": "Bash terminal started"}
-        elif request.command.lower() == "stop bash":
-            if bash_process and bash_process.poll() is None:
-                bash_process.kill()
-                return {"message": "Stop command sent to Bash terminal"}
-        return {"error": "Invalid command. Use 'start' or 'stop'."}
-    else:
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+    if request.command.lower() == "stop":
+        if bedrock_process and bedrock_process.poll() is None:
+            bedrock_process.stdin.write("stop\n")
+            bedrock_process.stdin.flush()
+            return {"message": "Stop command sent to Bedrock server"}
+        return {"error": "Bedrock server is not running"}
+
+    elif request.command.lower() == "start":
+        start_bedrock_server()
+        return {"message": "Bedrock server started"}
+    elif request.command.lower() == "start bash":
+        start_bash_console()
+        return {"message": "Bash terminal started"}
+    elif request.command.lower() == "stop bash":
+        if bash_process and bash_process.poll() is None:
+            bash_process.kill()
+            return {"message": "Stop command sent to Bash terminal"}
+    return {"error": "Invalid command. Use 'start' or 'stop'."}
