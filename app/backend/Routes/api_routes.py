@@ -9,7 +9,7 @@ md = ModManager()
 router = APIRouter()
 
 
-@router.post("/auth")
+@router.post("/api/auth")
 async def handle_cookie(request: AuthRequest):
     account_data = load_account_data()
     username = request.username
@@ -36,7 +36,7 @@ async def handle_cookie(request: AuthRequest):
             return {"authenticated": False}
 
 
-@router.get("/settings")
+@router.get("/api/settings")
 async def get_all_env_vars():
     """
     Fetch all environment variables if the user is authenticated.
@@ -45,7 +45,7 @@ async def get_all_env_vars():
     return {"env_vars": dict(os.environ)}
 
 
-@router.post("/settings")
+@router.post("/api/settings")
 async def update_env_var(request: SettingsRequest):
     """
     Update a specific environment variable if the user is authenticated.
@@ -70,7 +70,7 @@ async def update_env_var(request: SettingsRequest):
     raise HTTPException(status_code=401, detail="Invalid username or password")
 
 
-@router.post("/mods/")
+@router.post("/api/mods/")
 async def add(request: ModRequest):
     Type = request.requestType.lower()
     modId = request.modId

@@ -21,7 +21,8 @@
     "@minecraft/server": "^2.0.0-beta",
     "@minecraft/server-ui": "^2.0.0-beta",
     "@minecraft/vanilla-data": "^1.21.62",
-    "bedrock-server": "file:"
+    "bedrock-server": "file:",
+    "js-cookie": "^3.0.5"
   },
   "devDependencies": {
     "@types/node": "^22.13.10"

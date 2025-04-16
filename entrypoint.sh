@@ -18,9 +18,6 @@ fi
 # Activate it
 source "$VENV_DIR/bin/activate"
 
-# Upgrade pip & tools
-pip install --upgrade pip setuptools wheel
-
 # Install or update requirements
 pip install --upgrade -r "$REQUIREMENTS_FILE"
 

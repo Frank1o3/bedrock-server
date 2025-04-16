@@ -8,20 +8,56 @@ import Login from "./components/Login";
 import axios from "axios";
 
 const App: React.FC = () => {
-	const [activePage, setActivePage] = useState<string>("Console");
-	const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-	const [isAccountCreated, setIsAccountCreated] = useState<boolean>(false);
-	const [loading, setLoading] = useState<boolean>(true);
+	const [activePage, setActivePage] = useState("Console");
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [loading, setLoading] = useState(true);
+
+	// Example: persistent login on mount
+	useEffect(() => {
+		axios
+			.get("/api/auth/session", { withCredentials: true })
+			.then((res) => {
+				if (res.data.authenticated) {
+					setIsLoggedIn(true);
+				}
+			})
+			.catch((err) => {
+				console.error("Session check failed:", err);
+			})
+			.finally(() => {
+				setLoading(false);
+			});
+	}, []);
+
+	const handleLogin = async (
+		username: string,
+		password: string,
+		isLogin: boolean
+	) => {
+		setLoading(true);
+		try {
+			const res = await axios.post(
+				"/api/auth/login",
+				{ username, password, login: isLogin },
+				{ withCredentials: true }
+			);
+
+			if (res.data.success) {
+				setIsLoggedIn(true);
+			} else {
+				alert(res.data.detail || "Authentication failed");
+			}
+		} catch (err) {
+			console.error("Login error:", err);
+			alert("Server error");
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	const getPageComponent = useCallback(() => {
 		if (loading) return <div>Loading...</div>;
-		if (!isLoggedIn) return <Login />;
-		if (!isAccountCreated)
-			return (
-				<div style={{ padding: "50px", textAlign: "center" }}>
-					Site not loading...
-				</div>
-			);
+		if (!isLoggedIn) return <Login onAuthSubmit={handleLogin} />;
 
 		switch (activePage) {
 			case "Console":
@@ -33,61 +69,7 @@ const App: React.FC = () => {
 			default:
 				return <Console />;
 		}
-	}, [loading, isLoggedIn, isAccountCreated, activePage]);
-
-	useEffect(() => {
-		const getCookie = (name: string) => {
-			const match = document.cookie.match(
-				new RegExp(`(^| )${name}=([^;]+)`)
-			);
-			return match ? decodeURIComponent(match[2]) : null;
-		};
-
-		const username = getCookie("username");
-		const password = getCookie("password");
-
-		if (!username || !password) {
-			setLoading(false);
-			return;
-		}
-
-		axios
-			.post("/api/auth", {
-				username: username,
-				password: password,
-				cookie: true,
-			})
-			.then((res) => {
-				if (res.data.accountCreated) {
-					console.log("Account check response:", res.data);
-					setIsAccountCreated(res.data.accountCreated);
-
-					axios
-						.post("/api/auth", {
-							username: username,
-							password: password,
-							cookie: false,
-						})
-						.then((res) => {
-							console.log("Auth response:", res.data);
-							if (res.data.authenticated) {
-								setIsLoggedIn(true);
-							} else {
-								setIsLoggedIn(false);
-							}
-						});
-				}
-			})
-			.catch((error) => {
-				console.error("Authentication or account check failed:", error);
-				setIsLoggedIn(false);
-			})
-			.finally(() => {
-				setIsAccountCreated(true);
-				setLoading(false);
-				setIsLoggedIn(true);
-			});
-	}, []);
+	}, [loading, isLoggedIn, activePage]);
 
 	return (
 		<div style={styles.app}>

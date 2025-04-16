@@ -1,10 +1,9 @@
 from Functions.functions import (start_bedrock_server,
                                  start_bash_console,
-                                 load_account_data,
                                  clients,
                                  bedrock_process, bash_process
                                  )
-from fastapi import APIRouter, WebSocket, HTTPException
+from fastapi import APIRouter, WebSocket
 from fastapi.responses import HTMLResponse
 from models import CommandRequest
 import asyncio

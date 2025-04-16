@@ -19,7 +19,7 @@ services:
       - "5000:5000/tcp"
     restart: always
     volumes:
-      - ${HOME}/backups:/bedrock/backups # Maps local directory to container directory
+      - ${HOME}/bedrock/backups:bedrock/backups # Maps local directory to container directory
 
 networks:
   bedrock-net:
