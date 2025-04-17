@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   bedrock-server:
     build:
@@ -5,21 +7,29 @@ services:
       dockerfile: Dockerfile
     image: frank1o3/bedrock-server:beta
     container_name: bedrock-server
+
+    # Load environment variables
     environment:
       - NO_IP_USERNAME
       - NO_IP_PASSWORD
     env_file:
       - .env
-    network_mode: bridge
+
+    # Networking
+    network_mode: bridge  # OR use the custom network below (choose one)
     ports:
       - "19132:19132/udp"
-      - "19133:19133/tcp"
-      - "19133:19133/udp"
       - "19132:19132/tcp"
+      - "19133:19133/udp"
+      - "19133:19133/tcp"
       - "5000:5000/tcp"
+
+    # Restart policy
     restart: always
+
+    # Volume mapping
     volumes:
-      - ${HOME}/bedrock/backups:bedrock/backups # Maps local directory to container directory
+      - ${HOME}/bedrock/backups:/bedrock/backups  # Fixed path syntax
 
 networks:
   bedrock-net:
