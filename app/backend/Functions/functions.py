@@ -116,24 +116,20 @@ def save_account_data(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
+
 def get_ip():
     """
-    Get the IP address of the server.
+    Get the first non-loopback IPv4 address from Ethernet or Wireless interfaces.
     """
     interfaces = psutil.net_if_addrs()
-    ethernet_ip = None
-    wireless_ip = None
 
     for interface_name, interface_addresses in interfaces.items():
+        name_lower = interface_name.lower()
+        if not any(tag in name_lower for tag in ("eth", "en", "wlan", "wl")):
+            continue
+
         for address in interface_addresses:
-            if address.family == socket.AF_INET:
-                if "eth" in interface_name.lower() or "en" in interface_name.lower():
-                    ethernet_ip = address.address
-                elif "wlan" in interface_name.lower() or "wl" in interface_name.lower():
-                    wireless_ip = address.address
-    if ethernet_ip:
-        return ethernet_ip
-    elif wireless_ip:
-        return wireless_ip
-    else:
-        return "127.0.0.1"
+            if address.family == socket.AF_INET and not address.address.startswith("127."):
+                return address.address
+
+    return None  # or return "127.0.0.1" if you want a fallback
