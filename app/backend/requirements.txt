@@ -1,5 +1,4 @@
 psutil
-sqlite3
 fastapi
 websockets
 uvicorn[standard]
