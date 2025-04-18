@@ -4,3 +4,4 @@ app/development_behavior_packs/WendigoBeh
 app/development_resource_packs/WendigoRes
 node_modules/
 backups/
+.venv/
