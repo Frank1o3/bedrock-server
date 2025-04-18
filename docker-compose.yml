@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   bedrock-server:
     build:
@@ -16,25 +14,10 @@ services:
       - .env
 
     # Networking
-    network_mode: bridge  # OR use the custom network below (choose one)
-    ports:
-      - "19132:19132/udp"
-      - "19132:19132/tcp"
-      - "19133:19133/udp"
-      - "19133:19133/tcp"
-      - "5000:5000/tcp"
-
+    network_mode: host # OR use the custom network below (choose one)
     # Restart policy
     restart: always
 
     # Volume mapping
     volumes:
-      - ${HOME}/bedrock/backups:/bedrock/backups  # Fixed path syntax
-
-networks:
-  bedrock-net:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.20.0.0/16
+      - ${HOME}/bedrock/backups:/bedrock/backups # Fixed path syntax
