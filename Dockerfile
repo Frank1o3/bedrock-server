@@ -1,4 +1,4 @@
-FROM ubuntu:25.04
+FROM ubuntu:latest
 
 # Set environment to non-interactive (avoid tzdata prompt)
 ENV DEBIAN_FRONTEND=noninteractive
@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y \
-    rsync curl wget unzip bash cron jq sudo tar python3 python3-pip python3-venv libpcap0.8 && \
+    rsync curl wget unzip bash cron jq sudo tar python3 python3-pip python3-venv build-essential libpcap0.8 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -37,16 +37,16 @@ RUN chmod +x /bedrock/*.sh && \
     chown -R server:server /bedrock /home/server && \
 crontab /etc/cron.d/bedrock-backup
 
+RUN service cron start
+
 # Switch to user for user-space install
 USER server
 WORKDIR /home/server
 
-# Install No-IP DUC under user's home directory
-RUN wget --content-disposition https://www.noip.com/download/linux/latest -O noip-duc.tar.gz && \
-    tar xf noip-duc.tar.gz && \
-    mkdir -p ~/noip && \
-    mv noip-duc_*/binaries/* ~/noip && \
-rm -rf noip-duc*
+# Install No-IP DUC using package manager method
+RUN wget --content-disposition https://www.noip.com/download/linux/latest && \
+    tar xf noip-duc_3.3.0.tar.gz && \
+cd /home/server/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
 
 # Set back working directory to /bedrock
 WORKDIR /bedrock

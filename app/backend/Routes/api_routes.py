@@ -1,42 +1,68 @@
-from fastapi import APIRouter, HTTPException
 from models import AuthRequest, SettingsRequest, ModRequest, ModResponce
-from Functions.functions import load_account_data, save_account_data
+from fastapi import APIRouter, HTTPException, Cookie, Response
+from Shared.data import SESSION_STORE, SESSION_COOKIE_NAME
 from Libs.ModLoader import ModManager
+from Libs.Database import Database
 from uuid import uuid4
 import os
 
 md = ModManager()
 router = APIRouter()
+db = Database()
 
 
-@router.post("/api/auth")
-async def handle_cookie(request: AuthRequest):
-    account_data = load_account_data()
-    username = request.username
-    password = request.password
-
-    if request.cookie:
-        # Load account data from the file (data.json)
-        account_data = load_account_data()
-
-        # Check if the account already exists
-        if username in account_data:
-            return {"accountCreated": True}  # User already exists
-
-        # Add new user if they don't exist
-        account_data[username] = {"password": password}
-        save_account_data(account_data)  # Save updated account data to file
-
-        return {"accountCreated": True}  # Successfully created account
-    else:
-        # Authenticate user
-        if request.username in account_data and account_data[request.username]["password"] == request.password:
-            return {"authenticated": True}
-        else:
-            return {"authenticated": False}
+@router.get("/auth/session")
+async def get_session(session_token: str = Cookie(default=None)):
+    if session_token in SESSION_STORE:
+        return {"authenticated": True, "username": SESSION_STORE[session_token]}
+    return {"authenticated": False}
 
 
-@router.get("/api/settings")
+@router.post("/auth/login")
+async def login_or_register(request: AuthRequest, response: Response):
+    user = db.get_user(request.username)
+    print(user)
+
+    # LOGIN: if isLogin is True
+    if request.login:
+        if user:
+            session_token = str(uuid4())
+            SESSION_STORE[session_token] = request.username
+            SESSION_STORE.pop(request.session_token, None)  # Remove old session token
+            response.set_cookie(
+                key=SESSION_COOKIE_NAME,
+                value=session_token,
+                httponly=True,
+                secure=False,
+                samesite="lax",
+            )
+            return {"success": True, "message": "Logged in", "username": request.username}
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    # REGISTER: if not isLogin
+    if user:
+        raise HTTPException(status_code=400, detail="User already exists")
+
+    # Determine rank (admin for first user)
+    is_admin = len(db.get_all_users()) == 0
+    rank = "admin" if is_admin else "user"
+
+    # Create user with appropriate rank
+    db.insert_user(request.username, request.password, rank)
+
+    session_token = str(uuid4())
+    SESSION_STORE[session_token] = request.username
+    response.set_cookie(
+        key=SESSION_COOKIE_NAME,
+        value=session_token,
+        httponly=True,
+        secure=False,
+        samesite="lax",
+    )
+    return {"success": True, "message": "Account created", "username": request.username}
+
+
+@router.get("/settings")
 async def get_all_env_vars():
     """
     Fetch all environment variables if the user is authenticated.
@@ -45,14 +71,14 @@ async def get_all_env_vars():
     return {"env_vars": dict(os.environ)}
 
 
-@router.post("/api/settings")
+@router.post("/settings")
 async def update_env_var(request: SettingsRequest):
     """
     Update a specific environment variable if the user is authenticated.
     """
-    account_data = load_account_data()
+    account_data = db.get_user(request.username, request.password)
 
-    if request.username in account_data and account_data[request.username]["password"] == request.password:
+    if request.username in account_data and request.password in account_data:
         env_var_name = request.option
         new_value = request.update
 
@@ -70,7 +96,7 @@ async def update_env_var(request: SettingsRequest):
     raise HTTPException(status_code=401, detail="Invalid username or password")
 
 
-@router.post("/api/mods/")
+@router.post("/mods/")
 async def add(request: ModRequest):
     Type = request.requestType.lower()
     modId = request.modId

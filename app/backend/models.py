@@ -1,19 +1,17 @@
 from pydantic import BaseModel
 from typing import Optional
+from fastapi import Cookie
 from uuid import UUID
-
 
 class CommandRequest(BaseModel):
     command: str
-    username: str
-    password: str
-
+    session_token: Optional[str] = Cookie(default=None)
 
 class AuthRequest(BaseModel):
     username: str
     password: str
-    cookie: Optional[bool] = False
-
+    login: Optional[bool] = False
+    session_token: Optional[str] = Cookie(default=None)
 
 class SettingsRequest(BaseModel):
     username: str

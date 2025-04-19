@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { CSSProperties } from "react";
+import axios from "axios";
 
 const Console: React.FC = () => {
 	const [bedrockLogs, setBedrockLogs] = useState<string[]>([]);
@@ -51,11 +52,20 @@ const Console: React.FC = () => {
 		endpoint: string,
 		setter: React.Dispatch<React.SetStateAction<string>>
 	) => {
-		await fetch(endpoint, {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ command }),
-		});
+		try {
+			const res = await axios.post(
+				endpoint,
+				{ command: command },
+				{ withCredentials: true }
+			);
+
+			if (!res.data.success) {
+				throw new Error(`Failed to send command: ${res.status}`);
+			}
+		} catch (error) {
+			console.error("Command error:", error);
+			// Optional: show user feedback, maybe a toast or an alert div
+		}
 		setter("");
 	};
 

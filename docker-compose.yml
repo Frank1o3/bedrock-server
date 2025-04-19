@@ -20,4 +20,4 @@ services:
 
     # Volume mapping
     volumes:
-      - ${HOME}/bedrock/backups:/bedrock/backups # Fixed path syntax
+      - /home/${USER}/bedrock/backups/:/bedrock/backups/ # Fixed path syntax

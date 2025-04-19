@@ -17,9 +17,9 @@ const Settings: React.FC = () => {
 		try {
 			const response = await axios.get("/api/settings", {
 				headers: {
-					Authorization:
-						Cookies.get("username") + ":" + Cookies.get("password"),
-				},
+					username: Cookies.get("username"),
+					password: Cookies.get("password"),
+				}
 			});
 			setEnvVars(response.data);
 		} catch (error) {

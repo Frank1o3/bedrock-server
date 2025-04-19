@@ -22,4 +22,4 @@ source "$VENV_DIR/bin/activate"
 pip install --upgrade -r "$REQUIREMENTS_FILE"
 
 # Run the main server control script
-python3 "$MAIN_SCRIPT"
+"$VENV_DIR/bin/python" "$MAIN_SCRIPT"
