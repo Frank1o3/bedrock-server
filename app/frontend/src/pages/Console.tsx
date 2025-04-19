@@ -53,11 +53,7 @@ const Console: React.FC = () => {
 		setter: React.Dispatch<React.SetStateAction<string>>
 	) => {
 		try {
-			const res = await axios.post(
-				endpoint,
-				{ command: command },
-				{ withCredentials: true }
-			);
+			const res = await axios.post(endpoint, { command: command });
 
 			if (!res.data.success) {
 				throw new Error(`Failed to send command: ${res.status}`);

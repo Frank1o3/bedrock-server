@@ -1,12 +1,13 @@
-from Functions.functions import get_ip, start_bash_console, start_bedrock_server
-from Shared.data import SESSION_STORE, bedrock_process, bash_process
-from fastapi import FastAPI, WebSocket, Cookie
 from fastapi.staticfiles import StaticFiles
 from Routes import web_routes, api_routes
+from Functions.functions import get_ip
+from fastapi import FastAPI, WebSocket
+from Shared.data import SESSION_STORE
 from Libs.Database import Database
-from models import CommandRequest
+from fastapi import Request
 from pathlib import Path
 from typing import Set
+import subprocess
 import threading
 import asyncio
 import uvicorn
@@ -28,8 +29,65 @@ app.include_router(web_routes.router)
 app.include_router(api_routes.router, prefix="/api", tags=["api"])
 
 
+bedrock_process = subprocess.Popen(
+    ["/bin/bash", "/bedrock/start.sh"],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    text=True,
+    bufsize=1,
+)
+
+# Start Bash terminal inside the same container
+bash_process = subprocess.Popen(
+    ["/bin/bash"],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    text=True,
+    bufsize=1,
+)
+
+
+def start_bedrock_server():
+    global bedrock_process
+
+    # Ensure the previous process is completely stopped before starting a new one
+    if bedrock_process is not None and bedrock_process.poll() is None:
+        return  # Server is already running, do nothing
+
+    # Start a new Bedrock server process
+    bedrock_process = subprocess.Popen(
+        ["/bin/bash", "/bedrock/start.sh"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        bufsize=1,
+    )
+
+
+def start_bash_console():
+    global bash_process
+
+    # Ensure the previous process is completely stopped before starting a new one
+    if bash_process is not None and bash_process.poll() is None:
+        return  # Server is already running, do nothing
+
+    # Start a new Bedrock server process
+    bash_process = subprocess.Popen(
+        ["/bin/bash"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        bufsize=1,
+    )
+
+
 # Function to stream logs from Bedrock server
 async def stream_bedrock_logs():
+    global bedrock_process
     loop = asyncio.get_running_loop()
     while True:
         line = await loop.run_in_executor(None, bedrock_process.stdout.readline)
@@ -40,6 +98,7 @@ async def stream_bedrock_logs():
 
 # Function to stream logs from the Bash terminal
 async def stream_bash_logs():
+    global bash_process
     loop = asyncio.get_running_loop()
     while True:
         line = await loop.run_in_executor(None, bash_process.stdout.readline)
@@ -53,6 +112,7 @@ async def broadcast(message: str, source: str):
     Sends messages over WebSocket with a source identifier.
     `source` should be "bedrock" or "bash".
     """
+    global clients
     data = json.dumps({"source": source, "message": message})
     disconnected = []
     for client in clients:
@@ -66,6 +126,7 @@ async def broadcast(message: str, source: str):
 
 @app.websocket("/ws")
 async def terminals_endpoint(websocket: WebSocket):
+    global clients
     await websocket.accept()
     clients.add(websocket)
     try:
@@ -77,14 +138,18 @@ async def terminals_endpoint(websocket: WebSocket):
 
 
 @app.post("/send_command")
-async def send_command(command: str, session_token: str = Cookie(None)):
+async def send_command(request: Request):
     """
     Sends a command to the Bedrock Server.
     """
+    global bedrock_process
+
+    body = await request.json()
+    command: str = body["command"]
+    session_token = request.cookies.get("session_token")
 
     username = SESSION_STORE.get(session_token)
     user_data = db.get_user(username)
-    print(user_data)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
     elif "admin" not in user_data:
@@ -98,14 +163,18 @@ async def send_command(command: str, session_token: str = Cookie(None)):
 
 
 @app.post("/send_terminal_command")
-async def send_terminal_command(command: str, session_token: str = Cookie(None)):
+async def send_terminal_command(request: Request):
     """
     Sends a command to the Bash Terminal.
     """
+    global bash_process
+
+    body = await request.json()
+    command: str = body["command"]
+    session_token = request.cookies.get("session_token")
 
     username = SESSION_STORE.get(session_token)
     user_data = db.get_user(username)
-    print(user_data)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
     elif "admin" not in user_data:
@@ -119,12 +188,15 @@ async def send_terminal_command(command: str, session_token: str = Cookie(None))
 
 
 @app.post("/server_command")
-async def server_command(command: str, session_token: str = Cookie(None)):
+async def server_command(request: Request):
     global bedrock_process, bash_process
+
+    body = await request.json()
+    command: str = body["command"]
+    session_token = request.cookies.get("session_token")
 
     username = SESSION_STORE.get(session_token)
     user_data = db.get_user(username)
-    print(user_data)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
     elif "admin" not in user_data:
@@ -160,4 +232,4 @@ if __name__ == "__main__":
         stream_bash_logs()), daemon=True).start()
 
     # Start the FastAPI server
-    uvicorn.run(app, host=IP, port=5000)
+    uvicorn.run("Main:app", host=IP, port=5000, reload=True)

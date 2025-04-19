@@ -1,5 +1,5 @@
 from models import AuthRequest, SettingsRequest, ModRequest, ModResponce
-from fastapi import APIRouter, HTTPException, Cookie, Response
+from fastapi import APIRouter, HTTPException, Request, Response
 from Shared.data import SESSION_STORE, SESSION_COOKIE_NAME
 from Libs.ModLoader import ModManager
 from Libs.Database import Database
@@ -12,7 +12,8 @@ db = Database()
 
 
 @router.get("/auth/session")
-async def get_session(session_token: str = Cookie(default=None)):
+async def get_session(request: Request):
+    session_token = request.cookies.get(SESSION_COOKIE_NAME)
     if session_token in SESSION_STORE:
         return {"authenticated": True, "username": SESSION_STORE[session_token]}
     return {"authenticated": False}
@@ -21,7 +22,6 @@ async def get_session(session_token: str = Cookie(default=None)):
 @router.post("/auth/login")
 async def login_or_register(request: AuthRequest, response: Response):
     user = db.get_user(request.username)
-    print(user)
 
     # LOGIN: if isLogin is True
     if request.login:
@@ -36,7 +36,7 @@ async def login_or_register(request: AuthRequest, response: Response):
                 secure=False,
                 samesite="lax",
             )
-            return {"success": True, "message": "Logged in", "username": request.username}
+            return {"success": True, "message": "Logged in"}
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     # REGISTER: if not isLogin

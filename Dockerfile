@@ -12,15 +12,15 @@ RUN apt-get update && \
 
 # Add non-root user
 RUN useradd -m -s /bin/bash server && \
-echo "server ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+    echo "server ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Set working directory
 WORKDIR /bedrock
 
 # Download Bedrock Server
-RUN curl -L -A "bedrock-server.zip" -o bedrock-server.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.72.01.zip && \
+RUN curl -L -A "bedrock-server.zip" -o bedrock-server.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.73.01.zip && \
     unzip bedrock-server.zip && \
-rm bedrock-server.zip
+    rm bedrock-server.zip
 
 # Copy app files and scripts
 COPY ./app/BedrockServer /bedrock
@@ -35,7 +35,7 @@ COPY ./app/frontend/static/ /home/server/frontend/static/
 RUN chmod +x /bedrock/*.sh && \
     chmod 0644 /etc/cron.d/bedrock-backup && \
     chown -R server:server /bedrock /home/server && \
-crontab /etc/cron.d/bedrock-backup
+    crontab /etc/cron.d/bedrock-backup
 
 
 # Switch to user for user-space install
@@ -45,7 +45,7 @@ WORKDIR /home/server
 # Install No-IP DUC using package manager method
 RUN wget --content-disposition https://www.noip.com/download/linux/latest && \
     tar xf noip-duc_3.3.0.tar.gz && \
-cd /home/server/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
+    cd /home/server/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
 
 RUN service cron start
 
