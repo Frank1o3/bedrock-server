@@ -37,7 +37,6 @@ RUN chmod +x /bedrock/*.sh && \
     chown -R server:server /bedrock /home/server && \
 crontab /etc/cron.d/bedrock-backup
 
-RUN service cron start
 
 # Switch to user for user-space install
 USER server
@@ -47,6 +46,8 @@ WORKDIR /home/server
 RUN wget --content-disposition https://www.noip.com/download/linux/latest && \
     tar xf noip-duc_3.3.0.tar.gz && \
 cd /home/server/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
+
+RUN service cron start
 
 # Set back working directory to /bedrock
 WORKDIR /bedrock
