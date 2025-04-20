@@ -13,30 +13,54 @@ db = Database()
 
 @router.get("/auth/session")
 async def get_session(request: Request):
+    """
+    Check if the user is authenticated by looking for a session token in cookies.
+    """
+    response = Response()
+    response.headers.setdefault("Content-Type", "application/json")
+
+    response.body["success"] = False
+    response.body["authenticated"] = False
+    response.body["message"] = "Not authenticated"
+    response.status_code = 401
+
     session_token = request.cookies.get(SESSION_COOKIE_NAME)
     if session_token in SESSION_STORE:
-        return {"authenticated": True, "username": SESSION_STORE[session_token]}
-    return {"authenticated": False}
+        response.body["success"] = True
+        response.body["authenticated"] = True
+        response.status_code = 200
+        return response
+
+    return response
 
 
 @router.post("/auth/login")
-async def login_or_register(request: AuthRequest, response: Response):
+async def login_or_register(request: AuthRequest):
     user = db.get_user(request.username)
+    response = Response()
+    response.headers.setdefault("Content-Type", "application/json")
+    response.body["message"] = ""
+    response.body["success"] = False
+    response.status_code = 401
+
 
     # LOGIN: if isLogin is True
     if request.login:
         if user:
             session_token = str(uuid4())
             SESSION_STORE[session_token] = request.username
-            SESSION_STORE.pop(request.session_token, None)  # Remove old session token
+            # Remove old session token
+            SESSION_STORE.pop(request.session_token, None)
             response.set_cookie(
                 key=SESSION_COOKIE_NAME,
                 value=session_token,
                 httponly=True,
-                secure=False,
-                samesite="lax",
+                secure=True,
+                samesite="strict",
             )
-            return {"success": True, "message": "Logged in"}
+            response.body["success"] = True
+            response.body["message"] = "Logged in"
+            return response
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
     # REGISTER: if not isLogin
@@ -56,10 +80,13 @@ async def login_or_register(request: AuthRequest, response: Response):
         key=SESSION_COOKIE_NAME,
         value=session_token,
         httponly=True,
-        secure=False,
-        samesite="lax",
+        secure=True,
+        samesite="strict",
     )
-    return {"success": True, "message": "Account created", "username": request.username}
+    response.body["success"] = True
+    response.body["message"] = "Account created"
+
+    return response
 
 
 @router.get("/settings")
