@@ -232,4 +232,4 @@ if __name__ == "__main__":
         stream_bash_logs()), daemon=True).start()
 
     # Start the FastAPI server
-    uvicorn.run("Main:app", host=IP, port=5000, reload=True)
+    uvicorn.run(app, host=IP, port=5000)
