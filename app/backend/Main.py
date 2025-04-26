@@ -18,26 +18,6 @@ import os
 clients: Set[WebSocket] = set()
 home_dir = Path.home()
 
-bedrock_process = subprocess.Popen(
-    ["/bin/bash", "/bedrock/start.sh"],
-    stdin=subprocess.PIPE,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True,
-    bufsize=1,
-)
-
-# Start Bash terminal inside the same container
-bash_process = subprocess.Popen(
-    ["/bin/bash"],
-    stdin=subprocess.PIPE,
-    stdout=subprocess.PIPE,
-    stderr=subprocess.PIPE,
-    text=True,
-    bufsize=1,
-)
-
-
 db = Database()
 
 app = FastAPI()
@@ -47,6 +27,25 @@ app.mount(
 
 app.include_router(web_routes.router)
 app.include_router(api_routes.router, prefix="/api", tags=["api"])
+
+bedrock_process = subprocess.Popen(
+    ["/bin/bash", "/bedrock/start.sh"],
+    stdin=subprocess.PIPE,  # Ensure stdin is set to PIPE
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    text=True,
+    bufsize=1,
+)
+
+# Start Bash terminal inside the same container
+bash_process = subprocess.Popen(
+    ["/bin/bash"],
+    stdin=subprocess.PIPE,  # Ensure stdin is set to PIPE
+    stdout=subprocess.PIPE,
+    stderr=subprocess.PIPE,
+    text=True,
+    bufsize=1,
+)
 
 
 def start_bedrock_server():
@@ -89,10 +88,14 @@ async def stream_logs():
     global bedrock_process, bash_process
     loop = asyncio.get_running_loop()
     while True:
-        bedrock_line = await loop.run_in_executor(
-            None, bedrock_process.stdout.readline)
-        bash_line = await loop.run_in_executor(
-            None, bash_process.stdout.readline)
+        bedrock_line = None
+        if bedrock_process.stdout is not None:
+            bedrock_line = await loop.run_in_executor(
+                None, bedrock_process.stdout.readline)
+        bash_line = None
+        if bash_process.stdout is not None:
+            bash_line = await loop.run_in_executor(
+                None, bash_process.stdout.readline)
         if bedrock_line:
             await broadcast(bedrock_line.strip(), "bedrock")
         if bash_line:
@@ -150,7 +153,7 @@ async def send_command(request: Request):
     elif "admin" not in user_data:
         return {"error": "You don't have permission to execute this command.", "success": False}
 
-    if bedrock_process.poll() is None:
+    if bedrock_process and bedrock_process.stdin and bedrock_process.poll() is None:
         bedrock_process.stdin.write(f"{command}\n")
         bedrock_process.stdin.flush()
         return {"message": "Command sent to Bedrock server", "success": True}
@@ -178,7 +181,7 @@ async def send_terminal_command(request: Request):
     elif "admin" not in user_data:
         return {"error": "You don't have permission to execute this command.", "success": False}
 
-    if bash_process.poll() is None:
+    if bash_process and bash_process.stdin and bash_process.poll() is None:
         bash_process.stdin.write(f"{command}\n")
         bash_process.stdin.flush()
         return {"message": "Command sent to Bash terminal", "success": True}
@@ -205,7 +208,7 @@ async def server_command(request: Request):
         return {"error": "You don't have permission to execute this command.", "success": False}
 
     if command.lower() == "stop":
-        if bedrock_process and bedrock_process.poll() is None:
+        if bedrock_process and bedrock_process.stdin and bedrock_process.poll() is None:
             bedrock_process.stdin.write("stop\n")
             bedrock_process.stdin.flush()
             return {"message": "Stop command sent to Bedrock server", "success": True}
@@ -218,14 +221,14 @@ async def server_command(request: Request):
         start_bash_console()
         return {"message": "Bash terminal started"}
     elif command.lower() == "stop bash":
-        if bash_process and bash_process.poll() is None:
+        if bash_process and bash_process.stdin and bash_process and bash_process.poll() is None:
             bash_process.kill()
             return {"message": "Stop command sent to Bash terminal"}
     return {"error": "Invalid command. Use 'start' or 'stop'."}
 
 
 if __name__ == "__main__":
-    IP = get_ip()
+    IP = get_ip() or "0.0.0.0"
 
     print("Starting log streaming...")
     threading.Thread(target=lambda: asyncio.run(
