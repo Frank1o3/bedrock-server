@@ -18,17 +18,6 @@ import os
 clients: Set[WebSocket] = set()
 home_dir = Path.home()
 
-db = Database()
-
-app = FastAPI()
-
-app.mount(
-    "/static", StaticFiles(directory=os.path.join(home_dir, "frontend/static")), name="static")
-
-app.include_router(web_routes.router)
-app.include_router(api_routes.router, prefix="/api", tags=["api"])
-
-
 bedrock_process = subprocess.Popen(
     ["/bin/bash", "/bedrock/start.sh"],
     stdin=subprocess.PIPE,
@@ -47,6 +36,17 @@ bash_process = subprocess.Popen(
     text=True,
     bufsize=1,
 )
+
+
+db = Database()
+
+app = FastAPI()
+
+app.mount(
+    "/static", StaticFiles(directory=os.path.join(home_dir, "frontend/static")), name="static")
+
+app.include_router(web_routes.router)
+app.include_router(api_routes.router, prefix="/api", tags=["api"])
 
 
 def start_bedrock_server():
@@ -85,25 +85,18 @@ def start_bash_console():
     )
 
 
-# Function to stream logs from Bedrock server
-async def stream_bedrock_logs():
-    global bedrock_process
+async def stream_logs():
+    global bedrock_process, bash_process
     loop = asyncio.get_running_loop()
     while True:
-        line = await loop.run_in_executor(None, bedrock_process.stdout.readline)
-        if line:
-            await broadcast(line.strip(), "bedrock")
-        await asyncio.sleep(0.1)
-
-
-# Function to stream logs from the Bash terminal
-async def stream_bash_logs():
-    global bash_process
-    loop = asyncio.get_running_loop()
-    while True:
-        line = await loop.run_in_executor(None, bash_process.stdout.readline)
-        if line:
-            await broadcast(line.strip(), "bash")
+        bedrock_line = await loop.run_in_executor(
+            None, bedrock_process.stdout.readline)
+        bash_line = await loop.run_in_executor(
+            None, bash_process.stdout.readline)
+        if bedrock_line:
+            await broadcast(bedrock_line.strip(), "bedrock")
+        if bash_line:
+            await broadcast(bash_line.strip(), "bash")
         await asyncio.sleep(0.1)
 
 
@@ -147,6 +140,8 @@ async def send_command(request: Request):
     body = await request.json()
     command: str = body["command"]
     session_token = request.cookies.get("session_token")
+    print(
+        f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None} Command: {command}")
 
     username = SESSION_STORE.get(session_token)
     user_data = db.get_user(username)
@@ -173,6 +168,9 @@ async def send_terminal_command(request: Request):
     command: str = body["command"]
     session_token = request.cookies.get("session_token")
 
+    print(
+        f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None} Command: {command}")
+
     username = SESSION_STORE.get(session_token)
     user_data = db.get_user(username)
     if user_data is None:
@@ -190,6 +188,10 @@ async def send_terminal_command(request: Request):
 @app.post("/server_command")
 async def server_command(request: Request):
     global bedrock_process, bash_process
+    print(
+        f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None}")
+    print(
+        f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None}")
 
     body = await request.json()
     command: str = body["command"]
@@ -225,11 +227,10 @@ async def server_command(request: Request):
 if __name__ == "__main__":
     IP = get_ip()
 
-    # Start the log streaming threads
+    print("Starting log streaming...")
     threading.Thread(target=lambda: asyncio.run(
-        stream_bedrock_logs()), daemon=True).start()
-    threading.Thread(target=lambda: asyncio.run(
-        stream_bash_logs()), daemon=True).start()
+        stream_logs()), daemon=True).start()
 
+    print("Starting web server...")
     # Start the FastAPI server
-    uvicorn.run("Main:app", host=IP, port=5000, reload=True)
+    uvicorn.run(app, host=IP, port=5000)
