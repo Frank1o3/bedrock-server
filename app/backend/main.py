@@ -1,19 +1,24 @@
-from fastapi.staticfiles import StaticFiles
-from Routes import web_routes, api_routes
-from Functions.functions import get_ip
-from fastapi import FastAPI, WebSocket
-from Shared.data import SESSION_STORE
-from Libs.Database import Database
-from fastapi import Request
+""""
+Main backend application for managing the Bedrock server and Bash terminal.
+Handles WebSocket connections, command execution, and log streaming.
+"""
+
 from pathlib import Path
 from typing import Set
 import subprocess
 import threading
 import asyncio
-import uvicorn
 import json
 import os
+import uvicorn
 
+from fastapi.staticfiles import StaticFiles
+from Routes import web_routes, api_routes
+from Functions.functions import get_ip
+from fastapi import FastAPI, WebSocket
+from Shared.data import SESSION_STORE
+from app.backend.Libs.database import Database
+from fastapi import Request
 
 bedrock_clients: Set[WebSocket] = set()
 bash_clients: Set[WebSocket] = set()

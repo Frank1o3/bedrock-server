@@ -8,8 +8,8 @@ from Shared.data import (
     SESSION_STORE, SESSION_COOKIE_NAME, SessionData,
     create_session, get_session, invalidate_session, cleanup_expired_sessions
 )
-from Libs.ModLoader import ModManager
-from Libs.Database import Database
+from app.backend.Libs.modloader import ModManager
+from app.backend.Libs.database import Database
 import os
 import subprocess
 import psutil
@@ -397,7 +397,7 @@ async def upload_mod(request: Request):
             tmp_file_path = tmp_file.name
         
         # Use ModLoader to install the mod
-        from Libs.ModLoader import ModLoader
+        from app.backend.Libs.modloader import ModLoader
         mod_loader = ModLoader(server_world_path="/bedrock")
         mod_loader.load_mod(tmp_file_path, force=True)
         
