@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "tag": "beta",
+  "build": 1,
+  "description": "Minecraft Bedrock Server Management Platform",
+  "changelog": {
+    "1.0.0": [
+      "Initial release with comprehensive mod management system",
+      "Enhanced authentication with role-based access control",
+      "Real-time server console with separate WebSocket streams",
+      "Advanced settings management for environment and server properties",
+      "Docker containerization with automated builds",
+      "Single session enforcement and secure cookie authentication",
+      "Professional web interface with glassmorphism design"
+    ]
+  },
+  "compatibility": {
+    "minecraft_version": "1.21.73.01",
+    "node_version": ">=16.0.0",
+    "python_version": ">=3.8.0",
+    "docker_version": ">=20.10.0"
+  },
+  "release_date": "2025-01-19",
+  "author": "Frank1o3",
+  "repository": "https://github.com/Frank1o3/bedrock-server"
+}

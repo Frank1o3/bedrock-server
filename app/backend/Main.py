@@ -15,7 +15,8 @@ import json
 import os
 
 
-clients: Set[WebSocket] = set()
+bedrock_clients: Set[WebSocket] = set()
+bash_clients: Set[WebSocket] = set()
 home_dir = Path.home()
 
 db = Database()
@@ -84,53 +85,122 @@ def start_bash_console():
     )
 
 
-async def stream_logs():
-    global bedrock_process, bash_process
+async def stream_bedrock_logs():
+    """Stream logs from Bedrock server to bedrock clients only"""
+    global bedrock_process
     loop = asyncio.get_running_loop()
     while True:
-        bedrock_line = None
-        if bedrock_process.stdout is not None:
-            bedrock_line = await loop.run_in_executor(
-                None, bedrock_process.stdout.readline)
-        bash_line = None
-        if bash_process.stdout is not None:
-            bash_line = await loop.run_in_executor(
-                None, bash_process.stdout.readline)
-        if bedrock_line:
-            await broadcast(bedrock_line.strip(), "bedrock")
-        if bash_line:
-            await broadcast(bash_line.strip(), "bash")
+        if bedrock_process and bedrock_process.poll() is None:  # Check if process is still running
+            try:
+                # Read stdout
+                if bedrock_process.stdout is not None:
+                    bedrock_line = await loop.run_in_executor(
+                        None, bedrock_process.stdout.readline)
+                    if bedrock_line and bedrock_line.strip():
+                        await broadcast_to_bedrock(bedrock_line.strip())
+                
+                # Read stderr
+                if bedrock_process.stderr is not None:
+                    bedrock_error = await loop.run_in_executor(
+                        None, bedrock_process.stderr.readline)
+                    if bedrock_error and bedrock_error.strip():
+                        await broadcast_to_bedrock(f"[ERROR] {bedrock_error.strip()}")
+            except Exception as e:
+                print(f"Error reading bedrock logs: {e}")
         await asyncio.sleep(0.1)
 
 
-async def broadcast(message: str, source: str):
-    """
-    Sends messages over WebSocket with a source identifier.
-    `source` should be "bedrock" or "bash".
-    """
-    global clients
-    data = json.dumps({"source": source, "message": message})
+async def stream_bash_logs():
+    """Stream logs from Bash terminal to bash clients only"""
+    global bash_process
+    loop = asyncio.get_running_loop()
+    while True:
+        if bash_process and bash_process.poll() is None:  # Check if process is still running
+            try:
+                # Read stdout
+                if bash_process.stdout is not None:
+                    bash_line = await loop.run_in_executor(
+                        None, bash_process.stdout.readline)
+                    if bash_line and bash_line.strip():
+                        await broadcast_to_bash(bash_line.strip())
+                
+                # Read stderr
+                if bash_process.stderr is not None:
+                    bash_error = await loop.run_in_executor(
+                        None, bash_process.stderr.readline)
+                    if bash_error and bash_error.strip():
+                        await broadcast_to_bash(f"[ERROR] {bash_error.strip()}")
+            except Exception as e:
+                print(f"Error reading bash logs: {e}")
+        await asyncio.sleep(0.1)
+
+
+async def broadcast_to_bedrock(message: str):
+    """Send messages only to bedrock WebSocket clients"""
+    global bedrock_clients
+    if not message.strip():  # Skip empty messages
+        return
+    
+    data = json.dumps({"source": "bedrock", "message": message})
     disconnected = []
-    for client in clients:
+    for client in bedrock_clients.copy():  # Use copy to avoid modification during iteration
         try:
             await client.send_text(data)
-        except:
+        except Exception:
             disconnected.append(client)
+    
+    # Remove disconnected clients
     for client in disconnected:
-        clients.remove(client)
+        bedrock_clients.discard(client)
 
 
-@app.websocket("/ws")
-async def terminals_endpoint(websocket: WebSocket):
-    global clients
+async def broadcast_to_bash(message: str):
+    """Send messages only to bash WebSocket clients"""
+    global bash_clients
+    if not message.strip():  # Skip empty messages
+        return
+    
+    data = json.dumps({"source": "bash", "message": message})
+    disconnected = []
+    for client in bash_clients.copy():  # Use copy to avoid modification during iteration
+        try:
+            await client.send_text(data)
+        except Exception:
+            disconnected.append(client)
+    
+    # Remove disconnected clients
+    for client in disconnected:
+        bash_clients.discard(client)
+
+
+@app.websocket("/ws/bedrock")
+async def bedrock_terminal_endpoint(websocket: WebSocket):
+    """WebSocket endpoint specifically for bedrock server logs"""
+    global bedrock_clients
     await websocket.accept()
-    clients.add(websocket)
+    bedrock_clients.add(websocket)
     try:
         while True:
             await asyncio.sleep(1)
-    except:
-        if websocket in clients:
-            clients.discard(websocket)
+    except Exception:
+        pass
+    finally:
+        bedrock_clients.discard(websocket)
+
+
+@app.websocket("/ws/bash")
+async def bash_terminal_endpoint(websocket: WebSocket):
+    """WebSocket endpoint specifically for bash terminal logs"""
+    global bash_clients
+    await websocket.accept()
+    bash_clients.add(websocket)
+    try:
+        while True:
+            await asyncio.sleep(1)
+    except Exception:
+        pass
+    finally:
+        bash_clients.discard(websocket)
 
 
 @app.post("/send_command")
@@ -230,9 +300,13 @@ async def server_command(request: Request):
 if __name__ == "__main__":
     IP = get_ip() or "0.0.0.0"
 
-    print("Starting log streaming...")
+    print("Starting bedrock log streaming...")
     threading.Thread(target=lambda: asyncio.run(
-        stream_logs()), daemon=True).start()
+        stream_bedrock_logs()), daemon=True).start()
+    
+    print("Starting bash log streaming...")
+    threading.Thread(target=lambda: asyncio.run(
+        stream_bash_logs()), daemon=True).start()
 
     print("Starting web server...")
     # Start the FastAPI server

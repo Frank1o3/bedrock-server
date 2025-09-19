@@ -6,6 +6,20 @@ interface Mod {
 	id: number;
 	name: string;
 	type: "behavior" | "resource";
+	uuid?: string;
+	enabled?: boolean;
+	version?: number[];
+	description?: string;
+}
+
+interface ModDetails {
+	uuid: string;
+	name: string;
+	description: string;
+	version: number[];
+	type: string;
+	enabled: boolean;
+	file_path: string;
 }
 
 const Mods: React.FC = () => {
@@ -13,32 +27,48 @@ const Mods: React.FC = () => {
 	const [selectedMod, setSelectedMod] = useState<Mod | null>(null);
 	const [availableMods, setAvailableMods] = useState<Mod[]>([]);
 	const [activeMods, setActiveMods] = useState<Mod[]>([]);
+	const [uploadStatus, setUploadStatus] = useState<string>("");
+	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const fileInputRef = useRef<HTMLInputElement>(null);
 
-	useEffect(() => {
-		const fetchMods = async () => {
-			try {
-				const availableResponse = await axios.post("/api/mods/", {
-					requestType: "available",
-				});
-				const activeData = await axios.post("/api/mods/", {
-					requestType: "active",
-				});
+	const fetchMods = async () => {
+		setIsLoading(true);
+		try {
+			const availableResponse = await axios.post("/api/mods/", {
+				requestType: "available",
+			}, { withCredentials: true });
+			
+			const activeResponse = await axios.post("/api/mods/", {
+				requestType: "active",
+			}, { withCredentials: true });
 
-				if (
-					availableResponse.status === 200 ||
-					availableResponse.status === 201
-				) {
-					setAvailableMods(availableResponse.data.mods);
-				}
-				if (activeData.status === 200 || activeData.status === 201) {
-					setActiveMods(activeData.data.mods);
-				}
-			} catch (error) {
-				console.error("Error fetching mods:", error);
+			if (availableResponse.data?.mods) {
+				const enrichedMods = availableResponse.data.mods.map((mod: any) => ({
+					...mod,
+					uuid: mod.id.toString(), // Convert ID to UUID string for consistency
+					type: mod.Type || "unknown"
+				}));
+				setAvailableMods(enrichedMods);
 			}
-		};
+			
+			if (activeResponse.data?.mods) {
+				const enrichedActiveMods = activeResponse.data.mods.map((mod: any) => ({
+					...mod,
+					uuid: mod.id.toString(),
+					type: mod.Type || "unknown",
+					enabled: true
+				}));
+				setActiveMods(enrichedActiveMods);
+			}
+		} catch (error) {
+			console.error("Error fetching mods:", error);
+			setUploadStatus("Failed to fetch mods");
+		} finally {
+			setIsLoading(false);
+		}
+	};
 
+	useEffect(() => {
 		fetchMods();
 	}, []);
 
@@ -46,35 +76,101 @@ const Mods: React.FC = () => {
 		fileInputRef.current?.click();
 	};
 
-	const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files?.[0];
 		if (!file) return;
 
-		const reader = new FileReader();
-		reader.onload = () => {
-			const socket = new WebSocket(
-				`ws:${window.location.host}/ws/upload`
-			);
-			socket.onopen = () => {
-				socket.send(
-					JSON.stringify({
-						filename: file.name,
-						data: reader.result,
-					})
-				);
-				socket.close();
-			};
-		};
-		reader.readAsArrayBuffer(file);
+		// Validate file type
+		if (!file.name.endsWith('.mcaddon') && !file.name.endsWith('.mcpack')) {
+			setUploadStatus("Error: Only .mcaddon and .mcpack files are supported");
+			return;
+		}
+
+		setUploadStatus(`Uploading ${file.name}...`);
+		setIsLoading(true);
+
+		try {
+			const formData = new FormData();
+			formData.append('file', file);
+
+			const response = await axios.post('/api/mods/upload', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+				withCredentials: true
+			});
+
+			if (response.data.success) {
+				setUploadStatus(`✅ ${response.data.message}`);
+				// Refresh the mod lists
+				await fetchMods();
+			} else {
+				setUploadStatus(`❌ Upload failed: ${response.data.message || 'Unknown error'}`);
+			}
+		} catch (error: any) {
+			console.error('Upload error:', error);
+			setUploadStatus(`❌ Upload failed: ${error.response?.data?.detail || error.message || 'Unknown error'}`);
+		} finally {
+			setIsLoading(false);
+			// Clear the file input
+			if (fileInputRef.current) {
+				fileInputRef.current.value = '';
+			}
+		}
+	};
+
+	const handleModAction = async (action: 'enable' | 'disable' | 'remove') => {
+		if (!selectedMod || !selectedMod.uuid) {
+			setUploadStatus("No mod selected");
+			return;
+		}
+
+		setUploadStatus(`${action}ing mod...`);
+		setIsLoading(true);
+
+		try {
+			const response = await axios.post('/api/mods/action', {
+				action: action,
+				mod_uuid: selectedMod.uuid,
+				mod_type: selectedMod.type
+			}, { withCredentials: true });
+
+			if (response.data.success) {
+				setUploadStatus(`✅ ${response.data.message}`);
+				// Refresh the mod lists
+				await fetchMods();
+				// Clear selection if mod was removed
+				if (action === 'remove') {
+					setSelectedMod(null);
+				}
+			} else {
+				setUploadStatus(`❌ ${action} failed: ${response.data.message || 'Unknown error'}`);
+			}
+		} catch (error: any) {
+			console.error('Mod action error:', error);
+			setUploadStatus(`❌ ${action} failed: ${error.response?.data?.detail || error.message || 'Unknown error'}`);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	const isModSelected = selectedMod !== null;
+	const isModFromActiveList = activeMods.some(mod => mod.id === selectedMod?.id);
 
 	return (
 		<div style={styles.pageContainer}>
 			{/* Header */}
 			<div style={styles.header}>
 				<h1 style={styles.title}>Mods Management</h1>
+				{uploadStatus && (
+					<div style={{
+						...styles.statusMessage,
+						color: uploadStatus.includes('✅') ? '#4CAF50' : 
+						       uploadStatus.includes('❌') ? '#f44336' : '#FFA726'
+					}}>
+						{uploadStatus}
+					</div>
+				)}
 			</div>
 
 			{/* Main Content */}
@@ -139,49 +235,79 @@ const Mods: React.FC = () => {
 				type="file"
 				ref={fileInputRef}
 				style={{ display: "none" }}
-				accept=".mcaddon"
+				accept=".mcaddon,.mcpack"
 				onChange={handleFileChange}
 			/>
 
 			{/* Action Buttons */}
 			<div style={styles.actionButtons}>
-				{["Enable", "Disable", "Remove"].map((label) => (
+				{/* Enable/Disable Button - contextual */}
+				{isModSelected && (
 					<button
-						key={label}
 						style={{
 							...styles.button,
-							background:
-								hoveredButton === label
-									? "#145523"
-									: isModSelected
-									? "#2ea650"
-									: "#444",
-							cursor: isModSelected ? "pointer" : "not-allowed",
+							background: hoveredButton === "toggle" ? "#145523" : 
+							           isModFromActiveList ? "#ff9800" : "#4caf50",
+							cursor: "pointer"
 						}}
-						onMouseEnter={() => setHoveredButton(label)}
+						onMouseEnter={() => setHoveredButton("toggle")}
 						onMouseLeave={() => setHoveredButton(null)}
-						disabled={!isModSelected}
-						onClick={() => {
-							if (isModSelected) {
-								console.log(`${label} mod:`, selectedMod?.name);
-							}
-						}}
+						onClick={() => handleModAction(isModFromActiveList ? "disable" : "enable")}
+						disabled={isLoading}
 					>
-						{label} Mod
+						{isModFromActiveList ? "Disable" : "Enable"} Mod
 					</button>
-				))}
+				)}
 
+				{/* Remove Button */}
+				<button
+					style={{
+						...styles.button,
+						background:
+							hoveredButton === "Remove"
+								? "#c62828"
+								: isModSelected
+								? "#f44336"
+								: "#666",
+						cursor: isModSelected && !isLoading ? "pointer" : "not-allowed",
+					}}
+					onMouseEnter={() => setHoveredButton("Remove")}
+					onMouseLeave={() => setHoveredButton(null)}
+					disabled={!isModSelected || isLoading}
+					onClick={() => handleModAction("remove")}
+				>
+					Remove Mod
+				</button>
+
+				{/* Upload Button */}
 				<button
 					style={{
 						...styles.button,
 						background:
 							hoveredButton === "Upload" ? "#145523" : "#28a745",
+						cursor: isLoading ? "not-allowed" : "pointer"
 					}}
 					onMouseEnter={() => setHoveredButton("Upload")}
 					onMouseLeave={() => setHoveredButton(null)}
 					onClick={handleUploadClick}
+					disabled={isLoading}
 				>
-					Upload Mod
+					{isLoading ? "Processing..." : "Upload Mod"}
+				</button>
+
+				{/* Refresh Button */}
+				<button
+					style={{
+						...styles.button,
+						background: hoveredButton === "Refresh" ? "#145523" : "#2196F3",
+						cursor: isLoading ? "not-allowed" : "pointer"
+					}}
+					onMouseEnter={() => setHoveredButton("Refresh")}
+					onMouseLeave={() => setHoveredButton(null)}
+					onClick={fetchMods}
+					disabled={isLoading}
+				>
+					Refresh
 				</button>
 			</div>
 		</div>
@@ -204,6 +330,16 @@ const styles: { [key: string]: React.CSSProperties } = {
 		fontSize: "20px",
 		color: "#00FF41",
 		marginBottom: "10px",
+	},
+
+	statusMessage: {
+		padding: "8px 12px",
+		marginTop: "10px",
+		backgroundColor: "rgba(0, 0, 0, 0.3)",
+		border: "1px solid #444",
+		borderRadius: "4px",
+		fontFamily: "monospace",
+		fontSize: "14px",
 	},
 
 	mainContent: {

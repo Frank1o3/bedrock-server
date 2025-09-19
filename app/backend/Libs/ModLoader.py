@@ -315,8 +315,12 @@ class ModManager:
         return None
 
     def remove_mod(self, uuid: UUID) -> bool:
+        """Remove a mod from the filesystem and world configuration"""
         success = False
-        for mod_dir in [self.behavior_dir, self.resource_dir]:
+        mod_type = None
+        
+        # Remove from filesystem
+        for mod_dir, pack_type in [(self.behavior_dir, "behavior"), (self.resource_dir, "resource")]:
             for subdir in os.listdir(mod_dir):
                 manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
                 if os.path.exists(manifest_path):
@@ -324,12 +328,163 @@ class ModManager:
                         try:
                             data = load(f)
                             if data["header"]["uuid"] == str(uuid):
-                                shutil.rmtree(os.path.join(
-                                    mod_dir, subdir), ignore_errors=True)
+                                shutil.rmtree(os.path.join(mod_dir, subdir), ignore_errors=True)
                                 success = True
+                                mod_type = pack_type
+                                break
                         except Exception as e:
                             print(f"Error removing mod {uuid}: {e}")
+            if success:
+                break
+        
+        # Remove from world configuration if found
+        if success and mod_type:
+            self._remove_from_world_config(uuid, mod_type)
+        
         return success
+
+    def _remove_from_world_config(self, uuid: UUID, pack_type: str):
+        """Remove mod from world configuration JSON"""
+        config_file = os.path.join(self.world_path, f"world_{pack_type}_packs.json")
+        if os.path.exists(config_file):
+            try:
+                with open(config_file, 'r') as f:
+                    data = load(f)
+                
+                # Filter out the mod with the given UUID
+                data = [mod for mod in data if mod.get("pack_id") != str(uuid)]
+                
+                with open(config_file, 'w') as f:
+                    dump(data, f, indent=2)
+                    
+                print(f"Removed mod {uuid} from {config_file}")
+            except Exception as e:
+                print(f"Error removing mod from world config: {e}")
+
+    def enable_mod(self, uuid: UUID, pack_type: str) -> bool:
+        """Enable a mod by adding it to the world configuration"""
+        # Find the mod in the filesystem first
+        mod_manifest = self._find_mod_manifest(uuid, pack_type)
+        if not mod_manifest:
+            return False
+            
+        config_file = os.path.join(self.world_path, f"world_{pack_type}_packs.json")
+        
+        try:
+            # Read existing configuration
+            data = []
+            if os.path.exists(config_file):
+                with open(config_file, 'r') as f:
+                    content = f.read().strip()
+                    if content:
+                        data = loads(content)
+                        if not isinstance(data, list):
+                            data = []
+            
+            # Check if mod is already enabled
+            if any(mod.get("pack_id") == str(uuid) for mod in data):
+                return True  # Already enabled
+                
+            # Add mod to configuration
+            mod_entry = {
+                "pack_id": str(uuid),
+                "version": mod_manifest["header"]["version"]
+            }
+            
+            data.append(mod_entry)
+            
+            # Write updated configuration
+            with open(config_file, 'w') as f:
+                dump(data, f, indent=2)
+                
+            print(f"Enabled mod {uuid} in {config_file}")
+            return True
+            
+        except Exception as e:
+            print(f"Error enabling mod: {e}")
+            return False
+
+    def disable_mod(self, uuid: UUID, pack_type: str) -> bool:
+        """Disable a mod by removing it from world configuration (but keeping files)"""
+        config_file = os.path.join(self.world_path, f"world_{pack_type}_packs.json")
+        
+        try:
+            if not os.path.exists(config_file):
+                return True  # Already disabled
+                
+            with open(config_file, 'r') as f:
+                data = load(f)
+                
+            # Filter out the mod
+            original_length = len(data)
+            data = [mod for mod in data if mod.get("pack_id") != str(uuid)]
+            
+            if len(data) == original_length:
+                return True  # Mod wasn't enabled
+                
+            with open(config_file, 'w') as f:
+                dump(data, f, indent=2)
+                
+            print(f"Disabled mod {uuid} from {config_file}")
+            return True
+            
+        except Exception as e:
+            print(f"Error disabling mod: {e}")
+            return False
+            
+    def _find_mod_manifest(self, uuid: UUID, pack_type: str) -> Optional[dict]:
+        """Find manifest data for a specific mod"""
+        mod_dir = self.behavior_dir if pack_type == "behavior" else self.resource_dir
+        
+        for subdir in os.listdir(mod_dir):
+            manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
+            if os.path.exists(manifest_path):
+                try:
+                    with open(manifest_path, 'r') as f:
+                        data = load(f)
+                        if data["header"]["uuid"] == str(uuid):
+                            return data
+                except Exception as e:
+                    print(f"Error reading manifest {manifest_path}: {e}")
+        return None
+
+    def is_mod_enabled(self, uuid: UUID, pack_type: str) -> bool:
+        """Check if a mod is currently enabled in world configuration"""
+        config_file = os.path.join(self.world_path, f"world_{pack_type}_packs.json")
+        
+        if not os.path.exists(config_file):
+            return False
+            
+        try:
+            with open(config_file, 'r') as f:
+                data = load(f)
+                return any(mod.get("pack_id") == str(uuid) for mod in data)
+        except Exception:
+            return False
+            
+    def get_mod_details(self, uuid: UUID) -> Optional[dict]:
+        """Get detailed information about a mod"""
+        # Check both behavior and resource directories
+        for pack_type, mod_dir in [("behavior", self.behavior_dir), ("resource", self.resource_dir)]:
+            for subdir in os.listdir(mod_dir):
+                manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
+                if os.path.exists(manifest_path):
+                    try:
+                        with open(manifest_path, 'r') as f:
+                            data = load(f)
+                            if data["header"]["uuid"] == str(uuid):
+                                return {
+                                    "uuid": str(uuid),
+                                    "name": data["header"].get("name", "Unknown"),
+                                    "description": data["header"].get("description", ""),
+                                    "version": data["header"].get("version", [1, 0, 0]),
+                                    "type": pack_type,
+                                    "enabled": self.is_mod_enabled(uuid, pack_type),
+                                    "file_path": os.path.join(mod_dir, subdir)
+                                }
+                    except Exception as e:
+                        print(f"Error reading mod details: {e}")
+        return None
 
 
 if __name__ == "__main__":

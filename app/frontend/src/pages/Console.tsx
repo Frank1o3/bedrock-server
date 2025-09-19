@@ -8,7 +8,8 @@ const Console: React.FC = () => {
 	const [bedrockCommand, setBedrockCommand] = useState("");
 
 	const [bashCommand, setBashCommand] = useState("");
-	const ws = useRef<WebSocket | null>(null);
+	const bedrockWs = useRef<WebSocket | null>(null);
+	const bashWs = useRef<WebSocket | null>(null);
 	const bedrockLogRef = useRef<HTMLDivElement | null>(null);
 	const bashLogRef = useRef<HTMLDivElement | null>(null);
 
@@ -16,21 +17,42 @@ const Console: React.FC = () => {
 	const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
 	useEffect(() => {
-		ws.current = new WebSocket(`ws://${window.location.host}/ws`);
+		// Setup Bedrock WebSocket connection
+		bedrockWs.current = new WebSocket(
+			`ws://${window.location.host}/ws/bedrock`
+		);
 
-		ws.current.onmessage = (event) => {
+		bedrockWs.current.onmessage = (event) => {
 			const data = JSON.parse(event.data);
-			const { source, message } = data;
-
-			if (source === "bedrock") {
-				setBedrockLogs((prev) => [...prev, message]);
-			} else if (source === "bash") {
-				setBashLogs((prev) => [...prev, message]);
+			if (data.source === "bedrock" && data.message) {
+				setBedrockLogs((prev) => [...prev, data.message]);
 			}
 		};
 
+		bedrockWs.current.onerror = (error) => {
+			console.error("Bedrock WebSocket error:", error);
+		};
+
+		// Setup Bash WebSocket connection
+		bashWs.current = new WebSocket(
+			`ws://${window.location.host}/ws/bash`
+		);
+
+		bashWs.current.onmessage = (event) => {
+			const data = JSON.parse(event.data);
+			if (data.source === "bash" && data.message) {
+				setBashLogs((prev) => [...prev, data.message]);
+			}
+		};
+
+		bashWs.current.onerror = (error) => {
+			console.error("Bash WebSocket error:", error);
+		};
+
+		// Cleanup on unmount
 		return () => {
-			ws.current?.close();
+			bedrockWs.current?.close();
+			bashWs.current?.close();
 		};
 	}, []);
 
