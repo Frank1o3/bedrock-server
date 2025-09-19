@@ -134,7 +134,7 @@ async def login_or_register(request: AuthRequest) -> SessionResponse:
             key=SESSION_COOKIE_NAME,
             value=session_token,
             httponly=True,
-            secure=False,  # Set to True in production with HTTPS
+            secure=True,  # Secure cookie: Only sent via HTTPS
             samesite="lax",
             max_age=3600  # 1 hour
         )
@@ -174,7 +174,7 @@ async def login_or_register(request: AuthRequest) -> SessionResponse:
             key=SESSION_COOKIE_NAME,
             value=session_token,
             httponly=True,
-            secure=False,  # Set to True in production with HTTPS
+            secure=True,  # Secure cookie: Only sent via HTTPS
             samesite="lax",
             max_age=3600  # 1 hour
         )
@@ -191,7 +191,7 @@ async def logout(request: Request) -> dict:
         invalidate_session(session_token)
     
     response = Response(content='{"success": true, "message": "Logged out successfully"}')
-    response.delete_cookie(SESSION_COOKIE_NAME)
+    response.delete_cookie(SESSION_COOKIE_NAME, secure=True)
     response.headers["Content-Type"] = "application/json"
     return response
 
