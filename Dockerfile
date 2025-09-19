@@ -1,4 +1,4 @@
-FROM ubuntu:25.04
+FROM ubuntu:latest
 
 # Set environment to non-interactive (avoid tzdata prompt)
 ENV DEBIAN_FRONTEND=noninteractive
