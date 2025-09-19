@@ -1,6 +1,7 @@
 node_modules/
 backups/
-.venv/
+WARP.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
