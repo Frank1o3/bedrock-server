@@ -1,5 +1,10 @@
 FROM ubuntu:25.10
 
+# Build-time default version
+ARG VERSION=1.21.101.1
+# Runtime environment variable (fallback to ARG)
+ENV BEDROCK_VERSION=${VERSION}
+
 # Set environment to non-interactive (avoid tzdata prompt)
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -18,7 +23,9 @@ RUN useradd -m -s /bin/bash server && \
 WORKDIR /bedrock
 
 # Download Bedrock Server
-RUN curl -L -A "bedrock-server.zip" -o bedrock-server.zip https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.21.73.01.zip && \
+RUN curl -L -A "bedrock-server.zip" \
+    -o bedrock-server.zip \
+    https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-${BEDROCK_VERSION}.zip && \
     unzip bedrock-server.zip && \
     rm bedrock-server.zip
 
