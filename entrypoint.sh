@@ -7,7 +7,7 @@ chmod +x /bedrock/rollback.sh
 
 VENV_DIR="${HOME}/venv"
 REQUIREMENTS_FILE="${HOME}/backend/requirements.txt"
-MAIN_SCRIPT="${HOME}/backend/Main.py"
+MAIN_SCRIPT="${HOME}/backend/main.py"
 
 # Create virtual environment if missing
 if [ ! -d "$VENV_DIR" ]; then
