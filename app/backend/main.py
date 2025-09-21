@@ -1,4 +1,4 @@
-""""
+"""
 Main backend application for managing the Bedrock server and Bash terminal.
 Handles WebSocket connections, command execution, and log streaming.
 """
@@ -8,7 +8,6 @@ import json
 import os
 import subprocess
 import sys
-import threading
 from pathlib import Path
 from typing import Set
 
@@ -49,7 +48,7 @@ app.include_router(api_routes.router, prefix="/api", tags=["api"])
 
 bedrock_process = subprocess.Popen(
     ["/bin/bash", "/bedrock/start.sh"],
-    stdin=subprocess.PIPE,  # Ensure stdin is set to PIPE
+    stdin=subprocess.PIPE,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
     text=True,
@@ -59,7 +58,7 @@ bedrock_process = subprocess.Popen(
 # Start Bash terminal inside the same container
 bash_process = subprocess.Popen(
     ["/bin/bash"],
-    stdin=subprocess.PIPE,  # Ensure stdin is set to PIPE
+    stdin=subprocess.PIPE,
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE,
     text=True,
@@ -70,11 +69,9 @@ bash_process = subprocess.Popen(
 def start_bedrock_server():
     global bedrock_process
 
-    # Ensure the previous process is completely stopped before starting a new one
     if bedrock_process is not None and bedrock_process.poll() is None:
-        return  # Server is already running, do nothing
+        return  # Server already running
 
-    # Start a new Bedrock server process
     bedrock_process = subprocess.Popen(
         ["/bin/bash", "/bedrock/start.sh"],
         stdin=subprocess.PIPE,
@@ -88,11 +85,9 @@ def start_bedrock_server():
 def start_bash_console():
     global bash_process
 
-    # Ensure the previous process is completely stopped before starting a new one
     if bash_process is not None and bash_process.poll() is None:
-        return  # Server is already running, do nothing
+        return  # Bash already running
 
-    # Start a new Bedrock server process
     bash_process = subprocess.Popen(
         ["/bin/bash"],
         stdin=subprocess.PIPE,
@@ -108,20 +103,20 @@ async def stream_bedrock_logs():
     global bedrock_process
     loop = asyncio.get_running_loop()
     while True:
-        if bedrock_process and bedrock_process.poll() is None:  # Check if process is still running
+        if bedrock_process and bedrock_process.poll() is None:
             try:
-                # Read stdout
                 if bedrock_process.stdout is not None:
                     bedrock_line = await loop.run_in_executor(
-                        None, bedrock_process.stdout.readline)
+                        None, bedrock_process.stdout.readline
+                    )
                     if bedrock_line and bedrock_line.strip():
                         print(f"Bedrock Output: {bedrock_line.strip()}")
                         await broadcast_to_bedrock(bedrock_line)
 
-                # Read stderr
                 if bedrock_process.stderr is not None:
                     bedrock_error = await loop.run_in_executor(
-                        None, bedrock_process.stderr.readline)
+                        None, bedrock_process.stderr.readline
+                    )
                     if bedrock_error and bedrock_error.strip():
                         print(f"Bedrock Error: {bedrock_error.strip()}")
                         await broadcast_to_bedrock(f"[ERROR] {bedrock_error}")
@@ -135,20 +130,20 @@ async def stream_bash_logs():
     global bash_process
     loop = asyncio.get_running_loop()
     while True:
-        if bash_process and bash_process.poll() is None:  # Check if process is still running
+        if bash_process and bash_process.poll() is None:
             try:
-                # Read stdout
                 if bash_process.stdout is not None:
                     bash_line = await loop.run_in_executor(
-                        None, bash_process.stdout.readline)
+                        None, bash_process.stdout.readline
+                    )
                     if bash_line and bash_line.strip():
                         print(f"Bash Output: {bash_line.strip()}")
                         await broadcast_to_bash(bash_line)
 
-                # Read stderr
                 if bash_process.stderr is not None:
                     bash_error = await loop.run_in_executor(
-                        None, bash_process.stderr.readline)
+                        None, bash_process.stderr.readline
+                    )
                     if bash_error and bash_error.strip():
                         print(f"Bash Error: {bash_error.strip()}")
                         await broadcast_to_bash(f"[ERROR] {bash_error}")
@@ -160,7 +155,7 @@ async def stream_bash_logs():
 async def broadcast_to_bedrock(message: str):
     """Send messages only to bedrock WebSocket clients"""
     global bedrock_clients
-    if not message.strip():  # Skip empty messages
+    if not message.strip():
         return
 
     data = json.dumps({"source": "bedrock", "message": message})
@@ -171,7 +166,6 @@ async def broadcast_to_bedrock(message: str):
         except Exception:
             disconnected.append(client)
 
-    # Remove disconnected clients
     for client in disconnected:
         bedrock_clients.discard(client)
 
@@ -179,7 +173,7 @@ async def broadcast_to_bedrock(message: str):
 async def broadcast_to_bash(message: str):
     """Send messages only to bash WebSocket clients"""
     global bash_clients
-    if not message.strip():  # Skip empty messages
+    if not message.strip():
         return
 
     data = json.dumps({"source": "bash", "message": message})
@@ -190,58 +184,49 @@ async def broadcast_to_bash(message: str):
         except Exception:
             disconnected.append(client)
 
-    # Remove disconnected clients
     for client in disconnected:
         bash_clients.discard(client)
 
 
 @app.websocket("/ws/bedrock")
 async def bedrock_terminal_endpoint(websocket: WebSocket):
-    """WebSocket endpoint specifically for bedrock server logs"""
     global bedrock_clients
     await websocket.accept()
     bedrock_clients.add(websocket)
     try:
         while True:
             await asyncio.sleep(1)
-    except Exception:
-        pass
     finally:
         bedrock_clients.discard(websocket)
 
 
 @app.websocket("/ws/bash")
 async def bash_terminal_endpoint(websocket: WebSocket):
-    """WebSocket endpoint specifically for bash terminal logs"""
     global bash_clients
     await websocket.accept()
     bash_clients.add(websocket)
     try:
         while True:
             await asyncio.sleep(1)
-    except Exception:
-        pass
     finally:
         bash_clients.discard(websocket)
 
 
 @app.post("/send_command")
 async def send_command(request: Request):
-    """
-    Sends a command to the Bedrock Server.
-    """
     global bedrock_process
 
     body = await request.json()
     command: str = body["command"]
     session_token = request.cookies.get("session_token")
     print(
-        f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None} Command: {command}")
+        f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None} Command: {command}"
+    )
 
     if session_token is None:
         return {"error": "Invalid credentials", "success": False}
     username = SESSION_STORE.get(session_token)
-    
+
     user_data = db.get_user(username.username if username else None)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
@@ -257,9 +242,6 @@ async def send_command(request: Request):
 
 @app.post("/send_terminal_command")
 async def send_terminal_command(request: Request):
-    """
-    Sends a command to the Bash Terminal.
-    """
     global bash_process
 
     body = await request.json()
@@ -267,12 +249,13 @@ async def send_terminal_command(request: Request):
     session_token = request.cookies.get("session_token")
 
     print(
-        f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None} Command: {command}")
+        f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None} Command: {command}"
+    )
 
     if session_token is None:
         return {"error": "Invalid credentials", "success": False}
     username = SESSION_STORE.get(session_token)
-    
+
     user_data = db.get_user(username.username if username else None)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
@@ -290,9 +273,11 @@ async def send_terminal_command(request: Request):
 async def server_command(request: Request):
     global bedrock_process, bash_process
     print(
-        f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None}")
+        f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None}"
+    )
     print(
-        f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None}")
+        f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None}"
+    )
 
     body = await request.json()
     command: str = body["command"]
@@ -301,7 +286,7 @@ async def server_command(request: Request):
     if session_token is None:
         return {"error": "Invalid credentials", "success": False}
     username = SESSION_STORE.get(session_token)
-    
+
     user_data = db.get_user(username.username if username else None)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
@@ -322,23 +307,37 @@ async def server_command(request: Request):
         start_bash_console()
         return {"message": "Bash terminal started"}
     elif command.lower() == "stop bash":
-        if bash_process and bash_process.stdin and bash_process and bash_process.poll() is None:
+        if bash_process and bash_process.poll() is None:
             bash_process.kill()
             return {"message": "Stop command sent to Bash terminal"}
     return {"error": "Invalid command. Use 'start' or 'stop'."}
 
 
-if __name__ == "__main__":
-    IP = "0.0.0.0"
 
+# === Lifespan context for startup/shutdown ===
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     print("Starting bedrock log streaming...")
-    threading.Thread(target=lambda: asyncio.run(
-        stream_bedrock_logs()), daemon=True).start()
-
+    bedrock_task = asyncio.create_task(stream_bedrock_logs())
     print("Starting bash log streaming...")
-    threading.Thread(target=lambda: asyncio.run(
-        stream_bash_logs()), daemon=True).start()
+    bash_task = asyncio.create_task(stream_bash_logs())
+    try:
+        yield
+    finally:
+        global bedrock_process, bash_process
+        print("Shutting down processes...")
+        if bedrock_process and bedrock_process.poll() is None:
+            bedrock_process.kill()
+        if bash_process and bash_process.poll() is None:
+            bash_process.kill()
+        # Optionally cancel log streaming tasks
+        bedrock_task.cancel()
+        bash_task.cancel()
 
-    print("Starting web server...")
-    # Start the FastAPI server
-    uvicorn.run(app, host=IP, port=5000)
+app.router.lifespan_context = lifespan
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=5000)
