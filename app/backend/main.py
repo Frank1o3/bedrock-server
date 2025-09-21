@@ -340,4 +340,5 @@ app.router.lifespan_context = lifespan
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    IP = get_ip() or "0.0.0.0"
+    uvicorn.run(app, host=IP, port=5000)

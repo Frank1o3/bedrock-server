@@ -1,9 +1,7 @@
-name: Release Docker
-permissions:
-  contents: read
+name: Release Docker (Compose)
 
 on:
-  workflow_dispatch:  # only run manually
+  workflow_dispatch:  # manual trigger only
 
 jobs:
   build-and-publish:
@@ -13,19 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # --- Frontend build ---
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Build frontend
-        working-directory: ./app/frontend
-        run: |
-          npm install
-          npm run build
-
-      # --- Get version info from JSON ---
+      # --- Read version.json for tags ---
       - name: Read version.json
         id: version
         run: |
@@ -34,19 +20,26 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "tag=$TAG" >> $GITHUB_OUTPUT
 
-      # --- DockerHub login ---
+      # --- Docker login ---
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      # --- Build & publish image ---
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: |
-            frank1o3/bedrock-server:${{ steps.version.outputs.version }}
-            frank1o3/bedrock-server:${{ steps.version.outputs.tag }}
+      # --- Build with docker-compose ---
+      - name: Build Docker image with Compose
+        run: |
+          docker compose build bedrock-server
+
+      # --- Retag with version + tag ---
+      - name: Retag image
+        run: |
+          docker tag frank1o3/bedrock-server:beta frank1o3/bedrock-server:${{ steps.version.outputs.version }}
+          docker tag frank1o3/bedrock-server:beta frank1o3/bedrock-server:${{ steps.version.outputs.tag }}
+
+      # --- Push to Docker Hub ---
+      - name: Push images
+        run: |
+          docker push frank1o3/bedrock-server:${{ steps.version.outputs.version }}
+          docker push frank1o3/bedrock-server:${{ steps.version.outputs.tag }}
