@@ -1,7 +1,7 @@
 node_modules/
 backups/
 WARP.md
-**/static
+static/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
