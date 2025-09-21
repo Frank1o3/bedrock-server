@@ -1,4 +1,6 @@
 name: Release Docker
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:  # only run manually
