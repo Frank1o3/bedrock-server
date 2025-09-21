@@ -13,11 +13,27 @@ services:
     env_file:
       - .env
 
-    # Networking
-    network_mode: host # OR use the custom network below (choose one)
     # Restart policy
     restart: always
 
-    # Volume mapping
+    # Volume mapping (replace USERNAME with a var in .env or hardcode the path)
     volumes:
-      - /home/${USER}/bedrock/backups/:/bedrock/backups/ # Fixed path syntax
+      - ${HOME}/bedrock/backups:/bedrock/backups
+
+
+    # Port mapping
+    ports:
+      - "19132:19132/tcp"
+      - "19133:19133/tcp"
+      - "19132:19132/udp"
+      - "19133:19133/udp"
+      - "5000:5000/tcp" # so user does not have to specify port in browser
+
+    # Custom network
+    networks:
+      - net
+
+# Setup of custom network called bedrock-network with default bridge driver
+networks:
+  net:
+    driver: bridge

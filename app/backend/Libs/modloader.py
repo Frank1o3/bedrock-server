@@ -1,11 +1,10 @@
 from json import load, loads, dump, JSONDecodeError
-from fastapi import UploadFile
-from pydantic import BaseModel
-from typing import List, Optional, Tuple
 from uuid import UUID
+from typing import List, Optional, Tuple
 import zipfile
 import shutil
 import os
+from pydantic import BaseModel
 
 
 class JsonManifest:
@@ -50,7 +49,7 @@ class JsonManifest:
 
     def load(self, path: str) -> Optional['JsonManifest.Manifest']:
         try:
-            with open(path, "r") as f:
+            with open(path, "r", encoding='utf-8') as f:
                 data = load(f)
                 return self.Manifest(**data)
         except (JSONDecodeError, FileNotFoundError) as e:
@@ -59,7 +58,7 @@ class JsonManifest:
 
     def save(self, path: str, manifest: 'JsonManifest.Manifest') -> bool:
         try:
-            with open(path, "w") as f:
+            with open(path, "w", encoding='utf-8') as f:
                 f.write(manifest.model_dump_json(indent=2))
             return True
         except Exception as e:
@@ -67,10 +66,10 @@ class JsonManifest:
             return False
 
     def update_mod_json(self, path: str, mod: 'JsonManifest.Mod'):
-        data = []
+        data: list[dict] = []
         if os.path.exists(path):
             try:
-                with open(path, "r") as f:
+                with open(path, "r", encoding='utf-8') as f:
                     raw_content = f.read()
                     if not raw_content.strip():
                         data = []
@@ -101,7 +100,7 @@ class JsonManifest:
         print(data)
 
         # Write the updated data with proper formatting
-        with open(path, "w") as f:
+        with open(path, "w", encoding='utf-8') as f:
             dump(data, f, indent=2)
 
     def correct_mod_path(self, base_path: str, mod_name: str) -> str:
@@ -248,7 +247,7 @@ class ModManager:
             path = os.path.join(self.behavior_dir, entry)
             manifest = self._find_manifest(path)
             if manifest:
-                with open(manifest, 'r') as f:
+                with open(manifest, 'r', encoding='utf-8') as f:
                     data = load(f)
                     behavior_packs.append(JsonManifest.Manifest(**data))
         
@@ -256,7 +255,7 @@ class ModManager:
             path = os.path.join(self.resource_dir, entry)
             manifest = self._find_manifest(path)
             if manifest:
-                with open(manifest, 'r') as f:
+                with open(manifest, 'r', encoding='utf-8') as f:
                     data = load(f)
                     resource_packs.append(JsonManifest.Manifest(**data))
         
@@ -271,14 +270,14 @@ class ModManager:
         behavior_packs: List[JsonManifest.Mod] = []
         resource_packs: List[JsonManifest.Mod] = []
 
-        with open(self.world_behavior_dir, 'r') as f:
+        with open(self.world_behavior_dir, 'r', encoding='utf-8') as f:
             try:
                 data = load(f)
                 behavior_packs = [JsonManifest.Mod(**mod) for mod in data]
             except JSONDecodeError as e:
                 print(e)
 
-        with open(self.world_resource_dir, 'r') as f:
+        with open(self.world_resource_dir, 'r', encoding='utf-8') as f:
             try:
                 data = load(f)
                 resource_packs = [JsonManifest.Mod(**mod) for mod in data]
@@ -286,9 +285,9 @@ class ModManager:
                 print(e)
 
         # Check if one of the behavior packs shares similar data with a resourse pack if true then remove the resource pack from the list
-        behavior_uuids = {mod.version for mod in behavior_packs}
+        behavior_pack_ids = {str(mod.pack_id) for mod in behavior_packs}
         resource_packs = [
-            mod for mod in resource_packs if mod.version not in behavior_uuids
+            mod for mod in resource_packs if str(mod.pack_id) not in behavior_pack_ids
         ]
         return behavior_packs, resource_packs
 
@@ -297,7 +296,7 @@ class ModManager:
             path = os.path.join(self.behavior_dir, entry)
             manifest = self._find_manifest(path)
             if manifest:
-                with open(manifest, 'r') as f:
+                with open(manifest, 'r', encoding='utf-8') as f:
                     data = load(f)
                     mod = JsonManifest.Manifest(**data)
                     if mod.header.uuid == uuid:
@@ -307,7 +306,7 @@ class ModManager:
             path = os.path.join(self.resource_dir, entry)
             manifest = self._find_manifest(path)
             if manifest:
-                with open(manifest, 'r') as f:
+                with open(manifest, 'r', encoding='utf-8') as f:
                     data = load(f)
                     mod = JsonManifest.Manifest(**data)
                     if mod.header.uuid == uuid:
@@ -324,7 +323,7 @@ class ModManager:
             for subdir in os.listdir(mod_dir):
                 manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
                 if os.path.exists(manifest_path):
-                    with open(manifest_path) as f:
+                    with open(manifest_path, encoding='utf-8') as f:
                         try:
                             data = load(f)
                             if data["header"]["uuid"] == str(uuid):
@@ -348,13 +347,13 @@ class ModManager:
         config_file = os.path.join(self.world_path, f"world_{pack_type}_packs.json")
         if os.path.exists(config_file):
             try:
-                with open(config_file, 'r') as f:
+                with open(config_file, 'r', encoding='utf-8') as f:
                     data = load(f)
                 
                 # Filter out the mod with the given UUID
                 data = [mod for mod in data if mod.get("pack_id") != str(uuid)]
                 
-                with open(config_file, 'w') as f:
+                with open(config_file, 'w', encoding='utf-8') as f:
                     dump(data, f, indent=2)
                     
                 print(f"Removed mod {uuid} from {config_file}")
@@ -374,7 +373,7 @@ class ModManager:
             # Read existing configuration
             data = []
             if os.path.exists(config_file):
-                with open(config_file, 'r') as f:
+                with open(config_file, 'r', encoding='utf-8') as f:
                     content = f.read().strip()
                     if content:
                         data = loads(content)
@@ -394,7 +393,7 @@ class ModManager:
             data.append(mod_entry)
             
             # Write updated configuration
-            with open(config_file, 'w') as f:
+            with open(config_file, 'w', encoding='utf-8') as f:
                 dump(data, f, indent=2)
                 
             print(f"Enabled mod {uuid} in {config_file}")
@@ -412,7 +411,7 @@ class ModManager:
             if not os.path.exists(config_file):
                 return True  # Already disabled
                 
-            with open(config_file, 'r') as f:
+            with open(config_file, 'r', encoding='utf-8') as f:
                 data = load(f)
                 
             # Filter out the mod
@@ -422,7 +421,7 @@ class ModManager:
             if len(data) == original_length:
                 return True  # Mod wasn't enabled
                 
-            with open(config_file, 'w') as f:
+            with open(config_file, 'w', encoding='utf-8') as f:
                 dump(data, f, indent=2)
                 
             print(f"Disabled mod {uuid} from {config_file}")
@@ -440,7 +439,7 @@ class ModManager:
             manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
             if os.path.exists(manifest_path):
                 try:
-                    with open(manifest_path, 'r') as f:
+                    with open(manifest_path, 'r', encoding='utf-8') as f:
                         data = load(f)
                         if data["header"]["uuid"] == str(uuid):
                             return data
@@ -456,7 +455,7 @@ class ModManager:
             return False
             
         try:
-            with open(config_file, 'r') as f:
+            with open(config_file, 'r', encoding='utf-8') as f:
                 data = load(f)
                 return any(mod.get("pack_id") == str(uuid) for mod in data)
         except Exception:
@@ -470,7 +469,7 @@ class ModManager:
                 manifest_path = os.path.join(mod_dir, subdir, "manifest.json")
                 if os.path.exists(manifest_path):
                     try:
-                        with open(manifest_path, 'r') as f:
+                        with open(manifest_path, 'r', encoding='utf-8') as f:
                             data = load(f)
                             if data["header"]["uuid"] == str(uuid):
                                 return {

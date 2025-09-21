@@ -12,16 +12,6 @@ interface Mod {
 	description?: string;
 }
 
-interface ModDetails {
-	uuid: string;
-	name: string;
-	description: string;
-	version: number[];
-	type: string;
-	enabled: boolean;
-	file_path: string;
-}
-
 const Mods: React.FC = () => {
 	const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 	const [selectedMod, setSelectedMod] = useState<Mod | null>(null);

@@ -1,8 +1,7 @@
-import requests
 import re
 import os
 import zipfile
-
+import requests
 
 def get_latest_bedrock_version():
     url = "https://www.minecraft.net/en-us/download/server/bedrock"

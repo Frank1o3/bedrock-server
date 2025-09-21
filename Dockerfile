@@ -22,13 +22,6 @@ RUN useradd -m -s /bin/bash server && \
 # Set working directory
 WORKDIR /bedrock
 
-# Download Bedrock Server
-RUN curl -L -A "bedrock-server.zip" \
-    -o bedrock-server.zip \
-    https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-${BEDROCK_VERSION}.zip && \
-    unzip bedrock-server.zip && \
-    rm bedrock-server.zip
-
 # Copy app files and scripts
 COPY ./app/BedrockServer /bedrock
 COPY ./start.sh ./backup.sh ./rollback.sh ./entrypoint.sh /bedrock/
@@ -48,11 +41,6 @@ RUN chmod +x /bedrock/*.sh && \
 # Switch to user for user-space install
 USER server
 WORKDIR /home/server
-
-# Install No-IP DUC using package manager method
-RUN wget --content-disposition https://www.noip.com/download/linux/latest && \
-    tar xf noip-duc_3.3.0.tar.gz && \
-    cd /home/server/noip-duc_3.3.0/binaries && sudo apt install ./noip-duc_3.3.0_amd64.deb
 
 RUN service cron start
 

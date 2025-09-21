@@ -3,22 +3,35 @@ Main backend application for managing the Bedrock server and Bash terminal.
 Handles WebSocket connections, command execution, and log streaming.
 """
 
-from pathlib import Path
-from typing import Set
-import subprocess
-import threading
 import asyncio
 import json
 import os
-import uvicorn
+import subprocess
+import sys
+import threading
+from pathlib import Path
+from typing import Set
 
+import uvicorn
+from fastapi import FastAPI, Request, WebSocket
 from fastapi.staticfiles import StaticFiles
-from Routes import web_routes, api_routes
 from Functions.functions import get_ip
-from fastapi import FastAPI, WebSocket
+from Libs.database import Database
+from Routes import api_routes, web_routes
 from Shared.data import SESSION_STORE
-from app.backend.Libs.database import Database
-from fastapi import Request
+
+# Ensure the current directory is in sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Add the Functions, Libs, Routes and Shared directories with their files to sys.path
+sys.path.append(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), 'Functions'))
+sys.path.append(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), 'Libs'))
+sys.path.append(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), 'Routes'))
+sys.path.append(os.path.join(os.path.dirname(
+    os.path.abspath(__file__)), 'Shared'))
 
 bedrock_clients: Set[WebSocket] = set()
 bash_clients: Set[WebSocket] = set()
@@ -102,14 +115,16 @@ async def stream_bedrock_logs():
                     bedrock_line = await loop.run_in_executor(
                         None, bedrock_process.stdout.readline)
                     if bedrock_line and bedrock_line.strip():
-                        await broadcast_to_bedrock(bedrock_line.strip())
-                
+                        print(f"Bedrock Output: {bedrock_line.strip()}")
+                        await broadcast_to_bedrock(bedrock_line)
+
                 # Read stderr
                 if bedrock_process.stderr is not None:
                     bedrock_error = await loop.run_in_executor(
                         None, bedrock_process.stderr.readline)
                     if bedrock_error and bedrock_error.strip():
-                        await broadcast_to_bedrock(f"[ERROR] {bedrock_error.strip()}")
+                        print(f"Bedrock Error: {bedrock_error.strip()}")
+                        await broadcast_to_bedrock(f"[ERROR] {bedrock_error}")
             except Exception as e:
                 print(f"Error reading bedrock logs: {e}")
         await asyncio.sleep(0.1)
@@ -127,14 +142,16 @@ async def stream_bash_logs():
                     bash_line = await loop.run_in_executor(
                         None, bash_process.stdout.readline)
                     if bash_line and bash_line.strip():
-                        await broadcast_to_bash(bash_line.strip())
-                
+                        print(f"Bash Output: {bash_line.strip()}")
+                        await broadcast_to_bash(bash_line)
+
                 # Read stderr
                 if bash_process.stderr is not None:
                     bash_error = await loop.run_in_executor(
                         None, bash_process.stderr.readline)
                     if bash_error and bash_error.strip():
-                        await broadcast_to_bash(f"[ERROR] {bash_error.strip()}")
+                        print(f"Bash Error: {bash_error.strip()}")
+                        await broadcast_to_bash(f"[ERROR] {bash_error}")
             except Exception as e:
                 print(f"Error reading bash logs: {e}")
         await asyncio.sleep(0.1)
@@ -145,15 +162,15 @@ async def broadcast_to_bedrock(message: str):
     global bedrock_clients
     if not message.strip():  # Skip empty messages
         return
-    
+
     data = json.dumps({"source": "bedrock", "message": message})
     disconnected = []
-    for client in bedrock_clients.copy():  # Use copy to avoid modification during iteration
+    for client in bedrock_clients:
         try:
             await client.send_text(data)
         except Exception:
             disconnected.append(client)
-    
+
     # Remove disconnected clients
     for client in disconnected:
         bedrock_clients.discard(client)
@@ -164,15 +181,15 @@ async def broadcast_to_bash(message: str):
     global bash_clients
     if not message.strip():  # Skip empty messages
         return
-    
+
     data = json.dumps({"source": "bash", "message": message})
     disconnected = []
-    for client in bash_clients.copy():  # Use copy to avoid modification during iteration
+    for client in bash_clients:
         try:
             await client.send_text(data)
         except Exception:
             disconnected.append(client)
-    
+
     # Remove disconnected clients
     for client in disconnected:
         bash_clients.discard(client)
@@ -221,8 +238,11 @@ async def send_command(request: Request):
     print(
         f"Bedrock PID: {bedrock_process.pid}, Running: {bedrock_process.poll() is None} Command: {command}")
 
+    if session_token is None:
+        return {"error": "Invalid credentials", "success": False}
     username = SESSION_STORE.get(session_token)
-    user_data = db.get_user(username)
+    
+    user_data = db.get_user(username.username if username else None)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
     elif "admin" not in user_data:
@@ -249,8 +269,11 @@ async def send_terminal_command(request: Request):
     print(
         f"Bash PID: {bash_process.pid}, Running: {bash_process.poll() is None} Command: {command}")
 
+    if session_token is None:
+        return {"error": "Invalid credentials", "success": False}
     username = SESSION_STORE.get(session_token)
-    user_data = db.get_user(username)
+    
+    user_data = db.get_user(username.username if username else None)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
     elif "admin" not in user_data:
@@ -275,8 +298,11 @@ async def server_command(request: Request):
     command: str = body["command"]
     session_token = request.cookies.get("session_token")
 
+    if session_token is None:
+        return {"error": "Invalid credentials", "success": False}
     username = SESSION_STORE.get(session_token)
-    user_data = db.get_user(username)
+    
+    user_data = db.get_user(username.username if username else None)
     if user_data is None:
         return {"error": "Invalid credentials", "success": False}
     elif "admin" not in user_data:
@@ -303,12 +329,12 @@ async def server_command(request: Request):
 
 
 if __name__ == "__main__":
-    IP = get_ip() or "0.0.0.0"
+    IP = "0.0.0.0"
 
     print("Starting bedrock log streaming...")
     threading.Thread(target=lambda: asyncio.run(
         stream_bedrock_logs()), daemon=True).start()
-    
+
     print("Starting bash log streaming...")
     threading.Thread(target=lambda: asyncio.run(
         stream_bash_logs()), daemon=True).start()

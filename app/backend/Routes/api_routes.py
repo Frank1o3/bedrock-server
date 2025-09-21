@@ -1,19 +1,21 @@
+
+import os
+from datetime import datetime
+import tempfile
+
+import psutil
+from fastapi import (APIRouter, HTTPException, Request, Response, UploadFile, File)
 from models import (
-    AuthRequest, SettingsRequest, ModRequest, ModResponce,
-    SessionResponse, ServerStatusResponse, UserProfileResponse, 
-    SettingsUpdateRequest, LogoutRequest
+    AuthRequest,  ModRequest, ModResponce,
+    SessionResponse, ServerStatusResponse, UserProfileResponse
 )
-from fastapi import APIRouter, HTTPException, Request, Response
 from Shared.data import (
-    SESSION_STORE, SESSION_COOKIE_NAME, SessionData,
+    SESSION_COOKIE_NAME, SessionData,
     create_session, get_session, invalidate_session, cleanup_expired_sessions
 )
-from app.backend.Libs.modloader import ModManager
-from app.backend.Libs.database import Database
-import os
-import subprocess
-import psutil
-from datetime import datetime
+
+from Libs.modloader import ModManager, ModLoader
+from Libs.database import Database
 
 md = ModManager()
 router = APIRouter()
@@ -25,14 +27,15 @@ def require_auth(request: Request, require_admin: bool = False) -> SessionData:
     session_token = request.cookies.get(SESSION_COOKIE_NAME)
     if not session_token:
         raise HTTPException(status_code=401, detail="Not authenticated")
-    
+
     session = get_session(session_token)
     if not session:
-        raise HTTPException(status_code=401, detail="Session expired or invalid")
-    
+        raise HTTPException(
+            status_code=401, detail="Session expired or invalid")
+
     if require_admin and session.role != "admin":
         raise HTTPException(status_code=403, detail="Admin access required")
-    
+
     return session
 
 
@@ -42,19 +45,20 @@ def get_server_status() -> dict:
         # Check if bedrock server process is running (basic check)
         server_online = False
         uptime = None
-        
+
         # Look for bedrock server process
         for proc in psutil.process_iter(['pid', 'name', 'cmdline', 'create_time']):
             try:
                 if 'bedrock_server' in proc.info['name'] or \
                    any('bedrock' in str(cmd).lower() for cmd in proc.info.get('cmdline', [])):
                     server_online = True
-                    create_time = datetime.fromtimestamp(proc.info['create_time'])
+                    create_time = datetime.fromtimestamp(
+                        proc.info['create_time'])
                     uptime = str(datetime.now() - create_time).split('.')[0]
                     break
             except (psutil.NoSuchProcess, psutil.AccessDenied):
                 continue
-        
+
         return {
             "server_online": server_online,
             "uptime": uptime,
@@ -78,7 +82,7 @@ async def check_session(request: Request) -> SessionResponse:
     """Check if the user is authenticated and return session details"""
     # Clean up expired sessions first
     cleanup_expired_sessions()
-    
+
     session_token = request.cookies.get(SESSION_COOKIE_NAME)
     if not session_token:
         return SessionResponse(
@@ -86,7 +90,7 @@ async def check_session(request: Request) -> SessionResponse:
             authenticated=False,
             message="No session token provided"
         )
-    
+
     session = get_session(session_token)
     if session:
         return SessionResponse(
@@ -105,22 +109,24 @@ async def check_session(request: Request) -> SessionResponse:
 
 
 @router.post("/auth/login")
-async def login_or_register(request: AuthRequest) -> SessionResponse:
+async def login_or_register(request: AuthRequest) -> Response:
     """Handle both login and registration with enhanced security"""
     cleanup_expired_sessions()
-    
+
     if request.login:
         # LOGIN PROCESS
-        user_data = db.get_user(request.username, request.password)  # Verify password
+        user_data = db.get_user(
+            request.username, request.password)  # Verify password
         if not user_data:
-            raise HTTPException(status_code=401, detail="Invalid username or password")
-        
+            raise HTTPException(
+                status_code=401, detail="Invalid username or password")
+
         # Get user role from database result
-        user_id, username, password, role = user_data
-        
+        user_id, username, _, role = user_data
+
         # Create new session (this will invalidate any existing session for this user)
         session_token = create_session(username, role)
-        
+
         # Set secure cookie
         response = Response(content=SessionResponse(
             success=True,
@@ -129,7 +135,7 @@ async def login_or_register(request: AuthRequest) -> SessionResponse:
             role=role,
             message="Successfully logged in"
         ).model_dump_json())
-        
+
         response.set_cookie(
             key=SESSION_COOKIE_NAME,
             value=session_token,
@@ -139,28 +145,30 @@ async def login_or_register(request: AuthRequest) -> SessionResponse:
             max_age=3600  # 1 hour
         )
         response.headers["Content-Type"] = "application/json"
-        
+
         return response
-    
+
     else:
         # REGISTRATION PROCESS
         existing_user = db.get_user(request.username)
         if existing_user:
-            raise HTTPException(status_code=400, detail="Username already exists")
-        
+            raise HTTPException(
+                status_code=400, detail="Username already exists")
+
         # Check if this is the first user (becomes admin)
         all_users = db.get_all_users()
         is_first_user = len(all_users) == 0
         role = "admin" if is_first_user else "user"
-        
+
         # Create the user
         user_id = db.insert_user(request.username, request.password, role)
         if not user_id:
-            raise HTTPException(status_code=500, detail="Failed to create user")
-        
+            raise HTTPException(
+                status_code=500, detail="Failed to create user")
+
         # Create session for the new user
         session_token = create_session(request.username, role)
-        
+
         # Set secure cookie
         response = Response(content=SessionResponse(
             success=True,
@@ -169,7 +177,7 @@ async def login_or_register(request: AuthRequest) -> SessionResponse:
             role=role,
             message=f"Account created successfully. Role: {role}"
         ).model_dump_json())
-        
+
         response.set_cookie(
             key=SESSION_COOKIE_NAME,
             value=session_token,
@@ -179,27 +187,27 @@ async def login_or_register(request: AuthRequest) -> SessionResponse:
             max_age=3600  # 1 hour
         )
         response.headers["Content-Type"] = "application/json"
-        
+
         return response
 
 
 @router.post("/auth/logout")
-async def logout(request: Request) -> dict:
+async def logout(request: Request) -> Response:
     """Logout and invalidate session"""
     session_token = request.cookies.get(SESSION_COOKIE_NAME)
     if session_token:
         invalidate_session(session_token)
-    
-    response = Response(content='{"success": true, "message": "Logged out successfully"}')
+
+    response = Response(
+        content='{"success": true, "message": "Logged out successfully"}')
     response.delete_cookie(SESSION_COOKIE_NAME)
     response.headers["Content-Type"] = "application/json"
     return response
 
 
 @router.get("/server/status")
-async def server_status(request: Request) -> ServerStatusResponse:
+async def server_status() -> ServerStatusResponse:
     """Get server status - accessible to all authenticated users"""
-    session = require_auth(request, require_admin=False)
     status = get_server_status()
     return ServerStatusResponse(**status)
 
@@ -208,12 +216,12 @@ async def server_status(request: Request) -> ServerStatusResponse:
 async def user_profile(request: Request) -> UserProfileResponse:
     """Get current user's profile information"""
     session = require_auth(request, require_admin=False)
-    
+
     # Get user data from database
     user_data = db.get_user(session.username)
     if not user_data:
         raise HTTPException(status_code=404, detail="User not found")
-    
+
     return UserProfileResponse(
         username=session.username,
         role=session.role,
@@ -225,28 +233,27 @@ async def user_profile(request: Request) -> UserProfileResponse:
 @router.get("/settings")
 async def get_server_settings(request: Request):
     """Get server settings - admin only"""
-    session = require_auth(request, require_admin=True)
-    
+
     # Return selected environment variables and server config
     safe_env_vars = {
-        key: value for key, value in os.environ.items() 
-        if key in ['NO_IP_USERNAME', 'SERVER_NAME', 'GAMEMODE', 'DIFFICULTY', 
+        key: value for key, value in os.environ.items()
+        if key in ['NO_IP_USERNAME', 'SERVER_NAME', 'GAMEMODE', 'DIFFICULTY',
                    'MAX_PLAYERS', 'ALLOW_CHEATS', 'LEVEL_NAME']
     }
-    
+
     # Read server.properties if it exists
     server_props = {}
     server_props_path = "/bedrock/server.properties"
     if os.path.exists(server_props_path):
         try:
-            with open(server_props_path, 'r') as f:
+            with open(server_props_path, 'r', encoding='utf-8') as f:
                 for line in f:
                     if '=' in line and not line.strip().startswith('#'):
                         key, value = line.strip().split('=', 1)
                         server_props[key] = value
         except Exception as e:
             print(f"Error reading server.properties: {e}")
-    
+
     return {
         "env_vars": safe_env_vars,
         "server_properties": server_props,
@@ -257,39 +264,42 @@ async def get_server_settings(request: Request):
 @router.post("/settings/update")
 async def update_server_setting(request: Request):
     """Update a server setting - admin only"""
-    session = require_auth(request, require_admin=True)
-    
+
     try:
         body = await request.json()
         setting_key = body.get("setting_key")
         setting_value = body.get("setting_value")
-        setting_type = body.get("setting_type", "env")  # 'env' or 'server_prop'
-        
+        # 'env' or 'server_prop'
+        setting_type = body.get("setting_type", "env")
+
         if not setting_key:
-            raise HTTPException(status_code=400, detail="Setting key is required")
-        
+            raise HTTPException(
+                status_code=400, detail="Setting key is required")
+
         if setting_type == "env":
             # Update environment variable
-            safe_env_keys = ['NO_IP_USERNAME', 'SERVER_NAME', 'GAMEMODE', 'DIFFICULTY', 
-                           'MAX_PLAYERS', 'ALLOW_CHEATS', 'LEVEL_NAME']
-            
+            safe_env_keys = ['NO_IP_USERNAME', 'SERVER_NAME', 'GAMEMODE', 'DIFFICULTY',
+                             'MAX_PLAYERS', 'ALLOW_CHEATS', 'LEVEL_NAME']
+
             if setting_key not in safe_env_keys:
-                raise HTTPException(status_code=403, detail="This environment variable cannot be modified")
-            
+                raise HTTPException(
+                    status_code=403, detail="This environment variable cannot be modified")
+
             os.environ[setting_key] = str(setting_value)
             message = f"Environment variable '{setting_key}' updated successfully"
-            
+
         elif setting_type == "server_prop":
             # Update server.properties file
             server_props_path = "/bedrock/server.properties"
             if not os.path.exists(server_props_path):
-                raise HTTPException(status_code=404, detail="server.properties file not found")
-            
+                raise HTTPException(
+                    status_code=404, detail="server.properties file not found")
+
             # Read current properties
             lines = []
-            with open(server_props_path, 'r') as f:
+            with open(server_props_path, 'r', encoding='utf-8') as f:
                 lines = f.readlines()
-            
+
             # Update or add the setting
             found = False
             for i, line in enumerate(lines):
@@ -297,24 +307,25 @@ async def update_server_setting(request: Request):
                     lines[i] = f"{setting_key}={setting_value}\n"
                     found = True
                     break
-            
+
             if not found:
                 lines.append(f"{setting_key}={setting_value}\n")
-            
+
             # Write back to file
-            with open(server_props_path, 'w') as f:
+            with open(server_props_path, 'w', encoding='utf-8') as f:
                 f.writelines(lines)
-            
+
             message = f"Server property '{setting_key}' updated successfully"
-        
+
         else:
             raise HTTPException(status_code=400, detail="Invalid setting_type")
-        
+
         return {"success": True, "message": message}
-        
+
     except Exception as e:
         print(f"Error updating setting: {e}")
-        raise HTTPException(status_code=500, detail=f"Failed to update setting: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Failed to update setting: {str(e)}") from e
 
 
 @router.post("/mods/")
@@ -327,38 +338,41 @@ async def get_mods(request: ModRequest):
         mods = BP + RP
         available_mods = []
         for mod in mods:
-            mod_type = "behavior" if any(module.get("type") == "script" for module in mod.modules) else "resource"
+            mod_type = "behavior" if any(
+                module.type == "script" for module in mod.modules) else "resource"
             available_mods.append(ModResponce(
                 id=mod.header.uuid.int,
                 name=mod.header.name,
                 Type=mod_type
             ))
         return {"mods": available_mods}
-        
+
     elif Type == "active":
-        BP, RP = md.list_all_active_mods()
+        bp_manifests, rp_manifests = md.list_all_active_mods()
         active_mods = []
-        
-        for mod in BP:
-            mod_info = md.look_up(mod.pack_id)
-            if mod_info:
-                active_mods.append(ModResponce(
-                    id=mod.pack_id.int,
-                    name=mod_info.header.name,
-                    Type="behavior"
-                ))
-        
-        for mod in RP:
-            mod_info = md.look_up(mod.pack_id)
-            if mod_info:
-                active_mods.append(ModResponce(
-                    id=mod.pack_id.int,
-                    name=mod_info.header.name,
-                    Type="resource"
-                ))
-                
+
+        for manifest in bp_manifests:
+            if hasattr(manifest, "pack_id") and manifest.pack_id:
+                mod_info = md.look_up(manifest.pack_id)
+                if mod_info:
+                    active_mods.append(ModResponce(
+                        id=manifest.pack_id.int,
+                        name=mod_info.header.name,
+                        Type="behavior"
+                    ))
+
+        for manifest in rp_manifests:
+            if hasattr(manifest, "pack_id") and manifest.pack_id:
+                mod_info = md.look_up(manifest.pack_id)
+                if mod_info:
+                    active_mods.append(ModResponce(
+                        id=manifest.pack_id.int,
+                        name=mod_info.header.name,
+                        Type="resource"
+                    ))
+
         return {"mods": active_mods}
-        
+
     elif Type == "details" and modId:
         mod_details = md.get_mod_details(modId)
         if mod_details:
@@ -370,74 +384,69 @@ async def get_mods(request: ModRequest):
 
 
 @router.post("/mods/upload")
-async def upload_mod(request: Request):
+async def upload_mod(uploaded_file: UploadFile = File(...)):
     """Upload a new mod file"""
-    from fastapi import UploadFile, File, Form
-    import tempfile
-    
-    # Check admin authentication
-    session = require_auth(request, require_admin=True)
-    
+
     try:
-        # Get the uploaded file from form data
-        form_data = await request.form()
-        uploaded_file = form_data.get("file")
-        
-        if not uploaded_file or not hasattr(uploaded_file, 'filename'):
+        if not uploaded_file or not uploaded_file.filename:
             raise HTTPException(status_code=400, detail="No file uploaded")
-        
+
         # Validate file extension
         if not uploaded_file.filename.endswith(('.mcaddon', '.mcpack')):
-            raise HTTPException(status_code=400, detail="Invalid file type. Only .mcaddon and .mcpack files are supported")
-        
+            raise HTTPException(
+                status_code=400, detail="Invalid file type. Only .mcaddon and .mcpack files are supported")
+
         # Save uploaded file temporarily
-        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(uploaded_file.filename)[1]) as tmp_file:
+        _, ext = os.path.splitext(uploaded_file.filename)
+        with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as tmp_file:
             content = await uploaded_file.read()
             tmp_file.write(content)
             tmp_file_path = tmp_file.name
-        
+
         # Use ModLoader to install the mod
-        from app.backend.Libs.modloader import ModLoader
         mod_loader = ModLoader(server_world_path="/bedrock")
         mod_loader.load_mod(tmp_file_path, force=True)
-        
+
         # Clean up temporary file
         os.unlink(tmp_file_path)
-        
+
         return {"success": True, "message": f"Mod {uploaded_file.filename} uploaded successfully"}
-        
+
     except Exception as e:
         print(f"Error uploading mod: {e}")
-        raise HTTPException(status_code=500, detail=f"Failed to upload mod: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail=f"Failed to upload mod: {str(e)}") from e
 
 
 @router.post("/mods/action")
 async def mod_action(request: Request):
     """Enable, disable, or remove a mod"""
-    # Check admin authentication
-    session = require_auth(request, require_admin=True)
-    
+
+    action = None  # Ensure action is always defined
     try:
         body = await request.json()
         action = body.get("action").lower()
         mod_uuid = body.get("mod_uuid")
         mod_type = body.get("mod_type").lower()
-        
+
         if not all([action, mod_uuid, mod_type]):
-            raise HTTPException(status_code=400, detail="Missing required parameters")
-        
+            raise HTTPException(
+                status_code=400, detail="Missing required parameters")
+
         if action not in ["enable", "disable", "remove"]:
-            raise HTTPException(status_code=400, detail="Invalid action. Must be 'enable', 'disable', or 'remove'")
-        
+            raise HTTPException(
+                status_code=400, detail="Invalid action. Must be 'enable', 'disable', or 'remove'")
+
         if mod_type not in ["behavior", "resource"]:
-            raise HTTPException(status_code=400, detail="Invalid mod_type. Must be 'behavior' or 'resource'")
-        
+            raise HTTPException(
+                status_code=400, detail="Invalid mod_type. Must be 'behavior' or 'resource'")
+
         from uuid import UUID
         uuid_obj = UUID(mod_uuid)
-        
+
         success = False
         message = ""
-        
+
         if action == "enable":
             success = md.enable_mod(uuid_obj, mod_type)
             message = f"Mod {'enabled' if success else 'failed to enable'}"
@@ -447,14 +456,18 @@ async def mod_action(request: Request):
         elif action == "remove":
             success = md.remove_mod(uuid_obj)
             message = f"Mod {'removed' if success else 'failed to remove'}"
-        
+
         if success:
             return {"success": True, "message": message}
         else:
             raise HTTPException(status_code=500, detail=message)
-            
+
     except ValueError as e:
-        raise HTTPException(status_code=400, detail="Invalid UUID format")
+        raise HTTPException(
+            status_code=400, detail="Invalid UUID format") from e
     except Exception as e:
         print(f"Error in mod action: {e}")
-        raise HTTPException(status_code=500, detail=f"Failed to {action} mod: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to {action if action else 'perform'} mod: {str(e)}"
+        ) from e

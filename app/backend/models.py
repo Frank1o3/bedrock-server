@@ -22,7 +22,7 @@ class SettingsRequest(BaseModel):
 
 class ModRequest(BaseModel):
     requestType: str
-    modId: Optional[UUID] = ""
+    modId: Optional[UUID] = None
 
 
 class ModResponce(BaseModel):
