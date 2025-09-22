@@ -1,3 +1,4 @@
+/* Base */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #1e293b;
@@ -5,71 +6,85 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header {
   background: #0f172a;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem;
   text-align: center;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
+
 header h1 {
   margin: 0;
   font-size: 2.5rem;
-  letter-spacing: 2px;
 }
+
 header .subtitle {
   font-size: 1.1rem;
   color: #7dd3fc;
 }
+
 nav {
   margin-top: 1rem;
 }
+
 nav a {
   color: #38bdf8;
-  margin: 0 1rem;
+  margin: 0 0.7rem;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;
 }
+
 nav a:hover {
   color: #fbbf24;
 }
+
+/* Sections */
 main {
   max-width: 700px;
   margin: 2rem auto;
-  background: #334155;
-  border-radius: 10px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.2);
-  padding: 2rem;
+  padding: 1rem;
 }
-section {
-  margin-bottom: 2.5rem;
+
+.section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-ul {
-  list-style: none;
-  padding: 0;
+
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
-ul li {
-  padding: 0.5rem 0;
-  font-size: 1.1rem;
+
+ul, ol {
+  padding-left: 1rem;
 }
+
 button {
   background: #38bdf8;
   color: #0f172a;
   border: none;
   border-radius: 5px;
   padding: 0.6rem 1.2rem;
-  margin: 1rem 0 0.5rem 0;
+  margin: 1rem 0;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
 }
+
 button:hover {
   background: #fbbf24;
   color: #0f172a;
 }
+
+/* Surprise */
 #surpriseBox {
-  margin: 1rem 0 0 0;
+  margin-top: 1rem;
   padding: 1rem;
   background: #22d3ee;
   color: #0f172a;
@@ -77,14 +92,13 @@ button:hover {
   font-size: 1.1rem;
   text-align: center;
   font-weight: bold;
-  transition: opacity 0.3s;
 }
+
 .hidden {
   display: none;
 }
-.faq-item {
-  margin-bottom: 1rem;
-}
+
+/* FAQ */
 .faq-question {
   width: 100%;
   text-align: left;
@@ -94,39 +108,27 @@ button:hover {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  font-size: 1rem;
+  margin-bottom: 0.3rem;
   transition: background 0.2s;
 }
+
 .faq-question:hover {
   background: #38bdf8;
   color: #0f172a;
 }
+
 .faq-answer {
   display: none;
   background: #e0f2fe;
   color: #0f172a;
   padding: 0.8rem 1.2rem;
   border-radius: 4px;
-  margin-top: 0.3rem;
+  margin-bottom: 1rem;
 }
+
 #footer {
   text-align: center;
   color: #7dd3fc;
   font-size: 0.95rem;
   margin-top: 2rem;
-}
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s, transform 0.8s;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-a {
-  color: #38bdf8;
-}
-a:hover {
-  color: #fbbf24;
 }
