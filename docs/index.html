@@ -23,188 +23,115 @@
       <a href="https://github.com/Frank1o3/bedrock-server" target="_blank">GitHub</a>
     </nav>
   </header>
+
   <main>
-    <section id="about" class="fade-in">
+    <!-- All sections hidden except About -->
+    <section id="about" class="section active">
       <h2>About This Project</h2>
-      <p>
-        <strong>Bedrock Server</strong> is a comprehensive open-source toolkit for running and managing <b>Minecraft: Bedrock Edition</b> servers. It simplifies setup, enhances stability, and gives server owners fine-grained control over their multiplayer environments with automation, mod/plugin support, and a web control panel.
-      </p>
-      <ul>
-        <li><strong>Purpose:</strong> Make Bedrock server hosting accessible, stable, and customizable for everyone.</li>
-        <li><strong>Approach:</strong> Bash/Python/Node.js scripts, Docker, FastAPI backend, React web frontend, and robust documentation.</li>
-        <li><strong>Community:</strong> Contributions, ideas, and support are welcome! Join us on GitHub.</li>
-      </ul>
+      <p><strong>Bedrock Server</strong> is a comprehensive open-source toolkit...</p>
       <button id="surpriseBtn">Click for a Surprise!</button>
-      <div id="surpriseBox" class="hidden"></div>
+      <div id="surpriseBox" class="hidden">
+        <strong>🎉 Thanks for checking out Bedrock Server! 🎉</strong>
+      </div>
     </section>
 
-    <section id="features">
+    <section id="features" class="section">
       <h2>Features</h2>
       <ul>
-        <li>⚡ <b>Easy setup & configuration:</b> Scripts and Docker Compose for instant server deployment.</li>
-        <li>🔧 <b>Customization & plugin/mod support:</b> Upload, enable/disable, and manage mods, plugins, and resource packs from the web dashboard.</li>
-        <li>🚀 <b>Lightweight & optimized:</b> Minimal overhead, optimized scripts, and automatic backups.</li>
-        <li>🖥️ <b>Web-based control panel:</b> Real-time server console, mod management, configuration, and logs via browser.</li>
-        <li>🔑 <b>Role-based authentication:</b> Admin/standard user separation, secure sessions, and permissions.</li>
-        <li>💾 <b>Automated & manual backups:</b> Cron-based and on-demand backups with rollback support.</li>
-        <li>🛡️ <b>Security:</b> Role-based access, secure cookies, and input validation.</li>
-        <li>🌐 <b>Cross-platform:</b> Works on Linux, Windows, macOS, and containers.</li>
-        <li>📦 <b>Docker support:</b> Containerized deployment with automated builds and multi-process orchestration.</li>
-        <li>🌐 <b>Dynamic DNS support:</b> No-IP DDNS integration for running servers at home.</li>
-        <li>📝 <b>Complete documentation:</b> Step-by-step guides, troubleshooting, and advanced configuration.</li>
-        <li>🌍 <b>Community-driven:</b> Open contributions, feedback, and a helpful GitHub presence.</li>
+        <li>⚡ Easy setup & configuration</li>
+        <li>🔧 Customization & plugin/mod support</li>
+        <li>🚀 Lightweight & optimized</li>
+        <!-- ... -->
       </ul>
     </section>
 
-    <section id="getting-started">
+    <section id="getting-started" class="section">
       <h2>Getting Started</h2>
       <ol>
-        <li>Download the <a href="https://www.minecraft.net/en-us/download/server/bedrock" target="_blank">Minecraft: Bedrock Edition server binary</a>.</li>
-        <li>Install <a href="https://git-scm.com/" target="_blank">Git</a> and (optionally) Docker.</li>
-        <li>Clone the repository:
-          <pre><code>git clone https://github.com/Frank1o3/bedrock-server.git
-cd bedrock-server</code></pre>
-        </li>
-        <li>Follow the setup instructions in the README and scripts.</li>
+        <li>Download the Minecraft Bedrock server binary</li>
+        <li>Install Git and optionally Docker</li>
+        <li>Clone the repository...</li>
       </ol>
     </section>
 
-    <section id="usage">
+    <section id="usage" class="section">
       <h2>Usage</h2>
-      <p>
-        Run the server using the included scripts or via Docker Compose:
-      </p>
       <pre><code>./start.sh</code></pre>
-      <p>
-        By default, the server launches with provided configs, stores world data in <code>worlds/</code>, and logs output to <code>logs/</code>.  
-        Modify config files to customize gameplay, permissions, or advanced settings.
-      </p>
-      <ul>
-        <li><b>Manual scripts:</b> <code>./start.sh</code>, <code>./backup.sh</code>, <code>./rollback.sh</code></li>
-        <li><b>Docker Compose:</b>
-          <pre><code>docker compose -f docker-compose.yml build
-docker compose -f docker-compose.yml up -d</code></pre>
-        </li>
-      </ul>
     </section>
 
-    <section id="architecture">
+    <section id="architecture" class="section">
       <h2>Architecture</h2>
-      <h3>Three-Tier System</h3>
-      <ol>
-        <li>
-          <b>Game Server Layer:</b>
-          <ul>
-            <li>Minecraft Bedrock server executable, world data, configs, automatic backups.</li>
-          </ul>
-        </li>
-        <li>
-          <b>API Layer:</b>
-          <ul>
-            <li>Python FastAPI backend, route handlers, SQLite-based user management, mod loader.</li>
-          </ul>
-        </li>
-        <li>
-          <b>Frontend Layer:</b>
-          <ul>
-            <li>React SPA for real-time logs, mod/config management, authentication, and server control.</li>
-          </ul>
-        </li>
-      </ol>
-      <h3>Key Features</h3>
-      <ul>
-        <li>Real-time log streaming (WebSockets) for server and bash terminal.</li>
-        <li>Role-based authentication and access control.</li>
-        <li>Automated scheduled and manual backups with rollback.</li>
-        <li>Mod management (upload/enable/disable/remove, world config updates).</li>
-        <li>Single-container deployment with multiple orchestrated processes.</li>
-        <li>CI/CD pipeline for Docker images.</li>
-      </ul>
+      <p>Three-tier system: Game server, API layer, frontend.</p>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="section">
       <h2>FAQ</h2>
       <div class="faq-item">
-        <button class="faq-question">How do I install Bedrock Server?</button>
-        <div class="faq-answer">
-          <p>Clone the repo and run the setup scripts, or use Docker Compose for a one-command deployment. Detailed steps are in the README.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I use mods or plugins?</button>
-        <div class="faq-answer">
-          <p>Yes! The web dashboard and scripts let you upload, enable/disable, and remove mods and packs. See the docs for supported formats.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How do I back up my server?</button>
-        <div class="faq-answer">
-          <p>Use <code>./backup.sh</code> or the web UI. Automatic backups are also scheduled by default for Docker deployments.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How do I contribute?</button>
-        <div class="faq-answer">
-          <p>Open issues, feature requests, or pull requests on GitHub! See the CONTRIBUTING.md for more info.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Where can I get help?</button>
-        <div class="faq-answer">
-          <p>Check the docs, open an issue on GitHub, or use the community resources for support.</p>
-        </div>
+        <button class="faq-question" aria-expanded="false">How do I install Bedrock Server?</button>
+        <div class="faq-answer">Clone repo and run setup scripts...</div>
       </div>
     </section>
 
-    <section id="contributing">
+    <section id="contributing" class="section">
       <h2>Contributing</h2>
-      <p>
-        We welcome contributions, feature requests, and bug reports!  
-        See <a href="https://github.com/Frank1o3/bedrock-server/blob/main/CONTRIBUTING.md" target="_blank">CONTRIBUTING.md</a> for details.
-      </p>
+      <p>We welcome PRs, ideas, and issues!</p>
     </section>
 
-    <section id="roadmap">
+    <section id="roadmap" class="section">
       <h2>Roadmap</h2>
       <ul>
-        <li>Add automated install script</li>
-        <li>Add Docker support</li>
-        <li>Improve plugin/mod documentation</li>
-        <li>Expand testing for cross-platform setups</li>
+        <li>Automated install script</li>
+        <li>Better mod docs</li>
       </ul>
     </section>
 
-    <section id="resources">
-      <h2>Additional Resources</h2>
-      <ul>
-        <li><a href="https://github.com/Frank1o3/bedrock-server" target="_blank">GitHub Repository</a></li>
-        <li><a href="docs.html" target="_blank">Project Documentation</a></li>
-        <li><a href="https://www.minecraft.net/en-us/download/server/bedrock" target="_blank">Official Bedrock Server Download</a></li>
-      </ul>
+    <section id="resources" class="section">
+      <h2>Resources</h2>
+      <p>Links to docs and GitHub.</p>
     </section>
 
-    <section id="footer">
-      <p>Made with ❤️ by <a href="https://github.com/Frank1o3" target="_blank">Frank1o3</a> • Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+    <section id="footer" class="section">
+      <p>Made with ❤️ by <a href="https://github.com/Frank1o3" target="_blank">Frank1o3</a></p>
     </section>
   </main>
+
   <script>
-    // Fade-in animation for about section
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelector('.fade-in').classList.add('visible');
+    // Section switcher
+    const links = document.querySelectorAll("nav a[href^='#']");
+    const sections = document.querySelectorAll(".section");
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const targetId = link.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+
+        // fade out active
+        const current = document.querySelector(".section.active");
+        if (current) {
+          current.classList.remove("active");
+        }
+
+        // fade in target
+        if (target) {
+          target.classList.add("active");
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
     });
 
-    // Surprise Button interaction
-    document.getElementById('surpriseBtn').addEventListener('click', () => {
-      const box = document.getElementById('surpriseBox');
-      box.classList.toggle('hidden');
-      box.innerHTML = box.classList.contains('hidden') ? '' : '<strong>🎉 Thanks for checking out Bedrock Server! 🎉</strong>';
+    // Surprise button toggle
+    document.getElementById("surpriseBtn").addEventListener("click", () => {
+      document.getElementById("surpriseBox").classList.toggle("hidden");
     });
 
-    // FAQ Accordion
+    // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const answer = btn.nextElementSibling;
-        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", !expanded);
+        answer.style.display = expanded ? "none" : "block";
       });
     });
   </script>
