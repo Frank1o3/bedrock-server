@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Bedrock Server Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bedrock Server</h1>
+    <p class="subtitle">Tools and resources for Minecraft Bedrock Edition servers</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/Frank1o3/bedrock-server" target="_blank">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="fade-in">
+      <h2>About This Project</h2>
+      <p>
+        <strong>Bedrock Server</strong> provides scripts, docs, and automation to help you run and manage a Minecraft Bedrock Edition server. This site is your hub for guides, tools, and community help.
+      </p>
+      <button id="surpriseBtn">Click for a Surprise!</button>
+      <div id="surpriseBox" class="hidden"></div>
+    </section>
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>✨ Easy setup instructions</li>
+        <li>⚡ Server automation scripts</li>
+        <li>📚 Guides & troubleshooting help</li>
+        <li>🛡️ Open-source and community-driven</li>
+      </ul>
+    </section>
+    <section id="faq">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <button class="faq-question">How do I get started?</button>
+        <div class="faq-answer">
+          <p>Clone the repo and check out the README for setup instructions. You'll find all scripts and guides inside!</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I contribute?</button>
+        <div class="faq-answer">
+          <p>Yes! Contributions are welcome. Open an issue or PR on <a href="https://github.com/Frank1o3/bedrock-server" target="_blank">GitHub</a>.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Where do I find more docs?</button>
+        <div class="faq-answer">
+          <p>More guides are coming soon! For now, see the README and this site for updates.</p>
+        </div>
+      </div>
+    </section>
+    <section id="footer">
+      <p>Made with ❤️ by <a href="https://github.com/Frank1o3" target="_blank">Frank1o3</a> • Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+    </section>
+  </main>
+  <script>
+    // Fade-in animation for about section
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.fade-in').classList.add('visible');
+    });
+
+    // Surprise Button interaction
+    document.getElementById('surpriseBtn').addEventListener('click', () => {
+      const box = document.getElementById('surpriseBox');
+      box.classList.toggle('hidden');
+      box.innerHTML = box.classList.contains('hidden') ? '' : '<strong>🎉 Welcome to the Bedrock Server Project! 🎉</strong>';
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
