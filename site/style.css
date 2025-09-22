@@ -1,0 +1,134 @@
+/* Base */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #1e293b;
+  color: #f1f5f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #0f172a;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header .subtitle {
+  font-size: 1.1rem;
+  color: #7dd3fc;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #38bdf8;
+  margin: 0 0.7rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #fbbf24;
+}
+
+/* Sections */
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ul, ol {
+  padding-left: 1rem;
+}
+
+button {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #fbbf24;
+  color: #0f172a;
+}
+
+/* Surprise */
+#surpriseBox {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #22d3ee;
+  color: #0f172a;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* FAQ */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: #64748b;
+  color: #f1f5f9;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.faq-answer {
+  display: none;
+  background: #e0f2fe;
+  color: #0f172a;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+#footer {
+  text-align: center;
+  color: #7dd3fc;
+  font-size: 0.95rem;
+  margin-top: 2rem;
+}
